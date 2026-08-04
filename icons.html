@@ -17,7 +17,18 @@
   h2{margin:44px 0 4px;font-size:1.25rem;font-weight:800;letter-spacing:-0.01em}
   .sub{font-size:13px;color:var(--gray-600);margin-bottom:14px}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:12px}
-  .ic{background:#fff;border:1px solid var(--color-hairline);border-radius:14px;padding:18px 10px 12px;text-align:center;cursor:pointer;transition:border-color .15s}
+  .ic{background:#fff;border:1px solid var(--color-hairline);border-radius:14px;padding:16px;cursor:pointer;transition:border-color .15s,background .15s;position:relative}
+  .ic.sel{border-color:var(--emerald-500);background:var(--sage-50)}
+  .ic.sel::after{content:"";position:absolute;top:8px;right:8px;width:12px;height:12px;border-radius:50%;background:var(--emerald-500)}
+  .ic .acts{display:flex;gap:6px;margin-top:10px;opacity:0;transition:opacity .15s}
+  .ic:hover .acts,.ic.sel .acts{opacity:1}
+  .ic .acts button{flex:1;font-family:var(--font-mono);font-size:9.5px;font-weight:700;border:1.5px solid var(--emerald-700);color:var(--emerald-700);background:transparent;border-radius:999px;padding:3px 0;cursor:pointer}
+  .ic .acts button:hover{background:var(--emerald-700);color:#fff}
+  .selbar{position:fixed;left:50%;bottom:20px;transform:translateX(-50%) translateY(90px);z-index:130;background:var(--green-950);color:var(--cream-50);border-radius:14px;padding:12px 16px;display:flex;align-items:center;gap:14px;box-shadow:0 14px 40px rgba(0,0,0,.28);transition:transform .22s}
+  .selbar.on{transform:translateX(-50%) translateY(0)}
+  .selbar b{font-size:14px}
+  .selbar button{font-size:13px;font-weight:700;border:none;border-radius:10px;padding:9px 16px;cursor:pointer;background:var(--lime-500);color:var(--ink-900)}
+  .selbar .ghost{background:transparent;color:var(--cream-300);border:1.5px solid var(--green-800)}
   .ic:hover{border-color:var(--emerald-500)}
   .ic svg{width:32px;height:32px;color:var(--ink-900)}
   .ic span{display:block;font-size:11px;color:var(--gray-600);font-family:var(--font-mono);margin-top:10px;word-break:break-all}
@@ -56,6 +67,42 @@
   .side:hover a.act:not(:hover){font-size:15.5px;color:var(--cream-200)}
   .side a:hover{font-size:21px;color:var(--cream-50);letter-spacing:-0.02em}
   .side a:hover + a{font-size:15.5px;color:var(--cream-200)}
+
+  /* ---------- ejemplos de uso ---------- */
+  .usegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .ucard{background:#fff;border:1px solid var(--color-hairline);border-radius:16px;padding:18px}
+  .uk{font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--emerald-700)}
+  .ustage{margin:12px 0;border-radius:12px;overflow:hidden}
+  .ucap{font-size:12.5px;color:var(--gray-600);line-height:1.5}
+  .uslide{aspect-ratio:16/9;background:var(--sage-50);padding:8%;display:flex;align-items:flex-end;container-type:inline-size}
+  .ucards{display:grid;grid-template-columns:repeat(3,1fr);gap:3cqw;width:100%}
+  .uc{background:#fff;border-radius:2cqw;padding:3cqw}
+  .udot{width:7cqw;height:7cqw;border-radius:50%;background:var(--ink-900);display:flex;align-items:center;justify-content:center;margin-bottom:1.6cqw}
+  .udot svg{width:3.8cqw;height:3.8cqw}
+  .uc b{display:block;font-size:3.2cqw;letter-spacing:-0.01em}
+  .uc p{font-size:2.4cqw;color:var(--gray-600);line-height:1.35;margin-top:.6cqw}
+  .upiece{aspect-ratio:4/5;background:var(--green-950);color:var(--cream-50);padding:9%;display:flex;flex-direction:column;container-type:inline-size}
+  .ulabel{font-size:3cqw;font-weight:800;letter-spacing:.14em;color:var(--lime-500)}
+  .ubig{font-size:12cqw;font-weight:800;letter-spacing:-0.03em;line-height:1.02;margin-top:2cqw}
+  .urow{margin-top:auto;display:flex;gap:5cqw}
+  .uico{width:9cqw;height:9cqw;display:block;color:var(--cream-50)}
+  .uico svg{width:100%;height:100%}
+  .uico.hl{color:var(--lime-500)}
+  .udoc{background:#fff;border:1px solid var(--color-hairline);padding:20px;min-height:170px}
+  .uli{display:flex;gap:10px;align-items:flex-start;padding:9px 0;font-size:13px;line-height:1.45;border-bottom:1px solid var(--color-hairline)}
+  .uli:last-child{border-bottom:none}
+  .usm{flex:0 0 18px;color:var(--emerald-700)}
+  .usm svg{width:18px;height:18px}
+  .dodont{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .dd{border-top:3px solid var(--emerald-500);padding-top:14px}
+  .dd.avoid{border-top-color:var(--ink-900)}
+  .dd .h{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald-700);margin-bottom:12px;display:block}
+  .dd.avoid .h{color:var(--ink-900)}
+  .dd ul{list-style:none}
+  .dd li{font-size:13.5px;line-height:1.5;padding:9px 0;border-bottom:1px solid var(--color-hairline)}
+  .dd li:last-child{border-bottom:none}
+  .dd.avoid li{color:var(--gray-600)}
+  @media (max-width:880px){.usegrid,.dodont{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -72,13 +119,67 @@
   <span class="eyebrow">Magoya · Iconos v1.1</span>
   <h1>Librería de iconos</h1>
   <p class="lead">58 iconos de línea con el ADN del wordmark: trazo 2px, terminaciones y esquinas redondeadas, tamaño óptico 24px. Monocromos y recoloreables (usan <code>currentColor</code>). Click en un icono para copiar su SVG.</p>
+  <p style="font-size:13.5px;color:var(--gray-600);margin-bottom:10px"><b>Click</b> en un ícono lo copia como <b>imagen PNG</b> (pegalo directo en Docs, Slides, Figma o un mail). Los botones <code style="font-family:var(--font-mono);font-size:11px">PNG</code> / <code style="font-family:var(--font-mono);font-size:11px">SVG</code> lo descargan. <b>⌘/Ctrl + click</b> selecciona varios y <button id="sel-all" style="font-size:12px;font-weight:700;border:1.5px solid var(--emerald-700);color:var(--emerald-700);background:transparent;border-radius:999px;padding:3px 11px;cursor:pointer">seleccionar todos</button></p>
   <p class="spec-line">stroke: 2px · linecap: round · linejoin: round · grid: 24×24 · color: #161616 sobre claro · #F6F1EB sobre oscuro · lima solo el destacado</p>
 
   <div id="cats"></div>
 
   <div class="dark-demo" id="darkdemo">
-    <p style="order:-1;font-weight:700;color:var(--cream-50)">Sobre oscuro: crema — y lima únicamente para el icono destacado de la pieza.</p></div></div>
-<div class="toast" id="toast">SVG copiado</div>
+    <p style="order:-1;font-weight:700;color:var(--cream-50)">Sobre oscuro: crema — y lima únicamente para el icono destacado de la pieza.</p></div>
+
+  <h2 style="margin-top:54px">Dónde va cada ícono</h2>
+  <p class="sub" style="max-width:70ch;margin-bottom:18px">Tres contextos, tres tamaños, tres teñidos. Si el ícono no aporta significado al lado del texto, no va: <b>si decora nadie lo mira, si explica todos lo leen</b>.</p>
+  <div class="usegrid">
+    <div class="ucard">
+      <span class="uk">En un slide</span>
+      <div class="ustage"><div class="uslide"><div class="ucards">
+        <div class="uc"><span class="udot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sprout"/></svg></span><b>Project Based</b><p>Equipo dedicado de punta a punta.</p></div>
+        <div class="uc"><span class="udot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-chart-bars"/></svg></span><b>Team Extension</b><p>Nos sumamos a tu proceso.</p></div>
+        <div class="uc"><span class="udot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-briefcase"/></svg></span><b>Staff Augmentation</b><p>Talento senior bajo tu gestión.</p></div>
+      </div></div></div>
+      <p class="ucap"><b>Chip negro circular</b>, ícono crema al 55% del chip, uno por card. El ícono dice de qué habla la card — nunca el mismo en dos cards.</p>
+    </div>
+    <div class="ucard">
+      <span class="uk">En una pieza de redes</span>
+      <div class="ustage"><div class="upiece">
+        <span class="ulabel">AI EN CAMPO</span>
+        <div class="ubig">Tu lote,<br>en datos</div>
+        <div class="urow">
+          <span class="uico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-satellite"/></svg></span>
+          <span class="uico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-sensor"/></svg></span>
+          <span class="uico hl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-ai"/></svg></span>
+        </div>
+      </div></div>
+      <p class="ucap">Grandes y en fila, <b>uno solo en lima</b> — el destacado. Sobre oscuro van en crema. Nunca junto a personajes ilustrados.</p>
+    </div>
+    <div class="ucard">
+      <span class="uk">En un documento o web</span>
+      <div class="ustage"><div class="udoc">
+        <div class="uli"><span class="usm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span>Discovery con usuarios reales del lote</span></div>
+        <div class="uli"><span class="usm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span>Prototipo validado antes de escribir código</span></div>
+        <div class="uli"><span class="usm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-check"/></svg></span><span>Métricas de adopción en cada campaña</span></div>
+      </div></div>
+      <p class="ucap">Chicos (16–20px), alineados a la primera línea, en <b>verde #009145</b>. Como viñeta funcional: mismo ícono repetido, ahí sí.</p>
+    </div>
+  </div>
+
+  <div class="dodont" style="margin-top:28px;max-width:940px">
+    <div class="dd"><span class="h">Hacer</span><ul>
+      <li>Un ícono por idea, y que <b>represente</b> el concepto del título.</li>
+      <li>Mismo trazo (2px) y mismo tamaño óptico en toda la pieza.</li>
+      <li>Uno solo destacado: lima sobre oscuro, verde #009145 sobre claro.</li></ul></div>
+    <div class="dd avoid"><span class="h">Evitar</span><ul>
+      <li>Íconos decorativos que no agregan significado.</li>
+      <li>Mezclar íconos con personajes ilustrados en la misma pieza.</li>
+      <li>Rellenos sólidos, 3D, sombras, o dos tamaños en la misma fila.</li></ul></div>
+  </div>
+</div>
+<div class="toast" id="toast">listo</div>
+<div class="selbar" id="selbar">
+  <b><span id="selcount">0</span> seleccionados</b>
+  <button id="dl-sel">Descargar PNG</button>
+  <button class="ghost" id="clear-sel">Limpiar</button>
+</div>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" id="defs">
   <!-- AGRO -->
@@ -162,9 +263,10 @@ const cats = document.getElementById('cats');
 CATS.forEach(([name, sub, icons])=>{
   cats.insertAdjacentHTML('beforeend', `<h2>${name}</h2><p class="sub">${sub}</p>
     <div class="grid">${icons.map(i=>`
-      <div class="ic" data-icon="${i}" title="Click para copiar SVG">
+      <div class="ic" data-icon="${i}" title="Click: copiar como PNG · ⌘/Ctrl+click: seleccionar">
         <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-${i}"/></svg>
-        <span>${i}</span></div>`).join('')}</div>`);
+        <span>${i}</span>
+        <div class="acts"><button data-a="png">PNG</button><button data-a="svg">SVG</button></div></div>`).join('')}</div>`);
 });
 // demo oscuro
 const demo = document.getElementById('darkdemo');
@@ -172,16 +274,61 @@ const demo = document.getElementById('darkdemo');
   demo.insertAdjacentHTML('beforeend',
     `<svg class="${idx===2?'hl':''}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-${i}"/></svg>`);
 });
-// copiar al click
-document.addEventListener('click', e=>{
-  const card = e.target.closest('.ic'); if(!card) return;
-  const name = card.dataset.icon;
-  const sym = document.getElementById('i-'+name);
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${sym.innerHTML}</svg>`;
-  navigator.clipboard.writeText(svg).then(()=>{
-    const t=document.getElementById('toast'); t.classList.add('on');
-    setTimeout(()=>t.classList.remove('on'), 1200);
+// ---------- utilidades ----------
+function svgText(name, stroke){
+  var sym=document.getElementById('i-'+name);
+  return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="'+(stroke||'#161616')+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+sym.innerHTML+'</svg>';
+}
+function toPngBlob(name, size, cb){
+  var svg=svgText(name), img=new Image();
+  img.onload=function(){
+    var c=document.createElement('canvas'); c.width=c.height=size;
+    var x=c.getContext('2d'); x.drawImage(img,0,0,size,size);
+    c.toBlob(function(b){ cb(b); }, 'image/png');
+  };
+  img.src='data:image/svg+xml;base64,'+btoa(unescape(encodeURIComponent(svg)));
+}
+function toast(msg){ var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('on'); setTimeout(function(){t.classList.remove('on');},1400); }
+function dl(blob, filename){ var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=filename; a.click(); setTimeout(function(){URL.revokeObjectURL(a.href);},2000); }
+
+// ---------- click: copia PNG al portapapeles ----------
+document.addEventListener('click', function(e){
+  var btn=e.target.closest('.acts button'), card=e.target.closest('.ic');
+  if(!card) return;
+  var name=card.dataset.icon;
+  if(btn){
+    e.stopPropagation();
+    if(btn.dataset.a==='svg'){ dl(new Blob([svgText(name)],{type:'image/svg+xml'}), name+'.svg'); toast(name+'.svg descargado'); }
+    else { toPngBlob(name, 512, function(b){ dl(b, name+'.png'); toast(name+'.png descargado (512px)'); }); }
+    return;
+  }
+  if(e.metaKey||e.ctrlKey||e.shiftKey){ card.classList.toggle('sel'); updateBar(); return; }
+  // click simple: copiar PNG al portapapeles (pegable en Docs, Slides, Figma, mail)
+  toPngBlob(name, 512, function(b){
+    if(navigator.clipboard && window.ClipboardItem){
+      navigator.clipboard.write([new ClipboardItem({'image/png': b})])
+        .then(function(){ toast(name+' copiado como imagen — pegalo donde quieras'); })
+        .catch(function(){ dl(b, name+'.png'); toast('copiado no permitido: descargué '+name+'.png'); });
+    } else { dl(b, name+'.png'); toast('descargado '+name+'.png'); }
   });
+});
+
+// ---------- barra de selección ----------
+function updateBar(){
+  var n=document.querySelectorAll('.ic.sel').length, bar=document.getElementById('selbar');
+  document.getElementById('selcount').textContent=n;
+  bar.classList.toggle('on', n>0);
+}
+document.getElementById('dl-sel').addEventListener('click', function(){
+  var sel=[].slice.call(document.querySelectorAll('.ic.sel'));
+  sel.forEach(function(c,i){ setTimeout(function(){ toPngBlob(c.dataset.icon, 512, function(b){ dl(b, c.dataset.icon+'.png'); }); }, i*180); });
+  toast('descargando '+sel.length+' PNG…');
+});
+document.getElementById('clear-sel').addEventListener('click', function(){
+  document.querySelectorAll('.ic.sel').forEach(function(c){c.classList.remove('sel');}); updateBar();
+});
+document.getElementById('sel-all').addEventListener('click', function(){
+  document.querySelectorAll('.ic').forEach(function(c){c.classList.add('sel');}); updateBar();
 });
 </script>
 

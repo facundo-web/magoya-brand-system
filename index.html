@@ -164,6 +164,18 @@
   .icm.hl-light{background:var(--emerald-700)} /* destacado SOBRE CLARO — #009145, el lima no resalta sobre blanco */
   .icn{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600);margin-top:10px}
 
+  /* ---------- descargas y how-to ---------- */
+  .dlbox{display:block;background:var(--white);border:1px solid var(--color-hairline);border-radius:12px;padding:14px;text-decoration:none;color:inherit}
+  .dlbox:hover{border-color:var(--emerald-500);background:var(--sage-50)}
+  .dlbox b{display:block;font-size:13.5px;margin:8px 0 3px}
+  .dlbox .sp{font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600)}
+  .fmt{display:inline-block;font-family:var(--font-mono);font-size:9.5px;font-weight:700;letter-spacing:.06em;padding:3px 7px;border-radius:5px}
+  .fmt.vector{background:var(--emerald-500);color:var(--ink-900)}
+  .fmt.raster{background:var(--gray-300);color:var(--ink-900)}
+  ol.howto{list-style:none;counter-reset:h;max-width:640px}
+  ol.howto li{counter-increment:h;position:relative;padding:10px 0 10px 34px;font-size:13.5px;line-height:1.5;border-bottom:1px solid var(--color-hairline)}
+  ol.howto li::before{content:counter(h);position:absolute;left:0;top:11px;width:22px;height:22px;border-radius:50%;background:var(--green-900);color:var(--cream-50);font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
+
   /* ---------- doodles del Studio ---------- */
   .dm{display:block;background:var(--ink-900);width:34px;height:34px;
       -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
@@ -1084,13 +1096,35 @@
     <div>
       <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:12px;padding:26px">
         <p style="font-size:13.5px;color:var(--gray-600);margin-bottom:18px">— Saludos,</p>
-        <div style="display:flex;gap:16px;align-items:center">
-          <img src="assets/avatars/avatar-face.svg" alt="" style="width:52px">
+        <div style="display:flex;gap:18px;align-items:center">
+          <img src="assets/downloads/magoya-firma-animada.gif" alt="Magoya" style="width:118px">
           <div style="border-left:3px solid var(--emerald-500);padding-left:16px">
             <b style="font-size:15px">Nombre Apellido</b>
             <div style="font-size:13px;color:var(--gray-600)">Rol · Magoya</div>
-            <div style="font-size:13px;margin-top:4px"><a href="#papeleria" style="color:var(--emerald-700);font-weight:600">magoya.com</a> · +54 9 11 0000 0000</div></div></div></div>
-      <p class="cap" style="margin-top:10px"><b>Firma de email.</b> Avatar (cara o “m”) + filete verde + nombre 700 + rol y datos en gris. Sin banners, sin frases legales eternas, sin logos de redes.</p>
+            <div style="font-size:13px;margin-top:4px"><a href="#papeleria" style="color:var(--emerald-700);font-weight:600">magoya.com</a> · +54 9 11 0000 0000</div>
+          </div>
+        </div>
+      </div>
+      <p class="cap" style="margin-top:10px"><b>Firma de email.</b> Va <b>siempre el wordmark</b> — nunca los avatares ni la cara. Estático o <b>animado</b> (arriba se ve en vivo: la onda enciende cada letra en lima y vuelve). Filete verde + nombre 700 + rol y datos en gris. Sin banners, sin frases legales eternas, sin logos de redes.</p>
+
+      <h3>Descargas de papelería</h3>
+      <div class="grid g2" style="gap:12px">
+        <a class="dlbox" href="assets/downloads/doc-header.svg" download><span class="fmt vector">SVG</span><b>Header de documento</b><span class="sp">2480×300 · vectorial</span></a>
+        <a class="dlbox" href="assets/downloads/doc-footer.svg" download><span class="fmt vector">SVG</span><b>Footer de documento</b><span class="sp">2480×200 · filete verde</span></a>
+        <a class="dlbox" href="assets/downloads/magoya-firma-estatica.png" download><span class="fmt raster">PNG</span><b>Firma estática</b><span class="sp">400px · fondo blanco</span></a>
+        <a class="dlbox" href="assets/downloads/magoya-firma-animada.gif" download><span class="fmt raster">GIF</span><b>Firma animada</b><span class="sp">200px · loop · 17 KB</span></a>
+        <a class="dlbox" href="assets/magoya-wordmark-animado.svg" download><span class="fmt vector">SVG</span><b>Logo animado (web)</b><span class="sp">para sitio y HTML</span></a>
+      </div>
+
+      <h3>Cómo se sube la firma a Gmail</h3>
+      <ol class="howto">
+        <li>Subí el GIF a un lugar público (Drive con link público, el sitio, cualquier hosting): <b>Gmail no permite insertar un archivo local en la firma</b>, necesita una URL.</li>
+        <li>Gmail → <b>Configuración → Ver todos los ajustes → General → Firma → Crear nueva</b>.</li>
+        <li>Escribí el texto primero (Nombre, Rol · Magoya, magoya.com, teléfono) en <b>Arial</b> — Gmail no soporta Manrope.</li>
+        <li>Cursor donde va el logo → <b>Insertar imagen → Dirección web (URL)</b> → pegá la URL → tamaño <b>Pequeño</b> (~120px).</li>
+        <li>Guardá los cambios al pie de la página. Donde el cliente no anime GIF se ve el primer frame, que ya es el logo completo.</li>
+      </ol>
+      <p class="cap"><b>Cómo está construido:</b> el wordmark oficial en verde digital y una onda que enciende cada letra en lima y vuelve — 34 frames a 70ms, loop infinito, fondo blanco (los clientes de correo no manejan bien la transparencia). Se genera desde el SVG del wordmark, nunca se redibuja.</p>
 
       <h3 style="margin-top:34px">Reglas en documentos</h3>
       <div class="dodont">

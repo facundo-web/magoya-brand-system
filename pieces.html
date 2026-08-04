@@ -25,6 +25,26 @@
   .anat li b{font-weight:700}
   .anat .note{font-size:12.5px;color:var(--gray-600);margin-top:14px;line-height:1.5}
 
+  /* comparativa de modelos */
+  .models{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:8px}
+  .mcard{background:var(--white);border:1px solid var(--color-hairline);border-radius:14px;padding:18px;border-top:4px solid var(--green-900)}
+  .mcard.t2{border-top-color:var(--sage-100)}
+  .mcard.t3{border-top-color:var(--lime-500)}
+  .mcard .tag{font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600)}
+  .mcard .swatch{display:flex;gap:5px;margin:10px 0 12px}
+  .mcard .swatch span{width:26px;height:26px;border-radius:7px;display:block}
+  .mcard b{display:block;font-size:15px;margin-bottom:5px}
+  .mcard p{font-size:12.5px;color:var(--gray-600);line-height:1.45}
+  .mbadge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:10px}
+  .mbadge.b1{background:var(--green-900);color:var(--cream-50)}
+  .mbadge.b2{background:var(--sage-100);color:var(--green-900)}
+  .mbadge.b3{background:var(--lime-500);color:var(--ink-900)}
+  .anat{border-left:4px solid var(--color-hairline);padding-left:18px}
+  .tpl:nth-of-type(1) .anat{border-left-color:var(--green-900)}
+  .tpl:nth-of-type(2) .anat{border-left-color:var(--sage-100)}
+  .tpl:nth-of-type(3) .anat{border-left-color:var(--lime-500)}
+  @media (max-width:900px){.models{grid-template-columns:1fr}}
+
   /* página A4 vertical mock */
   .page{aspect-ratio:210/297;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 36px rgba(0,0,0,.10);container-type:inline-size;position:relative;display:flex;flex-direction:column}
   .zone{position:relative}
@@ -129,10 +149,19 @@
     <h1>Plantillas de piezas comerciales</h1>
     <p>Las arquitecturas de contenido probadas de los flyers 2024, capturadas como <b>plantillas del sistema</b> en el brand nuevo. No son piezas finales: son las estructuras para producirlas — cada zona está numerada y explicada. Regla transversal: cero naranja/amarillo, cero puzzle, personas B&amp;N, un golpe de lima por pieza.</p></div>
 
+  <h2 style="font-weight:800;font-size:1.5rem;letter-spacing:-0.02em;margin:10px 0 6px">Tres modelos, tres lienzos</h2>
+  <p style="color:var(--gray-600);max-width:70ch;font-size:.95rem;margin-bottom:18px">Cada plantilla tiene un <b>modelo propio</b> y se reconoce a distancia por su lienzo: el institucional abre en verde profundo, el de servicio en blanco studio, el de talento con foto aérea. No se mezclan.</p>
+  <div class="models">
+    <div class="mcard t1"><span class="tag">T1 · Institucional</span><div class="swatch"><span style="background:var(--green-900)"></span><span style="background:var(--cream-100)"></span><span style="background:var(--lime-500)"></span></div><b>Quiénes somos</b><p>Header verde profundo pleno · equipo B&amp;N · sección oscura de modelos. Para presentar la empresa entera.</p></div>
+    <div class="mcard t2"><span class="tag">T2 · Servicio</span><div class="swatch"><span style="background:var(--white);box-shadow:inset 0 0 0 1px var(--color-hairline)"></span><span style="background:var(--sage-50)"></span><span style="background:var(--green-900)"></span></div><b>Un servicio</b><p>Lienzo blanco studio · proceso numerado en sage · footer verde. Para vender una capacidad concreta.</p></div>
+    <div class="mcard t3"><span class="tag">T3 · Talento</span><div class="swatch"><span style="background:var(--green-950)"></span><span style="background:var(--lime-500)"></span><span style="background:var(--ink-950)"></span></div><b>Equipos y talento</b><p>Header con foto aérea + scrim · card dark con la cifra en lima · cierre negro. Para staffing y hiring.</p></div>
+  </div>
+
   <!-- ============ T1 · ONE-PAGER ============ -->
   <div class="tpl" id="t1">
     <div class="anat">
-      <h2>T1 · One-pager institucional</h2>
+      <span class="mbadge b1">Modelo institucional</span>
+      <h2>T1 · One-pager</h2>
       <span class="src">estructura heredada de: ONE PAGE MAGOYA GRAL.pdf</span>
       <ol>
         <li><span><b>Header verde profundo</b> — wordmark crema + propuesta de valor con palabra en lima + bajada corta.</span></li>
@@ -181,6 +210,7 @@
   <!-- ============ T2 · FLYER DE SERVICIO ============ -->
   <div class="tpl" id="t2">
     <div class="anat">
+      <span class="mbadge b2">Modelo servicio</span>
       <h2>T2 · Flyer de servicio</h2>
       <span class="src">estructura heredada de: FLYER_ Product Development.pdf</span>
       <ol>
@@ -211,7 +241,8 @@
   <!-- ============ T3 · FLYER STAFF AUGMENTATION ============ -->
   <div class="tpl" id="t3">
     <div class="anat">
-      <h2>T3 · Flyer Staff Augmentation</h2>
+      <span class="mbadge b3">Modelo talento</span>
+      <h2>T3 · Staff Augmentation</h2>
       <span class="src">estructura heredada de: FLYER_Staff Augentation.pdf (typo del original, corregido acá)</span>
       <ol>
         <li><span><b>Header foto aérea + scrim verde</b> — reemplaza el header naranja del original.</span></li>
