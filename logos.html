@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="tokens.css">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--font-body);background:var(--color-canvas-meta);color:var(--ink-900);padding:88px 56px 56px}
+body{font-family:var(--font-body);background:var(--color-canvas-meta);color:var(--ink-900);padding:88px 56px 56px 270px}
 .eyebrow{display:inline-block;background:var(--ink-900);color:#fff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
 h1{font-weight:800;letter-spacing:-0.03em;font-size:2.6rem;margin:14px 0 6px}
 p.lead{color:var(--gray-600);max-width:640px;margin-bottom:12px}
@@ -19,6 +19,7 @@ h2{margin:38px 0 14px;font-size:1.3rem;font-weight:700}
 .c a.dl:hover{background:var(--emerald-700);color:#fff}
 .note{font-size:13px;color:var(--gray-600);margin-top:16px;max-width:720px}
 @media (max-width:880px){.mg-topbar{position:static;padding:10px 14px}}
+  @media (max-width:880px){body{padding:16px}}
   @media (max-width:700px){body{padding:28px 18px}h1{font-size:1.9rem}}
 
   .mg-topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 24px;box-shadow:0 4px 18px rgba(0,0,0,.16)}
@@ -26,56 +27,113 @@ h2{margin:38px 0 14px;font-size:1.3rem;font-weight:700}
   
   .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
   .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
+
+  /* ---------- menú lateral (igual al brand book) ---------- */
+  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50}
+  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8FA396;margin:0 0 8px 10px}
+  .side a{color:#8FA396;text-decoration:none;font-size:13.5px;line-height:1.25;padding:5px 10px;border-radius:8px;font-weight:600;transition:font-size .2s cubic-bezier(.2,.9,.25,1),color .2s,letter-spacing .2s}
+  .side a:hover{background:var(--green-800);color:var(--cream-50)}
+  .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
+  .crumb{font-size:12.5px;color:var(--gray-600);margin-bottom:12px}
+  .crumb a{color:var(--emerald-700);text-decoration:none;font-weight:600}
+  .crumb a:hover{text-decoration:underline}
+  @media (max-width:880px){
+    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:2px 4px;padding:12px 14px}
+    .side .lbl,.side .v{display:none}
+  }
+
+  .c{text-align:left}
+  .c .ci{display:flex;align-items:center;gap:7px;margin-top:12px}
+  .fmt{font-family:var(--font-mono);font-size:9.5px;font-weight:700;letter-spacing:.06em;padding:3px 7px;border-radius:5px;flex:0 0 auto}
+  .fmt.vector{background:var(--emerald-500);color:var(--ink-900)}
+  .fmt.raster{background:var(--gray-300);color:var(--ink-900)}
+  .c .nm{font-size:12px;font-weight:600;word-break:break-word;line-height:1.25}
+  .c .cb{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
+  .c .spec{font-family:var(--font-mono);font-size:10px;color:var(--gray-600)}
+  .c a.dl{display:inline-flex;align-items:center;gap:5px;margin-top:0}
+  .c a.dl svg{width:12px;height:12px}
+
+  .side a.near{font-size:15.5px;color:var(--cream-200)}
+  .side a.act{font-size:21px;color:var(--cream-50);font-weight:800;letter-spacing:-0.02em}
+  .side:hover a.act:not(:hover){font-size:15.5px;color:var(--cream-200)}
+  .side a:hover{font-size:21px;color:var(--cream-50);letter-spacing:-0.02em}
+  .side a:hover + a{font-size:15.5px;color:var(--cream-200)}
 </style>
 </head>
 <body>
 <nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Piezas</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html" class="on">Logos</a></nav>
 
+<nav class="side">
+  <a href="#clientes">Clientes</a>
+  <a href="#stack">Stack / partners</a>
+  <span class="v">BRAND SYSTEM · V1.1</span>
+</nav>
+
+<p class="crumb"><a href="index.html">Brand book</a> › Logos de clientes & stack</p>
+
 <span class="eyebrow">Magoya · Brand System v1.1</span>
 <h1>Logos de clientes & partners</h1>
-<p class="lead">Regla de marca: los logos son <b>siempre reales</b> — nunca placeholders. Fondo blanco o sage, en escala de grises u original según la pieza. <a href="index.html">← volver al brand book</a></p>
+<p class="lead">Regla de marca: los logos son <b>siempre reales</b> — nunca placeholders. Fondo blanco o sage, en escala de grises u original según la pieza.</p>
 
-<h2>Clientes & marcas con las que construimos</h2>
+<h2 id="clientes">Clientes &amp; marcas con las que construimos</h2>
 <div class="g">
-  <div class="c"><img src="assets/logos/clients/apeel-sciences.svg" alt="Apeel Sciences"><span>apeel-sciences</span><a class="dl" href="assets/logos/clients/apeel-sciences.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/bunge.svg" alt="Bunge"><span>bunge</span><a class="dl" href="assets/logos/clients/bunge.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/bayer-crop-science.svg" alt="Bayer Crop Science"><span>bayer-crop-science</span><a class="dl" href="assets/logos/clients/bayer-crop-science.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/gdm.svg" alt="GDM"><span>gdm</span><a class="dl" href="assets/logos/clients/gdm.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/corteva.svg" alt="Corteva"><span>corteva</span><a class="dl" href="assets/logos/clients/corteva.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/climate-fieldview.svg" alt="Climate FieldView"><span>climate-fieldview</span><a class="dl" href="assets/logos/clients/climate-fieldview.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/indigo.svg" alt="Indigo"><span>indigo</span><a class="dl" href="assets/logos/clients/indigo.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/intent.svg" alt="Intent"><span>intent</span><a class="dl" href="assets/logos/clients/intent.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/nera.svg" alt="Nera"><span>nera</span><a class="dl" href="assets/logos/clients/nera.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/stine.svg" alt="Stine"><span>stine</span><a class="dl" href="assets/logos/clients/stine.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/biome-makers.svg" alt="Biome Makers"><span>biome-makers</span><a class="dl" href="assets/logos/clients/biome-makers.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/precision-planting.svg" alt="Precision Planting"><span>precision-planting</span><a class="dl" href="assets/logos/clients/precision-planting.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/syngenta.svg" alt="Syngenta"><span>syngenta</span><a class="dl" href="assets/logos/clients/syngenta.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/bolsatech.svg" alt="Bolsatech"><span>bolsatech</span><a class="dl" href="assets/logos/clients/bolsatech.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/sound-agriculture.svg" alt="Sound Agriculture"><span>sound-agriculture</span><a class="dl" href="assets/logos/clients/sound-agriculture.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/xarvio.svg" alt="Xarvio"><span>xarvio</span><a class="dl" href="assets/logos/clients/xarvio.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/clients/agro-sustentable.svg" alt="Agro Sustentable"><span>agro-sustentable</span><a class="dl" href="assets/logos/clients/agro-sustentable.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/bayer.svg" alt="Bayer"><span>bayer (vector)</span><a class="dl" href="assets/logos/bayer.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/basf.svg" alt="BASF"><span>basf (vector)</span><a class="dl" href="assets/logos/basf.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/john-deere.svg" alt="John Deere"><span>john-deere (vector)</span><a class="dl" href="assets/logos/john-deere.svg" download>bajar</a></div>
+  <div class="c"><img src="assets/logos/clients/apeel-sciences.svg" alt="Apeel Sciences"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">apeel-sciences</span></div><div class="cb"><span class="spec">4 KB · 199×90</span><a class="dl" href="assets/logos/clients/apeel-sciences.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/bunge.svg" alt="Bunge"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">bunge</span></div><div class="cb"><span class="spec">2 KB · 199×84</span><a class="dl" href="assets/logos/clients/bunge.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/bayer-crop-science.svg" alt="Bayer Crop Science"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">bayer-crop-science</span></div><div class="cb"><span class="spec">5 KB · 199×84</span><a class="dl" href="assets/logos/clients/bayer-crop-science.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/gdm.svg" alt="GDM"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">gdm</span></div><div class="cb"><span class="spec">13 KB · 230×97</span><a class="dl" href="assets/logos/clients/gdm.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/corteva.svg" alt="Corteva"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">corteva</span></div><div class="cb"><span class="spec">16 KB · 255×107</span><a class="dl" href="assets/logos/clients/corteva.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/climate-fieldview.svg" alt="Climate FieldView"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">climate-fieldview</span></div><div class="cb"><span class="spec">3 KB · 199×84</span><a class="dl" href="assets/logos/clients/climate-fieldview.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/indigo.svg" alt="Indigo"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">indigo</span></div><div class="cb"><span class="spec">3 KB · 199×84</span><a class="dl" href="assets/logos/clients/indigo.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/intent.svg" alt="Intent"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">intent</span></div><div class="cb"><span class="spec">25 KB · 199×84</span><a class="dl" href="assets/logos/clients/intent.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/nera.svg" alt="Nera"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">nera</span></div><div class="cb"><span class="spec">2 KB · 199×84</span><a class="dl" href="assets/logos/clients/nera.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/stine.svg" alt="Stine"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">stine</span></div><div class="cb"><span class="spec">48 KB · 199×84</span><a class="dl" href="assets/logos/clients/stine.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/biome-makers.svg" alt="Biome Makers"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">biome-makers</span></div><div class="cb"><span class="spec">22 KB · 199×84</span><a class="dl" href="assets/logos/clients/biome-makers.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/precision-planting.svg" alt="Precision Planting"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">precision-planting</span></div><div class="cb"><span class="spec">5 KB · 187×79</span><a class="dl" href="assets/logos/clients/precision-planting.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/syngenta.svg" alt="Syngenta"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">syngenta</span></div><div class="cb"><span class="spec">3 KB · 199×84</span><a class="dl" href="assets/logos/clients/syngenta.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/bolsatech.svg" alt="Bolsatech"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">bolsatech</span></div><div class="cb"><span class="spec">8 KB · 199×84</span><a class="dl" href="assets/logos/clients/bolsatech.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/sound-agriculture.svg" alt="Sound Agriculture"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">sound-agriculture</span></div><div class="cb"><span class="spec">6 KB · 188×79</span><a class="dl" href="assets/logos/clients/sound-agriculture.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/xarvio.svg" alt="Xarvio"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">xarvio</span></div><div class="cb"><span class="spec">64 KB · 199×91</span><a class="dl" href="assets/logos/clients/xarvio.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/clients/agro-sustentable.svg" alt="Agro Sustentable"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">agro-sustentable</span></div><div class="cb"><span class="spec">10 KB · 199×84</span><a class="dl" href="assets/logos/clients/agro-sustentable.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/bayer.svg" alt="Bayer"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">bayer (vector)</span></div><div class="cb"><span class="spec">7 KB · 633×633</span><a class="dl" href="assets/logos/bayer.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/basf.svg" alt="BASF"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">basf (vector)</span></div><div class="cb"><span class="spec">16 KB · 210×297</span><a class="dl" href="assets/logos/basf.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/john-deere.svg" alt="John Deere"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">john-deere (vector)</span></div><div class="cb"><span class="spec">9 KB · 1824×1212</span><a class="dl" href="assets/logos/john-deere.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
 </div>
 <p class="note">Los 17 primeros vienen del material del diseñador (SVG con raster embebido — sirven para pantalla; para print pedir vector). Los marcados “vector” son SVG puros ya trazados. Pendientes de conseguir en vector: ProducePay, HabiTerre, IntelinAir.</p>
 
-<h2>Stack / partners tecnológicos</h2>
+<h2 id="stack">Stack / partners tecnológicos</h2>
 <div class="g">
-  <div class="c"><img src="assets/logos/partners/aws.svg" alt="AWS"><span>aws</span><a class="dl" href="assets/logos/partners/aws.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/azure.svg" alt="Microsoft Azure"><span>azure</span><a class="dl" href="assets/logos/partners/azure.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/google-cloud.svg" alt="Google Cloud"><span>google-cloud</span><a class="dl" href="assets/logos/partners/google-cloud.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/kubernetes.svg" alt="Kubernetes"><span>kubernetes</span><a class="dl" href="assets/logos/partners/kubernetes.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/docker.svg" alt="Docker"><span>docker</span><a class="dl" href="assets/logos/partners/docker.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/terraform.svg" alt="Terraform"><span>terraform</span><a class="dl" href="assets/logos/partners/terraform.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/react.svg" alt="React"><span>react</span><a class="dl" href="assets/logos/partners/react.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/nextjs.svg" alt="Next.js"><span>nextjs</span><a class="dl" href="assets/logos/partners/nextjs.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/nodejs.svg" alt="Node.js"><span>nodejs</span><a class="dl" href="assets/logos/partners/nodejs.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/django.svg" alt="Django"><span>django</span><a class="dl" href="assets/logos/partners/django.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/postgresql.svg" alt="PostgreSQL"><span>postgresql</span><a class="dl" href="assets/logos/partners/postgresql.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/mongodb.svg" alt="MongoDB"><span>mongodb</span><a class="dl" href="assets/logos/partners/mongodb.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/jupyter.svg" alt="Jupyter"><span>jupyter</span><a class="dl" href="assets/logos/partners/jupyter.svg" download>bajar</a></div>
-  <div class="c"><img src="assets/logos/partners/argo.svg" alt="Argo"><span>argo</span><a class="dl" href="assets/logos/partners/argo.svg" download>bajar</a></div>
+  <div class="c"><img src="assets/logos/partners/aws.svg" alt="AWS"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">aws</span></div><div class="cb"><span class="spec">9 KB · 168×71</span><a class="dl" href="assets/logos/partners/aws.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/azure.svg" alt="Microsoft Azure"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">azure</span></div><div class="cb"><span class="spec">40 KB · 168×71</span><a class="dl" href="assets/logos/partners/azure.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/google-cloud.svg" alt="Google Cloud"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">google-cloud</span></div><div class="cb"><span class="spec">9 KB · 168×71</span><a class="dl" href="assets/logos/partners/google-cloud.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/kubernetes.svg" alt="Kubernetes"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">kubernetes</span></div><div class="cb"><span class="spec">15 KB · 168×71</span><a class="dl" href="assets/logos/partners/kubernetes.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/docker.svg" alt="Docker"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">docker</span></div><div class="cb"><span class="spec">8 KB · 168×71</span><a class="dl" href="assets/logos/partners/docker.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/terraform.svg" alt="Terraform"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">terraform</span></div><div class="cb"><span class="spec">7 KB · 168×71</span><a class="dl" href="assets/logos/partners/terraform.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/react.svg" alt="React"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">react</span></div><div class="cb"><span class="spec">10 KB · 168×71</span><a class="dl" href="assets/logos/partners/react.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/nextjs.svg" alt="Next.js"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">nextjs</span></div><div class="cb"><span class="spec">6 KB · 168×71</span><a class="dl" href="assets/logos/partners/nextjs.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/nodejs.svg" alt="Node.js"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">nodejs</span></div><div class="cb"><span class="spec">10 KB · 168×71</span><a class="dl" href="assets/logos/partners/nodejs.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/django.svg" alt="Django"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">django</span></div><div class="cb"><span class="spec">12 KB · 168×71</span><a class="dl" href="assets/logos/partners/django.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/postgresql.svg" alt="PostgreSQL"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">postgresql</span></div><div class="cb"><span class="spec">15 KB · 168×71</span><a class="dl" href="assets/logos/partners/postgresql.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/mongodb.svg" alt="MongoDB"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">mongodb</span></div><div class="cb"><span class="spec">11 KB · 168×71</span><a class="dl" href="assets/logos/partners/mongodb.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/jupyter.svg" alt="Jupyter"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">jupyter</span></div><div class="cb"><span class="spec">8 KB · 168×71</span><a class="dl" href="assets/logos/partners/jupyter.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
+  <div class="c"><img src="assets/logos/partners/argo.svg" alt="Argo"><div class="ci"><span class="fmt vector">SVG</span><span class="nm">argo</span></div><div class="cb"><span class="spec">15 KB · 168×71</span><a class="dl" href="assets/logos/partners/argo.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div>
 </div>
+
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.side a[href^="#"]'));
+  var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  function mark(idx){ links.forEach(function(a,i){ a.classList.remove('act','near');
+    if(i===idx)a.classList.add('act'); else if(Math.abs(i-idx)===1)a.classList.add('near'); }); }
+  function update(){
+    var y=window.scrollY+window.innerHeight*0.3, best=0;
+    targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top+window.scrollY<=y) best=i; });
+    mark(best);
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
 </body>
 </html>

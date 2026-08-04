@@ -18,7 +18,7 @@
   .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
   .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50}
   .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8FA396;margin:0 0 8px 10px}
-  .side a{color:var(--cream-300);text-decoration:none;font-size:13.5px;padding:7px 10px;border-radius:8px;font-weight:var(--weight-medium)}
+  .side a{color:#8FA396;text-decoration:none;font-size:13.5px;line-height:1.25;padding:5px 10px;border-radius:8px;font-weight:600;transition:font-size .2s cubic-bezier(.2,.9,.25,1),color .2s,letter-spacing .2s}
   .side a:hover{background:var(--green-800);color:var(--cream-50)}
   .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
   main{margin-left:230px;padding-top:44px}
@@ -85,6 +85,12 @@
     .table-scroll{overflow-x:auto}
     .table-scroll table{min-width:520px}
   }
+
+  .side a.near{font-size:15.5px;color:var(--cream-200)}
+  .side a.act{font-size:21px;color:var(--cream-50);font-weight:800;letter-spacing:-0.02em}
+  .side:hover a.act:not(:hover){font-size:15.5px;color:var(--cream-200)}
+  .side a:hover{font-size:21px;color:var(--cream-50);letter-spacing:-0.02em}
+  .side a:hover + a{font-size:15.5px;color:var(--cream-200)}
 </style>
 </head>
 <body>
@@ -95,14 +101,13 @@
 </nav>
 
 <nav class="side">
-  <span class="lbl">En esta página</span>
-  <a href="#esencia">1 · Esencia</a>
-  <a href="#color-voz">2 · Color & voz</a>
-  <a href="#ruido">3 · Ruido del Studio</a>
-  <a href="#componentes">4 · Componentes</a>
-  <a href="#plantillas">5 · Plantillas</a>
-  <a href="#formatos">6 · Formatos</a>
-  <a href="#reglas">7 · Reglas</a>
+  <a href="#esencia">Esencia</a>
+  <a href="#color-voz">Color & voz</a>
+  <a href="#ruido">Ruido del Studio</a>
+  <a href="#componentes">Componentes</a>
+  <a href="#plantillas">Plantillas</a>
+  <a href="#formatos">Formatos</a>
+  <a href="#reglas">Reglas</a>
   <span class="v">AI EN CAMPO · V1.1</span>
 </nav>
 
@@ -144,21 +149,23 @@
 
   <h3>La pieza patrón — anatomía</h3>
   <div class="grid" style="grid-template-columns:340px 1fr;gap:28px;align-items:start">
-    <div class="piece p45">
-      <span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-navarrow.svg);mask-image:url(assets/studio/flourish-navarrow.svg);width:16cqw;height:16cqw;position:absolute;top:2cqw;right:22cqw;transform:rotate(150deg)"></span>
-      <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg);width:7cqw;height:7cqw;position:absolute;top:37cqw;right:4cqw"></span>
-      <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg);width:5cqw;height:5cqw;position:absolute;bottom:36cqw;left:7cqw"></span>
-      <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-dots.svg);mask-image:url(assets/studio/doodle-dots.svg);background:#C97B5A;width:22cqw;height:22cqw;position:absolute;top:33cqw;left:-6cqw"></span>
-      <img src="assets/studio/icons/social/youtube.svg" alt="" style="position:absolute;top:11cqw;right:4cqw;width:17cqw;transform:rotate(8deg)">
-      <img src="assets/studio/icons/ai/openai.svg" alt="" style="position:absolute;bottom:11cqw;right:3cqw;width:18cqw">
-      <div style="position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;justify-content:center">
-        <div style="font-size:3.4cqw;font-weight:800;letter-spacing:.14em;color:var(--green-900)">AI EN CAMPO — WEBINAR GRATUITO</div>
-        <div style="font-size:22cqw;font-weight:800;letter-spacing:-0.04em;line-height:.9;color:var(--ink-900);margin-top:1cqw">6 AGO.</div>
-        <div style="align-self:flex-start;background:var(--ink-900);color:var(--cream-50);font-size:13cqw;font-weight:800;letter-spacing:-0.03em;line-height:1.12;padding:0 3cqw;border-radius:2cqw;margin-top:1.5cqw">11:00 h ARG</div>
-        <div style="font-size:9cqw;font-weight:500;line-height:1.12;color:var(--green-900);margin-top:3cqw">Analizá cotizaciones en segundos con IA</div>
-        <span style="align-self:flex-start;background:var(--green-950);color:var(--cream-50);font-size:5cqw;font-weight:700;padding:2.4cqw 5cqw;border-radius:999px;margin-top:4cqw">Link en la bio 👈</span>
+    <div>
+      <!-- Pieza REAL del Studio · proyecto "Impacto · pregunta del productor" · template impacto-pregunta · formato ig-story 1080×1920
+           Receta del JSON: scheme emerald · accent deep · logo deep · anchor top-left · rule top · silueta mitad · plate none -->
+      <div style="aspect-ratio:9/16;border-radius:var(--radius-lg);background:var(--emerald-500);position:relative;overflow:hidden;container-type:inline-size">
+        <span style="position:absolute;left:7cqw;right:7cqw;top:7cqw;height:.7cqw;background:var(--green-900);opacity:.9"></span>
+        <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg);background:var(--green-900);width:9cqw;height:9cqw;position:absolute;left:13%;top:14.5%;transform:translate(-50%,-50%)"></span>
+        <img src="assets/photos/ai-campo-silueta.png" alt="" style="position:absolute;left:57.5%;top:26.4%;transform:translate(-50%,-50%);width:64%">
+        <div style="position:absolute;left:64%;top:63%;transform:translate(-50%,-50%);width:64cqw;height:45cqw;background:var(--emerald-500);border-radius:4cqw"></div>
+        <img src="assets/studio/icons/social/youtube.svg" alt="" style="position:absolute;left:17%;top:37%;transform:translate(-50%,-50%) rotate(-19deg);width:19%">
+        <span class="dm" style="-webkit-mask-image:url(assets/flourish-arrow.svg);mask-image:url(assets/flourish-arrow.svg);background:var(--green-900);width:20cqw;height:15cqw;position:absolute;left:73%;top:80%;transform:translate(-50%,-50%) scaleX(-1)"></span>
+        <div style="position:absolute;left:7cqw;right:34cqw;top:12cqw">
+          <div style="font-size:3.2cqw;font-weight:800;letter-spacing:.14em;color:var(--green-900)">AI EN CAMPO</div>
+          <div style="font-size:11cqw;font-weight:800;letter-spacing:-0.03em;line-height:1.02;color:var(--green-900);margin-top:2cqw">Analizá cotizaciones en segundos con AI</div>
+        </div>
+        <img src="assets/magoya-wordmark-deep.svg" alt="Magoya" style="position:absolute;left:7cqw;bottom:6cqw;width:26cqw">
       </div>
-      <img src="assets/magoya-wordmark-black.svg" alt="Magoya" style="position:absolute;left:7cqw;bottom:5cqw;width:26cqw">
+      <p class="cap" style="color:var(--gray-600)">Pieza real producida en el Studio: proyecto <b style="color:var(--ink-900)">“Impacto · pregunta del productor”</b> · template <code style="font-family:var(--font-mono);font-size:11px">impacto-pregunta</code> · formato <code style="font-family:var(--font-mono);font-size:11px">ig-story</code> (1080×1920). Receta guardada en el JSON: <i>scheme</i> emerald · <i>accent/logo</i> deep · <i>anchor</i> top-left · <i>rule</i> top · <i>silueta</i> mitad.</p>
     </div>
     <div>
       <table>
@@ -403,5 +410,23 @@
 </section>
 
 </main>
+
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.side a[href^="#"]'));
+  var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  function mark(idx){ links.forEach(function(a,i){ a.classList.remove('act','near');
+    if(i===idx)a.classList.add('act'); else if(Math.abs(i-idx)===1)a.classList.add('near'); }); }
+  function update(){
+    var y=window.scrollY+window.innerHeight*0.3, best=0;
+    targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top+window.scrollY<=y) best=i; });
+    mark(best);
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
 </body>
 </html>

@@ -31,6 +31,7 @@
   .pagecard b{font-size:16px;display:block}
   .pagecard span{font-size:12.5px;color:var(--cream-300);display:block;margin-top:4px}
   @media (max-width:880px){.mg-topbar{position:static;padding:10px 14px}}
+  @media (max-width:880px){.wrap{margin-left:0}}
   @media (max-width:700px){body{padding:28px 16px 60px}h1{font-size:2rem}}
 
   .mg-topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 24px;box-shadow:0 4px 18px rgba(0,0,0,.16)}
@@ -38,80 +39,145 @@
   
   .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
   .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
+
+  /* ---------- menú lateral (igual al brand book) ---------- */
+  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50}
+  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8FA396;margin:0 0 8px 10px}
+  .side a{color:#8FA396;text-decoration:none;font-size:13.5px;line-height:1.25;padding:5px 10px;border-radius:8px;font-weight:600;transition:font-size .2s cubic-bezier(.2,.9,.25,1),color .2s,letter-spacing .2s}
+  .side a:hover{background:var(--green-800);color:var(--cream-50)}
+  .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
+  .crumb{font-size:12.5px;color:var(--gray-600);margin-bottom:12px}
+  .crumb a{color:var(--emerald-700);text-decoration:none;font-weight:600}
+  .crumb a:hover{text-decoration:underline}
+  @media (max-width:880px){
+    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:2px 4px;padding:12px 14px}
+    .side .lbl,.side .v{display:none}
+  }
+
+  /* ---------- fichas de descarga ---------- */
+  .cell .meta{border-top:1px solid var(--color-hairline);padding:12px;display:block}
+  .cell .mi{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+  .fmt{font-family:var(--font-mono);font-size:9.5px;font-weight:700;letter-spacing:.06em;padding:3px 7px;border-radius:5px;flex:0 0 auto}
+  .fmt.vector{background:var(--emerald-500);color:var(--ink-900)}
+  .fmt.raster{background:var(--gray-300);color:var(--ink-900)}
+  .fmt.font{background:var(--ink-900);color:var(--cream-50)}
+  .nm{font-size:12.5px;font-weight:600;word-break:break-word;line-height:1.25}
+  .mb{display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .spec{font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600)}
+  .cell .meta a{display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;font-size:11.5px;font-weight:700;color:var(--emerald-700);text-decoration:none;border:1.5px solid var(--emerald-700);padding:4px 10px;border-radius:999px}
+  .cell .meta a svg{width:13px;height:13px}
+  .cell .meta a:hover{background:var(--emerald-700);color:#fff}
+
+  .side a.near{font-size:15.5px;color:var(--cream-200)}
+  .side a.act{font-size:21px;color:var(--cream-50);font-weight:800;letter-spacing:-0.02em}
+  .side:hover a.act:not(:hover){font-size:15.5px;color:var(--cream-200)}
+  .side a:hover{font-size:21px;color:var(--cream-50);letter-spacing:-0.02em}
+  .side a:hover + a{font-size:15.5px;color:var(--cream-200)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Piezas</a><a href="icons.html">Iconos</a><a href="library.html" class="on">Assets</a><a href="logos.html">Logos</a></nav>
 
+<nav class="side">
+  <a href="#wordmark">Wordmark</a>
+  <a href="#avatares">Avatares</a>
+  <a href="#motivo">Motivo</a>
+  <a href="#marcas">Marcas a mano</a>
+  <a href="#personajes">Personajes</a>
+  <a href="#fotografia">Fotografía</a>
+  <a href="#tipografia">Tipografía</a>
+  <a href="#colecciones">Colecciones</a>
+  <span class="v">BRAND SYSTEM · V1.1</span>
+</nav>
+
+  <p class="crumb"><a href="index.html">Brand book</a> › Librería de assets</p>
+
   <span class="eyebrow">Magoya · Assets v1.1</span>
   <h1>Librería de assets</h1>
-  <p class="lead">Todos los recursos aprobados del sistema, con descarga directa (el botón baja el archivo — no te saca de la página). Doctrina vigente: motivo <b>semicírculos</b>, personajes planos sin rostro, foto aérea + B&amp;N, logos siempre reales. <a href="index.html">← volver al brand book</a></p>
+  <p class="lead">Todos los recursos aprobados del sistema, con descarga directa (el botón baja el archivo — no te saca de la página). Doctrina vigente: motivo <b>semicírculos</b>, personajes planos sin rostro, foto aérea + B&amp;N, logos siempre reales.</p>
 
-  <h2>Wordmark</h2>
+  <h2 id="wordmark">Wordmark</h2>
   <p class="sub">4 versiones oficiales — usar tal cual, nunca reconstruir.</p>
   <div class="grid">
-    <div class="cell"><div class="prev"><img src="assets/magoya-wordmark-green.svg" alt="Wordmark verde"></div><div class="meta"><span>wordmark-green</span><a href="assets/magoya-wordmark-green.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev dark"><img src="assets/magoya-wordmark-cream.svg" alt="Wordmark crema"></div><div class="meta"><span>wordmark-cream</span><a href="assets/magoya-wordmark-cream.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev"><img src="assets/magoya-wordmark-black.svg" alt="Wordmark negro"></div><div class="meta"><span>wordmark-black</span><a href="assets/magoya-wordmark-black.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev cream"><img src="assets/magoya-wordmark-deep.svg" alt="Wordmark verde profundo"></div><div class="meta"><span>wordmark-deep</span><a href="assets/magoya-wordmark-deep.svg" download>bajar</a></div></div>
+    <div class="cell"><div class="prev"><img src="assets/magoya-wordmark-green.svg" alt="Wordmark verde"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-green</span></div><div class="mb"><span class="spec">SVG · 4 KB · 139×38</span><a href="assets/magoya-wordmark-green.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev dark"><img src="assets/magoya-wordmark-cream.svg" alt="Wordmark crema"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-cream</span></div><div class="mb"><span class="spec">SVG · 4 KB · 139×38</span><a href="assets/magoya-wordmark-cream.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev"><img src="assets/magoya-wordmark-black.svg" alt="Wordmark negro"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-black</span></div><div class="mb"><span class="spec">SVG · 4 KB · 139×38</span><a href="assets/magoya-wordmark-black.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev cream"><img src="assets/magoya-wordmark-deep.svg" alt="Wordmark verde profundo"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-deep</span></div><div class="mb"><span class="spec">SVG · 4 KB · 139×38</span><a href="assets/magoya-wordmark-deep.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
   </div>
 
-  <h2>Avatares</h2>
+  <h2 id="avatares">Avatares</h2>
   <p class="sub">Vectoriales, reconstruidos desde los glifos del wordmark. Verde digital #00DE68 + blanco.</p>
   <div class="grid">
-    <div class="cell"><div class="prev"><img src="assets/avatars/avatar-go.svg" alt="Avatar go"></div><div class="meta"><span>avatar-go</span><a href="assets/avatars/avatar-go.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev"><img src="assets/avatars/avatar-o.svg" alt="Avatar o"></div><div class="meta"><span>avatar-o</span><a href="assets/avatars/avatar-o.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev"><img src="assets/avatars/avatar-face.svg" alt="Avatar cara"></div><div class="meta"><span>avatar-face</span><a href="assets/avatars/avatar-face.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev"><img src="assets/avatars/avatar-m.svg" alt="Avatar m"></div><div class="meta"><span>avatar-m</span><a href="assets/avatars/avatar-m.svg" download>bajar</a></div></div>
+    <div class="cell"><div class="prev"><img src="assets/avatars/avatar-go.svg" alt="Avatar go"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">avatar-go</span></div><div class="mb"><span class="spec">SVG · 2 KB · 100×100</span><a href="assets/avatars/avatar-go.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev"><img src="assets/avatars/avatar-o.svg" alt="Avatar o"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">avatar-o</span></div><div class="mb"><span class="spec">SVG · 1 KB · 100×100</span><a href="assets/avatars/avatar-o.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev"><img src="assets/avatars/avatar-face.svg" alt="Avatar cara"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">avatar-face</span></div><div class="mb"><span class="spec">SVG · 0 KB · 100×100</span><a href="assets/avatars/avatar-face.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev"><img src="assets/avatars/avatar-m.svg" alt="Avatar m"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">avatar-m</span></div><div class="mb"><span class="spec">SVG · 1 KB · 100×100</span><a href="assets/avatars/avatar-m.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
   </div>
 
-  <h2>Motivo semicírculos</h2>
-  <p class="sub">El patrón de marca. Siempre al corte: nace de un borde o detrás de un objeto.</p>
+  <h2 id="motivo">Motivo semicírculos</h2>
+  <p class="sub">El patrón de marca, aplicado como paño de textura. Siempre al corte: nace de un borde o queda detrás de un objeto.</p>
   <div class="grid">
-    <div class="cell"><div class="prev cream" style="overflow:hidden;padding:0"><img src="assets/motif-semis.svg" alt="Patrón semicírculos" style="max-height:none;width:130%"></div><div class="meta"><span>motif-semis</span><a href="assets/motif-semis.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev dark" style="align-items:flex-end;padding:0"><img src="assets/motif-semis-band.svg" alt="Banda festoneada" style="width:100%"></div><div class="meta"><span>motif-semis-band</span><a href="assets/motif-semis-band.svg" download>bajar</a></div></div>
+    <div class="cell"><div class="prev cream" style="overflow:hidden;padding:0"><img src="assets/motif-semis.svg" alt="Patrón semicírculos" style="max-height:none;width:130%"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">motif-semis</span></div><div class="mb"><span class="spec">SVG · 2 KB · 440×440</span><a href="assets/motif-semis.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
   </div>
 
-  <h2>Marcas a mano</h2>
+  <h2 id="marcas">Marcas a mano</h2>
   <p class="sub">Acentos humanos — una por pieza. Recoloreables (CSS mask / edición del SVG).</p>
   <div class="grid">
-    <div class="cell"><div class="prev sage"><img src="assets/flourish-underline.svg" alt="Subrayado"></div><div class="meta"><span>flourish-underline</span><a href="assets/flourish-underline.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev sage"><img src="assets/flourish-circle.svg" alt="Círculo"></div><div class="meta"><span>flourish-circle</span><a href="assets/flourish-circle.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev sage"><img src="assets/flourish-arrow.svg" alt="Flecha"></div><div class="meta"><span>flourish-arrow</span><a href="assets/flourish-arrow.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev sage"><img src="assets/doodle-sparkle.svg" alt="Sparkle"></div><div class="meta"><span>doodle-sparkle</span><a href="assets/doodle-sparkle.svg" download>bajar</a></div></div>
+    <div class="cell"><div class="prev sage"><img src="assets/flourish-underline.svg" alt="Subrayado"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">flourish-underline</span></div><div class="mb"><span class="spec">SVG · 0 KB · 240×26</span><a href="assets/flourish-underline.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev sage"><img src="assets/flourish-circle.svg" alt="Círculo"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">flourish-circle</span></div><div class="mb"><span class="spec">SVG · 0 KB · 270×120</span><a href="assets/flourish-circle.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev sage"><img src="assets/flourish-arrow.svg" alt="Flecha"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">flourish-arrow</span></div><div class="mb"><span class="spec">SVG · 0 KB · 130×100</span><a href="assets/flourish-arrow.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev sage"><img src="assets/doodle-sparkle.svg" alt="Sparkle"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">doodle-sparkle</span></div><div class="mb"><span class="spec">SVG · 0 KB · 120×120</span><a href="assets/doodle-sparkle.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
   </div>
 
-  <h2>Personajes</h2>
+  <h2 id="personajes">Personajes</h2>
   <p class="sub">Planos, sin rostro. Paleta cerrada: #33DB4E · #A2FF00 · #DFDFDF · #FFC67B · #161616. Siempre recortados por un borde.</p>
   <div class="grid">
-    <div class="cell"><div class="prev sage"><img src="assets/illus/char-laptop.svg" alt="Persona con laptop"></div><div class="meta"><span>char-laptop</span><a href="assets/illus/char-laptop.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev sage"><img src="assets/illus/char-jumping.svg" alt="Persona impulsándose"></div><div class="meta"><span>char-jumping</span><a href="assets/illus/char-jumping.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev sage"><img src="assets/illus/char-experts-talking.svg" alt="Expertos conversando"></div><div class="meta"><span>char-experts-talking</span><a href="assets/illus/char-experts-talking.svg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev sage"><img src="assets/illus/char-chart-duo.svg" alt="Dúo con gráfico"></div><div class="meta"><span>char-chart-duo</span><a href="assets/illus/char-chart-duo.svg" download>bajar</a></div></div>
+    <div class="cell"><div class="prev sage"><img src="assets/illus/char-laptop.svg" alt="Persona con laptop"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">char-laptop</span></div><div class="mb"><span class="spec">SVG · 13 KB · 526×602</span><a href="assets/illus/char-laptop.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev sage"><img src="assets/illus/char-jumping.svg" alt="Persona impulsándose"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">char-jumping</span></div><div class="mb"><span class="spec">SVG · 9 KB · 623×639</span><a href="assets/illus/char-jumping.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev sage"><img src="assets/illus/char-experts-talking.svg" alt="Expertos conversando"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">char-experts-talking</span></div><div class="mb"><span class="spec">SVG · 18 KB · 514×574</span><a href="assets/illus/char-experts-talking.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev sage"><img src="assets/illus/char-chart-duo.svg" alt="Dúo con gráfico"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">char-chart-duo</span></div><div class="mb"><span class="spec">SVG · 18 KB · 538×641</span><a href="assets/illus/char-chart-duo.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
   </div>
 
-  <h2>Fotografía</h2>
+  <h2 id="fotografia">Fotografía</h2>
   <p class="sub">Aéreas a color (para overlay verde) + personas B&amp;N. Web-ready (2400px JPEG).</p>
   <div class="grid">
-    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-rows.jpg" alt="Campo hileras" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><span>field-rows</span><a href="assets/photos/field-rows.jpg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-terraces.jpg" alt="Terrazas" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><span>field-terraces</span><a href="assets/photos/field-terraces.jpg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-bali.jpg" alt="Mosaico Bali" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><span>field-bali</span><a href="assets/photos/field-bali.jpg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-corn.jpg" alt="Maizal" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><span>field-corn</span><a href="assets/photos/field-corn.jpg" download>bajar</a></div></div>
-    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/founder-bw.png" alt="Retrato B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><span>founder-bw</span><a href="assets/photos/founder-bw.png" download>bajar</a></div></div>
-    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/team-couple-bw.jpg" alt="Equipo B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><span>team-couple-bw</span><a href="assets/photos/team-couple-bw.jpg" download>bajar</a></div></div>
+    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-rows.jpg" alt="Campo hileras" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-rows</span></div><div class="mb"><span class="spec">JPG · 2.2 MB · 2400×1799</span><a href="assets/photos/field-rows.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-terraces.jpg" alt="Terrazas" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-terraces</span></div><div class="mb"><span class="spec">JPG · 2.0 MB · 2400×1598</span><a href="assets/photos/field-terraces.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-bali.jpg" alt="Mosaico Bali" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-bali</span></div><div class="mb"><span class="spec">JPG · 845 KB · 2400×1352</span><a href="assets/photos/field-bali.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-corn.jpg" alt="Maizal" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-corn</span></div><div class="mb"><span class="spec">JPG · 694 KB · 2400×1228</span><a href="assets/photos/field-corn.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/founder-bw.png" alt="Retrato B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><div class="mi"><span class="fmt raster">PNG</span><span class="nm">founder-bw</span></div><div class="mb"><span class="spec">PNG · 55 KB · 290×290</span><a href="assets/photos/founder-bw.png" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/team-couple-bw.jpg" alt="Equipo B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">team-couple-bw</span></div><div class="mb"><span class="spec">JPG · 841 KB · 1600×900</span><a href="assets/photos/team-couple-bw.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
   </div>
 
-  <h2>Tipografía</h2>
+  <h2 id="tipografia">Tipografía</h2>
   <div class="grid">
-    <div class="cell"><div class="prev"><span style="font-size:42px;font-weight:800;letter-spacing:-0.03em">Aa</span></div><div class="meta"><span>Manrope variable (200–800)</span><a href="assets/font/manrope/Manrope-VariableFont_wght.ttf" download>bajar</a></div></div>
+    <div class="cell"><div class="prev"><span style="font-size:42px;font-weight:800;letter-spacing:-0.03em">Aa</span></div><div class="meta"><div class="mi"><span class="fmt font">TTF</span><span class="nm">Manrope variable (200–800)</span></div><div class="mb"><span class="spec">TTF · 163 KB</span><a href="assets/font/manrope/Manrope-VariableFont_wght.ttf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
   </div>
 
-  <h2>Colecciones completas</h2>
+  <h2 id="colecciones">Colecciones completas</h2>
   <div class="pages">
     <a class="pagecard" href="icons.html"><b>Librería de iconos →</b><span>58 iconos línea 2px en 7 categorías, copiables con un click</span></a>
     <a class="pagecard" href="logos.html"><b>Logos clientes &amp; stack →</b><span>17 clientes + 14 partners tecnológicos con nombres reales</span></a>
   </div>
 </div>
+
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.side a[href^="#"]'));
+  var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  function mark(idx){ links.forEach(function(a,i){ a.classList.remove('act','near');
+    if(i===idx)a.classList.add('act'); else if(Math.abs(i-idx)===1)a.classList.add('near'); }); }
+  function update(){
+    var y=window.scrollY+window.innerHeight*0.3, best=0;
+    targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top+window.scrollY<=y) best=i; });
+    mark(best);
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
 </body>
 </html>

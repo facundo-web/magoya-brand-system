@@ -8,7 +8,7 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--color-canvas-meta);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1160px;margin:0 auto;padding:88px 28px 90px}
+  .wrap{max-width:1160px;margin:0 0 0 230px;padding:88px 40px 90px}
   .intro{margin-bottom:44px}
   .eyebrow{display:inline-block;background:var(--ink-900);color:#fff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
   .intro h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-0.03em;margin:14px 0 10px}
@@ -90,20 +90,48 @@
   
   .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
   .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
+
+  /* ---------- menú lateral (igual al brand book) ---------- */
+  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50}
+  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8FA396;margin:0 0 8px 10px}
+  .side a{color:#8FA396;text-decoration:none;font-size:13.5px;line-height:1.25;padding:5px 10px;border-radius:8px;font-weight:600;transition:font-size .2s cubic-bezier(.2,.9,.25,1),color .2s,letter-spacing .2s}
+  .side a:hover{background:var(--green-800);color:var(--cream-50)}
+  .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
+  .crumb{font-size:12.5px;color:var(--gray-600);margin-bottom:12px}
+  .crumb a{color:var(--emerald-700);text-decoration:none;font-weight:600}
+  .crumb a:hover{text-decoration:underline}
+  @media (max-width:880px){
+    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:2px 4px;padding:12px 14px}
+    .side .lbl,.side .v{display:none}
+  }
+
+  .side a.near{font-size:15.5px;color:var(--cream-200)}
+  .side a.act{font-size:21px;color:var(--cream-50);font-weight:800;letter-spacing:-0.02em}
+  .side:hover a.act:not(:hover){font-size:15.5px;color:var(--cream-200)}
+  .side a:hover{font-size:21px;color:var(--cream-50);letter-spacing:-0.02em}
+  .side a:hover + a{font-size:15.5px;color:var(--cream-200)}
 </style>
 </head>
 <body>
 <div class="wrap">
 <nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html" class="on">Piezas</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html">Logos</a></nav>
 
+<nav class="side">
+  <a href="#t1">One-pager</a>
+  <a href="#t2">Flyer de servicio</a>
+  <a href="#t3">Staff Augmentation</a>
+  <span class="v">BRAND SYSTEM · V1.1</span>
+</nav>
+
   <div class="intro">
+    <p class="crumb"><a href="index.html">Brand book</a> › Piezas comerciales</p>
     <span class="eyebrow">Magoya · Piezas comerciales v1.1</span>
     <h1>Plantillas de piezas comerciales</h1>
-    <p>Las arquitecturas de contenido probadas de los flyers 2024, capturadas como <b>plantillas del sistema</b> en el brand nuevo. No son piezas finales: son las estructuras para producirlas — cada zona está numerada y explicada. Regla transversal: cero naranja/amarillo, cero puzzle, personas B&amp;N, un golpe de lima por pieza. <a href="index.html">← volver al brand book</a></p>
+    <p>Las arquitecturas de contenido probadas de los flyers 2024, capturadas como <b>plantillas del sistema</b> en el brand nuevo. No son piezas finales: son las estructuras para producirlas — cada zona está numerada y explicada. Regla transversal: cero naranja/amarillo, cero puzzle, personas B&amp;N, un golpe de lima por pieza.</p>
   </div>
 
   <!-- ============ T1 · ONE-PAGER ============ -->
-  <div class="tpl">
+  <div class="tpl" id="t1">
     <div class="anat">
       <h2>T1 · One-pager institucional</h2>
       <span class="src">estructura heredada de: ONE PAGE MAGOYA GRAL.pdf</span>
@@ -163,7 +191,7 @@
   </div>
 
   <!-- ============ T2 · FLYER DE SERVICIO ============ -->
-  <div class="tpl">
+  <div class="tpl" id="t2">
     <div class="anat">
       <h2>T2 · Flyer de servicio</h2>
       <span class="src">estructura heredada de: FLYER_ Product Development.pdf</span>
@@ -200,7 +228,7 @@
   </div>
 
   <!-- ============ T3 · FLYER STAFF AUGMENTATION ============ -->
-  <div class="tpl">
+  <div class="tpl" id="t3">
     <div class="anat">
       <h2>T3 · Flyer Staff Augmentation</h2>
       <span class="src">estructura heredada de: FLYER_Staff Augentation.pdf (typo del original, corregido acá)</span>
@@ -237,5 +265,23 @@
   </div>
 
 </div>
+
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.side a[href^="#"]'));
+  var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  function mark(idx){ links.forEach(function(a,i){ a.classList.remove('act','near');
+    if(i===idx)a.classList.add('act'); else if(Math.abs(i-idx)===1)a.classList.add('near'); }); }
+  function update(){
+    var y=window.scrollY+window.innerHeight*0.3, best=0;
+    targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top+window.scrollY<=y) best=i; });
+    mark(best);
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
 </body>
 </html>
