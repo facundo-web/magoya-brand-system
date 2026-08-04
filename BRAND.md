@@ -69,13 +69,17 @@ Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. N
 - **Story 9:16**: foto arriba + bloque verde abajo con festón; CTA lima. **Banner**: verde profundo + banda de borde a borde. **Avatar**: cara (comunidad) / m (corporativo).
 - **Slides**: lienzos blanco/sage, un golpe de lima por slide, margen interior 7% (`slides.html`, 16 módulos). **Piezas comerciales**: one-pager madre + flyers derivados (`pieces.html`).
 
-## 10. Merch & papelería
+## 10. Sub-marca "AI en campo"
 
-- **Textil**: verde profundo + crema, discreto y premium. Wordmark chico pecho izquierdo, monograma "m" en espalda, patrón de avatares solo en forros. Bordado > estampa. **Sin lima en textil.**
+La línea de contenido educativo de IA para el agro (carruseles, reels, webinars). Mismo ADN (Manrope, verdes oficiales) pero **rompe tres reglas del core a propósito**: (1) lienzo **verde digital pleno #00DE68** como fondo dominante; (2) **placa negra** #161616 con texto crema para el dato clave — permitida acá como lenguaje sticker; (3) **ruido controlado**: doodles a mano (sparkle negro, asterisco terracota #C97B5A, flecha), stickers de apps reales (YouTube, WhatsApp, ChatGPT) apenas rotados, emojis en CTAs. Texto secundario verde profundo; display negro; wordmark negro abajo-izquierda. Formato madre: **carrusel retrato 4:5 (1080×1350)**. Componentes propios: chat estilo WhatsApp (pregunta del productor / respuesta de la IA), celular con notificaciones, tarjeta de prompt. Producción en Magoya Studio (30+ plantillas, 13 formatos de red). Nada de esto vuelve al core.
+
+## 11. Merch & papelería
+
+- **Textil**: verde profundo + crema, discreto y premium. El merch se presenta SIEMPRE con foto/render real (referencia: render "Buzo Propuesta 1"); los esquemas vectoriales son solo especificación de producción. Wordmark chico pecho izquierdo, monograma "m" en espalda, patrón de avatares solo en forros. Bordado > estampa. **Sin lima en textil.**
 - **Membrete A4**: wordmark verde arriba-izq (20% del ancho), pie con filete verde digital + avatar m. **Firma de email**: avatar + filete verde + nombre 700 + rol gris — sin banners.
 - Docs: wordmark esquina sup-izq ≤1/5 del ancho; Manrope o Arial; nunca logo como marca de agua.
 
-## 11. Reglas de oro (resumen ejecutable)
+## 12. Reglas de oro (resumen ejecutable)
 
 1. El negro construye, el verde hace crecer (75/25, un movimiento verde por pieza).
 2. Lima = energía en dosis única: un CTA, un display o un motivo por pieza.
