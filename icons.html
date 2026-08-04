@@ -103,6 +103,11 @@
   .dd li:last-child{border-bottom:none}
   .dd.avoid li{color:var(--gray-600)}
   @media (max-width:880px){.usegrid,.dodont{grid-template-columns:1fr}}
+
+  @media (max-width:880px){
+    .side a,.side a.act,.side a.near,.side a:hover,.side a:hover + a{transform:none}
+    .side a.act{background:var(--green-800);color:var(--cream-50)}
+  }
 </style>
 </head>
 <body>

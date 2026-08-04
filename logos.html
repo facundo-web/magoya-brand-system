@@ -58,6 +58,11 @@ h2{margin:38px 0 14px;font-size:1.3rem;font-weight:700}
   .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
   .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
+
+  @media (max-width:880px){
+    .side a,.side a.act,.side a.near,.side a:hover,.side a:hover + a{transform:none}
+    .side a.act{background:var(--green-800);color:var(--cream-50)}
+  }
 </style>
 </head>
 <body>

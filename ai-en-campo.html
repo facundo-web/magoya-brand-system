@@ -105,15 +105,22 @@
     .hero > *,section > .inner{padding:0 20px}
     section{padding:44px 0}
     .g2,.g3,.g4,.rule-list{grid-template-columns:1fr}
-    .table-scroll{overflow-x:auto}
+    section .grid[style*="grid-template-columns"]{grid-template-columns:1fr !important}
+    .grid,.grid > *{min-width:0}
     .table-scroll table{min-width:520px}
   }
+  .table-scroll{overflow-x:auto;min-width:0;max-width:100%}
 
   .side a.near{transform:scale(1.14);color:var(--cream-200)}
   .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
   .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
   .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
+
+  @media (max-width:880px){
+    .side a,.side a.act,.side a.near,.side a:hover,.side a:hover + a{transform:none}
+    .side a.act{background:var(--green-800);color:var(--cream-50)}
+  }
 </style>
 </head>
 <body>
@@ -172,6 +179,7 @@
       <img src="assets/pieces/fecha-marcada-ig-portrait.svg" alt="Pieza AI en campo: webinar 6 AGO 11:00 h ARG" style="width:100%;border-radius:16px;display:block">
       <p class="cap">Pieza <b>real</b>, exportada del Studio: template <code>fecha-marcada</code> · formato <code>ig-portrait</code> (1080×1350). Es la referencia de la línea — cualquier pieza nueva se compara con esta.</p></div>
     <div>
+      <div class="table-scroll">
       <table>
         <thead><tr><th>Nivel</th><th>Especificación</th></tr></thead>
         <tbody>
@@ -179,11 +187,11 @@
           <tr><td><b>Display</b></td><td>800 · −4% tracking · negro · el dato que trae al lector (fecha, cifra) — <b>ocupa ~70% del ancho</b></td></tr>
           <tr><td><b>Placa</b></td><td>fondo negro + texto crema · el dato operativo (hora, plazo) · una sola por pieza</td></tr>
           <tr><td><b>Bajada</b></td><td>500 · verde profundo · la promesa concreta, 6–10 palabras</td></tr>
-          <tr><td><b>CTA</b></td><td>pill verde profundo o negra + texto crema + un emoji · opcional (puede ir en el copy)</td></tr>
+          <tr><td><b>CTA</b></td><td>pill verde profundo o negra + texto crema + <b>una manito que señala</b> (👈 👉 👇) · opcional (puede ir en el copy). Es la única familia de emoji permitida, junto con las banderas</td></tr>
           <tr><td><b>Firma</b></td><td>wordmark negro abajo-izquierda, ~26% del ancho</td></tr>
           <tr><td><b>Ruido</b></td><td>2–4 elementos en las esquinas, rotación ±5–15° · nunca sobre el texto</td></tr>
         </tbody>
-      </table></div></div>
+      </table></div></div></div>
 
   <h3>La voz</h3>
   <p class="note" style="max-width:70ch"><b>Voseo argentino, didáctica y directa:</b> “Analizá”, “Usá Claude o ChatGPT”, “Che, ¿con qué IA armo informes?”. Preguntas reales del productor como ancla. Emojis con criterio: uno por CTA (👈  ), nunca lluvia. Sin jerga corporativa — acá no hay “soluciones end-to-end”, hay “te muestro cómo”.</p></div>
@@ -336,7 +344,7 @@
     <div class="rule"><b class="do"></b><span>Placa negra con crema para el dato clave — una por pieza.</span></div>
     <div class="rule"><b class="do"></b><span>Ruido SOLO con los assets del Studio (<code>assets/studio/</code>): 2–4 por pieza, ±5–15°, en las esquinas.</span></div>
     <div class="rule"><b class="do"></b><span>Display y cifras al ~70% del ancho de la pieza. En redes, grande o nada.</span></div>
-    <div class="rule"><b class="do"></b><span>Voseo didáctico + un emoji por CTA. Wordmark negro abajo-izquierda.</span></div>
+    <div class="rule"><b class="do"></b><span>Voseo didáctico + una manito que señala por CTA (nunca otro emoji). Wordmark negro abajo-izquierda.</span></div>
     <div class="rule"><b class="do"></b><span>Producir SIEMPRE desde plantillas del Studio.</span></div>
     <div class="rule"><b class="dont"></b><span>Nada de esta sub-marca vuelve al core: ni placa negra, ni fondo verde pleno, ni stickers en piezas institucionales.</span></div>
     <div class="rule"><b class="dont"></b><span>Terracota #C97B5A solo en doodles — jamás como color de texto o UI.</span></div>

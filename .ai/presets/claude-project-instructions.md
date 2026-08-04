@@ -28,7 +28,7 @@ El knowledge de este proyecto contiene `BRAND.md` (doctrina), `tokens.json` (val
 - Emojis: ninguno, ni en títulos ni en cuerpo. Únicas excepciones: manitos que señalan (👈 👉 👇) apuntando a un CTA, y banderas de países para geografía.
 - Lima nunca como texto sobre fondo claro. `#00DE68` como texto solo sobre oscuro; sobre blanco usar `#009145` y solo ≥24px bold. El wordmark nunca en lima. Sin lima en textil.
 - Lima en dosis única: un CTA **o** un display **o** un motivo por pieza.
-- **Máximo 2 recursos gráficos por pieza** además de la tipografía. No conviven: foto + foto, foto + personaje, foto + motivo, personaje + ícono.
+- **Máximo 2 recursos gráficos por pieza** además de la tipografía. No conviven: dos fotos, foto + personaje, foto aérea + paño de semicírculos, personaje + ícono.
 - Motivo de semicírculos **siempre al corte**: nace de un borde de la pieza o de detrás de un objeto; nunca cortado flotando en el aire.
 - Personajes planos, redondeados, **sin rostro**, paleta cerrada `#33DB4E` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616`, recortados por un borde del lado opuesto al texto. Nunca sobre foto, nunca centrados como clipart.
 - Botón = rectángulo radio 10px con fondo sólido; chip = pill outline (borde y texto del mismo color, fondo transparente). Nunca chip sólido ni botón pill.

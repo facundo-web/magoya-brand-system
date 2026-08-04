@@ -10,7 +10,7 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 4. Verde digital **#00DE68** = identidad (wordmark y avatares). Como texto solo sobre fondo oscuro; sobre blanco se usa **#009145** y solo ≥24px bold. Lima ≠ logo.
 5. **Sin emojis** en títulos ni en cualquier texto — la única excepción son las manitos que señalan (👈 👉 👇) hacia un CTA y las banderas de países.
 6. **Sin gradientes** glossy, 3D ni estética "hecha por IA". El único gradiente permitido es el scrim verde profundo 55–86% sobre foto aérea.
-7. **Máximo 2 recursos gráficos por pieza** además de la tipografía: uno protagonista y uno de acompañamiento. Foto y personaje ilustrado no conviven; foto y motivo tampoco; personaje e ícono tampoco.
+7. **Máximo 2 recursos gráficos por pieza** además de la tipografía: uno protagonista y uno de acompañamiento. Los pares que no conviven son: dos fotos, foto + personaje, foto aérea + paño de semicírculos, y personaje + ícono (matriz completa en `resourceCoexistence` de `tokens.json`).
 8. El **motivo de semicírculos va siempre al corte**: nace de un borde de la pieza o de detrás de un objeto. Nunca se ve cortado flotando en el aire.
 9. **Personajes** ilustrados: planos, redondeados, **sin rostro**, paleta cerrada de 5 colores, siempre recortados por un borde del lado opuesto al texto. Nunca centrados como clipart, nunca sobre foto.
 10. Fuera de la marca: la metáfora del **puzzle**, el **naranja** y el **amarillo** del brand viejo, los personajes con rostro/monoline/stock, los motivos de líneas (caminos concéntricos, estratos), el bloque resaltador sólido detrás de texto y los logos de clientes falsos o placeholder.
@@ -18,21 +18,21 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 ## Núcleo machine-readable
 
 - [BRAND.md](https://facundo-web.github.io/magoya-brand-system/BRAND.md): la doctrina completa en Markdown — 12 secciones con esencia y voz, logo, roles de color, tipografía, fotografía, ilustración y motivos, iconografía, componentes, recetas de aplicación, merch, papelería y reglas de oro. Es el documento a leer si solo vas a leer uno.
-- [tokens.json](https://facundo-web.github.io/magoya-brand-system/tokens.json): todos los valores exactos con su rol y sus reglas de accesibilidad — paleta completa, ratio de uso por pieza, escalas tipográficas (incluida la de slides en pt), espaciado, radios, layouts de export y rutas de assets.
+- [tokens.json](https://facundo-web.github.io/magoya-brand-system/tokens.json): todos los valores exactos con su rol y sus reglas de accesibilidad — paleta completa, ratio de uso por pieza, escalas tipográficas (incluida la de slides en pt), espaciado, radios, layouts de export, la matriz `resourceCoexistence` de qué recursos gráficos pueden convivir, y las rutas de assets (con la lista de recursos retirados).
 - [tokens.css](https://facundo-web.github.io/magoya-brand-system/tokens.css): los mismos tokens como CSS custom properties en dos capas (primitivos y semánticos) con 4 temas: `default` (verde profundo), `light` (crema), `paper` (editorial) y `studio` (blanco + negro + lima, el de slides y marketing). Usar esto al escribir código.
 - [README.md](https://facundo-web.github.io/magoya-brand-system/README.md): mapa del repositorio, orden de lectura recomendado y árbol de la carpeta `assets/`.
 
 ## Prompts y checklist listos para usar
 
-- [.ai/brand-prompt.md](https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/brand-prompt.md): el prompt de sistema canónico y autocontenido (~450 palabras). Pegarlo como system prompt, custom instructions o project instructions y la salida ya sale on-brand sin adjuntar nada más.
+- [.ai/brand-prompt.md](https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/brand-prompt.md): el prompt de sistema canónico y autocontenido (~540 palabras). Pegarlo como system prompt, custom instructions o project instructions y la salida ya sale on-brand sin adjuntar nada más.
 - [.ai/brand-prompt-short.md](https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/brand-prompt-short.md): versión de ~120 palabras para pegar al inicio de un chat suelto.
 - [.ai/checklist.md](https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/checklist.md): 13 chequeos verificables para auditar una pieza generada por IA antes de publicarla.
 - [AI-INTEGRATION.md](https://facundo-web.github.io/magoya-brand-system/AI-INTEGRATION.md): guía de setup por herramienta (Claude Projects, Claude Code, Claude Design, Custom GPT, Cursor, Copilot, chat genérico) con tabla de verificación y troubleshooting.
 
 ## Manual visual navegable
 
-- [index.html](https://facundo-web.github.io/magoya-brand-system/index.html): el brand book completo en 13 secciones, con ejemplos "hacer / evitar", la matriz de convivencia de recursos y la jerarquía de cuatro planos (lienzo · textura · sujeto · voz).
-- [slides.html](https://facundo-web.github.io/magoya-brand-system/slides.html): 16 módulos de presentación en 7 familias, escala 126/84/56/42pt sobre lienzo de 1920px, margen interior 7%.
+- [index.html](https://facundo-web.github.io/magoya-brand-system/index.html): el brand book completo en 13 secciones más la marca anexa, con ejemplos "hacer / evitar", la matriz de convivencia de recursos y la jerarquía de cuatro planos (lienzo · textura · sujeto · voz).
+- [slides.html](https://facundo-web.github.io/magoya-brand-system/slides.html): 41 módulos de presentación en 13 familias, escala 126/84/56/42pt sobre lienzo de 1920px, margen interior 7%.
 - [pieces.html](https://facundo-web.github.io/magoya-brand-system/pieces.html): plantillas de piezas comerciales con anatomía — one-pager madre y flyers derivados.
 - [icons.html](https://facundo-web.github.io/magoya-brand-system/icons.html): librería de 58 iconos inline SVG, trazo 2px redondeado en grid 24×24, `currentColor`.
 

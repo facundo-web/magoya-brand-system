@@ -77,7 +77,7 @@ Máximo 3 niveles tipográficos por vista. Labels de botón en sentence case, nu
 - Sin la metáfora del puzzle, sin motivos de líneas (caminos concéntricos, estratos), sin personajes con rostro, monoline o stock.
 - Logos de clientes siempre reales desde `assets/logos/clients/`, en gris y grilla pareja — jamás placeholders ni SVG inventados.
 - El motivo de semicírculos va siempre al corte: nace de un borde del contenedor o de detrás de un objeto, nunca cortado flotando (usá `overflow:hidden` y posicionalo pegado a un borde).
-- Máximo 2 recursos gráficos por pieza además de la tipografía. No conviven foto + foto, foto + personaje, foto + motivo, personaje + ícono.
+- Máximo 2 recursos gráficos por pieza además de la tipografía. No conviven: dos fotos, foto + personaje, foto aérea + paño de semicírculos, personaje + ícono.
 - El monograma "m" circular es funcional (favicon, app icon): no lo metas como sello decorativo dentro de cards.
 
 ## Copy en UI

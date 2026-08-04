@@ -40,7 +40,7 @@ assets/
 ├── motif-semis.svg   # el único motivo: paño de semicírculos
 ├── flourish-{underline,circle,arrow}.svg + doodle-sparkle.svg   # marcas a mano
 ├── illus/            # 4 personajes planos (paleta cerrada de 5 colores)
-├── photos/           # 4 aéreas + retratos B&N (+ merch/ para las fotos de producto)
+├── photos/           # 5 aéreas + retrato B&N (+ merch/ para las fotos de producto)
 ├── pieces/           # capturas de piezas reales producidas en el Studio
 ├── logos/clients/    # 17 clientes reales
 ├── logos/partners/   # 14 partners tecnológicos

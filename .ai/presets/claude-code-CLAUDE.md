@@ -70,7 +70,7 @@ Balance por pantalla o pieza: neutros ≈75%, verdes ≈25%, un solo movimiento 
 - Logos de clientes siempre reales desde `assets/logos/clients/` — jamás placeholders ni SVG inventados.
 - Sin la metáfora del puzzle, sin motivos de líneas (caminos concéntricos, estratos), sin personajes con rostro, monoline o stock.
 - Motivo de semicírculos siempre al corte: nace de un borde del contenedor o de detrás de un objeto, nunca cortado flotando (`overflow:hidden` + posición pegada al borde).
-- Máximo 2 recursos gráficos por pieza además de la tipografía. No conviven foto + foto, foto + personaje, foto + motivo, personaje + ícono.
+- Máximo 2 recursos gráficos por pieza además de la tipografía. No conviven: dos fotos, foto + personaje, foto aérea + paño de semicírculos, personaje + ícono.
 - Personajes ilustrados sin rostro, paleta cerrada `#33DB4E` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616`, recortados por un borde del lado opuesto al texto. Nunca sobre foto.
 - El monograma "m" circular es funcional (favicon, app icon): no es un sello decorativo dentro de cards.
 - Lima en dosis única: un CTA **o** un display **o** un motivo por pieza.

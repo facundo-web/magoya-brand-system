@@ -408,6 +408,11 @@
   .pcard2 figcaption a{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--emerald-700);text-decoration:none;border:1.5px solid var(--emerald-700);padding:4px 10px;border-radius:999px}
   .pcard2 figcaption a svg{width:13px;height:13px}
   .pcard2 figcaption a:hover{background:var(--emerald-700);color:var(--white)}
+
+  @media (max-width:880px){
+    .side a,.side a.act,.side a.near,.side a:hover,.side a:hover + a{transform:none}
+    .side a.act{background:var(--green-800);color:var(--cream-50)}
+  }
 </style>
 </head>
 <body>
@@ -1225,7 +1230,7 @@
     logo:         ['Logo kit',                  '4 wordmarks + 4 avatares · SVG · 12 KB', 'assets/downloads/magoya-logo-kit.zip', 'bajar logo kit'],
     color:        ['Tokens de color',           'tokens.css + tokens.json · 11 KB', 'assets/downloads/magoya-tokens.zip', 'bajar tokens'],
     tipografia:   ['Manrope variable',          'TTF 200–800 + licencia OFL · 70 KB', 'assets/downloads/magoya-manrope.zip', 'bajar fuente'],
-    fotografia:   ['Banco de fotos',            '4 aéreas + 3 retratos B&N · 6.8 MB', 'assets/downloads/magoya-fotos.zip', 'bajar fotos'],
+    fotografia:   ['Banco de fotos',            '5 aéreas + retrato B&N + merch · 6.8 MB', 'assets/downloads/magoya-fotos.zip', 'bajar fotos'],
     ilustracion:  ['Ilustración & motivos',     '4 personajes + paño + marcas · SVG · 29 KB', 'assets/downloads/magoya-ilustracion.zip', 'bajar ilustración'],
     iconografia:  ['Set de íconos',             '16 agro + 10 IA + 13 redes · SVG · 20 KB', 'assets/downloads/magoya-iconos.zip', 'bajar íconos'],
     aplicaciones: ['Logos de clientes',         '31 logos reales · SVG · 306 KB', 'assets/downloads/magoya-logos-clientes.zip', 'bajar logos'],
