@@ -17,10 +17,14 @@
   img{max-width:100%;display:block}
 
   /* ---------- layout ---------- */
+  .mg-topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 24px;box-shadow:0 4px 18px rgba(0,0,0,.16)}
+  .mg-topbar img{height:20px;margin-right:14px}
+  .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
+  .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
   .side{
-    position:fixed;inset:0 auto 0 0;width:230px;padding:28px 22px;
-    background:var(--green-950);color:var(--cream-50);
-    display:flex;flex-direction:column;gap:6px;overflow-y:auto;z-index:50;
+    position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;
+    background:var(--green-900);color:var(--cream-50);
+    display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50;
   }
   .side img.wm{width:110px;margin-bottom:18px}
   .side a{
@@ -28,10 +32,12 @@
     padding:7px 10px;border-radius:8px;font-weight:var(--weight-medium);
   }
   .side a:hover{background:var(--green-800);color:var(--cream-50)}
+  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8FA396;margin:0 0 8px 10px}
   .side a.sep{margin-top:14px;border-top:1px solid var(--green-800);padding-top:14px;border-radius:0 0 8px 8px}
   .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
-  main{margin-left:230px}
-  section{padding:88px 64px;max-width:1220px}
+  main{margin-left:230px;padding-top:44px}
+  section{padding:88px 0}
+  section > *{max-width:1220px;margin-left:auto;margin-right:auto;padding-left:64px;padding-right:64px}
   .kicker{
     display:inline-block;font-size:12px;font-weight:var(--weight-extra);
     letter-spacing:var(--tracking-wide);text-transform:uppercase;
@@ -49,13 +55,13 @@
 
   /* ---------- hero ---------- */
   .hero{
-    margin-left:230px;min-height:88vh;position:relative;display:flex;
+    margin-left:230px;margin-top:44px;min-height:88vh;position:relative;display:flex;
     align-items:flex-end;color:var(--cream-50);
     background:
       linear-gradient(180deg, rgba(12,33,23,.55), rgba(12,33,23,.86)),
       url("assets/photos/field-rows.jpg") center/cover;
   }
-  .hero-in{padding:64px;max-width:900px}
+  .hero-in{padding:64px;max-width:1220px;width:100%;margin:0 auto}
   .hero img.wm{width:220px;margin-bottom:34px}
   .hero h1{
     font-size:clamp(3rem,6vw,5.4rem);font-weight:var(--weight-extra);
@@ -129,6 +135,26 @@
   .motif-card{background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:26px;display:flex;align-items:center;justify-content:center;min-height:200px}
   .motif-card img{max-height:170px}
   .motif-dark{background:var(--green-950);border:none}
+
+  /* ---------- iconos (mask = recoloreables) ---------- */
+  .ic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:12px}
+  .ic-grid > div{background:var(--white);border:1px solid var(--color-hairline);border-radius:12px;padding:16px 8px 10px}
+  .icm{display:block;width:32px;height:32px;margin:0 auto;background:var(--ink-900);
+       -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
+  .icm.big{width:38px;height:38px}
+  .icm.on-dark{background:var(--cream-50)}
+  .icm.hl{background:var(--lime-500)}
+  .icn{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600);text-align:center;margin-top:9px}
+
+  /* ---------- doodles del Studio ---------- */
+  .dm{display:block;background:var(--ink-900);width:34px;height:34px;
+      -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
+  .dcell{background:rgba(246,241,235,.06);border:1px solid rgba(246,241,235,.14);border-radius:12px;padding:16px 8px 10px;display:flex;flex-direction:column;align-items:center;gap:9px;min-height:86px;justify-content:center}
+  .dcell .dm{background:var(--cream-50)}
+  .dn{font-family:var(--font-mono);font-size:10px;color:var(--gray-400);text-align:center}
+  .rl-dark .rule{border-bottom-color:rgba(246,241,235,.14);color:var(--cream-200)}
+  .rl-dark .rule b.do{color:var(--lime-500)}
+  .rl-dark .rule b{color:var(--cream-50)}
 
   /* ---------- components ---------- */
   .comp-canvas{background:var(--sage-50);border-radius:var(--radius-lg);padding:38px;display:flex;flex-wrap:wrap;gap:16px;align-items:center}
@@ -212,7 +238,8 @@
   .app-metrics .nums .n{font-size:58px;font-weight:var(--weight-extra);letter-spacing:var(--tracking-tight)}
   .app-metrics .nums .d{font-size:14px;color:var(--gray-600)}
 
-  footer{margin-left:230px;background:var(--green-950);color:var(--cream-300);padding:40px 64px;font-size:13px}
+  footer{margin-left:230px;background:var(--green-950);color:var(--cream-300);padding:40px 0;font-size:13px}
+  footer > *{max-width:1220px;margin:0 auto;padding:0 64px}
   footer a{color:var(--lime-500)}
 
   /* ---------- estados interactivos ---------- */
@@ -226,8 +253,11 @@
   .table-scroll{overflow-x:auto}
   .table-scroll table{min-width:640px}
   @media (max-width:880px){
-    .side{position:static;width:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:2px 4px;padding:14px 16px}
-    .side img.wm{width:80px;margin:0 8px 0 0}
+    .mg-topbar{position:static;padding:10px 14px}
+    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:2px 4px;padding:12px 14px}
+    .side .lbl{display:none}
+    main{padding-top:0}
+    .hero{margin-top:0}
     .side a{font-size:11.5px;padding:4px 8px}
     .side a.sep{margin-top:0;border-top:none;padding-top:4px;border-radius:8px}
     .side .v{display:none}
@@ -235,7 +265,8 @@
     .hero{min-height:70vh}
     .hero-in{padding:34px 22px}
     .hero .tag{top:16px;right:16px}
-    section{padding:52px 22px}
+    section{padding:52px 0}
+    section > *{padding-left:22px;padding-right:22px}
     .g2,.g3,.g4,.rule-list{grid-template-columns:1fr}
     section .grid[style*="grid-template-columns"]{grid-template-columns:1fr !important}
     .spec{grid-template-columns:1fr;gap:6px}
@@ -261,8 +292,13 @@
 </head>
 <body>
 
+<nav class="mg-topbar">
+  <a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a>
+  <a href="index.html" class="on">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Piezas</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html">Logos</a>
+</nav>
+
 <nav class="side">
-  <img class="wm" src="assets/magoya-wordmark-cream.svg" alt="Magoya">
+  <span class="lbl">En esta página</span>
   <a href="#esencia">01 · Esencia</a>
   <a href="#logo">02 · Logo & avatares</a>
   <a href="#color">03 · Color</a>
@@ -276,13 +312,7 @@
   <a href="#merch">11 · Merch & indumentaria</a>
   <a href="#papeleria">12 · Papelería & corporativo</a>
   <a href="#reglas">13 · Reglas de oro</a>
-  <a href="ai-en-campo.html" class="sep">→ Sub-manual AI en campo</a>
-  <a href="slides.html">→ Módulos de slides</a>
-  <a href="pieces.html">→ Piezas comerciales</a>
-  <a href="icons.html">→ Librería de iconos (58)</a>
-  <a href="logos.html">→ Logos clientes & stack</a>
-  <a href="library.html">→ Librería de assets</a>
-  <span class="v">BRAND SYSTEM · V1.1 · 2026</span>
+  <span class="v" style="margin-top:auto">BRAND SYSTEM · V1.1 · 2026</span>
 </nav>
 
 <header class="hero">
@@ -493,13 +523,13 @@
   <div class="grid g2">
     <div style="border-radius:var(--radius-lg);overflow:hidden;background:var(--white);border:1px solid var(--color-hairline);position:relative;min-height:300px;padding:34px">
       <span style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-600)">Our footprint</span>
-      <h4 style="font-size:34px;font-weight:800;letter-spacing:-0.03em;line-height:1.05;margin-top:10px;max-width:55%">We are people of the world</h4>
-      <div style="margin-top:18px;font-size:14px;color:var(--gray-600);max-width:50%">Buenos Aires · São Paulo · Santa Fe · California</div>
+      <h4 style="font-size:44px;font-weight:800;letter-spacing:-0.03em;line-height:1.02;margin-top:12px;max-width:60%">We are people of the world</h4>
+      <div style="margin-top:16px;font-size:15px;font-weight:600;color:var(--green-900);max-width:52%">Buenos Aires · São Paulo · Santa Fe · California</div>
       <img src="assets/illus/char-laptop.svg" alt="Personaje con laptop recortado por el borde" style="position:absolute;right:-40px;bottom:-46px;width:52%">
     </div>
     <div style="border-radius:var(--radius-lg);overflow:hidden;background:var(--green-950);color:var(--cream-50);position:relative;min-height:300px;padding:34px">
       <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:96px">
-      <h4 style="font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin-top:16px;max-width:58%">Growing products, growing people</h4>
+      <h4 style="font-size:38px;font-weight:800;letter-spacing:-0.03em;line-height:1.04;margin-top:16px;max-width:62%">Growing products, growing people</h4>
       <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:auto">
       <img src="assets/illus/char-jumping.svg" alt="Personaje impulsándose recortado por el borde" style="position:absolute;right:-24px;bottom:-40px;width:46%">
     </div>
@@ -519,14 +549,37 @@
   </div>
   <p class="cap" style="max-width:680px">Colores permitidos del patrón: verde digital sobre crema/blanco · crema sobre verde profundo · lima solo en banda festoneada sobre oscuro. <b>Retirados del sistema:</b> los motivos de líneas (caminos concéntricos y estratos) — las líneas no caracterizan a la marca.</p>
 
-  <h3>Marcas a mano</h3>
-  <div class="grid g2">
-    <div class="motif-card" style="gap:30px;display:flex">
-      <img src="assets/flourish-underline.svg" alt="Subrayado a mano" style="width:120px">
-      <img src="assets/flourish-circle.svg" alt="Círculo a mano" style="width:90px">
-      <img src="assets/flourish-arrow.svg" alt="Flecha a mano" style="width:80px">
+  <h3>Marcas a mano — cómo se aplican</h3>
+  <p class="note" style="max-width:720px;margin-bottom:16px">Tres marcas, tres trabajos distintos. Van en lima o verde digital, <b>una sola por pieza</b>, siempre sobre texto ya compuesto (nunca sueltas como adorno).</p>
+  <div class="grid g3">
+    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:26px">
+      <div style="font-size:26px;font-weight:800;letter-spacing:-0.02em;line-height:1.2">Digital product<br>builders for
+        <span style="position:relative;display:inline-block">agribusiness
+          <img src="assets/flourish-underline.svg" alt="" style="position:absolute;left:0;right:0;bottom:-10px;width:100%">
+        </span>
+      </div>
+      <p class="cap"><b>Subrayado</b> → enfatiza <u>una</u> palabra clave del titular. Va pegado a la línea base, ancho completo de la palabra.</p>
     </div>
-    <p class="cap" style="align-self:center">El subrayado, el círculo y la flecha a mano aportan el toque humano anti-IA. Usarlas con moderación: una por pieza, en lima o verde digital.</p>
+    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:26px">
+      <div style="font-size:26px;font-weight:800;letter-spacing:-0.02em;line-height:1.2">Nos vemos el
+        <span style="position:relative;display:inline-block;padding:0 10px">6 AGO
+          <img src="assets/flourish-circle.svg" alt="" style="position:absolute;left:-12%;top:-38%;width:124%;height:176%">
+        </span>
+      </div>
+      <p class="cap"><b>Círculo</b> → marca una fecha o un dato puntual, como si lo hubieras marcado en el calendario. Nunca sobre frases largas.</p>
+    </div>
+    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:26px;position:relative">
+      <div style="font-size:26px;font-weight:800;letter-spacing:-0.02em;line-height:1.2">Empezá por acá</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:10px">
+        <img src="assets/flourish-arrow.svg" alt="" style="width:64px">
+        <span style="background:var(--lime-500);color:var(--ink-900);font-weight:700;font-size:14px;padding:11px 20px;border-radius:var(--radius-btn)">Contact us</span>
+      </div>
+      <p class="cap"><b>Flecha</b> → señala el CTA o el próximo paso. Apunta al objeto, con aire entre medio.</p>
+    </div>
+  </div>
+  <div class="rule-list" style="margin-top:20px">
+    <div class="rule"><b class="do">✓</b><span>Una marca por pieza · en lima o verde digital · sobre texto compuesto.</span></div>
+    <div class="rule"><b class="dont">✗</b><span>Dos marcas juntas, marcas sobre foto sin scrim, o usarlas como decoración suelta.</span></div>
   </div>
 </section>
 
@@ -534,24 +587,32 @@
 <section id="iconografia">
   <span class="kicker">07 · Iconografía</span>
   <h2>Íconos de línea redondeada</h2>
-  <p class="lead">Trazo 2px, terminaciones y esquinas redondeadas — el mismo ADN del wordmark. Monocromos: negro sobre claro, crema sobre oscuro, lima solo para el ícono destacado de la pieza. Nunca rellenos sólidos ni estilo 3D.</p>
+  <p class="lead">Trazo 2px, terminaciones y esquinas redondeadas — el mismo ADN del wordmark. Monocromos y recoloreables: negro sobre claro, crema sobre oscuro, <b>lima solo el ícono destacado de la pieza</b>. Nunca rellenos sólidos ni 3D.</p>
+
+  <h3>Set agro — el corazón del sistema (16 íconos)</h3>
+  <div class="ic-grid"><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/alerta-lote.svg);mask-image:url(assets/studio/icons/agro/alerta-lote.svg)"></span><span class="icn">alerta-lote</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/chat-ia.svg);mask-image:url(assets/studio/icons/agro/chat-ia.svg)"></span><span class="icn">chat-ia</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/dron.svg);mask-image:url(assets/studio/icons/agro/dron.svg)"></span><span class="icn">dron</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/escaneo.svg);mask-image:url(assets/studio/icons/agro/escaneo.svg)"></span><span class="icn">escaneo</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/gota.svg);mask-image:url(assets/studio/icons/agro/gota.svg)"></span><span class="icn">gota</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/grafico.svg);mask-image:url(assets/studio/icons/agro/grafico.svg)"></span><span class="icn">grafico</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/hoja.svg);mask-image:url(assets/studio/icons/agro/hoja.svg)"></span><span class="icn">hoja</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/lote.svg);mask-image:url(assets/studio/icons/agro/lote.svg)"></span><span class="icn">lote</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/mapa-pin.svg);mask-image:url(assets/studio/icons/agro/mapa-pin.svg)"></span><span class="icn">mapa-pin</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/nube-lluvia.svg);mask-image:url(assets/studio/icons/agro/nube-lluvia.svg)"></span><span class="icn">nube-lluvia</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/reloj-campana.svg);mask-image:url(assets/studio/icons/agro/reloj-campana.svg)"></span><span class="icn">reloj-campana</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/satelite.svg);mask-image:url(assets/studio/icons/agro/satelite.svg)"></span><span class="icn">satelite</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/semilla.svg);mask-image:url(assets/studio/icons/agro/semilla.svg)"></span><span class="icn">semilla</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/sensor.svg);mask-image:url(assets/studio/icons/agro/sensor.svg)"></span><span class="icn">sensor</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/sol.svg);mask-image:url(assets/studio/icons/agro/sol.svg)"></span><span class="icn">sol</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/tractor.svg);mask-image:url(assets/studio/icons/agro/tractor.svg)"></span><span class="icn">tractor</span></div></div>
+  <p class="cap">Los mismos archivos que usa Magoya Studio (<code style="font-family:var(--font-mono);font-size:11.5px">assets/studio/icons/agro/</code>) — una sola fuente para manual, piezas y producto.</p>
+
+  <h3>Sobre claro y sobre oscuro</h3>
   <div class="grid g2">
-    <div class="comp-canvas" style="gap:34px" aria-label="Set de íconos sobre claro">
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Brote"><path d="M12 21v-8"/><path d="M12 13C12 9 9 7 4 7c0 5 3 6 8 6z"/><path d="M12 11c0-4 3-6 8-6 0 5-3 6-8 6z"/></svg>
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Campo en hileras"><path d="M3 20l7-16"/><path d="M14 4l7 16"/><path d="M6.5 13h11"/><path d="M5 17h14"/><path d="M8 9h8"/></svg>
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Datos"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Satélite"><circle cx="12" cy="12" r="3"/><path d="M12 5a7 7 0 017 7"/><path d="M12 1a11 11 0 0111 11"/></svg>
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Conversación"><path d="M21 12a8 8 0 01-8 8H4l2-3a8 8 0 1115-5z"/><path d="M9 12h.01M13 12h.01M17 12h.01"/></svg>
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Proceso"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg>
+    <div class="comp-canvas" style="gap:30px;background:var(--white);border:1px solid var(--color-hairline)">
+      <span class="icm big" style="-webkit-mask-image:url(assets/studio/icons/agro/hoja.svg);mask-image:url(assets/studio/icons/agro/hoja.svg)"></span>
+      <span class="icm big" style="-webkit-mask-image:url(assets/studio/icons/agro/lote.svg);mask-image:url(assets/studio/icons/agro/lote.svg)"></span>
+      <span class="icm big" style="-webkit-mask-image:url(assets/studio/icons/agro/grafico.svg);mask-image:url(assets/studio/icons/agro/grafico.svg)"></span>
+      <span class="icm big" style="-webkit-mask-image:url(assets/studio/icons/agro/satelite.svg);mask-image:url(assets/studio/icons/agro/satelite.svg)"></span>
+      <span class="icm big" style="-webkit-mask-image:url(assets/studio/icons/agro/chat-ia.svg);mask-image:url(assets/studio/icons/agro/chat-ia.svg)"></span>
+      <span class="icm big" style="-webkit-mask-image:url(assets/studio/icons/agro/tractor.svg);mask-image:url(assets/studio/icons/agro/tractor.svg)"></span>
     </div>
-    <div class="comp-canvas" style="background:var(--green-950);gap:34px" aria-label="Set de íconos sobre oscuro">
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F6F1EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Brote"><path d="M12 21v-8"/><path d="M12 13C12 9 9 7 4 7c0 5 3 6 8 6z"/><path d="M12 11c0-4 3-6 8-6 0 5-3 6-8 6z"/></svg>
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F6F1EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Datos"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-7"/><path d="M22 20H2"/></svg>
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#A2FF00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Satélite destacado en lima"><circle cx="12" cy="12" r="3"/><path d="M12 5a7 7 0 017 7"/><path d="M12 1a11 11 0 0111 11"/></svg>
-      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#F6F1EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Conversación"><path d="M21 12a8 8 0 01-8 8H4l2-3a8 8 0 1115-5z"/><path d="M9 12h.01M13 12h.01M17 12h.01"/></svg>
+    <div class="comp-canvas" style="gap:30px;background:var(--green-950)">
+      <span class="icm big on-dark" style="-webkit-mask-image:url(assets/studio/icons/agro/hoja.svg);mask-image:url(assets/studio/icons/agro/hoja.svg)"></span>
+      <span class="icm big on-dark" style="-webkit-mask-image:url(assets/studio/icons/agro/lote.svg);mask-image:url(assets/studio/icons/agro/lote.svg)"></span>
+      <span class="icm big hl" style="-webkit-mask-image:url(assets/studio/icons/agro/satelite.svg);mask-image:url(assets/studio/icons/agro/satelite.svg)"></span>
+      <span class="icm big on-dark" style="-webkit-mask-image:url(assets/studio/icons/agro/gota.svg);mask-image:url(assets/studio/icons/agro/gota.svg)"></span>
+      <span class="icm big on-dark" style="-webkit-mask-image:url(assets/studio/icons/agro/sol.svg);mask-image:url(assets/studio/icons/agro/sol.svg)"></span>
+      <span class="icm big on-dark" style="-webkit-mask-image:url(assets/studio/icons/agro/dron.svg);mask-image:url(assets/studio/icons/agro/dron.svg)"></span>
     </div>
   </div>
-  <p class="cap" style="max-width:680px">La librería completa vive en <a href="icons.html" style="color:var(--emerald-700);font-weight:600">icons.html</a>: <b>58 iconos en 7 categorías</b> (agro, producto & UX, datos & AI, plataforma, negocio, comunicación & redes, sistema) — suficientes para hablar de cualquier tema, de redes sociales a AI. Click en cualquier icono para copiar su SVG. Para volumen extra, completar con <b>Lucide</b> (misma gramática, licencia ISC). El ícono destacado de una pieza puede ir en lima — solo uno.</p>
+  <p class="cap" style="max-width:680px">Además del set agro hay <b>58 íconos generales</b> en 7 categorías (producto & UX, datos & AI, plataforma, negocio, comunicación & redes, sistema) en <a href="icons.html" style="color:var(--emerald-700);font-weight:600">la librería de íconos</a>, y los logos de <b>IA</b> (OpenAI, Claude, Gemini…) y <b>redes</b> en <code style="font-family:var(--font-mono);font-size:11.5px">assets/studio/icons/</code>.</p>
 </section>
 
 <!-- ================= 08 COMPONENTES ================= -->
@@ -630,17 +691,17 @@
   <div class="grid g3">
     <div style="aspect-ratio:1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:linear-gradient(180deg,rgba(12,33,23,.35),rgba(12,33,23,.8)),url('assets/photos/field-terraces.jpg') center/cover;color:var(--cream-50);padding:26px;display:flex;flex-direction:column">
       <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:86px">
-      <div style="margin-top:auto;font-size:24px;font-weight:800;letter-spacing:-0.02em;line-height:1.1">AgTech challenges demand more than code.</div>
+      <div style="margin-top:auto;font-size:34px;font-weight:800;letter-spacing:-0.03em;line-height:1.03">AgTech challenges demand <span style="color:var(--lime-500)">more than code</span>.</div>
     </div>
     <div style="aspect-ratio:1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--cream-100);padding:26px;display:flex;flex-direction:column">
       <img src="assets/avatars/avatar-face.svg" alt="" style="width:52px">
-      <div style="margin-top:18px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.12;color:var(--green-900);max-width:88%">We're hiring: UX/UI Designer, AgTech expert</div>
-      <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:auto">
+      <div style="margin-top:18px;font-size:30px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;color:var(--green-900);max-width:92%">We're hiring: UX/UI Designer, AgTech expert</div>
+      <span style="margin-top:auto;align-self:flex-start;font-size:14px;font-weight:700;color:var(--emerald-700)">people@magoya.com →</span>
     </div>
     <div style="aspect-ratio:1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--green-950);color:var(--cream-50);padding:26px;display:flex;flex-direction:column">
       <span style="align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid var(--cream-100);color:var(--cream-100);padding:4px 12px;border-radius:999px">Case study</span>
-      <div style="margin-top:16px;font-size:44px;font-weight:800;letter-spacing:-0.03em;color:var(--lime-500);line-height:1">95%</div>
-      <div style="font-size:14px;color:var(--cream-300);margin-top:6px">client retention across engagements</div>
+      <div style="margin-top:auto;font-size:110px;font-weight:800;letter-spacing:-0.04em;color:var(--lime-500);line-height:.85">95%</div>
+      <div style="font-size:17px;font-weight:600;color:var(--cream-100);margin-top:10px;max-width:70%">client retention across engagements</div>
       <img src="assets/illus/char-jumping.svg" alt="" style="position:absolute;right:-30px;bottom:-36px;width:52%">
     </div>
   </div>
@@ -652,21 +713,24 @@
       <div style="flex:1.1;background:linear-gradient(180deg,rgba(12,33,23,.15),rgba(12,33,23,.7)),url('assets/photos/field-bali.jpg') center/cover"></div>
       <div style="flex:1;padding:20px;color:var(--cream-50);position:relative">
         <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:78px">
-        <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-top:10px">Senior AgTech talent, embedded in your team</div>
-        <span style="display:inline-block;background:var(--lime-500);color:var(--ink-900);font-size:12px;font-weight:700;padding:8px 14px;border-radius:var(--radius-btn);margin-top:12px">Swipe up</span>
-        <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:auto">
+        <div style="font-size:25px;font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin-top:10px">Senior AgTech talent, embedded in your team</div>
+        <span style="display:inline-block;background:var(--lime-500);color:var(--ink-900);font-size:13px;font-weight:700;padding:9px 16px;border-radius:var(--radius-btn);margin-top:14px">Swipe up</span>
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px">
-      <div style="aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--green-900);color:var(--cream-50);padding:28px 28px 40px;display:flex;flex-direction:column;justify-content:center">
-        <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:130px">
-        <div style="font-size:15px;color:var(--cream-200);margin-top:10px">Your Digital Product Strategy and Development Partner</div>
-        <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:auto">
+      <div style="aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;display:flex;align-items:flex-end">
+        <img class="bw" src="assets/photos/team-couple-bw.jpg" alt="Equipo Magoya en blanco y negro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,12,12,.92) 0%, rgba(13,12,12,.72) 46%, rgba(13,12,12,0) 78%)"></div>
+        <div style="position:relative;padding:28px 32px;color:var(--cream-50)">
+          <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:130px">
+          <div style="font-size:15px;color:var(--cream-200);margin-top:8px">Your Digital Product Strategy and Development Partner</div>
+        </div>
+        <span style="position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--emerald-500)"></span>
       </div>
       <div style="display:flex;gap:20px;align-items:center">
         <img src="assets/avatars/avatar-face.svg" alt="Avatar de perfil" style="width:84px;border-radius:50%">
         <img src="assets/avatars/avatar-m.svg" alt="Avatar m" style="width:84px;border-radius:50%">
-        <p class="cap" style="max-width:340px">Avatar de perfil: la <b>cara</b> para redes de comunidad (IG, X), la <b>m</b> para canales corporativos (LinkedIn). El banner lleva el patrón asomando desde un borde, nunca cortado al aire.</p>
+        <p class="cap" style="max-width:340px">Avatar de perfil: la <b>cara</b> para redes de comunidad (IG, X), la <b>m</b> para canales corporativos (LinkedIn). <b>Banner de LinkedIn:</b> foto del equipo en B&N + scrim negro degradado hacia la derecha + wordmark crema + filete verde digital al borde — la misma receta que la fotografía de personas.</p>
       </div>
     </div>
   </div>
@@ -685,10 +749,10 @@
         <div><div class="n">3k</div><div class="d">Monthly Active Users (MAU)</div></div>
       </div>
     </div>
-    <div class="app-piece" style="background:var(--sage-50);padding:34px;display:block;min-height:0;position:relative;overflow:hidden">
-      <span class="k" style="font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase">Our footprint</span>
-      <h4 style="font-size:30px;font-weight:800;letter-spacing:-0.03em;margin:6px 0 20px">People of the world,<br>experts in Ag</h4>
-      <div style="font-size:14px;color:var(--gray-600)">Buenos Aires · São Paulo · Santa Fe · California</div>
+    <div class="app-piece" style="background:var(--sage-50);border:1px solid var(--color-hairline);padding:34px;display:block;min-height:340px;position:relative;overflow:hidden">
+      <span class="pill">Our footprint</span>
+      <h4 style="font-size:38px;font-weight:800;letter-spacing:-0.03em;line-height:1.06;margin:14px 0 18px;max-width:62%">People of the world, experts in Ag</h4>
+      <div style="font-size:15px;font-weight:600;color:var(--green-900);max-width:56%">Buenos Aires · São Paulo · Santa Fe · California</div>
       <img src="assets/illus/char-experts-talking.svg" alt="" style="position:absolute;right:-26px;bottom:-30px;width:44%">
     </div>
   </div>
@@ -703,60 +767,66 @@
 </section>
 
 <!-- ================= 10 AI EN CAMPO ================= -->
-<section id="ai-en-campo" style="background:var(--emerald-500)">
-  <span class="kicker" style="border-color:var(--ink-900);color:var(--ink-900)">10 · AI en campo — sub-marca</span>
-  <h2 style="color:var(--ink-900)">Más ruido, mismo ADN.</h2>
-  <p class="lead" style="color:var(--green-900)">La línea de contenido educativo de IA para el agro (carruseles, reels, webinars). Habla con la misma tipografía y los mismos verdes, pero <b>rompe tres reglas del core a propósito</b>: el verde es fondo pleno, la placa negra resalta texto, y el collage mete ruido — stickers, doodles, emojis. Es la voz canal de redes: más cercana, más didáctica, más quilombera.</p>
+<section id="ai-en-campo" style="background:var(--ink-950)">
+  <div>
+  <span class="kicker" style="border-color:var(--lime-500);color:var(--lime-500)">10 · AI en campo — sub-marca</span>
+  <h2 style="color:var(--cream-50)">Más ruido, mismo ADN.</h2>
+  <p class="lead" style="color:var(--cream-200)">La línea de contenido educativo de IA para el agro (carruseles, reels, webinars). Habla con la misma tipografía y los mismos verdes, pero <b style="color:var(--cream-50)">rompe tres reglas del core a propósito</b>: el verde es fondo pleno, la placa negra resalta el dato, y el collage mete ruido con los stickers y doodles del Studio. Es la voz de canal de redes: más cercana, más didáctica, más quilombera.</p>
 
-  <div class="grid" style="grid-template-columns:340px 1fr;gap:28px;align-items:start">
-    <!-- pieza demo estilo referencia (4:5) -->
-    <div style="aspect-ratio:4/5;border-radius:var(--radius-lg);background:var(--emerald-500);border:1px solid rgba(12,33,23,.25);position:relative;overflow:hidden;padding:26px;display:flex;flex-direction:column;container-type:inline-size">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="2.6" stroke-linecap="round" style="position:absolute;top:16px;right:74px;width:34px;transform:rotate(15deg)"><path d="M4 4c8 2 12 8 13 15M17 12v7h-7"/></svg>
-      <div style="position:absolute;top:52px;right:18px;width:44px;height:44px;background:#FF0000;border-radius:11px;display:flex;align-items:center;justify-content:center;transform:rotate(8deg)"><svg viewBox="0 0 24 24" width="22" fill="#fff"><path d="M8 6l10 6-10 6z"/></svg></div>
-      <svg viewBox="0 0 100 100" style="position:absolute;left:-16px;top:32%;width:64px;transform:rotate(-10deg)" fill="#C97B5A"><g><rect x="46" y="6" width="8" height="36" rx="4"/><rect x="46" y="58" width="8" height="36" rx="4"/><rect x="6" y="46" width="36" height="8" rx="4"/><rect x="58" y="46" width="36" height="8" rx="4"/><rect x="46" y="6" width="8" height="36" rx="4" transform="rotate(45 50 50)"/><rect x="46" y="58" width="8" height="36" rx="4" transform="rotate(45 50 50)"/><rect x="6" y="46" width="36" height="8" rx="4" transform="rotate(45 50 50)"/><rect x="58" y="46" width="36" height="8" rx="4" transform="rotate(45 50 50)"/></g></svg>
-      <svg viewBox="0 0 24 24" style="position:absolute;right:20px;top:44%;width:20px" fill="#161616"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
-      <svg viewBox="0 0 24 24" style="position:absolute;left:22px;bottom:36%;width:16px" fill="#161616"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
-      <div style="margin-top:auto">
-        <div style="font-size:3.6cqw;font-weight:800;letter-spacing:.14em;color:var(--green-900)">AI EN CAMPO — WEBINAR GRATUITO</div>
-        <div style="font-size:17cqw;font-weight:800;letter-spacing:-0.03em;line-height:.95;color:var(--ink-900);margin-top:2cqw">6 AGO.</div>
-        <div style="display:inline-block;background:var(--ink-900);color:var(--cream-50);font-size:9cqw;font-weight:800;letter-spacing:-0.02em;padding:1cqw 3cqw;border-radius:1.5cqw;margin-top:1.5cqw">11:00 h ARG</div>
-        <div style="font-size:7.4cqw;font-weight:600;line-height:1.15;color:var(--green-900);margin-top:3cqw">Analizá cotizaciones en segundos con IA</div>
-        <span style="display:inline-block;background:var(--ink-900);color:var(--cream-50);font-size:4.6cqw;font-weight:700;padding:2.2cqw 4.5cqw;border-radius:999px;margin-top:4cqw">Link en la bio 👈</span>
-        <img src="assets/magoya-wordmark-black.svg" alt="Magoya" style="width:26cqw;margin-top:6cqw;display:block">
+  <div class="grid" style="grid-template-columns:360px 1fr;gap:32px;align-items:start">
+    <!-- pieza 4:5 fiel a la referencia -->
+    <div>
+      <div style="aspect-ratio:4/5;border-radius:var(--radius-lg);background:var(--emerald-500);position:relative;overflow:hidden;container-type:inline-size">
+        <!-- ruido: assets reales del Studio -->
+        <span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-navarrow.svg);mask-image:url(assets/studio/flourish-navarrow.svg);background:var(--ink-900);width:16cqw;height:16cqw;position:absolute;top:2cqw;right:22cqw;transform:rotate(150deg)"></span>
+        <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg);background:var(--ink-900);width:7cqw;height:7cqw;position:absolute;top:37cqw;right:4cqw"></span>
+        <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg);background:var(--ink-900);width:5cqw;height:5cqw;position:absolute;bottom:36cqw;left:7cqw"></span>
+        <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-dots.svg);mask-image:url(assets/studio/doodle-dots.svg);background:#C97B5A;width:22cqw;height:22cqw;position:absolute;top:33cqw;left:-6cqw"></span>
+        <img src="assets/studio/icons/social/youtube.svg" alt="" style="position:absolute;top:11cqw;right:4cqw;width:17cqw;transform:rotate(8deg)">
+        <img src="assets/studio/icons/ai/openai.svg" alt="" style="position:absolute;bottom:11cqw;right:3cqw;width:18cqw">
+        <!-- contenido -->
+        <div style="position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;justify-content:center">
+          <div style="font-size:3.4cqw;font-weight:800;letter-spacing:.14em;color:var(--green-900)">AI EN CAMPO — WEBINAR GRATUITO</div>
+          <div style="font-size:22cqw;font-weight:800;letter-spacing:-0.04em;line-height:.9;color:var(--ink-900);margin-top:1cqw">6 AGO.</div>
+          <div style="align-self:flex-start;background:var(--ink-900);color:var(--cream-50);font-size:13cqw;font-weight:800;letter-spacing:-0.03em;line-height:1.12;padding:0 3cqw;border-radius:2cqw;margin-top:1.5cqw">11:00 h ARG</div>
+          <div style="font-size:9cqw;font-weight:500;line-height:1.12;color:var(--green-900);margin-top:3cqw">Analizá cotizaciones en segundos con IA</div>
+          <span style="align-self:flex-start;background:var(--green-950);color:var(--cream-50);font-size:5cqw;font-weight:700;padding:2.4cqw 5cqw;border-radius:999px;margin-top:4cqw">Link en la bio 👈</span>
+        </div>
+        <img src="assets/magoya-wordmark-black.svg" alt="Magoya" style="position:absolute;left:7cqw;bottom:5cqw;width:26cqw">
       </div>
+      <p class="cap" style="color:var(--gray-400)">Anatomía: kicker verde profundo → fecha display 800 → placa negra con el dato → bajada 500 → CTA pill → wordmark negro al pie. El ruido va en las esquinas, nunca sobre el texto.</p>
     </div>
 
     <div>
-      <h3 style="margin-top:0">Las reglas de la sub-marca</h3>
-      <div class="rule-list" style="grid-template-columns:1fr">
+      <h3 style="color:var(--cream-50);margin-top:0">Las reglas de la sub-marca</h3>
+      <div class="rule-list rl-dark" style="grid-template-columns:1fr">
         <div class="rule"><b class="do">✓</b><span><b>Lienzo verde digital pleno #00DE68</b> — la única línea donde el verde domina el fondo (excepción documentada al 75/25 del core).</span></div>
         <div class="rule"><b class="do">✓</b><span><b>Placa negra</b> #161616 con texto crema para el dato clave (hora, cifra) — acá SÍ se permite, es lenguaje sticker.</span></div>
-        <div class="rule"><b class="do">✓</b><span><b>Ruido controlado:</b> doodles a mano (sparkle negro, asterisco terracota #C97B5A, flecha), stickers de apps reales (YouTube, WhatsApp, ChatGPT) apenas rotados, emojis en CTAs.</span></div>
-        <div class="rule"><b class="do">✓</b><span>Texto secundario en verde profundo #133825; display siempre negro. Wordmark negro abajo-izquierda.</span></div>
+        <div class="rule"><b class="do">✓</b><span><b>Ruido del Studio:</b> doodles (sparkle, dots, blob, loop), flourishes (flecha, círculo, subrayado, navarrow), badge EN VIVO, y los logos oficiales de IA y redes — todos desde <code style="font-family:var(--font-mono);font-size:11.5px">assets/studio/</code>.</span></div>
+        <div class="rule"><b class="do">✓</b><span>Texto secundario en verde profundo #133825; display siempre negro; wordmark negro abajo-izquierda.</span></div>
         <div class="rule"><b class="do">✓</b><span><b>Formato madre: carrusel retrato 4:5 (1080×1350).</b> El CTA final es placa opcional.</span></div>
         <div class="rule"><b class="dont">✗</b><span>Nada de esto vuelve al core: en piezas institucionales siguen las reglas de siempre.</span></div>
       </div>
 
-      <h3>Kit para carruseles</h3>
-      <div class="grid g2" style="gap:14px">
-        <div style="background:var(--white);border-radius:14px;padding:18px">
-          <b style="font-size:13.5px">Chat (WhatsApp)</b>
-          <div style="background:#E8E2D9;border-radius:10px;padding:12px;margin-top:10px">
-            <div style="background:var(--white);border-radius:10px 10px 10px 2px;padding:8px 12px;font-size:12.5px;max-width:85%">¿Qué le pasa a mi lote? 🌱</div>
-            <div style="background:#D9FDD3;border-radius:10px 10px 2px 10px;padding:8px 12px;font-size:12.5px;max-width:85%;margin:8px 0 0 auto">Según la imagen satelital, hay estrés hídrico en el sector NE. Te muestro →</div>
-          </div>
-        </div>
-        <div style="background:var(--white);border-radius:14px;padding:18px">
-          <b style="font-size:13.5px">Celular con notificaciones</b>
-          <div style="background:var(--green-950);border-radius:14px;padding:14px 10px;margin-top:10px;max-width:170px">
-            <div style="background:rgba(255,255,255,.94);border-radius:8px;padding:7px 9px;font-size:10.5px"><b>🌾 Tu lote</b><br>Alerta: posible plaga en L4</div>
-            <div style="background:rgba(255,255,255,.94);border-radius:8px;padding:7px 9px;font-size:10.5px;margin-top:6px"><b>💧 Riego</b><br>Recomendación lista</div>
-          </div>
-        </div>
+      <h3 style="color:var(--cream-50)">El ruido, con los assets reales</h3>
+      <div class="grid g4" style="gap:12px">
+        <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg)"></span><span class="dn">doodle-sparkle</span></div>
+        <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-dots.svg);mask-image:url(assets/studio/doodle-dots.svg)"></span><span class="dn">doodle-dots</span></div>
+        <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-blob.svg);mask-image:url(assets/studio/doodle-blob.svg)"></span><span class="dn">doodle-blob</span></div>
+        <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-loop.svg);mask-image:url(assets/studio/doodle-loop.svg)"></span><span class="dn">doodle-loop</span></div>
+        <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-navarrow.svg);mask-image:url(assets/studio/flourish-navarrow.svg)"></span><span class="dn">flourish-navarrow</span></div>
+        <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-circle.svg);mask-image:url(assets/studio/flourish-circle.svg)"></span><span class="dn">flourish-circle</span></div>
+        <div class="dcell" style="grid-column:span 2"><span class="dm" style="-webkit-mask-image:url(assets/studio/badge-envivo.svg);mask-image:url(assets/studio/badge-envivo.svg);width:100px;height:30px"></span><span class="dn">badge-envivo</span></div>
+        <div class="dcell"><img src="assets/studio/icons/ai/openai.svg" alt="OpenAI" style="width:30px"><span class="dn">ai/openai</span></div>
+        <div class="dcell"><img src="assets/studio/icons/ai/claude.svg" alt="Claude" style="width:30px"><span class="dn">ai/claude</span></div>
+        <div class="dcell"><img src="assets/studio/icons/social/youtube.svg" alt="YouTube" style="width:30px"><span class="dn">social/youtube</span></div>
+        <div class="dcell"><img src="assets/studio/icons/social/whatsapp.svg" alt="WhatsApp" style="width:30px"><span class="dn">social/whatsapp</span></div>
       </div>
-      <p class="cap" style="margin-top:12px">Este es el resumen — el detalle completo vive en el <a href="ai-en-campo.html" style="color:var(--green-900);font-weight:700">sub-manual AI en campo</a>: color & voz, inventario de doodles/stickers, 6 componentes, las 28 plantillas del Studio con su propósito y los 13 formatos de red.</p>
-      <a href="ai-en-campo.html" style="display:inline-block;background:var(--ink-900);color:var(--cream-50);text-decoration:none;font-weight:700;font-size:14.5px;padding:12px 22px;border-radius:var(--radius-btn);margin-top:4px">Abrir el sub-manual AI en campo →</a>
+      <p class="cap" style="color:var(--gray-400)">Los doodles son monocromos y se tiñen (verde profundo, negro, crema o terracota #C97B5A). Los logos de IA y redes van en su color oficial. Dosis: 2–4 elementos por pieza, rotación ±5–15°.</p>
+
+      <a href="ai-en-campo.html" style="display:inline-block;background:var(--lime-500);color:var(--ink-900);text-decoration:none;font-weight:700;font-size:14.5px;padding:13px 24px;border-radius:var(--radius-btn);margin-top:14px">Abrir el sub-manual completo →</a>
     </div>
+  </div>
   </div>
 </section>
 
@@ -894,7 +964,6 @@
     const img = new Image();
     img.onload = ()=>{ ph.innerHTML=''; ph.style.padding='0'; img.style.cssText='width:100%;height:100%;object-fit:cover'; img.alt=it.n+' Magoya'; ph.appendChild(img); };
     img.onerror = ()=>{ ph.innerHTML =
-      '<img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;opacity:.22">' +
       '<span style="position:absolute;top:10px;left:10px;font-size:9.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-600);border:1.5px solid var(--gray-400);padding:3px 8px;border-radius:999px;background:var(--sage-50)">Placeholder</span>' +
       '<div style="position:relative">' +
         '<svg viewBox="0 0 32 32" width="58" height="58" fill="none" stroke="#6E756D" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'+(ICO[it.ic]||'')+'</svg>' +
@@ -984,7 +1053,7 @@
 </main>
 
 <footer>
-  Magoya Brand System v1.1 · consolida guía de producción + moodboard 2026 + módulos del diseñador · <a href="slides.html">módulos de slides</a> · <a href="app/">Deck Studio</a>
+  <div>Magoya Brand System v1.1 · consolida guía de producción + moodboard 2026 + módulos del diseñador · <a href="slides.html">módulos de slides</a> · <a href="app/">Deck Studio</a></div>
 </footer>
 
 </body>

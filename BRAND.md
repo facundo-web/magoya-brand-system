@@ -48,13 +48,13 @@ Dos familias, cada una con su regla:
 ## 6. Ilustración & motivos
 
 - **Personajes planos redondeados, sin rostro.** Paleta CERRADA de 5 colores: `#33DB4E` (ropa) · `#A2FF00` (ropa) · `#DFDFDF` (ropa) · `#FFC67B` (piel) · `#161616` (pelo/detalle). Siempre **recortados por un borde de la pieza**, del lado opuesto al texto — nunca flotando enteros ni centrados como clipart.
-- **Motivo de marca: semicírculos** (patrón en grilla diagonal + banda festoneada). **Regla de sangrado: el motivo va al corte y siempre nace de un extremo de la pieza o de detrás de un objeto — nunca puede verse cortado flotando en el aire.** Colores: verde digital sobre crema/blanco · crema sobre verde profundo · lima solo en banda sobre oscuro.
-- **Marcas a mano** (subrayado, círculo, flecha): el toque humano anti-IA. Una por pieza.
+- **Motivo de marca: semicírculos** (patrón en grilla diagonal + banda festoneada). La **banda festoneada se reserva para la composición con personaje** (no se usa como remate genérico en cada pieza). **Regla de sangrado: el motivo va al corte y siempre nace de un extremo de la pieza o de detrás de un objeto — nunca puede verse cortado flotando en el aire.** Colores: verde digital sobre crema/blanco · crema sobre verde profundo · lima solo en banda sobre oscuro.
+- **Marcas a mano**: **subrayado** = enfatiza una palabra del titular (pegado a la línea base) · **círculo** = marca una fecha o dato puntual · **flecha** = señala el CTA o próximo paso. Una sola por pieza, en lima o verde digital, siempre sobre texto compuesto — nunca sueltas como adorno.
 - ✗ RETIRADOS: motivos de líneas (caminos concéntricos, estratos), personajes con rostro/monoline/stock, y la metáfora del **puzzle** (brand viejo — su reemplazo narrativo es el crecimiento/semicírculos). ✗ Naranja y amarillo del brand viejo.
 
 ## 7. Iconografía
 
-Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. Negro sobre claro, crema sobre oscuro, **lima solo el ícono destacado (uno por pieza)**. Librería propia de 58 iconos en 7 categorías (`icons.html`); completar con Lucide (misma gramática) si hace falta volumen. Nunca rellenos sólidos ni 3D.
+Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. **Set agro de 16 íconos + 10 logos de IA + 13 de redes en `assets/studio/icons/` — los mismos archivos que usa Magoya Studio.** Negro sobre claro, crema sobre oscuro, **lima solo el ícono destacado (uno por pieza)**. Librería propia de 58 iconos en 7 categorías (`icons.html`); completar con Lucide (misma gramática) si hace falta volumen. Nunca rellenos sólidos ni 3D.
 
 ## 8. Componentes
 
@@ -65,8 +65,8 @@ Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. N
 ## 9. Aplicaciones (recetas)
 
 - **Hero canónico** (la pieza que define la marca): foto aérea + scrim verde + wordmark crema arriba-izq + CTA lima arriba-der + display ExtraBold abajo-izq con una frase en lima.
-- **Feed 1:1** — 3 recetas rotativas: foto (statement sobre aérea) · crema (aviso + avatar + banda festoneada) · dark (dato lima + personaje recortado).
-- **Story 9:16**: foto arriba + bloque verde abajo con festón; CTA lima. **Banner**: verde profundo + banda de borde a borde. **Avatar**: cara (comunidad) / m (corporativo).
+- **Feed 1:1** — 3 recetas rotativas: foto (statement sobre aérea) · crema (aviso + avatar) · dark (dato lima + personaje recortado). En redes, **display y cifras al ~70% del ancho**: grande o nada.
+- **Story 9:16**: foto arriba + bloque verde abajo con festón; CTA lima. **Banner de LinkedIn**: foto del equipo en B&N + scrim negro degradado + wordmark crema + filete verde digital al borde (misma receta que la fotografía de personas). **Avatar**: cara (comunidad) / m (corporativo).
 - **Slides**: lienzos blanco/sage, un golpe de lima por slide, margen interior 7% (`slides.html`, 16 módulos). **Piezas comerciales**: one-pager madre + flyers derivados (`pieces.html`).
 
 ## 10. Sub-marca "AI en campo"
