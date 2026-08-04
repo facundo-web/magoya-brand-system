@@ -36,7 +36,7 @@ Estudio/partner de **estrategia y desarrollo de producto digital para agribusine
 
 **Manrope** (variable 200–800, self-hosted). Fallback: **Arial**. Display ExtraBold 800 con tracking −3%; cuerpo Regular 400. Kickers MAYÚSCULAS +12% tracking. Escala de slides: hero 126pt · display 84pt · título 56pt · subtítulo 42pt (sobre 1920px).
 
-Reglas: máximo **3 niveles tipográficos por pieza**; el peso hace la jerarquía; resaltado por color o **subrayado lima** — prohibido el bloque resaltador sólido detrás de texto; labels de botón en sentence case.
+Reglas: máximo **3 niveles tipográficos por pieza**; el peso hace la jerarquía; resaltado por color o **subrayado lima** — prohibido el bloque resaltador sólido detrás de texto; labels de botón en sentence case. **Emojis: nunca en títulos**; solo se permiten manitos que señalan (👈 👉 👇) para dirigir a un CTA y banderas de países para geografía — ningún otro.
 
 ## 5. Fotografía
 

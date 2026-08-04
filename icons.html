@@ -77,10 +77,8 @@
   <div id="cats"></div>
 
   <div class="dark-demo" id="darkdemo">
-    <p style="order:-1;font-weight:700;color:var(--cream-50)">Sobre oscuro: crema — y lima únicamente para el icono destacado de la pieza.</p>
-  </div>
-</div>
-<div class="toast" id="toast">SVG copiado ✓</div>
+    <p style="order:-1;font-weight:700;color:var(--cream-50)">Sobre oscuro: crema — y lima únicamente para el icono destacado de la pieza.</p></div></div>
+<div class="toast" id="toast">SVG copiado</div>
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none" id="defs">
   <!-- AGRO -->
@@ -166,8 +164,7 @@ CATS.forEach(([name, sub, icons])=>{
     <div class="grid">${icons.map(i=>`
       <div class="ic" data-icon="${i}" title="Click para copiar SVG">
         <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#i-${i}"/></svg>
-        <span>${i}</span>
-      </div>`).join('')}</div>`);
+        <span>${i}</span></div>`).join('')}</div>`);
 });
 // demo oscuro
 const demo = document.getElementById('darkdemo');

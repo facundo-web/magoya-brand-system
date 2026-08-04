@@ -59,6 +59,29 @@
   .dcell{background:var(--sage-50);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-height:96px;justify-content:flex-start}
   .dn{font-family:var(--font-mono);font-size:10px;color:var(--gray-600);margin-top:auto}
 
+  /* arco narrativo */
+  .arc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .arc .step{background:var(--white);border-radius:16px;padding:22px;border-top:3px solid var(--emerald-500);display:flex;flex-direction:column}
+  .arc .step .n{font-family:var(--font-mono);font-size:11px;color:var(--emerald-700);font-weight:700;letter-spacing:.1em}
+  .arc .step b{display:block;font-size:16px;margin:8px 0 6px;letter-spacing:-0.01em}
+  .arc .step p{font-size:13px;color:var(--gray-600);line-height:1.5}
+  .arc .step .tpl-tag{margin-top:14px;font-family:var(--font-mono);font-size:10.5px;color:var(--green-900);border:1.5px solid var(--green-900);padding:4px 9px;border-radius:999px;align-self:flex-start}
+
+  /* cards de plantilla */
+  .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .pcard{display:block;background:var(--white);border:1px solid var(--color-hairline);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color .15s,transform .15s}
+  .pcard:hover{border-color:var(--emerald-500);transform:translateY(-3px)}
+  .pv{height:190px;background:var(--sage-50);display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .pv img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .pv.tall img{object-position:center}
+  .pv .ph{font-family:var(--font-mono);font-size:11px;color:var(--gray-600)}
+  .pb{padding:16px}
+  .pb .want{display:block;font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--emerald-700)}
+  .pb b{display:block;font-family:var(--font-mono);font-size:12.5px;margin:7px 0 6px}
+  .pb p{font-size:12.5px;color:var(--gray-600);line-height:1.45}
+  .pb .go{display:block;margin-top:12px;font-size:12px;font-weight:700;color:var(--green-900)}
+  @media (max-width:880px){.arc,.pgrid{grid-template-columns:1fr}}
+
   /* piezas demo */
   .piece{background:var(--emerald-500);border-radius:16px;position:relative;overflow:hidden;container-type:inline-size}
   .p45{aspect-ratio:4/5}
@@ -114,9 +137,8 @@
 <header class="hero">
   <div>
     <span class="k">Sub-marca de Magoya · manual de detalle</span>
-    <h1>AI en campo 🌱</h1>
-    <p>La línea de contenido educativo de IA para el agro: carruseles, reels, webinars y tips que le hablan directo al productor. Mismo ADN que Magoya — <b>más ruido, más didáctica, más quilombera</b>.</p>
-  </div>
+    <h1>AI en campo</h1>
+    <p>La línea de contenido educativo de IA para el agro: carruseles, reels, webinars y tips que le hablan directo al productor. Mismo ADN que Magoya — <b>más ruido, más didáctica, más quilombera</b>.</p></div>
 </header>
 
 <main>
@@ -128,10 +150,8 @@
   <h2>Educar sobre IA, con los pies en el lote</h2>
   <p class="lead">AI en campo existe para un solo trabajo: que el productor y el técnico agro entiendan y usen IA en su día a día. El contenido responde preguntas reales (“¿qué le pregunto a la IA sobre mi lote?”), muestra herramientas concretas y anuncia webinars. Es la voz de canal de redes de Magoya — cuando la pieza es institucional (clientes, ventas, employer brand), se usa el core.</p>
   <div class="rule-list">
-    <div class="rule"><b class="do">✓</b><span><b>Cuándo:</b> carruseles educativos, tips de herramientas, webinars, cuenta regresiva, “mito vs realidad”, chat del productor.</span></div>
-    <div class="rule"><b class="dont">✗</b><span><b>Cuándo NO:</b> propuestas comerciales, casos de cliente formales, deck de ventas, sitio — eso es core Magoya.</span></div>
-  </div>
-    </div>
+    <div class="rule"><b class="do"></b><span><b>Cuándo:</b> carruseles educativos, tips de herramientas, webinars, cuenta regresiva, “mito vs realidad”, chat del productor.</span></div>
+    <div class="rule"><b class="dont"></b><span><b>Cuándo NO:</b> propuestas comerciales, casos de cliente formales, deck de ventas, sitio — eso es core Magoya.</span></div></div></div>
 </section>
 
 <!-- 2 COLOR & VOZ -->
@@ -144,29 +164,13 @@
     <div class="sw"><div class="chip" style="background:var(--emerald-500)"></div><div class="meta"><b>Lienzo pleno</b><span>#00DE68</span> acá el verde ES el fondo</div></div>
     <div class="sw"><div class="chip" style="background:var(--ink-900)"></div><div class="meta"><b>Placa negra</b><span>#161616</span> el dato clave (hora, cifra)</div></div>
     <div class="sw"><div class="chip" style="background:var(--green-900)"></div><div class="meta"><b>Texto secundario</b><span>#133825</span> bajadas y kickers</div></div>
-    <div class="sw"><div class="chip" style="background:#C97B5A"></div><div class="meta"><b>Terracota sticker</b><span>#C97B5A</span> SOLO doodles, nunca texto</div></div>
-  </div>
+    <div class="sw"><div class="chip" style="background:#C97B5A"></div><div class="meta"><b>Terracota sticker</b><span>#C97B5A</span> SOLO doodles, nunca texto</div></div></div>
 
   <h3>La pieza patrón — anatomía</h3>
   <div class="grid" style="grid-template-columns:340px 1fr;gap:28px;align-items:start">
     <div>
-      <!-- Pieza REAL del Studio · proyecto "Impacto · pregunta del productor" · template impacto-pregunta · formato ig-story 1080×1920
-           Receta del JSON: scheme emerald · accent deep · logo deep · anchor top-left · rule top · silueta mitad · plate none -->
-      <div style="aspect-ratio:9/16;border-radius:var(--radius-lg);background:var(--emerald-500);position:relative;overflow:hidden;container-type:inline-size">
-        <span style="position:absolute;left:7cqw;right:7cqw;top:7cqw;height:.7cqw;background:var(--green-900);opacity:.9"></span>
-        <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg);background:var(--green-900);width:9cqw;height:9cqw;position:absolute;left:13%;top:14.5%;transform:translate(-50%,-50%)"></span>
-        <img src="assets/photos/ai-campo-silueta.png" alt="" style="position:absolute;left:57.5%;top:26.4%;transform:translate(-50%,-50%);width:64%">
-        <div style="position:absolute;left:64%;top:63%;transform:translate(-50%,-50%);width:64cqw;height:45cqw;background:var(--emerald-500);border-radius:4cqw"></div>
-        <img src="assets/studio/icons/social/youtube.svg" alt="" style="position:absolute;left:17%;top:37%;transform:translate(-50%,-50%) rotate(-19deg);width:19%">
-        <span class="dm" style="-webkit-mask-image:url(assets/flourish-arrow.svg);mask-image:url(assets/flourish-arrow.svg);background:var(--green-900);width:20cqw;height:15cqw;position:absolute;left:73%;top:80%;transform:translate(-50%,-50%) scaleX(-1)"></span>
-        <div style="position:absolute;left:7cqw;right:34cqw;top:12cqw">
-          <div style="font-size:3.2cqw;font-weight:800;letter-spacing:.14em;color:var(--green-900)">AI EN CAMPO</div>
-          <div style="font-size:11cqw;font-weight:800;letter-spacing:-0.03em;line-height:1.02;color:var(--green-900);margin-top:2cqw">Analizá cotizaciones en segundos con AI</div>
-        </div>
-        <img src="assets/magoya-wordmark-deep.svg" alt="Magoya" style="position:absolute;left:7cqw;bottom:6cqw;width:26cqw">
-      </div>
-      <p class="cap" style="color:var(--gray-600)">Pieza real producida en el Studio: proyecto <b style="color:var(--ink-900)">“Impacto · pregunta del productor”</b> · template <code style="font-family:var(--font-mono);font-size:11px">impacto-pregunta</code> · formato <code style="font-family:var(--font-mono);font-size:11px">ig-story</code> (1080×1920). Receta guardada en el JSON: <i>scheme</i> emerald · <i>accent/logo</i> deep · <i>anchor</i> top-left · <i>rule</i> top · <i>silueta</i> mitad.</p>
-    </div>
+      <img src="assets/pieces/fecha-marcada-ig-portrait.svg" alt="Pieza AI en campo: webinar 6 AGO 11:00 h ARG" style="width:100%;border-radius:16px;display:block">
+      <p class="cap">Pieza <b>real</b>, exportada del Studio: template <code>fecha-marcada</code> · formato <code>ig-portrait</code> (1080×1350). Es la referencia de la línea — cualquier pieza nueva se compara con esta.</p></div>
     <div>
       <table>
         <thead><tr><th>Nivel</th><th>Especificación</th></tr></thead>
@@ -179,13 +183,10 @@
           <tr><td><b>Firma</b></td><td>wordmark negro abajo-izquierda, ~26% del ancho</td></tr>
           <tr><td><b>Ruido</b></td><td>2–4 elementos en las esquinas, rotación ±5–15° · nunca sobre el texto</td></tr>
         </tbody>
-      </table>
-    </div>
-  </div>
+      </table></div></div>
 
   <h3>La voz</h3>
-  <p class="note" style="max-width:70ch"><b>Voseo argentino, didáctica y directa:</b> “Analizá”, “Usá Claude o ChatGPT”, “Che, ¿con qué IA armo informes?”. Preguntas reales del productor como ancla. Emojis con criterio: uno por CTA (👈 🌱 💧), nunca lluvia. Sin jerga corporativa — acá no hay “soluciones end-to-end”, hay “te muestro cómo”.</p>
-    </div>
+  <p class="note" style="max-width:70ch"><b>Voseo argentino, didáctica y directa:</b> “Analizá”, “Usá Claude o ChatGPT”, “Che, ¿con qué IA armo informes?”. Preguntas reales del productor como ancla. Emojis con criterio: uno por CTA (👈  ), nunca lluvia. Sin jerga corporativa — acá no hay “soluciones end-to-end”, hay “te muestro cómo”.</p></div>
 </section>
 
 <!-- 3 RUIDO -->
@@ -204,160 +205,98 @@
     <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-arrow.svg);mask-image:url(assets/studio/flourish-arrow.svg);width:56px"></span><span class="dn">flourish-arrow</span></div>
     <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-navarrow.svg);mask-image:url(assets/studio/flourish-navarrow.svg)"></span><span class="dn">flourish-navarrow</span></div>
     <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-circle.svg);mask-image:url(assets/studio/flourish-circle.svg);width:56px"></span><span class="dn">flourish-circle</span></div>
-    <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-underline.svg);mask-image:url(assets/studio/flourish-underline.svg);width:64px;height:20px"></span><span class="dn">flourish-underline</span></div>
-  </div>
+    <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/flourish-underline.svg);mask-image:url(assets/studio/flourish-underline.svg);width:64px;height:20px"></span><span class="dn">flourish-underline</span></div></div>
 
   <h3>Badge EN VIVO <span style="font-weight:400;font-size:.8em;color:var(--gray-600)">— para reels y webinars en directo</span></h3>
   <div class="grid g3">
     <div class="dcell" style="background:var(--emerald-500)"><span class="dm" style="-webkit-mask-image:url(assets/studio/badge-envivo.svg);mask-image:url(assets/studio/badge-envivo.svg);width:120px;height:36px;background:var(--ink-900)"></span><span class="dn" style="color:var(--green-900)">sobre verde → negro</span></div>
     <div class="dcell" style="background:var(--green-950)"><span class="dm" style="-webkit-mask-image:url(assets/studio/badge-envivo.svg);mask-image:url(assets/studio/badge-envivo.svg);width:120px;height:36px;background:var(--lime-500)"></span><span class="dn" style="color:var(--cream-300)">sobre oscuro → lima</span></div>
-    <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/badge-envivo.svg);mask-image:url(assets/studio/badge-envivo.svg);width:120px;height:36px;background:#E33"></span><span class="dn">sobre claro → rojo directo</span></div>
-  </div>
+    <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/badge-envivo.svg);mask-image:url(assets/studio/badge-envivo.svg);width:120px;height:36px;background:#E33"></span><span class="dn">sobre claro → rojo directo</span></div></div>
   <p class="cap">El SVG viene con <code>fill="currentColor"</code>: se pinta del color que le pases (por eso no se ve si se inserta suelto como imagen). En el manual va por CSS <code>mask</code>; en el Studio entra al pipeline de teñido.</p>
 
-  <h3>Logos de IA y redes <span style="font-weight:400;font-size:.8em;color:var(--gray-600)">— color oficial, apenas rotados</span></h3>
-  <div class="grid g4">
-    <div class="dcell"><img src="assets/studio/icons/ai/openai.svg" alt="OpenAI" style="width:32px"><span class="dn">ai/openai</span></div>
-    <div class="dcell"><img src="assets/studio/icons/ai/claude.svg" alt="Claude" style="width:32px"><span class="dn">ai/claude</span></div>
-    <div class="dcell"><img src="assets/studio/icons/ai/googlegemini.svg" alt="Gemini" style="width:32px"><span class="dn">ai/googlegemini</span></div>
-    <div class="dcell"><img src="assets/studio/icons/ai/perplexity.svg" alt="Perplexity" style="width:32px"><span class="dn">ai/perplexity</span></div>
-    <div class="dcell"><img src="assets/studio/icons/social/youtube.svg" alt="YouTube" style="width:32px"><span class="dn">social/youtube</span></div>
-    <div class="dcell"><img src="assets/studio/icons/social/whatsapp.svg" alt="WhatsApp" style="width:32px"><span class="dn">social/whatsapp</span></div>
-    <div class="dcell"><img src="assets/studio/icons/social/instagram.svg" alt="Instagram" style="width:32px"><span class="dn">social/instagram</span></div>
-    <div class="dcell"><img src="assets/studio/icons/social/linkedin.svg" alt="LinkedIn" style="width:32px"><span class="dn">social/linkedin</span></div>
-  </div>
-  <p class="cap">10 logos de IA y 13 de redes en <code>assets/studio/icons/</code>. Uso nominativo: hablamos DE esas herramientas. Tamaño chico, nunca protagonistas del mensaje.</p>
+  <h3>Logos de IA <span style="font-weight:400;font-size:.8em;color:var(--gray-600)">— los 10, en su color oficial</span></h3>
+  <div class="grid g4"><div class="dcell"><img src="assets/studio/icons/ai/anthropic.svg" alt="anthropic" style="width:32px"><span class="dn">ai/anthropic</span></div><div class="dcell"><img src="assets/studio/icons/ai/claude.svg" alt="claude" style="width:32px"><span class="dn">ai/claude</span></div><div class="dcell"><img src="assets/studio/icons/ai/google.svg" alt="google" style="width:32px"><span class="dn">ai/google</span></div><div class="dcell"><img src="assets/studio/icons/ai/googlegemini.svg" alt="googlegemini" style="width:32px"><span class="dn">ai/googlegemini</span></div><div class="dcell"><img src="assets/studio/icons/ai/huggingface.svg" alt="huggingface" style="width:32px"><span class="dn">ai/huggingface</span></div><div class="dcell"><img src="assets/studio/icons/ai/meta.svg" alt="meta" style="width:32px"><span class="dn">ai/meta</span></div><div class="dcell"><img src="assets/studio/icons/ai/mistralai.svg" alt="mistralai" style="width:32px"><span class="dn">ai/mistralai</span></div><div class="dcell"><img src="assets/studio/icons/ai/ollama.svg" alt="ollama" style="width:32px"><span class="dn">ai/ollama</span></div><div class="dcell"><img src="assets/studio/icons/ai/openai.svg" alt="openai" style="width:32px"><span class="dn">ai/openai</span></div><div class="dcell"><img src="assets/studio/icons/ai/perplexity.svg" alt="perplexity" style="width:32px"><span class="dn">ai/perplexity</span></div></div>
+  <p class="cap">Cuando la pieza habla de IA, los logos de las herramientas van <b>en su color de marca</b> (no monocromos): así se reconocen al instante. Tamaño chico, apenas rotados, nunca protagonistas del mensaje. Uso nominativo — hablamos DE esas herramientas.</p>
+
+  <h3>Logos de redes</h3>
+  <div class="grid g4"><div class="dcell"><img src="assets/studio/icons/social/youtube.svg" alt="youtube" style="width:32px"><span class="dn">social/youtube</span></div><div class="dcell"><img src="assets/studio/icons/social/whatsapp.svg" alt="whatsapp" style="width:32px"><span class="dn">social/whatsapp</span></div><div class="dcell"><img src="assets/studio/icons/social/instagram.svg" alt="instagram" style="width:32px"><span class="dn">social/instagram</span></div><div class="dcell"><img src="assets/studio/icons/social/linkedin.svg" alt="linkedin" style="width:32px"><span class="dn">social/linkedin</span></div><div class="dcell"><img src="assets/studio/icons/social/x.svg" alt="x" style="width:32px"><span class="dn">social/x</span></div><div class="dcell"><img src="assets/studio/icons/social/tiktok.svg" alt="tiktok" style="width:32px"><span class="dn">social/tiktok</span></div><div class="dcell"><img src="assets/studio/icons/social/telegram.svg" alt="telegram" style="width:32px"><span class="dn">social/telegram</span></div><div class="dcell"><img src="assets/studio/icons/social/threads.svg" alt="threads" style="width:32px"><span class="dn">social/threads</span></div></div>
+  <p class="cap">13 en total en <code>assets/studio/icons/social/</code>. En tile de color (como el de YouTube en la pieza) o glifo suelto.</p>
 
   <h3>Íconos agro</h3>
   <div class="grid g4">
     <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/icons/agro/alerta-lote.svg);mask-image:url(assets/studio/icons/agro/alerta-lote.svg)"></span><span class="dn">alerta-lote</span></div>
     <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/icons/agro/chat-ia.svg);mask-image:url(assets/studio/icons/agro/chat-ia.svg)"></span><span class="dn">chat-ia</span></div>
     <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/icons/agro/satelite.svg);mask-image:url(assets/studio/icons/agro/satelite.svg)"></span><span class="dn">satelite</span></div>
-    <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/icons/agro/dron.svg);mask-image:url(assets/studio/icons/agro/dron.svg)"></span><span class="dn">dron</span></div>
-  </div>
+    <div class="dcell"><span class="dm" style="-webkit-mask-image:url(assets/studio/icons/agro/dron.svg);mask-image:url(assets/studio/icons/agro/dron.svg)"></span><span class="dn">dron</span></div></div>
   <p class="cap">Set completo de 16 en el <a href="index.html#iconografia" style="color:var(--emerald-700);font-weight:600">brand book</a>.</p>
 
   <div class="rule-list" style="margin-top:22px">
-    <div class="rule"><b class="do">✓</b><span>2–4 elementos de ruido por pieza · rotación ±5–15° · en las esquinas.</span></div>
-    <div class="rule"><b class="dont">✗</b><span>Ruido sobre el texto, más de 4 elementos, o inventar doodles nuevos fuera del set.</span></div>
-  </div>
-    </div>
+    <div class="rule"><b class="do"></b><span>2–4 elementos de ruido por pieza · rotación ±5–15° · en las esquinas.</span></div>
+    <div class="rule"><b class="dont"></b><span>Ruido sobre el texto, más de 4 elementos, o inventar doodles nuevos fuera del set.</span></div></div></div>
 </section>
 
 <!-- 4 COMPONENTES -->
 <section id="componentes" style="background:var(--sage-50)">
   <div class="inner">
-  <span class="kick">4 · Componentes</span>
-  <h2>El kit de carruseles</h2>
-  <p class="lead">Los cuatro bloques con los que se construye un carrusel educativo, en el orden en que se usan: <b>engancho con la pregunta real → muestro la herramienta → doy la prueba → cierro con el paso siguiente</b>. Todos existen como plantilla en el Studio.</p>
-
-  <div class="grid g4">
-    <!-- 1 pregunta -->
-    <div>
-      <div class="piece p45">
-        <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg);width:7cqw;height:7cqw;position:absolute;top:8cqw;right:8cqw"></span>
-        <div style="position:absolute;inset:0;padding:8cqw;display:flex;flex-direction:column;justify-content:center">
-          <div style="font-size:3.6cqw;font-weight:800;letter-spacing:.14em;color:var(--green-900)">SLIDE 1 · ENGANCHE</div>
-          <div style="background:var(--white);border-radius:5cqw 5cqw 5cqw 1cqw;padding:5cqw;font-size:8.4cqw;font-weight:700;line-height:1.12;letter-spacing:-0.02em;margin-top:4cqw">“¿Le puedo preguntar a la IA qué le pasa a mi lote?”</div>
-        </div>
-        <img src="assets/magoya-wordmark-black.svg" alt="" style="position:absolute;left:8cqw;bottom:6cqw;width:24cqw">
-      </div>
-      <p class="cap"><b>1 · Pregunta del productor.</b> La pregunta real, en bocadillo blanco. Es el ancla educativa: si no engancha acá, no lee el resto.</p>
-    </div>
-    <!-- 2 chat -->
-    <div>
-      <div class="piece p45">
-        <div style="position:absolute;inset:0;padding:7cqw;display:flex;flex-direction:column;justify-content:center">
-          <div style="font-size:3.6cqw;font-weight:800;letter-spacing:.14em;color:var(--green-900);margin-bottom:3cqw">SLIDE 2 · CÓMO SE HACE</div>
-          <div style="background:#E8E2D9;border-radius:4cqw;padding:4cqw">
-            <div style="background:var(--white);border-radius:3cqw 3cqw 3cqw .6cqw;padding:3cqw 3.6cqw;font-size:5cqw;line-height:1.25;max-width:88%">Che, ¿con qué IA armo informes técnicos? 🌱</div>
-            <div style="background:#D9FDD3;border-radius:3cqw 3cqw .6cqw 3cqw;padding:3cqw 3.6cqw;font-size:5cqw;line-height:1.25;max-width:88%;margin:3cqw 0 0 auto">Usá Claude o ChatGPT: lenguaje claro y adaptable a tu contexto.</div>
-          </div>
-        </div>
-        <img src="assets/studio/icons/ai/claude.svg" alt="" style="position:absolute;bottom:7cqw;right:6cqw;width:13cqw">
-      </div>
-      <p class="cap"><b>2 · Chat de WhatsApp.</b> Pregunta + respuesta que enseña. Máximo 2–3 globos: si no entra, va en dos slides.</p>
-    </div>
-    <!-- 3 prueba -->
-    <div>
-      <div class="piece p45">
-        <span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-dots.svg);mask-image:url(assets/studio/doodle-dots.svg);background:#C97B5A;width:20cqw;height:20cqw;position:absolute;bottom:6cqw;left:-4cqw"></span>
-        <div style="position:absolute;inset:0;padding:8cqw;display:flex;flex-direction:column;justify-content:center">
-          <div style="font-size:3.6cqw;font-weight:800;letter-spacing:.14em;color:var(--green-900)">SLIDE 3 · LA PRUEBA</div>
-          <div style="font-size:30cqw;font-weight:800;letter-spacing:-0.04em;line-height:.85;color:var(--ink-900);margin-top:2cqw">8×</div>
-          <div style="font-size:7.4cqw;font-weight:500;line-height:1.12;color:var(--green-900);margin-top:2cqw">más rápido armar el informe</div>
-        </div>
-        <img src="assets/magoya-wordmark-black.svg" alt="" style="position:absolute;left:8cqw;bottom:6cqw;width:24cqw">
-      </div>
-      <p class="cap"><b>3 · Dato / cifra.</b> El número ocupa ~70% del ancho. Sin placa acá: el dato ES la pieza.</p>
-    </div>
-    <!-- 4 cierre -->
-    <div>
-      <div class="piece p45" style="background:var(--green-950)">
-        <div style="position:absolute;inset:0;padding:8cqw;display:flex;flex-direction:column;justify-content:center">
-          <div style="font-size:3.6cqw;font-weight:800;letter-spacing:.14em;color:var(--lime-500)">SLIDE 4 · CIERRE</div>
-          <div style="font-size:11cqw;font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:var(--cream-50);margin-top:3cqw">Te lo mostramos en el webinar</div>
-          <span style="align-self:flex-start;background:var(--lime-500);color:var(--ink-900);font-size:5cqw;font-weight:700;padding:2.4cqw 5cqw;border-radius:999px;margin-top:5cqw">Link en la bio 👈</span>
-        </div>
-        <img src="assets/magoya-wordmark-cream.svg" alt="" style="position:absolute;left:8cqw;bottom:6cqw;width:24cqw">
-      </div>
-      <p class="cap"><b>4 · Cierre con CTA.</b> Única slide que puede ir en verde profundo, para cerrar el arco. CTA en lima.</p>
-    </div>
-  </div>
-
-  <h3>Otros bloques disponibles</h3>
-  <div class="grid g3">
-    <div class="comp"><b class="t">Celular con notificaciones</b>
-      <div style="background:var(--green-950);border-radius:14px;padding:14px 10px;max-width:180px">
-        <div style="background:rgba(255,255,255,.94);border-radius:8px;padding:7px 9px;font-size:10.5px"><b>🌾 Tu lote</b><br>Alerta: posible plaga en L4</div>
-        <div style="background:rgba(255,255,255,.94);border-radius:8px;padding:7px 9px;font-size:10.5px;margin-top:6px"><b>💧 Riego</b><br>Recomendación lista</div>
-      </div>
-      <p class="cap">Para contar algo que “le llega” al productor.</p>
-    </div>
-    <div class="comp"><b class="t">Cuenta regresiva</b>
-      <div style="background:var(--emerald-500);border-radius:12px;padding:16px;">
-        <div style="font-size:56px;font-weight:800;letter-spacing:-0.04em;line-height:1">3</div>
-        <div style="font-size:12.5px;font-weight:800;letter-spacing:.12em;color:var(--green-900)">DÍAS PARA EL WEBINAR</div>
-      </div>
-      <p class="cap">Para calentar fechas. Número gigante + kicker.</p>
-    </div>
-    <div class="comp"><b class="t">Mito vs realidad</b>
-      <div style="display:flex;gap:8px">
-        <div style="flex:1;background:var(--gray-100);border-radius:10px;padding:12px;font-size:11.5px"><b style="color:var(--danger-500)">Mito</b><br>“La IA reemplaza al agrónomo”</div>
-        <div style="flex:1;background:var(--emerald-500);border-radius:10px;padding:12px;font-size:11.5px"><b>Realidad</b><br>Le ahorra las 3 horas de informe</div>
-      </div>
-      <p class="cap">El formato de más engagement en LinkedIn B2B.</p>
-    </div>
-  </div>
-    </div>
+  <span class="kick">4 · El carrusel</span>
+  <h2>Cómo se cuenta la historia</h2>
+  <p class="lead">Esto no es una galería: es el <b>arco narrativo</b> que hace que un carrusel de AI en campo enseñe algo. Si el orden se rompe, la pieza se ve linda y no comunica. <b>4 a 6 slides, una idea por slide.</b></p>
+  <div class="arc">
+    <div class="step"><span class="n">01</span><b>Engancho con la duda real</b><p>La pregunta que te hacen, textual, en boca del productor. Nunca abrir con la solución ni con la marca.</p><span class="tpl-tag">impacto-pregunta</span></div>
+    <div class="step"><span class="n">02</span><b>Muestro la herramienta</b><p>Qué IA usar y cómo se le habla. Acá van los logos en su color y el prompt real.</p><span class="tpl-tag">whatsapp · impacto-apps</span></div>
+    <div class="step"><span class="n">03</span><b>Doy la prueba</b><p>Una cifra o una captura del resultado. Sin prueba, el carrusel es opinión.</p><span class="tpl-tag">impacto-cifra · impacto-pantalla</span></div>
+    <div class="step"><span class="n">04</span><b>Cierro con el paso siguiente</b><p>Una sola acción. Es la única slide que puede ir en verde profundo.</p><span class="tpl-tag">carrusel-cierre</span></div></div>
+  <div class="dodont" style="margin-top:28px">
+    <div class="dd"><span class="h">Hacer</span><ul>
+      <li>Una idea por slide · 4 a 6 slides · el arco completo aunque sea corto.</li>
+      <li>La pregunta del slide 1, textual de un productor real.</li>
+      <li>Producir desde la plantilla que ya existe en el Studio.</li></ul></div>
+    <div class="dd avoid"><span class="h">Evitar</span><ul>
+      <li>Abrir con la solución o con la marca — se pierde el enganche.</li>
+      <li>Carruseles de 10 slides: si no entra en 6, son dos posteos.</li>
+      <li>Cerrar sin acción, o con tres acciones distintas.</li></ul></div></div></div>
 </section>
 
 <!-- 5 PLANTILLAS -->
 <section id="plantillas">
   <div class="inner">
   <span class="kick">5 · Plantillas</span>
-  <h2>De la plantilla a la pieza</h2>
-  <p class="lead">Las piezas <b>no se arman a mano</b>: se eligen en el Studio y se cambia texto y foto. Esto es lo que hay que saber como marca — <b>qué plantilla usar según el objetivo</b>. El catálogo completo (28 plantillas) está en la galería.</p>
-
-  <div class="table-scroll">
-  <table>
-    <thead><tr><th>Si querés…</th><th>Plantilla</th><th>Por qué</th></tr></thead>
-    <tbody>
-      <tr><td><b>Enganchar</b> con una duda real</td><td>Impacto · pregunta del productor</td><td>El ancla educativa de la serie</td></tr>
-      <tr><td><b>Enseñar</b> a usar una herramienta</td><td>Chat de WhatsApp · Impacto · herramientas</td><td>Muestra la conversación y el logo de la IA</td></tr>
-      <tr><td><b>Probar</b> que funciona</td><td>Impacto · recorte + cifra · Impacto · pantalla</td><td>Cifra gigante o captura real del producto</td></tr>
-      <tr><td><b>Anunciar</b> un webinar</td><td>Evento · Evento sobre foto · Quiénes hablan</td><td>Fecha, hora, oradores y CTA</td></tr>
-      <tr><td><b>Apurar</b> una inscripción</td><td>Cuenta regresiva · Fecha marcada</td><td>Número gigante o círculo a mano en la fecha</td></tr>
-      <tr><td><b>Discutir</b> una creencia</td><td>Mito vs realidad</td><td>Máximo engagement en LinkedIn B2B</td></tr>
-      <tr><td><b>Resumir</b> la semana</td><td>Collage con stickers</td><td>Tres fotos rotadas + destellos</td></tr>
-      <tr><td><b>Abrir y cerrar</b> un carrusel</td><td>Carrusel · portada / cierre con CTA</td><td>Slide 1 con foto fuerte; última con acción</td></tr>
-      <tr><td><b>Portada</b> de un video</td><td>Miniatura de YouTube (1280×720)</td><td>Titular enorme + persona a la derecha</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p class="cap">Regla del Studio: la galería está ordenada por objetivo de marketing — primero lo que educa y prueba, “en blanco” al final. <b>Arrancar en blanco es donde se rompe la marca</b>: si hay una plantilla que sirve, se usa esa.</p>
-  <a class="studio-cta" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">Abrir la galería en Magoya Studio →</a>
-    </div>
+  <h2>Qué plantilla usar</h2>
+  <p class="lead">Las piezas no se arman a mano: se elige la plantilla en el Studio y se cambia texto y foto. Lo que hay que saber como marca es <b>cuál usar según el objetivo</b> — cada tarjeta abre la galería.</p>
+  <div class="pgrid">
+<a class="pcard" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">
+      <div class="pv tall"><img src="assets/pieces/impacto-pregunta.jpg" alt=""></div>
+      <div class="pb"><span class="want">Enganchar con una duda</span><b>impacto-pregunta</b><p>La pregunta real del productor: el ancla educativa de la serie.</p><span class="go">Abrir en el Studio →</span></div>
+    </a>
+    <a class="pcard" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">
+      <div class="pv"><img src="assets/pieces/mito-vs-realidad.jpg" alt=""></div>
+      <div class="pb"><span class="want">Discutir una creencia</span><b>contraste</b><p>Mito vs realidad — el formato de más engagement en LinkedIn B2B.</p><span class="go">Abrir en el Studio →</span></div>
+    </a>
+    <a class="pcard" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">
+      <div class="pv"><img src="assets/pieces/fecha-marcada.jpg" alt=""></div>
+      <div class="pb"><span class="want">Apurar una inscripción</span><b>fecha-marcada</b><p>La fecha grande con círculo a mano. También cuenta-regresiva.</p><span class="go">Abrir en el Studio →</span></div>
+    </a>
+    <a class="pcard" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">
+      <div class="pv"><span class="ph">Ver en el Studio</span></div>
+      <div class="pb"><span class="want">Enseñar una herramienta</span><b>whatsapp · impacto-apps</b><p>Muestra la conversación real y los logos de IA en su color.</p><span class="go">Abrir en el Studio →</span></div>
+    </a>
+    <a class="pcard" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">
+      <div class="pv"><span class="ph">Ver en el Studio</span></div>
+      <div class="pb"><span class="want">Probar que funciona</span><b>impacto-cifra · impacto-pantalla</b><p>Cifra gigante o captura del producto: la prueba.</p><span class="go">Abrir en el Studio →</span></div>
+    </a>
+    <a class="pcard" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">
+      <div class="pv"><span class="ph">Ver en el Studio</span></div>
+      <div class="pb"><span class="want">Anunciar un webinar</span><b>evento · speakers</b><p>Fecha, hora, oradores y CTA en una sola pieza.</p><span class="go">Abrir en el Studio →</span></div>
+    </a>
+    <a class="pcard" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">
+      <div class="pv"><span class="ph">Ver en el Studio</span></div>
+      <div class="pb"><span class="want">Resumir la semana</span><b>collage-stickers</b><p>Tres fotos rotadas con destellos.</p><span class="go">Abrir en el Studio →</span></div>
+    </a>
+    <a class="pcard" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">
+      <div class="pv"><span class="ph">Ver en el Studio</span></div>
+      <div class="pb"><span class="want">Portada de un video</span><b>youtube-miniatura</b><p>Titular enorme + persona a la derecha (1280×720).</p><span class="go">Abrir en el Studio →</span></div>
+    </a></div>
+  <p class="cap">La galería del Studio está ordenada por objetivo: primero lo que educa y prueba, “en blanco” al final. <b>Arrancar en blanco es donde se rompe la marca</b> — si hay plantilla que sirve, se usa esa. Son 28 en total.</p></div>
 </section>
 
 <!-- 6 FORMATOS -->
@@ -370,7 +309,7 @@
   <table>
     <thead><tr><th>Red</th><th>Formato</th><th class="mono">Medidas</th></tr></thead>
     <tbody>
-      <tr><td>Instagram</td><td><b>Post retrato 4:5 (carrusel) ★</b></td><td class="mono">1080 × 1350</td></tr>
+      <tr><td>Instagram</td><td><b>Post retrato 4:5 (carrusel)</b></td><td class="mono">1080 × 1350</td></tr>
       <tr><td>Instagram</td><td>Post cuadrado</td><td class="mono">1080 × 1080</td></tr>
       <tr><td>Instagram</td><td>Story / Reel 9:16</td><td class="mono">1080 × 1920</td></tr>
       <tr><td>LinkedIn</td><td>Carrusel (retrato)</td><td class="mono">1080 × 1350</td></tr>
@@ -384,9 +323,7 @@
       <tr><td>Genérico</td><td>Presentación 16:9</td><td class="mono">1920 × 1080</td></tr>
       <tr><td>Genérico</td><td>Clásico 4:3</td><td class="mono">1600 × 1200</td></tr>
     </tbody>
-  </table>
-  </div>
-    </div>
+  </table></div></div>
 </section>
 
 <!-- 7 REGLAS -->
@@ -395,18 +332,16 @@
   <span class="kick">7 · Reglas</span>
   <h2>Qué rompe y qué no</h2>
   <div class="rule-list" style="margin-top:16px">
-    <div class="rule"><b class="do">✓</b><span>Fondo verde digital #00DE68 pleno — la excepción documentada al 75/25 del core.</span></div>
-    <div class="rule"><b class="do">✓</b><span>Placa negra con crema para el dato clave — una por pieza.</span></div>
-    <div class="rule"><b class="do">✓</b><span>Ruido SOLO con los assets del Studio (<code>assets/studio/</code>): 2–4 por pieza, ±5–15°, en las esquinas.</span></div>
-    <div class="rule"><b class="do">✓</b><span>Display y cifras al ~70% del ancho de la pieza. En redes, grande o nada.</span></div>
-    <div class="rule"><b class="do">✓</b><span>Voseo didáctico + un emoji por CTA. Wordmark negro abajo-izquierda.</span></div>
-    <div class="rule"><b class="do">✓</b><span>Producir SIEMPRE desde plantillas del Studio.</span></div>
-    <div class="rule"><b class="dont">✗</b><span>Nada de esta sub-marca vuelve al core: ni placa negra, ni fondo verde pleno, ni stickers en piezas institucionales.</span></div>
-    <div class="rule"><b class="dont">✗</b><span>Terracota #C97B5A solo en doodles — jamás como color de texto o UI.</span></div>
-    <div class="rule"><b class="dont">✗</b><span>Lima #A2FF00 casi no juega acá — el protagonista es el verde digital. No mezclar los dos verdes brillantes en una pieza.</span></div>
-    <div class="rule"><b class="dont">✗</b><span>El wordmark sigue intocable: negro o crema, nunca reconstruido ni con sombras.</span></div>
-  </div>
-    </div>
+    <div class="rule"><b class="do"></b><span>Fondo verde digital #00DE68 pleno — la excepción documentada al 75/25 del core.</span></div>
+    <div class="rule"><b class="do"></b><span>Placa negra con crema para el dato clave — una por pieza.</span></div>
+    <div class="rule"><b class="do"></b><span>Ruido SOLO con los assets del Studio (<code>assets/studio/</code>): 2–4 por pieza, ±5–15°, en las esquinas.</span></div>
+    <div class="rule"><b class="do"></b><span>Display y cifras al ~70% del ancho de la pieza. En redes, grande o nada.</span></div>
+    <div class="rule"><b class="do"></b><span>Voseo didáctico + un emoji por CTA. Wordmark negro abajo-izquierda.</span></div>
+    <div class="rule"><b class="do"></b><span>Producir SIEMPRE desde plantillas del Studio.</span></div>
+    <div class="rule"><b class="dont"></b><span>Nada de esta sub-marca vuelve al core: ni placa negra, ni fondo verde pleno, ni stickers en piezas institucionales.</span></div>
+    <div class="rule"><b class="dont"></b><span>Terracota #C97B5A solo en doodles — jamás como color de texto o UI.</span></div>
+    <div class="rule"><b class="dont"></b><span>Lima #A2FF00 casi no juega acá — el protagonista es el verde digital. No mezclar los dos verdes brillantes en una pieza.</span></div>
+    <div class="rule"><b class="dont"></b><span>El wordmark sigue intocable: negro o crema, nunca reconstruido ni con sombras.</span></div></div></div>
 </section>
 
 </main>
