@@ -160,9 +160,18 @@
   .hiring h4 .arrow{color:var(--lime-500)}
   .hiring p{color:var(--gray-300);font-size:14px;margin-top:8px}
   .hiring .mail{
-    margin-top:auto;align-self:flex-start;background:var(--lime-500);color:var(--ink-900);
-    font-size:13px;font-weight:var(--weight-bold);padding:11px 20px;border-radius:var(--radius-btn);
+    margin-top:auto;align-self:flex-start;color:var(--lime-500);
+    font-size:14px;font-weight:var(--weight-bold);
   }
+  .hiring .mail::after{content:" →"}
+
+  /* mosaico de cards — las cards siempre encastran, nunca sueltas */
+  .mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:185px;gap:16px;max-width:980px}
+  .mosaic .hiring{grid-row:span 2;max-width:none;min-height:0;padding:26px}
+  .mosaic .quote-card{grid-column:span 2;max-width:none;height:100%;overflow:hidden}
+  .mosaic .quote-card img{height:100%}
+  .mosaic .quote-card .q{padding:20px 22px;display:flex;flex-direction:column;justify-content:center}
+  .mosaic .stat{display:flex;flex-direction:column;justify-content:center}
 
   .quote-card{
     background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);
@@ -232,6 +241,11 @@
     .spec{grid-template-columns:1fr;gap:6px}
     .quote-card{grid-template-columns:1fr;max-width:100%}
     .quote-card img{height:220px}
+    .mosaic{grid-template-columns:1fr;grid-auto-rows:auto}
+    .mosaic .hiring{grid-row:auto;min-height:260px}
+    .mosaic .quote-card{grid-column:auto}
+    .mosaic .quote-card img{height:220px}
+    .mosaic .stat{min-height:150px}
     .prop{flex-wrap:wrap;height:auto}
     .prop div{min-height:44px;flex-basis:33.33%}
     .comp-canvas[style*="grid"]{display:flex !important}
@@ -485,7 +499,7 @@
     <div style="border-radius:var(--radius-lg);overflow:hidden;background:var(--green-950);color:var(--cream-50);position:relative;min-height:300px;padding:34px">
       <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:96px">
       <h4 style="font-size:30px;font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin-top:16px;max-width:58%">Growing products, growing people</h4>
-      <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:26px;opacity:.5">
+      <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:auto">
       <img src="assets/illus/char-jumping.svg" alt="Personaje impulsándose recortado por el borde" style="position:absolute;right:-24px;bottom:-40px;width:46%">
     </div>
   </div>
@@ -565,27 +579,24 @@
     <span class="pill" style="color:var(--lime-500);border-color:var(--lime-500)">Hiring</span>
   </div>
 
-  <h3>Cards</h3>
-  <div class="grid g2" style="align-items:start">
+  <h3>Cards — siempre en mosaico</h3>
+  <p class="note" style="max-width:720px;margin-bottom:16px">Las cards nunca van sueltas: viven <b>encastradas en mosaico</b> — misma grilla, mismos aires, alturas que calzan. El contacto dentro de una card dark es un <b>link en lima</b>, no un botón (los botones viven fuera de las cards).</p>
+  <div class="mosaic">
     <div class="hiring">
       <img class="wm-s" src="assets/magoya-wordmark-cream.svg" alt="Magoya">
       <h4>We’re<br><span class="arrow">→</span> Hiring</h4>
       <p>UX/UI Designer · AgTech Expert</p>
-      <a class="mail" href="mailto:people@magoya.com" style="text-decoration:none">email us at people@magoya.com</a>
+      <a class="mail" href="mailto:people@magoya.com" style="text-decoration:none">people@magoya.com</a>
     </div>
-    <div>
-      <div class="quote-card">
-        <img class="bw" src="assets/photos/founder-bw.png" alt="Retrato">
-        <div class="q">
-          <p>“Magoya’s expertise in UX, digital ag platform development, and agronomic know-how made our transformation possible.”</p>
-          <div class="who"><b>Camila López Colmano</b>AgTech Expert</div>
-        </div>
-      </div>
-      <div class="grid g2" style="margin-top:20px">
-        <div class="stat"><div class="n">95%</div><div class="d">Retención de clientes</div></div>
-        <div class="stat on-dark"><div class="n">5+</div><div class="d">Años de relación promedio</div></div>
+    <div class="quote-card">
+      <img class="bw" src="assets/photos/founder-bw.png" alt="Retrato">
+      <div class="q">
+        <p>“Magoya’s expertise in UX, digital ag platform development, and agronomic know-how made our transformation possible.”</p>
+        <div class="who"><b>Camila López Colmano</b>AgTech Expert</div>
       </div>
     </div>
+    <div class="stat"><div class="n">95%</div><div class="d">Retención de clientes</div></div>
+    <div class="stat on-dark"><div class="n">5+</div><div class="d">Años de relación promedio</div></div>
   </div>
 
   <h3>Logo wall — Who we build with</h3>
@@ -623,7 +634,7 @@
     <div style="aspect-ratio:1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--cream-100);padding:26px;display:flex;flex-direction:column">
       <img src="assets/avatars/avatar-face.svg" alt="" style="width:52px">
       <div style="margin-top:18px;font-size:23px;font-weight:800;letter-spacing:-0.02em;line-height:1.12;color:var(--green-900);max-width:88%">We're hiring: UX/UI Designer, AgTech expert</div>
-      <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:36px">
+      <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:auto">
     </div>
     <div style="aspect-ratio:1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--green-950);color:var(--cream-50);padding:26px;display:flex;flex-direction:column">
       <span style="align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid var(--cream-100);color:var(--cream-100);padding:4px 12px;border-radius:999px">Case study</span>
@@ -642,14 +653,14 @@
         <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:78px">
         <div style="font-size:19px;font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-top:10px">Senior AgTech talent, embedded in your team</div>
         <span style="display:inline-block;background:var(--lime-500);color:var(--ink-900);font-size:12px;font-weight:700;padding:8px 14px;border-radius:var(--radius-btn);margin-top:12px">Swipe up</span>
-        <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:22px;opacity:.9">
+        <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:auto">
       </div>
     </div>
     <div style="display:flex;flex-direction:column;gap:20px">
-      <div style="flex:1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--green-900);color:var(--cream-50);padding:28px;display:flex;flex-direction:column;justify-content:center;min-height:150px">
+      <div style="aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--green-900);color:var(--cream-50);padding:28px 28px 40px;display:flex;flex-direction:column;justify-content:center">
         <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:130px">
         <div style="font-size:15px;color:var(--cream-200);margin-top:10px">Your Digital Product Strategy and Development Partner</div>
-        <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:20px;opacity:.55">
+        <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:auto">
       </div>
       <div style="display:flex;gap:20px;align-items:center">
         <img src="assets/avatars/avatar-face.svg" alt="Avatar de perfil" style="width:84px;border-radius:50%">
