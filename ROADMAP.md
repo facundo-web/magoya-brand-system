@@ -7,6 +7,45 @@
 
 ---
 
+## 🎓 Principio fundacional: el manual enseña, no solo dicta
+
+> **Regla del dueño (2026-08-04):** *"lo que importa es CÓMO aplicamos el contenido y cómo la gente lo puede llegar a usar, porque muchos son literales con los criterios o las ideas pueden no aparecer. Este brand tiene que lograr eso educando, enseñando y compartiendo desde el mismo brand."*
+
+Esto es **criterio de aceptación transversal**: ninguna sección se considera terminada si solo enuncia una regla. Cada una tiene que cumplir las cuatro capas:
+
+| Capa | Qué significa | Ejemplo que ya lo cumple |
+|---|---|---|
+| **1. La regla** | El criterio, verificable (hex, tamaño, sí/no) | "Lima nunca como texto sobre claro (1.25:1)" |
+| **2. El ejemplo aplicado** | La regla renderizada en una pieza real, no descrita | Las 3 recetas de feed 1:1 en §10 |
+| **3. El contraste** | Hacer / Evitar lado a lado, sin tildes ni cruces rojas | Sistema `.dodont` en las 13 secciones |
+| **4. El recurso listo** | El archivo descargable o el bloque copiable para ejecutarlo ya | Panel contextual de descargas · ZIPs por sección · íconos que se copian como PNG |
+
+**Consecuencias operativas:**
+- Si se crea algo nuevo (asset, componente, plantilla, animación), **no existe hasta que tiene su ficha de aplicación en el manual**: qué es, cuándo se usa, cuándo no, y de dónde se baja. Regla explícita del dueño.
+- Preferir *mostrar* antes que *explicar*: una pieza bien hecha al lado de la regla vale más que tres párrafos.
+- Escribir para el lector literal: nada de "usá la identidad de Magoya"; sí "display 800, tracking −3%, ocupa ~70% del ancho".
+- Todo lo que una persona podría necesitar copiar (prompt, token, snippet, archivo) tiene que estar a un click.
+
+**Estado de cumplimiento por sección** (auditar en cada iteración):
+
+| Sección | Regla | Ejemplo | Hacer/Evitar | Recurso |
+|---|---|---|---|---|
+| Esencia · Logo · Color · Tipografía | ✅ | ✅ | ✅ | ✅ |
+| Fotografía | ✅ | ✅ | ✅ | ✅ (descarga individual + ZIP) |
+| Ilustración & motivos | ✅ | ✅ | ✅ | ✅ |
+| Convivencia | ✅ | 🟡 piezas a rehacer | ✅ | ✅ |
+| Iconografía | ✅ | ✅ (3 contextos) | ✅ | ✅ (PNG/SVG, individual y múltiple) |
+| Componentes | ✅ | ✅ | ✅ | 🟡 falta snippet copiable |
+| Aplicaciones | ✅ | ✅ | ✅ | 🟡 |
+| Merch | ✅ | 🟡 catálogo con placeholders | ✅ | 🟡 |
+| Papelería | ✅ | ✅ | ✅ | ✅ (header/footer/firma + instructivo Gmail) |
+| Marca anexa AI en campo | ✅ | ✅ (pieza real del Studio) | ✅ | ✅ (kit ZIP) |
+| Slides | ✅ | 🟡 en ampliación | 🟡 | 🟡 export a Google Slides en curso |
+| Comerciales | ✅ | ✅ (3 modelos diferenciados) | 🟡 | 🟡 |
+| **Integrar con AI** | 🔵 en construcción | 🔵 | 🔵 | 🔵 prompts + presets + llms.txt |
+
+---
+
 ## ⚠️ Lo primero: el live está desincronizado
 
 Último commit pusheado: `afc116e` (Ronda 4). El working tree tiene **cambios sin commitear** — o sea, lo que se ve publicado **no** es lo último que se hizo:

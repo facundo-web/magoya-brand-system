@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="es" data-theme="studio">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magoya · Integrar con AI</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);background:var(--white);color:var(--ink-900);line-height:var(--leading-normal);-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+
+  /* ---------- topbar ---------- */
+  .mg-topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 24px;box-shadow:0 4px 18px rgba(0,0,0,.16)}
+  .mg-topbar img{height:28px;margin-right:18px}
+  .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
+  .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
+
+  /* ---------- dock lateral ---------- */
+  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50}
+  .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
+  .side a.near{transform:scale(1.14);color:var(--cream-200)}
+  .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
+  .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
+  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
+  .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
+  .side a.anx{margin-top:12px;border-top:1px solid var(--green-800);padding-top:12px;color:var(--lime-500)}
+  .side .v{margin-top:auto;font-size:11px;color:var(--sage-400);letter-spacing:.08em}
+
+  /* ---------- layout ---------- */
+  main{margin-left:230px;padding-top:44px}
+  section{padding:88px 0}
+  section > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 64px}
+  .hero{margin-left:230px;margin-top:44px;background:var(--green-950);color:var(--cream-50);padding:70px 0 60px;position:relative}
+  .hero > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 64px}
+  .hero .k{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lime-500);border:1.5px solid rgba(162,255,0,.45);padding:6px 14px;border-radius:999px}
+  .hero h1{font-weight:800;font-size:clamp(2.6rem,5.6vw,4.6rem);letter-spacing:var(--tracking-tight);line-height:1.02;margin:20px 0 16px}
+  .hero h1 em{font-style:normal;color:var(--lime-500)}
+  .hero p{color:var(--cream-200);font-size:1.12rem;max-width:64ch}
+
+  .kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--green-900);background:transparent;border:1.5px solid var(--green-900);padding:5px 13px;border-radius:var(--radius-full);margin-bottom:18px}
+  h2{font-size:clamp(1.9rem,3.8vw,2.9rem);font-weight:800;letter-spacing:var(--tracking-tight);line-height:var(--leading-tight);margin-bottom:14px}
+  h3{font-size:var(--text-xl);font-weight:700;margin:40px 0 14px}
+  .lead{font-size:var(--text-lg);color:var(--gray-600);max-width:66ch;margin-bottom:38px}
+  .note{font-size:var(--text-sm);color:var(--gray-600);max-width:74ch}
+  .grid{display:grid;gap:20px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:1100px){.g3{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- cards de concepto (mismo lenguaje que .stat del brand book) ---------- */
+  .stat{background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:28px 26px;position:relative;overflow:hidden;display:flex;flex-direction:column}
+  .stat::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--emerald-500)}
+  .stat .n{font-size:clamp(24px,2.6vw,31px);font-weight:800;letter-spacing:var(--tracking-tight);line-height:1.08;color:var(--emerald-700)}
+  .stat .d{font-size:14.5px;color:var(--gray-600);margin-top:12px}
+
+  /* ---------- bloque de código copiable ---------- */
+  .code{background:var(--green-950);border-radius:16px;padding:20px 22px 22px;max-width:1000px;color:var(--cream-50)}
+  .code .bar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid rgba(246,241,235,.14)}
+  .code .fn{font-family:var(--font-mono);font-size:11px;color:var(--sage-400);letter-spacing:.02em}
+  .code pre{font-family:var(--font-mono);font-size:12.5px;line-height:1.7;white-space:pre-wrap;word-break:break-word;color:var(--cream-100);max-height:460px;overflow:auto}
+  .btn-copy{background:var(--lime-500);color:var(--ink-900);border:none;border-radius:var(--radius-btn);font-family:var(--font-body);font-weight:700;font-size:13.5px;padding:10px 20px;cursor:pointer;transition:background .15s}
+  .btn-copy:hover{background:var(--lime-600)}
+  .btn-copy:focus-visible{outline:none;box-shadow:var(--shadow-focus)}
+  .btn-copy.done{background:var(--emerald-500)}
+  .steps30{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin-top:22px}
+  .steps30 div{border-top:3px solid var(--emerald-500);padding-top:12px;font-size:13.5px;color:var(--gray-600)}
+  .steps30 b{display:block;color:var(--ink-900);font-size:14.5px;margin-bottom:3px}
+
+  /* ---------- cards de herramienta ---------- */
+  .tool{background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:26px 24px;display:flex;flex-direction:column}
+  .tool .lbl{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald-700)}
+  .tool h4{font-size:1.15rem;font-weight:800;letter-spacing:-.015em;margin:8px 0 10px}
+  .tool .what{font-size:13px;color:var(--gray-600);border-top:1px solid var(--color-hairline);border-bottom:1px solid var(--color-hairline);padding:11px 0;margin-bottom:12px}
+  .tool .what b{color:var(--ink-900)}
+  ol.howto{list-style:none;counter-reset:h}
+  ol.howto li{counter-increment:h;position:relative;padding:9px 0 9px 32px;font-size:13.5px;line-height:1.5;border-bottom:1px solid var(--color-hairline)}
+  ol.howto li:last-child{border-bottom:none}
+  ol.howto li::before{content:counter(h);position:absolute;left:0;top:10px;width:21px;height:21px;border-radius:50%;background:var(--green-900);color:var(--cream-50);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  ol.howto li code,td code,p code,li code{font-family:var(--font-mono);font-size:.92em;font-weight:700;background:var(--sage-50);padding:1px 5px;border-radius:5px}
+  .dl{margin-top:auto;padding-top:16px;display:inline-flex;align-items:center;gap:7px;align-self:flex-start;font-size:12.5px;font-weight:700;color:var(--emerald-700);text-decoration:none}
+  .dl span{border:1.5px solid var(--emerald-700);border-radius:999px;padding:6px 13px;display:inline-flex;align-items:center;gap:6px}
+  .dl:hover span{background:var(--emerald-700);color:var(--white)}
+  .dl svg{width:13px;height:13px}
+
+  /* ---------- tabla de archivos ---------- */
+  .table-scroll{overflow-x:auto;max-width:1160px}
+  .table-scroll table{min-width:860px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;font-size:10.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-600);border-bottom:2px solid var(--ink-900);padding:0 16px 11px 0}
+  td{padding:15px 16px 15px 0;border-bottom:1px solid var(--color-hairline);vertical-align:top;color:var(--gray-600)}
+  td:first-child{color:var(--ink-900)}
+  td .u{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600);word-break:break-all;margin-top:6px}
+  td a.get{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--emerald-700);text-decoration:none;border:1.5px solid var(--emerald-700);padding:4px 11px;border-radius:999px;white-space:nowrap}
+  td a.get:hover{background:var(--emerald-700);color:var(--white)}
+
+  /* ---------- checklist de validación ---------- */
+  .check{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;max-width:1100px;counter-reset:c}
+  .check li{counter-increment:c;position:relative;padding:13px 0 13px 34px;border-bottom:1px solid var(--color-hairline);font-size:13.5px;line-height:1.5;color:var(--gray-600)}
+  .check li b{color:var(--ink-900)}
+  .check li::before{content:"";position:absolute;left:0;top:16px;width:16px;height:16px;border:2px solid var(--emerald-500);border-radius:5px}
+  .check li::after{content:counter(c);position:absolute;left:0;top:16px;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:var(--emerald-700)}
+
+  /* ---------- pares de pedidos ---------- */
+  .pair{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--color-hairline);border-radius:var(--radius-lg);overflow:hidden;max-width:1160px;margin-bottom:20px;background:var(--white)}
+  .pair > .col{padding:24px}
+  .pair .weak{background:var(--gray-100);border-right:1px solid var(--color-hairline)}
+  .pair .h{display:block;font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px;padding-top:10px;border-top:3px solid var(--ink-900)}
+  .pair .strong .h{border-top-color:var(--emerald-500);color:var(--emerald-700)}
+  .pair .q{font-family:var(--font-mono);font-size:12.5px;line-height:1.7;white-space:pre-wrap;color:var(--ink-900)}
+  .pair .weak .q{color:var(--gray-600)}
+  .pair .chg{grid-column:1/-1;border-top:1px solid var(--color-hairline);background:var(--sage-50);padding:15px 24px;font-size:13px;color:var(--gray-600)}
+  .pair .chg b{color:var(--ink-900)}
+
+  /* ---------- Hacer / Evitar (sin tildes ni cruces) ---------- */
+  .dodont{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:1000px;margin-top:6px}
+  .dd{border-top:3px solid var(--emerald-500);padding-top:14px}
+  .dd.avoid{border-top-color:var(--ink-900)}
+  .dd .h{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald-700);margin-bottom:12px;display:block}
+  .dd.avoid .h{color:var(--ink-900)}
+  .dd ul{list-style:none;display:flex;flex-direction:column}
+  .dd li{font-size:var(--text-sm);line-height:1.5;padding:10px 0;border-bottom:1px solid var(--color-hairline);color:var(--gray-600)}
+  .dd li:last-child{border-bottom:none}
+  .dd li b{color:var(--ink-900)}
+
+  .pill{display:inline-block;background:transparent;color:var(--green-900);border:1.5px solid var(--green-900);font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 15px;border-radius:var(--radius-full)}
+  .pill-green{color:var(--emerald-700);border-color:var(--emerald-700)}
+
+  footer{margin-left:230px;background:var(--green-950);color:var(--cream-300);padding:40px 0;font-size:13px}
+  footer > div{max-width:1284px;margin:0 auto 0 0;padding:0 64px}
+  footer a{color:var(--lime-500)}
+
+  /* links de prosa: visibles sin ser foco */
+  .lk{color:inherit;text-decoration:none;border-bottom:1.5px solid var(--emerald-500);padding-bottom:1px}
+  .lk:hover{background:var(--emerald-500);color:var(--ink-900);border-bottom-color:transparent}
+  a:focus-visible{outline:none;box-shadow:var(--shadow-focus)}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:880px){
+    .mg-topbar{position:static;padding:10px 14px}
+    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:2px 4px;padding:12px 14px}
+    .side a{font-size:11.5px;padding:4px 8px}
+    .side a.anx{margin-top:0;border-top:none;padding-top:4px}
+    .side .v{display:none}
+    main{padding-top:0}
+    main,.hero,footer{margin-left:0}
+    .hero{margin-top:0;padding:44px 0 40px}
+    .hero > .inner,section > .inner,footer > div{padding:0 22px}
+    section{padding:52px 0}
+    .g2,.g3,.steps30,.check,.dodont{grid-template-columns:1fr}
+    .code{padding:16px}
+    .code pre{font-size:12px}
+    .pair{grid-template-columns:1fr}
+    .pair .weak{border-right:none;border-bottom:1px solid var(--color-hairline)}
+    .pair .chg{padding:14px 20px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="mg-topbar">
+  <a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a>
+  <a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Comerciales</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html">Clientes</a><a href="ai.html" class="on">Integrar con AI</a>
+</nav>
+
+<nav class="side" id="dock">
+  <a href="#por-que">Por qué</a>
+  <a href="#empezar">Copiar y pegar</a>
+  <a href="#herramientas">Herramientas</a>
+  <a href="#archivos">Archivos</a>
+  <a href="#validar">Validar</a>
+  <a href="#ejemplos">Pedidos bien y mal</a>
+  <a href="#limites">Límites</a>
+  <a href="index.html" class="anx">Brand book ↗</a>
+  <span class="v">INTEGRAR CON AI · V1.1</span>
+</nav>
+
+<header class="hero">
+  <div class="inner">
+    <span class="k">Brand System · material para IA</span>
+    <h1>Que la IA trabaje <em>con la marca</em>,<br>no de memoria.</h1>
+    <p>Todo el manual de Magoya en formato que una IA puede leer entero: prompts listos, presets por herramienta y archivos machine-readable. Se copia, se pega y se valida.</p>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= 01 POR QUÉ ================= -->
+<section id="por-que">
+  <div class="inner">
+  <span class="kicker">01 · Por qué existe esta página</span>
+  <h2>El manual no sirve si cada uno<br>le explica la marca a la IA de memoria</h2>
+  <p class="lead">Hoy la mitad del trabajo de marca pasa por una IA: un copy, una variante de layout, un slide, un componente. Si cada persona improvisa el contexto, la marca se degrada pieza por pieza — lima de más, un verde que no existe, un chip sólido, una foto a color. Acá está el mismo manual, pero en el formato que la herramienta necesita: pegable, descargable y con URL pública.</p>
+  <div class="grid g3">
+    <div class="stat"><div class="n">Un solo contexto</div><div class="d">La misma base de marca para todos: no hay una versión buena en la cabeza de una persona y otra en la de la IA.</div></div>
+    <div class="stat"><div class="n">Listo para pegar</div><div class="d">Prompt corto para un chat suelto, prompt completo y presets por herramienta. Nada que redactar de nuevo.</div></div>
+    <div class="stat"><div class="n">Verificable</div><div class="d">Lo que la IA devuelve se chequea contra una lista concreta antes de usarlo. La IA propone, la marca aprueba.</div></div>
+  </div>
+  <p class="note" style="margin-top:26px">Regla de fondo: <b>la IA acelera decisiones ya tomadas</b> — no toma decisiones de marca. Todo lo que está en esta página deriva del <a class="lk" href="index.html">brand book</a> y de <a class="lk" href="BRAND.md">BRAND.md</a>; si hay diferencia, manda el manual.</p>
+  </div>
+</section>
+
+<!-- ================= 02 EMPEZAR ================= -->
+<section id="empezar" style="background:var(--sage-50)">
+  <div class="inner">
+  <span class="kicker">02 · Empezar</span>
+  <h2>Copiar y pegar en 30 segundos</h2>
+  <p class="lead">Si solo vas a hacer una cosa de esta página, hacé esta: copiá el bloque y pegalo como primer mensaje del chat, antes de pedir nada. Sirve en cualquier herramienta — Claude, ChatGPT, Gemini, el chat que tengas a mano.</p>
+
+  <div class="code">
+    <div class="bar">
+      <span class="fn">.ai/brand-prompt-short.md · prompt corto de marca</span>
+      <button class="btn-copy" id="copyBtn" type="button">Copiar</button>
+    </div>
+    <pre id="shortPrompt">Cargando el prompt corto…</pre>
+  </div>
+
+  <div class="steps30">
+    <div><b>1 · Pegar</b> El bloque va primero, solo. Esperá que la IA confirme que lo leyó.</div>
+    <div><b>2 · Pedir</b> Recién ahí el pedido, con formato, medida y destino. Mirá <a class="lk" href="#ejemplos">pedidos bien escritos</a>.</div>
+    <div><b>3 · Validar</b> Pasá la respuesta por el <a class="lk" href="#validar">checklist</a>. Si algo falla, se corrige señalando la regla.</div>
+  </div>
+
+  <p class="note" style="margin-top:26px">Para trabajo sostenido (un deck entero, un repo, una campaña) no alcanza el prompt corto: cargá el preset de tu herramienta en <a class="lk" href="#herramientas">herramientas</a> y adjuntá <code>BRAND.md</code> + <code>tokens.json</code>.</p>
+  </div>
+</section>
+
+<!-- ================= 03 HERRAMIENTAS ================= -->
+<section id="herramientas">
+  <div class="inner">
+  <span class="kicker">03 · Herramientas</span>
+  <h2>Configurar tu herramienta una vez</h2>
+  <p class="lead">Cinco escenarios, cinco recetas. La diferencia siempre es la misma: <b>qué archivo se adjunta</b> y <b>dónde se pegan las instrucciones permanentes</b>. Hecho una vez, no se repite nunca más.</p>
+
+  <div class="grid g2">
+
+    <div class="tool">
+      <span class="lbl">Trabajo sostenido de marca</span>
+      <h4>Claude Projects</h4>
+      <div class="what"><b>Adjuntás:</b> <code>BRAND.md</code>, <code>tokens.json</code> y <code>.ai/checklist.md</code> al knowledge del proyecto. <b>Pegás:</b> el preset en las instrucciones del proyecto.</div>
+      <ol class="howto">
+        <li>Creá un proyecto nuevo y llamalo <code>Magoya · Marca</code>.</li>
+        <li>En <b>Project knowledge</b>, subí <code>BRAND.md</code>, <code>tokens.json</code> y <code>.ai/checklist.md</code>.</li>
+        <li>Abrí <b>Set project instructions</b> y pegá el preset completo.</li>
+        <li>Sumá al knowledge lo que uses seguido: <code>tokens.css</code> para código, la sección de slides para decks.</li>
+        <li>Cuando salga una versión nueva del brand, reemplazá los archivos del knowledge — no acumules copias.</li>
+      </ol>
+      <a class="dl" href=".ai/presets/claude-project-instructions.md" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>claude-project-instructions.md</span></a>
+    </div>
+
+    <div class="tool">
+      <span class="lbl">Código con tokens reales</span>
+      <h4>Claude Code</h4>
+      <div class="what"><b>Adjuntás:</b> nada — vive en el repo. <b>Pegás:</b> el preset como <code>CLAUDE.md</code> en la raíz del proyecto.</div>
+      <ol class="howto">
+        <li>Bajá el preset y guardalo como <code>CLAUDE.md</code> en la raíz del repo.</li>
+        <li>Copiá <code>tokens.css</code> al proyecto e importalo antes de cualquier estilo propio.</li>
+        <li>Si el repo ya tiene <code>CLAUDE.md</code>, pegá el preset como sección <i>Marca Magoya</i> — no lo sobrescribas.</li>
+        <li>Dejá <code>BRAND.md</code> en el repo y referencialo desde <code>CLAUDE.md</code> para que lo lea cuando haga falta.</li>
+        <li>Regla de oro del preset: <b>ningún hex hardcodeado</b>, todo por <code>var(--token)</code>.</li>
+      </ol>
+      <a class="dl" href=".ai/presets/claude-code-CLAUDE.md" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>claude-code-CLAUDE.md</span></a>
+    </div>
+
+    <div class="tool">
+      <span class="lbl">Equipo no técnico</span>
+      <h4>ChatGPT / Custom GPT</h4>
+      <div class="what"><b>Adjuntás:</b> <code>BRAND.md</code> y <code>tokens.json</code> a <b>Knowledge</b>. <b>Pegás:</b> el preset en <b>Instructions</b>.</div>
+      <ol class="howto">
+        <li>Para uso suelto: pegá el <a class="lk" href="#empezar">prompt corto</a> al inicio del chat y listo.</li>
+        <li>Para uso de equipo: <b>Explore GPTs → Create</b>, nombre <code>Magoya Brand</code>.</li>
+        <li>Pegá el preset en <b>Instructions</b> y subí <code>BRAND.md</code> + <code>tokens.json</code> a <b>Knowledge</b>.</li>
+        <li>Desactivá generación de imágenes: la marca no usa imágenes generadas de personas ni de campo.</li>
+        <li>Compartilo solo dentro del workspace de Magoya, nunca público.</li>
+      </ol>
+      <a class="dl" href=".ai/presets/custom-gpt-instructions.md" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>custom-gpt-instructions.md</span></a>
+    </div>
+
+    <div class="tool">
+      <span class="lbl">Editor con autocompletado</span>
+      <h4>Cursor / GitHub Copilot</h4>
+      <div class="what"><b>Adjuntás:</b> los archivos de reglas al repo. <b>Pegás:</b> nada — el editor los lee solo en cada sugerencia.</div>
+      <ol class="howto">
+        <li><b>Cursor:</b> bajá <code>cursorrules.txt</code> y guardalo como <code>.cursorrules</code> en la raíz (o como <code>.cursor/rules/magoya.mdc</code>).</li>
+        <li><b>Copilot:</b> guardá el otro preset como <code>.github/copilot-instructions.md</code>.</li>
+        <li>Tené <code>tokens.css</code> en el proyecto: sin el archivo, los <code>var(--…)</code> quedan vacíos.</li>
+        <li>Commiteá las reglas al repo — así aplican para todo el equipo, no solo para tu máquina.</li>
+        <li>Revisá igual el diff: el autocompletado propone hex crudo cuando no encuentra el token.</li>
+      </ol>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:16px">
+        <a class="dl" style="padding-top:0" href=".ai/presets/cursorrules.txt" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>cursorrules.txt</span></a>
+        <a class="dl" style="padding-top:0" href=".ai/presets/copilot-instructions.md" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>copilot-instructions.md</span></a>
+      </div>
+    </div>
+
+    <div class="tool" style="grid-column:1/-1">
+      <span class="lbl">Sin configuración</span>
+      <h4>Cualquier chat (Gemini, Perplexity, un modelo del cliente)</h4>
+      <div class="what"><b>Pegás:</b> el prompt corto. <b>Si la herramienta pide URL en vez de archivo:</b> pasale <code>llms.txt</code>, que es el índice de todo lo demás.</div>
+      <ol class="howto" style="max-width:none">
+        <li>Pegá el <a class="lk" href="#empezar">prompt corto</a> como primer mensaje y esperá confirmación.</li>
+        <li>Si la herramienta puede leer web, agregá: <i>“Leé también https://facundo-web.github.io/magoya-brand-system/llms.txt y los archivos que indexa.”</i></li>
+        <li>Si el chat es largo, repetí el prompt corto cada tanto: los modelos pierden el contexto viejo.</li>
+        <li>Si la herramienta es de un cliente o un tercero, pegá solo el prompt corto — no subas archivos internos de Magoya.</li>
+      </ol>
+      <a class="dl" href="llms.txt" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>llms.txt</span></a>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- ================= 04 ARCHIVOS ================= -->
+<section id="archivos" style="background:var(--sage-50)">
+  <div class="inner">
+  <span class="kicker">04 · Archivos</span>
+  <h2>Los siete archivos machine-readable</h2>
+  <p class="lead">Todo lo que una IA necesita saber de Magoya está en estos siete archivos. Cada uno tiene su URL pública porque muchas herramientas piden un link, no un adjunto.</p>
+
+  <div class="table-scroll">
+  <table>
+    <thead><tr><th style="width:210px">Archivo</th><th style="width:250px">Qué es</th><th>Para qué sirve · URL pública</th><th style="width:96px">Bajar</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><code>llms.txt</code></td>
+        <td>Índice de la marca en texto plano, con links a todo lo demás.</td>
+        <td>El primer archivo que le das a una herramienta que lee web: desde ahí encuentra el resto.<span class="u">https://facundo-web.github.io/magoya-brand-system/llms.txt</span></td>
+        <td><a class="get" href="llms.txt" download>bajar</a></td>
+      </tr>
+      <tr>
+        <td><code>BRAND.md</code></td>
+        <td>El manual entero en Markdown: 12 secciones, de esencia a papelería.</td>
+        <td>La fuente de verdad. Se adjunta al knowledge de un proyecto o se deja en el repo.<span class="u">https://facundo-web.github.io/magoya-brand-system/BRAND.md</span></td>
+        <td><a class="get" href="BRAND.md" download>bajar</a></td>
+      </tr>
+      <tr>
+        <td><code>tokens.json</code></td>
+        <td>Tokens de diseño en JSON: color, tipografía, espaciado, radios.</td>
+        <td>Para que la IA use valores exactos y no aproxime colores de memoria.<span class="u">https://facundo-web.github.io/magoya-brand-system/tokens.json</span></td>
+        <td><a class="get" href="tokens.json" download>bajar</a></td>
+      </tr>
+      <tr>
+        <td><code>tokens.css</code></td>
+        <td>Los mismos tokens como variables CSS, con los cuatro temas.</td>
+        <td>Se importa en el proyecto: habilita el <code>var(--token)</code> en vez del hex hardcodeado.<span class="u">https://facundo-web.github.io/magoya-brand-system/tokens.css</span></td>
+        <td><a class="get" href="tokens.css" download>bajar</a></td>
+      </tr>
+      <tr>
+        <td><code>.ai/brand-prompt.md</code></td>
+        <td>Prompt completo de marca: reglas, prohibiciones y criterios de decisión.</td>
+        <td>Cuando el pedido es una pieza real y no una consulta suelta. Es el cuerpo de los presets.<span class="u">https://facundo-web.github.io/magoya-brand-system/.ai/brand-prompt.md</span></td>
+        <td><a class="get" href=".ai/brand-prompt.md" download>bajar</a></td>
+      </tr>
+      <tr>
+        <td><code>.ai/brand-prompt-short.md</code></td>
+        <td>La versión de un bloque, la de esta página.</td>
+        <td>Para pegar al inicio de cualquier chat sin configurar nada.<span class="u">https://facundo-web.github.io/magoya-brand-system/.ai/brand-prompt-short.md</span></td>
+        <td><a class="get" href=".ai/brand-prompt-short.md" download>bajar</a></td>
+      </tr>
+      <tr>
+        <td><code>.ai/checklist.md</code></td>
+        <td>La lista de validación de lo que devuelve la IA.</td>
+        <td>Se adjunta al proyecto para que la IA se auto-revise antes de entregar.<span class="u">https://facundo-web.github.io/magoya-brand-system/.ai/checklist.md</span></td>
+        <td><a class="get" href=".ai/checklist.md" download>bajar</a></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="note" style="margin-top:24px">Si una herramienta no logra leer una ruta que empieza con punto, usá el mirror crudo del repo: <code>https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/…</code> — el mismo archivo, sin pasar por GitHub Pages.</p>
+  <p class="note" style="margin-top:12px">Los presets por herramienta viven en <code>.ai/presets/</code> y se bajan desde <a class="lk" href="#herramientas">herramientas</a>. Assets binarios (logos, fotos, iconos) no van acá: están en la <a class="lk" href="library.html">librería de assets</a> — a una IA se le pasa la ruta del archivo, nunca se le pide que dibuje el logo.</p>
+  </div>
+</section>
+
+<!-- ================= 05 VALIDAR ================= -->
+<section id="validar">
+  <div class="inner">
+  <span class="kicker">05 · Validar</span>
+  <h2>Trece chequeos antes de usar<br>lo que devolvió la IA</h2>
+  <p class="lead">La IA propone; la marca aprueba. Pasá cada entrega por esta lista — cuando algo falla, se corrige nombrando la regla, no pidiendo “que quede más lindo”. Es la misma lista que <a class="lk" href=".ai/checklist.md">.ai/checklist.md</a>, que además trae cómo se verifica cada punto: adjuntala al proyecto y la IA se auto-revisa antes de contestar.</p>
+  <ol class="check" id="checklist">
+    <li><b>Solo hex de la paleta.</b> Cada color sale de <code>tokens.json</code>. Un verde “parecido” (<code>#4CAF50</code>, <code>#2ECC71</code>) es un verde que no es de Magoya.</li>
+    <li><b>Cero naranja y cero amarillo.</b> Ningún tono del brand viejo. Excepción única: <code>#FFC67B</code>, y solo como piel de personaje.</li>
+    <li><b>Lima nunca como texto sobre claro.</b> Sobre blanco, sage, crema o papel el verde-texto es <code>#009145</code> y solo ≥24px bold.</li>
+    <li><b>#00DE68 como texto solo sobre oscuro.</b> Sobre fondo claro no se usa: ahí va <code>#009145</code>.</li>
+    <li><b>Un solo golpe de lima.</b> Contá CTA, display, motivo, ícono destacado y marca a mano: si hay dos en lima, sobra uno.</li>
+    <li><b>Balance 75/25.</b> Neutros dominan, verdes ~25%. Nunca una pieza 100% negra ni 100% verde.</li>
+    <li><b>Manrope y tres niveles.</b> Ninguna otra tipografía (ni Inter, ni Poppins, ni <code>system-ui</code> suelto) y máximo tres niveles tipográficos.</li>
+    <li><b>Cero emojis.</b> Solo manitos que señalan un CTA y banderas de países. Ninguno en títulos.</li>
+    <li><b>Cero gradientes.</b> Ni glossy, ni 3D, ni glass, ni sombras de brillo. El único permitido es el scrim verde profundo 55–86% sobre foto aérea.</li>
+    <li><b>Máximo dos recursos gráficos</b> además de la tipografía, y sin pares prohibidos: foto + personaje, foto + motivo, personaje + ícono.</li>
+    <li><b>Motivo al corte.</b> Los semicírculos nacen de un borde o de detrás de un objeto — nunca cortados flotando en el aire.</li>
+    <li><b>Personajes sin rostro y al borde.</b> Planos, cinco colores de la paleta cerrada, recortados por un borde del lado opuesto al texto, nunca sobre foto ni centrados como clipart.</li>
+    <li><b>Botón vs chip, y assets reales.</b> Botón rect radio 10px, chip pill outline; logos de clientes reales; sin resaltador sólido detrás de texto.</li>
+  </ol>
+  <p class="note" style="margin-top:26px">El archivo agrega los extras por formato (slides, redes, logo, copy, merch, fotos de personas) y la aclaración de <a class="lk" href="ai-en-campo.html">AI en campo</a>, que tiene manual propio y rompe tres reglas del core a propósito. Y una regla de proceso: si una entrega falla tres o más puntos, no la corrijas de a parches — volvé a pegar el prompt y rehacé el pedido con más especificación.</p>
+  </div>
+</section>
+
+<!-- ================= 06 EJEMPLOS ================= -->
+<section id="ejemplos" style="background:var(--sage-50)">
+  <div class="inner">
+  <span class="kicker">06 · Pedidos</span>
+  <h2>El mismo pedido, flojo y bien escrito</h2>
+  <p class="lead">Un pedido flojo obliga a la IA a inventar: formato, tono, color, jerarquía. Un pedido bien escrito cierra esas decisiones de antemano — y lo que vuelve se puede usar. Tres casos reales.</p>
+
+  <div class="pair">
+    <div class="col weak">
+      <span class="h">Flojo</span>
+      <p class="q">Hacé un posteo para LinkedIn sobre un caso de éxito con un cliente. Que quede lindo y moderno.</p>
+    </div>
+    <div class="col strong">
+      <span class="h">Bien especificado</span>
+      <p class="q">Pieza de feed 1:1 (1080×1080) para LinkedIn de Magoya, receta dark: fondo negro #161616, dato en lima #A2FF00 al ~70% del ancho, personaje plano recortado por el borde derecho, wordmark crema abajo-izquierda.
+Dato: reducción de 6 semanas a 4 días en el ciclo de reporte de un cliente de agroinsumos.
+Copy en español, voz senior y directa, sin adjetivos de venta, sin emojis. Máximo tres niveles tipográficos. Devolveme HTML+CSS usando var() de tokens.css.</p>
+    </div>
+    <div class="chg"><b>Qué cambió:</b> formato y medida exactos, una de las tres recetas de feed en vez de “lindo”, el dato concreto que es el contenido real de la pieza, la dosis única de lima definida, y la salida pedida en código con tokens — no una descripción que después hay que interpretar.</div>
+  </div>
+
+  <div class="pair">
+    <div class="col weak">
+      <span class="h">Flojo</span>
+      <p class="q">Armame un slide con las métricas del proyecto. Poné los números destacados con colores.</p>
+    </div>
+    <div class="col strong">
+      <span class="h">Bien especificado</span>
+      <p class="q">Slide de métricas 1920×1080 para el deck comercial, lienzo sage #EEF2EC, margen interior 7%.
+Tres cifras: 34% menos tiempo de carga de datos · 12 semanas al primer release · 4 equipos embebidos.
+Cifras en Manrope 800, tracking −3%, negro #161616; un solo golpe de lima en la cifra principal (subrayado, no bloque de resaltado). Kicker en MAYÚSCULAS con tracking +12%. Sin iconos decorativos, sin sombras.
+Título en inglés, tono neutral, sin frases grandilocuentes.</p>
+    </div>
+    <div class="chg"><b>Qué cambió:</b> “colores” pasó a ser una regla — un golpe de lima, subrayado y no resaltador. Se fijaron lienzo, margen del sistema de slides, escala tipográfica y las cifras verdaderas. Y se cerró el idioma y el tono, que es donde la IA suele irse a vendedora.</div>
+  </div>
+
+  <div class="pair">
+    <div class="col weak">
+      <span class="h">Flojo</span>
+      <p class="q">Necesito un one-pager de Magoya para mandarle a un prospecto. Usá la info de la web.</p>
+    </div>
+    <div class="col strong">
+      <span class="h">Bien especificado</span>
+      <p class="q">One-pager A4 vertical para un prospecto de agroinsumos en Brasil 🇧🇷, derivado del one-pager madre de pieces.html — no inventes una plantilla nueva.
+Estructura: wordmark verde arriba-izquierda (20% del ancho), hero “AgTech challenges demand more than code.”, las 3C (Clarity / Confidence / Commitment) en una fila, dos casos con logos reales de clientes, pie con filete verde digital y avatar m.
+Copy en inglés, 90 palabras por bloque como techo. Sin fotos de personas si no te paso los archivos. Neutros ~75%, un solo acento lima en el CTA.</p>
+    </div>
+    <div class="chg"><b>Qué cambió:</b> se ancló a una plantilla que ya existe en vez de dejar que invente una, se listaron los bloques en orden, se puso techo de palabras y se bloqueó de antemano el error típico: fotos o logos que la IA no tiene y termina fabricando.</div>
+  </div>
+
+  <p class="note">Patrón de los tres: <b>formato y medida · receta o plantilla del sistema · el contenido real · la dosis de color · idioma y tono · el formato de salida</b>. Seis líneas y la primera entrega ya sirve.</p>
+  </div>
+</section>
+
+<!-- ================= 07 LÍMITES ================= -->
+<section id="limites">
+  <div class="inner">
+  <span class="kicker">07 · Límites</span>
+  <h2>Qué resuelve sola y qué no</h2>
+  <p class="lead">La IA es buenísima en lo que ya está decidido y peligrosa en lo que hay que decidir. La línea es simple: puede <b>ejecutar y variar</b> dentro del sistema; no puede <b>ampliar</b> el sistema.</p>
+  <div class="dodont">
+    <div class="dd">
+      <span class="h">Hacer — puede resolverlo sola</span>
+      <ul>
+        <li><b>Variaciones de layout</b> sobre una receta que ya existe: mover jerarquía, probar tres versiones del mismo slide, adaptar 1:1 a 9:16.</li>
+        <li><b>Copy en inglés y traducciones</b> con el tono de marca: neutral, senior, sin frases grandilocuentes.</li>
+        <li><b>Código con tokens</b>: HTML/CSS/React que consume <code>var(--token)</code> de <code>tokens.css</code>, sin un hex suelto.</li>
+        <li><b>Revisión contra el manual</b>: pasarle una pieza y pedirle los doce chequeos de <a class="lk" href="#validar">validar</a>.</li>
+        <li><b>Trabajo de volumen</b>: nombres de archivo, alts, metadata, tablas de assets, versiones cortas y largas de un mismo texto.</li>
+        <li><b>Estructura de contenido</b>: ordenar un deck, resumir un caso, proponer titulares alternativos.</li>
+      </ul>
+    </div>
+    <div class="dd avoid">
+      <span class="h">Evitar — no es trabajo de la IA</span>
+      <ul>
+        <li><b>Inventar colores.</b> La paleta está cerrada. Un verde “parecido” es un verde que no es de Magoya.</li>
+        <li><b>Dibujar o reconstruir el logo.</b> El wordmark y los avatares son archivos: se referencian desde la <a class="lk" href="library.html">librería</a>, no se generan.</li>
+        <li><b>Generar fotos de personas del equipo.</b> Van personas reales en B&amp;N. Una cara sintética no es del equipo.</li>
+        <li><b>Crear plantillas nuevas de cero</b> en vez de usar las de <a class="lk" href="slides.html">slides</a>, <a class="lk" href="pieces.html">comerciales</a> o Magoya Studio. Si falta una plantilla, se diseña — no se improvisa por prompt.</li>
+        <li><b>Decidir reglas de marca.</b> Si el manual no lo dice, la respuesta no es “que lo resuelva la IA”: se pregunta y se agrega al manual.</li>
+        <li><b>Poner logos de clientes que no existen</b> o placeholders. Los logos son siempre reales.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="note" style="margin-top:28px">Cuando el pedido cae del lado derecho, el camino es otro: <a class="lk" href="library.html">librería de assets</a> para archivos reales, <a class="lk" href="slides.html">slides</a> y <a class="lk" href="pieces.html">comerciales</a> para plantillas, y Magoya Studio para producir piezas de redes con receta guardada.</p>
+  <div style="margin-top:30px;display:flex;gap:10px;flex-wrap:wrap">
+    <span class="pill pill-green">La IA propone</span><span class="pill">La marca aprueba</span>
+  </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>Magoya Brand System v1.1 · material de integración con IA · <a href="BRAND.md">BRAND.md</a> · <a href="llms.txt">llms.txt</a> · <a href="index.html">brand book</a></div>
+</footer>
+
+<script>
+/* ---------- prompt corto: se lee del archivo, con fallback propio ---------- */
+(function(){
+  var FALLBACK = [
+    'Diseñás y escribís para Magoya: estudio de estrategia y desarrollo de producto digital para agribusiness (desde 2017). Equipos senior embebidos en el equipo del cliente. Pilares: Clarity, Confidence, Commitment.',
+    '',
+    'VOZ — profesional y cercana, experta y senior, nunca vendedora; transparente y estructurada. Madura y confiable, nada whimsical. Vocabulario propio: embedded, deep AgTech fluency, long-term value.',
+    '',
+    'COLOR — Verde Magoya #133825 · Verde digital #00DE68 (identidad: logo y avatares) · Lima #A2FF00 (energía: UNA dosis por pieza) · Verde ilustración #33DB4E · Crema #ECE3DB · Sage #EEF2EC · Negro #161616.',
+    'Regla central: el negro construye, el verde hace crecer. Neutros ~75%, verde ~25%, un solo movimiento verde dominante. Nunca una pieza 100% negra ni 100% verde.',
+    'Accesibilidad no negociable: lima nunca como texto sobre claro; verde sobre blanco como texto es #009145 y solo >=24px bold; #00DE68 como texto solo sobre oscuro.',
+    '',
+    'TIPOGRAFÍA — Manrope (fallback Arial). Display ExtraBold 800 con tracking -3%; cuerpo Regular 400; kickers MAYÚSCULAS con tracking +12%. Máximo 3 niveles tipográficos por pieza; el peso hace la jerarquía. Énfasis por color o subrayado lima — prohibido el bloque resaltador sólido detrás del texto.',
+    '',
+    'COMPONENTES — Botón: rectángulo radio 10px, fondo sólido (lima = CTA primario). Chip: pill outline, borde y texto del mismo color, fondo transparente. Nunca chip sólido ni botón pill. Todo redondeado, como el wordmark.',
+    '',
+    'IMAGEN — Personas: gente real del equipo, siempre B&N con un acento verde o lima. Aérea de campo: scrim verde profundo 55-86% cuando lleva texto (es el único gradiente permitido). Ilustración: personajes planos sin rostro, paleta cerrada de 5 colores (#33DB4E #A2FF00 #DFDFDF #FFC67B #161616), siempre recortados por un borde de la pieza. Motivo de marca: semicírculos al corte, nacen de un borde o de detrás de un objeto — nunca cortados flotando en el aire.',
+    '',
+    'NUNCA — emojis (solo manitos que señalan un CTA y banderas de países; ninguno en títulos) · gradientes glossy, 3D o estética IA · resaltador sólido tras texto · la metáfora del puzzle · naranja y amarillo del brand viejo · reconstruir o alterar el wordmark · logos de clientes inventados o placeholders.',
+    '',
+    'CÓDIGO — usá los tokens de tokens.css por var(--token). Cero hex hardcodeado, salvo los 5 colores cerrados de ilustración.',
+    '',
+    'Si te falta un dato de marca, preguntá antes de producir. No lo inventes.'
+  ].join('\n');
+
+  var pre = document.getElementById('shortPrompt');
+  var btn = document.getElementById('copyBtn');
+
+  function setText(t){ pre.textContent = t.trim(); }
+
+  fetch('.ai/brand-prompt-short.md',{cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('no file'); return r.text(); })
+    .then(function(t){ if(!t || t.trim().length < 40) throw new Error('empty'); setText(t); })
+    .catch(function(){ setText(FALLBACK); });
+
+  btn.addEventListener('click', function(){
+    var txt = pre.textContent;
+    function done(){
+      btn.textContent = 'Copiado';
+      btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='Copiar'; btn.classList.remove('done'); }, 1800);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done, legacy);
+    } else { legacy(); }
+    function legacy(){
+      var ta = document.createElement('textarea');
+      ta.value = txt; ta.setAttribute('readonly','');
+      ta.style.cssText = 'position:fixed;top:-1000px;left:0;opacity:0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); }
+      catch(e){ btn.textContent = 'Copiá a mano'; setTimeout(function(){ btn.textContent='Copiar'; },2200); }
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+
+<script>
+/* ---------- scroll-spy del dock (mismo mecanismo que el brand book) ---------- */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.side a[href^="#"]'));
+  var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
+  function mark(idx){ links.forEach(function(a,i){ a.classList.remove('act','near');
+    if(i===idx)a.classList.add('act'); else if(Math.abs(i-idx)===1)a.classList.add('near'); }); }
+  function update(){
+    var y=window.scrollY+window.innerHeight*0.3, best=0;
+    targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top+window.scrollY<=y) best=i; });
+    mark(best);
+  }
+  window.addEventListener('scroll',update,{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
+</body>
+</html>

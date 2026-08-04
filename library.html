@@ -9,14 +9,14 @@
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--color-canvas-meta);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased;padding:88px 28px 90px}
   .wrap{max-width:1160px;margin:0 auto}
-  .eyebrow{display:inline-block;background:var(--ink-900);color:#fff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+  .eyebrow{display:inline-block;background:var(--ink-900);color:var(--white);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
   h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-0.03em;margin:14px 0 10px}
   .lead{color:var(--gray-600);max-width:70ch;font-size:1.1rem;margin-bottom:34px}
   .lead a{color:var(--emerald-700);font-weight:600}
   h2{margin:44px 0 4px;font-size:1.25rem;font-weight:800}
   .sub{font-size:13px;color:var(--gray-600);margin-bottom:14px}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
-  .cell{background:#fff;border:1px solid var(--color-hairline);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .cell{background:var(--white);border:1px solid var(--color-hairline);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
   .cell .prev{height:110px;display:flex;align-items:center;justify-content:center;padding:16px}
   .cell .prev img{max-height:100%;max-width:100%}
   .cell .prev.dark{background:var(--green-950)}
@@ -25,7 +25,7 @@
   .cell .meta{border-top:1px solid var(--color-hairline);padding:9px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
   .cell .meta span{font-size:11px;font-family:var(--font-mono);color:var(--gray-600);word-break:break-all}
   .cell .meta a{flex:0 0 auto;font-size:11.5px;font-weight:700;color:var(--emerald-700);text-decoration:none;border:1.5px solid var(--emerald-700);padding:4px 10px;border-radius:999px}
-  .cell .meta a:hover{background:var(--emerald-700);color:#fff}
+  .cell .meta a:hover{background:var(--emerald-700);color:var(--white)}
   .pages{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:10px}
   .pagecard{background:var(--green-950);color:var(--cream-50);border-radius:14px;padding:22px;text-decoration:none;display:block}
   .pagecard b{font-size:16px;display:block}
@@ -35,17 +35,17 @@
   @media (max-width:700px){body{padding:28px 16px 60px}h1{font-size:2rem}}
 
   .mg-topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 24px;box-shadow:0 4px 18px rgba(0,0,0,.16)}
-  .mg-topbar img{height:20px;margin-right:14px}
+  .mg-topbar img{height:28px;margin-right:18px}
   
   .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
   .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
 
   /* ---------- menú lateral (igual al brand book) ---------- */
   .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50}
-  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8FA396;margin:0 0 8px 10px}
-  .side a{color:#8FA396;text-decoration:none;font-size:13.5px;line-height:1.25;padding:5px 10px;border-radius:8px;font-weight:600;transition:font-size .2s cubic-bezier(.2,.9,.25,1),color .2s,letter-spacing .2s}
-  .side a:hover{background:var(--green-800);color:var(--cream-50)}
-  .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
+  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-400);margin:0 0 8px 10px}
+  .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
+  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
+  .side .v{margin-top:auto;font-size:11px;color:var(--sage-400);letter-spacing:.08em}
   .crumb{font-size:12.5px;color:var(--gray-600);margin-bottom:12px}
   .crumb a{color:var(--emerald-700);text-decoration:none;font-weight:600}
   .crumb a:hover{text-decoration:underline}
@@ -61,33 +61,37 @@
   .fmt.vector{background:var(--emerald-500);color:var(--ink-900)}
   .fmt.raster{background:var(--gray-300);color:var(--ink-900)}
   .fmt.font{background:var(--ink-900);color:var(--cream-50)}
+  .fmt.zip{background:var(--green-900);color:var(--cream-50)}
   .nm{font-size:12.5px;font-weight:600;word-break:break-word;line-height:1.25}
   .mb{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .spec{font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600)}
   .cell .meta a{display:inline-flex;align-items:center;gap:5px;flex:0 0 auto;font-size:11.5px;font-weight:700;color:var(--emerald-700);text-decoration:none;border:1.5px solid var(--emerald-700);padding:4px 10px;border-radius:999px}
   .cell .meta a svg{width:13px;height:13px}
-  .cell .meta a:hover{background:var(--emerald-700);color:#fff}
+  .cell .meta a:hover{background:var(--emerald-700);color:var(--white)}
 
-  .side a.near{font-size:15.5px;color:var(--cream-200)}
-  .side a.act{font-size:21px;color:var(--cream-50);font-weight:800;letter-spacing:-0.02em}
-  .side:hover a.act:not(:hover){font-size:15.5px;color:var(--cream-200)}
-  .side a:hover{font-size:21px;color:var(--cream-50);letter-spacing:-0.02em}
-  .side a:hover + a{font-size:15.5px;color:var(--cream-200)}
+  .side a.near{transform:scale(1.14);color:var(--cream-200)}
+  .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
+  .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
+  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
+  .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
 </style>
 </head>
 <body>
 <div class="wrap">
-<nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Piezas</a><a href="icons.html">Iconos</a><a href="library.html" class="on">Assets</a><a href="logos.html">Logos</a></nav>
+<nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Comerciales</a><a href="icons.html">Iconos</a><a href="library.html" class="on">Assets</a><a href="logos.html">Clientes</a><a href="ai.html">Integrar con AI</a></nav>
 
 <nav class="side">
   <a href="#wordmark">Wordmark</a>
+  <a href="#animado">Animado &amp; producción</a>
   <a href="#avatares">Avatares</a>
   <a href="#motivo">Motivo</a>
   <a href="#marcas">Marcas a mano</a>
   <a href="#personajes">Personajes</a>
   <a href="#fotografia">Fotografía</a>
   <a href="#tipografia">Tipografía</a>
+  <a href="#papeleria">Papelería &amp; firma</a>
   <a href="#colecciones">Colecciones</a>
+  <a href="#paginas">Otras páginas</a>
   <span class="v">BRAND SYSTEM · V1.1</span>
 </nav>
 
@@ -95,7 +99,8 @@
 
   <span class="eyebrow">Magoya · Assets v1.1</span>
   <h1>Librería de assets</h1>
-  <p class="lead">Todos los recursos aprobados del sistema, con descarga directa (el botón baja el archivo — no te saca de la página). Doctrina vigente: motivo <b>semicírculos</b>, personajes planos sin rostro, foto aérea + B&amp;N, logos siempre reales.</p>
+  <p class="lead">Todos los recursos aprobados del sistema, con descarga directa (el botón baja el archivo — no te saca de la página). Doctrina vigente: motivo <b>paño de semicírculos</b>, personajes planos sin rostro, foto aérea + B&amp;N, logos siempre reales.</p>
+  <p class="sub" style="max-width:760px">Si un asset no está en esta página, no está aprobado. Lo que <b>no</b> vive acá: <code>assets/refs/</code> (material fuente del diseñador, no publicable) y los motivos retirados (<code>motif-estratos</code>, <code>camino-*</code>) que quedan en disco solo como historial.</p>
 
   <h2 id="wordmark">Wordmark</h2>
   <p class="sub">4 versiones oficiales — usar tal cual, nunca reconstruir.</p>
@@ -104,6 +109,13 @@
     <div class="cell"><div class="prev dark"><img src="assets/magoya-wordmark-cream.svg" alt="Wordmark crema"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-cream</span></div><div class="mb"><span class="spec">SVG · 4 KB · 139×38</span><a href="assets/magoya-wordmark-cream.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
     <div class="cell"><div class="prev"><img src="assets/magoya-wordmark-black.svg" alt="Wordmark negro"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-black</span></div><div class="mb"><span class="spec">SVG · 4 KB · 139×38</span><a href="assets/magoya-wordmark-black.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
     <div class="cell"><div class="prev cream"><img src="assets/magoya-wordmark-deep.svg" alt="Wordmark verde profundo"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-deep</span></div><div class="mb"><span class="spec">SVG · 4 KB · 139×38</span><a href="assets/magoya-wordmark-deep.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div></div>
+
+  <h2 id="animado">Wordmark animado &amp; producción</h2>
+  <p class="sub">Dos derivados del wordmark con un uso muy puntual — no reemplazan a las 4 versiones oficiales.</p>
+  <div class="grid">
+    <div class="cell"><div class="prev"><img src="assets/magoya-wordmark-animado.svg" alt="Wordmark animado"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-animado</span></div><div class="mb"><span class="spec">SVG · 5 KB · 139×38 · las letras entran una por una y quedan</span><a href="assets/magoya-wordmark-animado.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev dark"><img src="assets/magoya-wordmark-cream-prod.svg" alt="Wordmark crema para producción textil"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">wordmark-cream-prod</span></div><div class="mb"><span class="spec">SVG · 4 KB · 60×15.9 mm · vector de bordado, pecho izquierdo</span><a href="assets/magoya-wordmark-cream-prod.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div></div>
+  <p class="sub"><b>Cuándo sí:</b> el animado en el sitio y en la firma de email; el <code>-prod</code> únicamente como archivo para el proveedor textil (está en milímetros, escala 1:1 de bordado). <b>Cuándo no:</b> el animado en piezas estáticas, presentaciones o impresos — ahí va el wordmark normal; el <code>-prod</code> en pantalla, nunca.</p>
 
   <h2 id="avatares">Avatares</h2>
   <p class="sub">Vectoriales, reconstruidos desde los glifos del wordmark. Verde digital #00DE68 + blanco.</p>
@@ -142,16 +154,37 @@
     <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-bali.jpg" alt="Mosaico Bali" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-bali</span></div><div class="mb"><span class="spec">JPG · 845 KB · 2400×1352</span><a href="assets/photos/field-bali.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
     <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-corn.jpg" alt="Maizal" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-corn</span></div><div class="mb"><span class="spec">JPG · 694 KB · 2400×1228</span><a href="assets/photos/field-corn.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
     <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/founder-bw.png" alt="Retrato B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><div class="mi"><span class="fmt raster">PNG</span><span class="nm">founder-bw</span></div><div class="mb"><span class="spec">PNG · 55 KB · 290×290</span><a href="assets/photos/founder-bw.png" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
-    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/team-couple-bw.jpg" alt="Equipo B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">team-couple-bw</span></div><div class="mb"><span class="spec">JPG · 841 KB · 1600×900</span><a href="assets/photos/team-couple-bw.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div></div>
+    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-mosaic-16x9.jpg" alt="Equipo B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-mosaic-16x9</span></div><div class="mb"><span class="spec">JPG · 841 KB · 1600×900</span><a href="assets/photos/field-mosaic-16x9.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div></div>
 
   <h2 id="tipografia">Tipografía</h2>
   <div class="grid">
     <div class="cell"><div class="prev"><span style="font-size:42px;font-weight:800;letter-spacing:-0.03em">Aa</span></div><div class="meta"><div class="mi"><span class="fmt font">TTF</span><span class="nm">Manrope variable (200–800)</span></div><div class="mb"><span class="spec">TTF · 163 KB</span><a href="assets/font/manrope/Manrope-VariableFont_wght.ttf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div></div>
 
+  <h2 id="papeleria">Papelería &amp; firma</h2>
+  <p class="sub">Los assets del día a día. En la firma de email va <b>siempre el wordmark</b> — nunca los avatares ni la cara. Instructivo de Gmail en el <a href="index.html#papeleria" style="color:var(--emerald-700);font-weight:600">brand book</a>.</p>
+  <div class="grid">
+    <div class="cell"><div class="prev" style="padding:14px"><img src="assets/downloads/magoya-firma-animada.gif" alt="Firma de email animada"></div><div class="meta"><div class="mi"><span class="fmt raster">GIF</span><span class="nm">firma-animada</span></div><div class="mb"><span class="spec">GIF · 36 KB · 200×70 · loop · para Gmail</span><a href="assets/downloads/magoya-firma-animada.gif" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:14px"><img src="assets/downloads/magoya-firma-estatica.png" alt="Firma de email estática"></div><div class="meta"><div class="mi"><span class="fmt raster">PNG</span><span class="nm">firma-estatica</span></div><div class="mb"><span class="spec">PNG · 15 KB · 400×140 · si el correo no anima</span><a href="assets/downloads/magoya-firma-estatica.png" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:14px"><img src="assets/downloads/doc-header.svg" alt="Header de documento"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">doc-header</span></div><div class="mb"><span class="spec">SVG · 4 KB · 2480×300 · membrete A4, wordmark arriba-izq</span><a href="assets/downloads/doc-header.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:14px"><img src="assets/downloads/doc-footer.svg" alt="Footer de documento"></div><div class="meta"><div class="mi"><span class="fmt vector">SVG</span><span class="nm">doc-footer</span></div><div class="mb"><span class="spec">SVG · 2 KB · 2480×200 · pie con filete verde digital</span><a href="assets/downloads/doc-footer.svg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div></div>
+
   <h2 id="colecciones">Colecciones completas</h2>
+  <p class="sub">Los 8 ZIPs por sección — los mismos que baja el panel contextual del brand book.</p>
+  <div class="grid">
+    <div class="cell"><div class="meta"><div class="mi"><span class="fmt zip">ZIP</span><span class="nm">magoya-logo-kit</span></div><div class="mb"><span class="spec">ZIP · 12 KB · 4 wordmarks + 4 avatares</span><a href="assets/downloads/magoya-logo-kit.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="meta"><div class="mi"><span class="fmt zip">ZIP</span><span class="nm">magoya-tokens</span></div><div class="mb"><span class="spec">ZIP · 11 KB · tokens.css + tokens.json + BRAND.md</span><a href="assets/downloads/magoya-tokens.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="meta"><div class="mi"><span class="fmt zip">ZIP</span><span class="nm">magoya-manrope</span></div><div class="mb"><span class="spec">ZIP · 70 KB · TTF variable 200–800 + licencia OFL</span><a href="assets/downloads/magoya-manrope.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="meta"><div class="mi"><span class="fmt zip">ZIP</span><span class="nm">magoya-fotos</span></div><div class="mb"><span class="spec">ZIP · 6.8 MB · 4 aéreas + retratos B&amp;N</span><a href="assets/downloads/magoya-fotos.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="meta"><div class="mi"><span class="fmt zip">ZIP</span><span class="nm">magoya-ilustracion</span></div><div class="mb"><span class="spec">ZIP · 30 KB · 4 personajes + paño + marcas a mano</span><a href="assets/downloads/magoya-ilustracion.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="meta"><div class="mi"><span class="fmt zip">ZIP</span><span class="nm">magoya-iconos</span></div><div class="mb"><span class="spec">ZIP · 20 KB · 16 agro + 10 IA + 13 redes</span><a href="assets/downloads/magoya-iconos.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="meta"><div class="mi"><span class="fmt zip">ZIP</span><span class="nm">magoya-logos-clientes</span></div><div class="mb"><span class="spec">ZIP · 306 KB · 31 logos reales de clientes y partners</span><a href="assets/downloads/magoya-logos-clientes.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="meta"><div class="mi"><span class="fmt zip">ZIP</span><span class="nm">magoya-ai-en-campo</span></div><div class="mb"><span class="spec">ZIP · 19 KB · doodles + badge + logos IA/redes</span><a href="assets/downloads/magoya-ai-en-campo.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div></div>
+
+  <h2 id="paginas">Otras páginas del sistema</h2>
   <div class="pages">
     <a class="pagecard" href="icons.html"><b>Librería de iconos →</b><span>58 iconos línea 2px en 7 categorías, copiables con un click</span></a>
-    <a class="pagecard" href="logos.html"><b>Logos clientes &amp; stack →</b><span>17 clientes + 14 partners tecnológicos con nombres reales</span></a></div></div>
+    <a class="pagecard" href="logos.html"><b>Logos clientes &amp; stack →</b><span>17 clientes + 14 partners tecnológicos con nombres reales</span></a>
+    <a class="pagecard" href="ai-en-campo.html"><b>Assets del Studio →</b><span>Doodles, flourishes, badge EN VIVO y logos de IA/redes de <code>assets/studio/</code>, con su ficha de uso</span></a></div></div>
 
 
 <script>

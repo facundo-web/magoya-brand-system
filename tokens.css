@@ -1,5 +1,5 @@
 /* ============================================================
-   MAGOYA · DESIGN SYSTEM — TOKENS  v1.0  (BRAND FINAL)
+   MAGOYA · DESIGN SYSTEM — TOKENS  v1.1  (BRAND FINAL)
    Capa 1: Primitivos (valor crudo, no usar directo en UI)
    Capa 2: Semánticos (var --color-*  →  esto es lo que se usa)
    ------------------------------------------------------------
@@ -35,10 +35,10 @@
   --emerald-600: #00B856; /* + hover */
   --emerald-700: #009145; /* + pressed / sobre blanco SOLO texto grande (≥24px bold, 4.1:1) */
 
-  /* Lima energía — moodboard + piezas del diseñador (CTA, display, motivo camino) */
+  /* Lima energía — moodboard + piezas del diseñador (CTA, display, motivo de semicírculos) */
   --lime-300: #CBF06E;    /* + marcador suave / highlight editorial */
   --lime-400: #B6E84F;    /* + intermedio */
-  --lime-500: #A2FF00;    /* ✔ lima energía (caminos, display, botones) */
+  --lime-500: #A2FF00;    /* ✔ lima energía (CTA, display, paño de semicírculos sobre oscuro) */
   --lime-600: #8BDB00;    /* + hover */
 
   /* Verde ilustración — ropa de personajes, soporte y data-viz */
@@ -49,6 +49,9 @@
   /* Colores SOLO-ilustración (personajes planos; no usar en UI/texto) */
   --peach-300: #FFC67B;   /* ✔ piel de personajes */
   --gray-200:  #DFDFDF;   /* ✔ gris ropa de personajes (unificado) */
+
+  /* Terracota — SOLO marca anexa "AI en campo", para teñir doodles. Nunca texto ni UI */
+  --terracotta-400: #C97B5A; /* ✔ terracota sticker (ai-en-campo.html) */
 
   /* Crema Magoya — neutro cálido firma (core institucional) */
   --cream-50:  #F6F1EB;   /* + casi blanco cálido */
@@ -62,6 +65,7 @@
   --paper-200: #E6E1D8;   /* + bordes suaves sobre papel */
   --sage-50:   #EEF2EC;   /* ✔ superficie sage clara (módulos de slides) */
   --sage-100:  #E3EAE0;   /* + sage medio */
+  --sage-400:  #8FA396;   /* + verde grisáceo: texto terciario SOBRE verde profundo (dock, captions dark) */
 
   /* Neutros */
   --ink-950: #0D0C0C;     /* ✔ negro logo */
@@ -91,17 +95,17 @@
   /* Texto */
   --color-text:         var(--cream-50);    /* principal (logo crema sobre verde) */
   --color-text-muted:   var(--cream-300);   /* secundario */
-  --color-text-subtle:  #8FA396;            /* terciario / captions */
+  --color-text-subtle:  var(--sage-400);    /* terciario / captions */
   --color-text-inverse: var(--green-900);   /* sobre fondos claros/acento */
 
   /* Acento / marca */
   --color-accent:       var(--emerald-500); /* identidad: logo, links, micro-acentos */
   --color-accent-hover: var(--emerald-600);
   --color-accent-text:  var(--green-950);   /* texto SOBRE el verde digital */
-  --color-energy:       var(--lime-500);    /* lima: CTA, display, motivo camino */
+  --color-energy:       var(--lime-500);    /* lima: CTA, display, un golpe por pieza */
   --color-energy-text:  var(--ink-900);     /* texto SOBRE lima */
   --color-mark:         var(--lime-300);    /* marcas a mano (subrayado/círculo/flecha) */
-  --color-motif:        var(--lime-500);    /* motivo camino / estratos */
+  --color-motif:        var(--lime-500);    /* motivo = paño de semicírculos, siempre al corte */
 
   /* Bordes y líneas */
   --color-border:        rgba(236,227,219,.16);

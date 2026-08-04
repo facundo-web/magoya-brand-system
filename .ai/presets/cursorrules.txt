@@ -1,0 +1,85 @@
+=====================================================================
+CÓMO USAR ESTE ARCHIVO — CURSOR
+---------------------------------------------------------------------
+RECOMENDADO (2026): guardá el contenido de abajo, con el bloque ---
+de frontmatter incluido, en:
+
+    .cursor/rules/magoya-brand.mdc
+
+MODO LEGACY: si tu proyecto todavía usa el archivo único, guardá el
+mismo contenido SIN el bloque de frontmatter en:
+
+    .cursorrules
+
+Ojo: `.cursorrules` está deprecado y Cursor lo ignora en modo Agent.
+Si tus reglas "dejaron de funcionar", migrá a .cursor/rules/*.mdc.
+
+`alwaysApply: true` hace que la regla entre en todos los requests.
+Si el repo tiene backend que no toca la marca, cambiá a
+`alwaysApply: false` y dejá el globs que ya viene abajo.
+
+Copiá desde la línea siguiente al separador.
+=====================================================================
+
+---
+description: Sistema de diseño de Magoya — paleta con roles, tipografía Manrope, componentes y prohibiciones absolutas
+globs:
+  - "**/*.{css,scss,html,jsx,tsx,vue,svelte,svg,md}"
+alwaysApply: true
+---
+
+# Magoya — Design System
+
+Magoya es un estudio de estrategia y desarrollo de producto digital para agribusiness (AgTech). Toda UI, pieza o copy que generes en este repo sigue estas reglas. Fuente de verdad: `tokens.css`, `tokens.json` y `BRAND.md` en la raíz del brand system (https://facundo-web.github.io/magoya-brand-system/).
+
+## Color — usá tokens, no hex sueltos
+
+Si el proyecto importa `tokens.css`, usá siempre las custom properties (`var(--color-text)`, `var(--color-energy)`, `var(--radius-btn)`). Solo escribí hex literal si no hay token para ese valor.
+
+| Token | Hex | Rol |
+|---|---|---|
+| `--ink-900` | `#161616` | Texto, titulares, cards dark |
+| `--green-900` | `#133825` | Fondos oscuros, overlays, texto sobre claro |
+| `--emerald-500` | `#00DE68` | Identidad: wordmark, avatares, micro-acentos. Como texto SOLO sobre oscuro |
+| `--emerald-700` | `#009145` | Verde texto sobre blanco — solo ≥24px bold |
+| `--lime-500` | `#A2FF00` | CTA, display, motivo. Dosis única. NUNCA texto sobre claro |
+| `--lime-600` | `#8BDB00` | Hover de lima |
+| `--leaf-500` | `#33DB4E` | Ilustración y data-viz |
+| `--cream-100` | `#ECE3DB` | Texto sobre verde profundo |
+| `--sage-50` | `#EEF2EC` | Superficie clara de slides |
+| — | `#6E756D` | Captions sobre claro (mínimo accesible) |
+
+Temas disponibles vía `data-theme`: `default` (verde profundo), `light` (crema), `paper` (editorial), `studio` (blanco + negro + lima, el de slides y marketing).
+
+Balance por pantalla o pieza: neutros ≈75%, verdes ≈25%, un solo movimiento verde dominante. Nunca 100% negra ni 100% verde.
+
+## Tipografía
+
+`font-family: "Manrope", Arial, sans-serif` — variable 200–800, self-hosted en `assets/font/manrope/`.
+Display: `font-weight:800; letter-spacing:-0.03em; line-height:1.05`.
+Cuerpo: `400; line-height:1.55`. Kicker: `800; text-transform:uppercase; letter-spacing:0.12em`.
+Máximo 3 niveles tipográficos por vista. Labels de botón en sentence case, nunca MAYÚSCULAS.
+
+## Componentes
+
+- **Botón**: `border-radius:10px` (`--radius-btn`), fondo sólido. Tres niveles: primario lima con texto `#161616`, secundario verde profundo con texto crema, terciario outline. **Un solo primario por pantalla.**
+- **Chip**: pill (`border-radius:999px`) con `background:transparent` y borde + texto del mismo color. Nunca chip con fondo sólido, nunca botón pill.
+- **Focus**: `box-shadow: 0 0 0 3px rgba(0,222,104,.45)` — sin blur. Nunca `outline:none` sin reemplazo.
+- Radios generales: 6 / 12 / 20 / 28 / 999px. Espaciado base 4px, escala 4-8-12-16-24-32-48-64-96.
+- Iconos: SVG inline, `stroke-width:2`, `stroke-linecap:round`, `stroke-linejoin:round`, `viewBox="0 0 24 24"`, `stroke="currentColor"`, `fill="none"`. Nunca rellenos sólidos ni 3D.
+
+## Prohibiciones absolutas
+
+- **Sin emojis** en UI, copy, títulos, labels ni comentarios de cara al usuario. Únicas excepciones: manitos que señalan (👈 👉 👇) apuntando a un CTA, y banderas de países para geografía.
+- **Sin `linear-gradient` / `radial-gradient`**, sin glassmorphism, sin `backdrop-filter` decorativo, sin sombras de brillo, sin 3D. Único gradiente permitido: el scrim verde profundo sobre foto aérea, `linear-gradient(180deg, rgba(12,33,23,.55), rgba(12,33,23,.86))`.
+- Sin bloque resaltador sólido detrás de texto: resaltá con color o con subrayado lima.
+- Sin colores fuera de `tokens.json`. Cero naranja, cero amarillo (excepción única: `#FFC67B` como piel de personaje ilustrado).
+- Sin la metáfora del puzzle, sin motivos de líneas (caminos concéntricos, estratos), sin personajes con rostro, monoline o stock.
+- Logos de clientes siempre reales desde `assets/logos/clients/`, en gris y grilla pareja — jamás placeholders ni SVG inventados.
+- El motivo de semicírculos va siempre al corte: nace de un borde del contenedor o de detrás de un objeto, nunca cortado flotando (usá `overflow:hidden` y posicionalo pegado a un borde).
+- Máximo 2 recursos gráficos por pieza además de la tipografía. No conviven foto + foto, foto + personaje, foto + motivo, personaje + ícono.
+- El monograma "m" circular es funcional (favicon, app icon): no lo metas como sello decorativo dentro de cards.
+
+## Copy en UI
+
+Profesional y senior, nunca vendedor. Frases cortas, números concretos, sin superlativos ni grandilocuencia. Vocabulario propio: embedded, deep AgTech fluency, clarity / confidence / commitment, long-term value.

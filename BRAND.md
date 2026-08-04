@@ -2,6 +2,9 @@
 
 > Manual de marca en Markdown, pensado para ser consumido por personas y por AIs.
 > Tokens exactos en [`tokens.json`](tokens.json) y [`tokens.css`](tokens.css). Manual visual navegable en [`index.html`](index.html).
+> **Las secciones 1–13 + §14 espejan una a una las del brand book visual.** Si una regla cambia acá, cambia allá — y al revés.
+
+**Regla madre del sistema:** si se crea algo nuevo que puede ir en una pieza, tiene que estar en el brand. Ningún asset ni componente existe sin su ficha: qué es, cuándo se usa, cuándo no, y de dónde se baja ([`library.html`](library.html)).
 
 ## 1. Qué es Magoya
 
@@ -48,38 +51,61 @@ Dos familias, cada una con su regla:
 ## 6. Ilustración & motivos
 
 - **Personajes planos redondeados, sin rostro.** Paleta CERRADA de 5 colores: `#33DB4E` (ropa) · `#A2FF00` (ropa) · `#DFDFDF` (ropa) · `#FFC67B` (piel) · `#161616` (pelo/detalle). Siempre **recortados por un borde de la pieza**, del lado opuesto al texto — nunca flotando enteros ni centrados como clipart.
-- **Motivo de marca: semicírculos** (patrón en grilla diagonal + banda festoneada). La **banda festoneada se reserva para la composición con personaje** (no se usa como remate genérico en cada pieza). **Regla de sangrado: el motivo va al corte y siempre nace de un extremo de la pieza o de detrás de un objeto — nunca puede verse cortado flotando en el aire.** Colores: verde digital sobre crema/blanco · crema sobre verde profundo · lima solo en banda sobre oscuro.
+- **Motivo de marca: semicírculos**, un único formato — el **paño de textura** en grilla diagonal escalonada (`assets/motif-semis.svg`). **Regla de sangrado: el paño va al corte y siempre nace de un borde de la pieza o queda detrás de un objeto — nunca puede verse cortado flotando en el aire.** Aplicaciones canónicas: franja lateral (el paño ocupa una columna del borde y el contenido vive sobre el blanco) o fondo completo tapado por una card. Colores: verde digital sobre crema/blanco · crema sobre verde profundo · lima sobre oscuro.
+- ✗ **La banda festoneada quedó RETIRADA** (no funcionaba como remate y se usaba como adorno genérico). No hay asset de banda: el único motivo es el paño.
 - **Marcas a mano**: **subrayado** = enfatiza una palabra del titular (pegado a la línea base) · **círculo** = marca una fecha o dato puntual · **flecha** = señala el CTA: nace del texto y su punta cae sobre el botón (diagonal, no al costado). Una sola por pieza, en **verde digital #00DE68 sobre claro / lima sobre oscuro** (nunca en negro: contra el texto no resaltan), siempre sobre texto compuesto — nunca sueltas como adorno.
-- ✗ RETIRADOS: motivos de líneas (caminos concéntricos, estratos), personajes con rostro/monoline/stock, y la metáfora del **puzzle** (brand viejo — su reemplazo narrativo es el crecimiento/semicírculos). ✗ Naranja y amarillo del brand viejo.
+- ✗ RETIRADOS: motivos de líneas (caminos concéntricos `assets/illus/camino-*.svg`, estratos `assets/motif-estratos.svg`), la banda festoneada, personajes con rostro/monoline/stock, y la metáfora del **puzzle** (brand viejo — su reemplazo narrativo es el crecimiento/semicírculos). ✗ Naranja y amarillo del brand viejo. Los archivos retirados quedan en disco como historial: **no se usan en piezas nuevas y no tienen ficha en la librería.**
 
-## 7. Iconografía
+## 7. Convivencia de recursos
+
+La marca tiene seis recursos gráficos. La regla que los ordena: **máximo dos por pieza además de la tipografía** — uno protagonista y otro que acompaña en segundo plano. Con tres o más deja de ser Magoya y se vuelve ruido.
+
+| Combinar… | Foto aérea | Foto B&N | Personaje | Paño ○ | Marca a mano | Ícono |
+|---|---|---|---|---|---|---|
+| **Foto aérea** | — | ✗ | ✗ | ✗ | ✓ | ✓ |
+| **Foto B&N (personas)** | ✗ | — | ✗ | ✓ | ✓ | ✓ |
+| **Personaje ilustrado** | ✗ | ✗ | — | ✓ | ✓ | ✗ |
+| **Paño de semicírculos** | ✗ | ✓ | ✓ | — | ✓ | ✓ |
+| **Marca a mano** | ✓ | ✓ | ✓ | ✓ | — | ✓ |
+| **Ícono** | ✓ | ✓ | ✗ | ✓ | ✓ | — |
+
+**La razón de los vacíos es una sola: dos lenguajes del mismo tipo compiten.** Dos imágenes (foto + foto, foto + ilustración), dos texturas (foto + paño) o dos dibujos (personaje + ícono) nunca conviven. La cifra gigante y la tipografía combinan con todo: son la voz, no un recurso.
+
+**Personaje + paño** (la combinación que más se pregunta) **sí funciona**, con una condición: el paño va al fondo y en franja, el personaje al borde opuesto y en primer plano, el texto sobre superficie limpia. Nunca superpuestos.
+
+**Jerarquía de planos** — toda pieza se ordena en cuatro: **(1) lienzo** color plano o foto con scrim · **(2) textura** paño al corte · **(3) sujeto** personaje, foto recortada o cifra gigante · **(4) voz** tipografía, marcas a mano, chips y CTA. Un recurso por plano como máximo, y los planos 2 y 3 nunca se pisan entre sí.
+
+## 8. Iconografía
 
 Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. **Set agro de 16 íconos + 10 logos de IA + 13 de redes en `assets/studio/icons/` — los mismos archivos que usa Magoya Studio.** Negro sobre claro, crema sobre oscuro, **lima solo el ícono destacado (uno por pieza)**. Librería propia de 58 iconos en 7 categorías (`icons.html`); completar con Lucide (misma gramática) si hace falta volumen. Nunca rellenos sólidos ni 3D.
 
-## 8. Componentes
+## 9. Componentes
 
 - **Botón ≠ chip.** Botón: rectángulo radio 10px, fondo sólido (lima = CTA primario, negro, verde profundo, ghost). Chip: **pill outline** — borde y texto del mismo color, fondo transparente. Nunca chip sólido ni botón pill.
 - Estados: hover (lima→`#8BDB00`, resto brightness), focus ring `rgba(0,222,104,.45)` sin blur.
-- Cards: hiring (negro + lima), quote (foto B&N + cita), stat (número 800 −3%). Logo wall: logos **siempre reales**, en gris, grilla pareja.
+- **Cards: siempre en mosaico** — misma grilla, mismos aires, alturas que calzan; nunca sueltas. Tipos: hiring (negro + lima), quote (foto B&N + cita), stat (número 800 −3%). El contacto dentro de una card dark es un **link en lima**, no un botón (los botones viven fuera de las cards).
+- ✗ **El monograma "m" circular NO va en cards.** El avatar "m" es identidad de canal (favicon, app icon, perfil corporativo) y pie de papelería — dentro de una card compite con el wordmark y agrega un segundo logo a la pieza. En una card, la marca es el wordmark.
+- Logo wall: logos **siempre reales**, en gris, grilla pareja.
 
-## 9. Aplicaciones (recetas)
+## 10. Aplicaciones (recetas)
 
 - **Hero canónico** (la pieza que define la marca): foto aérea + scrim verde + wordmark crema arriba-izq + CTA lima arriba-der + display ExtraBold abajo-izq con una frase en lima.
-- **Feed 1:1** — 3 recetas rotativas: foto (statement sobre aérea) · crema (aviso + avatar) · dark (dato lima + personaje recortado). En redes, **display y cifras al ~70% del ancho**: grande o nada.
-- **Story 9:16**: foto arriba + bloque verde abajo con festón; CTA lima. **Banner de LinkedIn**: foto del equipo en B&N + scrim negro degradado + wordmark crema + filete verde digital al borde (misma receta que la fotografía de personas). **Avatar**: cara (comunidad) / m (corporativo).
+- **Feed 1:1** — 3 recetas rotativas: foto (statement sobre aérea) · crema (aviso + avatar de comunidad) · dark (dato lima + personaje recortado). En redes, **display y cifras al ~70% del ancho**: grande o nada.
+- **Story 9:16**: foto arriba + bloque verde abajo con display y CTA lima. **Banner de LinkedIn**: foto del equipo en B&N + scrim negro degradado + wordmark crema + filete verde digital al borde (misma receta que la fotografía de personas). **Avatar de perfil**: cara (comunidad) / m (corporativo).
 - **Slides**: lienzos blanco/sage, un golpe de lima por slide, margen interior 7% (`slides.html`, 16 módulos). **Piezas comerciales**: one-pager madre + flyers derivados (`pieces.html`).
+- **Export**: slides 16:9 1920×1080 · feed 1080×1080 · carrusel retrato 4:5 1080×1350 · story 1080×1920 (zona segura 96px) · favicon = avatar "m" 16/32/180/512px sin padding · print A4 sangrado 3mm, CMYK con prueba de color.
 
-## 10. Marca anexa "AI en campo" (manual propio)
-
-**No es una sección de este brand: es una marca anexa con su propio manual** (`ai-en-campo.html`). Línea de contenido educativo de IA para el agro (carruseles, reels, webinars). Mismo ADN (Manrope, verdes oficiales) pero **rompe tres reglas del core a propósito**: (1) lienzo **verde digital pleno #00DE68** como fondo dominante; (2) **placa negra** #161616 con texto crema para el dato clave — permitida acá como lenguaje sticker; (3) **ruido con los assets del Studio** (`assets/studio/`): doodles (sparkle, dots, blob, loop), flourishes (arrow, navarrow, circle, underline), badge EN VIVO y logos oficiales de IA/redes — 2–4 por pieza, ±5–15°, en las esquinas. Terracota #C97B5A solo para teñir doodles. Texto secundario verde profundo; display negro; wordmark negro abajo-izquierda. Formato madre: **carrusel retrato 4:5 (1080×1350)**. Las piezas se producen SIEMPRE desde plantillas del Studio y su receta queda guardada en un `.magoya.json` (template, scheme, accent, anchor, rule, silueta, objetos con x/y/scale/rotation) — esa es la fuente para reproducirlas, no el ojo. Producción en Magoya Studio (30+ plantillas, 13 formatos de red). Nada de esto vuelve al core.
-
-## 11. Merch & papelería
+## 11. Merch & indumentaria
 
 - **Textil**: verde profundo + crema, discreto y premium. **El merch se muestra SIEMPRE con foto o render real del producto — nunca ilustración ni esquema vectorial** (referencia de calidad: render "Buzo Propuesta 1"). Catálogo de 10 productos (buzo, remera blanca/negra, gorra, medias, mochila, termo, cuaderno, stickers, equipo usándolo); las fotos van en `assets/photos/merch/` con los nombres del LEEME y el manual las levanta solo. Wordmark chico pecho izquierdo, monograma "m" en espalda, patrón de avatares solo en forros. Bordado > estampa. **Sin lima en textil.**
-- **Membrete A4**: wordmark verde arriba-izq (20% del ancho), pie con filete verde digital + avatar m. **Firma de email**: avatar + filete verde + nombre 700 + rol gris — sin banners.
+
+## 12. Papelería & corporativo
+
+- **Membrete A4**: wordmark verde arriba-izq (20% del ancho), pie con filete verde digital + avatar m. Header y footer vectoriales listos: `assets/downloads/doc-header.svg` · `doc-footer.svg`.
+- **Firma de email**: va **SIEMPRE el wordmark — nunca los avatares ni la cara.** Filete verde + nombre 700 + rol y datos en gris. Sin banners, sin frases legales eternas, sin logos de redes. Assets: `assets/downloads/magoya-firma-animada.gif` (Gmail, loop) y `magoya-firma-estatica.png` (correos que no animan). Versión web animada del logo: `assets/magoya-wordmark-animado.svg`.
 - Docs: wordmark esquina sup-izq ≤1/5 del ancho; Manrope o Arial; nunca logo como marca de agua.
 
-## 12. Reglas de oro (resumen ejecutable)
+## 13. Reglas de oro (resumen ejecutable)
 
 1. El negro construye, el verde hace crecer (75/25, un movimiento verde por pieza).
 2. Lima = energía en dosis única: un CTA, un display o un motivo por pieza.
@@ -87,9 +113,29 @@ Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. *
 4. Personas reales en B&N con acento verde; ilustración plana para conceptos.
 5. Logos de clientes SIEMPRE reales — jamás placeholders.
 6. Todo redondeado — como el wordmark. Botón rect 10px, chip pill outline.
-7. Motivos al corte: nacen de un borde o de detrás de un objeto — nunca cortados al aire.
-8. ✗ Resaltador sólido tras texto · ✗ gradientes glossy/3D/estética IA · ✗ pieza 100% negra o verde · ✗ personajes con rostro/monoline · ✗ puzzle · ✗ naranja/amarillo.
+7. El motivo va al corte: nace de un borde o de detrás de un objeto — nunca cortado al aire.
+8. Máximo 2 recursos gráficos por pieza (§7); el monograma "m" no va en cards; en la firma va el wordmark.
+9. **Emojis prohibidos** — la única excepción son las manitos que señalan (👈 👉 👇) hacia un CTA y las banderas de países para geografía. Nunca en títulos.
+10. ✗ Resaltador sólido tras texto · ✗ gradientes glossy/3D/estética IA · ✗ pieza 100% negra o verde · ✗ personajes con rostro/monoline · ✗ puzzle · ✗ naranja/amarillo · ✗ banda festoneada · ✗ motivos de líneas.
+
+## 14. Marca anexa "AI en campo" (manual propio)
+
+**No es una sección de este brand: es una marca anexa con su propio manual** (`ai-en-campo.html`). Línea de contenido educativo de IA para el agro (carruseles, reels, webinars). Mismo ADN (Manrope, verdes oficiales) pero **rompe tres reglas del core a propósito**: (1) lienzo **verde digital pleno #00DE68** como fondo dominante; (2) **placa negra** #161616 con texto crema para el dato clave — permitida acá como lenguaje sticker; (3) **ruido con los assets del Studio** (`assets/studio/`): doodles (sparkle, dots, blob, loop), flourishes (arrow, navarrow, circle, underline), badge EN VIVO y logos oficiales de IA/redes — 2–4 por pieza, ±5–15°, en las esquinas. Terracota `#C97B5A` solo para teñir doodles, nunca texto ni UI. Texto secundario verde profundo; display negro; wordmark negro abajo-izquierda. Formato madre: **carrusel retrato 4:5 (1080×1350)**, arco narrativo de 4–6 slides (duda real → herramienta → prueba → paso siguiente). Las piezas se producen SIEMPRE desde plantillas del Studio y su receta queda guardada en un `.magoya.json` (template, scheme, accent, anchor, rule, silueta, objetos con x/y/scale/rotation) — esa es la fuente para reproducirlas, no el ojo. Producción en Magoya Studio (30+ plantillas, 13 formatos de red). Nada de esto vuelve al core.
+
+## Mapa de archivos del sistema
+
+| Página | Qué documenta |
+|---|---|
+| `index.html` | Brand book: 13 secciones + §14 marca anexa |
+| `ai-en-campo.html` | Manual completo de la marca anexa |
+| `slides.html` | Módulos de presentación |
+| `pieces.html` | Piezas comerciales (one-pager + flyers) |
+| `icons.html` | 58 iconos copiables |
+| `library.html` | Ficha + descarga de cada asset aprobado |
+| `logos.html` | Logos de clientes y stack tecnológico |
+
+`assets/refs/` es **material fuente no publicable** (exports originales del diseñador): se conserva como referencia de trazado, no se enlaza ni se distribuye. `archive/` son versiones previas del sistema — no usar.
 
 ---
 
-*Pendientes de contenido: fotos/nombres reales del equipo, cita completa de Camila López Colmano, logos vectoriales de ProducePay/HabiTerre/IntelinAir, validación de Staff Augmentation.*
+*Pendientes de contenido: fotos/nombres reales del equipo, cita completa de Camila López Colmano, logos vectoriales de ProducePay/HabiTerre/IntelinAir, validación de Staff Augmentation, unificación del email de contacto (hoy conviven `people@` e `info@`).*

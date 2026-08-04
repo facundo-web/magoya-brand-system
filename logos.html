@@ -6,34 +6,34 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);background:var(--color-canvas-meta);color:var(--ink-900);padding:88px 56px 56px 270px}
-.eyebrow{display:inline-block;background:var(--ink-900);color:#fff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+.eyebrow{display:inline-block;background:var(--ink-900);color:var(--white);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
 h1{font-weight:800;letter-spacing:-0.03em;font-size:2.6rem;margin:14px 0 6px}
 p.lead{color:var(--gray-600);max-width:640px;margin-bottom:12px}
 p.lead a{color:var(--emerald-700)}
 h2{margin:38px 0 14px;font-size:1.3rem;font-weight:700}
 .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;max-width:1100px}
-.c{background:#fff;border:1px solid var(--color-hairline);border-radius:12px;padding:18px 14px;text-align:center}
+.c{background:var(--white);border:1px solid var(--color-hairline);border-radius:12px;padding:18px 14px;text-align:center}
 .c img{width:100%;height:56px;object-fit:contain}
 .c span{font-size:11px;color:var(--gray-600);font-family:var(--font-mono);display:block;margin-top:10px}
 .c a.dl{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;color:var(--emerald-700);text-decoration:none;border:1.5px solid var(--emerald-700);padding:3px 10px;border-radius:999px}
-.c a.dl:hover{background:var(--emerald-700);color:#fff}
+.c a.dl:hover{background:var(--emerald-700);color:var(--white)}
 .note{font-size:13px;color:var(--gray-600);margin-top:16px;max-width:720px}
 @media (max-width:880px){.mg-topbar{position:static;padding:10px 14px}}
   @media (max-width:880px){body{padding:16px}}
   @media (max-width:700px){body{padding:28px 18px}h1{font-size:1.9rem}}
 
   .mg-topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 24px;box-shadow:0 4px 18px rgba(0,0,0,.16)}
-  .mg-topbar img{height:20px;margin-right:14px}
+  .mg-topbar img{height:28px;margin-right:18px}
   
   .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
   .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
 
   /* ---------- menú lateral (igual al brand book) ---------- */
   .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50}
-  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8FA396;margin:0 0 8px 10px}
-  .side a{color:#8FA396;text-decoration:none;font-size:13.5px;line-height:1.25;padding:5px 10px;border-radius:8px;font-weight:600;transition:font-size .2s cubic-bezier(.2,.9,.25,1),color .2s,letter-spacing .2s}
-  .side a:hover{background:var(--green-800);color:var(--cream-50)}
-  .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
+  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-400);margin:0 0 8px 10px}
+  .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
+  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
+  .side .v{margin-top:auto;font-size:11px;color:var(--sage-400);letter-spacing:.08em}
   .crumb{font-size:12.5px;color:var(--gray-600);margin-bottom:12px}
   .crumb a{color:var(--emerald-700);text-decoration:none;font-weight:600}
   .crumb a:hover{text-decoration:underline}
@@ -53,15 +53,15 @@ h2{margin:38px 0 14px;font-size:1.3rem;font-weight:700}
   .c a.dl{display:inline-flex;align-items:center;gap:5px;margin-top:0}
   .c a.dl svg{width:12px;height:12px}
 
-  .side a.near{font-size:15.5px;color:var(--cream-200)}
-  .side a.act{font-size:21px;color:var(--cream-50);font-weight:800;letter-spacing:-0.02em}
-  .side:hover a.act:not(:hover){font-size:15.5px;color:var(--cream-200)}
-  .side a:hover{font-size:21px;color:var(--cream-50);letter-spacing:-0.02em}
-  .side a:hover + a{font-size:15.5px;color:var(--cream-200)}
+  .side a.near{transform:scale(1.14);color:var(--cream-200)}
+  .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
+  .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
+  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
+  .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
 </style>
 </head>
 <body>
-<nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Piezas</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html" class="on">Logos</a></nav>
+<nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Comerciales</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html" class="on">Clientes</a><a href="ai.html">Integrar con AI</a></nav>
 
 <nav class="side">
   <a href="#clientes">Clientes</a>
