@@ -37,7 +37,7 @@
   .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
   main{margin-left:230px;padding-top:44px}
   section{padding:88px 0}
-  section > *{max-width:1220px;margin-left:auto;margin-right:auto;padding-left:64px;padding-right:64px}
+  section > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 64px}   /* anclado al inicio del contenido, nunca centrado */
   .kicker{
     display:inline-block;font-size:12px;font-weight:var(--weight-extra);
     letter-spacing:var(--tracking-wide);text-transform:uppercase;
@@ -61,7 +61,7 @@
       linear-gradient(180deg, rgba(12,33,23,.55), rgba(12,33,23,.86)),
       url("assets/photos/field-rows.jpg") center/cover;
   }
-  .hero-in{padding:64px;max-width:1220px;width:100%;margin:0 auto}
+  .hero-in{padding:64px;max-width:1284px;width:100%;margin:0 auto 0 0}
   .hero img.wm{width:220px;margin-bottom:34px}
   .hero h1{
     font-size:clamp(3rem,6vw,5.4rem);font-weight:var(--weight-extra);
@@ -138,20 +138,20 @@
 
   /* ---------- iconos (mask = recoloreables) ---------- */
   .ic-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:12px}
-  .ic-grid > div{background:var(--white);border:1px solid var(--color-hairline);border-radius:12px;padding:16px 8px 10px}
-  .icm{display:block;width:32px;height:32px;margin:0 auto;background:var(--ink-900);
+  .ic-grid > div{background:var(--white);border:1px solid var(--color-hairline);border-radius:12px;padding:16px}
+  .icm{display:block;width:32px;height:32px;background:var(--ink-900);
        -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
   .icm.big{width:38px;height:38px}
   .icm.on-dark{background:var(--cream-50)}
   .icm.hl{background:var(--lime-500)}
-  .icn{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600);text-align:center;margin-top:9px}
+  .icn{display:block;font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600);margin-top:10px}
 
   /* ---------- doodles del Studio ---------- */
   .dm{display:block;background:var(--ink-900);width:34px;height:34px;
       -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
-  .dcell{background:rgba(246,241,235,.06);border:1px solid rgba(246,241,235,.14);border-radius:12px;padding:16px 8px 10px;display:flex;flex-direction:column;align-items:center;gap:9px;min-height:86px;justify-content:center}
+  .dcell{background:rgba(246,241,235,.06);border:1px solid rgba(246,241,235,.14);border-radius:12px;padding:14px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:86px}
   .dcell .dm{background:var(--cream-50)}
-  .dn{font-family:var(--font-mono);font-size:10px;color:var(--gray-400);text-align:center}
+  .dn{font-family:var(--font-mono);font-size:10px;color:var(--gray-400);margin-top:auto}
   .rl-dark .rule{border-bottom-color:rgba(246,241,235,.14);color:var(--cream-200)}
   .rl-dark .rule b.do{color:var(--lime-500)}
   .rl-dark .rule b{color:var(--cream-50)}
@@ -239,7 +239,7 @@
   .app-metrics .nums .d{font-size:14px;color:var(--gray-600)}
 
   footer{margin-left:230px;background:var(--green-950);color:var(--cream-300);padding:40px 0;font-size:13px}
-  footer > *{max-width:1220px;margin:0 auto;padding:0 64px}
+  footer > *{max-width:1284px;margin:0 auto 0 0;padding:0 64px}
   footer a{color:var(--lime-500)}
 
   /* ---------- estados interactivos ---------- */
@@ -266,7 +266,7 @@
     .hero-in{padding:34px 22px}
     .hero .tag{top:16px;right:16px}
     section{padding:52px 0}
-    section > *{padding-left:22px;padding-right:22px}
+    section > .inner{padding:0 22px}
     .g2,.g3,.g4,.rule-list{grid-template-columns:1fr}
     section .grid[style*="grid-template-columns"]{grid-template-columns:1fr !important}
     .spec{grid-template-columns:1fr;gap:6px}
@@ -328,6 +328,7 @@
 
 <!-- ================= 01 ESENCIA ================= -->
 <section id="esencia">
+  <div class="inner">
   <span class="kicker">01 · Esencia</span>
   <h2>Expertise senior.<br>Dominio agro. Partnership.</h2>
   <p class="lead">Magoya es el partner de estrategia y desarrollo de producto digital para agribusiness. Nos embebemos como extensión del equipo del cliente — tecnólogos senior, expertos de producto y agrónomos.</p>
@@ -340,10 +341,12 @@
   <p class="note" style="max-width:720px;margin-bottom:14px">Desde 2017, Magoya existe para que las agroempresas modernas construyan mejores productos digitales: <b>“We partner with modern agribusinesses to design, build, and evolve their products and platforms.”</b> Posicionamiento: <i>Your Digital Product Strategy and Development Partner — where strategy meets execution, and product meets reality.</i> El hero de la marca: <b>“AgTech challenges demand more than code.”</b></p>
   <h3>La voz</h3>
   <p class="note" style="max-width:720px">Profesional pero cercana. Experta y senior, nunca vendedora. Transparente y estructurada. La marca es madura y confiable — <b>no whimsical</b>: la calidez viene del trato humano (la cara del logo, los personajes, la foto real del equipo), no de la infantilización. Vocabulario propio: <i>embedded, deep AgTech fluency, clarity/confidence/commitment, long-term value.</i></p>
+  </div>
 </section>
 
 <!-- ================= 02 LOGO ================= -->
 <section id="logo" style="background:var(--paper-50)">
+  <div class="inner">
   <span class="kicker">02 · Identidad</span>
   <h2>Logo & avatares</h2>
   <p class="lead">El wordmark redondeado es la firma. Los avatares — extraídos de las letras del wordmark — son el sistema de identidad secundario para redes, favicons y aplicaciones chicas.</p>
@@ -387,10 +390,12 @@
     <div class="rule"><b class="dont">✗</b><span>No recolorear los avatares ni ponerlos sobre fondos que compitan (lima sobre verde digital, etc.).</span></div>
     <div class="rule"><b class="dont">✗</b><span>No reconstruir el wordmark con otra tipografía ni alterar el espaciado entre letras.</span></div>
   </div>
+  </div>
 </section>
 
 <!-- ================= 03 COLOR ================= -->
 <section id="color">
+  <div class="inner">
   <span class="kicker">03 · Color</span>
   <h2>El negro construye.<br>El verde hace crecer.</h2>
   <p class="lead">Cuatro verdes con roles distintos + neutros cálidos. Los neutros sostienen ~75% de cada pieza; el verde enciende el ~25% restante. Nunca una pieza 100% negra ni 100% verde.</p>
@@ -438,10 +443,12 @@
     <div class="rule"><b class="do">✓</b><span>Crema sobre verde profundo · negro sobre blanco/sage · negro sobre lima · lima sobre negro/verde profundo · verde #009145 sobre blanco solo texto grande.</span></div>
     <div class="rule"><b class="dont">✗</b><span>Lima sobre blanco como texto (1.25:1, no accesible) · verde digital #00DE68 como texto sobre claro · verde sobre verde sin contraste.</span></div>
   </div>
+  </div>
 </section>
 
 <!-- ================= 04 TIPOGRAFÍA ================= -->
 <section id="tipografia" style="background:var(--sage-50)">
+  <div class="inner">
   <span class="kicker">04 · Tipografía</span>
   <h2>Manrope. Una sola familia.</h2>
   <p class="lead">Variable 200–800, self-hosted. Display ExtraBold con tracking apretado (−3%) para titulares; Regular para cuerpo. Los kickers van en MAYÚSCULAS con tracking amplio, en pill o solos.</p>
@@ -466,10 +473,12 @@
   <h3>Resaltado en titulares</h3>
   <p class="note" style="max-width:720px;margin-bottom:16px">Dos formas oficiales de encender una palabra: <b>color</b> (sobre claro: verde <span style="font-family:var(--font-mono);font-size:.85em">#009145</span> y solo en texto grande ≥24px bold; lima sobre oscuro) o <b>subrayado lima</b>. El verde digital #00DE68 como texto queda reservado a fondos oscuros y al logo. Prohibido el bloque de resaltador sólido detrás del texto.</p>
   <div class="type-hero" style="font-size:2.4rem">We are the best <span style="color:var(--emerald-700)">Digital Product Builders</span><br>for <span class="underline-lime">Agribusiness</span></div>
+  </div>
 </section>
 
 <!-- ================= 05 FOTOGRAFÍA ================= -->
 <section id="fotografia">
+  <div class="inner">
   <span class="kicker">05 · Fotografía</span>
   <h2>El campo desde arriba.<br>Las personas en blanco y negro.</h2>
   <p class="lead">Dos familias fotográficas, cada una con su regla. Aérea de campo: color natural con overlay verde profundo para fondos con texto. Personas: siempre B&N con un acento verde o lima — la firma Magoya.</p>
@@ -492,10 +501,12 @@
     <div class="rule"><b class="dont">✗</b><span>Nada de stock corporativo posado, apretones de mano, oficinas genéricas.</span></div>
     <div class="rule"><b class="dont">✗</b><span>Personas a color en piezas de marca — el color es del campo, no del retrato.</span></div>
   </div>
+  </div>
 </section>
 
 <!-- ================= 06 ILUSTRACIÓN ================= -->
 <section id="ilustracion" style="background:var(--paper-50)">
+  <div class="inner">
   <span class="kicker">06 · Ilustración & motivos</span>
   <h2>Personajes planos.<br>Semicírculos que crecen.</h2>
   <p class="lead">Personajes de relleno plano redondeado, sin rostro: pants lima o verde, tops grises, zapatillas verdes. Y el motivo de marca: el patrón de <b>semicírculos</b> — brotes geométricos que crecen en diagonal, frescos y orgánicos sin ser literales.</p>
@@ -511,11 +522,11 @@
   <h3>Paleta cerrada de ilustración</h3>
   <p class="note" style="max-width:720px;margin-bottom:14px">Los personajes usan <b>exactamente estos 5 colores</b> — nada fuera de esta lista. Piel y gris ropa son colores solo-ilustración: nunca en UI, texto ni fondos.</p>
   <div style="display:flex;gap:10px;flex-wrap:wrap;max-width:760px">
-    <div style="text-align:center"><div style="width:92px;height:56px;border-radius:10px;background:#33DB4E"></div><span class="cap">#33DB4E<br>ropa verde</span></div>
-    <div style="text-align:center"><div style="width:92px;height:56px;border-radius:10px;background:#A2FF00"></div><span class="cap">#A2FF00<br>ropa lima</span></div>
-    <div style="text-align:center"><div style="width:92px;height:56px;border-radius:10px;background:#DFDFDF"></div><span class="cap">#DFDFDF<br>ropa gris</span></div>
-    <div style="text-align:center"><div style="width:92px;height:56px;border-radius:10px;background:#FFC67B"></div><span class="cap">#FFC67B<br>piel</span></div>
-    <div style="text-align:center"><div style="width:92px;height:56px;border-radius:10px;background:#161616"></div><span class="cap">#161616<br>pelo / detalle</span></div>
+    <div><div style="width:92px;height:56px;border-radius:10px;background:#33DB4E"></div><span class="cap">#33DB4E<br>ropa verde</span></div>
+    <div><div style="width:92px;height:56px;border-radius:10px;background:#A2FF00"></div><span class="cap">#A2FF00<br>ropa lima</span></div>
+    <div><div style="width:92px;height:56px;border-radius:10px;background:#DFDFDF"></div><span class="cap">#DFDFDF<br>ropa gris</span></div>
+    <div><div style="width:92px;height:56px;border-radius:10px;background:#FFC67B"></div><span class="cap">#FFC67B<br>piel</span></div>
+    <div><div style="width:92px;height:56px;border-radius:10px;background:#161616"></div><span class="cap">#161616<br>pelo / detalle</span></div>
   </div>
 
   <h3>Ejemplos de uso de personajes</h3>
@@ -581,16 +592,18 @@
     <div class="rule"><b class="do">✓</b><span>Una marca por pieza · en lima o verde digital · sobre texto compuesto.</span></div>
     <div class="rule"><b class="dont">✗</b><span>Dos marcas juntas, marcas sobre foto sin scrim, o usarlas como decoración suelta.</span></div>
   </div>
+  </div>
 </section>
 
 <!-- ================= 07 ICONOGRAFÍA ================= -->
 <section id="iconografia">
+  <div class="inner">
   <span class="kicker">07 · Iconografía</span>
   <h2>Íconos de línea redondeada</h2>
   <p class="lead">Trazo 2px, terminaciones y esquinas redondeadas — el mismo ADN del wordmark. Monocromos y recoloreables: negro sobre claro, crema sobre oscuro, <b>lima solo el ícono destacado de la pieza</b>. Nunca rellenos sólidos ni 3D.</p>
 
   <h3>Set agro — el corazón del sistema (16 íconos)</h3>
-  <div class="ic-grid"><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/alerta-lote.svg);mask-image:url(assets/studio/icons/agro/alerta-lote.svg)"></span><span class="icn">alerta-lote</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/chat-ia.svg);mask-image:url(assets/studio/icons/agro/chat-ia.svg)"></span><span class="icn">chat-ia</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/dron.svg);mask-image:url(assets/studio/icons/agro/dron.svg)"></span><span class="icn">dron</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/escaneo.svg);mask-image:url(assets/studio/icons/agro/escaneo.svg)"></span><span class="icn">escaneo</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/gota.svg);mask-image:url(assets/studio/icons/agro/gota.svg)"></span><span class="icn">gota</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/grafico.svg);mask-image:url(assets/studio/icons/agro/grafico.svg)"></span><span class="icn">grafico</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/hoja.svg);mask-image:url(assets/studio/icons/agro/hoja.svg)"></span><span class="icn">hoja</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/lote.svg);mask-image:url(assets/studio/icons/agro/lote.svg)"></span><span class="icn">lote</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/mapa-pin.svg);mask-image:url(assets/studio/icons/agro/mapa-pin.svg)"></span><span class="icn">mapa-pin</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/nube-lluvia.svg);mask-image:url(assets/studio/icons/agro/nube-lluvia.svg)"></span><span class="icn">nube-lluvia</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/reloj-campana.svg);mask-image:url(assets/studio/icons/agro/reloj-campana.svg)"></span><span class="icn">reloj-campana</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/satelite.svg);mask-image:url(assets/studio/icons/agro/satelite.svg)"></span><span class="icn">satelite</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/semilla.svg);mask-image:url(assets/studio/icons/agro/semilla.svg)"></span><span class="icn">semilla</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/sensor.svg);mask-image:url(assets/studio/icons/agro/sensor.svg)"></span><span class="icn">sensor</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/sol.svg);mask-image:url(assets/studio/icons/agro/sol.svg)"></span><span class="icn">sol</span></div><div style="text-align:center"><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/tractor.svg);mask-image:url(assets/studio/icons/agro/tractor.svg)"></span><span class="icn">tractor</span></div></div>
+  <div class="ic-grid"><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/alerta-lote.svg);mask-image:url(assets/studio/icons/agro/alerta-lote.svg)"></span><span class="icn">alerta-lote</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/chat-ia.svg);mask-image:url(assets/studio/icons/agro/chat-ia.svg)"></span><span class="icn">chat-ia</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/dron.svg);mask-image:url(assets/studio/icons/agro/dron.svg)"></span><span class="icn">dron</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/escaneo.svg);mask-image:url(assets/studio/icons/agro/escaneo.svg)"></span><span class="icn">escaneo</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/gota.svg);mask-image:url(assets/studio/icons/agro/gota.svg)"></span><span class="icn">gota</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/grafico.svg);mask-image:url(assets/studio/icons/agro/grafico.svg)"></span><span class="icn">grafico</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/hoja.svg);mask-image:url(assets/studio/icons/agro/hoja.svg)"></span><span class="icn">hoja</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/lote.svg);mask-image:url(assets/studio/icons/agro/lote.svg)"></span><span class="icn">lote</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/mapa-pin.svg);mask-image:url(assets/studio/icons/agro/mapa-pin.svg)"></span><span class="icn">mapa-pin</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/nube-lluvia.svg);mask-image:url(assets/studio/icons/agro/nube-lluvia.svg)"></span><span class="icn">nube-lluvia</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/reloj-campana.svg);mask-image:url(assets/studio/icons/agro/reloj-campana.svg)"></span><span class="icn">reloj-campana</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/satelite.svg);mask-image:url(assets/studio/icons/agro/satelite.svg)"></span><span class="icn">satelite</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/semilla.svg);mask-image:url(assets/studio/icons/agro/semilla.svg)"></span><span class="icn">semilla</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/sensor.svg);mask-image:url(assets/studio/icons/agro/sensor.svg)"></span><span class="icn">sensor</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/sol.svg);mask-image:url(assets/studio/icons/agro/sol.svg)"></span><span class="icn">sol</span></div><div><span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/tractor.svg);mask-image:url(assets/studio/icons/agro/tractor.svg)"></span><span class="icn">tractor</span></div></div>
   <p class="cap">Los mismos archivos que usa Magoya Studio (<code style="font-family:var(--font-mono);font-size:11.5px">assets/studio/icons/agro/</code>) — una sola fuente para manual, piezas y producto.</p>
 
   <h3>Sobre claro y sobre oscuro</h3>
@@ -613,10 +626,12 @@
     </div>
   </div>
   <p class="cap" style="max-width:680px">Además del set agro hay <b>58 íconos generales</b> en 7 categorías (producto & UX, datos & AI, plataforma, negocio, comunicación & redes, sistema) en <a href="icons.html" style="color:var(--emerald-700);font-weight:600">la librería de íconos</a>, y los logos de <b>IA</b> (OpenAI, Claude, Gemini…) y <b>redes</b> en <code style="font-family:var(--font-mono);font-size:11.5px">assets/studio/icons/</code>.</p>
+  </div>
 </section>
 
 <!-- ================= 08 COMPONENTES ================= -->
 <section id="componentes" style="background:var(--paper-50)">
+  <div class="inner">
   <span class="kicker">08 · Componentes</span>
   <h2>Botones, chips & cards</h2>
   <p class="lead">Todo redondeado — como el logo. El CTA primario es lima; el institucional, verde profundo. Los chips categorizan; las cards muestran gente, datos y quotes.</p>
@@ -671,10 +686,12 @@
     <img src="assets/logos/clients/climate-fieldview.svg" alt="Climate FieldView" style="height:34px;object-fit:contain;filter:grayscale(1);opacity:.75">
     <img src="assets/logos/clients/precision-planting.svg" alt="Precision Planting" style="height:34px;object-fit:contain;filter:grayscale(1);opacity:.75">
   </div>
+  </div>
 </section>
 
 <!-- ================= 09 APLICACIONES ================= -->
 <section id="aplicaciones" style="background:var(--sage-50)">
+  <div class="inner">
   <span class="kicker">09 · Aplicaciones</span>
   <h2>La marca en acción</h2>
   <p class="lead">Cómo se ve Magoya en cada canal: web, redes sociales, presentaciones y piezas de contenido. La portada del hero es la <b>pieza canónica</b> — foto aérea + overlay verde profundo + wordmark crema + display con acento lima: si una pieza nueva no conversa con ella, no es Magoya.</p>
@@ -764,11 +781,12 @@
     <div class="rule"><b class="do">✓</b><span><b>Social:</b> feed 1:1 (1080×1080) · <b>carrusel retrato 4:5 (1080×1350)</b> · stories 9:16 (1080×1920, zona segura 96px arriba/abajo) · wordmark arriba-izquierda, CTA lima arriba-derecha. Los 13 formatos de red viven en Magoya Studio.</span></div>
     <div class="rule"><b class="do">✓</b><span><b>Print:</b> A4 con sangrado 3mm · validar CMYK con prueba de color (lima y verde digital pierden saturación en papel).</span></div>
   </div>
+  </div>
 </section>
 
 <!-- ================= 10 AI EN CAMPO ================= -->
 <section id="ai-en-campo" style="background:var(--ink-950)">
-  <div>
+  <div class="inner">
   <span class="kicker" style="border-color:var(--lime-500);color:var(--lime-500)">10 · AI en campo — sub-marca</span>
   <h2 style="color:var(--cream-50)">Más ruido, mismo ADN.</h2>
   <p class="lead" style="color:var(--cream-200)">La línea de contenido educativo de IA para el agro (carruseles, reels, webinars). Habla con la misma tipografía y los mismos verdes, pero <b style="color:var(--cream-50)">rompe tres reglas del core a propósito</b>: el verde es fondo pleno, la placa negra resalta el dato, y el collage mete ruido con los stickers y doodles del Studio. Es la voz de canal de redes: más cercana, más didáctica, más quilombera.</p>
@@ -827,11 +845,12 @@
       <a href="ai-en-campo.html" style="display:inline-block;background:var(--lime-500);color:var(--ink-900);text-decoration:none;font-weight:700;font-size:14.5px;padding:13px 24px;border-radius:var(--radius-btn);margin-top:14px">Abrir el sub-manual completo →</a>
     </div>
   </div>
-  </div>
+    </div>
 </section>
 
 <!-- ================= 11 MERCH ================= -->
 <section id="merch" style="background:var(--paper-50)">
+  <div class="inner">
   <span class="kicker">11 · Merch & indumentaria</span>
   <h2>La marca puesta</h2>
   <p class="lead">Regla madre del merch (del modelo de producción del buzo): <b>verde profundo + crema, discreto y premium</b>. Wordmark chico en pecho izquierdo, monograma en espalda, patrón de avatares solo en interiores/forros. Nada de estampas gigantes ni lima en textil. <b>El merch se muestra siempre con foto/render real</b> — los esquemas de abajo son especificación de producción, no presentación.</p>
@@ -857,70 +876,8 @@
   <div class="grid g3" id="merch-catalogo"></div>
   <p class="cap" style="max-width:760px">Para completar el catálogo: dejar las fotos en <code style="font-family:var(--font-mono);font-size:11.5px">assets/photos/merch/</code> con el nombre indicado en cada slot (JPG, lado largo ≥1600px). Se muestran solas al recargar.</p>
 
-  <div style="display:none">
-  <div class="grid g3">
-    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:20px;text-align:center">
-      <svg viewBox="0 0 200 210" style="width:100%;max-width:230px">
-        <path fill="#133825" d="M63 38 C70 22 130 22 137 38 L160 48 C170 52 176 60 178 70 L186 118 C187 126 182 132 174 133 L163 130 L163 176 C163 186 156 192 146 192 L54 192 C44 192 37 186 37 176 L37 130 L26 133 C18 132 13 126 14 118 L22 70 C24 60 30 52 40 48 Z"/>
-        <path fill="#0C2117" d="M70 40 C80 27 120 27 130 40 C122 53 78 53 70 40Z"/>
-        <path fill="none" stroke="#ECE3DB" stroke-width="2" stroke-linecap="round" d="M92 52 v18 M108 52 v18"/>
-        <path fill="#0C2117" d="M64 152 h72 v28 c0 7 -5 12 -12 12 h-48 c-7 0 -12 -5 -12 -12 Z"/>
-        <image href="assets/magoya-wordmark-cream.svg" x="112" y="84" width="34"/>
-      </svg>
-      <p class="cap"><b>Buzo — frente.</b> Wordmark crema bordado en pecho izquierdo (~9cm). Forro de capucha: patrón de avatares tono sobre tono.</p>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:20px;text-align:center">
-      <svg viewBox="0 0 200 210" style="width:100%;max-width:230px">
-        <path fill="#133825" d="M63 38 C70 22 130 22 137 38 L160 48 C170 52 176 60 178 70 L186 118 C187 126 182 132 174 133 L163 130 L163 176 C163 186 156 192 146 192 L54 192 C44 192 37 186 37 176 L37 130 L26 133 C18 132 13 126 14 118 L22 70 C24 60 30 52 40 48 Z"/>
-        <path fill="#0C2117" d="M70 36 C82 26 118 26 130 36 C120 44 80 44 70 36Z"/>
-        <circle cx="100" cy="78" r="15" fill="#ECE3DB"/>
-        <g transform="translate(91.6,70.2) scale(0.6)" fill="#133825">
-          <path d="M19.87 0c-1.1 0-2.18.23-3.19.68a8.15 8.15 0 00-2.68 1.94A7.32 7.32 0 009.84.2 7.4 7.4 0 005.1.61 7.72 7.72 0 001.4 3.73 8.5 8.5 0 000 8.48V26h4.53V8.48a3.63 3.63 0 011.01-2.73 3.42 3.42 0 012.59-1.15c.97 0 1.9.41 2.58 1.15a3.63 3.63 0 011.01 2.73V26h4.55V8.48c0-1 .38-1.95 1.05-2.65a3.55 3.55 0 015.09 0c.67.7 1.05 1.66 1.05 2.65V26H28V8.48a8.42 8.42 0 00-2.38-5.99A7.7 7.7 0 0019.88 0z"/>
-        </g>
-      </svg>
-      <p class="cap"><b>Buzo — espalda.</b> Parche circular crema con monograma “m” verde profundo, centrado bajo el cuello (~6cm).</p>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:20px;text-align:center">
-      <svg viewBox="0 0 200 210" style="width:100%;max-width:230px">
-        <path fill="#ECE3DB" d="M60 34 L80 26 C88 38 112 38 120 26 L140 34 L166 48 L154 74 L142 68 L142 172 C142 182 134 188 124 188 L76 188 C66 188 58 182 58 172 L58 68 L46 74 L34 48 Z"/>
-        <image href="assets/magoya-wordmark-green.svg" x="76" y="92" width="48"/>
-      </svg>
-      <p class="cap"><b>Remera.</b> Variante crema con wordmark verde digital centrado — o verde profunda con wordmark crema (como las fotos del equipo).</p>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:20px;text-align:center">
-      <svg viewBox="0 0 200 150" style="width:100%;max-width:210px">
-        <path fill="#133825" d="M42 96 C42 46 158 46 158 96 L158 100 L42 100 Z"/>
-        <path fill="#0C2117" d="M40 100 h120 c22 0 32 12 29 20 c-44 -10 -134 -10 -178 0 c-3 -8 7 -20 29 -20z"/>
-        <circle cx="100" cy="78" r="13" fill="#ECE3DB"/>
-        <g transform="translate(92.9,71.5) scale(0.51)" fill="#133825">
-          <path d="M19.87 0c-1.1 0-2.18.23-3.19.68a8.15 8.15 0 00-2.68 1.94A7.32 7.32 0 009.84.2 7.4 7.4 0 005.1.61 7.72 7.72 0 001.4 3.73 8.5 8.5 0 000 8.48V26h4.53V8.48a3.63 3.63 0 011.01-2.73 3.42 3.42 0 012.59-1.15c.97 0 1.9.41 2.58 1.15a3.63 3.63 0 011.01 2.73V26h4.55V8.48c0-1 .38-1.95 1.05-2.65a3.55 3.55 0 015.09 0c.67.7 1.05 1.66 1.05 2.65V26H28V8.48a8.42 8.42 0 00-2.38-5.99A7.7 7.7 0 0019.88 0z"/>
-        </g>
-      </svg>
-      <p class="cap"><b>Gorra.</b> Verde profundo, parche “m” crema al frente. Nunca el wordmark completo — a ese tamaño no respira.</p>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:20px;text-align:center">
-      <svg viewBox="0 0 200 210" style="width:100%;max-width:200px">
-        <rect x="72" y="26" width="56" height="16" rx="8" fill="#0C2117"/>
-        <path fill="#ECE3DB" d="M74 42 h52 c4 0 7 3 7 7 l-5 130 c0 8 -7 14 -15 14 h-26 c-8 0 -15 -6 -15 -14 l-5 -130 c0 -4 3 -7 7 -7z"/>
-        <image href="assets/magoya-wordmark-deep.svg" x="79" y="108" width="42"/>
-      </svg>
-      <p class="cap"><b>Vaso térmico.</b> Cuerpo crema, tapa verde profundo, wordmark verde al centro.</p>
-    </div>
-    <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:20px;text-align:center">
-      <svg viewBox="0 0 200 210" style="width:100%;max-width:200px">
-        <rect x="52" y="24" width="96" height="162" rx="10" fill="#133825"/>
-        <circle cx="60" cy="44" r="2.4" fill="#0C2117"/><circle cx="60" cy="64" r="2.4" fill="#0C2117"/><circle cx="60" cy="84" r="2.4" fill="#0C2117"/><circle cx="60" cy="104" r="2.4" fill="#0C2117"/><circle cx="60" cy="124" r="2.4" fill="#0C2117"/><circle cx="60" cy="144" r="2.4" fill="#0C2117"/><circle cx="60" cy="164" r="2.4" fill="#0C2117"/>
-        <image href="assets/magoya-wordmark-cream.svg" x="72" y="48" width="52"/>
-        <path fill="#00DE68" d="M76 186 A14 14 0 0 1 104 186 Z M104 186 A14 14 0 0 1 132 186 Z" opacity=".9"/>
-        <rect x="152" y="60" width="10" height="110" rx="5" fill="#ECE3DB"/>
-        <rect x="152" y="60" width="10" height="18" rx="5" fill="#00DE68"/>
-        <path d="M157 170 l0 14" stroke="#133825" stroke-width="4" stroke-linecap="round"/>
-      </svg>
-      <p class="cap"><b>Cuaderno + lapicera.</b> Tapa verde profundo con wordmark crema y festón naciendo del borde. Lapicera crema con clip verde digital.</p>
-    </div>
-  </div>
-  </div>
   <p class="note" style="max-width:760px;margin-top:20px">La referencia de calidad es el render del buzo (guía de producción con colores y espaciados). Toda pieza textil se valida contra ella: <b>bordado antes que estampa</b>, tono sobre tono antes que contraste, crema #ECE3DB y verde #133825 como dupla fija, y <b>sin lima en textil</b>.</p>
+  </div>
 </section>
 
 <script>
@@ -957,7 +914,7 @@
     const card = document.createElement('div');
     card.style.cssText = 'background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column';
     card.innerHTML =
-      '<div class="ph" style="aspect-ratio:4/3;background:var(--sage-50);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;position:relative;overflow:hidden"></div>' +
+      '<div class="ph" style="aspect-ratio:4/3;background:var(--sage-50);display:flex;align-items:flex-end;justify-content:flex-start;padding:16px;position:relative;overflow:hidden"></div>' +
       '<div style="padding:16px"><b style="font-size:14.5px;display:block">'+it.n+'</b>' +
       '<p style="font-size:12.5px;color:var(--gray-600);line-height:1.45;margin-top:5px">'+it.spec+'</p></div>';
     const ph = card.querySelector('.ph');
@@ -977,6 +934,7 @@
 
 <!-- ================= 12 PAPELERÍA ================= -->
 <section id="papeleria">
+  <div class="inner">
   <span class="kicker">12 · Papelería & corporativo</span>
   <h2>El logo en documentos</h2>
   <p class="lead">Membrete, firma de email y reglas para documentos del día a día — donde la marca más se degrada si no hay sistema.</p>
@@ -1028,10 +986,12 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- ================= 13 REGLAS ================= -->
 <section id="reglas">
+  <div class="inner">
   <span class="kicker">13 · Reglas de oro</span>
   <h2>Lo que nunca se negocia</h2>
   <div class="rule-list" style="margin-top:26px">
@@ -1047,6 +1007,7 @@
     <div class="rule"><b class="dont">✗</b><span>Personajes con rostro, estilo infantil o monoline — quedaron descartados.</span></div>
     <div class="rule"><b class="dont">✗</b><span>La metáfora del <b>puzzle</b> (brand viejo) queda retirada en todas las piezas — su reemplazo narrativo es el motivo camino.</span></div>
     <div class="rule"><b class="dont">✗</b><span>Naranja y amarillo del brand viejo — fuera de la paleta. Los acentos son verdes o lima.</span></div>
+  </div>
   </div>
 </section>
 

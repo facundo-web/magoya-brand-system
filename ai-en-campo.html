@@ -23,11 +23,11 @@
   .side .v{margin-top:auto;font-size:11px;color:#8FA396;letter-spacing:.08em}
   main{margin-left:230px;padding-top:44px}
   section{padding:76px 0}
-  section > *{max-width:1180px;margin:0 auto;padding:0 56px}
+  section > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 56px}
 
   /* ---------- hero ---------- */
   .hero{margin-left:230px;margin-top:44px;background:var(--emerald-500);padding:64px 0 56px}
-  .hero > *{max-width:1180px;margin:0 auto;padding:0 56px}
+  .hero > *{max-width:1284px;margin:0 auto 0 0;padding:0 56px}
   .hero .k{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green-900)}
   .hero h1{font-weight:800;font-size:clamp(2.8rem,6vw,4.8rem);letter-spacing:-0.03em;line-height:1;margin:10px 0 14px;color:var(--ink-900)}
   .hero p{color:var(--green-900);font-size:1.15rem;max-width:62ch}
@@ -55,9 +55,9 @@
   .sw .meta span{color:var(--gray-600);font-family:var(--font-mono);font-size:11px}
 
   /* doodles reales del Studio (mask = recoloreable) */
-  .dm{display:block;background:var(--ink-900);width:34px;height:34px;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
-  .dcell{background:var(--sage-50);border-radius:12px;padding:18px 8px 10px;display:flex;flex-direction:column;align-items:center;gap:10px;min-height:96px;justify-content:center}
-  .dn{font-family:var(--font-mono);font-size:10px;color:var(--gray-600);text-align:center}
+  .dm{display:block;background:var(--ink-900);width:34px;height:34px;flex:0 0 auto;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
+  .dcell{background:var(--sage-50);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-height:96px;justify-content:flex-start}
+  .dn{font-family:var(--font-mono);font-size:10px;color:var(--gray-600);margin-top:auto}
 
   /* piezas demo */
   .piece{background:var(--emerald-500);border-radius:16px;position:relative;overflow:hidden;container-type:inline-size}
@@ -79,7 +79,7 @@
     main,.hero{margin-left:0}
     main{padding-top:0}
     .hero{margin-top:0;padding:40px 0}
-    .hero > *,section > *{padding:0 20px}
+    .hero > *,section > .inner{padding:0 20px}
     section{padding:44px 0}
     .g2,.g3,.g4,.rule-list{grid-template-columns:1fr}
     .table-scroll{overflow-x:auto}
@@ -118,7 +118,7 @@
 
 <!-- 1 ESENCIA -->
 <section id="esencia">
-  <div>
+  <div class="inner">
   <span class="kick">1 · Esencia</span>
   <h2>Educar sobre IA, con los pies en el lote</h2>
   <p class="lead">AI en campo existe para un solo trabajo: que el productor y el técnico agro entiendan y usen IA en su día a día. El contenido responde preguntas reales (“¿qué le pregunto a la IA sobre mi lote?”), muestra herramientas concretas y anuncia webinars. Es la voz de canal de redes de Magoya — cuando la pieza es institucional (clientes, ventas, employer brand), se usa el core.</p>
@@ -126,12 +126,12 @@
     <div class="rule"><b class="do">✓</b><span><b>Cuándo:</b> carruseles educativos, tips de herramientas, webinars, cuenta regresiva, “mito vs realidad”, chat del productor.</span></div>
     <div class="rule"><b class="dont">✗</b><span><b>Cuándo NO:</b> propuestas comerciales, casos de cliente formales, deck de ventas, sitio — eso es core Magoya.</span></div>
   </div>
-  </div>
+    </div>
 </section>
 
 <!-- 2 COLOR & VOZ -->
 <section id="color-voz" style="background:var(--sage-50)">
-  <div>
+  <div class="inner">
   <span class="kick">2 · Color & voz</span>
   <h2>Verde pleno, placa negra, voseo</h2>
   <p class="lead">La sub-marca rompe tres reglas del core <b>a propósito</b> — y solo estas tres. Todo lo demás (Manrope, wordmark intocable, logos reales) sigue igual.</p>
@@ -178,12 +178,12 @@
 
   <h3>La voz</h3>
   <p class="note" style="max-width:70ch"><b>Voseo argentino, didáctica y directa:</b> “Analizá”, “Usá Claude o ChatGPT”, “Che, ¿con qué IA armo informes?”. Preguntas reales del productor como ancla. Emojis con criterio: uno por CTA (👈 🌱 💧), nunca lluvia. Sin jerga corporativa — acá no hay “soluciones end-to-end”, hay “te muestro cómo”.</p>
-  </div>
+    </div>
 </section>
 
 <!-- 3 RUIDO -->
 <section id="ruido">
-  <div>
+  <div class="inner">
   <span class="kick">3 · Ruido</span>
   <h2>Los elementos del Studio</h2>
   <p class="lead">Estos son los assets <b>reales</b> que usa Magoya Studio para producir las piezas — los mismos archivos, sin versiones paralelas. Los doodles son monocromos y se tiñen; los logos de IA y redes van en su color oficial.</p>
@@ -234,12 +234,12 @@
     <div class="rule"><b class="do">✓</b><span>2–4 elementos de ruido por pieza · rotación ±5–15° · en las esquinas.</span></div>
     <div class="rule"><b class="dont">✗</b><span>Ruido sobre el texto, más de 4 elementos, o inventar doodles nuevos fuera del set.</span></div>
   </div>
-  </div>
+    </div>
 </section>
 
 <!-- 4 COMPONENTES -->
 <section id="componentes" style="background:var(--sage-50)">
-  <div>
+  <div class="inner">
   <span class="kick">4 · Componentes</span>
   <h2>El kit de carruseles</h2>
   <p class="lead">Los cuatro bloques con los que se construye un carrusel educativo, en el orden en que se usan: <b>engancho con la pregunta real → muestro la herramienta → doy la prueba → cierro con el paso siguiente</b>. Todos existen como plantilla en el Studio.</p>
@@ -308,7 +308,7 @@
       <p class="cap">Para contar algo que “le llega” al productor.</p>
     </div>
     <div class="comp"><b class="t">Cuenta regresiva</b>
-      <div style="background:var(--emerald-500);border-radius:12px;padding:16px;text-align:center">
+      <div style="background:var(--emerald-500);border-radius:12px;padding:16px;">
         <div style="font-size:56px;font-weight:800;letter-spacing:-0.04em;line-height:1">3</div>
         <div style="font-size:12.5px;font-weight:800;letter-spacing:.12em;color:var(--green-900)">DÍAS PARA EL WEBINAR</div>
       </div>
@@ -322,12 +322,12 @@
       <p class="cap">El formato de más engagement en LinkedIn B2B.</p>
     </div>
   </div>
-  </div>
+    </div>
 </section>
 
 <!-- 5 PLANTILLAS -->
 <section id="plantillas">
-  <div>
+  <div class="inner">
   <span class="kick">5 · Plantillas</span>
   <h2>De la plantilla a la pieza</h2>
   <p class="lead">Las piezas <b>no se arman a mano</b>: se eligen en el Studio y se cambia texto y foto. Esto es lo que hay que saber como marca — <b>qué plantilla usar según el objetivo</b>. El catálogo completo (28 plantillas) está en la galería.</p>
@@ -350,12 +350,12 @@
   </div>
   <p class="cap">Regla del Studio: la galería está ordenada por objetivo de marketing — primero lo que educa y prueba, “en blanco” al final. <b>Arrancar en blanco es donde se rompe la marca</b>: si hay una plantilla que sirve, se usa esa.</p>
   <a class="studio-cta" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">Abrir la galería en Magoya Studio →</a>
-  </div>
+    </div>
 </section>
 
 <!-- 6 FORMATOS -->
 <section id="formatos" style="background:var(--sage-50)">
-  <div>
+  <div class="inner">
   <span class="kick">6 · Formatos</span>
   <h2>Los 13 formatos de red</h2>
   <p class="lead">Toda plantilla se exporta a cualquier formato — el Studio maneja las zonas seguras. <b>Formato madre de AI en campo: carrusel retrato 4:5.</b></p>
@@ -379,12 +379,12 @@
     </tbody>
   </table>
   </div>
-  </div>
+    </div>
 </section>
 
 <!-- 7 REGLAS -->
 <section id="reglas">
-  <div>
+  <div class="inner">
   <span class="kick">7 · Reglas</span>
   <h2>Qué rompe y qué no</h2>
   <div class="rule-list" style="margin-top:16px">
@@ -399,7 +399,7 @@
     <div class="rule"><b class="dont">✗</b><span>Lima #A2FF00 casi no juega acá — el protagonista es el verde digital. No mezclar los dos verdes brillantes en una pieza.</span></div>
     <div class="rule"><b class="dont">✗</b><span>El wordmark sigue intocable: negro o crema, nunca reconstruido ni con sombras.</span></div>
   </div>
-  </div>
+    </div>
 </section>
 
 </main>
