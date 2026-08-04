@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es" data-theme="studio">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magoya · Piezas comerciales v1.1</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--color-canvas-meta);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1160px;margin:0 auto;padding:56px 28px 90px}
+  .intro{margin-bottom:44px}
+  .eyebrow{display:inline-block;background:var(--ink-900);color:#fff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+  .intro h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-0.03em;margin:14px 0 10px}
+  .intro p{color:var(--gray-600);max-width:70ch;font-size:1.1rem}
+  .intro a{color:var(--emerald-700);font-weight:600}
+
+  .tpl{display:grid;grid-template-columns:300px 1fr;gap:34px;margin:64px 0;align-items:start}
+  @media (max-width:900px){.tpl{grid-template-columns:1fr}}
+  .anat h2{font-weight:800;letter-spacing:-0.02em;font-size:1.65rem;margin-bottom:6px}
+  .anat .src{font-size:12px;color:var(--gray-600);font-family:var(--font-mono);margin-bottom:16px;display:block}
+  .anat ol{list-style:none;counter-reset:z;display:flex;flex-direction:column}
+  .anat li{counter-increment:z;display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--color-hairline);font-size:13.5px;line-height:1.45}
+  .anat li::before{content:counter(z);flex:0 0 22px;height:22px;border-radius:50%;background:var(--green-900);color:var(--cream-50);font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .anat li b{font-weight:700}
+  .anat .note{font-size:12.5px;color:var(--gray-600);margin-top:14px;line-height:1.5}
+
+  /* página A4 vertical mock */
+  .page{aspect-ratio:210/297;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 10px 36px rgba(0,0,0,.10);container-type:inline-size;position:relative;display:flex;flex-direction:column}
+  .zone{position:relative}
+  .ztag{position:absolute;top:.8cqw;right:.8cqw;z-index:5;background:var(--ink-900);color:#fff;font-size:1.3cqw;font-weight:700;font-family:var(--font-mono);padding:.3cqw .9cqw;border-radius:.5cqw;opacity:.85}
+
+  /* tipografía de página */
+  .p-h1{font-weight:800;letter-spacing:-0.03em;line-height:1.05;font-size:5.2cqw}
+  .p-h2{font-weight:800;letter-spacing:-0.02em;line-height:1.1;font-size:3.6cqw}
+  .p-h3{font-weight:700;font-size:2.3cqw}
+  .p-body{font-size:1.7cqw;line-height:1.5;color:var(--gray-800)}
+  .p-cap{font-size:1.45cqw;line-height:1.45;color:var(--gray-600)}
+  .p-kick{font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:1.5cqw}
+  .wm{width:12cqw}
+  .btn-lime{display:inline-block;background:var(--lime-500);color:var(--ink-900);font-weight:700;font-size:1.7cqw;padding:1cqw 2.4cqw;border-radius:.9cqw}
+  .check{display:flex;gap:1cqw;font-size:1.55cqw;line-height:1.45;padding:.55cqw 0}
+  .check::before{content:"✓";color:var(--emerald-700);font-weight:800}
+
+  /* T1 one-pager */
+  .t1-head{background:var(--green-900);color:var(--cream-50);padding:4.5cqw 5cqw;display:flex;flex-direction:column;gap:1.6cqw}
+  .t1-how{padding:3.4cqw 5cqw;display:grid;grid-template-columns:1fr 1fr;gap:0 4cqw}
+  .t1-logos{border-top:1px solid var(--color-hairline);border-bottom:1px solid var(--color-hairline);padding:1.8cqw 5cqw;display:flex;gap:3.4cqw;align-items:center;justify-content:space-between}
+  .t1-logos img{height:3cqw;object-fit:contain;filter:grayscale(1);opacity:.7}
+  .t1-team{padding:3cqw 5cqw;display:grid;grid-template-columns:repeat(5,1fr);gap:1.6cqw}
+  .t1-team img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1) contrast(1.05);border-radius:.9cqw}
+  .t1-team b{display:block;font-size:1.4cqw;margin-top:.7cqw}
+  .t1-team span{font-size:1.2cqw;color:var(--gray-600)}
+  .t1-models{background:var(--green-950);color:var(--cream-50);padding:3.4cqw 5cqw;margin-top:auto}
+  .t1-models .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw;margin-top:1.8cqw}
+  .t1-models .card{background:var(--green-900);border-radius:1.2cqw;padding:1.8cqw}
+  .t1-models .card b{font-size:1.7cqw;display:block;margin-bottom:.6cqw}
+  .t1-models .card p{font-size:1.35cqw;color:var(--cream-300);line-height:1.45}
+  .t1-foot{background:var(--green-950);color:var(--cream-100);padding:1.6cqw 5cqw 2.6cqw;display:flex;justify-content:space-between;align-items:center;font-size:1.5cqw}
+
+  /* T2 flyer servicio */
+  .t2-head{padding:4.5cqw 5cqw 3cqw}
+  .t2-proc{padding:0 5cqw;display:grid;grid-template-columns:repeat(3,1fr);gap:1.8cqw}
+  .t2-proc .card{background:var(--sage-50);border-radius:1.4cqw;padding:2.2cqw}
+  .t2-proc .n{font-weight:800;font-size:4.6cqw;letter-spacing:-0.03em;line-height:1}
+  .t2-proc b{font-size:1.9cqw;display:block;margin:.9cqw 0 .5cqw}
+  .t2-proc p{font-size:1.4cqw;color:var(--gray-600);line-height:1.45}
+  .t2-sol{padding:3cqw 5cqw;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4cqw}
+  .t2-sol .card{border:1px solid var(--color-hairline);border-radius:1.2cqw;padding:1.6cqw}
+  .t2-sol .pill{display:inline-block;background:transparent;color:var(--green-900);border:1px solid var(--green-900);font-size:1.2cqw;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.5cqw 1.2cqw;border-radius:999px;margin-bottom:.9cqw}
+  .t2-sol p{font-size:1.3cqw;color:var(--gray-600);line-height:1.4}
+  .t2-foot{background:var(--green-900);color:var(--cream-50);margin-top:auto;padding:2.6cqw 5cqw;display:flex;justify-content:space-between;align-items:center}
+
+  /* T3 staff aug */
+  .t3-head{background:linear-gradient(180deg,rgba(12,33,23,.55),rgba(12,33,23,.86)),url("assets/photos/field-bali.jpg") center/cover;color:var(--cream-50);padding:4.5cqw 5cqw;display:flex;flex-direction:column;gap:1.4cqw}
+  .t3-value{margin:3cqw 5cqw 0;background:var(--green-950);color:var(--cream-50);border-radius:1.4cqw;padding:2.6cqw;display:flex;gap:3.4cqw;align-items:center}
+  .t3-value .n{font-weight:800;font-size:7cqw;letter-spacing:-0.03em;color:var(--lime-500);line-height:1}
+  .t3-value p{font-size:1.6cqw;color:var(--cream-200);line-height:1.5;max-width:46cqw}
+  .t3-steps{padding:3cqw 5cqw;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4cqw}
+  .t3-steps .card{border:1px solid var(--color-hairline);border-radius:1.2cqw;padding:1.6cqw}
+  .t3-steps .n{font-weight:800;font-size:2.6cqw;color:var(--emerald-700)}
+  .t3-steps b{display:block;font-size:1.5cqw;margin:.5cqw 0 .3cqw}
+  .t3-steps p{font-size:1.25cqw;color:var(--gray-600);line-height:1.4}
+  .t3-foot{background:var(--ink-950);color:var(--white);margin-top:auto;padding:2.6cqw 5cqw;display:flex;justify-content:space-between;align-items:center}
+  @media (max-width:700px){.wrap{padding:28px 14px 60px}.tpl{margin:44px 0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="intro">
+    <span class="eyebrow">Magoya · Piezas comerciales v1.1</span>
+    <h1>Plantillas de piezas comerciales</h1>
+    <p>Las arquitecturas de contenido probadas de los flyers 2024, capturadas como <b>plantillas del sistema</b> en el brand nuevo. No son piezas finales: son las estructuras para producirlas — cada zona está numerada y explicada. Regla transversal: cero naranja/amarillo, cero puzzle, personas B&amp;N, un golpe de lima por pieza. <a href="index.html">← volver al brand book</a></p>
+  </div>
+
+  <!-- ============ T1 · ONE-PAGER ============ -->
+  <div class="tpl">
+    <div class="anat">
+      <h2>T1 · One-pager institucional</h2>
+      <span class="src">estructura heredada de: ONE PAGE MAGOYA GRAL.pdf</span>
+      <ol>
+        <li><span><b>Header verde profundo</b> — wordmark crema + propuesta de valor con palabra en lima + bajada corta.</span></li>
+        <li><span><b>How we do it</b> — 6 bullets con check verde en 2 columnas (domain expertise, product oriented, global reach, metodología, partnerships).</span></li>
+        <li><span><b>Franja de logos</b> — clientes reales en gris, una sola fila.</span></li>
+        <li><span><b>Equipo</b> — 5 fichas foto B&amp;N + nombre + perfil de una línea.</span></li>
+        <li><span><b>Engagement models</b> — sección oscura con 3 cards (Product Development / Team Extension / Staff Augmentation).</span></li>
+        <li><span><b>Footer CTA</b> — contacto único (unificar: info@magoya.com).</span></li>
+      </ol>
+      <p class="note">Es el <b>template madre</b>: el flyer de servicio (T2) y el de staff (T3) derivan de él. Actualizar bios antes de producir (los años de la 2024 quedaron viejos).</p>
+    </div>
+    <div class="page">
+      <div class="zone t1-head"><span class="ztag">1</span>
+        <img class="wm" src="assets/magoya-wordmark-cream.svg" alt="Magoya">
+        <div class="p-h1">At Magoya we develop<br>tech products <span style="color:var(--lime-500)">for Ag</span><br>as a service</div>
+        <p class="p-body" style="color:var(--cream-200);max-width:56cqw">Tailored, scalable solutions that drive software adoption in the Ag space.</p>
+      </div>
+      <div class="zone t1-how"><span class="ztag">2</span>
+        <div>
+          <div class="check"><span><b>Domain expertise</b> — we deeply understand Ag and focus 100% on Ag.</span></div>
+          <div class="check"><span><b>Product oriented</b> — solving real user problems with a multidisciplinary team.</span></div>
+          <div class="check"><span><b>Global reach</b> — North America, Latin America and Europe.</span></div>
+        </div>
+        <div>
+          <div class="check"><span><b>Proven methodology</b> — a collaborative product development journey.</span></div>
+          <div class="check"><span><b>Partnerships</b> — we integrate with existing solutions to get to market faster.</span></div>
+          <div class="check"><span><b>Embedded teams</b> — hard to tell us apart from your own people.</span></div>
+        </div>
+      </div>
+      <div class="zone t1-logos"><span class="ztag">3</span>
+        <img src="assets/logos/clients/apeel-sciences.svg" alt="Apeel">
+        <img src="assets/logos/clients/bunge.svg" alt="Bunge">
+        <img src="assets/logos/clients/corteva.svg" alt="Corteva">
+        <img src="assets/logos/clients/climate-fieldview.svg" alt="FieldView">
+        <img src="assets/logos/clients/syngenta.svg" alt="Syngenta">
+        <img src="assets/logos/clients/precision-planting.svg" alt="Precision Planting">
+      </div>
+      <div class="zone t1-team"><span class="ztag">4</span>
+        <figure><img src="assets/photos/founder-bw.png" alt=""><b>Nombre Apellido</b><span>Founder &amp; CEO</span></figure>
+        <figure><img src="assets/photos/team-couple-bw.jpg" alt=""><b>Nombre Apellido</b><span>Co-Founder &amp; CFO</span></figure>
+        <figure><img src="assets/photos/founder-bw.png" alt=""><b>Nombre Apellido</b><span>CTO</span></figure>
+        <figure><img src="assets/photos/team-couple-bw.jpg" alt=""><b>Nombre Apellido</b><span>NA Business Lead</span></figure>
+        <figure><img src="assets/photos/founder-bw.png" alt=""><b>Nombre Apellido</b><span>LatAm Business Lead</span></figure>
+      </div>
+      <div class="zone t1-models"><span class="ztag">5</span>
+        <div class="p-h2" style="color:var(--cream-50)">Engagement models</div>
+        <div class="cards">
+          <div class="card"><b>Product Development</b><p>Full team, entire process — from discovery to launch.</p></div>
+          <div class="card"><b>Team Extension</b><p>Shared responsibilities inside your product process.</p></div>
+          <div class="card"><b>Staff Augmentation</b><p>Senior talent under your processes and management.</p></div>
+        </div>
+      </div>
+      <div class="zone t1-foot"><span>Get in touch now!</span><span class="btn-lime">info@magoya.com</span></div>
+    </div>
+  </div>
+
+  <!-- ============ T2 · FLYER DE SERVICIO ============ -->
+  <div class="tpl">
+    <div class="anat">
+      <h2>T2 · Flyer de servicio</h2>
+      <span class="src">estructura heredada de: FLYER_ Product Development.pdf</span>
+      <ol>
+        <li><span><b>Header studio</b> — kicker pill + display negro con palabra en verde #009145 + bajada.</span></li>
+        <li><span><b>Proceso en 3 cards sage</b> — números gigantes Manrope 800 (reemplazan las barras naranjas viejas): DIPI → MVP → Evolution, con scope y deliverables.</span></li>
+        <li><span><b>Soluciones</b> — 4 cards blancas con pill verde profundo (reemplazan las columnas verdes planas).</span></li>
+        <li><span><b>Footer CTA verde profundo</b> — cierre + botón lima.</span></li>
+      </ol>
+      <p class="note">El contenido de las 3 etapas es oro comercial — se conserva textual. Deriva del master T1: mismo footer, misma voz.</p>
+    </div>
+    <div class="page">
+      <div class="zone t2-head"><span class="ztag">1</span>
+        <span class="p-kick" style="margin-bottom:1.2cqw;display:inline-block">Service · Product Development</span>
+        <div class="p-h1">We build <span style="color:var(--emerald-700)">digital products</span> for agribusiness, end to end.</div>
+        <p class="p-body" style="margin-top:1.2cqw;max-width:60cqw">Our custom product development service guides your product through a collaborative journey.</p>
+      </div>
+      <div class="zone t2-proc"><span class="ztag">2</span>
+        <div class="card"><div class="n">1</div><b>DIPI</b><p>Discovery + Ideation + Prototyping + Iteration. We de-risk before we build.</p></div>
+        <div class="card"><div class="n">2</div><b>MVP</b><p>The smallest product that proves value in the field, shipped fast.</p></div>
+        <div class="card"><div class="n">3</div><b>Evolution</b><p>Long-haul partnership: measure, learn and grow the platform.</p></div>
+      </div>
+      <div class="zone t2-sol"><span class="ztag">3</span>
+        <div class="card"><span class="pill">Ag Platforms</span><p>Multi-tenant apps for input companies and retailers.</p></div>
+        <div class="card"><span class="pill">Data &amp; Agro</span><p>Recommendations engines with agronomic know-how.</p></div>
+        <div class="card"><span class="pill">Integrations</span><p>Connect existing solutions to get to market faster.</p></div>
+        <div class="card"><span class="pill">UX for Ag</span><p>Interfaces farmers and reps actually adopt.</p></div>
+      </div>
+      <div class="zone t2-foot"><span class="ztag">4</span>
+        <div class="p-h3" style="color:var(--cream-50)">Let's build what your product needs next.</div>
+        <span class="btn-lime">Start a discovery →</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ T3 · FLYER STAFF AUGMENTATION ============ -->
+  <div class="tpl">
+    <div class="anat">
+      <h2>T3 · Flyer Staff Augmentation</h2>
+      <span class="src">estructura heredada de: FLYER_Staff Augentation.pdf (typo del original, corregido acá)</span>
+      <ol>
+        <li><span><b>Header foto aérea + scrim verde</b> — reemplaza el header naranja del original.</span></li>
+        <li><span><b>Card de valor dark</b> — el argumento "LatAm: a good deal for talent" con el 40% de savings en lima gigante + same time zone.</span></li>
+        <li><span><b>Proceso en 6 pasos</b> — cards claras con números en verde #009145 (reemplazan los números naranjas).</span></li>
+        <li><span><b>Footer CTA negro</b> — variante dark del cierre (matchea la hiring card).</span></li>
+      </ol>
+      <p class="note">Antes de producir: validar con Varu que Staff Augmentation siga en la oferta 2026. La estructura queda lista igual.</p>
+    </div>
+    <div class="page">
+      <div class="zone t3-head"><span class="ztag">1</span>
+        <img class="wm" src="assets/magoya-wordmark-cream.svg" alt="Magoya">
+        <div class="p-h1">Senior AgTech talent,<br>embedded in <span style="color:var(--lime-500)">your team</span></div>
+      </div>
+      <div class="zone t3-value"><span class="ztag">2</span>
+        <div class="n">40%</div>
+        <p><b style="color:var(--cream-50)">LatAm: a good deal for talent.</b> Average cost savings vs. US hiring — same time zone, senior seniority, AgTech fluency.</p>
+      </div>
+      <div class="zone t3-steps"><span class="ztag">3</span>
+        <div class="card"><div class="n">1</div><b>Brief</b><p>Role, seniority and stack you need.</p></div>
+        <div class="card"><div class="n">2</div><b>Match</b><p>Curated candidates from our bench.</p></div>
+        <div class="card"><div class="n">3</div><b>Interview</b><p>You validate fit — technical and human.</p></div>
+        <div class="card"><div class="n">4</div><b>Onboard</b><p>Embedded under your processes.</p></div>
+        <div class="card"><div class="n">5</div><b>Deliver</b><p>Daily management stays with you.</p></div>
+        <div class="card"><div class="n">6</div><b>Scale</b><p>Grow or adjust the team per season.</p></div>
+      </div>
+      <div class="zone t3-foot"><span class="ztag">4</span>
+        <div class="p-h3">Need senior hands this quarter?</div>
+        <span class="btn-lime">people@magoya.com</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

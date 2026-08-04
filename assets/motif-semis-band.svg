@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Motivo Magoya — banda de semicírculos">
+  <!-- Banda festoneada: semicírculos que NACEN del borde inferior de la pieza.
+       Cumple la regla de sangrado: el motivo se ancla a un extremo, nunca queda cortado al aire.
+       preserveAspectRatio=xMidYMax slice → los semicírculos NUNCA se deforman:
+       se anclan al borde inferior y recortan a los lados según el contenedor. -->
+  <g fill="#00DE68">
+    <path d="M0 120 A60 60 0 0 1 120 120 Z"/>
+    <path d="M120 120 A60 60 0 0 1 240 120 Z"/>
+    <path d="M240 120 A60 60 0 0 1 360 120 Z"/>
+    <path d="M360 120 A60 60 0 0 1 480 120 Z"/>
+    <path d="M480 120 A60 60 0 0 1 600 120 Z"/>
+    <path d="M600 120 A60 60 0 0 1 720 120 Z"/>
+    <path d="M720 120 A60 60 0 0 1 840 120 Z"/>
+    <path d="M840 120 A60 60 0 0 1 960 120 Z"/>
+    <path d="M960 120 A60 60 0 0 1 1080 120 Z"/>
+    <path d="M1080 120 A60 60 0 0 1 1200 120 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,229 @@
+/* ============================================================
+   MAGOYA · DESIGN SYSTEM — TOKENS  v1.0  (BRAND FINAL)
+   Capa 1: Primitivos (valor crudo, no usar directo en UI)
+   Capa 2: Semánticos (var --color-*  →  esto es lo que se usa)
+   ------------------------------------------------------------
+   Fuentes autoritativas integradas:
+   · Guía de producción (buzo): verde #133825 · crema #ECE3DB
+   · Wordmark + avatares vectoriales: verde digital #00DE68
+   · Moodboard + módulos del diseñador (2026): lima #A2FF00,
+     negro #161616, superficies blanco/sage, foto aérea + B&N
+   · Ilustración (personajes planos): verde #33DB4E + lima
+   ✔ = color oficial de marca.  + = derivado de escala.
+   Tipografía: Manrope (variable, self-hosted).
+   ============================================================ */
+
+@font-face {
+  font-family: "Manrope";
+  src: url("assets/font/manrope/Manrope-VariableFont_wght.ttf") format("truetype-variations");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  /* ---------- 1. PRIMITIVOS ---------- */
+
+  /* Verde Magoya profundo — institucional / superficies oscuras */
+  --green-950: #0C2117;   /* + el más profundo (fondo) */
+  --green-900: #133825;   /* ✔ Verde Magoya oficial (buzo) */
+  --green-800: #1A4A31;   /* + superficie elevada */
+  --green-700: #235F40;   /* + bordes / hover sobre oscuro */
+
+  /* Verde digital — el verde del logo y los avatares */
+  --emerald-400: #33E886; /* + claro */
+  --emerald-500: #00DE68; /* ✔ wordmark + avatares (verificado) */
+  --emerald-600: #00B856; /* + hover */
+  --emerald-700: #009145; /* + pressed / sobre blanco SOLO texto grande (≥24px bold, 4.1:1) */
+
+  /* Lima energía — moodboard + piezas del diseñador (CTA, display, motivo camino) */
+  --lime-300: #CBF06E;    /* + marcador suave / highlight editorial */
+  --lime-400: #B6E84F;    /* + intermedio */
+  --lime-500: #A2FF00;    /* ✔ lima energía (caminos, display, botones) */
+  --lime-600: #8BDB00;    /* + hover */
+
+  /* Verde ilustración — ropa de personajes, soporte y data-viz */
+  --leaf-300: #88E755;    /* + */
+  --leaf-500: #33DB4E;    /* ✔ verde personajes / soporte */
+  --leaf-700: #309E3A;    /* + derivado (data-viz oscuro; no aparece en los SVG actuales) */
+
+  /* Colores SOLO-ilustración (personajes planos; no usar en UI/texto) */
+  --peach-300: #FFC67B;   /* ✔ piel de personajes */
+  --gray-200:  #DFDFDF;   /* ✔ gris ropa de personajes (unificado) */
+
+  /* Crema Magoya — neutro cálido firma (core institucional) */
+  --cream-50:  #F6F1EB;   /* + casi blanco cálido */
+  --cream-100: #ECE3DB;   /* ✔ Crema Magoya oficial */
+  --cream-200: #DCD0C4;   /* + */
+  --cream-300: #C4B5A6;   /* + */
+
+  /* Papel / sage — lienzos de slides (módulos del diseñador) */
+  --paper-50:  #F7F4EF;   /* + canvas claro cálido */
+  --paper-100: #F1EDE7;   /* + canvas editorial (greige) */
+  --paper-200: #E6E1D8;   /* + bordes suaves sobre papel */
+  --sage-50:   #EEF2EC;   /* ✔ superficie sage clara (módulos de slides) */
+  --sage-100:  #E3EAE0;   /* + sage medio */
+
+  /* Neutros */
+  --ink-950: #0D0C0C;     /* ✔ negro logo */
+  --ink-900: #161616;     /* ✔ negro de texto del diseñador */
+  --gray-800: #222222;    /* ✔ */
+  --gray-600: #666666;    /* ✔ */
+  --gray-400: #AAAAAA;    /* ✔ */
+  --gray-300: #D0D0D0;    /* ✔ */
+  --gray-100: #EFEFEF;    /* ✔ gris claro de superficie */
+  --white: #FFFFFF;       /* ✔ */
+
+  /* Funcionales (estados) */
+  --success-500: var(--emerald-500);
+  --info-500:    #2E7DD1;   /* + */
+  --warning-500: #E0A33A;   /* + */
+  --danger-500:  #D8514E;   /* + */
+
+
+  /* ---------- 2. SEMÁNTICOS (tema default = verde profundo, core) ---------- */
+
+  /* Fondos y superficies */
+  --color-bg:             var(--green-950);
+  --color-surface:        var(--green-900);
+  --color-surface-raised: var(--green-800);
+  --color-overlay:        rgba(12,33,23,.75);
+
+  /* Texto */
+  --color-text:         var(--cream-50);    /* principal (logo crema sobre verde) */
+  --color-text-muted:   var(--cream-300);   /* secundario */
+  --color-text-subtle:  #8FA396;            /* terciario / captions */
+  --color-text-inverse: var(--green-900);   /* sobre fondos claros/acento */
+
+  /* Acento / marca */
+  --color-accent:       var(--emerald-500); /* identidad: logo, links, micro-acentos */
+  --color-accent-hover: var(--emerald-600);
+  --color-accent-text:  var(--green-950);   /* texto SOBRE el verde digital */
+  --color-energy:       var(--lime-500);    /* lima: CTA, display, motivo camino */
+  --color-energy-text:  var(--ink-900);     /* texto SOBRE lima */
+  --color-mark:         var(--lime-300);    /* marcas a mano (subrayado/círculo/flecha) */
+  --color-motif:        var(--lime-500);    /* motivo camino / estratos */
+
+  /* Bordes y líneas */
+  --color-border:        rgba(236,227,219,.16);
+  --color-border-strong: var(--green-700);
+  --color-focus:         var(--emerald-500);
+
+  /* Estados */
+  --color-success: var(--success-500);
+  --color-info:    var(--info-500);
+  --color-warning: var(--warning-500);
+  --color-danger:  var(--danger-500);
+
+
+  /* ---------- 3. ESCALAS NO-COLOR ---------- */
+
+  /* Tipografía — Manrope variable */
+  --font-display: "Manrope", system-ui, sans-serif;
+  --font-body:    "Manrope", system-ui, sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Escala tipográfica (ratio 1.25 / major third) */
+  --text-xs:   0.75rem;   /* 12 */
+  --text-sm:   0.875rem;  /* 14 */
+  --text-base: 1rem;      /* 16 */
+  --text-lg:   1.25rem;   /* 20 */
+  --text-xl:   1.563rem;  /* 25 */
+  --text-2xl:  1.953rem;  /* 31 */
+  --text-3xl:  2.441rem;  /* 39 */
+  --text-4xl:  3.052rem;  /* 49 */
+  --text-5xl:  3.815rem;  /* 61 */
+  --text-6xl:  4.768rem;  /* 76  — display de módulos (≈84pt slide) */
+  --text-7xl:  5.96rem;   /* 95  — display hero (≈126pt slide) */
+
+  --leading-tight: 1.05;
+  --leading-snug:  1.3;
+  --leading-normal:1.55;
+
+  /* Manrope: pesos disponibles 200–800 */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+  --weight-extra:   800;
+  --tracking-tight: -0.03em;   /* display apretado (módulos del diseñador) */
+  --tracking-wide:  0.12em;    /* kickers / etiquetas MAYÚSCULAS */
+
+  /* Espaciado (base 4px) */
+  --space-1: 0.25rem; --space-2: 0.5rem;  --space-3: 0.75rem;
+  --space-4: 1rem;    --space-5: 1.5rem;  --space-6: 2rem;
+  --space-8: 3rem;    --space-10: 4rem;   --space-12: 6rem;
+
+  /* Radios — la marca es redondeada (logo, pills, personajes) */
+  --radius-sm: 6px; --radius-md: 12px; --radius-lg: 20px;
+  --radius-xl: 28px; --radius-full: 999px;
+  --radius-btn: 10px;  /* botones: rectángulo con radio leve (≠ chips, que son pill outline) */
+
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.3);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.35);
+  --shadow-focus: 0 0 0 3px rgba(0,222,104,.45); /* anillo de focus, sin blur */
+
+  /* Superficies compartidas entre páginas del sistema */
+  --color-hairline: #E7E7E2;      /* bordes finos sobre claro */
+  --color-canvas-meta: #E9E9E5;   /* fondo de páginas-catálogo (fuera de pieza) */
+  --overlay-scrim: linear-gradient(180deg, rgba(12,33,23,.55), rgba(12,33,23,.86)); /* scrim verde sobre foto: permitido y obligatorio con texto */
+}
+
+/* ---------- TEMA LIGHT / CREMA (institucional claro) ---------- */
+[data-theme="light"] {
+  --color-bg:             var(--cream-100);
+  --color-surface:        var(--cream-50);
+  --color-surface-raised: var(--white);
+  --color-text:           var(--green-900);
+  --color-text-muted:     var(--gray-600);
+  --color-text-subtle:    #6E756D;
+  --color-text-inverse:   var(--cream-50);
+  --color-accent:         var(--emerald-600);
+  --color-accent-hover:   var(--emerald-700);
+  --color-accent-text:    var(--white);
+  --color-energy:         var(--lime-500);
+  --color-energy-text:    var(--ink-900);
+  --color-border:         var(--cream-200);
+  --color-border-strong:  var(--cream-300);
+}
+
+/* ---------- TEMA PAPER / EDITORIAL (greige cálido, marketing impreso) ---------- */
+[data-theme="paper"] {
+  --color-bg:             var(--paper-100);
+  --color-surface:        var(--paper-50);
+  --color-surface-raised: var(--white);
+  --color-text:           var(--green-900);
+  --color-text-muted:     #5C6B61;
+  --color-text-subtle:    #8A9389;
+  --color-text-inverse:   var(--paper-50);
+  --color-accent:         var(--green-900);  /* botón sólido oscuro editorial */
+  --color-accent-hover:   var(--green-800);
+  --color-accent-text:    var(--cream-50);
+  --color-energy:         var(--lime-500);
+  --color-energy-text:    var(--ink-900);
+  --color-mark:           var(--lime-300);
+  --color-border:         var(--paper-200);
+  --color-border-strong:  #CFC8BC;
+}
+
+/* ---------- TEMA STUDIO (blanco + negro + verde/lima — slides & marketing) ----------
+   El tema de los módulos del diseñador y el moodboard 2026.
+   Negro #161616 construye (~75%) · verde/lima hace crecer (~25%). */
+[data-theme="studio"] {
+  --color-bg:             var(--white);
+  --color-surface:        var(--sage-50);    /* superficie sage de los módulos */
+  --color-surface-raised: var(--white);
+  --color-text:           var(--ink-900);
+  --color-text-muted:     var(--gray-600);
+  --color-text-subtle:    #6E756D;
+  --color-text-inverse:   var(--white);
+  --color-accent:         var(--emerald-500);
+  --color-accent-hover:   var(--emerald-600);
+  --color-accent-text:    var(--ink-900);
+  --color-energy:         var(--lime-500);   /* display gigante, barras, CTA */
+  --color-energy-text:    var(--ink-900);
+  --color-mark:           var(--lime-500);
+  --color-motif:          var(--lime-500);
+  --color-border:         #E7E7E2;
+  --color-border-strong:  #D2D2CC;
+}

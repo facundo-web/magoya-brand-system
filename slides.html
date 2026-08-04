@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="es" data-theme="studio">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magoya · Módulos de slides v1.1</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--color-canvas-meta);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1000px;margin:0 auto;padding:56px 28px 90px}
+  .intro{margin-bottom:44px}
+  .intro .eyebrow{display:inline-block;background:var(--ink-900);color:#fff;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+  .intro h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-0.03em;margin:14px 0 10px}
+  .intro p{color:var(--gray-600);max-width:64ch;font-size:1.1rem}
+  .intro a{color:var(--emerald-700);font-weight:600}
+  .fam{margin:54px 0 18px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gray-600);border-bottom:2px solid var(--ink-900);padding-bottom:8px;display:flex;justify-content:space-between}
+  .fam span{color:var(--gray-600);font-weight:600;letter-spacing:0;text-transform:none}
+
+  /* ---------- marco de slide ---------- */
+  .slide{
+    aspect-ratio:16/9;background:#fff;border-radius:14px;overflow:hidden;position:relative;
+    box-shadow:0 10px 36px rgba(0,0,0,.10);margin-bottom:34px;container-type:inline-size;
+  }
+  .slide .pad{position:absolute;inset:0;padding:7cqw 7.5cqw;display:flex;flex-direction:column}
+  .mod-tag{font-family:var(--font-mono);font-size:11px;color:var(--gray-600);margin:-24px 0 8px;display:block}
+
+  /* tipografía de slide (escala real del diseñador: 126/84/56/42pt sobre 1920) */
+  .t-hero {font-weight:800;letter-spacing:-0.03em;line-height:1.02;font-size:8.2cqw}   /* ≈126pt */
+  .t-disp {font-weight:800;letter-spacing:-0.03em;line-height:1.05;font-size:5.6cqw}   /* ≈84pt  */
+  .t-title{font-weight:700;letter-spacing:-0.02em;line-height:1.12;font-size:3.7cqw}   /* ≈56pt  */
+  .t-sub  {font-weight:600;line-height:1.3;font-size:2.8cqw}                            /* ≈42pt  */
+  .t-body {font-weight:400;line-height:1.5;font-size:1.75cqw;color:var(--gray-800)}
+  .t-cap  {font-weight:400;line-height:1.45;font-size:1.45cqw;color:var(--gray-600)}
+  .kick{font-weight:800;letter-spacing:.13em;text-transform:uppercase;font-size:1.5cqw;margin-bottom:2.2cqw}
+  .accent{color:var(--emerald-700)}
+  .on-sage{background:var(--sage-50)}
+
+  /* componentes de slide */
+  .cards{display:grid;gap:2cqw;margin-top:auto}
+  .c3{grid-template-columns:repeat(3,1fr)}
+  .c2{grid-template-columns:repeat(2,1fr)}
+  .card{background:#fff;border-radius:1.6cqw;padding:2.4cqw;display:flex;flex-direction:column;gap:1cqw;border:1px solid var(--color-hairline)}
+  .card .dot{width:3cqw;height:3cqw;border-radius:50%;background:var(--ink-900);display:flex;align-items:center;justify-content:center;margin-bottom:.6cqw}
+  .card .dot svg{width:1.7cqw;height:1.7cqw}
+  .card h5{font-size:2.1cqw;font-weight:700;letter-spacing:-0.01em}
+  .card p{font-size:1.4cqw;color:var(--gray-600);line-height:1.45}
+  .card .cta{margin-top:auto;font-size:1.4cqw;font-weight:700;color:var(--ink-900)}
+  .card .cta::after{content:" ↗"}
+
+  .stat-n{font-weight:800;letter-spacing:-0.03em;font-size:4.6cqw;line-height:1}
+  .stat-d{font-size:1.4cqw;color:var(--gray-600);margin-top:.5cqw;line-height:1.4}
+
+  .bars{display:flex;align-items:flex-end;gap:2.6cqw;height:26cqw}
+  .bars .b{width:3.2cqw;border-radius:.5cqw .5cqw 0 0}
+  .bars .lab{font-size:1.2cqw;color:var(--gray-600);text-align:center;margin-top:.8cqw}
+
+  .rows{display:flex;flex-direction:column;margin-top:auto}
+  .row{display:grid;grid-template-columns:4cqw 1fr;gap:2cqw;align-items:baseline;padding:1.5cqw 1.2cqw;border-bottom:1px solid var(--color-hairline);font-size:1.75cqw}
+  .row .n{font-weight:800;font-size:2.2cqw}
+  .row.hl{background:var(--lime-500);border-radius:.8cqw;border-bottom-color:transparent}
+
+  .check{display:flex;gap:1.2cqw;font-size:1.6cqw;line-height:1.45;padding:.9cqw 0}
+  .check::before{content:"✓";color:var(--emerald-700);font-weight:800}
+
+  .tl{display:flex;justify-content:space-between;align-items:flex-start;margin-top:auto;position:relative;padding-top:3cqw}
+  .tl::before{content:"";position:absolute;top:3.6cqw;left:2%;right:2%;height:2px;background:var(--gray-300)}
+  .tl .step{position:relative;width:18%;padding-top:2.4cqw}
+  .tl .step::before{content:"";position:absolute;top:0;left:0;width:1.4cqw;height:1.4cqw;border-radius:50%;background:var(--green-900);border:.35cqw solid #fff;box-shadow:0 0 0 2px var(--green-900)}
+  .tl .step.on::before{background:var(--lime-500);box-shadow:0 0 0 2px var(--lime-600)}
+  .tl b{display:block;font-size:1.5cqw;margin-bottom:.4cqw}
+  .tl span{font-size:1.25cqw;color:var(--gray-600);line-height:1.4}
+
+  .team{display:grid;grid-template-columns:repeat(5,1fr);gap:1.6cqw;margin-top:auto}
+  .team figure img{width:100%;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1) contrast(1.05);border-radius:1cqw}
+  .team b{display:block;font-size:1.35cqw;margin-top:.9cqw}
+  .team span{font-size:1.15cqw;color:var(--gray-600)}
+
+  .qcard{background:#fff;border-radius:1.6cqw;padding:3.4cqw;max-width:58cqw;box-shadow:0 6px 26px rgba(0,0,0,.07)}
+  .qcard p{font-size:2.2cqw;font-weight:600;line-height:1.45}
+  .qcard .who{margin-top:2cqw;font-size:1.5cqw;color:var(--gray-600)}
+  .qcard .who b{display:block;color:var(--ink-900)}
+  .q-under{display:block;width:12cqw;height:.7cqw;background:var(--lime-500);border-radius:.35cqw;margin-top:2.4cqw}
+
+  .btn-s{display:inline-block;background:var(--lime-500);color:var(--ink-900);font-weight:700;font-size:1.7cqw;padding:1.2cqw 2.6cqw;border-radius:.9cqw}
+  .wm-slide{width:11cqw}
+  @media (max-width:700px){.wrap{padding:28px 14px 60px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="intro">
+    <span class="eyebrow">Magoya · Sistema de slides v1.1</span>
+    <h1>Módulos de presentación</h1>
+    <p>La gramática modular del diseñador ("Modules for Slides") reconstruida con los tokens finales de marca. Escala tipográfica real: hero 126pt · display 84pt · título 56pt · subtítulo 42pt (relativa al ancho del slide). Lienzos: blanco y sage. Un golpe de lima por slide. <a href="index.html">← volver al brand book</a></p>
+  </div>
+
+  <!-- ============ FAMILIA A · TÍTULOS ============ -->
+  <div class="fam">A · Títulos <span>statements de apertura y sección</span></div>
+
+  <span class="mod-tag">A1 · Statement hero (126pt)</span>
+  <div class="slide">
+    <div class="pad">
+      <span class="kick">Product Strategy</span>
+      <div class="t-hero">Complex agtech<br>challenges demand<br>more than code.</div>
+    </div>
+  </div>
+
+  <span class="mod-tag">A2 · Título + bajada</span>
+  <div class="slide">
+    <div class="pad" style="flex-direction:row;gap:6cqw;align-items:flex-start">
+      <div style="flex:1.1"><div class="t-disp">Complex agtech challenges demand more than code.</div></div>
+      <div style="flex:1;padding-top:1cqw"><p class="t-body">Magoya blends product strategy, engineering, and agricultural expertise — partnering with your team to build the right solutions.</p></div>
+    </div>
+  </div>
+
+  <!-- ============ FAMILIA B · CARDS ============ -->
+  <div class="fam">B · Cards <span>servicios, modelos, pilares</span></div>
+
+  <span class="mod-tag">B1 · Título 126pt + 3 cards de servicio (sage)</span>
+  <div class="slide on-sage">
+    <div class="pad">
+      <div class="t-disp" style="margin-bottom:3cqw">How we partner</div>
+      <div class="cards c3">
+        <div class="card">
+          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 21v-8M12 13C12 9 9 7 4 7c0 5 3 6 8 6zM12 11c0-4 3-6 8-6 0 5-3 6-8 6z"/></svg></span>
+          <h5>Project Based</h5>
+          <p>Dedicated team that manages the entire product lifecycle — from discovery and ideation to prototyping, MVP and scaling.</p>
+          <span class="cta">Learn more</span>
+        </div>
+        <div class="card">
+          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+          <h5>Team Extension</h5>
+          <p>We split responsibilities with your team inside the product development process — embedded, not outsourced.</p>
+          <span class="cta">Learn more</span>
+        </div>
+        <div class="card">
+          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></span>
+          <h5>Staff Augmentation</h5>
+          <p>Senior talent working on your products, under your processes and daily management.</p>
+          <span class="cta">Learn more</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="mod-tag">B2 · 3 boxes de modelo / pricing</span>
+  <div class="slide">
+    <div class="pad">
+      <div class="t-disp" style="font-size:4.4cqw;margin-bottom:2.6cqw">Engagement models</div>
+      <div class="cards c3">
+        <div class="card" style="background:var(--sage-50);border:none">
+          <h5>Product Development</h5>
+          <p><b>How it works:</b> we assemble a team with all the necessary roles and take care of the entire process.</p>
+          <p><b>Best for:</b> building a product end-to-end, from discovery to launch.</p>
+          <div style="border-top:1px solid var(--color-hairline);padding-top:1.4cqw;margin-top:auto;font-size:1.9cqw;font-weight:800">$ Model price</div>
+        </div>
+        <div class="card" style="background:var(--green-900);border:none;color:var(--cream-50)">
+          <h5 style="color:var(--cream-50)">Team Extension</h5>
+          <p style="color:var(--cream-200)"><b style="color:var(--cream-50)">How it works:</b> shared responsibilities within your product development process.</p>
+          <p style="color:var(--cream-200)"><b style="color:var(--cream-50)">Best for:</b> scaling an existing product team with AgTech fluency.</p>
+          <div style="border-top:1px solid rgba(236,227,219,.25);padding-top:1.4cqw;margin-top:auto;font-size:1.9cqw;font-weight:800;color:var(--lime-500)">$ Model price</div>
+        </div>
+        <div class="card" style="background:var(--sage-50);border:none">
+          <h5>Staff Augmentation</h5>
+          <p><b>How it works:</b> we provide the talent; you keep your processes and daily management.</p>
+          <p><b>Best for:</b> filling specific senior roles fast, without hiring overhead.</p>
+          <div style="border-top:1px solid var(--color-hairline);padding-top:1.4cqw;margin-top:auto;font-size:1.9cqw;font-weight:800">$ Model price</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FAMILIA C · DATOS ============ -->
+  <div class="fam">C · Datos <span>stats, data heroes, charts</span></div>
+
+  <span class="mod-tag">C1 · Título 84pt + grilla de stats</span>
+  <div class="slide">
+    <div class="pad" style="flex-direction:row;gap:6cqw">
+      <div style="flex:.9"><div class="t-disp">Proof, not promises.</div></div>
+      <div style="flex:1.1;display:grid;grid-template-columns:repeat(2,1fr);gap:3cqw 4cqw;align-content:center">
+        <div><div class="stat-n">95%</div><div class="stat-d">Client retention across engagements</div></div>
+        <div><div class="stat-n">5+</div><div class="stat-d">Years of average client relationship</div></div>
+        <div><div class="stat-n">21</div><div class="stat-d">AgTech domains covered by the team</div></div>
+        <div><div class="stat-n">10</div><div class="stat-d">Countries where our products operate</div></div>
+      </div>
+    </div>
+  </div>
+
+  <span class="mod-tag">C2 · Data hero (sage, 3 métricas)</span>
+  <div class="slide on-sage">
+    <div class="pad">
+      <div class="t-disp" style="font-size:4.6cqw">Our footprint</div>
+      <div style="display:flex;gap:8cqw;margin-top:auto;margin-bottom:2cqw">
+        <div><div class="stat-n" style="font-size:7cqw">25<span class="accent">k</span></div><div class="stat-d" style="font-size:1.6cqw">Delivered recommendations</div></div>
+        <div><div class="stat-n" style="font-size:7cqw">3<span class="accent">k</span></div><div class="stat-d" style="font-size:1.6cqw">Monthly Active Users</div></div>
+        <div><div class="stat-n" style="font-size:7cqw">8<span class="accent">×</span></div><div class="stat-d" style="font-size:1.6cqw">Faster time-to-field</div></div>
+      </div>
+    </div>
+  </div>
+
+  <span class="mod-tag">C3 · Chart de barras (verde profundo + lima)</span>
+  <div class="slide">
+    <div class="pad" style="flex-direction:row;gap:6cqw">
+      <div style="flex:1">
+        <div class="t-disp" style="font-size:4.4cqw">Adoption grows season over season</div>
+        <p class="t-cap" style="margin-top:2cqw;max-width:30cqw">Active users per campaign across the last four seasons. Lime marks the season with embedded support.</p>
+      </div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end">
+        <div class="bars">
+          <div><div class="b" style="height:9cqw;background:var(--green-900)"></div><div class="lab">S1</div></div>
+          <div><div class="b" style="height:14cqw;background:var(--green-900)"></div><div class="lab">S2</div></div>
+          <div><div class="b" style="height:18cqw;background:var(--green-900)"></div><div class="lab">S3</div></div>
+          <div><div class="b" style="height:24cqw;background:var(--lime-500)"></div><div class="lab">S4</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FAMILIA D · LISTAS ============ -->
+  <div class="fam">D · Listas <span>agendas, procesos, checklists</span></div>
+
+  <span class="mod-tag">D1 · Lista numerada con fila destacada (lima)</span>
+  <div class="slide">
+    <div class="pad" style="flex-direction:row;gap:6cqw">
+      <div style="flex:.8"><div class="t-disp">The Magoya Method</div></div>
+      <div style="flex:1.2" class="rows">
+        <div class="row"><span class="n">1</span><span>Discover — immersion in your product, market and users.</span></div>
+        <div class="row"><span class="n">2</span><span>Align — one plan, shared metrics, no surprises.</span></div>
+        <div class="row hl"><span class="n">3</span><span><b>Execute — senior embedded team ships and iterates.</b></span></div>
+        <div class="row"><span class="n">4</span><span>Learn — measure in the field, evolve the roadmap.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <span class="mod-tag">D2 · Checklist en dos columnas</span>
+  <div class="slide on-sage">
+    <div class="pad">
+      <div class="t-disp" style="font-size:4.4cqw;margin-bottom:3cqw">Why teams choose Magoya</div>
+      <div class="cards c2" style="margin-top:0">
+        <div class="card">
+          <h5 style="margin-bottom:1cqw">Domain expertise</h5>
+          <div class="check">We deeply understand Ag and focus 100% on Ag.</div>
+          <div class="check">Agronomists working next to engineers.</div>
+          <div class="check">Fluency with farmer and retail workflows.</div>
+        </div>
+        <div class="card">
+          <h5 style="margin-bottom:1cqw">Proven methodology</h5>
+          <div class="check">A collaborative journey from discovery to launch.</div>
+          <div class="check">Senior teams built for your product.</div>
+          <div class="check">Results that last beyond the roadmap.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <span class="mod-tag">D3 · Agenda minimal</span>
+  <div class="slide">
+    <div class="pad" style="flex-direction:row;gap:6cqw">
+      <div style="flex:.9"><div class="t-disp">Today</div></div>
+      <div style="flex:1.1" class="rows">
+        <div class="row"><span class="n accent">1</span><span>Who we are — and how we embed</span></div>
+        <div class="row"><span class="n accent">2</span><span>What we've built in AgTech</span></div>
+        <div class="row"><span class="n accent">3</span><span>The Magoya Method</span></div>
+        <div class="row"><span class="n accent">4</span><span>A paid discovery for your product</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FAMILIA E · PERSONAS ============ -->
+  <div class="fam">E · Personas <span>quotes y equipo — siempre B&N</span></div>
+
+  <span class="mod-tag">E1 · Quote destacada (sage)</span>
+  <div class="slide on-sage">
+    <div class="pad" style="align-items:center;justify-content:center">
+      <div class="qcard">
+        <p>“Magoya's expertise in UX, digital ag platform development, and agronomic know-how, combined with their understanding of farmer and retail needs, made our transformation possible.”</p>
+        <span class="q-under"></span>
+        <div class="who"><b>Camila López Colmano</b>AgTech Expert</div>
+      </div>
+    </div>
+  </div>
+
+  <span class="mod-tag">E2 · Equipo (fotos B&N + roles) — fotos y nombres PLACEHOLDER: reemplazar con el roster real antes de usar</span>
+  <div class="slide">
+    <div class="pad">
+      <div class="t-disp" style="font-size:4.4cqw">The team you actually get</div>
+      <div class="team">
+        <figure><img src="assets/photos/founder-bw.png" alt="Retrato 1"><b>Subtitle bold</b><span>Body regular</span></figure>
+        <figure><img src="assets/photos/team-couple-bw.jpg" alt="Retrato 2"><b>Subtitle bold</b><span>Body regular</span></figure>
+        <figure><img src="assets/photos/founder-bw.png" alt="Retrato 3"><b>Subtitle bold</b><span>Body regular</span></figure>
+        <figure><img src="assets/photos/team-couple-bw.jpg" alt="Retrato 4"><b>Subtitle bold</b><span>Body regular</span></figure>
+        <figure><img src="assets/photos/founder-bw.png" alt="Retrato 5"><b>Subtitle bold</b><span>Body regular</span></figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FAMILIA F · PROCESO ============ -->
+  <div class="fam">F · Proceso <span>timelines y fases</span></div>
+
+  <span class="mod-tag">F1 · Timeline horizontal (paso activo en lima)</span>
+  <div class="slide">
+    <div class="pad">
+      <div class="t-disp" style="font-size:4.4cqw">From discovery to the field</div>
+      <div class="tl">
+        <div class="step"><b>Discovery</b><span>Immersion, users, constraints</span></div>
+        <div class="step"><b>Ideation</b><span>Concepts and priorities</span></div>
+        <div class="step on"><b>Prototyping</b><span>Test with real growers</span></div>
+        <div class="step"><b>MVP</b><span>Ship the core loop</span></div>
+        <div class="step"><b>Scaling</b><span>Evolve with the seasons</span></div>
+      </div>
+    </div>
+  </div>
+
+  <span class="mod-tag">F2 · Fases en 3 columnas</span>
+  <div class="slide on-sage">
+    <div class="pad">
+      <div class="t-disp" style="font-size:4.4cqw;margin-bottom:2.6cqw">Our product development process</div>
+      <div class="cards c3" style="margin-top:0">
+        <div class="card"><h5>1 · DIPI</h5><p>Discovery + Ideation + Prototyping + Iteration. We de-risk before we build.</p></div>
+        <div class="card"><h5>2 · MVP</h5><p>Minimum Viable Product: the smallest thing that proves value in the field.</p></div>
+        <div class="card"><h5>3 · Evolution</h5><p>Long-haul partnership: measure, learn and grow the platform.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FAMILIA G · PORTADA & CIERRE ============ -->
+  <div class="fam">G · Portada & cierre <span>foto aérea + overlay · CTA</span></div>
+
+  <span class="mod-tag">G1 · Cover — foto aérea + overlay verde profundo (moodboard)</span>
+  <div class="slide" style="background:linear-gradient(180deg,rgba(12,33,23,.5),rgba(12,33,23,.85)),url('assets/photos/field-rows.jpg') center/cover">
+    <div class="pad" style="color:var(--cream-50)">
+      <img class="wm-slide" src="assets/magoya-wordmark-cream.svg" alt="Magoya">
+      <div style="margin-top:auto">
+        <div class="t-hero" style="font-size:7cqw">Digital product<br>development<br>for agribusiness</div>
+        <p style="font-size:1.8cqw;color:var(--cream-100);margin-top:1.6cqw;max-width:46cqw">With a 100% service-focused approach, we develop custom solutions and talented teams to drive growth and sustainability.</p>
+      </div>
+    </div>
+  </div>
+
+  <span class="mod-tag">G2 · CTA de cierre — dark + banda de semicírculos + lima</span>
+  <div class="slide" style="background:var(--green-950)">
+    <img src="assets/motif-semis-band.svg" alt="" style="position:absolute;left:0;bottom:0;width:100%;height:5.5cqw">
+    <div class="pad" style="color:var(--cream-50)">
+      <img class="wm-slide" src="assets/magoya-wordmark-cream.svg" alt="Magoya">
+      <div style="margin-top:auto;max-width:60cqw">
+        <div class="t-disp" style="color:var(--cream-50)">Let's build what your product needs next.</div>
+        <span class="btn-s" style="margin-top:2.6cqw">Start a paid discovery →</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
