@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="es" data-theme="studio">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magoya · AI en campo — sub-manual v1.1</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--emerald-500);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 28px 90px}
+  .mg-topbar{position:sticky;top:12px;z-index:99;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 16px;border-radius:14px;margin-bottom:34px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+  .mg-topbar img{height:20px;margin-right:10px}
+  .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
+  .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
+
+  .hero-sub{padding:20px 0 10px}
+  .hero-sub .k{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green-900)}
+  h1{font-weight:800;font-size:clamp(2.6rem,6vw,4.6rem);letter-spacing:-0.03em;line-height:1;margin:10px 0 14px}
+  .hero-sub p{color:var(--green-900);font-size:1.15rem;max-width:64ch}
+
+  /* sub-índice */
+  .subindex{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0 10px}
+  .subindex a{background:var(--ink-900);color:var(--cream-50);text-decoration:none;font-size:13px;font-weight:700;padding:9px 16px;border-radius:999px}
+  .subindex a:hover{background:var(--green-900)}
+
+  section{margin-top:64px;background:var(--white);border-radius:var(--radius-lg);padding:40px 44px}
+  section.on-green{background:transparent;padding:0}
+  .kick{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid var(--green-900);color:var(--green-900);padding:5px 13px;border-radius:999px;margin-bottom:14px}
+  h2{font-weight:800;font-size:clamp(1.7rem,3.4vw,2.5rem);letter-spacing:-0.02em;margin-bottom:10px}
+  .lead{color:var(--gray-600);max-width:66ch;margin-bottom:28px}
+  h3{font-size:1.15rem;font-weight:700;margin:30px 0 12px}
+  .note{font-size:.9rem;color:var(--gray-600)}
+  .cap{font-size:12.5px;color:var(--gray-600);margin-top:10px}
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .rule-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 28px}
+  .rule{display:flex;gap:10px;font-size:.9rem;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--color-hairline)}
+  .rule b.do{color:var(--emerald-700)}
+  .rule b.dont{color:var(--danger-500)}
+
+  .sw{border-radius:12px;overflow:hidden;border:1px solid var(--color-hairline)}
+  .sw .chip{height:76px}
+  .sw .meta{padding:9px 12px;background:var(--white);font-size:12px}
+  .sw .meta b{display:block;font-size:13px}
+  .sw .meta span{color:var(--gray-600);font-family:var(--font-mono);font-size:11px}
+
+  .doodle-cell{background:var(--emerald-500);border-radius:12px;min-height:110px;display:flex;align-items:center;justify-content:center;padding:16px}
+  .doodle-cell.dark{background:var(--green-950)}
+  .doodle-name{font-size:11px;font-family:var(--font-mono);color:var(--gray-600);text-align:center;margin-top:8px}
+
+  .tpl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .tpl{border:1px solid var(--color-hairline);border-radius:12px;padding:16px;background:var(--white)}
+  .tpl .cat{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid var(--green-900);color:var(--green-900);padding:2px 9px;border-radius:999px;margin-bottom:8px}
+  .tpl .cat.imp{border-color:#B4530A;color:#B4530A}
+  .tpl b{display:block;font-size:14.5px;margin-bottom:4px}
+  .tpl p{font-size:12.5px;color:var(--gray-600);line-height:1.45}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th{text-align:left;border-bottom:2px solid var(--ink-900);padding:9px 8px}
+  td{border-bottom:1px solid var(--color-hairline);padding:9px 8px}
+  td.mono{font-family:var(--font-mono);font-size:12px;color:var(--gray-600)}
+
+  .studio-cta{display:inline-block;background:var(--ink-900);color:var(--cream-50);text-decoration:none;font-weight:700;font-size:14.5px;padding:13px 24px;border-radius:var(--radius-btn);margin-top:18px}
+  .studio-cta:hover{background:var(--green-900)}
+
+  @media (max-width:880px){
+    .wrap{padding:16px 16px 60px}
+    section{padding:26px 20px}
+    .g2,.g3,.g4,.rule-list{grid-template-columns:1fr}
+    .table-scroll{overflow-x:auto}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Brand book</a><a href="ai-en-campo.html" class="on">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Piezas</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html">Logos</a></nav>
+
+  <div class="hero-sub">
+    <span class="k">Sub-marca de Magoya · manual de detalle</span>
+    <h1>AI en campo 🌱</h1>
+    <p>La línea de contenido educativo de IA para el agro: carruseles, reels, webinars y tips que le hablan directo al productor. Mismo ADN que Magoya — <b>más ruido, más didáctica, más quilombera</b>.</p>
+    <div class="subindex">
+      <a href="#esencia">1 · Esencia</a>
+      <a href="#color-voz">2 · Color & voz</a>
+      <a href="#ruido">3 · Ruido: doodles & stickers</a>
+      <a href="#componentes">4 · Componentes</a>
+      <a href="#plantillas">5 · Plantillas del Studio</a>
+      <a href="#formatos">6 · Formatos</a>
+      <a href="#reglas">7 · Reglas</a>
+    </div>
+  </div>
+
+  <!-- 1 ESENCIA -->
+  <section id="esencia">
+    <span class="kick">1 · Esencia</span>
+    <h2>Educar sobre IA, con los pies en el lote</h2>
+    <p class="lead">AI en campo existe para un solo trabajo: que el productor y el técnico agro entiendan y usen IA en su día a día. El contenido responde preguntas reales (“¿qué le pregunto a la IA sobre mi lote?”), muestra herramientas concretas y anuncia webinars. Es la voz de canal de redes de Magoya — cuando la pieza es institucional (clientes, ventas, employer brand), se usa el core.</p>
+    <div class="rule-list">
+      <div class="rule"><b class="do">✓</b><span><b>Cuándo:</b> carruseles educativos, tips de herramientas, webinars, cuenta regresiva, "mito vs realidad", chat del productor.</span></div>
+      <div class="rule"><b class="dont">✗</b><span><b>Cuándo NO:</b> propuestas comerciales, casos de cliente formales, deck de ventas, sitio — eso es core Magoya.</span></div>
+    </div>
+  </section>
+
+  <!-- 2 COLOR & VOZ -->
+  <section id="color-voz">
+    <span class="kick">2 · Color & voz</span>
+    <h2>Verde pleno, placa negra, voseo</h2>
+    <p class="lead">La sub-marca rompe tres reglas del core <b>a propósito</b> — y solo estas tres. Todo lo demás (Manrope, wordmark intocable, logos reales) sigue igual.</p>
+    <div class="grid g4">
+      <div class="sw"><div class="chip" style="background:var(--emerald-500)"></div><div class="meta"><b>Lienzo pleno</b><span>#00DE68</span> — acá el verde ES el fondo</div></div>
+      <div class="sw"><div class="chip" style="background:var(--ink-900)"></div><div class="meta"><b>Placa negra</b><span>#161616</span> — resalta el dato clave (hora, cifra)</div></div>
+      <div class="sw"><div class="chip" style="background:var(--green-900)"></div><div class="meta"><b>Texto secundario</b><span>#133825</span> — bajadas y kickers</div></div>
+      <div class="sw"><div class="chip" style="background:#C97B5A"></div><div class="meta"><b>Terracota sticker</b><span>#C97B5A</span> — SOLO doodles, nunca texto</div></div>
+    </div>
+    <h3>Jerarquía tipográfica de pieza</h3>
+    <div style="background:var(--emerald-500);border-radius:14px;padding:26px">
+      <div style="font-size:13px;font-weight:800;letter-spacing:.14em;color:var(--green-900)">AI EN CAMPO — WEBINAR GRATUITO <span style="font-weight:400;letter-spacing:0;text-transform:none">← kicker verde profundo, +14%</span></div>
+      <div style="font-size:56px;font-weight:800;letter-spacing:-0.03em;line-height:1;margin-top:8px">6 AGO. <span style="font-size:14px;font-weight:400;letter-spacing:0">← display negro 800</span></div>
+      <div style="display:inline-block;background:var(--ink-900);color:var(--cream-50);font-size:30px;font-weight:800;padding:4px 14px;border-radius:8px;margin-top:8px">11:00 h ARG</div> <span style="font-size:14px">← placa negra + crema</span>
+      <div style="font-size:24px;font-weight:600;color:var(--green-900);margin-top:10px">Analizá cotizaciones en segundos con IA <span style="font-size:14px;font-weight:400">← bajada verde profundo 600</span></div>
+    </div>
+    <h3>La voz</h3>
+    <p class="note" style="max-width:70ch"><b>Voseo argentino, didáctica y directa:</b> "Analizá", "Usá Claude o ChatGPT", "Che, ¿con qué IA armo informes?". Preguntas reales del productor como ancla. Emojis permitidos con criterio: uno por CTA (👈 🌱 💧), nunca lluvia de emojis. Sin jerga corporativa — acá no hay "soluciones end-to-end", hay "te muestro cómo".</p>
+  </section>
+
+  <!-- 3 RUIDO -->
+  <section id="ruido">
+    <span class="kick">3 · Ruido</span>
+    <h2>Doodles & stickers — el quilombo controlado</h2>
+    <p class="lead">Lo que hace reconocible a la sub-marca: elementos sueltos con rotación leve (±5–15°), como stickers pegados. Regla de dosis: <b>2 a 4 elementos de ruido por pieza</b>, nunca tapando el mensaje.</p>
+    <div class="grid g4">
+      <div><div class="doodle-cell"><svg viewBox="0 0 100 100" style="width:56px;transform:rotate(-10deg)" fill="#C97B5A"><g><rect x="46" y="6" width="8" height="36" rx="4"/><rect x="46" y="58" width="8" height="36" rx="4"/><rect x="6" y="46" width="36" height="8" rx="4"/><rect x="58" y="46" width="36" height="8" rx="4"/><rect x="46" y="6" width="8" height="36" rx="4" transform="rotate(45 50 50)"/><rect x="46" y="58" width="8" height="36" rx="4" transform="rotate(45 50 50)"/><rect x="6" y="46" width="36" height="8" rx="4" transform="rotate(45 50 50)"/><rect x="58" y="46" width="36" height="8" rx="4" transform="rotate(45 50 50)"/></g></svg></div><div class="doodle-name">asterisco terracota</div></div>
+      <div><div class="doodle-cell"><svg viewBox="0 0 24 24" style="width:34px" fill="#161616"><path d="M12 2l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg></div><div class="doodle-name">sparkle negro</div></div>
+      <div><div class="doodle-cell"><svg viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="2.4" stroke-linecap="round" style="width:44px;transform:rotate(12deg)"><path d="M4 4c8 2 12 8 13 15M17 12v7h-7"/></svg></div><div class="doodle-name">flecha a mano</div></div>
+      <div><div class="doodle-cell"><img src="assets/doodle-dots.svg" alt="Puntos" style="width:60px"></div><div class="doodle-name">doodle-dots (del Studio)</div></div>
+      <div><div class="doodle-cell dark"><img src="assets/badge-envivo.svg" alt="Badge EN VIVO" style="width:90px"></div><div class="doodle-name">badge-envivo (del Studio)</div></div>
+      <div><div class="doodle-cell"><div style="width:44px;height:44px;background:#FF0000;border-radius:11px;display:flex;align-items:center;justify-content:center;transform:rotate(8deg)"><svg viewBox="0 0 24 24" width="22" fill="#fff"><path d="M8 6l10 6-10 6z"/></svg></div></div><div class="doodle-name">sticker app (YouTube)</div></div>
+      <div><div class="doodle-cell"><img src="assets/flourish-circle.svg" alt="Círculo a mano" style="width:70px"></div><div class="doodle-name">círculo a mano (fecha marcada)</div></div>
+      <div><div class="doodle-cell"><span style="font-size:34px">👈 🌱</span></div><div class="doodle-name">emojis (uno por CTA)</div></div>
+    </div>
+    <p class="cap">Stickers de apps reales permitidos: YouTube, WhatsApp, ChatGPT/Claude, Instagram — con su color original, apenas rotados, tamaño chico (nunca protagonistas). Es uso nominativo: hablamos DE esas herramientas.</p>
+  </section>
+
+  <!-- 4 COMPONENTES -->
+  <section id="componentes">
+    <span class="kick">4 · Componentes</span>
+    <h2>El kit de la sub-marca</h2>
+    <p class="lead">Los bloques con los que se arman los carruseles. Todos existen como plantillas funcionales en el Studio — acá está la especificación visual.</p>
+    <div class="grid g3">
+      <div style="border:1px solid var(--color-hairline);border-radius:14px;padding:18px">
+        <b style="font-size:14px">Chat (WhatsApp)</b>
+        <div style="background:#E8E2D9;border-radius:10px;padding:12px;margin-top:10px">
+          <div style="background:var(--white);border-radius:10px 10px 10px 2px;padding:8px 12px;font-size:12.5px;max-width:88%">Che, ¿con qué IA armo informes técnicos? 🌱</div>
+          <div style="background:#D9FDD3;border-radius:10px 10px 2px 10px;padding:8px 12px;font-size:12.5px;max-width:88%;margin:8px 0 0 auto">Usá Claude o ChatGPT: lenguaje claro y adaptable a tu contexto.</div>
+        </div>
+        <p class="cap">La pregunta REAL del productor abre; la respuesta enseña. Máx 2-3 globos por slide.</p>
+      </div>
+      <div style="border:1px solid var(--color-hairline);border-radius:14px;padding:18px">
+        <b style="font-size:14px">Celular con notificaciones</b>
+        <div style="background:var(--green-950);border-radius:14px;padding:14px 10px;margin-top:10px;max-width:170px">
+          <div style="background:rgba(255,255,255,.94);border-radius:8px;padding:7px 9px;font-size:10.5px"><b>🌾 Tu lote</b><br>Alerta: posible plaga en L4</div>
+          <div style="background:rgba(255,255,255,.94);border-radius:8px;padding:7px 9px;font-size:10.5px;margin-top:6px"><b>💧 Riego</b><br>Recomendación lista</div>
+        </div>
+        <p class="cap">Para contar algo que "le llega" al productor. Notificaciones cortas, con emoji de contexto.</p>
+      </div>
+      <div style="border:1px solid var(--color-hairline);border-radius:14px;padding:18px">
+        <b style="font-size:14px">Pregunta del productor (bocadillo)</b>
+        <div style="background:var(--emerald-500);border-radius:14px;padding:18px;margin-top:10px">
+          <div style="background:var(--white);border-radius:14px 14px 14px 3px;padding:12px 14px;font-size:14px;font-weight:600;max-width:95%">“¿Le puedo preguntar a la IA qué le pasa a mi lote?”</div>
+        </div>
+        <p class="cap">El ancla educativa de la serie: una pregunta real, grande, en bocadillo blanco sobre verde.</p>
+      </div>
+      <div style="border:1px solid var(--color-hairline);border-radius:14px;padding:18px">
+        <b style="font-size:14px">Placa de dato</b>
+        <div style="background:var(--emerald-500);border-radius:14px;padding:18px;margin-top:10px;text-align:center">
+          <span style="display:inline-block;background:var(--ink-900);color:var(--cream-50);font-size:26px;font-weight:800;padding:6px 16px;border-radius:8px">11:00 h ARG</span>
+        </div>
+        <p class="cap">Hora, fecha o cifra clave. Negra con crema — solo UNA por pieza.</p>
+      </div>
+      <div style="border:1px solid var(--color-hairline);border-radius:14px;padding:18px">
+        <b style="font-size:14px">CTA pill + emoji</b>
+        <div style="background:var(--emerald-500);border-radius:14px;padding:18px;margin-top:10px;text-align:center">
+          <span style="display:inline-block;background:var(--ink-900);color:var(--cream-50);font-size:15px;font-weight:700;padding:11px 22px;border-radius:999px">Link en la bio 👈</span>
+        </div>
+        <p class="cap">Pill negra (acá sí es pill: lenguaje sticker de la sub-marca). Es placa opcional — puede ir en el copy.</p>
+      </div>
+      <div style="border:1px solid var(--color-hairline);border-radius:14px;padding:18px">
+        <b style="font-size:14px">Cuenta regresiva</b>
+        <div style="background:var(--emerald-500);border-radius:14px;padding:14px;margin-top:10px;text-align:center">
+          <div style="font-size:54px;font-weight:800;letter-spacing:-0.03em;line-height:1">3</div>
+          <div style="font-size:13px;font-weight:700;color:var(--green-900)">DÍAS PARA EL WEBINAR</div>
+        </div>
+        <p class="cap">Número gigante negro + bajada kicker. Para calentar fechas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 PLANTILLAS -->
+  <section id="plantillas">
+    <span class="kick">5 · Plantillas del Studio</span>
+    <h2>28 plantillas listas para producir</h2>
+    <p class="lead">Las piezas NO se arman a mano: se producen en <b>Magoya Studio</b> eligiendo plantilla + formato y cambiando texto/foto. La serie <b style="color:#B4530A">impacto</b> es la columna vertebral de AI en campo. Orden de la galería = objetivo de marketing: primero lo que educa y prueba.</p>
+    <div class="tpl-grid">
+      <div class="tpl"><span class="cat imp">impacto</span><b>Recorte + cifra</b><p>Foto de fondo, persona recortada y una cifra gigante. Para contenido educativo de AI en campo.</p></div>
+      <div class="tpl"><span class="cat imp">impacto</span><b>Herramientas</b><p>Fondo negro con los logos de IA flotando. Para tips de qué herramienta usar.</p></div>
+      <div class="tpl"><span class="cat imp">impacto</span><b>Pantalla que prueba</b><p>Fondo sólido con una captura o dashboard y un gráfico que sube. Resultados reales.</p></div>
+      <div class="tpl"><span class="cat imp">impacto</span><b>Pregunta del productor</b><p>La pregunta real que te hacen, en un bocadillo. El ancla educativa de la serie.</p></div>
+      <div class="tpl"><span class="cat imp">impacto</span><b>Miniatura de YouTube</b><p>Titular enorme a la izquierda y la persona a la derecha. Portada de video (1280×720).</p></div>
+      <div class="tpl"><span class="cat imp">impacto</span><b>Celular con notificaciones</b><p>Un celular en el centro y globos de notificación encima. Lo que "le llega" al productor.</p></div>
+      <div class="tpl"><span class="cat">chat</span><b>Chat de WhatsApp</b><p>Pregunta del productor + respuesta. Ideal para carrusel o post.</p></div>
+      <div class="tpl"><span class="cat">post</span><b>Mito vs realidad</b><p>Lo que te venden vs lo que pasa. El formato de más engagement en LinkedIn B2B.</p></div>
+      <div class="tpl"><span class="cat">post</span><b>Cuenta regresiva</b><p>Número gigante con los días que faltan. Para webinars e inscripciones.</p></div>
+      <div class="tpl"><span class="cat">post</span><b>Fecha marcada</b><p>La fecha grande con un círculo dibujado a mano encima.</p></div>
+      <div class="tpl"><span class="cat">post</span><b>Collage con stickers</b><p>Tres fotos en paneles rotados, con destellos y una etiqueta. Resumen de la semana.</p></div>
+      <div class="tpl"><span class="cat">post</span><b>Evento / webinar</b><p>Anuncio con fecha, lugar y llamado a la acción (+ variante sobre foto y "quiénes hablan").</p></div>
+      <div class="tpl"><span class="cat">post</span><b>Carrusel portada & cierre</b><p>Slide 1 con foto fuerte + etiqueta manuscrita; slide final con CTA.</p></div>
+      <div class="tpl"><span class="cat">metric</span><b>Dato / caso / insight</b><p>Cifras que impactan, casos con logo real, dato externo citado con tu lectura.</p></div>
+      <div class="tpl"><span class="cat">quote</span><b>Cita & retrato</b><p>Testimonial destacado; persona del equipo con frase (employer brand).</p></div>
+      <div class="tpl"><span class="cat">zócalo</span><b>Foto + texto (×4)</b><p>Foto titular, foto lateral, foto centrada, bloque de color — la base foto+texto.</p></div>
+    </div>
+    <a class="studio-cta" href="https://facundo-web.github.io/magoya-studio/#gallery" target="_blank" rel="noopener">Abrir la galería en Magoya Studio →</a>
+    <p class="cap">El Studio también trae el copiloto de IA: le pedís "quiero armar una pieza para X" y te guía. Los placeholders de cada plantilla enseñan el largo y tono correcto del copy.</p>
+  </section>
+
+  <!-- 6 FORMATOS -->
+  <section id="formatos">
+    <span class="kick">6 · Formatos</span>
+    <h2>Los 13 formatos de red</h2>
+    <p class="lead">Toda plantilla se exporta a cualquier formato — el Studio maneja las zonas seguras. <b>Formato madre de AI en campo: carrusel retrato 4:5.</b></p>
+    <div class="table-scroll">
+    <table>
+      <thead><tr><th>Red</th><th>Formato</th><th class="mono">Medidas</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram</td><td><b>Post retrato 4:5 (carrusel) ★</b></td><td class="mono">1080 × 1350</td></tr>
+        <tr><td>Instagram</td><td>Post cuadrado</td><td class="mono">1080 × 1080</td></tr>
+        <tr><td>Instagram</td><td>Story / Reel 9:16</td><td class="mono">1080 × 1920</td></tr>
+        <tr><td>LinkedIn</td><td>Carrusel (retrato)</td><td class="mono">1080 × 1350</td></tr>
+        <tr><td>LinkedIn</td><td>Post cuadrado</td><td class="mono">1200 × 1200</td></tr>
+        <tr><td>LinkedIn</td><td>Post horizontal</td><td class="mono">1200 × 627</td></tr>
+        <tr><td>WhatsApp</td><td>Estado 9:16</td><td class="mono">1080 × 1920</td></tr>
+        <tr><td>Facebook</td><td>Post</td><td class="mono">1200 × 630</td></tr>
+        <tr><td>Facebook</td><td>Story 9:16</td><td class="mono">1080 × 1920</td></tr>
+        <tr><td>X / Twitter</td><td>Post 16:9</td><td class="mono">1600 × 900</td></tr>
+        <tr><td>YouTube</td><td>Miniatura</td><td class="mono">1280 × 720</td></tr>
+        <tr><td>Genérico</td><td>Presentación 16:9</td><td class="mono">1920 × 1080</td></tr>
+        <tr><td>Genérico</td><td>Clásico 4:3</td><td class="mono">1600 × 1200</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </section>
+
+  <!-- 7 REGLAS -->
+  <section id="reglas">
+    <span class="kick">7 · Reglas</span>
+    <h2>Qué rompe y qué no</h2>
+    <div class="rule-list" style="margin-top:16px">
+      <div class="rule"><b class="do">✓</b><span>Fondo verde digital #00DE68 pleno — la excepción documentada al 75/25 del core.</span></div>
+      <div class="rule"><b class="do">✓</b><span>Placa negra con crema para el dato clave — una por pieza.</span></div>
+      <div class="rule"><b class="do">✓</b><span>2–4 elementos de ruido por pieza, rotación ±5–15°, nunca tapando el mensaje.</span></div>
+      <div class="rule"><b class="do">✓</b><span>Voseo didáctico + un emoji por CTA. Wordmark negro abajo-izquierda.</span></div>
+      <div class="rule"><b class="do">✓</b><span>Producir SIEMPRE desde plantillas del Studio — arrancar en blanco es donde se rompe la marca.</span></div>
+      <div class="rule"><b class="dont">✗</b><span>Nada de esta sub-marca vuelve al core: ni placa negra, ni fondo verde pleno, ni stickers en piezas institucionales.</span></div>
+      <div class="rule"><b class="dont">✗</b><span>Terracota #C97B5A solo en doodles — jamás como color de texto o UI.</span></div>
+      <div class="rule"><b class="dont">✗</b><span>Lima #A2FF00 casi no juega acá — el protagonista es el verde digital. No mezclar los dos verdes brillantes en una pieza.</span></div>
+      <div class="rule"><b class="dont">✗</b><span>El wordmark sigue intocable: negro o crema, nunca reconstruido ni con sombras.</span></div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
