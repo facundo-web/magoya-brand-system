@@ -782,7 +782,12 @@
     </div>
   </div>
 
-  <h3>Especificaciones de aplicación (esquemas — no usar como presentación)</h3>
+  <h3>Catálogo de merch — fotos reales</h3>
+  <p class="note" style="max-width:760px;margin-bottom:18px">Regla: <b>el merch se muestra SIEMPRE con foto o render real del producto</b> — nunca con ilustración ni esquema vectorial. Cada producto abajo tiene su especificación de aplicación; los que aún no tienen foto muestran el slot con el nombre de archivo esperado.</p>
+  <div class="grid g3" id="merch-catalogo"></div>
+  <p class="cap" style="max-width:760px">Para completar el catálogo: dejar las fotos en <code style="font-family:var(--font-mono);font-size:11.5px">assets/photos/merch/</code> con el nombre indicado en cada slot (JPG, lado largo ≥1600px). Se muestran solas al recargar.</p>
+
+  <div style="display:none">
   <div class="grid g3">
     <div style="background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);padding:20px;text-align:center">
       <svg viewBox="0 0 200 210" style="width:100%;max-width:230px">
@@ -844,8 +849,47 @@
       <p class="cap"><b>Cuaderno + lapicera.</b> Tapa verde profundo con wordmark crema y festón naciendo del borde. Lapicera crema con clip verde digital.</p>
     </div>
   </div>
-  <p class="note" style="max-width:760px;margin-top:20px">Estos mockups son <b>especificaciones de aplicación</b>, no renders de producción — la referencia real de calidad es el modelo del buzo (guía de producción con colores y espaciados). Toda pieza textil se valida contra ella: bordado antes que estampa, tono sobre tono antes que contraste, crema #ECE3DB y verde #133825 como dupla fija.</p>
+  </div>
+  <p class="note" style="max-width:760px;margin-top:20px">La referencia de calidad es el render del buzo (guía de producción con colores y espaciados). Toda pieza textil se valida contra ella: <b>bordado antes que estampa</b>, tono sobre tono antes que contraste, crema #ECE3DB y verde #133825 como dupla fija, y <b>sin lima en textil</b>.</p>
 </section>
+
+<script>
+/* Catálogo de merch: intenta cargar la foto real; si no existe, muestra el slot
+   con el nombre de archivo esperado. Sin ilustraciones. */
+(function(){
+  const ITEMS = [
+    {f:'merch-buzo.jpg', dir:'', n:'Buzo (hoodie)', spec:'Verde profundo. Wordmark crema bordado pecho izq (60mm) · monograma “m” crema espalda (30mm) · forro de capucha con trama de avatares · parche canguro “since 2017” (65×35mm).'},
+    {f:'remera-blanca.jpg', n:'Remera blanca', spec:'Blanca con wordmark verde digital al frente, o estampa chica pecho izq. Variante de equipo para eventos y fotos.'},
+    {f:'remera-negra.jpg', n:'Remera negra', spec:'Negra #161616 con wordmark crema o verde digital. La variante más urbana del set.'},
+    {f:'gorra.jpg', n:'Gorra', spec:'Negra o verde profundo con parche/bordado del monograma “m” al frente. Nunca el wordmark completo — a ese tamaño no respira.'},
+    {f:'medias.jpg', n:'Medias', spec:'Blancas y negras con “m” tejida en el puño. Detalle de marca, no billboard.'},
+    {f:'mochila.jpg', n:'Mochila', spec:'Negra técnica, wordmark chico bordado en el panel frontal o lateral. Discreta y premium.'},
+    {f:'termo.jpg', n:'Vaso térmico', spec:'Acero o crema, wordmark verde digital al centro. Sin patrones sobre el cuerpo.'},
+    {f:'cuaderno.jpg', n:'Cuaderno / notes', spec:'Tapa verde profundo o crema, wordmark y banda de semicírculos naciendo del borde inferior.'},
+    {f:'stickers.jpg', n:'Stickers', spec:'Set de avatares (go · o · cara · m) + wordmark. Troquelado circular, verde digital sobre blanco.'},
+    {f:'equipo-merch.jpg', n:'El equipo usándolo', spec:'La foto que más vale: gente real del equipo con el merch puesto, en contexto de trabajo. Para employer brand y redes.'},
+  ];
+  const box = document.getElementById('merch-catalogo');
+  if(!box) return;
+  ITEMS.forEach(it=>{
+    const path = (it.dir===''? 'assets/photos/' : 'assets/photos/merch/') + it.f;
+    const card = document.createElement('div');
+    card.style.cssText = 'background:var(--white);border:1px solid var(--color-hairline);border-radius:var(--radius-lg);overflow:hidden;display:flex;flex-direction:column';
+    card.innerHTML =
+      '<div class="ph" style="aspect-ratio:4/3;background:var(--sage-50);display:flex;align-items:center;justify-content:center;text-align:center;padding:16px"></div>' +
+      '<div style="padding:16px"><b style="font-size:14.5px;display:block">'+it.n+'</b>' +
+      '<p style="font-size:12.5px;color:var(--gray-600);line-height:1.45;margin-top:5px">'+it.spec+'</p></div>';
+    const ph = card.querySelector('.ph');
+    const img = new Image();
+    img.onload = ()=>{ ph.innerHTML=''; ph.style.padding='0'; img.style.cssText='width:100%;height:100%;object-fit:cover'; img.alt=it.n+' Magoya'; ph.appendChild(img); };
+    img.onerror = ()=>{ ph.innerHTML = '<div><div style="font-size:24px;opacity:.35">📷</div>'+
+      '<div style="font-size:11.5px;font-weight:700;color:var(--gray-600);margin-top:8px">Pendiente foto real</div>'+
+      '<div style="font-family:var(--font-mono);font-size:10.5px;color:var(--gray-600);margin-top:4px;word-break:break-all">'+path+'</div></div>'; };
+    img.src = path;
+    box.appendChild(card);
+  });
+})();
+</script>
 
 <!-- ================= 12 PAPELERÍA ================= -->
 <section id="papeleria">

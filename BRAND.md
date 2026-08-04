@@ -75,7 +75,7 @@ La línea de contenido educativo de IA para el agro (carruseles, reels, webinars
 
 ## 11. Merch & papelería
 
-- **Textil**: verde profundo + crema, discreto y premium. El merch se presenta SIEMPRE con foto/render real (referencia: render "Buzo Propuesta 1"); los esquemas vectoriales son solo especificación de producción. Wordmark chico pecho izquierdo, monograma "m" en espalda, patrón de avatares solo en forros. Bordado > estampa. **Sin lima en textil.**
+- **Textil**: verde profundo + crema, discreto y premium. **El merch se muestra SIEMPRE con foto o render real del producto — nunca ilustración ni esquema vectorial** (referencia de calidad: render "Buzo Propuesta 1"). Catálogo de 10 productos (buzo, remera blanca/negra, gorra, medias, mochila, termo, cuaderno, stickers, equipo usándolo); las fotos van en `assets/photos/merch/` con los nombres del LEEME y el manual las levanta solo. Wordmark chico pecho izquierdo, monograma "m" en espalda, patrón de avatares solo en forros. Bordado > estampa. **Sin lima en textil.**
 - **Membrete A4**: wordmark verde arriba-izq (20% del ancho), pie con filete verde digital + avatar m. **Firma de email**: avatar + filete verde + nombre 700 + rol gris — sin banners.
 - Docs: wordmark esquina sup-izq ≤1/5 del ancho; Manrope o Arial; nunca logo como marca de agua.
 
