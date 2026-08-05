@@ -29,7 +29,7 @@ h2{margin:38px 0 14px;font-size:1.3rem;font-weight:700}
   .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
 
   /* ---------- menú lateral (igual al brand book) ---------- */
-  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;z-index:50}
+  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;overflow-x:visible;z-index:50}
   .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-400);margin:0 0 8px 10px}
   .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
@@ -43,7 +43,7 @@ h2{margin:38px 0 14px;font-size:1.3rem;font-weight:700}
   }
 
   .c{text-align:left}
-  .c .ci{display:flex;align-items:center;gap:7px;margin-top:12px}
+  .c .ci{display:flex;align-items:center;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid var(--color-hairline)}
   .fmt{font-family:var(--font-mono);font-size:9.5px;font-weight:700;letter-spacing:.06em;padding:3px 7px;border-radius:5px;flex:0 0 auto}
   .fmt.vector{background:var(--emerald-500);color:var(--ink-900)}
   .fmt.raster{background:var(--gray-300);color:var(--ink-900)}

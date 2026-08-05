@@ -181,6 +181,41 @@ Todo acá es cerrar huecos, no abrir capítulos. Ninguno depende de Proteína.
 
 ---
 
+## Revisión de Luca Cantarelli (5 de agosto de 2026)
+
+Feedback de una llamada mostrándole el sistema en vivo. Separado en dos partes desde el principio: lo que es de este repo, y lo que es de la app de Magoya Studio (esa parte no se toca acá — queda para el otro proyecto).
+
+### Aplicado en este repo
+
+| # | Lo que vio Luca | Causa real (verificada, no a ojo) | Fix |
+|---|---|---|---|
+| L1 | En AI en campo, una flecha "pisa" la palabra "vende" — en su resolución nada más | Medido en el navegador a 1280px: la flecha (52px) empezaba 52px arriba de las cifras, pero el margen debajo del párrafo era de solo 30px — 22px de la flecha caían dentro del texto | Flecha reducida a 26px, margen del párrafo a 36px. Verificado sin superposición en 1100/1280/1440px — ya no depende del ancho de pantalla |
+| L2 | El índice lateral (dock): al hacer hover, el texto se corta — "Ilustración & motivos" queda en "Ilustración & motivo" | `.side{overflow-y:auto}` sin `overflow-x` declarado — el spec de CSS fuerza `overflow-x` a `auto` también cuando solo se fija un eje, así que el texto agrandado por el hover se recortaba en el borde del dock en vez de desbordar visible | `overflow-x:visible` explícito en las 8 páginas que comparten el dock. Reproducido el bug, aplicado el fix, confirmado que ya no corta |
+| L3 | Tipografía "de card generada por IA" en Clientes — pensó que era output crudo sin estilo | Era un zócalo técnico intencional (mono + tag SVG) pero sin separación visual del resto de la card, por eso se leía como un accidente | Hairline + padding-top separando el zócalo del cuerpo de la card en `logos.html` |
+| L4 | Nombres de sección inconsistentes entre el dock, el título y el panel de descarga (ej. "Identidad" vs "Logo & avatares"; "Fotografía" vs "Banco de fotos") | El kicker de la sección de logo decía "Identidad" mientras el dock y el H2 ya decían "Logo & avatares" — desalineado dentro de la misma sección. Y el panel de descarga siempre nombra el *producto* (correcto), pero nunca decía de qué *sección* venía | Kicker corregido. El panel de descarga ahora muestra el nombre real de la sección (tomado del propio dock) además del producto — ej. "Fotografía · descarga" arriba de "Banco de fotos" |
+| L5 | En la portada, "la pieza canónica" y otros títulos se leen poco contra el fondo de la card al hacer hover | El degradé del hover (`rgba(13,12,12,.82)` solo en el 18% final) dejaba el título en una zona casi transparente del degradé | Degradé reforzado (42% de opacidad ya al 30% de la altura) + text-shadow en título y subtítulo — funciona sobre cualquier color de card, no solo fotos |
+| L6 | Una card de "AI en campo" se leía como si fuera una pieza genérica de redes de Magoya — la sub-marca no se notaba hasta pasar el mouse | El único indicador era el `.lb` que solo aparece en hover — en reposo la card no decía nada | Badge "AI en campo" visible siempre, no solo al hover |
+
+### Verificado y descartado (busqué el problema, no está)
+
+- **Botones ≠ chips mezclados**: revisé la sección "Componentes" de `brand-book.html`, que es literalmente la página sobre esta regla. `.btn` usa `border-radius:var(--radius-btn)` (10px, rectángulo) y `.pill` usa `border-radius:var(--radius-full)` (pill completo) — están bien diferenciados. Si Luca lo vio en otro lado (algún mockup con estilo inline), falta que señale la card exacta.
+
+### Documentado para más adelante (real, pero grande para tocar en esta pasada)
+
+- **Escala tipográfica con decimales fuera de múltiplos de 4** (Luca marcó 13.5px como ejemplo): confirmado — hay 5 instancias de 13.5px y decenas más de 9.5/10.5/11.5/12.5/14.5px, repartidas en las 9 páginas. No es un accidente: es una micro-escala deliberada y usada consistentemente para captions/kickers/specs desde el arranque del sistema. Normalizarla a múltiplos de 4 (o a un mínimo de 14px como sugiere Luca) es un cambio real de escala tipográfica que tocaría cientos de instancias — no algo para hacer a ciegas en una pasada. Queda anotado para una revisión dedicada.
+- **Rediseño del dock con lógica tipo Notion** (rieles minimalistas que se expanden en hover, con la sección activa siempre en texto y el resto como barritas — la sugerencia concreta de Luca): buena idea, pero es un cambio de interacción completo, no un fix. Se banca hasta una pasada dedicada a navegación.
+
+### Excluido — es feedback de Magoya Studio, no de este repo
+
+Todo esto lo vio en el editor de piezas (canvas, capas, zoom), no en el brand system. Facundo ya lo separó explícitamente: va al otro proyecto, no acá.
+
+- Etiqueta "Detrás" mal traducida (debería ser "Fondo"/"Encima"/"Contenido") — bug de la traducción automática del editor
+- Ícono de "Marca" que se confunde con el de Gmail — icono del editor
+- Doble barra de navegación horizontal + botón "Volver al inicio" redundante — UI del editor
+- Zoom con Ctrl/Cmd+rueda y paneo con clic-rueda — controles del canvas
+- Área fuera del artboard para tirar elementos sueltos — feature del canvas
+- Mockups de dispositivo de mala calidad — Luca ofreció pasar mejores SVG de la comunidad de Figma; cuando lleguen, revisar si además reemplazan a los que usa este repo en `assets/studio/devices/`
+
 ## Bloqueado por un insumo tuyo
 
 1. **Fotos de merch** (F35) — dejar los archivos en `assets/photos/merch/` con los nombres que pide cada slot. Se muestran solas al recargar. Los veo en el chat pero no los puedo extraer de una imagen pegada.
