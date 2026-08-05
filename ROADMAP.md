@@ -7,7 +7,7 @@
 
 ---
 
-## 🎓 Principio fundacional: el manual enseña, no solo dicta
+## Principio fundacional: el manual enseña, no solo dicta
 
 > **Regla del dueño (2026-08-04):** *"lo que importa es CÓMO aplicamos el contenido y cómo la gente lo puede llegar a usar, porque muchos son literales con los criterios o las ideas pueden no aparecer. Este brand tiene que lograr eso educando, enseñando y compartiendo desde el mismo brand."*
 
@@ -46,13 +46,13 @@ Esto es **criterio de aceptación transversal**: ninguna sección se considera t
 
 ---
 
-## ⚠️ Lo primero: el live está desincronizado
+## Lo primero: el live está desincronizado
 
 Último commit pusheado: `afc116e` (Ronda 4). El working tree tiene **cambios sin commitear** — o sea, lo que se ve publicado **no** es lo último que se hizo:
 
 | Archivo | Estado git | Qué trae |
 |---|---|---|
-| `index.html` | modificado | ajustes de Ronda 4 + pieza real del Studio |
+| `brand-book.html` | modificado | ajustes de Ronda 4 + pieza real del Studio |
 | `ai-en-campo.html` | modificado | reescritura de secciones + iconos de IA reales |
 | `assets/pieces/` | sin trackear | 5 piezas reales del Studio (fecha-marcada, mito-vs-realidad, impacto-pregunta) |
 | `assets/magoya-wordmark-animado.svg` | sin trackear | logo animado |
@@ -71,7 +71,7 @@ Ver **A1** en el backlog.
 
 | Página | Contenido | Estado |
 |---|---|---|
-| [`index.html`](index.html) | Brand book — 13 secciones (esencia · logo & avatares · color · tipografía · fotografía · ilustración & motivos · **convivencia** · iconografía · componentes · aplicaciones · merch · papelería · reglas de oro) + §14 marca anexa | ✅ Completo, con 2 huecos: merch en placeholders, firma sin los assets nuevos |
+| [`brand-book.html`](brand-book.html) | Brand book — 13 secciones (esencia · logo & avatares · color · tipografía · fotografía · ilustración & motivos · **convivencia** · iconografía · componentes · aplicaciones · merch · papelería · reglas de oro) + §14 marca anexa | ✅ Completo, con 2 huecos: merch en placeholders, firma sin los assets nuevos |
 | [`ai-en-campo.html`](ai-en-campo.html) | Sub-manual de la marca anexa — 7 secciones (esencia/cuándo-no · color & voz · ruido con inventario · kit de 6 componentes · 28 plantillas del Studio · 13 formatos · reglas vs core) | ✅ Completo (cambios sin pushear) |
 | [`slides.html`](slides.html) | 16 módulos en 7 familias (A títulos · B cards · C datos · D listas · E personas · F proceso · G portadas), escala 126/84/56/42pt | 🟡 Base sólida, falta ampliar (ver S1) |
 | [`pieces.html`](pieces.html) | 3 plantillas comerciales con anatomía numerada + mockup A4: T1 one-pager institucional · T2 flyer de servicio · T3 flyer Staff Augmentation | 🟡 T3 pendiente de validación; bios/nombres placeholder |
@@ -116,12 +116,12 @@ Desbloquea: quién tiene que producir algo o decidir para que el ítem avance. *
 
 | # | Qué | Por qué importa | Desbloquea | Esf. |
 |---|---|---|---|---|
-| **A1** | Commitear y pushear el trabajo pendiente (`index.html`, `ai-en-campo.html`, `assets/pieces/`, wordmark animado, firma GIF/PNG, doc-header/footer, `pieza-ai-campo-real.jpg`) | El live está atrás del local. Cualquiera que abra el link hoy ve una versión vieja, y los assets nuevos no se pueden descargar | nadie | S |
+| **A1** | Commitear y pushear el trabajo pendiente (`brand-book.html`, `ai-en-campo.html`, `assets/pieces/`, wordmark animado, firma GIF/PNG, doc-header/footer, `pieza-ai-campo-real.jpg`) | El live está atrás del local. Cualquiera que abra el link hoy ve una versión vieja, y los assets nuevos no se pueden descargar | nadie | S |
 | **A2** | Guardar los renders de merch en `assets/photos/merch/` con los nombres exactos del `LEEME.txt`: `remera-blanca.jpg`, `remera-negra.jpg`, `gorra.jpg`, `medias.jpg`, `mochila.jpg`, `termo.jpg`, `cuaderno.jpg`, `stickers.jpg`, `equipo-merch.jpg` (JPG, lado largo ≥1600px, calidad 80-85) | Los renders ya existen (generados hoy con AI) pero **no están en disco** — la §11 muestra 9 slots con badge de placeholder. El manual las levanta solas al recargar, no hay que tocar código | **Facu** (bajar los archivos del chat) | S |
-| **A3** | Integrar los assets de papelería en §12 del manual: firma animada (GIF) + firma estática (PNG) + `doc-header.svg`/`doc-footer.svg` + logo animado, con **instructivo de cómo se sube la firma a Gmail** (Configuración → Firma → pegar imagen → link a magoya.com), y **sacar la carita del ejemplo de firma → va siempre el logo** (`index.html:1203` usa `avatars/avatar-face.svg`) | Hoy los archivos existen en `assets/downloads/` pero **no están linkeados desde ninguna página**: nadie los va a encontrar. Y el ejemplo de firma enseña lo contrario de la regla (avatar de persona en lugar de logo) | nadie | M |
+| **A3** | Integrar los assets de papelería en §12 del manual: firma animada (GIF) + firma estática (PNG) + `doc-header.svg`/`doc-footer.svg` + logo animado, con **instructivo de cómo se sube la firma a Gmail** (Configuración → Firma → pegar imagen → link a magoya.com), y **sacar la carita del ejemplo de firma → va siempre el logo** (`brand-book.html:1203` usa `avatars/avatar-face.svg`) | Hoy los archivos existen en `assets/downloads/` pero **no están linkeados desde ninguna página**: nadie los va a encontrar. Y el ejemplo de firma enseña lo contrario de la regla (avatar de persona en lugar de logo) | nadie | M |
 | **A4** | Unificar el contacto a `info@magoya.com` (hay 4 usos de `people@magoya.com` y 3 de `info@`) y arreglar las bios del one-pager EN | Un manual que muestra dos emails distintos no es fuente de verdad. El one-pager 2024 tiene bios desactualizadas | **Varu** (confirmar cuál es el email correcto y pasar bios al día) | S |
-| **A5** | Roster real del equipo: fotos B&N + nombres + roles reales en `slides.html` E2 (5 figuras "Subtitle bold"), `pieces.html:175-179` (5 × "Nombre Apellido") e `index.html:583` | Es el placeholder más caro: el módulo E2 lleva un cartel escrito que dice "reemplazar antes de usar". Si alguien arma un deck de cliente hoy, sale con nombres falsos | **Facu + Varu** (roster) / **fotos** del equipo en B&N | M |
-| **A6** | Cita completa de Camila López Colmano (`index.html:960`, `slides.html:321` — hoy es una versión corta/parcial y el rol "AgTech Expert" está a confirmar) | Es la única cita de cliente del sistema y aparece en dos módulos (E1 quote + card de mosaico). Si es incorrecta, se propaga a todo deck comercial | **Facu** (conseguir la cita textual y el rol/empresa exactos) | S |
+| **A5** | Roster real del equipo: fotos B&N + nombres + roles reales en `slides.html` E2 (5 figuras "Subtitle bold"), `pieces.html:175-179` (5 × "Nombre Apellido") e `brand-book.html:583` | Es el placeholder más caro: el módulo E2 lleva un cartel escrito que dice "reemplazar antes de usar". Si alguien arma un deck de cliente hoy, sale con nombres falsos | **Facu + Varu** (roster) / **fotos** del equipo en B&N | M |
+| **A6** | Cita completa de Camila López Colmano (`brand-book.html:960`, `slides.html:321` — hoy es una versión corta/parcial y el rol "AgTech Expert" está a confirmar) | Es la única cita de cliente del sistema y aparece en dos módulos (E1 quote + card de mosaico). Si es incorrecta, se propaga a todo deck comercial | **Facu** (conseguir la cita textual y el rol/empresa exactos) | S |
 | **A7** | Validar con Varu si **Staff Augmentation** sigue en la oferta 2026 antes de producir el flyer T3 | T3 ya está como plantilla en `pieces.html`. Si el servicio salió de la oferta, hay que retirar la plantilla, no producirla | **Varu** (decisión de oferta) | S (decisión) |
 
 ### SIGUIENTE — profundiza el sistema
@@ -202,7 +202,7 @@ Reglas cerradas. Si alguien las cuestiona, la respuesta es este bloque.
 
 | Decisión | Detalle |
 |---|---|
-| Dos marcas, dos manuales | El core (`index.html`) y **"AI en campo"** (`ai-en-campo.html`) son **marcas separadas**. AI en campo rompe 3 reglas del core **a propósito** (fondo verde digital pleno · placa negra con crema para el dato clave · ruido controlado 2–4 doodles ±5–15°). **Nada de eso vuelve al core** |
+| Dos marcas, dos manuales | El core (`brand-book.html`) y **"AI en campo"** (`ai-en-campo.html`) son **marcas separadas**. AI en campo rompe 3 reglas del core **a propósito** (fondo verde digital pleno · placa negra con crema para el dato clave · ruido controlado 2–4 doodles ±5–15°). **Nada de eso vuelve al core** |
 | Producción | Las piezas de redes se producen **siempre desde plantillas de Magoya Studio** (28 plantillas, 13 formatos) y la receta queda en un `.magoya.json` — esa es la fuente para reproducir una pieza, no el ojo |
 | Piezas comerciales | Se capturan las **estructuras** como plantillas del sistema (`pieces.html`), no se producen los flyers uno por uno |
 | Capa para AI | `BRAND.md` (doctrina) + `tokens.json` (valores) + `tokens.css` (4 temas). Orden de lectura documentado en `README.md` |

@@ -1,7 +1,7 @@
 # Magoya — Brand System v1.1
 
 > Manual de marca en Markdown, pensado para ser consumido por personas y por AIs.
-> Tokens exactos en [`tokens.json`](tokens.json) y [`tokens.css`](tokens.css). Manual visual navegable en [`index.html`](index.html).
+> Tokens exactos en [`tokens.json`](tokens.json) y [`tokens.css`](tokens.css). Manual visual navegable en [`brand-book.html`](brand-book.html).
 > **Las secciones 1–13 + §14 espejan una a una las del brand book visual.** Si una regla cambia acá, cambia allá — y al revés.
 
 **Regla madre del sistema:** si se crea algo nuevo que puede ir en una pieza, tiene que estar en el brand. Ningún asset ni componente existe sin su ficha: qué es, cuándo se usa, cuándo no, y de dónde se baja ([`library.html`](library.html)).
@@ -135,7 +135,7 @@ Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. *
 
 | Página | Qué documenta |
 |---|---|
-| `index.html` | Brand book: 13 secciones + §14 marca anexa |
+| `brand-book.html` | Brand book: 13 secciones + §14 marca anexa |
 | `ai-en-campo.html` | Manual completo de la marca anexa |
 | `slides.html` | Módulos de presentación |
 | `pieces.html` | Piezas comerciales (one-pager + flyers) |

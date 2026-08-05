@@ -31,7 +31,7 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 
 ## Manual visual navegable
 
-- [index.html](https://facundo-web.github.io/magoya-brand-system/index.html): el brand book completo en 13 secciones más la marca anexa, con ejemplos "hacer / evitar", la matriz de convivencia de recursos y la jerarquía de cuatro planos (lienzo · textura · sujeto · voz).
+- [brand-book.html](https://facundo-web.github.io/magoya-brand-system/brand-book.html): el brand book completo en 13 secciones más la marca anexa, con ejemplos "hacer / evitar", la matriz de convivencia de recursos y la jerarquía de cuatro planos (lienzo · textura · sujeto · voz).
 - [slides.html](https://facundo-web.github.io/magoya-brand-system/slides.html): 41 módulos de presentación en 13 familias, escala 126/84/56/42pt sobre lienzo de 1920px, margen interior 7%.
 - [pieces.html](https://facundo-web.github.io/magoya-brand-system/pieces.html): plantillas de piezas comerciales con anatomía — one-pager madre y flyers derivados.
 - [icons.html](https://facundo-web.github.io/magoya-brand-system/icons.html): librería de 58 iconos inline SVG, trazo 2px redondeado en grid 24×24, `currentColor`.

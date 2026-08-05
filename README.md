@@ -8,11 +8,12 @@ Sistema de diseño oficial de **Magoya** — AgTech digital product studio. Una 
 
 ## Para personas
 
-Las 8 páginas comparten la misma topbar y el mismo índice lateral (dock).
+Las 9 páginas comparten la misma topbar y el mismo índice lateral (dock).
 
 | Página | Qué hay |
 |---|---|
-| [`index.html`](index.html) | **El brand book** — 13 secciones: esencia, logo & avatares, color, tipografía, fotografía, ilustración & motivos, convivencia de recursos, iconografía, componentes, aplicaciones, merch, papelería, reglas de oro · + §14 marca anexa |
+| [`index.html`](index.html) | **La portada** — el moodboard: 19 celdas con un elemento real de la marca cada una, cada celda entra al capítulo que le corresponde. Es la entrada al sistema |
+| [`brand-book.html`](brand-book.html) | **El brand book** — 13 secciones: esencia, logo & avatares, color, tipografía, fotografía, ilustración & motivos, convivencia de recursos, iconografía, componentes, aplicaciones, merch, papelería, reglas de oro · + §14 marca anexa |
 | [`ai-en-campo.html`](ai-en-campo.html) | **Manual de la marca anexa "AI en campo"** — la línea de contenido educativo de IA para el agro (rompe tres reglas del core a propósito) |
 | [`slides.html`](slides.html) | 41 módulos de presentación en 13 familias (escala 126/84/56/42pt) + exportador .pptx |
 | [`pieces.html`](pieces.html) | Plantillas de piezas comerciales con anatomía (one-pager, flyers) |
@@ -62,6 +63,16 @@ assets/
 **Duplicados conocidos** (existen en dos rutas; la de la derecha es la que usa el manual): `assets/badge-envivo.svg` y `assets/doodle-{blob,dots,loop}.svg` → viven en `assets/studio/` · `assets/logos/{corteva,syngenta}.svg` → viven en `assets/logos/clients/`. Al bajar un asset, usar siempre el que linkea `library.html`.
 
 **Fuentes de las piezas de "AI en campo"**: `assets/photos/ai-campo-silueta.{jpg,png}` es la silueta recortada que usan las plantillas del Studio, y `assets/pieces/*.jpg` son capturas de piezas ya publicadas que el manual muestra como referencia. Son insumos de producción del Studio, no assets de descarga.
+
+## Documentos de trabajo
+
+No son parte del manual — son el registro de por qué el manual dice lo que dice.
+
+| Archivo | Qué es |
+|---|---|
+| [`AUDITORIA-FEEDBACK.md`](AUDITORIA-FEEDBACK.md) | Cada pedido de feedback con su estado verificado, la evidencia (archivo:línea) y el criterio de aceptación. Incluye el roadmap por olas y las contradicciones abiertas |
+| [`VOICE-RESEARCH.md`](VOICE-RESEARCH.md) | Relevamiento de la voz con citas trazables: el Manual de Marca 2022, la estrategia de Varu, los pilares de contenido y las reuniones |
+| [`ROADMAP.md`](ROADMAP.md) | Roadmap maestro y decisiones tomadas que no se re-litigan |
 
 ## Desarrollo
 

@@ -373,7 +373,7 @@ Diez pares. El "antes" es copy **real, hoy en el sistema**, con archivo indicado
 
 ---
 
-**5. Especimen de display** — `index.html` §04 (y usado como ejemplo de jerarquía aplicada)
+**5. Especimen de display** — `brand-book.html` §04 (y usado como ejemplo de jerarquía aplicada)
 
 > **Antes:** "**We are the best** Digital Product Builders **for Agribusiness**"
 > "With over 20 years of combined experience and expert know-how, our capabilities are **unparalleled**."
@@ -409,7 +409,7 @@ Diez pares. El "antes" es copy **real, hoy en el sistema**, con archivo indicado
 
 ---
 
-**8. Sección "Esencia" en español** — `index.html` §01
+**8. Sección "Esencia" en español** — `brand-book.html` §01
 
 > **Antes:** "**Clarity** — Convertimos complejidad en un plan claro. Sin sorpresas."
 > Vocabulario propio declarado: *embedded, deep AgTech fluency, clarity/confidence/commitment, long-term value.*
@@ -422,7 +422,7 @@ Diez pares. El "antes" es copy **real, hoy en el sistema**, con archivo indicado
 
 ---
 
-**9. Slide de personajes / footprint** — `index.html` §06, ejemplos de uso
+**9. Slide de personajes / footprint** — `brand-book.html` §06, ejemplos de uso
 
 > **Antes:** "Our footprint — **We are people of the world**" · "Buenos Aires · São Paulo · Santa Fe · California"
 > "**Growing products, growing people**"
@@ -435,7 +435,7 @@ Diez pares. El "antes" es copy **real, hoy en el sistema**, con archivo indicado
 
 ---
 
-**10. Bajada del hero de marca** — `slides.html` portada + `index.html` hero
+**10. Bajada del hero de marca** — `slides.html` portada + `brand-book.html` hero
 
 > **Antes:** "AgTech challenges demand more than code." / "We partner with modern agribusinesses to design, build, and evolve their products and platforms. Senior teams embedded in yours — technologists, product experts and agronomists."
 
@@ -461,7 +461,7 @@ Diez pares. El "antes" es copy **real, hoy en el sistema**, con archivo indicado
 
 Texto actual: *"Profesional pero cercana; experta y senior, nunca vendedora; transparente y estructurada. Madura y confiable — no whimsical: la calidez viene del trato humano, no de la infantilización. Vocabulario propio: embedded, deep AgTech fluency, clarity/confidence/commitment, long-term value."*
 
-### Se sostiene ✅
+### Se sostiene
 
 | Afirmación | Evidencia que la respalda |
 |---|---|
@@ -488,7 +488,7 @@ Texto actual: *"Profesional pero cercana; experta y senior, nunca vendedora; tra
 
 8. **Falta el anti-hype de IA explícito.** Con la mitad de las líneas de contenido apuntando a IA, la posición *"ni hype ni negacionismo"* debería estar en el §1, no solo en un docx de pilares.
 
-### Está mal ⚠️ — tres correcciones
+### Está mal — tres correcciones
 
 1. **"no whimsical" está mal usado como criterio de voz.** Su origen documentado es una conclusión de **ilustración**: *"la esencia es expertise senior + dominio agro + partnership maduro, NO whimsical. **Por eso las ilustraciones monoline infantiles fallaron**"* (`magoya-what-it-does.md`). Trasladado a la voz, contradice cuatro fuentes: Manual (*"Nos divertimos sin perder el profesionalismo"*, tono *"alegre, casual"*), Cultura Magoya (*"Humor y camaradería: el humor es esencial en nuestro día a día"*), Anita p94 (*"Divertida: humor, juego e ironía (…) para alivianar la complejidad"*) y el sub-manual (voseo didáctico). **Redacción correcta: "no infantil — pero con humor cuando aliviana, nunca cuando decora".** El "no whimsical" queda donde nació: en ilustración.
 
@@ -556,3 +556,15 @@ Preguntas que solo Varu o Cami pueden responder. Listadas para llevar a reunión
 - No aparece como cliente ni proyecto en ninguna otra parte: los clientes que sí figuran en el material son Bayer/Agrobayer/Experto, John Deere, Nidera, Apeel, Biome Makers, ProducePay, HabiTerre, IntelinAir. Nada llamado Proteína. (El único otro archivo con esa raíz en el disco es `Protea_Maiz_2024_Final.pdf`, de un WhatsApp de maíz — "Protea", sin relación.)
 
 **Confianza: alta, pero es inferencia.** Confirmar con Cami (pregunta 8 del §7) y, si se confirma, pedirle el resto del entregable: es muy probable que exista un documento de tono con ejemplos de copy que nunca llegó al sistema actual.
+
+### Actualización — 5 de agosto de 2026: Proteína está trabajando con Magoya ahora
+
+Las notas de reunión de julio de 2026 confirman que **Proteína es una agencia** — y que **el proyecto está activo, no cerrado en 2022**. Kickoff el 28 de julio de 2026, con Anita Figueiredo y Estrella. Entregables comprometidos: módulo 1 (posicionamiento, propuesta de valor, arquitectura de marca) después del workshop del 13 de agosto, y módulo 2 (**playbook consumible por AI** + vocabulario acordado) después del 2 de septiembre.
+
+Esto obliga a bajar la confianza de la atribución del material 2022:
+
+- **A favor de que también hicieron el rebranding 2022:** la carpeta lleva su nombre, y volver a contratar a la agencia que ya conoce la empresa es lo habitual.
+- **En contra:** las notas describen a **Nat como la diseñadora original de Magoya** — y es ella quien va a diseñar el playbook del módulo 2. Si el trabajo visual de 2022 fue de Nat, la carpeta `Material Rebranding Proteina/` puede ser material que Proteína **compartió o auditó** en 2026, no que produjo en 2022.
+- El diagnóstico que Proteína trae hoy — *nueve años de inconsistencia narrativa; Magoya se adaptó tanto al cliente que no construyó espacio propio* — describe un problema **no resuelto**, lo que encaja peor con la idea de que ellos mismos entregaron la solución en 2022.
+
+**Confianza revisada: media.** La pregunta 8 del §7 pasa a ser urgente y cambia de destinatario: preguntárselo directamente a Proteína en el workshop del 13 de agosto. Lo que no cambia: **el `Manual de Marca` 2022 es la única especificación de voz que Magoya tuvo escrita**, y el sistema no la citaba. Eso se sostiene con independencia de quién la escribió.
