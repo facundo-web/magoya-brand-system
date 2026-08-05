@@ -49,6 +49,19 @@
   .tpl:nth-of-type(3) .anat{border-left-color:var(--lime-500)}
   @media (max-width:900px){.models{grid-template-columns:1fr}}
 
+  /* ---------- hacer / evitar (patrón del brand book) ---------- */
+  .dodont{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:940px;margin:22px 0 6px}
+  .dd{border-top:3px solid var(--emerald-500);padding-top:14px}
+  .dd.avoid{border-top-color:var(--ink-900)}
+  .dd .h{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald-700);margin-bottom:12px;display:block}
+  .dd.avoid .h{color:var(--ink-900)}
+  .dd ul{list-style:none;display:flex;flex-direction:column}
+  .dd li{font-size:var(--text-sm);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--color-hairline)}
+  .dd li:last-child{border-bottom:none}
+  .dd.avoid li{color:var(--gray-600)}
+  .dd.avoid li b{color:var(--ink-900)}
+  @media (max-width:880px){.dodont{grid-template-columns:1fr;gap:18px}}
+
   /* página A4 vertical mock */
   .page{aspect-ratio:210/297;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 10px 36px rgba(0,0,0,.10);container-type:inline-size;position:relative;display:flex;flex-direction:column}
   .zone{position:relative}
@@ -182,7 +195,24 @@
     <div class="mcard t3"><span class="tag">T3 · Talento</span><div class="swatch"><span style="background:var(--green-950)"></span><span style="background:var(--lime-500)"></span><span style="background:var(--ink-950)"></span></div><b>Equipos y talento</b><p>Header con foto aérea + scrim · card dark con la cifra en lima · cierre negro. Para staffing y hiring.</p></div>
   </div>
 
-  
+  <div class="dodont">
+    <div class="dd">
+      <span class="h">Hacer</span>
+      <ul>
+      <li>Un solo golpe de <b>lima</b> por pieza, y máximo <b>dos recursos gráficos</b> distintos en el mismo layout.</li>
+      <li>Personas siempre en <b>blanco y negro</b>, con nombre y rol reales antes de producir la pieza final.</li>
+      <li>Respetar el <b>lienzo propio</b> de cada template — no mezclar el header de T1 con el footer de T3.</li>
+      <li>Actualizar bios y años cada vez que se deriva una pieza de T1 — no arrastrar datos viejos.</li>
+      </ul></div>
+    <div class="dd avoid">
+      <span class="h">Evitar</span>
+      <ul>
+      <li>Nada de <b>naranja, amarillo ni puzzle</b> — quedan afuera de la paleta en cualquier pieza comercial.</li>
+      <li>No uses <b>más de un golpe de lima</b> por pieza — compite con el resto de la jerarquía.</li>
+      <li>No combines las <b>tres plantillas</b> en un mismo documento — cada modelo se reconoce por su propio lienzo.</li>
+      <li>No dejes <b>"Nombre Apellido"</b> de placeholder en una pieza que se va a enviar.</li>
+      </ul></div></div>
+
   <div class="tabs" role="tablist">
     <button class="tab on" role="tab" data-t="1"><b>T1 · Institucional</b><span>One-pager de empresa</span></button>
     <button class="tab" role="tab" data-t="2"><b>T2 · Servicio</b><span>Flyer de una capacidad</span></button>

@@ -59,6 +59,19 @@
   .howto p b{font-weight:800}
   .howto p + p{margin-top:4px}
 
+  /* ---------- hacer / evitar (patrón del brand book) ---------- */
+  .dodont{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:940px;margin:22px 0 6px}
+  .dd{border-top:3px solid var(--emerald-500);padding-top:14px}
+  .dd.avoid{border-top-color:var(--ink-900)}
+  .dd .h{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald-700);margin-bottom:12px;display:block}
+  .dd.avoid .h{color:var(--ink-900)}
+  .dd ul{list-style:none;display:flex;flex-direction:column}
+  .dd li{font-size:var(--text-sm);line-height:1.5;padding:9px 0;border-bottom:1px solid var(--color-hairline)}
+  .dd li:last-child{border-bottom:none}
+  .dd.avoid li{color:var(--gray-600)}
+  .dd.avoid li b{color:var(--ink-900)}
+  @media (max-width:880px){.dodont{grid-template-columns:1fr;gap:18px}}
+
   /* ---------- familias ---------- */
   .fam{margin:58px 0 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink-900);padding-bottom:9px;scroll-margin-top:62px}
   .fam h2{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-900)}
@@ -365,6 +378,24 @@
       <p>En el diálogo de importación dejá marcado <b>“Mantener el tema original”</b> para conservar colores y jerarquía de Magoya. Si Manrope no está en la cuenta, Slides cae a Arial (el fallback oficial de la marca).</p>
     </div>
   </div>
+
+  <div class="dodont">
+    <div class="dd">
+      <span class="h">Hacer</span>
+      <ul>
+      <li>Un solo golpe de <b>lima</b> por slide, y máximo <b>dos recursos gráficos</b> (foto + ilustración, o gráfico + ícono).</li>
+      <li>Retratos siempre en <b>blanco y negro</b>, nombre y rol reales — nunca "Nombre Apellido" en el deck final.</li>
+      <li>Logos de clientes y partners siempre en <b>gris</b>, nunca a color, para no competir con la pieza.</li>
+      <li>Mantené el margen de <b>7% del ancho</b> en los cuatro lados — no lo reduzcas para meter más contenido.</li>
+      </ul></div>
+    <div class="dd avoid">
+      <span class="h">Evitar</span>
+      <ul>
+      <li>No mezcles <b>más de un golpe de lima</b> en el mismo slide — compite con el resto de la jerarquía.</li>
+      <li>No repitas la <b>misma familia de módulo</b> dos veces seguidas en el deck armado — rompe el ritmo.</li>
+      <li>No estires el <b>wordmark</b> ni cambies su proporción para que "entre" en un layout.</li>
+      <li>No uses <b>emojis</b> como recurso gráfico — solo la manito que señala y banderas, si aplica.</li>
+      </ul></div></div>
 
   <!-- ============ A · APERTURA ============ -->
   <div class="fam" id="fam-a"><h2>A · Apertura</h2><span class="sub">statements, agenda y divisores de sección</span><label class="all"><input type="checkbox" data-all="A" checked>Familia</label></div>

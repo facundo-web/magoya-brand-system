@@ -98,7 +98,7 @@ En `VOICE-RESEARCH.md` inferí que **Proteína era la agencia del rebranding 202
 | F26 | *"las fotos se debería poder bajar una"* | **LISTO** | 6 fotos con descarga individual en `library.html` |
 | F27 | *"los textos no son referenciales"* (descargas) | **NO HECHO** | Pendiente de revisión de copy en las fichas |
 | F28 | *"el hacer y evitar en la foto parece que corresponde a las fotos de arriba"* | **LISTO** | Reordenado |
-| F29 | *"el hacer y evitar lo dejaría en algún contenedor que lo separe más, pero que se note que es contexto"* | **PARCIAL** | 14 bloques `.dodont` en el brand book y 1 en AI en campo — pero **`slides.html` y `pieces.html` tienen 0**. Las dos páginas más operativas no enseñan qué no hacer |
+| F29 | *"el hacer y evitar lo dejaría en algún contenedor que lo separe más, pero que se note que es contexto"* | **LISTO** | Bloque `.dodont` universal agregado en `slides.html` (antes de la familia A) y en `pieces.html` (antes de los tabs) — `grep -c dodont slides.html pieces.html` = 3 en ambos |
 
 ## 5. Firma, papelería y merch
 
