@@ -8,17 +8,18 @@ Sistema de diseño oficial de **Magoya** — AgTech digital product studio. Una 
 
 ## Para personas
 
-Las 7 páginas comparten la misma topbar y el mismo índice lateral.
+Las 8 páginas comparten la misma topbar y el mismo índice lateral (dock).
 
 | Página | Qué hay |
 |---|---|
 | [`index.html`](index.html) | **El brand book** — 13 secciones: esencia, logo & avatares, color, tipografía, fotografía, ilustración & motivos, convivencia de recursos, iconografía, componentes, aplicaciones, merch, papelería, reglas de oro · + §14 marca anexa |
 | [`ai-en-campo.html`](ai-en-campo.html) | **Manual de la marca anexa "AI en campo"** — la línea de contenido educativo de IA para el agro (rompe tres reglas del core a propósito) |
-| [`slides.html`](slides.html) | 16 módulos de presentación en 7 familias (escala 126/84/56/42pt) |
+| [`slides.html`](slides.html) | 41 módulos de presentación en 13 familias (escala 126/84/56/42pt) + exportador .pptx |
 | [`pieces.html`](pieces.html) | Plantillas de piezas comerciales con anatomía (one-pager, flyers) |
 | [`icons.html`](icons.html) | 58 iconos línea redondeada — click para copiar el SVG |
 | [`library.html`](library.html) | Ficha + descarga directa de cada asset aprobado, y los 8 ZIPs por sección |
 | [`logos.html`](logos.html) | Logos de clientes y stack tecnológico |
+| [`ai.html`](ai.html) | **Integrar con AI** — cómo cargar la marca en Claude, Cursor, Copilot o un GPT, y cómo validar lo que devuelve |
 
 ## Para AIs
 
@@ -27,6 +28,8 @@ Si sos una AI generando piezas para Magoya, leé **en este orden**:
 1. [`BRAND.md`](BRAND.md) — la doctrina completa en Markdown (reglas, roles de color, matriz de convivencia, recetas de aplicación, prohibiciones). Sus secciones 1–13 + §14 espejan una a una las del brand book visual.
 2. [`tokens.json`](tokens.json) — todos los valores exactos: paleta con roles y reglas de accesibilidad, tipografía, espaciado, radios, matriz de convivencia, layouts de export y rutas de assets.
 3. [`tokens.css`](tokens.css) — los mismos tokens como custom properties CSS con 4 temas (`default` verde profundo, `light`, `paper`, `studio`).
+4. [`llms.txt`](llms.txt) — el resumen corto y estable de la marca para agentes.
+5. [`.ai/`](.ai) — prompts listos para pegar (`brand-prompt.md`, `brand-prompt-short.md`), el checklist de validación (`checklist.md`) y presets por herramienta (`.ai/presets/`). La guía de uso está en [`ai.html`](ai.html).
 
 Reglas mínimas si solo vas a leer una cosa: Manrope; negro `#161616` construye (~75%), verde hace crecer (~25%); lima `#A2FF00` solo UN golpe por pieza y nunca como texto sobre blanco; logo/avatares = `#00DE68`; el motivo (paño de semicírculos) va al corte naciendo de un borde o detrás de un objeto; personajes sin rostro recortados por el borde; máximo 2 recursos gráficos por pieza; emojis prohibidos salvo manitos que señalan y banderas; el monograma "m" no va en cards; en la firma de email va el wordmark; nada de gradientes glossy, puzzle, banda festoneada, naranja ni amarillo.
 
@@ -55,6 +58,10 @@ assets/
 **`assets/refs/` es material fuente, no un asset del sistema.** Son los exports originales del diseñador (SVG/PNG de los módulos, ~25 MB) que sirvieron de referencia de trazado. No se enlazan desde ninguna página, no se distribuyen y no tienen ficha en `library.html`. Si algo de ahí tiene que poder usarse, primero se produce como asset aprobado y se le hace su ficha.
 
 **Retirados de la doctrina** (los archivos quedan en disco solo como historial, sin ficha y sin uso en piezas nuevas): `motif-estratos.svg` y `illus/camino-*.svg` (motivos de líneas), y la banda festoneada — que ya no tiene asset.
+
+**Duplicados conocidos** (existen en dos rutas; la de la derecha es la que usa el manual): `assets/badge-envivo.svg` y `assets/doodle-{blob,dots,loop}.svg` → viven en `assets/studio/` · `assets/logos/{corteva,syngenta}.svg` → viven en `assets/logos/clients/`. Al bajar un asset, usar siempre el que linkea `library.html`.
+
+**Fuentes de las piezas de "AI en campo"**: `assets/photos/ai-campo-silueta.{jpg,png}` es la silueta recortada que usan las plantillas del Studio, y `assets/pieces/*.jpg` son capturas de piezas ya publicadas que el manual muestra como referencia. Son insumos de producción del Studio, no assets de descarga.
 
 ## Desarrollo
 

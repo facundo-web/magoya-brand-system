@@ -92,7 +92,7 @@ Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. *
 - **Hero canónico** (la pieza que define la marca): foto aérea + scrim verde + wordmark crema arriba-izq + CTA lima arriba-der + display ExtraBold abajo-izq con una frase en lima.
 - **Feed 1:1** — 3 recetas rotativas: foto (statement sobre aérea) · crema (aviso + avatar de comunidad) · dark (dato lima + personaje recortado). En redes, **display y cifras al ~70% del ancho**: grande o nada.
 - **Story 9:16**: foto arriba + bloque verde abajo con display y CTA lima. **Banner de LinkedIn**: foto del equipo en B&N + scrim negro degradado + wordmark crema + filete verde digital al borde (misma receta que la fotografía de personas). **Avatar de perfil**: cara (comunidad) / m (corporativo).
-- **Slides**: lienzos blanco/sage, un golpe de lima por slide, margen interior 7% (`slides.html`, 16 módulos). **Piezas comerciales**: one-pager madre + flyers derivados (`pieces.html`).
+- **Slides**: lienzos blanco/sage, un golpe de lima por slide, margen interior 7% (`slides.html`, 41 módulos en 13 familias, exportables a .pptx). **Piezas comerciales**: one-pager madre + flyers derivados (`pieces.html`).
 - **Export**: slides 16:9 1920×1080 · feed 1080×1080 · carrusel retrato 4:5 1080×1350 · story 1080×1920 (zona segura 96px) · favicon = avatar "m" 16/32/180/512px sin padding · print A4 sangrado 3mm, CMYK con prueba de color.
 
 ## 11. Merch & indumentaria
@@ -133,6 +133,9 @@ Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. *
 | `icons.html` | 58 iconos copiables |
 | `library.html` | Ficha + descarga de cada asset aprobado |
 | `logos.html` | Logos de clientes y stack tecnológico |
+| `ai.html` | Cómo cargar esta marca en una herramienta de AI y cómo validar el resultado |
+
+Capa machine-readable: `llms.txt` (resumen estable), `.ai/brand-prompt.md` y `.ai/brand-prompt-short.md` (prompts para pegar), `.ai/checklist.md` (validación) y `.ai/presets/` (uno por herramienta). **Todos derivan de este archivo: si una regla cambia acá, hay que propagarla ahí.**
 
 `assets/refs/` es **material fuente no publicable** (exports originales del diseñador): se conserva como referencia de trazado, no se enlaza ni se distribuye. `archive/` son versiones previas del sistema — no usar.
 
