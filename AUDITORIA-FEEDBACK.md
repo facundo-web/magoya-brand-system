@@ -63,7 +63,7 @@ En `VOICE-RESEARCH.md` inferí que **Proteína era la agencia del rebranding 202
 | F06 | *"la animación de popup solo si se cambia de sección, y si esa sección no tiene nada tiene que desaparecer"* | **LISTO** | Scroll-spy por posición (IntersectionObserver fallaba con anclas cortas); verificado: Convivencia y Componentes muestran el panel oculto |
 | F07 | *"el menú de Aladino… si entro al espacio verde disminuye el tamaño de la sección actual"* | **LISTO** | `:has(a:hover) a.act:not(:hover)` en vez de `:hover` del contenedor, en las 9 páginas |
 | F08 | *"las animaciones se traban y parecen poco fluidas"* | **LISTO** | `transform:scale()` (compositor) en vez de `font-size`, y scroll-spy con `requestAnimationFrame` que no toca el DOM si no cambió |
-| F09 | *"la flechita de AI en campo ponela del lado derecho, que sea toda el área clickeable"* | **PARCIAL** | La flecha está (`brand-book.html:439` `AI en campo ↗`) pero **no verifiqué** que esté empujada a la derecha con `justify-content:space-between` ni que el `<a>` ocupe el ancho del dock. Falta medirlo |
+| F09 | *"la flechita de AI en campo ponela del lado derecho, que sea toda el área clickeable"* | **LISTO** | `.side a.anx` con `display:flex;justify-content:space-between`; medido en el navegador: la flecha queda a 8px del borde derecho del `<a>`, que ya ocupa el ancho completo del dock (heredado del flex del sidebar) |
 
 ## 2. Ilustración, motivos y marcas a mano
 
@@ -107,8 +107,8 @@ En `VOICE-RESEARCH.md` inferí que **Proteína era la agencia del rebranding 202
 | F30 | *"no va la carita, siempre el logo"* (firma) | **LISTO** | Firma = wordmark |
 | F31 | *"la firma quiero que sea el logo animado — animalo y ponelo descargable, y también el header del doc, el footer, la firma estática"* | **LISTO** | GIF 200×70 / 26 frames + PNG + `doc-header.svg` + `doc-footer.svg` + instructivo de Gmail |
 | F32 | *"mostrar si lo tiene que aplicar en un Excel u otro documento"* | **LISTO** | Membrete A4 + pie con avatar "m" (uso permitido de papelería) |
-| F33 | *"le falta lo de LinkedIn — AI en campo, qué puede aportar a la firma más datos"* | **PARCIAL** | Hay receta de **banner** de LinkedIn (`brand-book.html:989`) pero **no** el ícono de LinkedIn en la firma ni la línea de AI en campo |
-| F34 | *"la referencia real — Buzo Propuesta 1 no es una referencia para llevar al frente; primero va el catálogo de merch con aplicación"* | **PARCIAL** | El catálogo existe con 9 productos y slots que se autocompletan (`brand-book.html:1045-1048`), pero el **render del buzo sigue primero** (línea 1030, antes del catálogo en 1045) |
+| F33 | *"le falta lo de LinkedIn — AI en campo, qué puede aportar a la firma más datos"* | **LISTO** | Firma de email suma ícono de LinkedIn (16px, linkeado al perfil) y link a AI en campo bajo el contacto — instructivo de Gmail actualizado con el paso para sumarlos |
+| F34 | *"la referencia real — Buzo Propuesta 1 no es una referencia para llevar al frente; primero va el catálogo de merch con aplicación"* | **LISTO** (foto real, F35 sigue pendiente) | Catálogo de 10 productos ahora abre la sección; el buzo pasó a "Especificación de producción" después, retitulado para no leerse como la pieza a mostrar primero |
 | F35 | *"las fotos no son reales; si querés poné 'a modo ilustrativo', pero tomá todas las que te pasé, recortalas y ponelas bien"* | **BLOQUEADO** | `assets/photos/merch/` tiene **solo `LEEME.txt`**. Busqué en Desktop, Downloads y Claude por remera/gorra/mochila/vaso/medias/cuaderno/sticker/hoodie: no están en disco. Las veo en el chat, no las puedo extraer de una imagen pegada — necesito los archivos |
 | F36 | *"aplicación en branding: remeras, buzos, gorra, vaso térmico, cuaderno, lapiceras"* | **PARCIAL** | Especificación de los 9 productos escrita; falta la foto de cada uno (F35) |
 

@@ -34,7 +34,8 @@
   .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
   .side a.near{transform:scale(1.14);color:var(--cream-200)}
   .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side a.anx{margin-top:12px;border-top:1px solid var(--green-800);padding-top:12px;color:var(--lime-500)}
+  .side a.anx{margin-top:12px;border-top:1px solid var(--green-800);padding-top:12px;color:var(--lime-500);display:flex;align-items:center;justify-content:space-between}
+  .side a.anx .arr{margin-left:8px}
   .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
   .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
@@ -440,7 +441,7 @@
   <a href="#merch">Merch</a>
   <a href="#papeleria">Papelería</a>
   <a href="#reglas">Reglas de oro</a>
-  <a href="#anexa" class="anx">AI en campo ↗</a>
+  <a href="#anexa" class="anx"><span>AI en campo</span><span class="arr">↗</span></a>
 </nav>
 
 <header class="hero">
@@ -1044,11 +1045,16 @@
   <h2>La marca puesta</h2>
   <p class="lead">Regla madre del merch (del modelo de producción del buzo): <b>verde profundo + crema, discreto y premium</b>. Wordmark chico en pecho izquierdo, monograma en espalda, patrón de avatares solo en interiores/forros. Nada de estampas gigantes ni lima en textil. <b>El merch se muestra siempre con foto/render real</b> — los esquemas de abajo son especificación de producción, no presentación.</p>
 
-  <h3>La referencia real — Buzo, Propuesta 1</h3>
+  <h3>Catálogo de merch — fotos reales</h3>
+  <p class="note" style="max-width:760px;margin-bottom:18px">Regla: <b>el merch se muestra SIEMPRE con foto o render real del producto</b> — nunca con ilustración ni esquema vectorial. Cada producto abajo tiene su especificación de aplicación; los que aún no tienen foto muestran el slot con el nombre de archivo esperado.</p>
+  <div class="grid g3" id="merch-catalogo"></div>
+  <p class="cap" style="max-width:760px">Para completar el catálogo: dejar las fotos en <code style="font-family:var(--font-mono);font-size:11.5px">assets/photos/merch/</code> con el nombre indicado en cada slot (JPG, lado largo ≥1600px). Se muestran solas al recargar.</p>
+
+  <h3 style="margin-top:28px">Especificación de producción — Buzo, Propuesta 1</h3>
+  <p class="note" style="max-width:760px;margin-bottom:14px">El buzo ya tiene render real (arriba, primer producto del catálogo) y define el estándar de calidad para el resto del merch textil — no es la referencia a mostrar primero, es la guía de medidas y colocación:</p>
   <div class="grid" style="grid-template-columns:1.4fr 1fr;gap:24px;align-items:start">
     <img src="assets/photos/merch-buzo.jpg" alt="Buzo Magoya verde profundo — frente con wordmark crema en pecho, espalda con monograma m" style="border-radius:var(--radius-lg);width:100%">
     <div>
-      <p class="note" style="margin-bottom:14px">El render de producción define el estándar de calidad de todo el merch:</p>
       <div class="dodont">
     <div class="dd">
       <span class="h">Hacer</span>
@@ -1060,11 +1066,6 @@
       <li>Colorways aprobados: verde profundo · crema · negro · gris.</li>
       </ul></div></div>
       <p class="cap" style="margin-top:12px">El vector de bordado del pecho (60mm, crema) se baja de la <a href="library.html#animado" style="color:var(--emerald-700);font-weight:600">librería de assets</a>; el resto de los vectores de producción (monograma 30mm, trama capucha, parche) siguen en la carpeta “Diseño buzos”. Remera, gorra, vaso y cuaderno: pendiente foto real — hasta entonces, solo especificación.</p></div></div>
-
-  <h3>Catálogo de merch — fotos reales</h3>
-  <p class="note" style="max-width:760px;margin-bottom:18px">Regla: <b>el merch se muestra SIEMPRE con foto o render real del producto</b> — nunca con ilustración ni esquema vectorial. Cada producto abajo tiene su especificación de aplicación; los que aún no tienen foto muestran el slot con el nombre de archivo esperado.</p>
-  <div class="grid g3" id="merch-catalogo"></div>
-  <p class="cap" style="max-width:760px">Para completar el catálogo: dejar las fotos en <code style="font-family:var(--font-mono);font-size:11.5px">assets/photos/merch/</code> con el nombre indicado en cada slot (JPG, lado largo ≥1600px). Se muestran solas al recargar.</p>
 
   <p class="note" style="max-width:760px;margin-top:20px">La referencia de calidad es el render del buzo (guía de producción con colores y espaciados). Toda pieza textil se valida contra ella: <b>bordado antes que estampa</b>, tono sobre tono antes que contraste, crema #ECE3DB y verde #133825 como dupla fija, y <b>sin lima en textil</b>.</p></div>
 </section>
@@ -1155,17 +1156,21 @@
             <b style="font-size:15px">Nombre Apellido</b>
             <div style="font-size:13px;color:var(--gray-600)">Rol · Magoya</div>
             <div style="font-size:13px;margin-top:4px"><a href="#papeleria" style="color:var(--emerald-700);font-weight:600">magoya.com</a> · +54 9 11 0000 0000</div>
+            <div style="display:flex;gap:12px;align-items:center;margin-top:8px">
+              <a href="#" aria-label="LinkedIn de Magoya" style="display:inline-flex"><img src="assets/studio/icons/social/linkedin.svg" alt="LinkedIn" style="width:15px;height:15px"></a>
+              <a href="ai-en-campo.html" style="font-size:11.5px;font-weight:700;color:var(--emerald-700);text-decoration:none;display:inline-flex;align-items:center;gap:3px">AI en campo <span style="color:var(--gray-500)">↗</span></a>
+            </div>
           </div>
         </div>
       </div>
-      <p class="cap" style="margin-top:10px"><b>Firma de email.</b> Va <b>siempre el wordmark</b> — nunca los avatares ni la cara. Estático o <b>animado</b> (arriba se ve en vivo: las letras aparecen una por una y quedan). Filete verde + nombre 700 + rol y datos en gris. Sin banners, sin frases legales eternas, sin logos de redes.</p>
+      <p class="cap" style="margin-top:10px"><b>Firma de email.</b> Va <b>siempre el wordmark</b> — nunca los avatares ni la cara. Estático o <b>animado</b> (arriba se ve en vivo: las letras aparecen una por una y quedan). Filete verde + nombre 700 + rol y datos en gris. Debajo del contacto, dos elementos opcionales: el <b>ícono de LinkedIn</b> (16px, linkeado al perfil de la empresa) y el link a <b>AI en campo</b> — la única marca anexa que amerita su propia línea en la firma. Sin banners, sin frases legales eternas, sin más logos de redes que ese.</p>
 
       <h3>Descargas de papelería</h3>
       <div class="grid g2" style="gap:12px">
         <a class="dlbox" href="assets/downloads/doc-header.svg" download><span class="fmt vector">SVG</span><b>Header de documento</b><span class="sp">2480×300 · vectorial</span></a>
         <a class="dlbox" href="assets/downloads/doc-footer.svg" download><span class="fmt vector">SVG</span><b>Footer de documento</b><span class="sp">2480×200 · filete verde</span></a>
         <a class="dlbox" href="assets/downloads/magoya-firma-estatica.png" download><span class="fmt raster">PNG</span><b>Firma estática</b><span class="sp">PNG 400×140 · si el correo no anima</span></a>
-        <a class="dlbox" href="assets/downloads/magoya-firma-animada.gif" download><span class="fmt raster">GIF</span><b>Firma animada</b><span class="sp">GIF 200×70 · loop · para Gmail</span></a>
+        <a class="dlbox" href="assets/downloads/magoya-firma-animada.gif" download><span class="fmt raster">GIF</span><b>Firma animada</b><span class="sp">GIF 200×70 · una pasada, sin loop · para Gmail</span></a>
         <a class="dlbox" href="assets/magoya-wordmark-animado.svg" download><span class="fmt vector">SVG</span><b>Logo animado (web)</b><span class="sp">para sitio y HTML</span></a>
       </div>
 
@@ -1175,9 +1180,10 @@
         <li>Gmail → <b>Configuración → Ver todos los ajustes → General → Firma → Crear nueva</b>.</li>
         <li>Escribí el texto primero (Nombre, Rol · Magoya, magoya.com, teléfono) en <b>Arial</b> — Gmail no soporta Manrope.</li>
         <li>Cursor donde va el logo → <b>Insertar imagen → Dirección web (URL)</b> → pegá la URL → tamaño <b>Pequeño</b> (~120px).</li>
-        <li>Guardá los cambios al pie de la página. Donde el cliente no anime GIF se ve el primer frame, que ya es el logo completo.</li>
+        <li>Guardá los cambios al pie de la página. Donde el cliente no anime GIF se ve el último frame, que ya es el logo completo.</li>
+        <li>Si querés sumar el ícono de LinkedIn y el link a AI en campo (como en el ejemplo de arriba): insertalos igual, con <b>Insertar imagen → Dirección web (URL)</b> el ícono, y como texto con link el link de AI en campo.</li>
       </ol>
-      <p class="cap"><b>Cómo está construido:</b> el wordmark oficial en verde digital; las letras entran de a una con un leve rise y quedan en pantalla casi un segundo antes de reiniciar — 26 frames, loop infinito, fondo blanco (los clientes de correo no manejan bien la transparencia). Se genera desde el SVG del wordmark, nunca se redibuja.</p>
+      <p class="cap"><b>Cómo está construido:</b> el wordmark oficial en verde digital; las letras entran de a una con un leve rise y quedan en pantalla casi un segundo — 26 frames, <b>sin loop</b> (una sola pasada y se detiene en el logo completo), fondo blanco (los clientes de correo no manejan bien la transparencia). Se genera desde el SVG del wordmark, nunca se redibuja.</p>
 
       <h3 style="margin-top:34px">Reglas en documentos</h3>
       <div class="dodont">
