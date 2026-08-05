@@ -41,6 +41,7 @@ assets/
 ├── magoya-wordmark-{green,cream,black,deep}.svg
 ├── magoya-wordmark-animado.svg   # versión animada (web + firma)
 ├── avatars/          # go · o · cara · m (vectoriales)
+├── favicon/          # favicon.svg + favicon-{16,32,180,512}.png — aplicado en las 9 páginas
 ├── motif-semis.svg   # el único motivo: paño de semicírculos
 ├── flourish-{underline,circle,arrow}.svg + doodle-sparkle.svg   # marcas a mano
 ├── illus/            # 4 personajes planos (paleta cerrada de 5 colores)
