@@ -99,6 +99,26 @@
   .pb .go{display:block;margin-top:12px;font-size:12px;font-weight:700;color:var(--green-900)}
   @media (max-width:880px){.arc,.pgrid{grid-template-columns:1fr}}
 
+  /* hacer/evitar */
+  .dodont{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:940px;margin-top:6px}
+  .dd{border-top:3px solid var(--emerald-500);padding-top:14px}
+  .dd.avoid{border-top-color:var(--ink-900)}
+  .dd .h{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--emerald-700);margin-bottom:12px;display:block}
+  .dd.avoid .h{color:var(--ink-900)}
+  .dd ul{list-style:none;display:flex;flex-direction:column}
+  .dd li{font-size:.9rem;line-height:1.5;padding:9px 0;border-bottom:1px solid var(--color-hairline)}
+  .dd li:last-child{border-bottom:none}
+  .dd.avoid li{color:var(--gray-600)}
+  @media (max-width:880px){.dodont{grid-template-columns:1fr}}
+
+  /* logo AI en campo: lockup real (Manrope viva) + mark a mano SOLO en este tamaño */
+  .aic-plate{border-radius:16px;padding:28px;display:flex;align-items:flex-end}
+  .aic-lockup{display:inline-flex;flex-direction:column;line-height:1}
+  .aic-lockup .l1{display:flex;align-items:center;gap:5px;font-weight:800;font-size:26px;letter-spacing:-0.02em}
+  .aic-lockup .l1 .mk{width:17px;height:17px;background:currentColor;flex:0 0 auto;-webkit-mask-image:url(assets/studio/mark-ai-campo.svg);mask-image:url(assets/studio/mark-ai-campo.svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}
+  .aic-lockup .l2{font-weight:800;font-size:26px;letter-spacing:-0.02em;margin-top:1px}
+  .aic-lockup .l3{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;opacity:.62;margin-top:6px}
+
   /* piezas demo */
   .piece{background:var(--emerald-500);border-radius:16px;position:relative;overflow:hidden;container-type:inline-size}
   .p45{aspect-ratio:4/5}
@@ -151,6 +171,7 @@
 <nav class="side">
   <a href="#esencia">Esencia</a>
   <a href="#color-voz">Color & voz</a>
+  <a href="#logo-aic">Logo</a>
   <a href="#ruido">Ruido del Studio</a>
   <a href="#componentes">Componentes</a>
   <a href="#plantillas">Plantillas</a>
@@ -223,7 +244,7 @@
           <tr><td><b>Placa</b></td><td>fondo negro + texto crema · el dato operativo (hora, plazo) · una sola por pieza</td></tr>
           <tr><td><b>Bajada</b></td><td>500 · verde profundo · la promesa concreta, 6–10 palabras</td></tr>
           <tr><td><b>CTA</b></td><td>pill verde profundo o negra + texto crema + <b>una manito que señala</b> (👈 👉 👇) · opcional (puede ir en el copy). Es la única familia de emoji permitida, junto con las banderas</td></tr>
-          <tr><td><b>Firma</b></td><td>wordmark negro abajo-izquierda, ~26% del ancho</td></tr>
+          <tr><td><b>Firma</b></td><td>lockup <b>AI en campo · por Magoya</b> abajo-izquierda (ver sección Logo) — reemplaza al wordmark solo en piezas de esta sub-marca</td></tr>
           <tr><td><b>Ruido</b></td><td>2–4 elementos en las esquinas, rotación ±5–15° · nunca sobre el texto</td></tr>
         </tbody>
       </table></div></div></div>
@@ -232,10 +253,37 @@
   <p class="note" style="max-width:70ch"><b>Voseo argentino, didáctica y directa:</b> “Analizá”, “Usá Claude o ChatGPT”, “Che, ¿con qué IA armo informes?”. Preguntas reales del productor como ancla. Emojis con criterio: uno por CTA (👈  ), nunca lluvia. Sin jerga corporativa — acá no hay “soluciones end-to-end”, hay “te muestro cómo”.</p></div>
 </section>
 
-<!-- 3 RUIDO -->
+<!-- 3 LOGO AI EN CAMPO -->
+<section id="logo-aic" style="background:var(--sage-50)">
+  <div class="inner">
+  <span class="kick">3 · Logo</span>
+  <h2>El lockup de AI en campo</h2>
+  <p class="lead">Todas las piezas de esta sub-marca llevan este lockup abajo-izquierda en vez del wordmark de Magoya solo. El garabato es el mismo lenguaje de las marcas a mano del core, pero <b>en este único tamaño, pegado al texto</b> — nunca suelto y grande como estallido decorativo en una esquina.</p>
+
+  <div class="grid g2" style="margin-bottom:22px">
+    <div class="aic-plate" style="background:var(--emerald-500);color:var(--ink-900)">
+      <div class="aic-lockup"><span class="l1">AI<span class="mk"></span></span><span class="l2">en Campo</span><span class="l3">por Magoya</span></div>
+    </div>
+    <div class="aic-plate" style="background:var(--ink-900);color:var(--cream-50)">
+      <div class="aic-lockup"><span class="l1">AI<span class="mk"></span></span><span class="l2">en Campo</span><span class="l3">por Magoya</span></div>
+    </div>
+  </div>
+
+  <div class="rule-list">
+    <div class="rule"><b class="do">Hacer</b> el mark mide ~65% de la altura de "AI", pegado a la derecha de la letra — no es un elemento independiente.</div>
+    <div class="rule"><b class="dont">Evitar</b> agrandar el mark y usarlo solo, flotando en una esquina como estallido cómic — eso quedó afuera del sistema.</div>
+    <div class="rule"><b class="do">Hacer</b> negro <code>#161616</code> sobre lienzo claro (verde pleno, crema) · crema <code>#ECE3DB</code> sobre placa negra.</div>
+    <div class="rule"><b class="dont">Evitar</b> lima o verde digital en el lockup — el lockup es siempre neutro, el color lo pone el fondo.</div>
+    <div class="rule"><b class="do">Hacer</b> "por Magoya" siempre en <code>font-mono</code>, mayúsculas, más chico — es la firma, no el título.</div>
+    <div class="rule"><b class="dont">Evitar</b> mover el lockup del ángulo inferior izquierdo — es la posición fija, como la firma del wordmark en el core.</div>
+  </div>
+  <p class="note" style="max-width:70ch;margin-top:18px">Asset del mark: <code>assets/studio/mark-ai-campo.svg</code> (mask, recoloreable). El lockup en sí no es una imagen — se compone con Manrope viva (800, tracking −2%) para que nunca pierda nitidez en ningún tamaño de exportación.</p></div>
+</section>
+
+<!-- 4 RUIDO -->
 <section id="ruido">
   <div class="inner">
-  <span class="kick">3 · Ruido</span>
+  <span class="kick">4 · Ruido</span>
   <h2>Los elementos del Studio</h2>
   <p class="lead">Estos son los assets <b>reales</b> que usa Magoya Studio para producir las piezas — los mismos archivos, sin versiones paralelas. Los doodles son monocromos y se tiñen; los logos de IA y redes van en su color oficial.</p>
 
@@ -281,7 +329,7 @@
 <!-- 4 COMPONENTES -->
 <section id="componentes" style="background:var(--sage-50)">
   <div class="inner">
-  <span class="kick">4 · El carrusel</span>
+  <span class="kick">5 · El carrusel</span>
   <h2>Cómo se cuenta la historia</h2>
   <p class="lead">Esto no es una galería: es el <b>arco narrativo</b> que hace que un carrusel de AI en campo enseñe algo. Si el orden se rompe, la pieza se ve linda y no comunica. <b>4 a 6 slides, una idea por slide.</b></p>
   <div class="arc">
@@ -289,21 +337,37 @@
     <div class="step"><span class="n">02</span><b>Muestro la herramienta</b><p>Qué IA usar y cómo se le habla. Acá van los logos en su color y el prompt real.</p><span class="tpl-tag">whatsapp · impacto-apps</span></div>
     <div class="step"><span class="n">03</span><b>Doy la prueba</b><p>Una cifra o una captura del resultado. Sin prueba, el carrusel es opinión.</p><span class="tpl-tag">impacto-cifra · impacto-pantalla</span></div>
     <div class="step"><span class="n">04</span><b>Cierro con el paso siguiente</b><p>Una sola acción. Es la única slide que puede ir en verde profundo.</p><span class="tpl-tag">carrusel-cierre</span></div></div>
-  <div class="dodont" style="margin-top:28px">
+
+  <h3>Ritmo de color en el carrusel</h3>
+  <p class="note" style="max-width:70ch">El lienzo <b>no es del mismo color en todas las slides</b>: abre y cierra en verde pleno (la marca del arranque y del cierre), y el medio pasa a <b>crema Magoya</b> para que el ojo distinga "estoy en el desarrollo". Sin esto, un carrusel de 6 slides verdes se lee como una sola pieza repetida, no como un recorrido.</p>
+  <div style="display:flex;gap:6px;margin:14px 0 22px;max-width:520px">
+    <div style="flex:1;height:40px;border-radius:8px;background:var(--emerald-500);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;color:var(--ink-900)">1</div>
+    <div style="flex:1;height:40px;border-radius:8px;background:var(--cream-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;color:var(--green-900)">2</div>
+    <div style="flex:1;height:40px;border-radius:8px;background:var(--cream-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;color:var(--green-900)">3</div>
+    <div style="flex:1;height:40px;border-radius:8px;background:var(--cream-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;color:var(--green-900)">4</div>
+    <div style="flex:1;height:40px;border-radius:8px;background:var(--cream-100);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;color:var(--green-900)">5</div>
+    <div style="flex:1;height:40px;border-radius:8px;background:var(--emerald-500);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:10px;color:var(--ink-900)">6</div>
+  </div>
+
+  <div class="dodont" style="margin-top:6px">
     <div class="dd"><span class="h">Hacer</span><ul>
       <li>Una idea por slide · 4 a 6 slides · el arco completo aunque sea corto.</li>
       <li>La pregunta del slide 1, textual de un productor real.</li>
+      <li>Verde pleno en la primera y la última slide, crema Magoya en el medio.</li>
+      <li>Comillas tipográficas consistentes (“ ”) en todas las citas de la pieza — nunca mezclar con comillas rectas.</li>
       <li>Producir desde la plantilla que ya existe en el Studio.</li></ul></div>
     <div class="dd avoid"><span class="h">Evitar</span><ul>
       <li>Abrir con la solución o con la marca — se pierde el enganche.</li>
       <li>Carruseles de 10 slides: si no entra en 6, son dos posteos.</li>
-      <li>Cerrar sin acción, o con tres acciones distintas.</li></ul></div></div></div>
+      <li>Cerrar sin acción, o con tres acciones distintas.</li>
+      <li>Numerar las slides ("1/6", "2/6"…) — el arco y el swipe ya lo comunican.</li>
+      <li>Formato cuadrado 1080×1080 para carruseles: Instagram lo dejó de privilegiar, el formato madre es 4:5.</li></ul></div></div></div>
 </section>
 
 <!-- 5 PLANTILLAS -->
 <section id="plantillas">
   <div class="inner">
-  <span class="kick">5 · Plantillas</span>
+  <span class="kick">6 · Plantillas</span>
   <h2>Qué plantilla usar</h2>
   <p class="lead">Las piezas no se arman a mano: se elige la plantilla en el Studio y se cambia texto y foto. Lo que hay que saber como marca es <b>cuál usar según el objetivo</b> — cada tarjeta abre la galería.</p>
   <div class="pgrid">
@@ -345,7 +409,7 @@
 <!-- 6 FORMATOS -->
 <section id="formatos" style="background:var(--sage-50)">
   <div class="inner">
-  <span class="kick">6 · Formatos</span>
+  <span class="kick">7 · Formatos</span>
   <h2>Los 13 formatos de red</h2>
   <p class="lead">Toda plantilla se exporta a cualquier formato — el Studio maneja las zonas seguras. <b>Formato madre de AI en campo: carrusel retrato 4:5.</b></p>
   <div class="table-scroll">
@@ -372,19 +436,20 @@
 <!-- 7 REGLAS -->
 <section id="reglas">
   <div class="inner">
-  <span class="kick">7 · Reglas</span>
+  <span class="kick">8 · Reglas</span>
   <h2>Qué rompe y qué no</h2>
   <div class="rule-list" style="margin-top:16px">
     <div class="rule"><b class="do"></b><span>Fondo verde digital #00DE68 pleno — la excepción documentada al 75/25 del core.</span></div>
     <div class="rule"><b class="do"></b><span>Placa negra con crema para el dato clave — una por pieza.</span></div>
     <div class="rule"><b class="do"></b><span>Ruido SOLO con los assets del Studio (<code>assets/studio/</code>): 2–4 por pieza, ±5–15°, en las esquinas.</span></div>
     <div class="rule"><b class="do"></b><span>Display y cifras al ~70% del ancho de la pieza. En redes, grande o nada.</span></div>
-    <div class="rule"><b class="do"></b><span>Voseo didáctico + una manito que señala por CTA (nunca otro emoji). Wordmark negro abajo-izquierda.</span></div>
+    <div class="rule"><b class="do"></b><span>Voseo didáctico + una manito que señala por CTA (nunca otro emoji). Lockup "AI en campo · por Magoya" abajo-izquierda.</span></div>
     <div class="rule"><b class="do"></b><span>Producir SIEMPRE desde plantillas del Studio.</span></div>
     <div class="rule"><b class="dont"></b><span>Nada de esta sub-marca vuelve al core: ni placa negra, ni fondo verde pleno, ni stickers en piezas institucionales.</span></div>
-    <div class="rule"><b class="dont"></b><span>Terracota #C97B5A solo en doodles — jamás como color de texto o UI.</span></div>
+    <div class="rule"><b class="dont"></b><span>Ningún acento fuera de la paleta core (nada de terracota ni colores propios de la sub-marca) — solo verdes, lima, negro y crema.</span></div>
     <div class="rule"><b class="dont"></b><span>Lima #A2FF00 casi no juega acá — el protagonista es el verde digital. No mezclar los dos verdes brillantes en una pieza.</span></div>
-    <div class="rule"><b class="dont"></b><span>El wordmark sigue intocable: negro o crema, nunca reconstruido ni con sombras.</span></div></div></div>
+    <div class="rule"><b class="dont"></b><span>El wordmark sigue intocable: negro o crema, nunca reconstruido ni con sombras.</span></div>
+    <div class="rule"><b class="dont"></b><span>El mark de "AI en campo" agrandado y suelto como estallido cómic en una esquina — solo va chico, pegado al lockup.</span></div></div></div>
 </section>
 
 </main>

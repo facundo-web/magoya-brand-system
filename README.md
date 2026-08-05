@@ -50,7 +50,8 @@ assets/
 ├── logos/partners/   # 14 partners tecnológicos
 ├── logos/*.svg       # 3 logos de cuentas objetivo (bayer, basf, john-deere)
 ├── studio/           # espejo de los archivos de Magoya Studio: iconos agro/IA/redes,
-│                     # doodles, flourishes, badge EN VIVO, mockups de dispositivo
+│                     # doodles, flourishes, badge EN VIVO, mockups de dispositivo,
+│                     # mark-ai-campo.svg (mark a mano del lockup "AI en campo · por Magoya")
 ├── downloads/        # 8 ZIPs por sección + firma GIF/PNG + doc-header/footer
 ├── refs/             # MATERIAL FUENTE — no publicable, ver abajo
 └── font/manrope/     # Manrope variable 200–800 (OFL)
