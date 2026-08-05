@@ -25,29 +25,29 @@
   section{padding:76px 0}
   section > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 56px}
 
-  /* ---------- hero: fondo oscuro pleno + figura + badges de prueba real (regla rota a propósito) ---------- */
+  /* ---------- hero: fondo oscuro pleno + tile de ícono + badges de prueba real (regla rota a propósito) ---------- */
   .hero{margin-left:230px;margin-top:44px;background:var(--green-950);position:relative;overflow:hidden}
-  .hero-in{max-width:1284px;margin:0 auto 0 0;padding:68px 56px 0;position:relative;display:grid;grid-template-columns:1.35fr .8fr;gap:32px;align-items:end}
+  .hero-in{max-width:1284px;margin:0 auto 0 0;padding:68px 56px 64px;position:relative;display:grid;grid-template-columns:1.35fr .8fr;gap:32px;align-items:center}
   .hero .badges{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
-  .hero .k{display:inline-flex;align-items:center;font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;background:var(--terracotta-400);color:var(--ink-900);padding:6px 13px;border-radius:999px}
-  .hero .live{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);color:var(--lime-500);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.14)}
-  .hero .live .dm{width:16px;height:16px}
+  .hero .k{display:inline-flex;align-items:center;font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;background:transparent;border:1.5px solid var(--lime-500);color:var(--lime-500);padding:5px 13px;border-radius:999px}
+  .hero .live{display:inline-flex;align-items:center;gap:7px;background:var(--lime-500);color:var(--ink-900);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:999px}
+  .hero .live .dm{width:16px;height:16px;background:var(--ink-900)}
   .hero h1{font-weight:800;font-size:clamp(3.4rem,7.2vw,6.4rem);letter-spacing:-0.045em;line-height:.9;margin:6px 0 16px;color:var(--cream-50)}
   .hero h1 i{font-style:normal;color:var(--lime-500)}
   .hero .hook{color:var(--cream-200);font-size:1.22rem;font-weight:600;max-width:52ch;line-height:1.42;margin-bottom:30px}
   .hero .hook b{color:var(--lime-500);font-weight:800}
-  .hero .stats{display:flex;gap:34px;flex-wrap:wrap;padding-bottom:40px}
+  .hero .stats{display:flex;gap:34px;flex-wrap:wrap;position:relative}
   .hero .stats div{position:relative}
   .hero .stats b{display:block;font-size:2.3rem;font-weight:800;color:var(--cream-50);letter-spacing:-0.03em;line-height:1}
   .hero .stats span{display:block;font-size:11px;color:var(--sage-400);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
-  .hero .fig{position:relative;align-self:end;justify-self:end;width:100%;max-width:280px;height:340px}
-  .hero .fig img.sil{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);height:100%;width:auto;max-width:none;object-fit:contain;filter:grayscale(1) contrast(1.08)}
-  .hero .fig .noise{position:absolute;width:20px;height:20px;background:var(--terracotta-400);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}
-  .hero .fig .n1{top:14%;right:6%}
-  .hero .fig .n2{top:30%;left:-2%;width:14px;height:14px}
-  .hero .fig .n3{top:20%;left:14%;width:16px;height:16px}
-  .hero .arrow-cta{position:absolute;width:66px;height:64px;color:var(--lime-500);top:-46px;left:22%;transform:rotate(-4deg)}
-  @media (max-width:1100px){.hero-in{grid-template-columns:1fr}.hero .fig{display:none}}
+  .hero .arrow-cta{position:absolute;width:56px;height:52px;color:var(--lime-500);top:-52px;left:-4px;transform:rotate(4deg)}
+  .hero .tile{position:relative;width:100%;max-width:260px;aspect-ratio:1;margin:0 auto;border-radius:28px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center}
+  .hero .tile .icm{width:44%;height:44%;background:var(--lime-500);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
+  .hero .tile .noise{position:absolute;width:22px;height:22px;background:var(--lime-500);opacity:.85;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}
+  .hero .tile .n1{top:-8px;right:26px}
+  .hero .tile .n2{bottom:14%;left:-10px;width:16px;height:16px}
+  .hero .tile .n3{top:20%;right:-8px;width:18px;height:18px}
+  @media (max-width:1100px){.hero-in{grid-template-columns:1fr}.hero .tile{display:none}}
 
   .kick{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid var(--green-900);color:var(--green-900);padding:5px 13px;border-radius:999px;margin-bottom:14px}
   h2{font-weight:800;font-size:clamp(1.8rem,3.6vw,2.6rem);letter-spacing:-0.02em;margin-bottom:10px}
@@ -164,22 +164,22 @@
     <div>
       <div class="badges">
         <span class="k">Sub-marca de Magoya</span>
-        <span class="live"><span class="dm" style="background:var(--lime-500);-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg)"></span>Webinars en vivo</span>
+        <span class="live"><span class="dm" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg)"></span>Webinars en vivo</span>
       </div>
       <h1>AI en campo<br><i>sin relleno.</i></h1>
       <p class="hook">Carruseles, reels y webinars que le hablan directo al productor — sin humo de IA. <b>Cada pieza responde una pregunta real del lote</b>, no vende una promesa.</p>
       <div class="stats">
+        <svg class="arrow-cta" viewBox="0 0 56 52" fill="none"><path d="M48 4 C 30 2, 10 10, 6 26 C 3 38, 10 47, 22 46" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M14 38 L22 47 L31 40" stroke="currentColor" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" fill="none"/></svg>
         <div><b>13</b><span>formatos de red</span></div>
         <div><b>8</b><span>plantillas del Studio</span></div>
         <div><b>10</b><span>reglas · qué rompe y qué no</span></div>
       </div>
     </div>
-    <div class="fig">
-      <svg class="arrow-cta" viewBox="0 0 66 64" fill="none"><path d="M8 6 C 34 2, 54 14, 50 34 C 47 48, 36 54, 30 52" stroke="currentColor" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M22 46 L30 53 L37 44" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" fill="none"/></svg>
+    <div class="tile">
+      <span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/chat-ia.svg);mask-image:url(assets/studio/icons/agro/chat-ia.svg)"></span>
       <span class="noise n1" style="-webkit-mask-image:url(assets/studio/doodle-dots.svg);mask-image:url(assets/studio/doodle-dots.svg)"></span>
       <span class="noise n2" style="-webkit-mask-image:url(assets/studio/doodle-blob.svg);mask-image:url(assets/studio/doodle-blob.svg)"></span>
-      <span class="noise n3" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg)"></span>
-      <img class="sil" src="assets/photos/ai-campo-silueta.png" alt="">
+      <span class="noise n3" style="-webkit-mask-image:url(assets/studio/flourish-navarrow.svg);mask-image:url(assets/studio/flourish-navarrow.svg)"></span>
     </div>
   </div>
 </header>
@@ -203,11 +203,10 @@
   <span class="kick">2 · Color & voz</span>
   <h2>Verde pleno, placa negra, voseo</h2>
   <p class="lead">La sub-marca rompe tres reglas del core <b>a propósito</b> — y solo estas tres. Todo lo demás (Manrope, wordmark intocable, logos reales) sigue igual.</p>
-  <div class="grid g4">
+  <div class="grid g3">
     <div class="sw"><div class="chip" style="background:var(--emerald-500)"></div><div class="meta"><b>Lienzo pleno</b><span>#00DE68</span> acá el verde ES el fondo</div></div>
     <div class="sw"><div class="chip" style="background:var(--ink-900)"></div><div class="meta"><b>Placa negra</b><span>#161616</span> el dato clave (hora, cifra)</div></div>
-    <div class="sw"><div class="chip" style="background:var(--green-900)"></div><div class="meta"><b>Texto secundario</b><span>#133825</span> bajadas y kickers</div></div>
-    <div class="sw"><div class="chip" style="background:var(--terracotta-400)"></div><div class="meta"><b>Terracota sticker</b><span>#C97B5A</span> SOLO doodles, nunca texto</div></div></div>
+    <div class="sw"><div class="chip" style="background:var(--green-900)"></div><div class="meta"><b>Texto secundario</b><span>#133825</span> bajadas y kickers</div></div></div>
 
   <h3>La pieza patrón — anatomía</h3>
   <div class="grid" style="grid-template-columns:340px 1fr;gap:28px;align-items:start">
