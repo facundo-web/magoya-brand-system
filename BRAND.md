@@ -41,6 +41,18 @@ Estudio/partner de **estrategia y desarrollo de producto digital para agribusine
 
 **Regla central: "El negro construye, el verde hace crecer."** Neutros ≈75% de cada pieza, verde ≈25%, un solo movimiento verde dominante. Nunca pieza 100% negra ni 100% verde.
 
+**Proporción exacta (confirmada por Varu el 5 de agosto de 2026 como obligatoria — "cualquier diseño que hagas tiene que mantener estas proporciones", deja de ser guía y pasa a ser regla):**
+
+| Color | % de la pieza |
+|---|---|
+| Blanco / sage | 52% |
+| Negro `#161616` | 23% |
+| Verde profundo `#133825` | 13% |
+| Lima `#A2FF00` | 8% |
+| Verde digital `#00DE68` | 4% |
+
+Suma: neutros (blanco+negro) 75%, verde (profundo+lima+digital) 25% — la misma regla de siempre, ahora con el desglose exacto por color, obligatorio en todo lo que se produce.
+
 **Accesibilidad (no negociable):** lima nunca como texto sobre claro (1.25:1). Verde sobre blanco como texto = `#009145` y solo ≥24px bold. `#00DE68` como texto solo sobre fondos oscuros. Captions sobre claro: mínimo `#6E756D`.
 
 ## 4. Tipografía
