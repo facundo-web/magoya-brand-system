@@ -71,7 +71,7 @@
 
   .side a.near{transform:scale(1.14);color:var(--cream-200)}
   .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
+  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
   .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
 
@@ -158,7 +158,7 @@
     <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-terraces.jpg" alt="Terrazas" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-terraces</span></div><div class="mb"><span class="spec">JPG · 2.0 MB · 2400×1598</span><a href="assets/photos/field-terraces.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
     <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-bali.jpg" alt="Mosaico Bali" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-bali</span></div><div class="mb"><span class="spec">JPG · 845 KB · 2400×1352</span><a href="assets/photos/field-bali.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
     <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-corn.jpg" alt="Maizal" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-corn</span></div><div class="mb"><span class="spec">JPG · 694 KB · 2400×1228</span><a href="assets/photos/field-corn.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
-    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/founder-bw.png" alt="Retrato B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><div class="mi"><span class="fmt raster">PNG</span><span class="nm">founder-bw</span></div><div class="mb"><span class="spec">PNG · 55 KB · 290×290</span><a href="assets/photos/founder-bw.png" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
+    <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/varu-ceo-bw.jpg" alt="Retrato B&N" style="width:100%;height:100%;object-fit:cover;max-height:none;filter:grayscale(1)"></div><div class="meta"><div class="mi"><span class="fmt raster">PNG</span><span class="nm">varu-ceo-bw</span></div><div class="mb"><span class="spec">PNG · 55 KB · 290×290</span><a href="assets/photos/varu-ceo-bw.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div>
     <div class="cell"><div class="prev" style="padding:0"><img src="assets/photos/field-mosaic-16x9.jpg" alt="Aérea · mosaico de lotes 16:9" style="width:100%;height:100%;object-fit:cover;max-height:none"></div><div class="meta"><div class="mi"><span class="fmt raster">JPG</span><span class="nm">field-mosaic-16x9</span></div><div class="mb"><span class="spec">JPG · 841 KB · 1600×900</span><a href="assets/photos/field-mosaic-16x9.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></div></div></div></div>
 
   <h2 id="tipografia">Tipografía</h2>
@@ -195,17 +195,30 @@
 <script>
 (function(){
   var links=[].slice.call(document.querySelectorAll('.side a[href^="#"]'));
+  if(!links.length) return;
   var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
-  function mark(idx){ links.forEach(function(a,i){ a.classList.remove('act','near');
-    if(i===idx)a.classList.add('act'); else if(Math.abs(i-idx)===1)a.classList.add('near'); }); }
-  function update(){
+  var last=-1, raf=null;
+  function mark(i){
+    if(i===last) return;            // sin cambio real: no se toca el DOM (evita jank)
+    last=i;
+    links.forEach(function(a,k){
+      a.classList.toggle('act', k===i);
+      a.classList.toggle('near', Math.abs(k-i)===1);
+    });
+  }
+  function compute(){
+    raf=null;
     var y=window.scrollY+window.innerHeight*0.3, best=0;
-    targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top+window.scrollY<=y) best=i; });
+    for(var k=0;k<targets.length;k++){
+      var t=targets[k]; if(!t) continue;
+      if(t.getBoundingClientRect().top+window.scrollY<=y) best=k;
+    }
     mark(best);
   }
-  window.addEventListener('scroll',update,{passive:true});
-  window.addEventListener('resize',update);
-  update();
+  function onScroll(){ if(raf===null) raf=requestAnimationFrame(compute); }   // 1 cálculo por frame
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  compute();
 })();
 </script>
 </body>

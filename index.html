@@ -31,7 +31,7 @@
   .side a.near{transform:scale(1.14);color:var(--cream-200)}
   .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
   .side a.anx{margin-top:12px;border-top:1px solid var(--green-800);padding-top:12px;color:var(--lime-500)}
-  .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
+  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
   .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
@@ -619,7 +619,7 @@
   <h3>Personas = B&N + acento verde</h3>
   <p class="note" style="max-width:720px;margin-bottom:14px"><b>Hoy hay un solo retrato en el banco.</b> Las piezas que muestran equipo usan ese mismo archivo como referencia de tratamiento — la sesión de fotos del equipo es un pendiente abierto del <a href="ROADMAP.md">roadmap</a>.</p>
   <div class="grid g2" style="max-width:880px">
-    <figure class="pcard2"><div class="pw bw"><img src="assets/photos/founder-bw.png" alt="Retrato · remera Magoya"><span class='accent-bar'></span><span class="lbl">Retrato · remera Magoya</span></div><figcaption><span class="sp">PNG · 55 KB · 290×290</span><a href="assets/photos/founder-bw.png" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></figcaption></figure>
+    <figure class="pcard2"><div class="pw bw"><img src="assets/photos/varu-ceo-bw.jpg" alt="Varina Baldi, Founder & CEO — retrato B&N"><span class='accent-bar'></span><span class="lbl">Varu · Founder & CEO</span></div><figcaption><span class="sp">PNG · 55 KB · 290×290</span><a href="assets/photos/varu-ceo-bw.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></figcaption></figure>
     <figure class="pcard2"><div class="pw overlay"><img src="assets/photos/field-mosaic-16x9.jpg" alt="Aérea · mosaico 16:9"><span class="lbl">Aérea · mosaico 16:9</span></div><figcaption><span class="sp">JPG · 841 KB · 1600×900</span><a href="assets/photos/field-mosaic-16x9.jpg" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>bajar</a></figcaption></figure>
   </div>
 
@@ -796,6 +796,9 @@
       <li>Personaje encima del patrón, texto sobre el patrón, o el personaje centrado tapando el paño.</li>
       </ul></div></div>
 
+  <h3>Ocupar el espacio</h3>
+  <p class="note" style="max-width:760px"><b>Si un recurso está en la pieza, es para que se vea.</b> Nada de elementos chiquitos puestos como detalle: el gráfico ocupa el ancho de su columna, la cifra ocupa ~70% del bloque, el personaje 40–55% de la pieza, el paño llega al corte. Un recurso que no se lee de lejos no aporta — o crece, o se saca.</p>
+
   <h3>Jerarquía de planos</h3>
   <p class="note" style="max-width:760px">Todas las piezas de Magoya se ordenan en cuatro planos fijos: <b>(1) lienzo</b> — color plano o foto con scrim · <b>(2) textura</b> — paño de semicírculos, siempre al corte · <b>(3) sujeto</b> — personaje, foto recortada o cifra gigante · <b>(4) voz</b> — tipografía, marcas a mano, chips y CTA. Un recurso por plano como máximo, y los planos 2 y 3 nunca se pisan entre sí.</p></div>
 </section>
@@ -903,10 +906,10 @@
       <div class="foot">
         <a class="mail" href="mailto:people@magoya.com" style="text-decoration:none">people@magoya.com</a></div></div>
     <div class="quote-card">
-      <img class="bw" src="assets/photos/founder-bw.png" alt="Retrato">
+      <img class="bw" src="assets/photos/varu-ceo-bw.jpg" alt="Retrato">
       <div class="q">
         <p>“Magoya’s expertise in UX, digital ag platform development, and agronomic know-how made our transformation possible.”</p>
-        <div class="who"><b>Camila López Colmano</b>AgTech Expert</div></div></div>
+        <div class="who"><b>Varina Baldi</b>Founder &amp; CEO</div></div></div>
     <div class="stat"><div class="n">95%</div><div class="d">Retención de clientes</div><div class="src">2017–2026</div></div>
     <div class="stat on-dark"><div class="n">5+</div><div class="d">Años de relación promedio</div><div class="src">Promedio de cartera</div></div></div>
 
@@ -961,7 +964,7 @@
         <span style="display:inline-block;background:var(--lime-500);color:var(--ink-900);font-size:13px;font-weight:700;padding:9px 16px;border-radius:var(--radius-btn);margin-top:14px">Swipe up</span></div></div>
     <div style="display:flex;flex-direction:column;gap:20px">
       <div style="aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;display:flex;align-items:flex-end">
-        <img class="bw" src="assets/photos/founder-bw.png" alt="Retrato del equipo Magoya en blanco y negro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <img class="bw" src="assets/photos/varu-ceo-bw.jpg" alt="Retrato del equipo Magoya en blanco y negro" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
         <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,12,12,.92) 0%, rgba(13,12,12,.72) 46%, rgba(13,12,12,0) 78%)"></div>
         <div style="position:relative;padding:28px 32px;color:var(--cream-50)">
           <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:130px">
@@ -1274,17 +1277,30 @@
 <script>
 (function(){
   var links=[].slice.call(document.querySelectorAll('.side a[href^="#"]'));
+  if(!links.length) return;
   var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
-  function mark(idx){ links.forEach(function(a,i){ a.classList.remove('act','near');
-    if(i===idx)a.classList.add('act'); else if(Math.abs(i-idx)===1)a.classList.add('near'); }); }
-  function update(){
+  var last=-1, raf=null;
+  function mark(i){
+    if(i===last) return;            // sin cambio real: no se toca el DOM (evita jank)
+    last=i;
+    links.forEach(function(a,k){
+      a.classList.toggle('act', k===i);
+      a.classList.toggle('near', Math.abs(k-i)===1);
+    });
+  }
+  function compute(){
+    raf=null;
     var y=window.scrollY+window.innerHeight*0.3, best=0;
-    targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top+window.scrollY<=y) best=i; });
+    for(var k=0;k<targets.length;k++){
+      var t=targets[k]; if(!t) continue;
+      if(t.getBoundingClientRect().top+window.scrollY<=y) best=k;
+    }
     mark(best);
   }
-  window.addEventListener('scroll',update,{passive:true});
-  window.addEventListener('resize',update);
-  update();
+  function onScroll(){ if(raf===null) raf=requestAnimationFrame(compute); }   // 1 cálculo por frame
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  compute();
 })();
 </script>
 </body>

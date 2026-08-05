@@ -22,7 +22,7 @@
   .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
   .side a.near{transform:scale(1.14);color:var(--cream-200)}
   .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
+  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
   .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
   .side a.anx{margin-top:12px;border-top:1px solid var(--green-800);padding-top:12px;color:var(--lime-500)}
@@ -287,14 +287,14 @@
       <h4>Cursor / GitHub Copilot</h4>
       <div class="what"><b>Adjuntás:</b> los archivos de reglas al repo. <b>Pegás:</b> nada — el editor los lee solo en cada sugerencia.</div>
       <ol class="howto">
-        <li><b>Cursor:</b> bajá <code>cursorrules.txt</code> y guardalo como <code>.cursorrules</code> en la raíz (o como <code>.cursor/rules/magoya.mdc</code>).</li>
+        <li><b>Cursor:</b> bajá <code>cursor-rule.mdc</code> y guardalo como <code>.cursorrules</code> en la raíz (o como <code>.cursor/rules/magoya.mdc</code>).</li>
         <li><b>Copilot:</b> guardá el otro preset como <code>.github/copilot-instructions.md</code>.</li>
         <li>Tené <code>tokens.css</code> en el proyecto: sin el archivo, los <code>var(--…)</code> quedan vacíos.</li>
         <li>Commiteá las reglas al repo — así aplican para todo el equipo, no solo para tu máquina.</li>
         <li>Revisá igual el diff: el autocompletado propone hex crudo cuando no encuentra el token.</li>
       </ol>
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:16px">
-        <a class="dl" style="padding-top:0" href=".ai/presets/cursorrules.txt" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>cursorrules.txt</span></a>
+        <a class="dl" style="padding-top:0" href=".ai/presets/cursor-rule.mdc" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>cursor-rule.mdc</span></a>
         <a class="dl" style="padding-top:0" href=".ai/presets/copilot-instructions.md" download><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>copilot-instructions.md</span></a>
       </div>
     </div>

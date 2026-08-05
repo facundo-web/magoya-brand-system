@@ -23,7 +23,7 @@
   .side .v{margin-top:auto;padding-top:14px;font-size:11px;color:var(--sage-400);letter-spacing:.08em}
   .side a.near{transform:scale(1.14);color:var(--cream-200)}
   .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
+  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
   .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
 
@@ -147,26 +147,27 @@
 
   /* stats */
   .stat-n{font-weight:800;letter-spacing:-0.03em;font-size:4.6cqw;line-height:1}
-  .stat-d{font-size:1.4cqw;color:var(--gray-600);margin-top:.5cqw;line-height:1.4}
+  .stat-d{font-size:1.4cqw;color:var(--gray-600);margin-top:1.5cqw;line-height:1.4}
   .mega{font-weight:800;letter-spacing:-0.05em;line-height:.74;font-size:44cqw}
   .mega small{font-size:.42em;letter-spacing:-0.03em}
-  .big3{display:flex;gap:6cqw;align-items:flex-end}
-  .big3 .n{font-weight:800;letter-spacing:-0.04em;line-height:.9;font-size:15cqw}
-  .big3 .d{font-size:1.5cqw;color:var(--gray-600);line-height:1.4;margin-top:1cqw;max-width:22cqw}
+  .big3{display:grid;grid-template-columns:repeat(3,1fr);gap:4cqw;align-items:end}
+  .big3 .u{display:flex;flex-direction:column;justify-content:flex-end}
+  .big3 .n{font-weight:800;letter-spacing:-0.04em;line-height:.9;font-size:15cqw;margin:0}
+  .big3 .d{font-size:1.5cqw;color:var(--gray-600);line-height:1.4;margin-top:1.6cqw;padding-top:1.2cqw;border-top:2px solid var(--ink-900);min-height:6cqw}
   .lime-rule{display:block;height:.8cqw;background:var(--lime-500);border-radius:.4cqw;width:14cqw}
 
   /* charts */
-  .bars{display:flex;align-items:flex-end;gap:2.6cqw;height:26cqw}
-  .bars .b{width:3.2cqw;border-radius:.5cqw .5cqw 0 0}
+  .bars{display:flex;align-items:flex-end;justify-content:space-between;gap:2.6cqw;height:42cqw;width:100%}
+  .bars .b{width:6.5cqw;border-radius:.5cqw .5cqw 0 0}
   .bars .lab{font-size:1.2cqw;color:var(--gray-600);text-align:center;margin-top:.8cqw}
-  .gbars{display:flex;align-items:flex-end;gap:3.4cqw;height:24cqw}
+  .gbars{display:flex;align-items:flex-end;justify-content:space-between;gap:3.4cqw;height:40cqw;width:100%}
   .gbars .grp{display:flex;align-items:flex-end;gap:.6cqw}
-  .gbars .b{width:2.2cqw;border-radius:.4cqw .4cqw 0 0}
+  .gbars .b{width:4cqw;border-radius:.4cqw .4cqw 0 0}
   .gbars .lab{font-size:1.2cqw;color:var(--gray-600);text-align:center;margin-top:.8cqw}
   .legend{display:flex;gap:1.4cqw;margin-top:1.6cqw}
   .lg{display:inline-flex;align-items:center;gap:.6cqw;font-size:1.2cqw;font-weight:700;color:var(--gray-600)}
   .lg i{width:1cqw;height:1cqw;border-radius:.25cqw;display:block}
-  .donut{width:20cqw;height:20cqw;flex:none}
+  .donut{width:34cqw;height:34cqw;flex:none}
   .donut text{font-family:var(--font-body)}
   .prog{margin-top:1.4cqw}
   .prog .r{display:flex;justify-content:space-between;font-size:1.35cqw;font-weight:700;margin-bottom:.5cqw}
@@ -297,7 +298,7 @@
     .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:2px 4px;padding:12px 14px}
     .side .lbl,.side .v{display:none}
     /* dock colapsado en móvil: sin escala, se marca la familia activa con fondo */
-    .side a,.side a.act,.side a.near,.side:hover a.act:not(:hover),.side a:hover,.side a:hover + a{transform:none;font-size:12px;padding:4px 8px}
+    .side a,.side a.act,.side a.near,.side:has(a:hover) a.act:not(:hover),.side a:hover,.side a:hover + a{transform:none;font-size:12px;padding:4px 8px}
     .side a.act{background:var(--green-800);color:var(--cream-50);font-weight:800}
     .xbar{left:0;padding:10px 14px;gap:8px}
     .xbar .cnt{flex-basis:100%;order:-1}
@@ -1173,7 +1174,7 @@
         <div class="qcard">
           <p>“Magoya's expertise in UX, digital ag platform development and agronomic know-how, combined with their understanding of farmer and retail needs, made our transformation possible.”</p>
           <span class="q-under"></span>
-          <div class="who"><b>Camila López Colmano</b>AgTech Expert</div>
+          <div class="who"><b>Varina Baldi</b>Founder &amp; CEO</div>
         </div>
       </div>
     </div>
@@ -1185,7 +1186,7 @@
       <div class="l1"><span class="code">J2</span><span class="nm">Quote sobre foto B&amp;N + scrim</span></div>
       <p class="when"><b>Cuándo usarlo:</b> cuando el testimonio tiene que poner cara. Retrato en B&amp;N a sangre, scrim verde profundo y subrayado a mano en lima (sobre oscuro la marca a mano va en lima, nunca en negro).</p>
     </div>
-    <div class="slide" style="background:url('assets/photos/founder-bw.png') center 28%/cover">
+    <div class="slide" style="background:url('assets/photos/varu-ceo-bw.jpg') center 28%/cover">
       <span class="scrim"></span>
       <div class="chrome dark"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"><span class="pg"></span></div>
       <div class="pad tight" style="color:var(--cream-50)">
@@ -1201,7 +1202,7 @@
     <div class="mod-h">
       <label class="pick"><input type="checkbox" data-fam="J" checked aria-label="Incluir J3"></label>
       <div class="l1"><span class="code">J3</span><span class="nm">Equipo — retratos B&amp;N + rol</span></div>
-      <p class="when"><b>Cuándo usarlo:</b> presentar el pod concreto de la propuesta, con nombre y rol reales. Los retratos van siempre en B&amp;N. <b>Pendiente:</b> reemplazar por la sesión de fotos del roster real — hoy los tres recuadros repiten <code>founder-bw.png</code> con distinto encuadre, porque es el único retrato B&amp;N que existe en <code>assets/photos/</code> (<code>field-mosaic-16x9.jpg</code> es una aérea, no un retrato).</p>
+      <p class="when"><b>Cuándo usarlo:</b> presentar el pod concreto de la propuesta, con nombre y rol reales. Los retratos van siempre en B&amp;N. <b>Pendiente:</b> reemplazar por la sesión de fotos del roster real — hoy los tres recuadros repiten <code>varu-ceo-bw.png</code> con distinto encuadre, porque es el único retrato B&amp;N que existe en <code>assets/photos/</code> (<code>field-mosaic-16x9.jpg</code> es una aérea, no un retrato).</p>
     </div>
     <div class="slide">
       <div class="chrome"><img src="assets/magoya-wordmark-black.svg" alt="Magoya"><span class="pg"></span></div>
@@ -1211,9 +1212,9 @@
           <p class="t-cap" style="max-width:26cqw">Named people, not a bench. The pod grows with agronomy and QA from the same team.</p>
         </div>
         <div class="team">
-          <figure><img src="assets/photos/founder-bw.png" alt="Varina Baldi" style="object-position:center 18%"><b>Varina Baldi</b><span>Founder &amp; CEO</span></figure>
-          <figure><img src="assets/photos/founder-bw.png" alt="Francisco Facal" style="object-position:38% 24%"><b>Francisco Facal</b><span>Solutions Architecture</span></figure>
-          <figure><img src="assets/photos/founder-bw.png" alt="Camila López Colmano" style="object-position:62% 22%"><b>Camila López Colmano</b><span>AgTech Expert</span></figure>
+          <figure><img src="assets/photos/varu-ceo-bw.jpg" alt="Varina Baldi" style="object-position:center 18%"><b>Varina Baldi</b><span>Founder &amp; CEO</span></figure>
+          <figure><img src="assets/photos/varu-ceo-bw.jpg" alt="Francisco Facal" style="object-position:38% 24%"><b>Francisco Facal</b><span>Solutions Architecture</span></figure>
+          <figure><img src="assets/photos/varu-ceo-bw.jpg" alt="Camila López Colmano" style="object-position:62% 22%"><b>Camila López Colmano</b><span>AgTech Expert</span></figure>
         </div>
       </div>
     </div>
@@ -1974,7 +1975,7 @@ SPEC.J1=function(){return [bg(C.sage),
   T('AgTech Expert',{x:24.2,y:38.2,w:40,h:3,s:1.45,c:C.g600})];};
 
 SPEC.J2=function(p){return [bg(C.g950),
-  IMG({src:PH+'founder-bw.png',x:0,y:0,w:100,h:56.25,fit:'cover',gray:true}),
+  IMG({src:PH+'varu-ceo-bw.png',x:0,y:0,w:100,h:56.25,fit:'cover',gray:true}),
   R({x:0,y:0,w:100,h:56.25,fill:C.g950,alpha:30})].concat(chrome(p,true),[
   T('“They did not join to deliver a project. They joined to own the outcome with us.”',
     {x:7.5,y:28,w:60,h:14,s:2.6,b:true,c:C.cr50,lh:1.38}),
@@ -1990,7 +1991,7 @@ SPEC.J3=function(p){
   var t=[['Varina Baldi','Founder & CEO'],['Francisco Facal','Solutions Architecture'],
          ['Camila López Colmano','AgTech Expert']];
   t.forEach(function(c,i){var x=7.5+i*29.5,w=26.9;
-    s.push(IMG({src:PH+'founder-bw.png',x:x,y:18,w:w,h:26,fit:'cover',gray:true}));
+    s.push(IMG({src:PH+'varu-ceo-bw.png',x:x,y:18,w:w,h:26,fit:'cover',gray:true}));
     s.push(T(c[0],{x:x,y:44.8,w:w,h:3,s:1.6,b:true,tight:true}));
     s.push(T(c[1],{x:x,y:47.7,w:w,h:3,s:1.3,c:C.g600}));});
   return s;};

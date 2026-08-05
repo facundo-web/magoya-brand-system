@@ -128,7 +128,7 @@
 
   .side a.near{transform:scale(1.14);color:var(--cream-200)}
   .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side:hover a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
+  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
   .side a:hover{transform:scale(1.5);color:var(--cream-50)}
   .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
 
@@ -136,6 +136,21 @@
     .side a,.side a.act,.side a.near,.side a:hover,.side a:hover + a{transform:none}
     .side a.act{background:var(--green-800);color:var(--cream-50)}
   }
+
+  /* ---------- solapas ---------- */
+  .tabs{display:flex;gap:8px;margin:26px 0 22px;flex-wrap:wrap}
+  .tab{flex:1 1 200px;text-align:left;background:var(--white);border:1px solid var(--color-hairline);border-radius:14px;
+       padding:14px 18px;cursor:pointer;font-family:var(--font-body);transition:border-color .15s,background .15s;border-top:3px solid var(--color-hairline)}
+  .tab b{display:block;font-size:14.5px;font-weight:700;color:var(--ink-900)}
+  .tab span{display:block;font-size:12.5px;color:var(--gray-600);margin-top:3px}
+  .tab:hover{border-color:var(--emerald-500)}
+  .tab.on{background:var(--sage-50);border-top-color:var(--green-900)}
+  .tab[data-t="2"].on{border-top-color:var(--sage-100)}
+  .tab[data-t="3"].on{border-top-color:var(--lime-500)}
+  .tpanel{display:none}
+  .tpanel.on{display:block;animation:tfade .22s ease}
+  @keyframes tfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .tpanel .tpl{margin:0}
 </style>
 </head>
 <body>
@@ -163,7 +178,13 @@
     <div class="mcard t3"><span class="tag">T3 · Talento</span><div class="swatch"><span style="background:var(--green-950)"></span><span style="background:var(--lime-500)"></span><span style="background:var(--ink-950)"></span></div><b>Equipos y talento</b><p>Header con foto aérea + scrim · card dark con la cifra en lima · cierre negro. Para staffing y hiring.</p></div>
   </div>
 
-  <!-- ============ T1 · ONE-PAGER ============ -->
+  
+  <div class="tabs" role="tablist">
+    <button class="tab on" role="tab" data-t="1"><b>T1 · Institucional</b><span>One-pager de empresa</span></button>
+    <button class="tab" role="tab" data-t="2"><b>T2 · Servicio</b><span>Flyer de una capacidad</span></button>
+    <button class="tab" role="tab" data-t="3"><b>T3 · Talento</b><span>Staff augmentation</span></button>
+  </div>
+<section class="tpanel on" id="tp1" role="tabpanel">
   <div class="tpl" id="t1">
     <div class="anat">
       <span class="mbadge b1">Modelo institucional</span>
@@ -200,11 +221,11 @@
         <img src="assets/logos/clients/syngenta.svg" alt="Syngenta">
         <img src="assets/logos/clients/precision-planting.svg" alt="Precision Planting"></div>
       <div class="zone t1-team"><span class="ztag">4</span>
-        <figure><img src="assets/photos/founder-bw.png" alt=""><b>Nombre Apellido</b><span>Founder &amp; CEO</span></figure>
+        <figure><img src="assets/photos/varu-ceo-bw.jpg" alt=""><b>Nombre Apellido</b><span>Founder &amp; CEO</span></figure>
         <figure><img src="assets/photos/field-mosaic-16x9.jpg" alt=""><b>Nombre Apellido</b><span>Co-Founder &amp; CFO</span></figure>
-        <figure><img src="assets/photos/founder-bw.png" alt=""><b>Nombre Apellido</b><span>CTO</span></figure>
+        <figure><img src="assets/photos/varu-ceo-bw.jpg" alt=""><b>Nombre Apellido</b><span>CTO</span></figure>
         <figure><img src="assets/photos/field-mosaic-16x9.jpg" alt=""><b>Nombre Apellido</b><span>NA Business Lead</span></figure>
-        <figure><img src="assets/photos/founder-bw.png" alt=""><b>Nombre Apellido</b><span>LatAm Business Lead</span></figure></div>
+        <figure><img src="assets/photos/varu-ceo-bw.jpg" alt=""><b>Nombre Apellido</b><span>LatAm Business Lead</span></figure></div>
       <div class="zone t1-models"><span class="ztag">5</span>
         <div class="p-h2" style="color:var(--cream-50)">Engagement models</div>
         <div class="cards">
@@ -213,7 +234,8 @@
           <div class="card"><b>Staff Augmentation</b><p>Senior talent under your processes and management.</p></div></div></div>
       <div class="zone t1-foot"><span>Get in touch now!</span><span class="btn-lime">info@magoya.com</span></div></div></div>
 
-  <!-- ============ T2 · FLYER DE SERVICIO ============ -->
+  </section>
+<section class="tpanel" id="tp2" role="tabpanel">
   <div class="tpl" id="t2">
     <div class="anat">
       <span class="mbadge b2">Modelo servicio</span>
@@ -244,7 +266,8 @@
         <div class="p-h3" style="color:var(--cream-50)">Let's build what your product needs next.</div>
         <span class="btn-lime">Start a discovery →</span></div></div></div>
 
-  <!-- ============ T3 · FLYER STAFF AUGMENTATION ============ -->
+  </section>
+<section class="tpanel" id="tp3" role="tabpanel">
   <div class="tpl" id="t3">
     <div class="anat">
       <span class="mbadge b3">Modelo talento</span>
@@ -273,23 +296,48 @@
         <div class="card"><div class="n">6</div><b>Scale</b><p>Grow or adjust the team per season.</p></div></div>
       <div class="zone t3-foot"><span class="ztag">4</span>
         <div class="p-h3">Need senior hands this quarter?</div>
-        <span class="btn-lime">people@magoya.com</span></div></div></div></div>
+        <span class="btn-lime">people@magoya.com</span></div></div></div></section></div>
 
 
 <script>
 (function(){
   var links=[].slice.call(document.querySelectorAll('.side a[href^="#"]'));
+  if(!links.length) return;
   var targets=links.map(function(a){ return document.getElementById(a.getAttribute('href').slice(1)); });
-  function mark(idx){ links.forEach(function(a,i){ a.classList.remove('act','near');
-    if(i===idx)a.classList.add('act'); else if(Math.abs(i-idx)===1)a.classList.add('near'); }); }
-  function update(){
+  var last=-1, raf=null;
+  function mark(i){
+    if(i===last) return;            // sin cambio real: no se toca el DOM (evita jank)
+    last=i;
+    links.forEach(function(a,k){
+      a.classList.toggle('act', k===i);
+      a.classList.toggle('near', Math.abs(k-i)===1);
+    });
+  }
+  function compute(){
+    raf=null;
     var y=window.scrollY+window.innerHeight*0.3, best=0;
-    targets.forEach(function(t,i){ if(t && t.getBoundingClientRect().top+window.scrollY<=y) best=i; });
+    for(var k=0;k<targets.length;k++){
+      var t=targets[k]; if(!t) continue;
+      if(t.getBoundingClientRect().top+window.scrollY<=y) best=k;
+    }
     mark(best);
   }
-  window.addEventListener('scroll',update,{passive:true});
-  window.addEventListener('resize',update);
-  update();
+  function onScroll(){ if(raf===null) raf=requestAnimationFrame(compute); }   // 1 cálculo por frame
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll);
+  compute();
+})();
+</script>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(x){x.classList.toggle('on', x===t);});
+      document.querySelectorAll('.tpanel').forEach(function(p){ p.classList.toggle('on', p.id==='tp'+t.dataset.t); });
+    });
+  });
 })();
 </script>
 </body>

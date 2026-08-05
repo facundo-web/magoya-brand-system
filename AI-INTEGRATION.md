@@ -25,7 +25,7 @@ Guía de setup, herramienta por herramienta. El objetivo es que cualquier IA que
 | **Claude Design** (claude.ai/design) | El repo `facundo-web/magoya-brand-system` como fuente del design system, o `/design-sync` desde Claude Code apuntando a esta carpeta | Onboarding de Claude Design → "Link a code repository"; o `/design-sync` | Pedí una landing y revisá que use Manrope y los hex de `tokens.css`. Claude Design chequea su propio output contra el design system importado |
 | **Custom GPT** (ChatGPT) | `.ai/presets/custom-gpt-instructions.md` en Instructions + `BRAND.md` y `tokens.json` en Knowledge | GPTs → Create → Configure | Pedí un carrusel y contá emojis: tienen que ser cero (salvo manitos hacia un CTA o banderas) |
 | **ChatGPT Projects** | Mismo texto en Project instructions + los mismos archivos como referencia | Project settings (los tres puntos arriba a la derecha) | Igual que arriba |
-| **Cursor** | `.ai/presets/cursorrules.txt` como `.cursor/rules/magoya-brand.mdc` (o `.cursorrules` legacy) | Raíz del repo | Escribí un componente y mirá si usa `var(--color-energy)` o hex sueltos random |
+| **Cursor** | `.ai/presets/cursor-rule.mdc` como `.cursor/rules/magoya-brand.mdc` (o `.cursorrules` legacy) | Raíz del repo | Escribí un componente y mirá si usa `var(--color-energy)` o hex sueltos random |
 | **GitHub Copilot** | `.ai/presets/copilot-instructions.md` como `.github/copilot-instructions.md` | Carpeta `.github/` del repo | En Copilot Chat pedí un card oscuro: tiene que salir `#133825` o `#161616`, sin gradiente |
 | **Chat genérico** (Gemini, Perplexity, un LLM por API, un chat nuevo de cualquier cosa) | `.ai/brand-prompt-short.md` pegado como primer mensaje. Si la herramienta navega, agregá la URL de `llms.txt` | Primer mensaje del chat | Pedí que repita las tres reglas de color antes de generar |
 
@@ -83,7 +83,7 @@ Qué esperar: buen copy y buen HTML/CSS. Si generás imágenes, el modelo de ima
 
 ### 5. Cursor
 
-1. Guardá [`.ai/presets/cursorrules.txt`](.ai/presets/cursorrules.txt) como `.cursor/rules/magoya-brand.mdc`, con el bloque de frontmatter que viene incluido.
+1. Guardá [`.ai/presets/cursor-rule.mdc`](.ai/presets/cursor-rule.mdc) como `.cursor/rules/magoya-brand.mdc`, con el bloque de frontmatter que viene incluido.
 2. `.cursorrules` (archivo único en la raíz) sigue funcionando pero está deprecado, y **se ignora en modo Agent**. Si las reglas "dejaron de aplicarse", esto es casi siempre la causa: migrá al `.mdc`.
 3. El preset viene con `alwaysApply: true` y un `globs` de archivos de front. Si el repo tiene mucho backend, poné `alwaysApply: false` y dejá que el glob decida.
 
