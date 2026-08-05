@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="es" data-theme="studio">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magoya · Brand System</title>
+<link rel="stylesheet" href="tokens.css">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--color-canvas-meta);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{text-decoration:none;color:inherit}
+
+  .mg-topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 24px;box-shadow:0 4px 18px rgba(0,0,0,.16)}
+  .mg-topbar img{height:28px;margin-right:18px}
+  .mg-topbar a{color:var(--cream-300);font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
+  .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
+
+  .wrap{max-width:1420px;margin:0 auto;padding:88px 28px 80px}
+
+  /* ---------- cabecera ---------- */
+  .head{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:end;margin-bottom:26px}
+  .head h1{font-size:clamp(2.6rem,5.4vw,4.6rem);font-weight:var(--weight-extra);letter-spacing:-0.035em;line-height:.98}
+  .head h1 em{font-style:normal;color:var(--emerald-700)}
+  .head p{color:var(--gray-600);font-size:1.05rem;max-width:52ch;margin-top:16px}
+  .meta{display:flex;gap:26px;flex-wrap:wrap;justify-content:flex-end}
+  .meta div b{display:block;font-size:1.9rem;font-weight:var(--weight-extra);letter-spacing:-0.03em;line-height:1}
+  .meta div span{font-size:11.5px;color:var(--gray-600);font-family:var(--font-mono)}
+
+  /* ---------- mosaico ---------- */
+  .board{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:96px;gap:14px}
+  .c{position:relative;border-radius:16px;overflow:hidden;background:var(--white);border:1px solid var(--color-hairline);
+     display:flex;transition:transform .22s cubic-bezier(.22,1,.36,1),box-shadow .22s}
+  .c:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.13);z-index:3}
+  .c .lb{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:16px 16px 13px;
+     background:linear-gradient(180deg,transparent,rgba(13,12,12,.82));color:var(--cream-50);
+     opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s}
+  .c:hover .lb{opacity:1;transform:none}
+  .c .lb b{display:block;font-size:13.5px;font-weight:var(--weight-bold)}
+  .c .lb span{font-size:11.5px;color:var(--cream-300)}
+  .c .lb b::after{content:" →"}
+  .fill{width:100%;height:100%;object-fit:cover}
+  .pad{padding:18px;width:100%;display:flex;flex-direction:column}
+  .k{font-size:9.5px;font-weight:var(--weight-extra);letter-spacing:.16em;text-transform:uppercase;color:var(--gray-600)}
+  .dark{background:var(--green-950);border:none;color:var(--cream-50)}
+  .dark .k{color:#8FA396}
+  .deep{background:var(--green-900);border:none;color:var(--cream-50)}
+  .cream{background:var(--cream-100);border:none}
+  .sage{background:var(--sage-50);border:none}
+  .black{background:var(--ink-950);border:none;color:var(--cream-50)}
+  .emerald{background:var(--emerald-500);border:none;color:var(--ink-900)}
+
+  /* spans */
+  .s3{grid-column:span 3} .s4{grid-column:span 4} .s5{grid-column:span 5}
+  .s6{grid-column:span 6} .s2{grid-column:span 2}
+  .r2{grid-row:span 2} .r3{grid-row:span 3} .r4{grid-row:span 4}
+
+  /* piezas internas */
+  .sw{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:auto}
+  .sw span{aspect-ratio:1;border-radius:8px;display:block}
+  .aa{font-size:clamp(3rem,7vw,5.4rem);font-weight:var(--weight-extra);letter-spacing:-0.05em;line-height:.82;margin-top:auto}
+  .aa small{display:block;font-size:11.5px;font-weight:var(--weight-regular);letter-spacing:0;color:var(--gray-600);margin-top:10px;font-family:var(--font-mono)}
+  .ico{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:auto}
+  .icm{display:block;width:100%;aspect-ratio:1;background:var(--ink-900);
+    -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
+  .dark .icm{background:var(--cream-50)}
+  .dark .icm.hl{background:var(--lime-500)}
+  .num{font-size:clamp(2.6rem,5vw,4.2rem);font-weight:var(--weight-extra);letter-spacing:-0.045em;line-height:.85;margin-top:auto}
+  .num i{font-style:normal;color:var(--lime-500)}
+  .num small{display:block;font-size:12px;font-weight:var(--weight-semibold);letter-spacing:0;margin-top:12px;padding-top:10px;border-top:2px solid currentColor;opacity:.8}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;align-items:center}
+  .chip{font-size:10px;font-weight:var(--weight-extra);letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:999px;border:1.5px solid currentColor}
+  .btn{font-size:12.5px;font-weight:var(--weight-bold);padding:9px 16px;border-radius:var(--radius-btn);background:var(--lime-500);color:var(--ink-900);border:none}
+  .logos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:center;margin-top:auto}
+  .logos img{height:26px;object-fit:contain;filter:grayscale(1);opacity:.7}
+  .stack{display:flex;gap:10px;margin-top:auto;align-items:center}
+  .stack img{height:26px;width:26px;object-fit:contain}
+  .hero-t{font-size:clamp(1.5rem,2.5vw,2.3rem);font-weight:var(--weight-extra);letter-spacing:-0.03em;line-height:1.02;margin-top:auto}
+  .hero-t em{font-style:normal;color:var(--lime-500)}
+  .ph{position:absolute;inset:0}
+  .scrim::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,33,23,.35),rgba(12,33,23,.85))}
+  .rel{position:relative;z-index:2;display:flex;flex-direction:column;height:100%;padding:18px;width:100%}
+  .avs{display:flex;gap:10px;margin-top:auto}
+  .avs img{width:100%;max-width:56px}
+  .mkw{position:relative;display:inline-block;padding:0 .14em}
+  .mkc{position:absolute;left:-6%;top:-40%;width:112%;height:180%;color:var(--emerald-500);overflow:visible}
+
+  footer{max-width:1420px;margin:0 auto;padding:0 28px 60px;color:var(--gray-600);font-size:13px}
+  footer a{color:var(--emerald-700);font-weight:600}
+
+  @media (max-width:1100px){
+    .board{grid-template-columns:repeat(6,1fr)}
+    .s6,.s5{grid-column:span 6} .s4{grid-column:span 3} .s3{grid-column:span 3} .s2{grid-column:span 3}
+  }
+  @media (max-width:880px){
+    .mg-topbar{position:static;padding:10px 14px}
+    .wrap{padding:20px 16px 60px}
+    .head{grid-template-columns:1fr;gap:18px;align-items:start}
+    .meta{justify-content:flex-start}
+    .board{grid-template-columns:repeat(2,1fr);grid-auto-rows:88px}
+    .s6,.s5,.s4,.s3,.s2{grid-column:span 2}
+    .c .lb{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="mg-topbar">
+  <a href="intro.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a>
+  <a href="intro.html" class="on">Inicio</a><a href="index.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html">Comerciales</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html">Clientes</a><a href="ai.html">Integrar con AI</a>
+</nav>
+
+<div class="wrap">
+
+  <div class="head">
+    <div>
+      <span class="k" style="color:var(--emerald-700)">Brand System · v1.2 · 2026</span>
+      <h1>Todo Magoya,<br><em>de un vistazo.</em></h1>
+      <p>La marca completa en una pantalla: identidad, color, tipografía, fotografía, ilustración, íconos, componentes y cada aplicación real. Tocá cualquier pieza para entrar a su capítulo.</p>
+    </div>
+    <div class="meta">
+      <div><b>13</b><span>capítulos</span></div>
+      <div><b>41</b><span>módulos de slide</span></div>
+      <div><b>58</b><span>íconos</span></div>
+      <div><b>31</b><span>logos reales</span></div>
+    </div>
+  </div>
+
+  <div class="board">
+
+    <!-- IDENTIDAD -->
+    <a class="c s4 r2 deep" href="index.html#logo">
+      <div class="pad">
+        <span class="k">01 · Identidad</span>
+        <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:76%;margin:auto 0">
+        <div class="avs">
+          <img src="assets/avatars/avatar-go.svg" alt=""><img src="assets/avatars/avatar-o.svg" alt=""><img src="assets/avatars/avatar-face.svg" alt=""><img src="assets/avatars/avatar-m.svg" alt="">
+        </div>
+      </div>
+      <span class="lb"><b>Logo & avatares</b><span>4 versiones + 4 avatares vectoriales</span></span>
+    </a>
+
+    <!-- HERO CANÓNICO -->
+    <a class="c s5 r3 scrim" href="index.html#aplicaciones">
+      <img class="ph fill" src="assets/photos/field-rows.jpg" alt="Campo aéreo">
+      <div class="rel">
+        <img src="assets/magoya-wordmark-cream.svg" alt="" style="width:120px">
+        <div class="hero-t" style="color:var(--cream-50)">Digital product development <em>for agribusiness</em></div>
+      </div>
+      <span class="lb"><b>La pieza canónica</b><span>Foto aérea + scrim verde + display con acento lima</span></span>
+    </a>
+
+    <!-- COLOR -->
+    <a class="c s3 r2" href="index.html#color">
+      <div class="pad">
+        <span class="k">02 · Color</span>
+        <div class="sw">
+          <span style="background:var(--green-900)"></span><span style="background:var(--emerald-500)"></span>
+          <span style="background:var(--lime-500)"></span><span style="background:var(--leaf-500)"></span>
+          <span style="background:var(--cream-100)"></span><span style="background:var(--sage-50)"></span>
+          <span style="background:var(--ink-900)"></span><span style="background:var(--white);box-shadow:inset 0 0 0 1px var(--color-hairline)"></span>
+        </div>
+      </div>
+      <span class="lb"><b>El negro construye, el verde hace crecer</b><span>Neutros 75% · verde 25%</span></span>
+    </a>
+
+    <!-- TIPOGRAFÍA -->
+    <a class="c s4 r2 cream" href="index.html#tipografia">
+      <div class="pad">
+        <span class="k">03 · Tipografía</span>
+        <div class="aa">Aa<small>Manrope variable · 200–800 · display 800 / −3%</small></div>
+      </div>
+      <span class="lb"><b>Manrope, una sola familia</b><span>13 usos definidos, del hero al caption</span></span>
+    </a>
+
+    <!-- CIFRA -->
+    <a class="c s3 r2 dark" href="slides.html#fam-c">
+      <div class="pad">
+        <span class="k">Cifras</span>
+        <div class="num"><i>95%</i><small>Retención de clientes</small></div>
+      </div>
+      <span class="lb"><b>Datos al palo</b><span>Si está, es para que se vea</span></span>
+    </a>
+
+    <!-- PERSONAJE + PAÑO -->
+    <a class="c s5 r3 cream" href="index.html#ilustracion">
+      <img src="assets/motif-semis.svg" alt="" style="position:absolute;right:0;top:0;bottom:0;width:34%;height:100%;object-fit:cover">
+      <div class="rel" style="max-width:70%">
+        <span class="k">04 · Ilustración & motivo</span>
+        <div class="hero-t">Growing products,<br>growing people</div>
+      </div>
+      <img src="assets/illus/char-jumping.svg" alt="" style="position:absolute;right:20%;bottom:-8%;width:44%;z-index:3">
+      <span class="lb"><b>Personajes + paño de semicírculos</b><span>Recortados por el borde · el motivo al corte</span></span>
+    </a>
+
+    <!-- RETRATO B&N -->
+    <a class="c s3 r3" href="index.html#fotografia">
+      <img class="ph fill" src="assets/photos/varu-ceo-bw.jpg" alt="Varina Baldi, CEO">
+      <span style="position:absolute;left:16px;bottom:52px;z-index:3;width:52px;height:8px;background:var(--lime-500);border-radius:4px"></span>
+      <span class="lb"><b>Personas en B&N + acento</b><span>Gente real del equipo, nunca stock</span></span>
+    </a>
+
+    <!-- AI EN CAMPO -->
+    <a class="c s4 r4" href="ai-en-campo.html">
+      <img class="ph fill" src="assets/pieces/fecha-marcada-ig-portrait.svg" alt="Pieza AI en campo" style="object-position:top">
+      <span class="lb"><b>AI en campo · marca anexa</b><span>Su propio manual: verde pleno, placa negra, ruido</span></span>
+    </a>
+
+    <!-- ICONOS -->
+    <a class="c s3 r2 dark" href="icons.html">
+      <div class="pad">
+        <span class="k">05 · Iconografía</span>
+        <div class="ico">
+          <span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/hoja.svg);mask-image:url(assets/studio/icons/agro/hoja.svg)"></span>
+          <span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/lote.svg);mask-image:url(assets/studio/icons/agro/lote.svg)"></span>
+          <span class="icm hl" style="-webkit-mask-image:url(assets/studio/icons/agro/satelite.svg);mask-image:url(assets/studio/icons/agro/satelite.svg)"></span>
+          <span class="icm" style="-webkit-mask-image:url(assets/studio/icons/agro/gota.svg);mask-image:url(assets/studio/icons/agro/gota.svg)"></span>
+        </div>
+      </div>
+      <span class="lb"><b>58 íconos de línea</b><span>Uno destacado en lima · copiás como PNG</span></span>
+    </a>
+
+    <!-- COMPONENTES -->
+    <a class="c s3 r2 sage" href="index.html#componentes">
+      <div class="pad">
+        <span class="k">06 · Componentes</span>
+        <div class="chips" style="color:var(--green-900)">
+          <span class="chip">Case study</span>
+          <button class="btn">Contact us</button>
+        </div>
+      </div>
+      <span class="lb"><b>Botón ≠ chip</b><span>Rectángulo sólido vs pill outline</span></span>
+    </a>
+
+    <!-- MARCA A MANO -->
+    <a class="c s3 r2" href="index.html#ilustracion">
+      <div class="pad">
+        <span class="k">Marcas a mano</span>
+        <div style="font-size:1.5rem;font-weight:var(--weight-extra);letter-spacing:-0.02em;margin-top:auto;line-height:1.35">Nos vemos el <span class="mkw">6 AGO<svg class="mkc" viewBox="0 0 270 120" fill="none" preserveAspectRatio="none"><path d="M198 20 C 118 2, 40 10, 18 44 C 2 72, 44 108, 134 110 C 220 112, 264 80, 250 42 C 243 24, 222 14, 198 10" stroke="currentColor" stroke-width="9" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg></span></div>
+      </div>
+      <span class="lb"><b>Círculo y flecha</b><span>Trazo fuerte, una sola por pieza</span></span>
+    </a>
+
+    <!-- SLIDE -->
+    <a class="c s6 r3 sage" href="slides.html">
+      <div class="pad">
+        <span class="k">07 · Presentaciones</span>
+        <div style="font-size:clamp(1.4rem,2.6vw,2.4rem);font-weight:var(--weight-extra);letter-spacing:-0.03em;line-height:1.03;margin:auto 0">AgTech challenges demand <span style="color:var(--emerald-700)">more than code</span>.</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span class="chip" style="color:var(--green-900);font-size:9.5px">41 módulos</span>
+          <span class="chip" style="color:var(--green-900);font-size:9.5px">13 familias</span>
+          <span class="chip" style="color:var(--green-900);font-size:9.5px">export .pptx</span>
+        </div>
+      </div>
+      <span class="lb"><b>Deck kit</b><span>Elegís módulos y bajás el .pptx para Google Slides</span></span>
+    </a>
+
+    <!-- MERCH -->
+    <a class="c s3 r3" href="index.html#merch">
+      <img class="ph fill" src="assets/photos/merch-buzo.jpg" alt="Buzo Magoya" style="object-fit:contain;background:var(--cream-100)">
+      <span class="lb"><b>Merch & indumentaria</b><span>Verde profundo + crema, bordado, discreto</span></span>
+    </a>
+
+    <!-- LOGOS CLIENTES -->
+    <a class="c s3 r2" href="logos.html">
+      <div class="pad">
+        <span class="k">08 · Clientes</span>
+        <div class="logos">
+          <img src="assets/logos/clients/apeel-sciences.svg" alt="Apeel">
+          <img src="assets/logos/clients/corteva.svg" alt="Corteva">
+          <img src="assets/logos/clients/syngenta.svg" alt="Syngenta">
+        </div>
+      </div>
+      <span class="lb"><b>Logos siempre reales</b><span>17 clientes + 14 de stack</span></span>
+    </a>
+
+    <!-- COMERCIALES -->
+    <a class="c s3 r2 deep" href="pieces.html">
+      <div class="pad">
+        <span class="k">09 · Comerciales</span>
+        <div style="margin-top:auto;font-size:1.15rem;font-weight:var(--weight-bold);letter-spacing:-0.01em">One-pager · Servicio · Talento</div>
+        <span style="font-size:11.5px;color:var(--cream-300);margin-top:6px">3 modelos, 3 lienzos</span>
+      </div>
+      <span class="lb"><b>Piezas comerciales</b><span>Anatomía zona por zona, en solapas</span></span>
+    </a>
+
+    <!-- PAPELERÍA / FIRMA -->
+    <a class="c s3 r2" href="index.html#papeleria">
+      <div class="pad">
+        <span class="k">10 · Papelería</span>
+        <img src="assets/downloads/magoya-firma-animada.gif" alt="Firma animada" style="width:118px;margin:auto 0">
+        <span style="font-size:11px;color:var(--gray-600);font-family:var(--font-mono)">firma animada · GIF</span>
+      </div>
+      <span class="lb"><b>Membrete y firma</b><span>Logo animado + instructivo para Gmail</span></span>
+    </a>
+
+    <!-- INTEGRAR CON AI -->
+    <a class="c s3 r2 black" href="ai.html">
+      <div class="pad">
+        <span class="k" style="color:var(--lime-500)">11 · Para AIs</span>
+        <div style="margin-top:auto;font-family:var(--font-mono);font-size:12px;color:var(--cream-200);line-height:1.6">
+          llms.txt<br>BRAND.md<br>tokens.json
+        </div>
+      </div>
+      <span class="lb"><b>Integrar con AI</b><span>Prompt, presets y checklist para que la respete</span></span>
+    </a>
+
+    <!-- STACK -->
+    <a class="c s3 r2 sage" href="logos.html#stack">
+      <div class="pad">
+        <span class="k">Stack</span>
+        <div class="stack">
+          <img src="assets/logos/partners/aws.svg" alt="AWS">
+          <img src="assets/logos/partners/react.svg" alt="React">
+          <img src="assets/logos/partners/postgresql.svg" alt="PostgreSQL">
+          <img src="assets/studio/icons/ai/openai.svg" alt="OpenAI">
+        </div>
+      </div>
+      <span class="lb"><b>Tecnología & AI</b><span>Partners en su color oficial</span></span>
+    </a>
+
+    <!-- REGLAS -->
+    <a class="c s6 r2 emerald" href="index.html#reglas">
+      <div class="pad">
+        <span class="k" style="color:var(--green-900)">12 · Reglas de oro</span>
+        <div style="margin-top:auto;font-size:clamp(1.1rem,2vw,1.6rem);font-weight:var(--weight-extra);letter-spacing:-0.02em;line-height:1.2;color:var(--ink-900)">Un protagonista por pieza. Máximo dos recursos. Si está, es para que se vea.</div>
+      </div>
+      <span class="lb"><b>Lo que no se negocia</b><span>13 reglas que sostienen todo el sistema</span></span>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  Magoya Brand System · <a href="index.html">brand book completo</a> · <a href="library.html">librería de assets</a> · <a href="ai.html">integrar con AI</a> · <a href="ROADMAP.md">roadmap</a>
+</footer>
+
+</body>
+</html>

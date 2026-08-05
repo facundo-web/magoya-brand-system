@@ -10,7 +10,15 @@
 
 Estudio/partner de **estrategia y desarrollo de producto digital para agribusiness** (desde 2017). *"We partner with modern agribusinesses to design, build, and evolve their products and platforms."* Hero de marca: **"AgTech challenges demand more than code."** Diferenciador: equipos senior **embebidos** en el equipo del cliente — tecnólogos, expertos de producto y agrónomos. Pilares (las 3C): **Clarity** (complejidad → plan claro), **Confidence** (equipos senior con fluidez AgTech), **Commitment** (largo plazo).
 
-**Voz:** profesional pero cercana; experta y senior, nunca vendedora; transparente y estructurada. Madura y confiable — **no whimsical**: la calidez viene del trato humano, no de la infantilización. Vocabulario propio: *embedded, deep AgTech fluency, clarity/confidence/commitment, long-term value.*
+**Voz:** **traductora** — hablamos agro y software, y el trabajo es pasar de uno al otro sin perder precisión. **Concreta**: ninguna afirmación de valor viaja sin cifra, nombre de cliente, plazo o captura. **Directa**: oraciones cortas, conclusión primero, cero preguntas retóricas, mínimo de siglas. **Filosa cuando hace falta**: decimos lo que no cierra — ni hype de IA ni negacionismo. **Informal sin ser liviana**: voseo en español, humor cuando aliviana una idea, nunca como adorno; no infantil.
+
+**Idioma:** español para cercanía y comunidad (voseo, léxico del lote); inglés para credencial y cuentas US (nativo-conceptual, nunca traducido, con revisión nativa antes de salir); portugués para Brasil. **En textos en castellano, mínimo de palabras en inglés — y las que van, traducidas.**
+
+**Vocabulario propio:** *levantar el guante · no damos vueltas · talento híbrido / trilingües · traducir · convertir complejidad en decisiones · señal y ruido · equipo embebido (embedded) · claridad, confianza, compromiso · lote, campaña, ventana de siembra.*
+
+**Nunca:** preguntas retóricas · superlativos sobre nosotros mismos ("the best", "unparalleled") · "as a service" para lo que es un servicio a medida · siglas internas (DIPI) · "soluciones end-to-end" · "fracaso" · "familia" para el equipo · "startup" para Magoya · hype de IA · frasecitas de autoayuda.
+
+> Evidencia y trazabilidad de cada regla: [`VOICE-RESEARCH.md`](VOICE-RESEARCH.md) — releva el Manual de Marca 2022 (la única especificación de voz que Magoya tuvo), la estrategia de marca de Varu, los pilares de contenido y las reuniones. **"No whimsical" salió de acá y volvió a ilustración**: era una conclusión sobre los personajes, no sobre la voz — cuatro fuentes piden humor explícitamente.
 
 ## 2. Logo & avatares
 
