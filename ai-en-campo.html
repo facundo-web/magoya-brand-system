@@ -25,12 +25,29 @@
   section{padding:76px 0}
   section > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 56px}
 
-  /* ---------- hero ---------- */
-  .hero{margin-left:230px;margin-top:44px;background:var(--emerald-500);padding:64px 0 56px}
-  .hero > *{max-width:1284px;margin:0 auto 0 0;padding:0 56px}
-  .hero .k{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--green-900)}
-  .hero h1{font-weight:800;font-size:clamp(2.8rem,6vw,4.8rem);letter-spacing:-0.03em;line-height:1;margin:10px 0 14px;color:var(--ink-900)}
-  .hero p{color:var(--green-900);font-size:1.15rem;max-width:62ch}
+  /* ---------- hero: fondo oscuro pleno + figura + badges de prueba real (regla rota a propósito) ---------- */
+  .hero{margin-left:230px;margin-top:44px;background:var(--green-950);position:relative;overflow:hidden}
+  .hero-in{max-width:1284px;margin:0 auto 0 0;padding:68px 56px 0;position:relative;display:grid;grid-template-columns:1.35fr .8fr;gap:32px;align-items:end}
+  .hero .badges{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+  .hero .k{display:inline-flex;align-items:center;font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;background:var(--terracotta-400);color:var(--ink-900);padding:6px 13px;border-radius:999px}
+  .hero .live{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.08);color:var(--lime-500);font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 13px;border-radius:999px;border:1px solid rgba(255,255,255,.14)}
+  .hero .live .dm{width:16px;height:16px}
+  .hero h1{font-weight:800;font-size:clamp(3.4rem,7.2vw,6.4rem);letter-spacing:-0.045em;line-height:.9;margin:6px 0 16px;color:var(--cream-50)}
+  .hero h1 i{font-style:normal;color:var(--lime-500)}
+  .hero .hook{color:var(--cream-200);font-size:1.22rem;font-weight:600;max-width:52ch;line-height:1.42;margin-bottom:30px}
+  .hero .hook b{color:var(--lime-500);font-weight:800}
+  .hero .stats{display:flex;gap:34px;flex-wrap:wrap;padding-bottom:40px}
+  .hero .stats div{position:relative}
+  .hero .stats b{display:block;font-size:2.3rem;font-weight:800;color:var(--cream-50);letter-spacing:-0.03em;line-height:1}
+  .hero .stats span{display:block;font-size:11px;color:var(--sage-400);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;margin-top:4px}
+  .hero .fig{position:relative;align-self:end;justify-self:end;width:100%;max-width:280px;height:340px}
+  .hero .fig img.sil{position:absolute;bottom:-4px;left:50%;transform:translateX(-50%);height:100%;width:auto;max-width:none;object-fit:contain;filter:grayscale(1) contrast(1.08)}
+  .hero .fig .noise{position:absolute;width:20px;height:20px;background:var(--terracotta-400);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}
+  .hero .fig .n1{top:14%;right:6%}
+  .hero .fig .n2{top:30%;left:-2%;width:14px;height:14px}
+  .hero .fig .n3{top:20%;left:14%;width:16px;height:16px}
+  .hero .arrow-cta{position:absolute;width:66px;height:64px;color:var(--lime-500);top:-46px;left:22%;transform:rotate(-4deg)}
+  @media (max-width:1100px){.hero-in{grid-template-columns:1fr}.hero .fig{display:none}}
 
   .kick{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid var(--green-900);color:var(--green-900);padding:5px 13px;border-radius:999px;margin-bottom:14px}
   h2{font-weight:800;font-size:clamp(1.8rem,3.6vw,2.6rem);letter-spacing:-0.02em;margin-bottom:10px}
@@ -101,8 +118,9 @@
     .side .lbl,.side .v{display:none}
     main,.hero{margin-left:0}
     main{padding-top:0}
-    .hero{margin-top:0;padding:40px 0}
-    .hero > *,section > .inner{padding:0 20px}
+    .hero{margin-top:0}
+    .hero-in{padding:36px 20px 32px;grid-template-columns:1fr}
+    section > .inner{padding:0 20px}
     section{padding:44px 0}
     .g2,.g3,.g4,.rule-list{grid-template-columns:1fr}
     section .grid[style*="grid-template-columns"]{grid-template-columns:1fr !important}
@@ -142,10 +160,28 @@
 </nav>
 
 <header class="hero">
-  <div>
-    <span class="k">Sub-marca de Magoya · manual de detalle</span>
-    <h1>AI en campo</h1>
-    <p>La línea de contenido educativo de IA para el agro: carruseles, reels, webinars y tips que le hablan directo al productor. Mismo ADN que Magoya — <b>más ruido, más didáctica, más quilombera</b>.</p></div>
+  <div class="hero-in">
+    <div>
+      <div class="badges">
+        <span class="k">Sub-marca de Magoya</span>
+        <span class="live"><span class="dm" style="background:var(--lime-500);-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg)"></span>Webinars en vivo</span>
+      </div>
+      <h1>AI en campo<br><i>sin relleno.</i></h1>
+      <p class="hook">Carruseles, reels y webinars que le hablan directo al productor — sin humo de IA. <b>Cada pieza responde una pregunta real del lote</b>, no vende una promesa.</p>
+      <div class="stats">
+        <div><b>13</b><span>formatos de red</span></div>
+        <div><b>8</b><span>plantillas del Studio</span></div>
+        <div><b>10</b><span>reglas · qué rompe y qué no</span></div>
+      </div>
+    </div>
+    <div class="fig">
+      <svg class="arrow-cta" viewBox="0 0 66 64" fill="none"><path d="M8 6 C 34 2, 54 14, 50 34 C 47 48, 36 54, 30 52" stroke="currentColor" stroke-width="7" stroke-linecap="round" vector-effect="non-scaling-stroke"/><path d="M22 46 L30 53 L37 44" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" fill="none"/></svg>
+      <span class="noise n1" style="-webkit-mask-image:url(assets/studio/doodle-dots.svg);mask-image:url(assets/studio/doodle-dots.svg)"></span>
+      <span class="noise n2" style="-webkit-mask-image:url(assets/studio/doodle-blob.svg);mask-image:url(assets/studio/doodle-blob.svg)"></span>
+      <span class="noise n3" style="-webkit-mask-image:url(assets/studio/doodle-sparkle.svg);mask-image:url(assets/studio/doodle-sparkle.svg)"></span>
+      <img class="sil" src="assets/photos/ai-campo-silueta.png" alt="">
+    </div>
+  </div>
 </header>
 
 <main>
