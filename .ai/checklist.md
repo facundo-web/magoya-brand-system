@@ -15,7 +15,7 @@ Trece chequeos verificables. Todos tienen que dar **sí** antes de publicar. Si 
 | 9 | **Cero gradientes** | Buscá `gradient`, `blur`, `box-shadow` de brillo, glass, 3D | Hay algún gradiente que no sea el scrim verde profundo 55–86% sobre foto aérea |
 | 10 | **Máximo 2 recursos gráficos** | Contá: foto aérea, foto B&N, personaje, paño de semicírculos, marca a mano, ícono. La cifra gigante y la tipografía no cuentan — son la voz | Hay 3 o más además de la tipografía, o convive un par prohibido: dos fotos, foto + personaje, foto aérea + paño, personaje + ícono (matriz completa en `resourceCoexistence` de `tokens.json`) |
 | 11 | **Motivo al corte** | Mirá los bordes del paño de semicírculos | El motivo se ve cortado flotando en el aire en vez de nacer de un borde o de detrás de un objeto. Si convive con un personaje: el paño va al fondo en franja, el personaje al borde opuesto en primer plano, nunca superpuestos |
-| 12 | **Personajes sin rostro y al borde** | Mirá cada personaje ilustrado | Tiene rostro, es monoline o stock, está centrado como clipart, flota entero, está sobre una foto, o usa un color fuera de `#33DB4E` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616` |
+| 12 | **Personajes sin rostro y al borde** | Mirá cada personaje ilustrado | Tiene rostro, es monoline o stock, está centrado como clipart, flota entero, está sobre una foto, o usa un color fuera de `#00DE68` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616` |
 | 13 | **Botón vs. chip, y assets reales** | Revisá radios y logos | Un botón es pill o un chip tiene fondo sólido (botón = rect radio 10px, chip = pill outline), o hay logos de clientes inventados/placeholder, o hay un resaltador sólido detrás de texto |
 
 ## Extras según el formato

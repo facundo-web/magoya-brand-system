@@ -169,9 +169,8 @@ Reglas cerradas. Si alguien las cuestiona, la respuesta es este bloque.
 | Rol | HEX | Regla |
 |---|---|---|
 | Verde Magoya | `#133825` | Core institucional: fondos oscuros, overlays, texto sobre claro |
-| Verde digital | `#00DE68` | Identidad (logo/avatares). Como texto **solo sobre oscuro** |
+| Verde digital | `#00DE68` | Identidad (logo/avatares), ropa de personajes y data-viz. Como texto **solo sobre oscuro** |
 | Lima energía | `#A2FF00` | CTA/display/motivo. **Dosis única por pieza.** Nunca texto sobre blanco (1.25:1) |
-| Verde ilustración | `#33DB4E` | Ropa de personajes, soporte, data-viz |
 | Crema Magoya | `#ECE3DB` | Neutro cálido firma; texto sobre verde profundo |
 | Sage | `#EEF2EC` | Superficie clara de slides |
 | Negro Magoya | `#161616` | Texto, titulares, cards dark |
@@ -186,7 +185,7 @@ Reglas cerradas. Si alguien las cuestiona, la respuesta es este bloque.
 |---|---|
 | Motivo de marca | **Semicírculos** (`motif-semis.svg` + banda festoneada). La banda festoneada se reserva para la composición con personaje |
 | Sangrado de motivos | Van al corte y **siempre nacen de un borde o de detrás de un objeto** — nunca cortados flotando al aire |
-| Personajes | Planos redondeados, **sin rostro**, paleta CERRADA de 5 colores (`#33DB4E` · `#A2FF00` · `#DFDFDF` · `#FFC67B` piel · `#161616`). Siempre **recortados por un borde**, del lado opuesto al texto |
+| Personajes | Planos redondeados, **sin rostro**, paleta CERRADA de 5 colores (`#00DE68` · `#A2FF00` · `#DFDFDF` · `#FFC67B` piel · `#161616`). Siempre **recortados por un borde**, del lado opuesto al texto |
 | Marcas a mano | Una sola por pieza. **Círculo** = fecha o dato puntual · **flecha** = señala el CTA (nace del texto, la punta cae sobre el botón). Verde digital sobre claro / lima sobre oscuro, nunca negro. Siempre sobre texto compuesto. **El subrayado quedó retirado** (no cubría bien la palabra completa, trazo débil) — para enfatizar una palabra o frase de un titular, el color hace el trabajo |
 | Resaltador sólido | **PROHIBIDO** el bloque marcador detrás de palabras. Sí color, círculo, flecha |
 | Fotografía | Aérea de campo en color natural + **scrim verde profundo 55–86%** cuando lleva texto (el scrim es el único gradiente permitido). **Personas siempre B&N** con acento verde o lima |
@@ -223,6 +222,7 @@ Reglas cerradas. Si alguien las cuestiona, la respuesta es este bloque.
 | **Motivos de líneas** (caminos concéntricos, estratos) | "Las líneas no caracterizan la marca". Retirados en v1.1 a favor de los semicírculos. Los archivos siguen en disco pero **ninguna página los usa** (ver S8) |
 | **Resaltador / marcador sólido detrás de texto** | Regla de dirección de arte. Se usa color, círculo o flecha |
 | **Subrayado a mano** (`flourish-underline.svg`) | No cubría bien la palabra completa y el trazo no tenía la fuerza que pide una marca. Reemplazo: el color hace el trabajo (texto en lima) — solo quedan círculo y flecha como marcas a mano |
+| **Verde ilustración como color distinto** (`#33DB4E`) | Demasiado parecido al verde digital `#00DE68` como para convivir como dos verdes separados — confundía en los swatches de la paleta. Unificado el 6 de agosto de 2026: ropa de personajes y data-viz ahora usan el mismo verde digital. `--leaf-500` sigue en `tokens.css` como alias por compatibilidad |
 | **Esquemas SVG de merch** | Degradados a "especificación de producción" y luego eliminados del manual: el merch se muestra con foto/render real |
 | **Lima como color primario** | El lime del moodboard **no** se descartó pero **no es primario**: vive como energía/marcador (CTA, display, motivo), dosis única |
 | **Wordmark en lima** | Uso incorrecto. El logo es verde digital `#00DE68` |

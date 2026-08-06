@@ -20,7 +20,7 @@ El knowledge de este proyecto contiene `BRAND.md` (doctrina), `tokens.json` (val
 
 **Tipografía.** Manrope (variable 200–800), fallback Arial. Display 800 / tracking −0.03em / line-height 1.05; cuerpo 400 / 1.55; kickers MAYÚSCULAS 800 / tracking +0.12em. Máximo **3 niveles tipográficos por pieza**. Labels de botón en sentence case. Slides sobre 1920px: hero 126pt · display 84pt · título 56pt · subtítulo 42pt, margen interior 7%.
 
-**Paleta y roles.** `#161616` negro: texto, titulares, cards dark. `#133825` verde profundo: fondos oscuros, overlays, texto sobre claro. `#00DE68` verde digital: **identidad** — wordmark, avatares, micro-acentos, marcas a mano sobre claro. `#A2FF00` lima: CTA, display, motivo. `#33DB4E`: ropa de personajes y data-viz. `#ECE3DB` crema: texto sobre verde profundo. `#EEF2EC` sage y `#FFFFFF`: superficies claras. Derivados: hover lima `#8BDB00`, hover verde `#00B856`, verde-texto-sobre-blanco `#009145`, captions sobre claro `#6E756D`, focus ring `rgba(0,222,104,.45)` sin blur.
+**Paleta y roles.** `#161616` negro: texto, titulares, cards dark. `#133825` verde profundo: fondos oscuros, overlays, texto sobre claro. `#00DE68` verde digital: **identidad** — wordmark, avatares, micro-acentos, marcas a mano sobre claro, ropa de personajes y data-viz. `#A2FF00` lima: CTA, display, motivo. `#ECE3DB` crema: texto sobre verde profundo. `#EEF2EC` sage y `#FFFFFF`: superficies claras. Derivados: hover lima `#8BDB00`, hover verde `#00B856`, verde-texto-sobre-blanco `#009145`, captions sobre claro `#6E756D`, focus ring `rgba(0,222,104,.45)` sin blur.
 
 **Regla 75/25.** "El negro construye, el verde hace crecer": neutros ≈75% de la pieza, verdes ≈25%, **un solo movimiento verde dominante**. Nunca una pieza 100% negra ni 100% verde.
 
@@ -30,7 +30,7 @@ El knowledge de este proyecto contiene `BRAND.md` (doctrina), `tokens.json` (val
 - Lima en dosis única: un CTA **o** un display **o** un motivo por pieza.
 - **Máximo 2 recursos gráficos por pieza** además de la tipografía. No conviven: dos fotos, foto + personaje, foto aérea + paño de semicírculos, personaje + ícono.
 - Motivo de semicírculos **siempre al corte**: nace de un borde de la pieza o de detrás de un objeto; nunca cortado flotando en el aire.
-- Personajes planos, redondeados, **sin rostro**, paleta cerrada `#33DB4E` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616`, recortados por un borde del lado opuesto al texto. Nunca sobre foto, nunca centrados como clipart.
+- Personajes planos, redondeados, **sin rostro**, paleta cerrada `#00DE68` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616`, recortados por un borde del lado opuesto al texto. Nunca sobre foto, nunca centrados como clipart.
 - Botón = rectángulo radio 10px con fondo sólido; chip = pill outline (borde y texto del mismo color, fondo transparente). Nunca chip sólido ni botón pill.
 - El monograma "m" circular es funcional (favicon, app icon, canales corporativos, pie de membrete): no es un sello decorativo dentro de cards.
 - Logos de clientes siempre reales, en gris, grilla pareja — jamás placeholders.

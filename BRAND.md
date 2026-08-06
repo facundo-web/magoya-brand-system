@@ -32,14 +32,15 @@ Estudio/partner de **estrategia y desarrollo de producto digital para agribusine
 | Color | HEX | Pantone (aprox.) | Rol |
 |---|---|---|---|
 | Verde Magoya | `#133825` | PMS 553 | Core institucional: fondos oscuros, overlays, texto sobre claro |
-| Verde digital | `#00DE68` | PMS 3282 | Identidad: wordmark, avatares, micro-acentos. Como texto SOLO sobre oscuro |
+| Verde digital | `#00DE68` | PMS 3282 | Identidad: wordmark, avatares, micro-acentos, ropa de personajes y data-viz. Como texto SOLO sobre oscuro |
 | Lima energía | `#A2FF00` | PMS 382 2X | CTA, display, motivo. **Dosis única por pieza.** Nunca texto sobre blanco |
-| Verde ilustración | `#33DB4E` | PMS 7482 | Ropa de personajes, soporte, data-viz |
 | Crema Magoya | `#ECE3DB` | PMS Warm Gray 2 | Neutro cálido firma; texto sobre verde profundo |
 | Sage | `#EEF2EC` | PMS Cool Gray 1 | Superficie clara de slides |
 | Negro Magoya | `#161616` | PMS Black 5 2X | Texto, titulares, cards dark |
 
-Los Pantone son el **match más cercano por distancia RGB** contra la librería Solid Coated (no existe una conversión exacta hex→Pantone) — confirmar contra el libro físico antes de mandar a producción. El verde ilustración (`#33DB4E`→PMS 7482) es el que más se aleja del hex original en pantalla.
+Los Pantone son el **match más cercano por distancia RGB** contra la librería Solid Coated (no existe una conversión exacta hex→Pantone) — confirmar contra el libro físico antes de mandar a producción.
+
+**El verde ilustración (`#33DB4E`) se unificó con el verde digital el 6 de agosto de 2026** — eran demasiado parecidos como para convivir como dos colores distintos. El token `--leaf-500` sigue en `tokens.css` como alias de `--emerald-500` por compatibilidad; no es un verde distinto.
 
 **Regla central: "El negro construye, el verde hace crecer."** Neutros ≈75% de cada pieza, verde ≈25%, un solo movimiento verde dominante. Nunca pieza 100% negra ni 100% verde.
 
@@ -72,7 +73,7 @@ Dos familias, cada una con su regla:
 
 ## 6. Ilustración & motivos
 
-- **Personajes planos redondeados, sin rostro.** Paleta CERRADA de 5 colores: `#33DB4E` (ropa) · `#A2FF00` (ropa) · `#DFDFDF` (ropa) · `#FFC67B` (piel) · `#161616` (pelo/detalle). Siempre **recortados por un borde de la pieza**, del lado opuesto al texto — nunca flotando enteros ni centrados como clipart.
+- **Personajes planos redondeados, sin rostro.** Paleta CERRADA de 5 colores: `#00DE68` (ropa, verde digital) · `#A2FF00` (ropa) · `#DFDFDF` (ropa) · `#FFC67B` (piel) · `#161616` (pelo/detalle). Siempre **recortados por un borde de la pieza**, del lado opuesto al texto — nunca flotando enteros ni centrados como clipart.
 - **Motivo de marca: semicírculos**, un único formato — el **paño de textura** en grilla diagonal escalonada (`assets/motif-semis.svg`). **Regla de sangrado: el paño va al corte y siempre nace de un borde de la pieza o queda detrás de un objeto — nunca puede verse cortado flotando en el aire.** Aplicaciones canónicas: franja lateral (el paño ocupa una columna del borde y el contenido vive sobre el blanco) o fondo completo tapado por una card. Colores: verde digital sobre crema/blanco · crema sobre verde profundo · lima sobre oscuro.
 - ✗ **La banda festoneada quedó RETIRADA** (no funcionaba como remate y se usaba como adorno genérico). No hay asset de banda: el único motivo es el paño.
 - **Ocupar el espacio:** si un recurso está en la pieza, es para que se vea. El gráfico ocupa el ancho de su columna, la cifra ~70% del bloque, el personaje 40–55% de la pieza, el paño llega al corte. Un recurso que no se lee de lejos o crece, o se saca — nada de detalles decorativos chiquitos.

@@ -25,10 +25,9 @@ Si el proyecto importa `tokens.css`, usá las custom properties (`var(--color-te
 
 - `#161616` negro — texto, titulares, cards dark
 - `#133825` verde profundo — fondos oscuros, overlays, texto sobre claro
-- `#00DE68` verde digital — identidad (wordmark, avatares, micro-acentos). Como texto **solo sobre fondo oscuro**
+- `#00DE68` verde digital — identidad (wordmark, avatares, micro-acentos), ropa de personajes y data-viz. Como texto **solo sobre fondo oscuro**
 - `#009145` — verde texto sobre blanco, y solo a ≥24px bold
 - `#A2FF00` lima — CTA, display, motivo. **Nunca como texto sobre fondo claro.** Hover `#8BDB00`
-- `#33DB4E` — ilustración y data-viz
 - `#ECE3DB` crema — texto sobre verde profundo
 - `#EEF2EC` sage / `#FFFFFF` — superficies claras
 - `#6E756D` — captions sobre claro (mínimo accesible)

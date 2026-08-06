@@ -40,15 +40,16 @@ Si el proyecto importa `tokens.css`, usá custom properties (`var(--color-text)`
 |---|---|---|
 | `#161616` | `--ink-900` | Texto, titulares, cards dark |
 | `#133825` | `--green-900` | Fondos oscuros, overlays, texto sobre claro |
-| `#00DE68` | `--emerald-500` | Identidad: wordmark, avatares, micro-acentos. Como texto **solo sobre oscuro** |
+| `#00DE68` | `--emerald-500` | Identidad: wordmark, avatares, micro-acentos, ropa de personajes y data-viz. Como texto **solo sobre oscuro** |
 | `#009145` | `--emerald-700` | Verde texto sobre blanco, y solo a ≥24px bold |
 | `#A2FF00` | `--lime-500` | CTA, display, motivo. **Nunca texto sobre claro.** Hover `#8BDB00` |
-| `#33DB4E` | `--leaf-500` | Ilustración y data-viz |
 | `#ECE3DB` | `--cream-100` | Texto sobre verde profundo |
 | `#EEF2EC` | `--sage-50` | Superficie clara de slides |
 | `#6E756D` | — | Captions sobre claro (mínimo accesible) |
 
 Balance por pantalla o pieza: neutros ≈75%, verdes ≈25%, un solo movimiento verde dominante. Nunca 100% negra ni 100% verde. No uses hex que no estén en `tokens.json`. Cero naranja y cero amarillo — excepción única `#FFC67B` como piel de personaje ilustrado.
+
+`--leaf-500` sigue existiendo en `tokens.css` como alias de `--emerald-500` (mismo hex) por compatibilidad — no es un verde distinto, usá `--emerald-500` directo en código nuevo.
 
 ## Tipografía
 
@@ -71,7 +72,7 @@ Balance por pantalla o pieza: neutros ≈75%, verdes ≈25%, un solo movimiento 
 - Sin la metáfora del puzzle, sin motivos de líneas (caminos concéntricos, estratos), sin personajes con rostro, monoline o stock.
 - Motivo de semicírculos siempre al corte: nace de un borde del contenedor o de detrás de un objeto, nunca cortado flotando (`overflow:hidden` + posición pegada al borde).
 - Máximo 2 recursos gráficos por pieza además de la tipografía. No conviven: dos fotos, foto + personaje, foto aérea + paño de semicírculos, personaje + ícono.
-- Personajes ilustrados sin rostro, paleta cerrada `#33DB4E` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616`, recortados por un borde del lado opuesto al texto. Nunca sobre foto.
+- Personajes ilustrados sin rostro, paleta cerrada `#00DE68` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616`, recortados por un borde del lado opuesto al texto. Nunca sobre foto.
 - El monograma "m" circular es funcional (favicon, app icon): no es un sello decorativo dentro de cards.
 - Lima en dosis única: un CTA **o** un display **o** un motivo por pieza.
 

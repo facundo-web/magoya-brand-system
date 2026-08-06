@@ -8,7 +8,10 @@
    · Wordmark + avatares vectoriales: verde digital #00DE68
    · Moodboard + módulos del diseñador (2026): lima #A2FF00,
      negro #161616, superficies blanco/sage, foto aérea + B&N
-   · Ilustración (personajes planos): verde #33DB4E + lima
+   · Ilustración (personajes planos): verde digital #00DE68 + lima
+     (el "verde ilustración" #33DB4E se unificó con el verde digital
+     el 6 de agosto de 2026 — eran demasiado similares como para
+     convivir como dos verdes distintos)
    ✔ = color oficial de marca.  + = derivado de escala.
    Tipografía: Manrope (variable, self-hosted).
    ============================================================ */
@@ -41,10 +44,10 @@
   --lime-500: #A2FF00;    /* ✔ lima energía (CTA, display, paño de semicírculos sobre oscuro) */
   --lime-600: #8BDB00;    /* + hover */
 
-  /* Verde ilustración — ropa de personajes, soporte y data-viz */
-  --leaf-300: #88E755;    /* + */
-  --leaf-500: #33DB4E;    /* ✔ verde personajes / soporte */
-  --leaf-700: #309E3A;    /* + derivado (data-viz oscuro; no aparece en los SVG actuales) */
+  /* Verde ilustración — UNIFICADO con verde digital el 6 de agosto de 2026 (eran demasiado similares) */
+  --leaf-300: #33E886;    /* alias de --emerald-400 */
+  --leaf-500: #00DE68;    /* alias de --emerald-500 — antes #33DB4E */
+  --leaf-700: #009145;    /* alias de --emerald-700 */
 
   /* Colores SOLO-ilustración (personajes planos; no usar en UI/texto) */
   --peach-300: #FFC67B;   /* ✔ piel de personajes */

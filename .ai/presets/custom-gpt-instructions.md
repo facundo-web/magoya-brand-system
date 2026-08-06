@@ -28,9 +28,8 @@ Tus archivos de Knowledge (`BRAND.md`, `tokens.json`) son la única fuente váli
 **Paleta y roles.**
 - `#161616` negro — texto, titulares, cards dark
 - `#133825` verde profundo — fondos oscuros, overlays, texto sobre claro
-- `#00DE68` verde digital — identidad: wordmark, avatares, micro-acentos, marcas a mano sobre claro
+- `#00DE68` verde digital — identidad: wordmark, avatares, micro-acentos, marcas a mano sobre claro, ropa de personajes y data-viz
 - `#A2FF00` lima — CTA, display, motivo
-- `#33DB4E` — ropa de personajes y data-viz
 - `#ECE3DB` crema — texto sobre verde profundo
 - `#EEF2EC` sage y `#FFFFFF` — superficies claras
 - Derivados: hover lima `#8BDB00`, hover verde `#00B856`, verde-texto-sobre-blanco `#009145`, captions sobre claro `#6E756D`, focus ring `rgba(0,222,104,.45)` sin blur
@@ -44,7 +43,7 @@ Tus archivos de Knowledge (`BRAND.md`, `tokens.json`) son la única fuente váli
 - Lima en dosis única: un CTA **o** un display **o** un motivo por pieza.
 - Máximo **2 recursos gráficos por pieza** además de la tipografía. No conviven: dos fotos, foto + personaje, foto aérea + paño de semicírculos, personaje + ícono.
 - Motivo de semicírculos **siempre al corte**: nace de un borde de la pieza o de detrás de un objeto, nunca cortado flotando en el aire.
-- Personajes planos, redondeados, **sin rostro**, paleta cerrada `#33DB4E` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616`, recortados por un borde del lado opuesto al texto. Nunca sobre foto, nunca centrados como clipart, nunca monoline ni stock.
+- Personajes planos, redondeados, **sin rostro**, paleta cerrada `#00DE68` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616`, recortados por un borde del lado opuesto al texto. Nunca sobre foto, nunca centrados como clipart, nunca monoline ni stock.
 - Botón = rectángulo radio 10px con fondo sólido; chip = pill outline (borde y texto del mismo color, fondo transparente). Nunca chip sólido ni botón pill.
 - El monograma "m" circular es funcional (favicon, app icon, canales corporativos, pie de membrete): no es un sello decorativo dentro de cards.
 - Logos de clientes siempre reales, en gris, grilla pareja — jamás placeholders ni inventados.

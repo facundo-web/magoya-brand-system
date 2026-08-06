@@ -40,11 +40,10 @@ Si el proyecto importa `tokens.css`, usá siempre las custom properties (`var(--
 |---|---|---|
 | `--ink-900` | `#161616` | Texto, titulares, cards dark |
 | `--green-900` | `#133825` | Fondos oscuros, overlays, texto sobre claro |
-| `--emerald-500` | `#00DE68` | Identidad: wordmark, avatares, micro-acentos. Como texto SOLO sobre oscuro |
+| `--emerald-500` | `#00DE68` | Identidad: wordmark, avatares, micro-acentos, ropa de personajes y data-viz. Como texto SOLO sobre oscuro |
 | `--emerald-700` | `#009145` | Verde texto sobre blanco — solo ≥24px bold |
 | `--lime-500` | `#A2FF00` | CTA, display, motivo. Dosis única. NUNCA texto sobre claro |
 | `--lime-600` | `#8BDB00` | Hover de lima |
-| `--leaf-500` | `#33DB4E` | Ilustración y data-viz |
 | `--cream-100` | `#ECE3DB` | Texto sobre verde profundo |
 | `--sage-50` | `#EEF2EC` | Superficie clara de slides |
 | — | `#6E756D` | Captions sobre claro (mínimo accesible) |
