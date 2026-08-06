@@ -77,7 +77,7 @@ En `VOICE-RESEARCH.md` inferí que **Proteína era la agencia del rebranding 202
 | F15 | *"el subrayado quedó fuera"* (implícito en F14: solo círculo y flecha) | **NO HECHO** | `flourish-underline.svg` sigue usado en 4 archivos: `brand-book.html:732`, `slides.html:377`, `slides.html:1194`, `library.html:141`. Si sale del sistema, salen las 4 aplicaciones y la ficha |
 | F16 | *"un patito en motivos semicirculares está deformado"* | **LISTO** | Era `preserveAspectRatio="none"`; el asset se retiró después |
 | F17 | *"la regla es cubrir los espacios, no que quede algo chiquito como detalle; si hay algo es para que se vea"* | **LISTO** | Regla "ocupar el espacio" en `BRAND.md` §6 con números (gráfico = ancho de columna, cifra ~70%, personaje 40–55%, paño al corte); gráficos de slides agrandados (`.bars` 26cqw → 42cqw, `.donut` 20 → 34cqw) |
-| F18 | *"rehacer las piezas de convivencia — los fondos son raros y la persona, los chips no están bien"* + *"no sé qué significa área mosaico"* | **NO HECHO** | Sigue pendiente el rehacer y el retítulo |
+| F18 | *"rehacer las piezas de convivencia — los fondos son raros y la persona, los chips no están bien"* + *"no sé qué significa área mosaico"* | **LISTO** | El motivo pasó de `<img object-fit:cover>` (una sola instancia recortada, se veía sparse/rota) a `background-repeat` en tile continuo — verificado visualmente en los dos ejemplos. El retítulo ya había pasado a "Cards — siempre en mosaico" en una ronda anterior. La persona (task previa) y los chips (pill + tags) ya estaban bien |
 
 ## 3. Iconografía
 
