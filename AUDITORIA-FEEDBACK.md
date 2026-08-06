@@ -87,7 +87,7 @@ En `VOICE-RESEARCH.md` inferí que **Proteína era la agencia del rebranding 202
 | F20 | *"si lo pego me pega un código, me gustaría que sea el ícono en PNG"* | **LISTO** | `toPngBlob()` + `ClipboardItem`; pega como imagen |
 | F21 | *"que se puedan descargar todos, algunos o uno"* | **LISTO** | Descarga individual + ⌘-click múltiple con barra de selección |
 | F22 | *"mostrá cómo se aplica en cada sección — slide, piezas, ícono — pensá en la persona que viene de la nada"* | **LISTO** | 3 ejemplos por contexto de uso, distintos de la home |
-| F23 | *"hay ejemplos de íconos grandes que me gustaron mucho en los slides — llevá más referencias de ahí al brand"* | **NO HECHO** | Busqué referencias cruzadas de íconos grandes en `brand-book.html` y `slides.html`: **cero**. El capítulo de iconografía no muestra el uso a escala grande que sí funciona en los slides |
+| F23 | *"hay ejemplos de íconos grandes que me gustaron mucho en los slides — llevá más referencias de ahí al brand"* | **LISTO** | 3 ejemplos reales agregados al capítulo de iconografía, cada uno con link al módulo de origen: ícono protagonista de statement (slides A5), ícono en badge circular (slides B3), ícono líder de fila en capacidades de AI (slides K2). De paso, encontrado y corregido un bug real: la clase nueva `.icm.hero` colisionaba con `.hero` (el header de la página, `min-height:88vh`) e inflaba el ícono a 335px de alto — renombrada a `.icm.xl` |
 
 ## 4. Logos, descargas y aplicación web
 

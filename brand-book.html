@@ -160,6 +160,7 @@
   .icm{display:block;width:32px;height:32px;background:var(--ink-900);
        -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
   .icm.big{width:38px;height:38px}
+  .icm.xl{width:96px;height:96px}
   .icm.on-dark{background:var(--cream-50)}
   .icm.hl{background:var(--lime-500)}          /* destacado SOBRE OSCURO */
   .icm.hl-light{background:var(--emerald-700)} /* destacado SOBRE CLARO — #009145, el lima no resalta sobre blanco */
@@ -849,7 +850,22 @@
       <span class="icm big on-dark" style="-webkit-mask-image:url(assets/studio/icons/agro/gota.svg);mask-image:url(assets/studio/icons/agro/gota.svg)"></span>
       <span class="icm big on-dark" style="-webkit-mask-image:url(assets/studio/icons/agro/sol.svg);mask-image:url(assets/studio/icons/agro/sol.svg)"></span>
       <span class="icm big on-dark" style="-webkit-mask-image:url(assets/studio/icons/agro/dron.svg);mask-image:url(assets/studio/icons/agro/dron.svg)"></span></div></div>
-  <p class="cap" style="max-width:680px">Además del set agro hay <b>58 íconos generales</b> en 7 categorías (producto & UX, datos & AI, plataforma, negocio, comunicación & redes, sistema) en <a href="icons.html" style="color:var(--emerald-700);font-weight:600">la librería de íconos</a>, y los logos de <b>IA</b> (OpenAI, Claude, Gemini…) y <b>redes</b> en <code style="font-family:var(--font-mono);font-size:11.5px">assets/studio/icons/</code>.</p></div>
+  <p class="cap" style="max-width:680px">Además del set agro hay <b>58 íconos generales</b> en 7 categorías (producto & UX, datos & AI, plataforma, negocio, comunicación & redes, sistema) en <a href="icons.html" style="color:var(--emerald-700);font-weight:600">la librería de íconos</a>, y los logos de <b>IA</b> (OpenAI, Claude, Gemini…) y <b>redes</b> en <code style="font-family:var(--font-mono);font-size:11.5px">assets/studio/icons/</code>.</p>
+
+  <h3>Íconos a escala grande — lo que ya funciona en los slides</h3>
+  <p class="note" style="max-width:760px;margin-bottom:16px">En <a href="slides.html" style="color:var(--emerald-700);font-weight:600">el deck kit</a> el ícono no siempre es un detalle chico: en varios módulos carga peso visual real. Tres formas ya probadas, con el módulo de origen:</p>
+  <div class="grid g3">
+    <div class="comp-canvas" style="background:var(--sage-50);flex-direction:column;align-items:flex-start;gap:14px;min-height:180px">
+      <span class="icm xl" style="-webkit-mask-image:url(assets/studio/icons/agro/satelite.svg);mask-image:url(assets/studio/icons/agro/satelite.svg)"></span>
+      <span style="font-size:14px;font-weight:800;line-height:1.2">Satellite data that reaches the agronomist, not the archive.</span></div>
+    <div class="comp-canvas" style="background:var(--white);border:1px solid var(--color-hairline);flex-direction:column;align-items:flex-start;gap:10px;min-height:180px">
+      <div style="display:flex;gap:9px;align-items:center"><span class="dot" style="width:30px;height:30px;border-radius:50%;background:var(--sage-100);display:flex;align-items:center;justify-content:center"><span class="icm" style="width:16px;height:16px;-webkit-mask-image:url(assets/studio/icons/agro/chat-ia.svg);mask-image:url(assets/studio/icons/agro/chat-ia.svg)"></span></span><b style="font-size:13px">Data &amp; AI</b></div>
+      <div style="display:flex;gap:9px;align-items:center"><span class="dot" style="width:30px;height:30px;border-radius:50%;background:var(--sage-100);display:flex;align-items:center;justify-content:center"><span class="icm" style="width:16px;height:16px;-webkit-mask-image:url(assets/studio/icons/agro/lote.svg);mask-image:url(assets/studio/icons/agro/lote.svg)"></span></span><b style="font-size:13px">Product design</b></div>
+      <div style="display:flex;gap:9px;align-items:center"><span class="dot" style="width:30px;height:30px;border-radius:50%;background:var(--sage-100);display:flex;align-items:center;justify-content:center"><span class="icm" style="width:16px;height:16px;-webkit-mask-image:url(assets/studio/icons/agro/tractor.svg);mask-image:url(assets/studio/icons/agro/tractor.svg)"></span></span><b style="font-size:13px">Field validation</b></div></div>
+    <div class="comp-canvas" style="background:var(--white);border:1px solid var(--color-hairline);flex-direction:column;align-items:flex-start;gap:12px;min-height:180px">
+      <div style="display:flex;gap:10px;align-items:flex-start"><img src="assets/studio/icons/ai/anthropic.svg" alt="Anthropic" style="width:22px;height:22px;flex:none"><div><b style="font-size:13px;display:block">Retrieval over field data</b><span style="font-size:11.5px;color:var(--gray-600)">RAG sobre resultados de ensayos, etiquetas y protocolos.</span></div></div>
+      <div style="display:flex;gap:10px;align-items:flex-start"><img src="assets/studio/icons/ai/huggingface.svg" alt="Hugging Face" style="width:22px;height:22px;flex:none"><div><b style="font-size:13px;display:block">Vision on crop imagery</b><span style="font-size:11.5px;color:var(--gray-600)">Detección de enfermedad y maleza en imágenes de campo.</span></div></div></div></div>
+  <p class="cap" style="display:flex;gap:18px;flex-wrap:wrap;max-width:760px"><span>① Ícono como protagonista del statement — módulo <a href="slides.html#fam-a" style="color:var(--emerald-700);font-weight:600">A5</a></span><span>② Ícono en badge circular, grilla de capacidades — módulo <a href="slides.html#fam-b" style="color:var(--emerald-700);font-weight:600">B3</a></span><span>③ Ícono como líder de fila, capacidades de AI — módulo <a href="slides.html#fam-k" style="color:var(--emerald-700);font-weight:600">K2</a></span></p></div>
 </section>
 
 <!-- ================= 09 COMPONENTES ================= -->
