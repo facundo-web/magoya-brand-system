@@ -129,11 +129,11 @@ En `VOICE-RESEARCH.md` inferí que **Proteína era la agencia del rebranding 202
 
 | ID | Pedido | Estado | Evidencia |
 |---|---|---|---|
-| F45 | *"nunca pongas emoji en los títulos; solo manitos para señalar o banderas de países"* | **VIOLADO POR MÍ** | La regla está escrita en `BRAND.md` §4 — y **la rompen mis propios archivos**: `ROADMAP.md:10` (🎓), `ROADMAP.md:49` (⚠️), `PLAN.md:10` (✅), `VOICE-RESEARCH.md:464` (✅), `VOICE-RESEARCH.md:491` (⚠️). Si el manual no se cumple a sí mismo, no es una regla |
+| F45 | *"nunca pongas emoji en los títulos; solo manitos para señalar o banderas de países"* | **LISTO** | `grep -nP '[emoji]' *.md` en títulos → cero coincidencias. Los 5 casos violados (`ROADMAP.md`, `PLAN.md`, `VOICE-RESEARCH.md`) están corregidos |
 | F46 | *"quedaron textos centrados y títulos a la derecha — sé consistente"* | **LISTO** | Contenedor `.inner` único anclado a la izquierda; verificado un solo left (294px) en 13 secciones |
 | F47 | *"grand full responsive"* | **LISTO** | Breakpoint 880px en las 9 páginas |
 | F48 | *"si creas algo nuevo que puede ir, tiene que estar en el brand"* (regla madre) | **LISTO como regla, PARCIAL en cumplimiento** | Escrita en `README.md` y `BRAND.md`. Pero F24, F25 y F13 son casos abiertos: hay especificación sin asset, o asset sin aplicación |
-| F49 | *"el cómo aplicamos el contenido es cómo la gente lo puede llegar a usar — muchos son literales con los criterios; este brand tiene que educar, enseñar y compartir desde el mismo brand"* | **PARCIAL** | Criterio transversal en el `ROADMAP.md` con tabla de 4 capas por sección, pero F29 (slides y comerciales sin Hacer/Evitar) y F23 (íconos sin ejemplo a escala) son justamente huecos pedagógicos |
+| F49 | *"el cómo aplicamos el contenido es cómo la gente lo puede llegar a usar — muchos son literales con los criterios; este brand tiene que educar, enseñar y compartir desde el mismo brand"* | **LISTO** | Criterio transversal en el `ROADMAP.md` con tabla de 4 capas por sección. Los dos huecos pedagógicos concretos que se habían identificado (F29: slides y comerciales sin Hacer/Evitar · F23: íconos sin ejemplo a escala) ya están cerrados — es un criterio transversal, así que vale seguir vigilándolo en piezas nuevas |
 | F50 | *"validá que integrar con AI sea algo que las AI hoy estén usando — no se inventa, se tiene que validar"* | **LISTO** | Convenciones verificadas contra documentación vigente: `llms.txt`, `CLAUDE.md` + `.claude/rules/`, knowledge de Custom GPT, `.cursor/rules/*.mdc` (renombrado al formato vigente), `.github/copilot-instructions.md` |
 | F51 | *"revisá si algo nos falta del brand que no consideramos y deberíamos, algo esencial que no supimos"* | **PARCIAL** | `VOICE-RESEARCH.md` §6 lista 8 ausencias. Falta el hallazgo mayor: **no hay capítulo de voz por mercado** (C2) y **no hay arquitectura de marca** — que es justamente un entregable del módulo 1 de Proteína |
 
@@ -145,7 +145,9 @@ Ordenado por la fecha real que manda: **10 de agosto**, prework de Proteína.
 
 ### Ola 1 — antes del 10 de agosto: que el sistema cumpla sus propias reglas
 
-Todo acá es cerrar huecos, no abrir capítulos. Ninguno depende de Proteína.
+**Completa — los 12 puntos cerrados.** Todo acá era cerrar huecos, no abrir capítulos. Ninguno dependía de Proteína.
+
+Nota sobre el punto 2: el criterio original pedía agrandar el óvalo del subrayado; la resolución real fue retirarlo del sistema (decisión F15, "el subrayado quedó fuera"), que es la que efectivamente cierra F14 sin dejar una versión débil que seguir parchando.
 
 | # | Tarea | Criterio de aceptación verificable |
 |---|---|---|
