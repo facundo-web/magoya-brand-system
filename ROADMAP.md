@@ -187,8 +187,8 @@ Reglas cerradas. Si alguien las cuestiona, la respuesta es este bloque.
 | Motivo de marca | **Semicírculos** (`motif-semis.svg` + banda festoneada). La banda festoneada se reserva para la composición con personaje |
 | Sangrado de motivos | Van al corte y **siempre nacen de un borde o de detrás de un objeto** — nunca cortados flotando al aire |
 | Personajes | Planos redondeados, **sin rostro**, paleta CERRADA de 5 colores (`#33DB4E` · `#A2FF00` · `#DFDFDF` · `#FFC67B` piel · `#161616`). Siempre **recortados por un borde**, del lado opuesto al texto |
-| Marcas a mano | Una sola por pieza. **Subrayado** = enfatiza palabra del titular · **círculo** = fecha o dato puntual · **flecha** = señala el CTA (nace del texto, la punta cae sobre el botón). Verde digital sobre claro / lima sobre oscuro, nunca negro. Siempre sobre texto compuesto |
-| Resaltador sólido | **PROHIBIDO** el bloque marcador detrás de palabras. Sí subrayado, círculo, flecha |
+| Marcas a mano | Una sola por pieza. **Círculo** = fecha o dato puntual · **flecha** = señala el CTA (nace del texto, la punta cae sobre el botón). Verde digital sobre claro / lima sobre oscuro, nunca negro. Siempre sobre texto compuesto. **El subrayado quedó retirado** (no cubría bien la palabra completa, trazo débil) — para enfatizar una palabra o frase de un titular, el color hace el trabajo |
+| Resaltador sólido | **PROHIBIDO** el bloque marcador detrás de palabras. Sí color, círculo, flecha |
 | Fotografía | Aérea de campo en color natural + **scrim verde profundo 55–86%** cuando lleva texto (el scrim es el único gradiente permitido). **Personas siempre B&N** con acento verde o lima |
 | Iconografía | Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. Lima solo en el ícono destacado (uno por pieza). Nunca relleno sólido ni 3D. Completar volumen con Lucide |
 | Botón ≠ chip | **Botón** = rectángulo radio 10px, fondo sólido. **Chip** = pill outline (borde y texto del mismo color, fondo transparente). Nunca chip sólido ni botón pill |
@@ -221,7 +221,8 @@ Reglas cerradas. Si alguien las cuestiona, la respuesta es este bloque.
 | **Metáfora del puzzle** | Símbolo del brand viejo, retirado. Su reemplazo narrativo es el crecimiento / los semicírculos |
 | **Naranja y amarillo** | Colores del brand viejo, fuera de la paleta |
 | **Motivos de líneas** (caminos concéntricos, estratos) | "Las líneas no caracterizan la marca". Retirados en v1.1 a favor de los semicírculos. Los archivos siguen en disco pero **ninguna página los usa** (ver S8) |
-| **Resaltador / marcador sólido detrás de texto** | Regla de dirección de arte. Se usa subrayado, círculo o flecha |
+| **Resaltador / marcador sólido detrás de texto** | Regla de dirección de arte. Se usa color, círculo o flecha |
+| **Subrayado a mano** (`flourish-underline.svg`) | No cubría bien la palabra completa y el trazo no tenía la fuerza que pide una marca. Reemplazo: el color hace el trabajo (texto en lima) — solo quedan círculo y flecha como marcas a mano |
 | **Esquemas SVG de merch** | Degradados a "especificación de producción" y luego eliminados del manual: el merch se muestra con foto/render real |
 | **Lima como color primario** | El lime del moodboard **no** se descartó pero **no es primario**: vive como energía/marcador (CTA, display, motivo), dosis única |
 | **Wordmark en lima** | Uso incorrecto. El logo es verde digital `#00DE68` |

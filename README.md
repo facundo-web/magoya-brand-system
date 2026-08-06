@@ -43,7 +43,7 @@ assets/
 ├── avatars/          # go · o · cara · m (vectoriales)
 ├── favicon/          # favicon.svg + favicon-{16,32,180,512}.png — aplicado en las 9 páginas
 ├── motif-semis.svg   # el único motivo: paño de semicírculos
-├── flourish-{underline,circle,arrow}.svg + doodle-sparkle.svg   # marcas a mano
+├── flourish-{circle,arrow}.svg + doodle-sparkle.svg   # marcas a mano
 ├── illus/            # 4 personajes planos (paleta cerrada de 5 colores)
 ├── photos/           # 5 aéreas + retrato B&N (+ merch/ para las fotos de producto)
 ├── pieces/           # capturas de piezas reales producidas en el Studio
@@ -60,7 +60,7 @@ assets/
 
 **`assets/refs/` es material fuente, no un asset del sistema.** Son los exports originales del diseñador (SVG/PNG de los módulos, ~25 MB) que sirvieron de referencia de trazado. No se enlazan desde ninguna página, no se distribuyen y no tienen ficha en `library.html`. Si algo de ahí tiene que poder usarse, primero se produce como asset aprobado y se le hace su ficha.
 
-**Retirados de la doctrina** (los archivos quedan en disco solo como historial, sin ficha y sin uso en piezas nuevas): `motif-estratos.svg` y `illus/camino-*.svg` (motivos de líneas), y la banda festoneada — que ya no tiene asset.
+**Retirados de la doctrina** (los archivos quedan en disco solo como historial, sin ficha y sin uso en piezas nuevas): `motif-estratos.svg` y `illus/camino-*.svg` (motivos de líneas), la banda festoneada — que ya no tiene asset —, y `flourish-underline.svg` (el subrayado a mano: no cubría bien la palabra completa y el trazo no tenía fuerza; el énfasis de un titular ahora es color, no marca a mano).
 
 **Duplicados conocidos** (existen en dos rutas; la de la derecha es la que usa el manual): `assets/badge-envivo.svg` y `assets/doodle-{blob,dots,loop}.svg` → viven en `assets/studio/` · `assets/logos/{corteva,syngenta}.svg` → viven en `assets/logos/clients/`. Al bajar un asset, usar siempre el que linkea `library.html`.
 
