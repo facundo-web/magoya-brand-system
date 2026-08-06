@@ -29,15 +29,17 @@ Estudio/partner de **estrategia y desarrollo de producto digital para agribusine
 
 ## 3. Color
 
-| Color | HEX | Rol |
-|---|---|---|
-| Verde Magoya | `#133825` | Core institucional: fondos oscuros, overlays, texto sobre claro |
-| Verde digital | `#00DE68` | Identidad: wordmark, avatares, micro-acentos. Como texto SOLO sobre oscuro |
-| Lima energía | `#A2FF00` | CTA, display, motivo. **Dosis única por pieza.** Nunca texto sobre blanco |
-| Verde ilustración | `#33DB4E` | Ropa de personajes, soporte, data-viz |
-| Crema Magoya | `#ECE3DB` | Neutro cálido firma; texto sobre verde profundo |
-| Sage | `#EEF2EC` | Superficie clara de slides |
-| Negro Magoya | `#161616` | Texto, titulares, cards dark |
+| Color | HEX | Pantone (aprox.) | Rol |
+|---|---|---|---|
+| Verde Magoya | `#133825` | PMS 553 | Core institucional: fondos oscuros, overlays, texto sobre claro |
+| Verde digital | `#00DE68` | PMS 3282 | Identidad: wordmark, avatares, micro-acentos. Como texto SOLO sobre oscuro |
+| Lima energía | `#A2FF00` | PMS 382 2X | CTA, display, motivo. **Dosis única por pieza.** Nunca texto sobre blanco |
+| Verde ilustración | `#33DB4E` | PMS 7482 | Ropa de personajes, soporte, data-viz |
+| Crema Magoya | `#ECE3DB` | PMS Warm Gray 2 | Neutro cálido firma; texto sobre verde profundo |
+| Sage | `#EEF2EC` | PMS Cool Gray 1 | Superficie clara de slides |
+| Negro Magoya | `#161616` | PMS Black 5 2X | Texto, titulares, cards dark |
+
+Los Pantone son el **match más cercano por distancia RGB** contra la librería Solid Coated (no existe una conversión exacta hex→Pantone) — confirmar contra el libro físico antes de mandar a producción. El verde ilustración (`#33DB4E`→PMS 7482) es el que más se aleja del hex original en pantalla.
 
 **Regla central: "El negro construye, el verde hace crecer."** Neutros ≈75% de cada pieza, verde ≈25%, un solo movimiento verde dominante. Nunca pieza 100% negra ni 100% verde.
 

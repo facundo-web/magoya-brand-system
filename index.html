@@ -57,7 +57,8 @@
 
   /* piezas internas */
   .sw{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:auto}
-  .sw span{aspect-ratio:1;border-radius:8px;display:block}
+  .sw span{aspect-ratio:1;border-radius:8px;display:block;position:relative}
+  .sw span b{position:absolute;left:5px;bottom:4px;font-family:var(--font-mono);font-weight:600;font-size:8.5px;letter-spacing:-0.01em;color:var(--cream-50)}
   .aa{font-size:clamp(3rem,7vw,5.4rem);font-weight:var(--weight-extra);letter-spacing:-0.05em;line-height:.82;margin-top:auto}
   .aa small{display:block;font-size:11.5px;font-weight:var(--weight-regular);letter-spacing:0;color:var(--gray-600);margin-top:10px;font-family:var(--font-mono)}
   .ico{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:auto}
@@ -155,10 +156,10 @@
       <div class="pad">
         <span class="k">02 · Color</span>
         <div class="sw">
-          <span style="background:var(--green-900)"></span><span style="background:var(--emerald-500)"></span>
-          <span style="background:var(--lime-500)"></span><span style="background:var(--leaf-500)"></span>
-          <span style="background:var(--cream-100)"></span><span style="background:var(--sage-50)"></span>
-          <span style="background:var(--ink-900)"></span><span style="background:var(--white);box-shadow:inset 0 0 0 1px var(--color-hairline)"></span>
+          <span style="background:var(--green-900)"><b>553</b></span><span style="background:var(--emerald-500)"><b style="color:var(--ink-900)">3282</b></span>
+          <span style="background:var(--lime-500)"><b style="color:var(--ink-900)">382</b></span><span style="background:var(--leaf-500)"><b style="color:var(--ink-900)">7482</b></span>
+          <span style="background:var(--cream-100)"><b style="color:var(--ink-900)">WG2</b></span><span style="background:var(--sage-50)"><b style="color:var(--ink-900)">CG1</b></span>
+          <span style="background:var(--ink-900)"><b>Blk5</b></span><span style="background:var(--white);box-shadow:inset 0 0 0 1px var(--color-hairline)"><b style="color:var(--ink-900)">—</b></span>
         </div>
       </div>
       <span class="lb"><b>El negro construye, el verde hace crecer</b><span>Neutros 75% · verde 25%</span></span>
