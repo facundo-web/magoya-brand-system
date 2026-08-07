@@ -128,6 +128,10 @@
   
   .mg-topbar a{color:var(--cream-300);text-decoration:none;font-size:13px;font-weight:600;padding:6px 10px;border-radius:8px}
   .mg-topbar a:hover,.mg-topbar a.on{background:var(--green-800);color:var(--cream-50)}
+  .mg-topbar a.cl{margin-left:16px}
+  .mg-topbar a.cl2{margin-left:10px}
+  .mg-topbar .navdiv{width:1px;height:18px;background:var(--cream-300);opacity:.25;margin:0 14px 0 20px}
+  @media (max-width:880px){ .mg-topbar .navdiv{display:none} }
 
   /* ---------- menú lateral (igual al brand book) ---------- */
   .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;overflow-x:visible;z-index:50}
@@ -172,7 +176,7 @@
 </head>
 <body>
 <div class="wrap">
-<nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Inicio</a><a href="brand-book.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html">Slides</a><a href="pieces.html" class="on">Comerciales</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html">Clientes</a><a href="ai.html">Integrar con AI</a></nav>
+<nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Inicio</a><a href="brand-book.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html" class="cl">Slides</a><a href="pieces.html" class="on">Comerciales</a><a href="icons.html" class="cl">Iconos</a><a href="library.html">Assets</a><a href="logos.html" class="cl2">Clientes</a><span class="navdiv"></span><a href="ai.html">Integrar con AI</a></nav>
 
 <nav class="side">
   <a href="#t1">One-pager</a>

@@ -220,7 +220,7 @@ Todo esto lo vio en el editor de piezas (canvas, capas, zoom), no en el brand sy
 
 ## Revisión de UX / Arquitectura de la Información (7 de agosto de 2026)
 
-Feedback en PDF (`Feedback sobre Magoya Brand System.pdf`, exportado de Notion), revisando el sitio completo con mirada de UX/IA — no bugs puntuales, sino cómo está organizada y presentada la información. **Nada de esto está tocado todavía — es el mapeo de qué implica cada punto, para priorizar antes de ejecutar.**
+Feedback en PDF (`Feedback sobre Magoya Brand System.pdf`, exportado de Notion), revisando el sitio completo con mirada de UX/IA — no bugs puntuales, sino cómo está organizada y presentada la información. El mapeo completo está abajo; el bloque que se ejecutó primero está en "Aplicado en este repo".
 
 | # | Cita | Qué implica | Tamaño |
 |---|---|---|---|
@@ -242,6 +242,17 @@ Feedback en PDF (`Feedback sobre Magoya Brand System.pdf`, exportado de Notion),
 - **F56/F60** son la misma pieza (rediseño de `index.html`) — ya estaba en el roadmap como tarea pendiente, esto le suma dirección concreta (mosaico por pilares, estilo Atlassian) y un contenido nuevo a incluir (Integrar con AI como propuesta de valor).
 - **F57** tiene una parte chica y verificable (la inconsistencia puntual entre dos secciones) y una parte abierta (si el componente completo necesita un rediseño visual tipo Atlassian).
 - **F59 y F61** son los más grandes y menos definidos — auditoría de espaciado de todo el sistema, y una funcionalidad de navegación por caso de uso que no existe en ningún lado todavía.
+
+### Aplicado en este repo
+
+El usuario priorizó F52/F53 (jerarquía de nav), F56/F60 (mosaico por pilares) y F61 (navegación por caso de uso) como el primer bloque a ejecutar. F54 quedó resuelto como efecto colateral de la misma decisión de nav (se agrupó "AI en campo" e "Integrar con AI" en zonas visualmente distintas). F55, F57, F58 y F59 quedan documentados arriba, sin tocar.
+
+| # | Qué se decidió | Dónde |
+|---|---|---|
+| F52/F53 | Nav superior agrupada por proximidad (Manual: Brand book + AI en campo · Plantillas: Slides + Comerciales · Recursos: Iconos + Assets + Clientes), sin renombrar nada y sin mega-menú — la jerarquía se lee por espaciado creciente entre clusters, no por texto nuevo | `.mg-topbar` en las 9 páginas (`index.html`, `brand-book.html`, `ai-en-campo.html`, `slides.html`, `pieces.html`, `icons.html`, `library.html`, `logos.html`, `ai.html`) |
+| F54 | "Integrar con AI" separado del resto por el único divisor duro de la barra (hairline vertical) — resuelve la confusión con "AI en campo" por contenedor visual, no por renombre | Mismo bloque de nav, las 9 páginas |
+| F56/F60 | `index.html` pasó de 19 cards sueltas (masonry tipo Pinterest) a un grid uniforme de 10 pilares reales del sistema (Identidad, Color, Tipografía, Fotografía & ilustración, Iconografía, Componentes & aplicaciones, Reglas de oro, Slides, Comerciales, AI en campo). Clientes/Assets/Integrar con AI salieron del grid — quedan accesibles por nav y por el footer, que ahora suma `logos.html` | `index.html` — `.board`, `.meta` (13 capítulos → 10 pilares), `footer` |
+| F61 | Bloque nuevo "¿Qué necesitás hacer?" en `index.html`, entre el hero y el grid de pilares — 7 casos de uso reales (deck, pieza comercial, LinkedIn de Magoya, AI en campo, cargar la marca en una AI, bajar un asset, firma de email) cada uno con link directo a su destino | `index.html` — sección `.usecases` |
 
 ## Bloqueado por un insumo tuyo
 
