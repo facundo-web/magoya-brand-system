@@ -138,6 +138,15 @@
     font-weight:var(--weight-bold);font-size:14px;
   }
   .bw{filter:grayscale(1) contrast(1.05)}
+
+  /* ---------- banner LinkedIn: foto en flujo normal (no absoluta) con blur sutil; overlays nítidos ---------- */
+  .lnkbn{aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--ink-950)}
+  .lnkbn>img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) blur(2.5px);transform:scale(1.06)}
+  .lnkbn .scrim{position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,12,12,.92) 0%, rgba(13,12,12,.72) 46%, rgba(13,12,12,0) 78%)}
+  .lnkbn .tx{position:absolute;left:0;bottom:0;padding:28px 32px;color:var(--cream-50)}
+  .lnkbn .tx img{width:130px}
+  .lnkbn .tx div{font-size:15px;color:var(--cream-200);margin-top:8px}
+  .lnkbn .rule{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--emerald-500)}
   .accent-bar{position:absolute;left:18px;bottom:44px;z-index:2;width:52px;height:8px;background:var(--lime-500);border-radius:4px}
 
   /* ---------- illustration ---------- */
@@ -1000,39 +1009,39 @@
   <p class="cap" style="max-width:680px">Tres recetas de feed: <b>foto</b> (statement sobre aérea) · <b>crema</b> (aviso con avatar de comunidad) · <b>dark</b> (dato lima + personaje recortado). Rotarlas mantiene la grilla variada y reconocible.</p>
 
   <h3>Redes sociales — story (9:16), banner y avatar</h3>
-  <div class="grid" style="grid-template-columns:220px 1fr;gap:20px;align-items:stretch">
+  <div class="grid" style="grid-template-columns:220px 1fr;gap:20px;align-items:start">
     <div style="aspect-ratio:9/16;border-radius:var(--radius-lg);overflow:hidden;position:relative;display:flex;flex-direction:column;background:var(--green-950)">
       <div style="flex:1.1;background:linear-gradient(180deg,rgba(12,33,23,.15),rgba(12,33,23,.7)),url('assets/photos/field-bali.jpg') center/cover"></div>
       <div style="flex:1;padding:20px;color:var(--cream-50);position:relative">
         <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:78px">
         <div style="font-size:25px;font-weight:800;letter-spacing:-0.03em;line-height:1.08;margin-top:10px">Senior AgTech talent, embedded in your team</div>
         <span style="display:inline-block;background:var(--lime-500);color:var(--ink-900);font-size:13px;font-weight:700;padding:9px 16px;border-radius:var(--radius-btn);margin-top:14px">Swipe up</span></div></div>
-    <div style="display:flex;flex-direction:column;gap:20px">
-      <div style="aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;display:flex;align-items:flex-end;isolation:isolate;will-change:transform;-webkit-transform:translateZ(0);transform:translateZ(0)">
-        <img class="bw" src="assets/photos/cami-agtech-bw.jpg" alt="Camila López Colmano, AgTech Expert — con la remera de Magoya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 78%">
-        <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,12,12,.92) 0%, rgba(13,12,12,.72) 46%, rgba(13,12,12,0) 78%)"></div>
-        <div style="position:relative;padding:28px 32px;color:var(--cream-50)">
-          <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:130px">
-          <div style="font-size:15px;color:var(--cream-200);margin-top:8px">Your Digital Product Strategy and Development Partner</div></div>
-        <span style="position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--emerald-500)"></span></div>
-      <div style="aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;display:flex;align-items:flex-end;isolation:isolate;will-change:transform;-webkit-transform:translateZ(0);transform:translateZ(0)">
-        <img class="bw" src="assets/photos/leo-dopacio-bw.jpg" alt="Leo Dopacio — con la remera de Magoya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 70%">
-        <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,12,12,.92) 0%, rgba(13,12,12,.72) 46%, rgba(13,12,12,0) 78%)"></div>
-        <div style="position:relative;padding:28px 32px;color:var(--cream-50)">
-          <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:130px">
-          <div style="font-size:15px;color:var(--cream-200);margin-top:8px">Your Digital Product Strategy and Development Partner</div></div>
-        <span style="position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--emerald-500)"></span></div>
-      <div style="aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;display:flex;align-items:flex-end;isolation:isolate;will-change:transform;-webkit-transform:translateZ(0);transform:translateZ(0)">
-        <img class="bw" src="assets/photos/varu-baldi-bw.jpg" alt="Varina Baldi, Founder & CEO — con la remera de Magoya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 62%">
-        <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,12,12,.92) 0%, rgba(13,12,12,.72) 46%, rgba(13,12,12,0) 78%)"></div>
-        <div style="position:relative;padding:28px 32px;color:var(--cream-50)">
-          <img src="assets/magoya-wordmark-cream.svg" alt="Magoya" style="width:130px">
-          <div style="font-size:15px;color:var(--cream-200);margin-top:8px">Your Digital Product Strategy and Development Partner</div></div>
-        <span style="position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--emerald-500)"></span></div>
+    <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
+      <div class="lnkbn">
+        <img src="assets/photos/cami-agtech-bw.jpg" alt="Camila López Colmano — hombros y cuello, con la remera de Magoya" style="object-position:center 60%">
+        <div class="scrim"></div>
+        <div class="tx">
+          <img src="assets/magoya-wordmark-cream.svg" alt="Magoya">
+          <div>Your Digital Product Strategy and Development Partner</div></div>
+        <span class="rule"></span></div>
+      <div class="lnkbn">
+        <img src="assets/photos/leo-dopacio-bw.jpg" alt="Leo Dopacio — hombros y cuello, con la remera de Magoya" style="object-position:center 55%">
+        <div class="scrim"></div>
+        <div class="tx">
+          <img src="assets/magoya-wordmark-cream.svg" alt="Magoya">
+          <div>Your Digital Product Strategy and Development Partner</div></div>
+        <span class="rule"></span></div>
+      <div class="lnkbn">
+        <img src="assets/photos/varu-baldi-bw.jpg" alt="Varina Baldi — hombros y cuello, con la remera de Magoya" style="object-position:center 54%">
+        <div class="scrim"></div>
+        <div class="tx">
+          <img src="assets/magoya-wordmark-cream.svg" alt="Magoya">
+          <div>Your Digital Product Strategy and Development Partner</div></div>
+        <span class="rule"></span></div>
       <div style="display:flex;gap:20px;align-items:center">
         <img src="assets/avatars/avatar-face.svg" alt="Avatar de perfil" style="width:84px;border-radius:50%">
         <img src="assets/avatars/avatar-m.svg" alt="Avatar m" style="width:84px;border-radius:50%">
-        <p class="cap" style="max-width:340px">Avatar de perfil: la <b>cara</b> para redes de comunidad (IG, X), la <b>m</b> para canales corporativos (LinkedIn). <b>Banner de LinkedIn:</b> foto del equipo en B&N + scrim negro degradado hacia la derecha + wordmark crema + filete verde digital al borde — la misma receta que la fotografía de personas. Tres personas reales, misma receta: el encuadre 4:1 recorta por diseño a la altura del torso — no es que se les saque la cara, es que a ese formato no entra.</p></div></div></div>
+        <p class="cap" style="max-width:340px">Avatar de perfil: la <b>cara</b> para redes de comunidad (IG, X), la <b>m</b> para canales corporativos (LinkedIn). <b>Banner de LinkedIn:</b> cuerpo en B&N con <b>blur sutil</b> — hombros y cuello reconocibles como persona, sin mostrar la cara — + scrim negro degradado hacia la derecha + wordmark crema y texto <b>siempre nítidos</b> por encima + filete verde digital al borde. Tres personas reales, misma receta.</p></div></div></div>
 
   <h3>Presentaciones</h3>
   <p class="note" style="max-width:720px">El sistema completo de slides vive en <a href="slides.html" style="color:var(--emerald-700);font-weight:600">módulos de presentación</a>: 41 módulos en 13 familias con la escala del diseñador (126/84/56/42pt), lienzos blanco/sage, un golpe de lima por slide y máximo dos recursos gráficos. Cada módulo se exporta a .pptx. Las piezas comerciales (one-pager, flyers) están en <a href="pieces.html" style="color:var(--emerald-700);font-weight:600">plantillas comerciales</a>.</p>
