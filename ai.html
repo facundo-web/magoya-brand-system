@@ -72,6 +72,19 @@
   .btn-copy:hover{background:var(--lime-600)}
   .btn-copy:focus-visible{outline:none;box-shadow:var(--shadow-focus)}
   .btn-copy.done{background:var(--emerald-500)}
+  .btn-copy.sm{padding:7px 12px;font-size:12px}
+  .btn-copy.sm.ghost{background:transparent;border:1.5px solid var(--emerald-700);color:var(--emerald-700)}
+  .btn-copy.sm.ghost:hover{background:var(--emerald-700);color:var(--white)}
+  .btn-copy.sm.ghost.done{background:var(--emerald-500);border-color:var(--emerald-500);color:var(--ink-900)}
+  .ailinks{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 18px}
+  .ail{background:var(--white);border:1px solid var(--color-hairline);border-radius:12px;padding:14px 16px}
+  .ail>b{display:block;font-size:15px;letter-spacing:-.01em}
+  .ail>span{display:block;font-size:11.5px;color:var(--gray-600);margin:2px 0 10px}
+  .ail .acts{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+  .ail .acts a{font-size:12px;font-weight:700;color:var(--emerald-700);text-decoration:none;margin-left:2px}
+  .ail .acts a:hover{text-decoration:underline}
+  @media (max-width:900px){ .ailinks{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:560px){ .ailinks{grid-template-columns:1fr} }
   .steps30{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin-top:22px}
   .steps30 div{border-top:3px solid var(--emerald-500);padding-top:12px;font-size:13.5px;color:var(--gray-600)}
   .steps30 b{display:block;color:var(--ink-900);font-size:14.5px;margin-bottom:3px}
@@ -246,14 +259,23 @@
   <h2>Configurar tu herramienta una vez</h2>
   <p class="lead">Cinco escenarios, cinco recetas. La diferencia siempre es la misma: <b>qué archivo se adjunta</b> y <b>dónde se pegan las instrucciones permanentes</b>. Hecho una vez, no se repite nunca más.</p>
 
-  <p class="lead" style="margin-top:14px"><b>El camino más corto: un link por AI.</b> Cada entrada le dice a esa AI qué fetchear, en qué orden y qué puede hacer al pie de la letra hoy — sin subir archivos ni pedir permisos, y versionada por separado a medida que cada AI mejora:
-  <a href="ai/chatgpt.md" style="color:var(--lime-500);font-weight:600">ChatGPT</a> ·
-  <a href="ai/claude.md" style="color:var(--lime-500);font-weight:600">Claude</a> ·
-  <a href="ai/gemini.md" style="color:var(--lime-500);font-weight:600">Gemini</a> ·
-  <a href="ai/cursor.md" style="color:var(--lime-500);font-weight:600">Cursor</a> ·
-  <a href="ai/copilot.md" style="color:var(--lime-500);font-weight:600">Copilot</a> ·
-  <a href="ai/generic.md" style="color:var(--lime-500);font-weight:600">cualquier otra</a> —
-  <a href="ai/index.md" style="color:var(--lime-500);font-weight:600">índice completo</a>. Detrás de todas está la misma capa: <a href="ai/assets.json" style="color:var(--lime-500);font-weight:600">assets.json</a> (los 247 assets con URL directa) y <a href="ai/slides.json" style="color:var(--lime-500);font-weight:600">slides.json</a> (los 41 módulos machine-readable).</p>
+  <p class="lead" style="margin-top:14px"><b>El camino más corto: un link por AI.</b> Cada entrada le dice a esa AI qué fetchear, en qué orden y qué puede hacer al pie de la letra hoy — sin subir archivos ni pedir permisos. <b>Copiá la instrucción</b> y pegala donde esa herramienta guarda instrucciones permanentes (GPT, Gem, Project): con eso alcanza.</p>
+
+  <div class="ailinks">
+    <div class="ail" data-ai="chatgpt"><b>ChatGPT</b><span>Custom GPT / Projects</span>
+      <div class="acts"><button class="btn-copy sm" data-copy="inst" type="button">Copiar instrucción</button><button class="btn-copy sm ghost" data-copy="link" type="button">Copiar link</button><a href="ai/chatgpt.md">ver</a></div></div>
+    <div class="ail" data-ai="claude"><b>Claude</b><span>claude.ai / Claude Code / API</span>
+      <div class="acts"><button class="btn-copy sm" data-copy="inst" type="button">Copiar instrucción</button><button class="btn-copy sm ghost" data-copy="link" type="button">Copiar link</button><a href="ai/claude.md">ver</a></div></div>
+    <div class="ail" data-ai="gemini"><b>Gemini</b><span>app / AI Studio / Gems</span>
+      <div class="acts"><button class="btn-copy sm" data-copy="inst" type="button">Copiar instrucción</button><button class="btn-copy sm ghost" data-copy="link" type="button">Copiar link</button><a href="ai/gemini.md">ver</a></div></div>
+    <div class="ail" data-ai="cursor"><b>Cursor</b><span>reglas del proyecto</span>
+      <div class="acts"><button class="btn-copy sm" data-copy="inst" type="button">Copiar instrucción</button><button class="btn-copy sm ghost" data-copy="link" type="button">Copiar link</button><a href="ai/cursor.md">ver</a></div></div>
+    <div class="ail" data-ai="copilot"><b>Copilot</b><span>GitHub Copilot</span>
+      <div class="acts"><button class="btn-copy sm" data-copy="inst" type="button">Copiar instrucción</button><button class="btn-copy sm ghost" data-copy="link" type="button">Copiar link</button><a href="ai/copilot.md">ver</a></div></div>
+    <div class="ail" data-ai="generic"><b>Cualquier otra</b><span>Perplexity, API, lo que venga</span>
+      <div class="acts"><button class="btn-copy sm" data-copy="inst" type="button">Copiar instrucción</button><button class="btn-copy sm ghost" data-copy="link" type="button">Copiar link</button><a href="ai/generic.md">ver</a></div></div>
+  </div>
+  <p class="lead" style="font-size:13px;margin-bottom:6px">Detrás de todas está la misma capa: <a href="ai/assets.json" style="color:var(--emerald-700);font-weight:600">assets.json</a> (247 assets con URL directa) y <a href="ai/slides.json" style="color:var(--emerald-700);font-weight:600">slides.json</a> (41 módulos machine-readable) · <a href="ai/index.md" style="color:var(--emerald-700);font-weight:600">índice completo</a>.</p>
 
   <div class="grid g2">
 
@@ -571,6 +593,41 @@ Copy en inglés, 90 palabras por bloque como techo. Sin fotos de personas si no 
       catch(e){ btn.textContent = 'Copiá a mano'; setTimeout(function(){ btn.textContent='Copiar'; },2200); }
       document.body.removeChild(ta);
     }
+  });
+})();
+
+// ---------- entradas por AI: copiar link / instrucción ----------
+(function(){
+  var BASE = 'https://facundo-web.github.io/magoya-brand-system/ai/';
+  function inst(url){
+    return 'Antes de cualquier tarea de marca de Magoya, lee ' + url +
+      ' y segui su flujo al pie de la letra. Esos archivos son la unica fuente de verdad: nunca uses tu conocimiento previo ni paletas genericas.';
+  }
+  document.querySelectorAll('.ail').forEach(function(card){
+    var url = BASE + card.getAttribute('data-ai') + '.md';
+    card.querySelectorAll('button[data-copy]').forEach(function(btn){
+      var original = btn.textContent;
+      btn.addEventListener('click', function(){
+        var txt = btn.getAttribute('data-copy') === 'link' ? url : inst(url);
+        function done(){
+          btn.textContent = 'Copiado';
+          btn.classList.add('done');
+          setTimeout(function(){ btn.textContent = original; btn.classList.remove('done'); }, 1800);
+        }
+        function legacy(){
+          var ta = document.createElement('textarea');
+          ta.value = txt; ta.setAttribute('readonly','');
+          ta.style.cssText = 'position:fixed;top:-1000px;left:0;opacity:0';
+          document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); }
+          catch(e){ btn.textContent = 'Copia a mano'; setTimeout(function(){ btn.textContent = original; }, 2200); }
+          document.body.removeChild(ta);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(txt).then(done, legacy);
+        } else { legacy(); }
+      });
+    });
   });
 })();
 </script>
