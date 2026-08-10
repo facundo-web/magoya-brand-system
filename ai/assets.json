@@ -372,7 +372,7 @@
   {
    "carpeta": "assets/icons",
    "descripcion": "Los 58 íconos de línea del sistema (export de icons.html)",
-   "reglas": "Trazo 2px redondeado, grid 24×24, stroke=currentColor (recoloreables). Sobre oscuro: crema #F6F1EB con UNO destacado en lima. Sobre claro: #161616, el destacado va #009145.",
+   "reglas": "Trazo 2px redondeado, grid 24×24, stroke=currentColor (recoloreables). ATENCION: embebido como <img> currentColor renderiza NEGRO — inlinear el SVG y setear color por CSS, o reemplazar currentColor por el hex. Sobre oscuro: crema #F6F1EB con UNO destacado en lima. Sobre claro: #161616, el destacado va #009145.",
    "archivos": [
     "https://facundo-web.github.io/magoya-brand-system/assets/icons/ai.svg",
     "https://facundo-web.github.io/magoya-brand-system/assets/icons/arrow.svg",

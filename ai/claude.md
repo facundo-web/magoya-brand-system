@@ -1,6 +1,6 @@
 # Magoya Brand — entrada para Claude (claude.ai / Claude Code / API)
 
-**Versión 1.0 · 2026-08-10** · Punto de entrada de la marca Magoya para Claude. Se versiona por separado de las otras AIs: cuando Claude gane capacidades nuevas, esta entrada se actualiza sin tocar las demás (changelog al pie).
+**Versión 1.1 · 2026-08-10** · Punto de entrada de la marca Magoya para Claude. Se versiona por separado de las otras AIs: cuando Claude gane capacidades nuevas, esta entrada se actualiza sin tocar las demás (changelog al pie).
 
 Si sos Claude leyendo esto: seguí el flujo de abajo, todas las URLs son públicas y fetcheables sin auth.
 
@@ -10,7 +10,7 @@ Si sos Claude leyendo esto: seguí el flujo de abajo, todas las URLs son públic
 2. **Valores exactos** → https://facundo-web.github.io/magoya-brand-system/tokens.json
 3. **Tokens CSS** (si vas a escribir código) → https://facundo-web.github.io/magoya-brand-system/tokens.css — usá las custom properties, nunca hex sueltos.
 4. **Assets** → https://facundo-web.github.io/magoya-brand-system/ai/assets.json — 247 archivos con URL directa y regla de uso. Los SVGs se leen como texto: el wordmark se usa tal cual, jamás se redibuja.
-5. **Presentaciones** → https://facundo-web.github.io/magoya-brand-system/ai/slides.json — 41 módulos con "cuándo usarlo".
+5. **Presentaciones** → https://facundo-web.github.io/magoya-brand-system/ai/slides.json — 41 módulos con "cuándo usarlo" y `layout_src`: la geometría EXACTA de cada módulo (coordenadas en % de lienzo 100×56.25, conversión pt→px declarada). Reproducí el layout, no lo improvises. Si tu fetch trunca el archivo (~86KB), usá los archivos por familia: `ai/slides/A.json` … `M.json`.
 6. **Antes de entregar** → https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/checklist.md
 
 ## Qué podés hacer al pie de la letra (hoy)
@@ -26,4 +26,5 @@ Si sos Claude leyendo esto: seguí el flujo de abajo, todas las URLs son públic
 
 ## Changelog
 
+- **1.1** (2026-08-10): slides.json ahora trae la geometría exacta de los 41 módulos (`layout_src`) + archivos por familia contra truncamiento de fetch + advertencia currentColor en íconos.
 - **1.0** (2026-08-10): primera versión. Fetch directo como canal principal; artifacts como salida recomendada para piezas visuales.

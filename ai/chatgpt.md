@@ -1,6 +1,6 @@
 # Magoya Brand — entrada para ChatGPT (Custom GPT / Projects)
 
-**Versión 1.0 · 2026-08-10** · Este archivo es el punto de entrada de la marca Magoya para ChatGPT. Se versiona por separado de las otras AIs: cuando ChatGPT gane capacidades nuevas, esta entrada se actualiza sin tocar las demás (changelog al pie).
+**Versión 1.1 · 2026-08-10** · Este archivo es el punto de entrada de la marca Magoya para ChatGPT. Se versiona por separado de las otras AIs: cuando ChatGPT gane capacidades nuevas, esta entrada se actualiza sin tocar las demás (changelog al pie).
 
 Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir permisos adicionales — todas las URLs son públicas.
 
@@ -9,7 +9,7 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 1. **Doctrina** → https://facundo-web.github.io/magoya-brand-system/BRAND.md — todas las reglas de la marca. Si solo vas a leer un archivo, es este.
 2. **Valores exactos** → https://facundo-web.github.io/magoya-brand-system/tokens.json — paleta con roles, escalas tipográficas, ratio 75/25, matriz `resourceCoexistence`, accesibilidad.
 3. **Assets** → https://facundo-web.github.io/magoya-brand-system/ai/assets.json — manifiesto de TODOS los archivos (247): wordmarks, avatares, 58 íconos, ilustraciones, fotos, logos reales de clientes; cada uno con URL directa y su regla de uso.
-4. **Si la pieza es una presentación** → https://facundo-web.github.io/magoya-brand-system/ai/slides.json — los 41 módulos con su "cuándo usarlo", lienzo 1920×1080, margen 7%, escala 126/84/56/42pt.
+4. **Si la pieza es una presentación** → https://facundo-web.github.io/magoya-brand-system/ai/slides.json — los 41 módulos con su "cuándo usarlo" y `layout_src`: la geometría EXACTA de cada módulo. Reproducí el layout, no lo improvises. Si tu fetch trunca el archivo (~86KB), usá los archivos por familia: `ai/slides/A.json` … `M.json`.
 5. **Antes de entregar** → https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/checklist.md — 13 chequeos verificables.
 
 ## Qué podés hacer al pie de la letra (hoy)
@@ -27,4 +27,5 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 
 ## Changelog
 
+- **1.1** (2026-08-10): geometría exacta de los 41 módulos en slides.json + archivos por familia contra truncamiento + advertencia currentColor.
 - **1.0** (2026-08-10): primera versión. Browsing como canal principal, Knowledge como fallback, advertencia de imagen-gen.
