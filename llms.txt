@@ -38,6 +38,7 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 - [.ai/brand-prompt.md](https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/brand-prompt.md): el prompt de sistema canónico y autocontenido (~540 palabras). Pegarlo como system prompt, custom instructions o project instructions y la salida ya sale on-brand sin adjuntar nada más.
 - [.ai/brand-prompt-short.md](https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/brand-prompt-short.md): versión de ~120 palabras para pegar al inicio de un chat suelto.
 - [.ai/checklist.md](https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/checklist.md): 13 chequeos verificables para auditar una pieza generada por IA antes de publicarla.
+- [ai/metodo.md](https://facundo-web.github.io/magoya-brand-system/ai/metodo.md): el método de trabajo obligatorio para piezas con contenido — entender antes de elegir, módulos por criterio (no por defecto), y agentes de copy / diseño / crítica antes de entregar.
 - [AI-INTEGRATION.md](https://facundo-web.github.io/magoya-brand-system/AI-INTEGRATION.md): guía de setup por herramienta (Claude Projects, Claude Code, Claude Design, Custom GPT, Cursor, Copilot, chat genérico) con tabla de verificación y troubleshooting.
 
 ## Manual visual navegable
