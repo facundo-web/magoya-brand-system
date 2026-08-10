@@ -139,13 +139,13 @@
   }
   .bw{filter:grayscale(1) contrast(1.05)}
 
-  /* ---------- banner LinkedIn: foto en flujo normal (no absoluta) con blur sutil; overlays nítidos ---------- */
-  .lnkbn{aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;background:var(--ink-950)}
-  .lnkbn>img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) blur(1.2px);transform:scale(1.04)}
-  .lnkbn .scrim{position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,12,12,.92) 0%, rgba(13,12,12,.72) 46%, rgba(13,12,12,0) 78%)}
-  .lnkbn .tx{position:absolute;left:0;bottom:0;padding:28px 32px;color:var(--cream-50)}
-  .lnkbn .tx img{width:130px}
-  .lnkbn .tx div{font-size:15px;color:var(--cream-200);margin-top:8px}
+  /* ---------- banner LinkedIn: panel sólido con lockup + foto limpia (sin scrim sobre el print de la remera) ---------- */
+  .lnkbn{aspect-ratio:4/1;border-radius:var(--radius-lg);overflow:hidden;position:relative;display:flex;background:var(--ink-950)}
+  .lnkbn .panel{width:36%;flex-shrink:0;display:flex;flex-direction:column;justify-content:center;padding:24px 30px 24px 37px;color:var(--cream-50)}
+  .lnkbn .panel img{width:130px}
+  .lnkbn .panel div{font-size:14px;color:var(--cream-200);margin-top:8px}
+  .lnkbn .pw2{flex:1;min-width:0;overflow:hidden}
+  .lnkbn .pw2 img{display:block;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) blur(1.2px);transform:scale(1.04)}
   .lnkbn .rule{position:absolute;left:0;top:0;bottom:0;width:7px;background:var(--emerald-500)}
   .accent-bar{position:absolute;left:18px;bottom:44px;z-index:2;width:52px;height:8px;background:var(--lime-500);border-radius:4px}
 
@@ -1018,30 +1018,27 @@
         <span style="display:inline-block;background:var(--lime-500);color:var(--ink-900);font-size:13px;font-weight:700;padding:9px 16px;border-radius:var(--radius-btn);margin-top:14px">Swipe up</span></div></div>
     <div style="display:flex;flex-direction:column;gap:20px;min-width:0">
       <div class="lnkbn">
-        <img src="assets/photos/cami-agtech-bw.jpg" alt="Camila López Colmano — hombros y remera de Magoya" style="object-position:center 72%">
-        <div class="scrim"></div>
-        <div class="tx">
+        <div class="panel">
           <img src="assets/magoya-wordmark-cream.svg" alt="Magoya">
           <div>Your Digital Product Strategy and Development Partner</div></div>
+        <div class="pw2"><img src="assets/photos/cami-agtech-bw.jpg" alt="Camila López Colmano — hombros y remera de Magoya" style="object-position:center 68%"></div>
         <span class="rule"></span></div>
       <div class="lnkbn">
-        <img src="assets/photos/leo-dopacio-bw.jpg" alt="Leo Dopacio — hombros y remera de Magoya" style="object-position:center 66%">
-        <div class="scrim"></div>
-        <div class="tx">
+        <div class="panel">
           <img src="assets/magoya-wordmark-cream.svg" alt="Magoya">
           <div>Your Digital Product Strategy and Development Partner</div></div>
+        <div class="pw2"><img src="assets/photos/leo-dopacio-bw.jpg" alt="Leo Dopacio — hombros y remera de Magoya" style="object-position:center 64%"></div>
         <span class="rule"></span></div>
       <div class="lnkbn">
-        <img src="assets/photos/varu-baldi-bw.jpg" alt="Varina Baldi — hombros y remera de Magoya" style="object-position:center 60%">
-        <div class="scrim"></div>
-        <div class="tx">
+        <div class="panel">
           <img src="assets/magoya-wordmark-cream.svg" alt="Magoya">
           <div>Your Digital Product Strategy and Development Partner</div></div>
+        <div class="pw2"><img src="assets/photos/varu-baldi-bw.jpg" alt="Varina Baldi — hombros y remera de Magoya" style="object-position:center 60%"></div>
         <span class="rule"></span></div>
       <div style="display:flex;gap:20px;align-items:center">
         <img src="assets/avatars/avatar-face.svg" alt="Avatar de perfil" style="width:84px;border-radius:50%">
         <img src="assets/avatars/avatar-m.svg" alt="Avatar m" style="width:84px;border-radius:50%">
-        <p class="cap" style="max-width:340px">Avatar de perfil: la <b>cara</b> para redes de comunidad (IG, X), la <b>m</b> para canales corporativos (LinkedIn). <b>Banner de LinkedIn:</b> cuerpo en B&N con <b>blur sutil</b> — hombros y cuello reconocibles como persona, sin mostrar la cara, y el <b>wordmark de la remera siempre en cuadro</b> — + scrim negro degradado hacia la derecha + wordmark crema y texto <b>siempre nítidos</b> por encima + filete verde digital al borde. Tres personas reales, misma receta.</p></div></div></div>
+        <p class="cap" style="max-width:340px">Avatar de perfil: la <b>cara</b> para redes de comunidad (IG, X), la <b>m</b> para canales corporativos (LinkedIn). <b>Banner de LinkedIn:</b> panel negro sólido a la izquierda con wordmark crema y tagline <b>siempre nítidos</b> + foto limpia a la derecha — cuerpo en B&N con blur sutil, hombros y cuello reconocibles como persona sin mostrar la cara, y el <b>wordmark de la remera completo y sin nada encima</b> — + filete verde digital al borde. Tres personas reales, misma receta.</p></div></div></div>
 
   <h3>Presentaciones</h3>
   <p class="note" style="max-width:720px">El sistema completo de slides vive en <a href="slides.html" style="color:var(--emerald-700);font-weight:600">módulos de presentación</a>: 41 módulos en 13 familias con la escala del diseñador (126/84/56/42pt), lienzos blanco/sage, un golpe de lima por slide y máximo dos recursos gráficos. Cada módulo se exporta a .pptx. Las piezas comerciales (one-pager, flyers) están en <a href="pieces.html" style="color:var(--emerald-700);font-weight:600">plantillas comerciales</a>.</p>
