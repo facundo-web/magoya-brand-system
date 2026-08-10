@@ -54,6 +54,7 @@ for mod in mods:
 
 slides = {
   'que_es': 'Spec machine-readable de los 41 módulos de presentación de Magoya. El deck kit navegable (con export .pptx) vive en slides.html — esta es la receta para que una AI reconstruya cualquier módulo.',
+  'si_tu_fetch_trunca': f'Este archivo es grande (~86KB). Si tu fetch llega cortado o resumido, usa los archivos por familia (2-10KB, mismo formato): {BASE}/ai/slides/A.json hasta {BASE}/ai/slides/M.json — una familia por archivo, con layout_src completo por modulo.',
   'lienzo': {'ancho_px': 1920, 'alto_px': 1080, 'margen_interior': '7%',
              'fondos': ['blanco #FFFFFF', 'sage #EFF3EE', 'oscuro #133825 (solo apertura/cierre/citas)'],
              'escala_tipografica_pt': [126, 84, 56, 42],
@@ -66,7 +67,6 @@ slides = {
     'dsl_src': dsl_src},
   'familias': fams, 'modulos': mods,
   'fuente_de_verdad': f'{BASE}/slides.html'}
-slides['si_tu_fetch_trunca'] = f'Este archivo es grande. Si tu fetch llega cortado, usa los archivos por familia (2-10KB cada uno): {BASE}/ai/slides/A.json ... M.json — mismo formato, una familia por archivo.'
 json.dump(slides, open('ai/slides.json','w'), ensure_ascii=False, indent=1)
 os.makedirs('ai/slides', exist_ok=True)
 for fam in fams:
