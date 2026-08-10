@@ -21,6 +21,17 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 - [tokens.json](https://facundo-web.github.io/magoya-brand-system/tokens.json): todos los valores exactos con su rol y sus reglas de accesibilidad — paleta completa, ratio de uso por pieza, escalas tipográficas (incluida la de slides en pt), espaciado, radios, layouts de export, la matriz `resourceCoexistence` de qué recursos gráficos pueden convivir, y las rutas de assets (con la lista de recursos retirados).
 - [tokens.css](https://facundo-web.github.io/magoya-brand-system/tokens.css): los mismos tokens como CSS custom properties en dos capas (primitivos y semánticos) con 4 temas: `default` (verde profundo), `light` (crema), `paper` (editorial) y `studio` (blanco + negro + lima, el de slides y marketing). Usar esto al escribir código.
 - [README.md](https://facundo-web.github.io/magoya-brand-system/README.md): mapa del repositorio, orden de lectura recomendado y árbol de la carpeta `assets/`.
+- [ai/assets.json](https://facundo-web.github.io/magoya-brand-system/ai/assets.json): manifiesto de TODOS los assets (247 archivos) con URL directa y regla de uso por carpeta — wordmarks, avatares, los 58 íconos del sistema como SVGs individuales (`assets/icons/`), ilustraciones, fotos, logos reales de clientes y stack. Pages no lista directorios: este manifiesto es la única forma de enumerar los assets.
+- [ai/slides.json](https://facundo-web.github.io/magoya-brand-system/ai/slides.json): los 41 módulos de presentación machine-readable — familia, nombre, "cuándo usarlo", lienzo 1920×1080 con margen 7% y escala 126/84/56/42pt.
+
+## Entrada por AI (un link por herramienta, versionadas por separado)
+
+- [ai/chatgpt.md](https://facundo-web.github.io/magoya-brand-system/ai/chatgpt.md): ChatGPT (Custom GPT / Projects) — flujo por browsing, sin permisos.
+- [ai/claude.md](https://facundo-web.github.io/magoya-brand-system/ai/claude.md): Claude (claude.ai / Claude Code / API).
+- [ai/gemini.md](https://facundo-web.github.io/magoya-brand-system/ai/gemini.md): Gemini (app / AI Studio / Gems).
+- [ai/cursor.md](https://facundo-web.github.io/magoya-brand-system/ai/cursor.md): Cursor.
+- [ai/copilot.md](https://facundo-web.github.io/magoya-brand-system/ai/copilot.md): GitHub Copilot.
+- [ai/generic.md](https://facundo-web.github.io/magoya-brand-system/ai/generic.md): cualquier otra AI con browsing.
 
 ## Prompts y checklist listos para usar
 

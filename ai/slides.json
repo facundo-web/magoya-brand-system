@@ -1,0 +1,299 @@
+{
+ "que_es": "Spec machine-readable de los 41 módulos de presentación de Magoya. El deck kit navegable (con export .pptx) vive en slides.html — esta es la receta para que una AI reconstruya cualquier módulo.",
+ "lienzo": {
+  "ancho_px": 1920,
+  "alto_px": 1080,
+  "margen_interior": "7%",
+  "fondos": [
+   "blanco #FFFFFF",
+   "sage #EFF3EE",
+   "oscuro #133825 (solo apertura/cierre/citas)"
+  ],
+  "escala_tipografica_pt": [
+   126,
+   84,
+   56,
+   42
+  ],
+  "reglas": [
+   "un golpe de lima #A2FF00 por slide como máximo",
+   "máximo dos recursos gráficos además de la tipografía",
+   "wordmark chico arriba-izquierda en slides interiores"
+  ]
+ },
+ "familias": [
+  {
+   "id": "A",
+   "nombre": "A · Apertura",
+   "que_cubre": "statements, agenda y divisores de sección"
+  },
+  {
+   "id": "B",
+   "nombre": "B · Servicios & cards",
+   "que_cubre": "modelos de engagement y capacidades"
+  },
+  {
+   "id": "C",
+   "nombre": "C · Cifras",
+   "que_cubre": "stats, métricas al palo, números que se leen de lejos"
+  },
+  {
+   "id": "D",
+   "nombre": "D · Gráficos",
+   "que_cubre": "barras, barras agrupadas, líneas y progreso"
+  },
+  {
+   "id": "E",
+   "nombre": "E · Listas & tablas",
+   "que_cubre": "método, checklists y escenarios de inversión"
+  },
+  {
+   "id": "F",
+   "nombre": "F · Proceso",
+   "que_cubre": "timelines, método, journey de actores y artefactos"
+  },
+  {
+   "id": "G",
+   "nombre": "G · Casos de éxito",
+   "que_cubre": "estructura challenge → equipo → adaptación → resultados"
+  },
+  {
+   "id": "H",
+   "nombre": "H · Fotografía",
+   "que_cubre": "aéreas de campo a sangre, scrim y tiras"
+  },
+  {
+   "id": "I",
+   "nombre": "I · Ilustración",
+   "que_cubre": "personajes planos recortados por un borde"
+  },
+  {
+   "id": "J",
+   "nombre": "J · Personas",
+   "que_cubre": "quotes y equipo — retratos siempre en B&amp;N"
+  },
+  {
+   "id": "K",
+   "nombre": "K · Tecnología & AI",
+   "que_cubre": "stack de partners y capacidades de AI"
+  },
+  {
+   "id": "L",
+   "nombre": "L · Clientes",
+   "que_cubre": "logo wall — logos reales, siempre en gris"
+  },
+  {
+   "id": "M",
+   "nombre": "M · Portada & cierre",
+   "que_cubre": "covers y next step con CTA"
+  }
+ ],
+ "modulos": [
+  {
+   "id": "A1",
+   "nombre": "Statement hero (126pt)",
+   "cuando_usarlo": "primera slide después de la portada, o para abrir un bloque con una sola idea. Una frase, nada más. La frase que carga el sentido va en lima."
+  },
+  {
+   "id": "A2",
+   "nombre": "Título + bajada (2 columnas)",
+   "cuando_usarlo": "cuando el statement necesita una aclaración de contexto. El display manda; la bajada no pasa de tres líneas."
+  },
+  {
+   "id": "A3",
+   "nombre": "Agenda / índice",
+   "cuando_usarlo": "slide 2 de todo deck de más de 10 slides. Se repite antes de cada bloque moviendo la fila en lima a la sección que arranca."
+  },
+  {
+   "id": "A4",
+   "nombre": "Divisor de sección (paño de semicírculos al corte)",
+   "cuando_usarlo": "respiro entre bloques. El paño nace del borde inferior y se corta contra los tres bordes de la pieza — nunca flota en el aire. Número en lima, título en crema."
+  },
+  {
+   "id": "A5",
+   "nombre": "Título + ícono semántico grande",
+   "cuando_usarlo": "abrir un capítulo temático. El ícono"
+  },
+  {
+   "id": "B1",
+   "nombre": "3 cards de servicio con ícono semántico (sage)",
+   "cuando_usarlo": "presentar los tres modelos de trabajo. El ícono en lima marca el modelo que estás proponiendo — ése es el golpe de lima de la slide."
+  },
+  {
+   "id": "B2",
+   "nombre": "3 boxes de modelo comercial (uno destacado en verde profundo)",
+   "cuando_usarlo": "cuando hay que comparar cómo se factura cada modelo. La caja oscura es la recomendada; el resto queda en sage."
+  },
+  {
+   "id": "B3",
+   "nombre": "Grilla de capacidades 2×3 con iconografía semántica",
+   "cuando_usarlo": "resumir qué hace el equipo sin párrafos. Un ícono del set agro por capacidad, texto de una línea. El destacado va en lima."
+  },
+  {
+   "id": "C1",
+   "nombre": "Título + grilla de 4 stats",
+   "cuando_usarlo": "credenciales de la compañía. Cuatro cifras, cada una con un descriptor de una línea. Nunca más de cuatro en esta grilla."
+  },
+  {
+   "id": "C2",
+   "nombre": "Data hero — 3 métricas de producto (sage)",
+   "cuando_usarlo": "resultado de un producto puntual. El sufijo (k, ×, %) va en verde digital para que la cifra respire."
+  },
+  {
+   "id": "C3",
+   "nombre": "Porcentaje al palo — una cifra gigante (44cqw ≈ 65% del ancho)",
+   "cuando_usarlo": "cuando el dato es el argumento. La cifra ocupa ~70% del slide y no comparte protagonismo con nada. Lima como display sobre verde profundo."
+  },
+  {
+   "id": "C4",
+   "nombre": "Tres cifras grandes en línea (15cqw)",
+   "cuando_usarlo": "cuando tres datos cuentan una sola historia. Un descriptor corto abajo de cada uno y una regla lima para anclar el bloque."
+  },
+  {
+   "id": "D1",
+   "nombre": "Barras simples (una serie, última barra en lima)",
+   "cuando_usarlo": "una sola serie temporal. La barra en lima es el período que querés que se recuerde; el resto en verde profundo."
+  },
+  {
+   "id": "D2",
+   "nombre": "Barras agrupadas (dos series + leyenda en chips)",
+   "cuando_usarlo": "comparar dos cohortes o dos escenarios en el mismo eje. Máximo dos series y cuatro grupos: más que eso deja de leerse en pantalla."
+  },
+  {
+   "id": "D3",
+   "nombre": "Gráfico de líneas (serie principal + baseline punteada)",
+   "cuando_usarlo": "tendencia larga. La serie de Magoya va sólida en verde profundo con el último punto en lima; el baseline queda punteado en gris."
+  },
+  {
+   "id": "D4",
+   "nombre": "Donut + barras de progreso (sage)",
+   "cuando_usarlo": "una proporción principal más dos o tres avances secundarios. El donut lleva la cifra adentro; una sola barra va en lima."
+  },
+  {
+   "id": "E1",
+   "nombre": "Lista numerada con fila destacada (lima)",
+   "cuando_usarlo": "secuencias de 4 a 5 pasos. La fila en lima es el paso donde está el cliente hoy — se mueve según la conversación."
+  },
+  {
+   "id": "E2",
+   "nombre": "Checklist en dos columnas",
+   "cuando_usarlo": "argumentos de diferenciación. Tres ítems por columna como máximo, cada uno de una línea. El check va en verde digital."
+  },
+  {
+   "id": "E3",
+   "nombre": "Tabla comparativa de scope — Lean vs Recommended",
+   "cuando_usarlo": "primera de las dos slides de escenarios de inversión:"
+  },
+  {
+   "id": "E4",
+   "nombre": "Escenarios de inversión — timing + números",
+   "cuando_usarlo": "segunda slide de escenarios:"
+  },
+  {
+   "id": "F1",
+   "nombre": "Timeline horizontal de 5 etapas (etapa activa en lima)",
+   "cuando_usarlo": "mostrar dónde arranca y dónde termina el trabajo. Cinco hitos como máximo; el nodo lima es el que se está negociando."
+  },
+  {
+   "id": "F2",
+   "nombre": "Método en 4 columnas — Discover · Align · Execute · Learn",
+   "cuando_usarlo": "explicar el método propio con una frase por fase. La fase Execute lleva el golpe de lima porque es donde vive el equipo embebido."
+  },
+  {
+   "id": "F3",
+   "nombre": "Journey de actores y plataformas (swimlanes)",
+   "cuando_usarlo": "mostrar la interacción entre personas y sistemas. Un carril por actor, una etapa por columna, celdas vacías cuando el actor no participa. Nunca llenar la grilla entera: eso es el \"bingo\" que hay que evitar."
+  },
+  {
+   "id": "F4",
+   "nombre": "Artefactos de proceso (wireframe · prototipo · output de discovery)",
+   "cuando_usarlo": "cuando hay que mostrar"
+  },
+  {
+   "id": "G1",
+   "nombre": "Caso estructurado — challenge · team · adaptation · results",
+   "cuando_usarlo": "el caso de éxito canónico. Los chips dejan visibles el"
+  },
+  {
+   "id": "G2",
+   "nombre": "Caso en resultados — antes / después",
+   "cuando_usarlo": "variante corta del caso, para cuando el deck ya explicó el contexto. Se usa alternada con G1 para que dos casos seguidos no se vean iguales."
+  },
+  {
+   "id": "H1",
+   "nombre": "Foto a sangre a la izquierda + texto a la derecha",
+   "cuando_usarlo": "abrir un bloque de contexto de mercado. La foto va a sangre por tres bordes y el texto respira en el lienzo blanco — nunca texto encima de la foto en esta variante."
+  },
+  {
+   "id": "H2",
+   "nombre": "Foto a sangre a la derecha + texto a la izquierda (sage)",
+   "cuando_usarlo": "el espejo de H1, para alternar ritmo cuando hay dos slides de foto seguidas. Lienzo sage para diferenciarla."
+  },
+  {
+   "id": "H3",
+   "nombre": "Foto de fondo completo + scrim verde + statement",
+   "cuando_usarlo": "statement de impacto a mitad de deck. El scrim verde profundo 55→86% es obligatorio cuando hay texto encima; es el único degradado permitido."
+  },
+  {
+   "id": "H4",
+   "nombre": "Tira de 3 fotos + título",
+   "cuando_usarlo": "mostrar rango geográfico o de cultivos sin caer en un collage. Tres aéreas, mismo alto, un rótulo por foto. Sin texto encima de las imágenes."
+  },
+  {
+   "id": "I1",
+   "nombre": "Personaje + display al palo",
+   "cuando_usarlo": "statement conceptual sin foto. El personaje se recorta contra el borde derecho, ocupa ~47% del ancho y va sobre lienzo plano —"
+  },
+  {
+   "id": "I2",
+   "nombre": "Personaje a la izquierda + dato al palo (sage)",
+   "cuando_usarlo": "espejo de I1 para alternar el lado. El texto siempre va del lado opuesto al personaje; la cifra hace de display."
+  },
+  {
+   "id": "J1",
+   "nombre": "Quote destacada en card (sage)",
+   "cuando_usarlo": "testimonio con nombre y rol. La regla lima abajo del texto es el golpe de color; la card nunca lleva foto además del texto."
+  },
+  {
+   "id": "J2",
+   "nombre": "Quote sobre foto B&N + scrim",
+   "cuando_usarlo": "cuando el testimonio tiene que poner cara. Retrato en B&amp;N a sangre, scrim verde profundo y la frase que carga el sentido en lima."
+  },
+  {
+   "id": "J3",
+   "nombre": "Equipo — retratos B&N + rol",
+   "cuando_usarlo": "presentar el pod concreto de la propuesta, con nombre y rol reales. Los retratos van siempre en B&amp;N."
+  },
+  {
+   "id": "K1",
+   "nombre": "Stack tecnológico por capa (logos reales en gris)",
+   "cuando_usarlo": "validación técnica frente a un CTO. Logos reales de"
+  },
+  {
+   "id": "K2",
+   "nombre": "Capacidades de AI (logos de modelos + qué hacemos con ellos)",
+   "cuando_usarlo": "cuando la conversación entra en AI y hay que ser explícito. Cada fila nombra una capacidad concreta, no \"AI-powered\". Los logos de"
+  },
+  {
+   "id": "L1",
+   "nombre": "Logo wall de clientes (12 logos, grilla pareja)",
+   "cuando_usarlo": "prueba social después de la portada o antes del cierre. Logos"
+  },
+  {
+   "id": "M1",
+   "nombre": "Portada — aérea de campo + scrim verde",
+   "cuando_usarlo": "portada por defecto. Wordmark crema arriba a la izquierda, chip de contexto a la derecha, display abajo. El scrim es obligatorio: sin él el texto no lee."
+  },
+  {
+   "id": "M2",
+   "nombre": "Portada alternativa — verde profundo + paño al corte",
+   "cuando_usarlo": "cuando no hay una foto que aporte, o cuando el deck ya abre con foto y hace falta contraste. El paño nace del borde derecho y se corta contra él."
+  },
+  {
+   "id": "M3",
+   "nombre": "Cierre / next step con CTA + flecha a mano",
+   "cuando_usarlo": "última slide, siempre. Tres próximos pasos concretos con fecha y un solo CTA. La flecha a mano nace del texto y su punta cae sobre el botón — una sola marca por slide."
+  }
+ ],
+ "fuente_de_verdad": "https://facundo-web.github.io/magoya-brand-system/slides.html"
+}
