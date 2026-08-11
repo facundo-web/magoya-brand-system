@@ -22,7 +22,7 @@ Guía de setup, herramienta por herramienta. El objetivo es que cualquier IA que
 |---|---|---|---|
 | **Claude Projects** (claude.ai) | `.ai/presets/claude-project-instructions.md` como project instructions + `BRAND.md`, `tokens.json`, `tokens.css` en Project knowledge | Project settings → instructions; "Add content" → files | Preguntá *"¿qué hex uso para un CTA sobre fondo blanco y por qué no el lima?"* → tiene que responder lima `#A2FF00` de fondo con texto `#161616`, y explicar que el lima como **texto** sobre claro está prohibido (1.25:1) |
 | **Claude Code** | `.ai/presets/claude-code-CLAUDE.md` como `CLAUDE.md` del repo (o `~/.claude/CLAUDE.md`, o `.claude/rules/magoya-brand.md` con `paths:`) | Raíz del repo | Corré `/context` y confirmá que aparece bajo **Memory files**. Después pedí un botón: tiene que salir `border-radius:10px`, nunca pill |
-| **Claude Design** (claude.ai/design) | El repo `facundo-web/magoya-brand-system` como fuente del design system, o `/design-sync` desde Claude Code apuntando a esta carpeta | Onboarding de Claude Design → "Link a code repository"; o `/design-sync` | Pedí una landing y revisá que use Manrope y los hex de `tokens.css`. Claude Design chequea su propio output contra el design system importado |
+| **Claude Design** (claude.ai/design) | El repo `magoya/magoya-brand-system` como fuente del design system, o `/design-sync` desde Claude Code apuntando a esta carpeta | Onboarding de Claude Design → "Link a code repository"; o `/design-sync` | Pedí una landing y revisá que use Manrope y los hex de `tokens.css`. Claude Design chequea su propio output contra el design system importado |
 | **Custom GPT** (ChatGPT) | `.ai/presets/custom-gpt-instructions.md` en Instructions + `BRAND.md` y `tokens.json` en Knowledge | GPTs → Create → Configure | Pedí un carrusel y contá emojis: tienen que ser cero (salvo manitos hacia un CTA o banderas) |
 | **ChatGPT Projects** | Mismo texto en Project instructions + los mismos archivos como referencia | Project settings (los tres puntos arriba a la derecha) | Igual que arriba |
 | **Cursor** | `.ai/presets/cursor-rule.mdc` como `.cursor/rules/magoya-brand.mdc` (o `.cursorrules` legacy) | Raíz del repo | Escribí un componente y mirá si usa `var(--color-energy)` o hex sueltos random |
@@ -61,7 +61,7 @@ Claude Design construye un design system para el equipo leyendo tu código y tus
 
 Dos caminos, en orden de preferencia:
 
-- **Repo de GitHub**: en el onboarding, linkeá `facundo-web/magoya-brand-system`. Lo que hace que esto funcione bien es `tokens.css`: dos capas de custom properties con roles explícitos y 4 temas. Claude Design extrae de ahí la paleta, la tipografía y los patrones de componentes.
+- **Repo de GitHub**: en el onboarding, linkeá `magoya/magoya-brand-system`. Lo que hace que esto funcione bien es `tokens.css`: dos capas de custom properties con roles explícitos y 4 temas. Claude Design extrae de ahí la paleta, la tipografía y los patrones de componentes.
 - **`/design-sync` desde Claude Code**: parado en esta carpeta, corré `/design-sync`. Trae el design system local al proyecto de Claude Design.
 
 Al generar, Claude Design construye con los componentes del design system real y **chequea su propio output contra él antes de mostrártelo**. Si el equipo es Enterprise, un admin tiene que habilitarlo en Organization settings (viene apagado), y el rol *Claude Design Admin* permite aprobar un sistema estándar y bloquear ediciones.
@@ -96,7 +96,7 @@ Qué esperar: buen copy y buen HTML/CSS. Si generás imágenes, el modelo de ima
 ### 7. Chat genérico (Gemini, Perplexity, un LLM por API, un chat nuevo)
 
 - **Si la herramienta navega**: primer mensaje →
-  > Leé https://facundo-web.github.io/magoya-brand-system/llms.txt y seguí ese sistema de diseño en todo lo que generes en esta conversación. Empezá confirmando las tres reglas de color.
+  > Leé https://magoya.github.io/magoya-brand-system/llms.txt y seguí ese sistema de diseño en todo lo que generes en esta conversación. Empezá confirmando las tres reglas de color.
 - **Si no navega**: pegá [`.ai/brand-prompt-short.md`](.ai/brand-prompt-short.md) (120 palabras) o [`.ai/brand-prompt.md`](.ai/brand-prompt.md) (~500 palabras, todas las prohibiciones) como primer mensaje.
 - **Por API**: `.ai/brand-prompt.md` va como `system`. Es autocontenido a propósito: no depende de ningún adjunto.
 

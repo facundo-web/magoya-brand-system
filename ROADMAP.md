@@ -2,7 +2,7 @@
 
 > Única lista de pendientes y decisiones del sistema. Si algo no está acá, no existe.
 > **Última actualización:** 2026-08-04 · **Versión del sistema:** v1.1 (+ Ronda 4 aplicada)
-> **Live:** https://facundo-web.github.io/magoya-brand-system/ · **Repo:** `facundo-web/magoya-brand-system` (público)
+> **Live:** https://magoya.github.io/magoya-brand-system/ · **Repo:** `magoya/magoya-brand-system` (público)
 > **Local:** `/Users/facu/Claude/brand-system/` · **Proyecto hermano:** `/Users/facu/Claude/magoya-studio/` → facundo-web.github.io/magoya-studio
 
 ---

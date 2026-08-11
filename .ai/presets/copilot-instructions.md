@@ -17,7 +17,7 @@ Este comentario HTML es para vos; podés borrarlo o dejarlo, Copilot lo ignora.
 
 # Magoya — Design System
 
-Magoya es un estudio de estrategia y desarrollo de producto digital para agribusiness (AgTech). Toda UI, pieza y copy de este repo sigue el brand system: https://facundo-web.github.io/magoya-brand-system/ (`BRAND.md` + `tokens.json` + `tokens.css`).
+Magoya es un estudio de estrategia y desarrollo de producto digital para agribusiness (AgTech). Toda UI, pieza y copy de este repo sigue el brand system: https://magoya.github.io/magoya-brand-system/ (`BRAND.md` + `tokens.json` + `tokens.css`).
 
 ## Color
 

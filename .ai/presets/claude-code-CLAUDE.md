@@ -25,10 +25,10 @@ Estos comentarios HTML se descartan antes de entrar al contexto: no gastan token
 Magoya es un estudio de estrategia y desarrollo de producto digital para agribusiness (AgTech). Todo output visual, de UI o de copy sigue estas reglas.
 
 **Fuente de verdad completa** (leela con WebFetch cuando necesites un detalle que no esté acá):
-- Doctrina: https://facundo-web.github.io/magoya-brand-system/BRAND.md
-- Valores exactos: https://facundo-web.github.io/magoya-brand-system/tokens.json
-- Custom properties + 4 temas: https://facundo-web.github.io/magoya-brand-system/tokens.css
-- Índice para modelos: https://facundo-web.github.io/magoya-brand-system/llms.txt
+- Doctrina: https://magoya.github.io/magoya-brand-system/BRAND.md
+- Valores exactos: https://magoya.github.io/magoya-brand-system/tokens.json
+- Custom properties + 4 temas: https://magoya.github.io/magoya-brand-system/tokens.css
+- Índice para modelos: https://magoya.github.io/magoya-brand-system/llms.txt
 
 Si el brand system está clonado o vendorizado en este repo, usá `tokens.css` y `BRAND.md` locales antes que las URLs.
 
@@ -82,6 +82,6 @@ Profesional y senior, nunca vendedor; transparente y estructurado; maduro y conf
 
 ## Antes de dar por terminada una pieza
 
-Corré la checklist: https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/checklist.md — y reportá en una línea los hex usados, los golpes de lima y los recursos gráficos.
+Corré la checklist: https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md — y reportá en una línea los hex usados, los golpes de lima y los recursos gráficos.
 
 "AI en campo" es una marca anexa con manual propio (`ai-en-campo.html`): sus reglas nunca se aplican a piezas de Magoya core.

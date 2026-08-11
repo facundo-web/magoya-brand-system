@@ -4,10 +4,10 @@
 
 ## Flujo (en este orden)
 
-1. **Instrucciones del repo**: guardá [copilot-instructions.md](https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/presets/copilot-instructions.md) como `.github/copilot-instructions.md` en el proyecto donde trabajás.
-2. **Tokens en el código**: bajá https://facundo-web.github.io/magoya-brand-system/tokens.css al proyecto — Copilot autocompleta con las custom properties que ve en el árbol.
-3. **Doctrina completa**: https://facundo-web.github.io/magoya-brand-system/BRAND.md (Copilot Chat puede leerla si se la pegás o si está en el workspace).
-4. **Assets**: https://facundo-web.github.io/magoya-brand-system/ai/assets.json — bajá al repo los SVGs que la UI necesite.
+1. **Instrucciones del repo**: guardá [copilot-instructions.md](https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/presets/copilot-instructions.md) como `.github/copilot-instructions.md` en el proyecto donde trabajás.
+2. **Tokens en el código**: bajá https://magoya.github.io/magoya-brand-system/tokens.css al proyecto — Copilot autocompleta con las custom properties que ve en el árbol.
+3. **Doctrina completa**: https://magoya.github.io/magoya-brand-system/BRAND.md (Copilot Chat puede leerla si se la pegás o si está en el workspace).
+4. **Assets**: https://magoya.github.io/magoya-brand-system/ai/assets.json — bajá al repo los SVGs que la UI necesite.
 
 ## Qué podés hacer al pie de la letra (hoy)
 
