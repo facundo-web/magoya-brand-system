@@ -18,7 +18,7 @@ Un link por herramienta. Cada entrada se versiona por separado: cuando una AI ga
 - `ai/assets.json` — manifiesto de los 247 assets con URL directa y regla de uso (incluye los 58 íconos del sistema como SVGs individuales en `assets/icons/`).
 - `ai/slides.json` — los 41 módulos de presentación, machine-readable.
 - `ai/metodo.md` — método de trabajo obligatorio: narrativa primero, módulos por criterio, agentes de copy/diseño/crítica.
-- `.ai/checklist.md` — 13 chequeos antes de entregar.
+- `.ai/checklist.md` — 15 chequeos antes de entregar.
 
 ## Cómo se regenera la capa compartida
 

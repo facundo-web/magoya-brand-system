@@ -1,6 +1,6 @@
 # Método de trabajo — obligatorio para cualquier pieza con contenido
 
-**Versión 1.0 · 2026-08-10** · Este archivo es parte del flujo de todas las entradas por AI. No es opcional: cumplir la marca al pie de la letra es la mitad del trabajo — la otra mitad es buscar la excelencia en cómo se cuenta. Una pieza on-brand con la historia mal contada es una pieza fallida.
+**Versión 1.1 · 2026-08-10** · Este archivo es parte del flujo de todas las entradas por AI. No es opcional: cumplir la marca al pie de la letra es la mitad del trabajo — la otra mitad es buscar la excelencia en cómo se cuenta. Una pieza on-brand con la historia mal contada es una pieza fallida.
 
 ## Fase 1 — Entender antes de elegir
 
@@ -32,11 +32,13 @@ Si tu plataforma soporta subagentes (Claude Code, workflows, etc.), **desplegalo
 
 Antes de entregar, verificá los dos niveles:
 
-- **Técnico**: los 13 chequeos de `.ai/checklist.md`.
+- **Técnico**: los 15 chequeos de `.ai/checklist.md`.
 - **Narrativo**: ¿la historia se entiende leyendo SOLO los títulos, en orden? ¿el dato más fuerte tiene el slide más fuerte? ¿hay algún slide que, si se borra, la historia no pierde nada? (Si sí: borralo.)
 
 Entregá junto con la pieza una nota corta de decisiones: qué módulos elegiste y por qué, y qué encontró el crítico.
 
 ## Changelog
+
+- **1.1** (2026-08-10): el checklist técnico pasa a 15 chequeos (chips solo texto sin punto · espaciado en escala y un eje de alineación).
 
 - **1.0** (2026-08-10): primera versión — entender antes de elegir, módulos por criterio, agentes de copy/diseño/crítica, doble checklist de entrega.

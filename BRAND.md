@@ -105,7 +105,9 @@ Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. *
 
 ## 9. Componentes
 
-- **Botón ≠ chip.** Botón: rectángulo radio 10px, fondo sólido (lima = CTA primario, negro, verde profundo, ghost). Chip: **pill outline** — borde y texto del mismo color, fondo transparente. Nunca chip sólido ni botón pill.
+- **Botón ≠ chip.** Botón: rectángulo radio 10px, fondo sólido (lima = CTA primario, negro, verde profundo, ghost). Chip: **pill outline** — borde y texto del mismo color, fondo transparente. Nunca chip sólido ni botón pill. **El chip lleva SOLO texto** (uppercase, tracking .1em): nunca un punto/bullet delante, nunca un ícono adentro — la pill ya delimita, el punto es ruido (acuerdo explícito del equipo).
+- **Espaciado sistematizado.** Todo margin/padding/gap sale de la escala base-4 de `tokens.json` (4/8/12/16/24/32/48/64/96) — nunca valores arbitrarios. Aire entre bloques ≥24; dentro de un componente 8–16. Paddings canónicos: botón 13px/26px, chip 6px/15px (spec completa en `components` de `tokens.json`).
+- **Alineación.** Una pieza tiene UN eje principal (por defecto, izquierda): todos los bloques de texto arrancan ahí. Los elementos de una fila comparten centro vertical y un gap único (8 o 12). Padding interno simétrico, nunca 4 valores distintos.
 - Estados: hover (lima→`#8BDB00`, resto brightness), focus ring `rgba(0,222,104,.45)` sin blur.
 - **Cards: siempre en mosaico** — misma grilla, mismos aires, alturas que calzan; nunca sueltas. Tipos: hiring (negro + lima), quote (foto B&N + cita), stat (número 800 −3%). El contacto dentro de una card dark es un **link en lima**, no un botón (los botones viven fuera de las cards).
 - ✗ **El monograma "m" circular NO va en cards.** El avatar "m" es identidad de canal (favicon, app icon, perfil corporativo) y pie de papelería — dentro de una card compite con el wordmark y agrega un segundo logo a la pieza. En una card, la marca es el wordmark.

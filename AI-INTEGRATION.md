@@ -11,7 +11,7 @@ Guía de setup, herramienta por herramienta. El objetivo es que cualquier IA que
 | [`llms.txt`](llms.txt) | Índice según la convención [llmstxt.org](https://llmstxt.org/): resumen del sistema, las 10 reglas que más se rompen, y links absolutos a cada recurso con una línea de descripción | Cuando la IA puede navegar. Le pegás una URL y entiende el sistema entero |
 | [`.ai/brand-prompt.md`](.ai/brand-prompt.md) | Prompt de sistema canónico, autocontenido (~500 palabras) | Cuando la IA **no** puede navegar ni leer archivos: lo pegás y ya |
 | [`.ai/brand-prompt-short.md`](.ai/brand-prompt-short.md) | Versión de ~120 palabras | Chat suelto, un solo pedido |
-| [`.ai/checklist.md`](.ai/checklist.md) | 13 chequeos verificables | Antes de publicar cualquier cosa que devolvió una IA |
+| [`.ai/checklist.md`](.ai/checklist.md) | 15 chequeos verificables | Antes de publicar cualquier cosa que devolvió una IA |
 | [`.ai/presets/`](.ai/presets/) | Un archivo por herramienta, listo para copiar sin editar | Setup inicial |
 
 ---

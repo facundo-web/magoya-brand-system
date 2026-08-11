@@ -11,7 +11,7 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 3. **Assets** → https://facundo-web.github.io/magoya-brand-system/ai/assets.json — manifiesto de TODOS los archivos (247): wordmarks, avatares, 58 íconos, ilustraciones, fotos, logos reales de clientes; cada uno con URL directa y su regla de uso.
 4. **Si la pieza es una presentación** → https://facundo-web.github.io/magoya-brand-system/ai/slides.json — los 41 módulos con su "cuándo usarlo" y `layout_src`: la geometría EXACTA de cada módulo. Reproducí el layout, no lo improvises. Si tu fetch trunca el archivo (~86KB), usá los archivos por familia: `ai/slides/A.json` … `M.json`.
 5. **Método de trabajo (OBLIGATORIO en piezas con contenido)** → https://facundo-web.github.io/magoya-brand-system/ai/metodo.md — entender antes de elegir, módulo por criterio (no por defecto), y pasadas de copy / diseño / crítica antes de entregar (secuenciales si no tenés subagentes).
-6. **Antes de entregar** → https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/checklist.md — 13 chequeos verificables.
+6. **Antes de entregar** → https://raw.githubusercontent.com/facundo-web/magoya-brand-system/main/.ai/checklist.md — 15 chequeos verificables.
 
 ## Qué podés hacer al pie de la letra (hoy)
 

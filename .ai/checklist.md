@@ -1,6 +1,6 @@
 # Checklist de validación — piezas, código o copy generados por IA
 
-Trece chequeos verificables. Todos tienen que dar **sí** antes de publicar. Si alguno falla, corregí y volvé a correr la lista completa.
+Quince chequeos verificables. Todos tienen que dar **sí** antes de publicar. Si alguno falla, corregí y volvé a correr la lista completa.
 
 | # | Chequeo | Cómo se verifica | Falla si… |
 |---|---|---|---|
@@ -17,6 +17,8 @@ Trece chequeos verificables. Todos tienen que dar **sí** antes de publicar. Si 
 | 11 | **Motivo al corte** | Mirá los bordes del paño de semicírculos | El motivo se ve cortado flotando en el aire en vez de nacer de un borde o de detrás de un objeto. Si convive con un personaje: el paño va al fondo en franja, el personaje al borde opuesto en primer plano, nunca superpuestos |
 | 12 | **Personajes sin rostro y al borde** | Mirá cada personaje ilustrado | Tiene rostro, es monoline o stock, está centrado como clipart, flota entero, está sobre una foto, o usa un color fuera de `#00DE68` `#A2FF00` `#DFDFDF` `#FFC67B` `#161616` |
 | 13 | **Botón vs. chip, y assets reales** | Revisá radios y logos | Un botón es pill o un chip tiene fondo sólido (botón = rect radio 10px, chip = pill outline), o hay logos de clientes inventados/placeholder, o hay un resaltador sólido detrás de texto |
+| 14 | **Chips: solo texto, sin punto** | Mirá cada chip/pill de la pieza | Un chip lleva un punto/bullet (•) delante del texto, un ícono adentro, o texto en sentence case — el chip es SOLO texto uppercase; la pill ya delimita, el punto es ruido |
+| 15 | **Espaciado en escala y un eje** | Extraé los margin/padding/gap y compará contra la escala base-4 de `tokens.json`; mirá el eje de alineación | Hay valores fuera de la escala (5, 10, 14, 18…), bloques a menos de 24 de aire entre sí, más de un eje de alineación en la pieza, filas cuyos elementos no comparten centro vertical, o paddings con 4 valores distintos |
 
 ## Extras según el formato
 
