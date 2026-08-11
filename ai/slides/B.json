@@ -47,5 +47,5 @@
    "layout_src": "SPEC.B3=function(p){\n  var s=[bg(C.sage)].concat(chrome(p),[T('What the pod covers',{x:7.5,y:11.5,w:70,h:7,s:4.4,b:true,tight:true})]);\n  var d=[['escaneo.svg','Discovery','Field immersion with growers and agronomists.',0],\n         ['lote.svg','Product design','Flows built for gloves, dust and low signal.',0],\n         ['chat-ia.svg','Data & AI','Models and copilots on agronomic data.',1],\n         ['satelite.svg','Platform engineering','APIs, pipelines and cloud that hold a season.',0],\n         ['hoja.svg','Agronomy','Agronomists in the pod, not on call.',0],\n         ['tractor.svg','Field validation','Every release tested on real operations.',0]];\n  d.forEach(function(c,i){var col=i%3,row=Math.floor(i/3),x=7.5+col*29.5,y=21+row*13.5;\n    s=s.concat(iconDot(x,y,3.6,c[0],c[3]));\n    s.push(T(c[1],{x:x+5,y:y+.2,w:23,h:3,s:1.75,b:true,tight:true}));\n    s.push(T(c[2],{x:x+5,y:y+3.4,w:23,h:6,s:1.45,c:C.g600,lh:1.3}));});\n  return s;};\n\n/* --- C · cifras --- */;"
   }
  ],
- "dsl_completo_en": "https://magoya.github.io/magoya-brand-system/ai/slides.json"
+ "dsl_completo_en": "https://brand.magoya.com/ai/slides.json"
 }

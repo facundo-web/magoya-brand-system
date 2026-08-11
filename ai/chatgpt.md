@@ -6,11 +6,11 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 
 ## Flujo (en este orden)
 
-1. **Doctrina** → https://magoya.github.io/magoya-brand-system/BRAND.md — todas las reglas de la marca. Si solo vas a leer un archivo, es este.
-2. **Valores exactos** → https://magoya.github.io/magoya-brand-system/tokens.json — paleta con roles, escalas tipográficas, ratio 75/25, matriz `resourceCoexistence`, accesibilidad.
-3. **Assets** → https://magoya.github.io/magoya-brand-system/ai/assets.json — manifiesto de TODOS los archivos (247): wordmarks, avatares, 58 íconos, ilustraciones, fotos, logos reales de clientes; cada uno con URL directa y su regla de uso.
-4. **Si la pieza es una presentación** → https://magoya.github.io/magoya-brand-system/ai/slides.json — los 41 módulos con su "cuándo usarlo" y `layout_src`: la geometría EXACTA de cada módulo. Reproducí el layout, no lo improvises. Si tu fetch trunca el archivo (~86KB), usá los archivos por familia: `ai/slides/A.json` … `M.json`.
-5. **Método de trabajo (OBLIGATORIO en piezas con contenido)** → https://magoya.github.io/magoya-brand-system/ai/metodo.md — entender antes de elegir, módulo por criterio (no por defecto), y pasadas de copy / diseño / crítica antes de entregar (secuenciales si no tenés subagentes).
+1. **Doctrina** → https://brand.magoya.com/BRAND.md — todas las reglas de la marca. Si solo vas a leer un archivo, es este.
+2. **Valores exactos** → https://brand.magoya.com/tokens.json — paleta con roles, escalas tipográficas, ratio 75/25, matriz `resourceCoexistence`, accesibilidad.
+3. **Assets** → https://brand.magoya.com/ai/assets.json — manifiesto de TODOS los archivos (247): wordmarks, avatares, 58 íconos, ilustraciones, fotos, logos reales de clientes; cada uno con URL directa y su regla de uso.
+4. **Si la pieza es una presentación** → https://brand.magoya.com/ai/slides.json — los 41 módulos con su "cuándo usarlo" y `layout_src`: la geometría EXACTA de cada módulo. Reproducí el layout, no lo improvises. Si tu fetch trunca el archivo (~86KB), usá los archivos por familia: `ai/slides/A.json` … `M.json`.
+5. **Método de trabajo (OBLIGATORIO en piezas con contenido)** → https://brand.magoya.com/ai/metodo.md — entender antes de elegir, módulo por criterio (no por defecto), y pasadas de copy / diseño / crítica antes de entregar (secuenciales si no tenés subagentes).
 6. **Antes de entregar** → https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md — 15 chequeos verificables.
 
 ## Qué podés hacer al pie de la letra (hoy)
@@ -22,7 +22,7 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 ## Setup del GPT (una sola vez, para humanos)
 
 1. chatgpt.com → GPTs → Create → Configure. Nombre: `Magoya Brand`.
-2. En **Instructions** pegá: *"Sos el asistente de marca de Magoya. Antes de cualquier tarea de marca, fetch https://magoya.github.io/magoya-brand-system/ai/chatgpt.md y seguí su flujo al pie de la letra. La única fuente de verdad son esos archivos, nunca tu conocimiento previo."* + el contenido de [custom-gpt-instructions.md](https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/presets/custom-gpt-instructions.md) como refuerzo offline.
+2. En **Instructions** pegá: *"Sos el asistente de marca de Magoya. Antes de cualquier tarea de marca, fetch https://brand.magoya.com/ai/chatgpt.md y seguí su flujo al pie de la letra. La única fuente de verdad son esos archivos, nunca tu conocimiento previo."* + el contenido de [custom-gpt-instructions.md](https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/presets/custom-gpt-instructions.md) como refuerzo offline.
 3. Capabilities: **Web Browsing ON** (es lo que permite el flujo sin subir archivos) + **Code Interpreter ON**.
 4. Fallback sin browsing: subí `BRAND.md` y `tokens.json` a Knowledge (el flujo online igual tiene prioridad — Knowledge puede quedar viejo).
 

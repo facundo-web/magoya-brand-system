@@ -1,298 +1,298 @@
 {
  "que_es": "Manifiesto completo de assets del brand system de Magoya. Cada URL es pública y fetcheable sin auth. Antes de usar cualquier asset, leer BRAND.md (reglas) y tokens.json (valores).",
- "doctrina": "https://magoya.github.io/magoya-brand-system/BRAND.md",
- "tokens": "https://magoya.github.io/magoya-brand-system/tokens.json",
+ "doctrina": "https://brand.magoya.com/BRAND.md",
+ "tokens": "https://brand.magoya.com/tokens.json",
  "total_archivos": 247,
  "iconos_sistema": [
   {
    "nombre": "sprout",
    "categoria": "Agro",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/sprout.svg"
+   "url": "https://brand.magoya.com/assets/icons/sprout.svg"
   },
   {
    "nombre": "field",
    "categoria": "Agro",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/field.svg"
+   "url": "https://brand.magoya.com/assets/icons/field.svg"
   },
   {
    "nombre": "leaf",
    "categoria": "Agro",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/leaf.svg"
+   "url": "https://brand.magoya.com/assets/icons/leaf.svg"
   },
   {
    "nombre": "seed",
    "categoria": "Agro",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/seed.svg"
+   "url": "https://brand.magoya.com/assets/icons/seed.svg"
   },
   {
    "nombre": "tractor",
    "categoria": "Agro",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/tractor.svg"
+   "url": "https://brand.magoya.com/assets/icons/tractor.svg"
   },
   {
    "nombre": "sun",
    "categoria": "Agro",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/sun.svg"
+   "url": "https://brand.magoya.com/assets/icons/sun.svg"
   },
   {
    "nombre": "rain",
    "categoria": "Agro",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/rain.svg"
+   "url": "https://brand.magoya.com/assets/icons/rain.svg"
   },
   {
    "nombre": "soil",
    "categoria": "Agro",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/soil.svg"
+   "url": "https://brand.magoya.com/assets/icons/soil.svg"
   },
   {
    "nombre": "screen",
    "categoria": "Producto & UX",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/screen.svg"
+   "url": "https://brand.magoya.com/assets/icons/screen.svg"
   },
   {
    "nombre": "mobile",
    "categoria": "Producto & UX",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/mobile.svg"
+   "url": "https://brand.magoya.com/assets/icons/mobile.svg"
   },
   {
    "nombre": "layout",
    "categoria": "Producto & UX",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/layout.svg"
+   "url": "https://brand.magoya.com/assets/icons/layout.svg"
   },
   {
    "nombre": "flow",
    "categoria": "Producto & UX",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/flow.svg"
+   "url": "https://brand.magoya.com/assets/icons/flow.svg"
   },
   {
    "nombre": "route",
    "categoria": "Producto & UX",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/route.svg"
+   "url": "https://brand.magoya.com/assets/icons/route.svg"
   },
   {
    "nombre": "gear",
    "categoria": "Producto & UX",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/gear.svg"
+   "url": "https://brand.magoya.com/assets/icons/gear.svg"
   },
   {
    "nombre": "search",
    "categoria": "Producto & UX",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/search.svg"
+   "url": "https://brand.magoya.com/assets/icons/search.svg"
   },
   {
    "nombre": "checklist",
    "categoria": "Producto & UX",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/checklist.svg"
+   "url": "https://brand.magoya.com/assets/icons/checklist.svg"
   },
   {
    "nombre": "chart-bars",
    "categoria": "Datos & AI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/chart-bars.svg"
+   "url": "https://brand.magoya.com/assets/icons/chart-bars.svg"
   },
   {
    "nombre": "chart-line",
    "categoria": "Datos & AI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/chart-line.svg"
+   "url": "https://brand.magoya.com/assets/icons/chart-line.svg"
   },
   {
    "nombre": "pie",
    "categoria": "Datos & AI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/pie.svg"
+   "url": "https://brand.magoya.com/assets/icons/pie.svg"
   },
   {
    "nombre": "database",
    "categoria": "Datos & AI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/database.svg"
+   "url": "https://brand.magoya.com/assets/icons/database.svg"
   },
   {
    "nombre": "ai",
    "categoria": "Datos & AI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/ai.svg"
+   "url": "https://brand.magoya.com/assets/icons/ai.svg"
   },
   {
    "nombre": "chip",
    "categoria": "Datos & AI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/chip.svg"
+   "url": "https://brand.magoya.com/assets/icons/chip.svg"
   },
   {
    "nombre": "satellite",
    "categoria": "Datos & AI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/satellite.svg"
+   "url": "https://brand.magoya.com/assets/icons/satellite.svg"
   },
   {
    "nombre": "sensor",
    "categoria": "Datos & AI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/sensor.svg"
+   "url": "https://brand.magoya.com/assets/icons/sensor.svg"
   },
   {
    "nombre": "cloud",
    "categoria": "Plataforma & código",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/cloud.svg"
+   "url": "https://brand.magoya.com/assets/icons/cloud.svg"
   },
   {
    "nombre": "code",
    "categoria": "Plataforma & código",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/code.svg"
+   "url": "https://brand.magoya.com/assets/icons/code.svg"
   },
   {
    "nombre": "plug",
    "categoria": "Plataforma & código",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/plug.svg"
+   "url": "https://brand.magoya.com/assets/icons/plug.svg"
   },
   {
    "nombre": "layers",
    "categoria": "Plataforma & código",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/layers.svg"
+   "url": "https://brand.magoya.com/assets/icons/layers.svg"
   },
   {
    "nombre": "dashboard",
    "categoria": "Plataforma & código",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/dashboard.svg"
+   "url": "https://brand.magoya.com/assets/icons/dashboard.svg"
   },
   {
    "nombre": "link",
    "categoria": "Plataforma & código",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/link.svg"
+   "url": "https://brand.magoya.com/assets/icons/link.svg"
   },
   {
    "nombre": "server",
    "categoria": "Plataforma & código",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/server.svg"
+   "url": "https://brand.magoya.com/assets/icons/server.svg"
   },
   {
    "nombre": "deploy",
    "categoria": "Plataforma & código",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/deploy.svg"
+   "url": "https://brand.magoya.com/assets/icons/deploy.svg"
   },
   {
    "nombre": "target",
    "categoria": "Negocio",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/target.svg"
+   "url": "https://brand.magoya.com/assets/icons/target.svg"
   },
   {
    "nombre": "growth",
    "categoria": "Negocio",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/growth.svg"
+   "url": "https://brand.magoya.com/assets/icons/growth.svg"
   },
   {
    "nombre": "calendar",
    "categoria": "Negocio",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/calendar.svg"
+   "url": "https://brand.magoya.com/assets/icons/calendar.svg"
   },
   {
    "nombre": "doc",
    "categoria": "Negocio",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/doc.svg"
+   "url": "https://brand.magoya.com/assets/icons/doc.svg"
   },
   {
    "nombre": "briefcase",
    "categoria": "Negocio",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/briefcase.svg"
+   "url": "https://brand.magoya.com/assets/icons/briefcase.svg"
   },
   {
    "nombre": "partnership",
    "categoria": "Negocio",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/partnership.svg"
+   "url": "https://brand.magoya.com/assets/icons/partnership.svg"
   },
   {
    "nombre": "globe",
    "categoria": "Negocio",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/globe.svg"
+   "url": "https://brand.magoya.com/assets/icons/globe.svg"
   },
   {
    "nombre": "lock",
    "categoria": "Negocio",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/lock.svg"
+   "url": "https://brand.magoya.com/assets/icons/lock.svg"
   },
   {
    "nombre": "chat",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/chat.svg"
+   "url": "https://brand.magoya.com/assets/icons/chat.svg"
   },
   {
    "nombre": "mail",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/mail.svg"
+   "url": "https://brand.magoya.com/assets/icons/mail.svg"
   },
   {
    "nombre": "phone",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/phone.svg"
+   "url": "https://brand.magoya.com/assets/icons/phone.svg"
   },
   {
    "nombre": "video",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/video.svg"
+   "url": "https://brand.magoya.com/assets/icons/video.svg"
   },
   {
    "nombre": "share",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/share.svg"
+   "url": "https://brand.magoya.com/assets/icons/share.svg"
   },
   {
    "nombre": "heart",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/heart.svg"
+   "url": "https://brand.magoya.com/assets/icons/heart.svg"
   },
   {
    "nombre": "at",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/at.svg"
+   "url": "https://brand.magoya.com/assets/icons/at.svg"
   },
   {
    "nombre": "hashtag",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/hashtag.svg"
+   "url": "https://brand.magoya.com/assets/icons/hashtag.svg"
   },
   {
    "nombre": "bell",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/bell.svg"
+   "url": "https://brand.magoya.com/assets/icons/bell.svg"
   },
   {
    "nombre": "play",
    "categoria": "Comunicación & redes",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/play.svg"
+   "url": "https://brand.magoya.com/assets/icons/play.svg"
   },
   {
    "nombre": "check",
    "categoria": "Sistema / UI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/check.svg"
+   "url": "https://brand.magoya.com/assets/icons/check.svg"
   },
   {
    "nombre": "x",
    "categoria": "Sistema / UI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/x.svg"
+   "url": "https://brand.magoya.com/assets/icons/x.svg"
   },
   {
    "nombre": "arrow",
    "categoria": "Sistema / UI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/arrow.svg"
+   "url": "https://brand.magoya.com/assets/icons/arrow.svg"
   },
   {
    "nombre": "download",
    "categoria": "Sistema / UI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/download.svg"
+   "url": "https://brand.magoya.com/assets/icons/download.svg"
   },
   {
    "nombre": "plus",
    "categoria": "Sistema / UI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/plus.svg"
+   "url": "https://brand.magoya.com/assets/icons/plus.svg"
   },
   {
    "nombre": "star",
    "categoria": "Sistema / UI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/star.svg"
+   "url": "https://brand.magoya.com/assets/icons/star.svg"
   },
   {
    "nombre": "pin",
    "categoria": "Sistema / UI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/pin.svg"
+   "url": "https://brand.magoya.com/assets/icons/pin.svg"
   },
   {
    "nombre": "info",
    "categoria": "Sistema / UI",
-   "url": "https://magoya.github.io/magoya-brand-system/assets/icons/info.svg"
+   "url": "https://brand.magoya.com/assets/icons/info.svg"
   }
  ],
  "carpetas": [
@@ -301,22 +301,22 @@
    "descripcion": "Raíz: wordmarks del logo y motivo de semicírculos",
    "reglas": "El wordmark es LA firma de la marca. Nunca redibujarlo: usar el SVG tal cual. Variantes por fondo: cream sobre oscuro, dark sobre claro.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/badge-envivo.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/doodle-blob.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/doodle-dots.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/doodle-loop.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/doodle-sparkle.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/flourish-arrow.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/flourish-circle.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/flourish-underline.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/magoya-wordmark-animado.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/magoya-wordmark-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/magoya-wordmark-cream-prod.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/magoya-wordmark-cream.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/magoya-wordmark-deep.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/magoya-wordmark-green.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/motif-estratos.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/motif-semis.svg"
+    "https://brand.magoya.com/assets/badge-envivo.svg",
+    "https://brand.magoya.com/assets/doodle-blob.svg",
+    "https://brand.magoya.com/assets/doodle-dots.svg",
+    "https://brand.magoya.com/assets/doodle-loop.svg",
+    "https://brand.magoya.com/assets/doodle-sparkle.svg",
+    "https://brand.magoya.com/assets/flourish-arrow.svg",
+    "https://brand.magoya.com/assets/flourish-circle.svg",
+    "https://brand.magoya.com/assets/flourish-underline.svg",
+    "https://brand.magoya.com/assets/magoya-wordmark-animado.svg",
+    "https://brand.magoya.com/assets/magoya-wordmark-black.svg",
+    "https://brand.magoya.com/assets/magoya-wordmark-cream-prod.svg",
+    "https://brand.magoya.com/assets/magoya-wordmark-cream.svg",
+    "https://brand.magoya.com/assets/magoya-wordmark-deep.svg",
+    "https://brand.magoya.com/assets/magoya-wordmark-green.svg",
+    "https://brand.magoya.com/assets/motif-estratos.svg",
+    "https://brand.magoya.com/assets/motif-semis.svg"
    ]
   },
   {
@@ -324,10 +324,10 @@
    "descripcion": "4 avatares oficiales derivados del wordmark",
    "reglas": "La cara = redes de comunidad (IG, X). La m = canales corporativos (LinkedIn, favicon). Nunca usar el monograma m dentro de cards. No inventar avatares nuevos.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/avatars/avatar-face.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/avatars/avatar-go.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/avatars/avatar-m.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/avatars/avatar-o.svg"
+    "https://brand.magoya.com/assets/avatars/avatar-face.svg",
+    "https://brand.magoya.com/assets/avatars/avatar-go.svg",
+    "https://brand.magoya.com/assets/avatars/avatar-m.svg",
+    "https://brand.magoya.com/assets/avatars/avatar-o.svg"
    ]
   },
   {
@@ -335,18 +335,18 @@
    "descripcion": "Entregables listos: firma de email animada/estática, membrete",
    "reglas": "La firma de email lleva SIEMPRE el wordmark, nunca los avatares.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/doc-footer.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/doc-header.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-ai-en-campo.zip",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-firma-animada.gif",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-firma-estatica.png",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-fotos.zip",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-iconos.zip",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-ilustracion.zip",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-logo-kit.zip",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-logos-clientes.zip",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-manrope.zip",
-    "https://magoya.github.io/magoya-brand-system/assets/downloads/magoya-tokens.zip"
+    "https://brand.magoya.com/assets/downloads/doc-footer.svg",
+    "https://brand.magoya.com/assets/downloads/doc-header.svg",
+    "https://brand.magoya.com/assets/downloads/magoya-ai-en-campo.zip",
+    "https://brand.magoya.com/assets/downloads/magoya-firma-animada.gif",
+    "https://brand.magoya.com/assets/downloads/magoya-firma-estatica.png",
+    "https://brand.magoya.com/assets/downloads/magoya-fotos.zip",
+    "https://brand.magoya.com/assets/downloads/magoya-iconos.zip",
+    "https://brand.magoya.com/assets/downloads/magoya-ilustracion.zip",
+    "https://brand.magoya.com/assets/downloads/magoya-logo-kit.zip",
+    "https://brand.magoya.com/assets/downloads/magoya-logos-clientes.zip",
+    "https://brand.magoya.com/assets/downloads/magoya-manrope.zip",
+    "https://brand.magoya.com/assets/downloads/magoya-tokens.zip"
    ]
   },
   {
@@ -354,19 +354,19 @@
    "descripcion": "Favicons oficiales",
    "reglas": "Avatar m al corte, sin padding extra.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/favicon/favicon-16.png",
-    "https://magoya.github.io/magoya-brand-system/assets/favicon/favicon-180.png",
-    "https://magoya.github.io/magoya-brand-system/assets/favicon/favicon-32.png",
-    "https://magoya.github.io/magoya-brand-system/assets/favicon/favicon-512.png",
-    "https://magoya.github.io/magoya-brand-system/assets/favicon/favicon.svg"
+    "https://brand.magoya.com/assets/favicon/favicon-16.png",
+    "https://brand.magoya.com/assets/favicon/favicon-180.png",
+    "https://brand.magoya.com/assets/favicon/favicon-32.png",
+    "https://brand.magoya.com/assets/favicon/favicon-512.png",
+    "https://brand.magoya.com/assets/favicon/favicon.svg"
    ]
   },
   {
    "carpeta": "assets/font/manrope",
    "descripcion": "Archivos de la fuente",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/font/manrope/Manrope-VariableFont_wght.ttf",
-    "https://magoya.github.io/magoya-brand-system/assets/font/manrope/OFL.txt"
+    "https://brand.magoya.com/assets/font/manrope/Manrope-VariableFont_wght.ttf",
+    "https://brand.magoya.com/assets/font/manrope/OFL.txt"
    ]
   },
   {
@@ -374,64 +374,64 @@
    "descripcion": "Los 58 íconos de línea del sistema (export de icons.html)",
    "reglas": "Trazo 2px redondeado, grid 24×24, stroke=currentColor (recoloreables). ATENCION: embebido como <img> currentColor renderiza NEGRO — inlinear el SVG y setear color por CSS, o reemplazar currentColor por el hex. Sobre oscuro: crema #F6F1EB con UNO destacado en lima. Sobre claro: #161616, el destacado va #009145.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/icons/ai.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/arrow.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/at.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/bell.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/briefcase.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/calendar.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/chart-bars.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/chart-line.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/chat.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/check.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/checklist.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/chip.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/cloud.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/code.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/dashboard.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/database.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/deploy.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/doc.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/download.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/field.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/flow.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/gear.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/globe.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/growth.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/hashtag.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/heart.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/info.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/layers.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/layout.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/leaf.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/link.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/lock.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/mail.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/mobile.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/partnership.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/phone.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/pie.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/pin.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/play.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/plug.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/plus.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/rain.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/route.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/satellite.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/screen.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/search.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/seed.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/sensor.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/server.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/share.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/soil.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/sprout.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/star.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/sun.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/target.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/tractor.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/video.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/icons/x.svg"
+    "https://brand.magoya.com/assets/icons/ai.svg",
+    "https://brand.magoya.com/assets/icons/arrow.svg",
+    "https://brand.magoya.com/assets/icons/at.svg",
+    "https://brand.magoya.com/assets/icons/bell.svg",
+    "https://brand.magoya.com/assets/icons/briefcase.svg",
+    "https://brand.magoya.com/assets/icons/calendar.svg",
+    "https://brand.magoya.com/assets/icons/chart-bars.svg",
+    "https://brand.magoya.com/assets/icons/chart-line.svg",
+    "https://brand.magoya.com/assets/icons/chat.svg",
+    "https://brand.magoya.com/assets/icons/check.svg",
+    "https://brand.magoya.com/assets/icons/checklist.svg",
+    "https://brand.magoya.com/assets/icons/chip.svg",
+    "https://brand.magoya.com/assets/icons/cloud.svg",
+    "https://brand.magoya.com/assets/icons/code.svg",
+    "https://brand.magoya.com/assets/icons/dashboard.svg",
+    "https://brand.magoya.com/assets/icons/database.svg",
+    "https://brand.magoya.com/assets/icons/deploy.svg",
+    "https://brand.magoya.com/assets/icons/doc.svg",
+    "https://brand.magoya.com/assets/icons/download.svg",
+    "https://brand.magoya.com/assets/icons/field.svg",
+    "https://brand.magoya.com/assets/icons/flow.svg",
+    "https://brand.magoya.com/assets/icons/gear.svg",
+    "https://brand.magoya.com/assets/icons/globe.svg",
+    "https://brand.magoya.com/assets/icons/growth.svg",
+    "https://brand.magoya.com/assets/icons/hashtag.svg",
+    "https://brand.magoya.com/assets/icons/heart.svg",
+    "https://brand.magoya.com/assets/icons/info.svg",
+    "https://brand.magoya.com/assets/icons/layers.svg",
+    "https://brand.magoya.com/assets/icons/layout.svg",
+    "https://brand.magoya.com/assets/icons/leaf.svg",
+    "https://brand.magoya.com/assets/icons/link.svg",
+    "https://brand.magoya.com/assets/icons/lock.svg",
+    "https://brand.magoya.com/assets/icons/mail.svg",
+    "https://brand.magoya.com/assets/icons/mobile.svg",
+    "https://brand.magoya.com/assets/icons/partnership.svg",
+    "https://brand.magoya.com/assets/icons/phone.svg",
+    "https://brand.magoya.com/assets/icons/pie.svg",
+    "https://brand.magoya.com/assets/icons/pin.svg",
+    "https://brand.magoya.com/assets/icons/play.svg",
+    "https://brand.magoya.com/assets/icons/plug.svg",
+    "https://brand.magoya.com/assets/icons/plus.svg",
+    "https://brand.magoya.com/assets/icons/rain.svg",
+    "https://brand.magoya.com/assets/icons/route.svg",
+    "https://brand.magoya.com/assets/icons/satellite.svg",
+    "https://brand.magoya.com/assets/icons/screen.svg",
+    "https://brand.magoya.com/assets/icons/search.svg",
+    "https://brand.magoya.com/assets/icons/seed.svg",
+    "https://brand.magoya.com/assets/icons/sensor.svg",
+    "https://brand.magoya.com/assets/icons/server.svg",
+    "https://brand.magoya.com/assets/icons/share.svg",
+    "https://brand.magoya.com/assets/icons/soil.svg",
+    "https://brand.magoya.com/assets/icons/sprout.svg",
+    "https://brand.magoya.com/assets/icons/star.svg",
+    "https://brand.magoya.com/assets/icons/sun.svg",
+    "https://brand.magoya.com/assets/icons/target.svg",
+    "https://brand.magoya.com/assets/icons/tractor.svg",
+    "https://brand.magoya.com/assets/icons/video.svg",
+    "https://brand.magoya.com/assets/icons/x.svg"
    ]
   },
   {
@@ -439,13 +439,13 @@
    "descripcion": "Personajes ilustrados y caminos",
    "reglas": "Personajes planos sin rostro, paleta cerrada, zapatillas verdes. Siempre recortados por un borde, lado opuesto al texto. Nunca sobre foto ni junto a un ícono.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/illus/camino-esquina.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/illus/camino-grande.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/illus/camino-zigzag.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/illus/char-chart-duo.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/illus/char-experts-talking.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/illus/char-jumping.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/illus/char-laptop.svg"
+    "https://brand.magoya.com/assets/illus/camino-esquina.svg",
+    "https://brand.magoya.com/assets/illus/camino-grande.svg",
+    "https://brand.magoya.com/assets/illus/camino-zigzag.svg",
+    "https://brand.magoya.com/assets/illus/char-chart-duo.svg",
+    "https://brand.magoya.com/assets/illus/char-experts-talking.svg",
+    "https://brand.magoya.com/assets/illus/char-jumping.svg",
+    "https://brand.magoya.com/assets/illus/char-laptop.svg"
    ]
   },
   {
@@ -453,11 +453,11 @@
    "descripcion": "Wordmarks propios en variantes",
    "reglas": "Ver reglas del logo en BRAND.md sección 2.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/logos/basf.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/bayer.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/corteva.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/john-deere.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/syngenta.svg"
+    "https://brand.magoya.com/assets/logos/basf.svg",
+    "https://brand.magoya.com/assets/logos/bayer.svg",
+    "https://brand.magoya.com/assets/logos/corteva.svg",
+    "https://brand.magoya.com/assets/logos/john-deere.svg",
+    "https://brand.magoya.com/assets/logos/syngenta.svg"
    ]
   },
   {
@@ -465,23 +465,23 @@
    "descripcion": "Logos REALES de clientes",
    "reglas": "Los únicos logos permitidos en un logo wall. En grilla: escala de grises, tamaño óptico parejo.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/agro-sustentable.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/apeel-sciences.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/bayer-crop-science.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/biome-makers.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/bolsatech.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/bunge.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/climate-fieldview.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/corteva.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/gdm.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/indigo.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/intent.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/nera.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/precision-planting.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/sound-agriculture.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/stine.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/syngenta.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/clients/xarvio.svg"
+    "https://brand.magoya.com/assets/logos/clients/agro-sustentable.svg",
+    "https://brand.magoya.com/assets/logos/clients/apeel-sciences.svg",
+    "https://brand.magoya.com/assets/logos/clients/bayer-crop-science.svg",
+    "https://brand.magoya.com/assets/logos/clients/biome-makers.svg",
+    "https://brand.magoya.com/assets/logos/clients/bolsatech.svg",
+    "https://brand.magoya.com/assets/logos/clients/bunge.svg",
+    "https://brand.magoya.com/assets/logos/clients/climate-fieldview.svg",
+    "https://brand.magoya.com/assets/logos/clients/corteva.svg",
+    "https://brand.magoya.com/assets/logos/clients/gdm.svg",
+    "https://brand.magoya.com/assets/logos/clients/indigo.svg",
+    "https://brand.magoya.com/assets/logos/clients/intent.svg",
+    "https://brand.magoya.com/assets/logos/clients/nera.svg",
+    "https://brand.magoya.com/assets/logos/clients/precision-planting.svg",
+    "https://brand.magoya.com/assets/logos/clients/sound-agriculture.svg",
+    "https://brand.magoya.com/assets/logos/clients/stine.svg",
+    "https://brand.magoya.com/assets/logos/clients/syngenta.svg",
+    "https://brand.magoya.com/assets/logos/clients/xarvio.svg"
    ]
   },
   {
@@ -489,20 +489,20 @@
    "descripcion": "Logos reales del stack tecnológico",
    "reglas": "Se muestran en su color oficial.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/argo.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/aws.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/azure.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/django.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/docker.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/google-cloud.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/jupyter.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/kubernetes.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/mongodb.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/nextjs.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/nodejs.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/postgresql.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/react.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/logos/partners/terraform.svg"
+    "https://brand.magoya.com/assets/logos/partners/argo.svg",
+    "https://brand.magoya.com/assets/logos/partners/aws.svg",
+    "https://brand.magoya.com/assets/logos/partners/azure.svg",
+    "https://brand.magoya.com/assets/logos/partners/django.svg",
+    "https://brand.magoya.com/assets/logos/partners/docker.svg",
+    "https://brand.magoya.com/assets/logos/partners/google-cloud.svg",
+    "https://brand.magoya.com/assets/logos/partners/jupyter.svg",
+    "https://brand.magoya.com/assets/logos/partners/kubernetes.svg",
+    "https://brand.magoya.com/assets/logos/partners/mongodb.svg",
+    "https://brand.magoya.com/assets/logos/partners/nextjs.svg",
+    "https://brand.magoya.com/assets/logos/partners/nodejs.svg",
+    "https://brand.magoya.com/assets/logos/partners/postgresql.svg",
+    "https://brand.magoya.com/assets/logos/partners/react.svg",
+    "https://brand.magoya.com/assets/logos/partners/terraform.svg"
    ]
   },
   {
@@ -510,21 +510,21 @@
    "descripcion": "Fotografía real del equipo y de campo",
    "reglas": "Personas SIEMPRE en B&N + un acento de color. Foto aérea con scrim verde profundo. Nunca stock.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/photos/ai-campo-silueta.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/ai-campo-silueta.png",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/cami-agtech-bw.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/field-bali.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/field-corn.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/field-mosaic-16x9.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/field-rows.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/field-terraces.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/founder-bw.png",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/leo-dopacio-bw.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/merch-buzo.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/pieza-ai-campo-real.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/varu-baldi-bw.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/varu-ceo-bw.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/photos/varu-ceo-color.jpg"
+    "https://brand.magoya.com/assets/photos/ai-campo-silueta.jpg",
+    "https://brand.magoya.com/assets/photos/ai-campo-silueta.png",
+    "https://brand.magoya.com/assets/photos/cami-agtech-bw.jpg",
+    "https://brand.magoya.com/assets/photos/field-bali.jpg",
+    "https://brand.magoya.com/assets/photos/field-corn.jpg",
+    "https://brand.magoya.com/assets/photos/field-mosaic-16x9.jpg",
+    "https://brand.magoya.com/assets/photos/field-rows.jpg",
+    "https://brand.magoya.com/assets/photos/field-terraces.jpg",
+    "https://brand.magoya.com/assets/photos/founder-bw.png",
+    "https://brand.magoya.com/assets/photos/leo-dopacio-bw.jpg",
+    "https://brand.magoya.com/assets/photos/merch-buzo.jpg",
+    "https://brand.magoya.com/assets/photos/pieza-ai-campo-real.jpg",
+    "https://brand.magoya.com/assets/photos/varu-baldi-bw.jpg",
+    "https://brand.magoya.com/assets/photos/varu-ceo-bw.jpg",
+    "https://brand.magoya.com/assets/photos/varu-ceo-color.jpg"
    ]
   },
   {
@@ -532,7 +532,7 @@
    "descripcion": "Fotos reales de merch",
    "reglas": "Verde profundo + crema, bordado discreto.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/photos/merch/LEEME.txt"
+    "https://brand.magoya.com/assets/photos/merch/LEEME.txt"
    ]
   },
   {
@@ -540,11 +540,11 @@
    "descripcion": "Piezas reales exportadas (referencia de calidad)",
    "reglas": "fecha-marcada-ig-portrait es LA pieza canónica de AI en campo (formato madre 4:5).",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/pieces/fecha-marcada-ig-portrait.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/pieces/fecha-marcada-ig-portrait.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/pieces/fecha-marcada.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/pieces/impacto-pregunta.jpg",
-    "https://magoya.github.io/magoya-brand-system/assets/pieces/mito-vs-realidad.jpg"
+    "https://brand.magoya.com/assets/pieces/fecha-marcada-ig-portrait.jpg",
+    "https://brand.magoya.com/assets/pieces/fecha-marcada-ig-portrait.svg",
+    "https://brand.magoya.com/assets/pieces/fecha-marcada.jpg",
+    "https://brand.magoya.com/assets/pieces/impacto-pregunta.jpg",
+    "https://brand.magoya.com/assets/pieces/mito-vs-realidad.jpg"
    ]
   },
   {
@@ -552,14 +552,14 @@
    "descripcion": "REFERENCIAS del diseñador original",
    "reglas": "NO son assets finales — no usar en piezas. Solo contexto histórico.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/refs/Introduction titulo grande+ilustracion .svg",
-    "https://magoya.github.io/magoya-brand-system/assets/refs/Slides - CASE STUDY.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/refs/Slides - copy+titulo+personas.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/refs/modules-for-slides.png",
-    "https://magoya.github.io/magoya-brand-system/assets/refs/pieza de redes.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/refs/quote + foto + flecha.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/refs/tirulo grande.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/refs/titulo con persona y ilustraciones .svg"
+    "https://brand.magoya.com/assets/refs/Introduction titulo grande+ilustracion .svg",
+    "https://brand.magoya.com/assets/refs/Slides - CASE STUDY.svg",
+    "https://brand.magoya.com/assets/refs/Slides - copy+titulo+personas.svg",
+    "https://brand.magoya.com/assets/refs/modules-for-slides.png",
+    "https://brand.magoya.com/assets/refs/pieza de redes.svg",
+    "https://brand.magoya.com/assets/refs/quote + foto + flecha.svg",
+    "https://brand.magoya.com/assets/refs/tirulo grande.svg",
+    "https://brand.magoya.com/assets/refs/titulo con persona y ilustraciones .svg"
    ]
   },
   {
@@ -567,50 +567,50 @@
    "descripcion": "Kit de la sub-marca AI en campo + logos de terceros",
    "reglas": "Los doodles/flourishes del Studio son SOLO para piezas de AI en campo, no para Magoya core.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/studio/badge-envivo.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/doodle-blob.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/doodle-dots.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/doodle-loop.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/doodle-sparkle.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/flourish-arrow.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/flourish-circle.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/flourish-navarrow.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/flourish-underline.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/magoya-avatar.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/magoya-isotipo-verde.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/magoya-trama.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/mark-ai-campo.svg"
+    "https://brand.magoya.com/assets/studio/badge-envivo.svg",
+    "https://brand.magoya.com/assets/studio/doodle-blob.svg",
+    "https://brand.magoya.com/assets/studio/doodle-dots.svg",
+    "https://brand.magoya.com/assets/studio/doodle-loop.svg",
+    "https://brand.magoya.com/assets/studio/doodle-sparkle.svg",
+    "https://brand.magoya.com/assets/studio/flourish-arrow.svg",
+    "https://brand.magoya.com/assets/studio/flourish-circle.svg",
+    "https://brand.magoya.com/assets/studio/flourish-navarrow.svg",
+    "https://brand.magoya.com/assets/studio/flourish-underline.svg",
+    "https://brand.magoya.com/assets/studio/magoya-avatar.svg",
+    "https://brand.magoya.com/assets/studio/magoya-isotipo-verde.svg",
+    "https://brand.magoya.com/assets/studio/magoya-trama.svg",
+    "https://brand.magoya.com/assets/studio/mark-ai-campo.svg"
    ]
   },
   {
    "carpeta": "assets/studio/devices",
    "descripcion": "Mockups de dispositivos",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/studio/devices/laptop.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/devices/phone.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/devices/tablet.svg"
+    "https://brand.magoya.com/assets/studio/devices/laptop.svg",
+    "https://brand.magoya.com/assets/studio/devices/phone.svg",
+    "https://brand.magoya.com/assets/studio/devices/tablet.svg"
    ]
   },
   {
    "carpeta": "assets/studio/icons/agro",
    "descripcion": "Íconos agro del Studio",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/alerta-lote.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/chat-ia.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/dron.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/escaneo.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/gota.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/grafico.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/hoja.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/lote.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/mapa-pin.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/nube-lluvia.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/reloj-campana.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/satelite.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/semilla.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/sensor.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/sol.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/agro/tractor.svg"
+    "https://brand.magoya.com/assets/studio/icons/agro/alerta-lote.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/chat-ia.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/dron.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/escaneo.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/gota.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/grafico.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/hoja.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/lote.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/mapa-pin.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/nube-lluvia.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/reloj-campana.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/satelite.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/semilla.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/sensor.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/sol.svg",
+    "https://brand.magoya.com/assets/studio/icons/agro/tractor.svg"
    ]
   },
   {
@@ -618,26 +618,26 @@
    "descripcion": "Logos oficiales de plataformas de AI",
    "reglas": "Usar la variante correcta según fondo (-black sobre claro).",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/anthropic-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/anthropic.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/claude-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/claude.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/google-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/google.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/googlegemini-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/googlegemini.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/huggingface-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/huggingface.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/meta-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/meta.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/mistralai-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/mistralai.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/ollama-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/ollama.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/openai-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/openai.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/perplexity-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/ai/perplexity.svg"
+    "https://brand.magoya.com/assets/studio/icons/ai/anthropic-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/anthropic.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/claude-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/claude.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/google-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/google.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/googlegemini-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/googlegemini.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/huggingface-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/huggingface.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/meta-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/meta.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/mistralai-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/mistralai.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/ollama-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/ollama.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/openai-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/openai.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/perplexity-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/ai/perplexity.svg"
    ]
   },
   {
@@ -645,32 +645,32 @@
    "descripcion": "Logos oficiales de redes",
    "reglas": "Idem variantes por fondo.",
    "archivos": [
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/discord-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/discord.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/facebook-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/facebook.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/instagram-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/instagram.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/linkedin-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/linkedin.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/pinterest-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/pinterest.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/reddit-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/reddit.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/telegram-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/telegram.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/threads-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/threads.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/tiktok-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/tiktok.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/twitch-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/twitch.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/whatsapp-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/whatsapp.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/x-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/x.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/youtube-black.svg",
-    "https://magoya.github.io/magoya-brand-system/assets/studio/icons/social/youtube.svg"
+    "https://brand.magoya.com/assets/studio/icons/social/discord-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/discord.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/facebook-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/facebook.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/instagram-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/instagram.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/linkedin-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/linkedin.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/pinterest-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/pinterest.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/reddit-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/reddit.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/telegram-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/telegram.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/threads-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/threads.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/tiktok-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/tiktok.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/twitch-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/twitch.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/whatsapp-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/whatsapp.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/x-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/x.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/youtube-black.svg",
+    "https://brand.magoya.com/assets/studio/icons/social/youtube.svg"
    ]
   }
  ]

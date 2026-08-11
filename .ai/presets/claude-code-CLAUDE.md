@@ -25,10 +25,10 @@ Estos comentarios HTML se descartan antes de entrar al contexto: no gastan token
 Magoya es un estudio de estrategia y desarrollo de producto digital para agribusiness (AgTech). Todo output visual, de UI o de copy sigue estas reglas.
 
 **Fuente de verdad completa** (leela con WebFetch cuando necesites un detalle que no esté acá):
-- Doctrina: https://magoya.github.io/magoya-brand-system/BRAND.md
-- Valores exactos: https://magoya.github.io/magoya-brand-system/tokens.json
-- Custom properties + 4 temas: https://magoya.github.io/magoya-brand-system/tokens.css
-- Índice para modelos: https://magoya.github.io/magoya-brand-system/llms.txt
+- Doctrina: https://brand.magoya.com/BRAND.md
+- Valores exactos: https://brand.magoya.com/tokens.json
+- Custom properties + 4 temas: https://brand.magoya.com/tokens.css
+- Índice para modelos: https://brand.magoya.com/llms.txt
 
 Si el brand system está clonado o vendorizado en este repo, usá `tokens.css` y `BRAND.md` locales antes que las URLs.
 

@@ -5,9 +5,9 @@
 ## Flujo (en este orden)
 
 1. **Regla del proyecto**: guardá [cursor-rule.mdc](https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/presets/cursor-rule.mdc) como `.cursor/rules/magoya-brand.mdc` — es la doctrina condensada que el agente aplica en cada edición.
-2. **Tokens en el código**: bajá https://magoya.github.io/magoya-brand-system/tokens.css al proyecto y usá SIEMPRE las custom properties (`var(--color-energy)`), nunca hex sueltos.
-3. **Doctrina completa** (cuando el agente necesite contexto): https://magoya.github.io/magoya-brand-system/BRAND.md
-4. **Assets** → https://magoya.github.io/magoya-brand-system/ai/assets.json — URL directa de cada SVG/foto para embeber o bajar al repo.
+2. **Tokens en el código**: bajá https://brand.magoya.com/tokens.css al proyecto y usá SIEMPRE las custom properties (`var(--color-energy)`), nunca hex sueltos.
+3. **Doctrina completa** (cuando el agente necesite contexto): https://brand.magoya.com/BRAND.md
+4. **Assets** → https://brand.magoya.com/ai/assets.json — URL directa de cada SVG/foto para embeber o bajar al repo.
 5. **Antes de mergear UI nueva** → https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md
 
 ## Qué podés hacer al pie de la letra (hoy)

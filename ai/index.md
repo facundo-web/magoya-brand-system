@@ -4,12 +4,12 @@ Un link por herramienta. Cada entrada se versiona por separado: cuando una AI ga
 
 | AI | Link de entrada |
 |---|---|
-| ChatGPT (Custom GPT / Projects) | https://magoya.github.io/magoya-brand-system/ai/chatgpt.md |
-| Claude (claude.ai / Claude Code / API) | https://magoya.github.io/magoya-brand-system/ai/claude.md |
-| Gemini (app / AI Studio / Gems) | https://magoya.github.io/magoya-brand-system/ai/gemini.md |
-| Cursor | https://magoya.github.io/magoya-brand-system/ai/cursor.md |
-| GitHub Copilot | https://magoya.github.io/magoya-brand-system/ai/copilot.md |
-| Cualquier otra AI con browsing | https://magoya.github.io/magoya-brand-system/ai/generic.md |
+| ChatGPT (Custom GPT / Projects) | https://brand.magoya.com/ai/chatgpt.md |
+| Claude (claude.ai / Claude Code / API) | https://brand.magoya.com/ai/claude.md |
+| Gemini (app / AI Studio / Gems) | https://brand.magoya.com/ai/gemini.md |
+| Cursor | https://brand.magoya.com/ai/cursor.md |
+| GitHub Copilot | https://brand.magoya.com/ai/copilot.md |
+| Cualquier otra AI con browsing | https://brand.magoya.com/ai/generic.md |
 
 ## Capa compartida (lo que todas las entradas apuntan)
 

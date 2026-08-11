@@ -96,7 +96,7 @@ Qué esperar: buen copy y buen HTML/CSS. Si generás imágenes, el modelo de ima
 ### 7. Chat genérico (Gemini, Perplexity, un LLM por API, un chat nuevo)
 
 - **Si la herramienta navega**: primer mensaje →
-  > Leé https://magoya.github.io/magoya-brand-system/llms.txt y seguí ese sistema de diseño en todo lo que generes en esta conversación. Empezá confirmando las tres reglas de color.
+  > Leé https://brand.magoya.com/llms.txt y seguí ese sistema de diseño en todo lo que generes en esta conversación. Empezá confirmando las tres reglas de color.
 - **Si no navega**: pegá [`.ai/brand-prompt-short.md`](.ai/brand-prompt-short.md) (120 palabras) o [`.ai/brand-prompt.md`](.ai/brand-prompt.md) (~500 palabras, todas las prohibiciones) como primer mensaje.
 - **Por API**: `.ai/brand-prompt.md` va como `system`. Es autocontenido a propósito: no depende de ningún adjunto.
 

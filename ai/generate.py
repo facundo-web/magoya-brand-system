@@ -5,7 +5,7 @@ Regenera: assets/icons/*.svg, ai/assets.json, ai/slides.json
 Es idempotente — correrlo después de cada cambio de assets o slides."""
 import re, os, json
 
-BASE = 'https://magoya.github.io/magoya-brand-system'
+BASE = 'https://brand.magoya.com'
 
 # ---------- 1. iconos: de <symbol> inline a archivos ----------
 s = open('icons.html').read()

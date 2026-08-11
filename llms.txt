@@ -18,40 +18,40 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 
 ## Núcleo machine-readable
 
-- [BRAND.md](https://magoya.github.io/magoya-brand-system/BRAND.md): la doctrina completa en Markdown — 12 secciones con esencia y voz, logo, roles de color, tipografía, fotografía, ilustración y motivos, iconografía, componentes, recetas de aplicación, merch, papelería y reglas de oro. Es el documento a leer si solo vas a leer uno.
-- [tokens.json](https://magoya.github.io/magoya-brand-system/tokens.json): todos los valores exactos con su rol y sus reglas de accesibilidad — paleta completa, ratio de uso por pieza, escalas tipográficas (incluida la de slides en pt), espaciado, radios, layouts de export, la matriz `resourceCoexistence` de qué recursos gráficos pueden convivir, y las rutas de assets (con la lista de recursos retirados).
-- [tokens.css](https://magoya.github.io/magoya-brand-system/tokens.css): los mismos tokens como CSS custom properties en dos capas (primitivos y semánticos) con 4 temas: `default` (verde profundo), `light` (crema), `paper` (editorial) y `studio` (blanco + negro + lima, el de slides y marketing). Usar esto al escribir código.
-- [README.md](https://magoya.github.io/magoya-brand-system/README.md): mapa del repositorio, orden de lectura recomendado y árbol de la carpeta `assets/`.
-- [ai/assets.json](https://magoya.github.io/magoya-brand-system/ai/assets.json): manifiesto de TODOS los assets (247 archivos) con URL directa y regla de uso por carpeta — wordmarks, avatares, los 58 íconos del sistema como SVGs individuales (`assets/icons/`), ilustraciones, fotos, logos reales de clientes y stack. Pages no lista directorios: este manifiesto es la única forma de enumerar los assets.
-- [ai/slides.json](https://magoya.github.io/magoya-brand-system/ai/slides.json): los 41 módulos de presentación machine-readable — familia, nombre, "cuándo usarlo", lienzo 1920×1080 con margen 7% y escala 126/84/56/42pt.
+- [BRAND.md](https://brand.magoya.com/BRAND.md): la doctrina completa en Markdown — 12 secciones con esencia y voz, logo, roles de color, tipografía, fotografía, ilustración y motivos, iconografía, componentes, recetas de aplicación, merch, papelería y reglas de oro. Es el documento a leer si solo vas a leer uno.
+- [tokens.json](https://brand.magoya.com/tokens.json): todos los valores exactos con su rol y sus reglas de accesibilidad — paleta completa, ratio de uso por pieza, escalas tipográficas (incluida la de slides en pt), espaciado, radios, layouts de export, la matriz `resourceCoexistence` de qué recursos gráficos pueden convivir, y las rutas de assets (con la lista de recursos retirados).
+- [tokens.css](https://brand.magoya.com/tokens.css): los mismos tokens como CSS custom properties en dos capas (primitivos y semánticos) con 4 temas: `default` (verde profundo), `light` (crema), `paper` (editorial) y `studio` (blanco + negro + lima, el de slides y marketing). Usar esto al escribir código.
+- [README.md](https://brand.magoya.com/README.md): mapa del repositorio, orden de lectura recomendado y árbol de la carpeta `assets/`.
+- [ai/assets.json](https://brand.magoya.com/ai/assets.json): manifiesto de TODOS los assets (247 archivos) con URL directa y regla de uso por carpeta — wordmarks, avatares, los 58 íconos del sistema como SVGs individuales (`assets/icons/`), ilustraciones, fotos, logos reales de clientes y stack. Pages no lista directorios: este manifiesto es la única forma de enumerar los assets.
+- [ai/slides.json](https://brand.magoya.com/ai/slides.json): los 41 módulos de presentación machine-readable — familia, nombre, "cuándo usarlo", lienzo 1920×1080 con margen 7% y escala 126/84/56/42pt.
 
 ## Entrada por AI (un link por herramienta, versionadas por separado)
 
-- [ai/chatgpt.md](https://magoya.github.io/magoya-brand-system/ai/chatgpt.md): ChatGPT (Custom GPT / Projects) — flujo por browsing, sin permisos.
-- [ai/claude.md](https://magoya.github.io/magoya-brand-system/ai/claude.md): Claude (claude.ai / Claude Code / API).
-- [ai/gemini.md](https://magoya.github.io/magoya-brand-system/ai/gemini.md): Gemini (app / AI Studio / Gems).
-- [ai/cursor.md](https://magoya.github.io/magoya-brand-system/ai/cursor.md): Cursor.
-- [ai/copilot.md](https://magoya.github.io/magoya-brand-system/ai/copilot.md): GitHub Copilot.
-- [ai/generic.md](https://magoya.github.io/magoya-brand-system/ai/generic.md): cualquier otra AI con browsing.
+- [ai/chatgpt.md](https://brand.magoya.com/ai/chatgpt.md): ChatGPT (Custom GPT / Projects) — flujo por browsing, sin permisos.
+- [ai/claude.md](https://brand.magoya.com/ai/claude.md): Claude (claude.ai / Claude Code / API).
+- [ai/gemini.md](https://brand.magoya.com/ai/gemini.md): Gemini (app / AI Studio / Gems).
+- [ai/cursor.md](https://brand.magoya.com/ai/cursor.md): Cursor.
+- [ai/copilot.md](https://brand.magoya.com/ai/copilot.md): GitHub Copilot.
+- [ai/generic.md](https://brand.magoya.com/ai/generic.md): cualquier otra AI con browsing.
 
 ## Prompts y checklist listos para usar
 
 - [.ai/brand-prompt.md](https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/brand-prompt.md): el prompt de sistema canónico y autocontenido (~540 palabras). Pegarlo como system prompt, custom instructions o project instructions y la salida ya sale on-brand sin adjuntar nada más.
 - [.ai/brand-prompt-short.md](https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/brand-prompt-short.md): versión de ~120 palabras para pegar al inicio de un chat suelto.
 - [.ai/checklist.md](https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md): 15 chequeos verificables para auditar una pieza generada por IA antes de publicarla.
-- [ai/metodo.md](https://magoya.github.io/magoya-brand-system/ai/metodo.md): el método de trabajo obligatorio para piezas con contenido — entender antes de elegir, módulos por criterio (no por defecto), y agentes de copy / diseño / crítica antes de entregar.
-- [AI-INTEGRATION.md](https://magoya.github.io/magoya-brand-system/AI-INTEGRATION.md): guía de setup por herramienta (Claude Projects, Claude Code, Claude Design, Custom GPT, Cursor, Copilot, chat genérico) con tabla de verificación y troubleshooting.
+- [ai/metodo.md](https://brand.magoya.com/ai/metodo.md): el método de trabajo obligatorio para piezas con contenido — entender antes de elegir, módulos por criterio (no por defecto), y agentes de copy / diseño / crítica antes de entregar.
+- [AI-INTEGRATION.md](https://brand.magoya.com/AI-INTEGRATION.md): guía de setup por herramienta (Claude Projects, Claude Code, Claude Design, Custom GPT, Cursor, Copilot, chat genérico) con tabla de verificación y troubleshooting.
 
 ## Manual visual navegable
 
-- [brand-book.html](https://magoya.github.io/magoya-brand-system/brand-book.html): el brand book completo en 13 secciones más la marca anexa, con ejemplos "hacer / evitar", la matriz de convivencia de recursos y la jerarquía de cuatro planos (lienzo · textura · sujeto · voz).
-- [slides.html](https://magoya.github.io/magoya-brand-system/slides.html): 41 módulos de presentación en 13 familias, escala 126/84/56/42pt sobre lienzo de 1920px, margen interior 7%.
-- [pieces.html](https://magoya.github.io/magoya-brand-system/pieces.html): plantillas de piezas comerciales con anatomía — one-pager madre y flyers derivados.
-- [icons.html](https://magoya.github.io/magoya-brand-system/icons.html): librería de 58 iconos inline SVG, trazo 2px redondeado en grid 24×24, `currentColor`.
+- [brand-book.html](https://brand.magoya.com/brand-book.html): el brand book completo en 13 secciones más la marca anexa, con ejemplos "hacer / evitar", la matriz de convivencia de recursos y la jerarquía de cuatro planos (lienzo · textura · sujeto · voz).
+- [slides.html](https://brand.magoya.com/slides.html): 41 módulos de presentación en 13 familias, escala 126/84/56/42pt sobre lienzo de 1920px, margen interior 7%.
+- [pieces.html](https://brand.magoya.com/pieces.html): plantillas de piezas comerciales con anatomía — one-pager madre y flyers derivados.
+- [icons.html](https://brand.magoya.com/icons.html): librería de 58 iconos inline SVG, trazo 2px redondeado en grid 24×24, `currentColor`.
 
 ## Optional
 
-- [library.html](https://magoya.github.io/magoya-brand-system/library.html): todos los assets con descarga directa (wordmarks, avatares, motivos, personajes, fotos, fuente).
-- [logos.html](https://magoya.github.io/magoya-brand-system/logos.html): logos reales de clientes y del stack tecnológico — los únicos que se pueden usar en un logo wall.
-- [ai-en-campo.html](https://magoya.github.io/magoya-brand-system/ai-en-campo.html): manual de la marca anexa "AI en campo". **No es parte del core**: rompe tres reglas a propósito (lienzo verde digital pleno, placa negra de dato clave, doodles del Studio). No aplicar sus reglas a piezas de Magoya.
-- [ROADMAP.md](https://magoya.github.io/magoya-brand-system/ROADMAP.md): estado del sistema y pendientes de contenido.
+- [library.html](https://brand.magoya.com/library.html): todos los assets con descarga directa (wordmarks, avatares, motivos, personajes, fotos, fuente).
+- [logos.html](https://brand.magoya.com/logos.html): logos reales de clientes y del stack tecnológico — los únicos que se pueden usar en un logo wall.
+- [ai-en-campo.html](https://brand.magoya.com/ai-en-campo.html): manual de la marca anexa "AI en campo". **No es parte del core**: rompe tres reglas a propósito (lienzo verde digital pleno, placa negra de dato clave, doodles del Studio). No aplicar sus reglas a piezas de Magoya.
+- [ROADMAP.md](https://brand.magoya.com/ROADMAP.md): estado del sistema y pendientes de contenido.

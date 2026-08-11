@@ -30,7 +30,7 @@ alwaysApply: true
 
 # Magoya — Design System
 
-Magoya es un estudio de estrategia y desarrollo de producto digital para agribusiness (AgTech). Toda UI, pieza o copy que generes en este repo sigue estas reglas. Fuente de verdad: `tokens.css`, `tokens.json` y `BRAND.md` en la raíz del brand system (https://magoya.github.io/magoya-brand-system/).
+Magoya es un estudio de estrategia y desarrollo de producto digital para agribusiness (AgTech). Toda UI, pieza o copy que generes en este repo sigue estas reglas. Fuente de verdad: `tokens.css`, `tokens.json` y `BRAND.md` en la raíz del brand system (https://brand.magoya.com/).
 
 ## Color — usá tokens, no hex sueltos
 

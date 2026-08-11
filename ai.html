@@ -344,7 +344,7 @@
       <div class="what"><b>Pegás:</b> el prompt corto. <b>Si la herramienta pide URL en vez de archivo:</b> pasale <code>llms.txt</code>, que es el índice de todo lo demás.</div>
       <ol class="howto" style="max-width:none">
         <li>Pegá el <a class="lk" href="#empezar">prompt corto</a> como primer mensaje y esperá confirmación.</li>
-        <li>Si la herramienta puede leer web, agregá: <i>“Leé también https://magoya.github.io/magoya-brand-system/llms.txt y los archivos que indexa.”</i></li>
+        <li>Si la herramienta puede leer web, agregá: <i>“Leé también https://brand.magoya.com/llms.txt y los archivos que indexa.”</i></li>
         <li>Si el chat es largo, repetí el prompt corto cada tanto: los modelos pierden el contexto viejo.</li>
         <li>Si la herramienta es de un cliente o un tercero, pegá solo el prompt corto — no subas archivos internos de Magoya.</li>
       </ol>
@@ -369,43 +369,43 @@
       <tr>
         <td><code>llms.txt</code></td>
         <td>Índice de la marca en texto plano, con links a todo lo demás.</td>
-        <td>El primer archivo que le das a una herramienta que lee web: desde ahí encuentra el resto.<span class="u">https://magoya.github.io/magoya-brand-system/llms.txt</span></td>
+        <td>El primer archivo que le das a una herramienta que lee web: desde ahí encuentra el resto.<span class="u">https://brand.magoya.com/llms.txt</span></td>
         <td><a class="get" href="llms.txt" download>bajar</a></td>
       </tr>
       <tr>
         <td><code>BRAND.md</code></td>
         <td>El manual entero en Markdown: 12 secciones, de esencia a papelería.</td>
-        <td>La fuente de verdad. Se adjunta al knowledge de un proyecto o se deja en el repo.<span class="u">https://magoya.github.io/magoya-brand-system/BRAND.md</span></td>
+        <td>La fuente de verdad. Se adjunta al knowledge de un proyecto o se deja en el repo.<span class="u">https://brand.magoya.com/BRAND.md</span></td>
         <td><a class="get" href="BRAND.md" download>bajar</a></td>
       </tr>
       <tr>
         <td><code>tokens.json</code></td>
         <td>Tokens de diseño en JSON: color, tipografía, espaciado, radios.</td>
-        <td>Para que la IA use valores exactos y no aproxime colores de memoria.<span class="u">https://magoya.github.io/magoya-brand-system/tokens.json</span></td>
+        <td>Para que la IA use valores exactos y no aproxime colores de memoria.<span class="u">https://brand.magoya.com/tokens.json</span></td>
         <td><a class="get" href="tokens.json" download>bajar</a></td>
       </tr>
       <tr>
         <td><code>tokens.css</code></td>
         <td>Los mismos tokens como variables CSS, con los cuatro temas.</td>
-        <td>Se importa en el proyecto: habilita el <code>var(--token)</code> en vez del hex hardcodeado.<span class="u">https://magoya.github.io/magoya-brand-system/tokens.css</span></td>
+        <td>Se importa en el proyecto: habilita el <code>var(--token)</code> en vez del hex hardcodeado.<span class="u">https://brand.magoya.com/tokens.css</span></td>
         <td><a class="get" href="tokens.css" download>bajar</a></td>
       </tr>
       <tr>
         <td><code>.ai/brand-prompt.md</code></td>
         <td>Prompt completo de marca: reglas, prohibiciones y criterios de decisión.</td>
-        <td>Cuando el pedido es una pieza real y no una consulta suelta. Es el cuerpo de los presets.<span class="u">https://magoya.github.io/magoya-brand-system/.ai/brand-prompt.md</span></td>
+        <td>Cuando el pedido es una pieza real y no una consulta suelta. Es el cuerpo de los presets.<span class="u">https://brand.magoya.com/.ai/brand-prompt.md</span></td>
         <td><a class="get" href=".ai/brand-prompt.md" download>bajar</a></td>
       </tr>
       <tr>
         <td><code>.ai/brand-prompt-short.md</code></td>
         <td>La versión de un bloque, la de esta página.</td>
-        <td>Para pegar al inicio de cualquier chat sin configurar nada.<span class="u">https://magoya.github.io/magoya-brand-system/.ai/brand-prompt-short.md</span></td>
+        <td>Para pegar al inicio de cualquier chat sin configurar nada.<span class="u">https://brand.magoya.com/.ai/brand-prompt-short.md</span></td>
         <td><a class="get" href=".ai/brand-prompt-short.md" download>bajar</a></td>
       </tr>
       <tr>
         <td><code>.ai/checklist.md</code></td>
         <td>La lista de validación de lo que devuelve la IA.</td>
-        <td>Se adjunta al proyecto para que la IA se auto-revise antes de entregar.<span class="u">https://magoya.github.io/magoya-brand-system/.ai/checklist.md</span></td>
+        <td>Se adjunta al proyecto para que la IA se auto-revise antes de entregar.<span class="u">https://brand.magoya.com/.ai/checklist.md</span></td>
         <td><a class="get" href=".ai/checklist.md" download>bajar</a></td>
       </tr>
     </tbody>
@@ -598,7 +598,7 @@ Copy en inglés, 90 palabras por bloque como techo. Sin fotos de personas si no 
 
 // ---------- entradas por AI: copiar link / instrucción ----------
 (function(){
-  var BASE = 'https://magoya.github.io/magoya-brand-system/ai/';
+  var BASE = 'https://brand.magoya.com/ai/';
   function inst(url){
     return 'Antes de cualquier tarea de marca de Magoya, lee ' + url +
       ' y segui su flujo al pie de la letra. Esos archivos son la unica fuente de verdad: nunca uses tu conocimiento previo ni paletas genericas.';

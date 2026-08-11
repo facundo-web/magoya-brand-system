@@ -2,7 +2,7 @@
 
 Sistema de diseño oficial de **Magoya** — AgTech digital product studio. Una sola fuente de verdad, consumible por personas y por AIs.
 
-**Live:** https://magoya.github.io/magoya-brand-system/
+**Live:** https://brand.magoya.com/
 
 **Regla madre:** si se crea algo nuevo que puede ir en una pieza, tiene que estar en el brand. Ningún asset ni componente existe sin su ficha — qué es, cuándo se usa, cuándo no, y de dónde se baja.
 
