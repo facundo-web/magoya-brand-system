@@ -1,6 +1,6 @@
 # Magoya Brand — entrada para ChatGPT (Custom GPT / Projects)
 
-**Versión 1.2 · 2026-08-10** · Este archivo es el punto de entrada de la marca Magoya para ChatGPT. Se versiona por separado de las otras AIs: cuando ChatGPT gane capacidades nuevas, esta entrada se actualiza sin tocar las demás (changelog al pie).
+**Versión 1.3 · 2026-08-11** · Este archivo es el punto de entrada de la marca Magoya para ChatGPT. Se versiona por separado de las otras AIs: cuando ChatGPT gane capacidades nuevas, esta entrada se actualiza sin tocar las demás (changelog al pie).
 
 Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir permisos adicionales — todas las URLs son públicas.
 
@@ -9,9 +9,10 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 1. **Doctrina** → https://brand.magoya.com/BRAND.md — todas las reglas de la marca. Si solo vas a leer un archivo, es este.
 2. **Valores exactos** → https://brand.magoya.com/tokens.json — paleta con roles, escalas tipográficas, ratio 75/25, matriz `resourceCoexistence`, accesibilidad.
 3. **Assets** → https://brand.magoya.com/ai/assets.json — manifiesto de TODOS los archivos (247): wordmarks, avatares, 58 íconos, ilustraciones, fotos, logos reales de clientes; cada uno con URL directa y su regla de uso.
-4. **Si la pieza es una presentación** → https://brand.magoya.com/ai/slides.json — los 41 módulos con su "cuándo usarlo" y `layout_src`: la geometría EXACTA de cada módulo. Reproducí el layout, no lo improvises. Si tu fetch trunca el archivo (~86KB), usá los archivos por familia: `ai/slides/A.json` … `M.json`.
-5. **Método de trabajo (OBLIGATORIO en piezas con contenido)** → https://brand.magoya.com/ai/metodo.md — entender antes de elegir, módulo por criterio (no por defecto), y pasadas de copy / diseño / crítica antes de entregar (secuenciales si no tenés subagentes).
-6. **Antes de entregar** → https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md — 15 chequeos verificables.
+4. **Presentaciones — flujo copiá-pegá-y-funciona**: (a) elegí el módulo con https://brand.magoya.com/ai/selector.json (qué querés contar → qué plantilla, sin criterio de diseño), (b) copiá la plantilla oficial TAL CUAL desde https://brand.magoya.com/ai/templates/index.json (HTML listo, geometría y colores bloqueados), (c) llená SOLO los data-slot respetando max_caracteres — si el texto no entra, acortá el texto, nunca la fuente. La geometría de referencia sigue en ai/slides.json (layout_src) para quien renderice por su cuenta.
+5. **Constraints duros** → https://brand.magoya.com/ai/constraints.json — mínimos de logo, clearspace, márgenes, safe areas, límites de texto. Nada se asume: si un valor no está ahí ni en tokens.json, se pregunta.
+6. **Método de trabajo (OBLIGATORIO en piezas con contenido)** → https://brand.magoya.com/ai/metodo.md — entender antes de elegir, módulo por criterio (no por defecto), y pasadas de copy / diseño / crítica antes de entregar (secuenciales si no tenés subagentes).
+7. **Antes de entregar** → https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md — 15 chequeos verificables.
 
 ## Qué podés hacer al pie de la letra (hoy)
 
@@ -27,6 +28,8 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 4. Fallback sin browsing: subí `BRAND.md` y `tokens.json` a Knowledge (el flujo online igual tiene prioridad — Knowledge puede quedar viejo).
 
 ## Changelog
+
+- **1.3** (2026-08-11): plantillas HTML con slots + selector + constraints + llms-full.txt. Si tu fetch rinde poco, un solo fetch de https://brand.magoya.com/llms-full.txt trae todo.
 
 - **1.2** (2026-08-10): método de trabajo obligatorio (`ai/metodo.md`).
 

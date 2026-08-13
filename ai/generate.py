@@ -122,3 +122,27 @@ manifest = {
  'carpetas': carpetas}
 json.dump(manifest, open('ai/assets.json','w'), ensure_ascii=False, indent=1)
 print(f'assets.json: {total} archivos en {len(carpetas)} carpetas')
+
+# ---------- 4. plantillas HTML con slots ----------
+import subprocess as _sp
+r = _sp.run(['python3', 'ai/templates.py'], capture_output=True, text=True)
+print(r.stdout.strip() or r.stderr.strip()[:300])
+
+# ---------- 5. llms-full.txt: todo en un fetch ----------
+parts = []
+parts.append(open('llms.txt').read())
+parts.append('\n\n# ===== BRAND.md (doctrina completa) =====\n\n' + open('BRAND.md').read())
+parts.append('\n\n# ===== CONSTRAINTS (minimos/maximos/clearspace/safe areas) =====\n\n' + open('ai/constraints.json').read())
+parts.append('\n\n# ===== SELECTOR DE MODULOS (que queres contar -> que plantilla) =====\n\n' + open('ai/selector.json').read())
+tpl = json.load(open('ai/templates/index.json'))
+lines = ['\n\n# ===== PLANTILLAS LISTAS (llenar slots, NO tocar geometria) =====\n',
+         tpl['que_es'], '']
+for m in tpl['modulos']:
+    lines.append(f"- {m['id']} · {m['nombre']} -> {m['url']} · slots: " +
+                 ', '.join(f"{s['slot']}({s['rol']},max {s.get('max_caracteres_aprox','?')}ch)" for s in m['slots'][:6]))
+parts.append('\n'.join(lines))
+parts.append('\n\n# ===== METODO DE TRABAJO (obligatorio) =====\n\n' + open('ai/metodo.md').read())
+parts.append('\n\n# ===== CHECKLIST DE ENTREGA =====\n\n' + open('.ai/checklist.md').read())
+open('llms-full.txt', 'w').write('\n'.join(parts))
+import os as _os
+print(f'llms-full.txt: {_os.path.getsize("llms-full.txt")//1024}KB')

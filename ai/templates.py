@@ -1,0 +1,193 @@
+#!/usr/bin/env python3
+"""Genera las 41 plantillas HTML con slots desde el DSL real del exportador.
+Correr desde la raíz: python3 ai/templates.py  (generate.py lo invoca solo).
+Ejecuta las funciones SPEC reales en Node (no las interpreta) y convierte
+los shapes a HTML absoluto en unidades cqw — fidelidad 1:1 con el .pptx.
+Salida: ai/templates/<ID>.html + ai/templates/index.json
+"""
+import json, os, re, subprocess, tempfile, html as htmllib
+
+BASE = 'https://brand.magoya.com'
+dsl = json.load(open('ai/slides.json'))['layouts']['dsl_src']
+mods = {m['id']: m for m in json.load(open('ai/slides.json'))['modulos']}
+
+# ---------- 1. ejecutar SPEC real en node ----------
+runner = '''
+var window = {}; var U = 13.333/100;
+function IN(v){return v*U;} function FS(cqw){return cqw*9.6;}
+''' + dsl + '''
+var out = {};
+Object.keys(SPEC).forEach(function(id){
+  try { out[id] = SPEC[id]('NN').filter(Boolean); }
+  catch(e){ out[id] = {error: String(e)}; }
+});
+console.log(JSON.stringify(out));
+'''
+with tempfile.NamedTemporaryFile('w', suffix='.js', delete=False) as f:
+    f.write(runner); runner_path = f.name
+res = subprocess.run(['node', runner_path], capture_output=True, text=True)
+os.unlink(runner_path)
+if res.returncode != 0:
+    raise SystemExit('node error: ' + res.stderr[:800])
+shapes_by_mod = json.loads(res.stdout)
+errs = {k: v for k, v in shapes_by_mod.items() if isinstance(v, dict)}
+if errs:
+    print('MODULOS CON ERROR:', errs)
+
+# ---------- 2. conversión shapes -> HTML ----------
+def cq(v):  # unidades del lienzo (100 = ancho) -> cqw
+    return f'{round(v, 3)}cqw'
+
+def fs(s):  # tamaño tipográfico: s*9.6pt -> px a 1920 = s*12.8 -> cqw
+    return f'{round(s * 12.8 / 19.2, 3)}cqw'
+
+def esc(t):
+    return htmllib.escape(str(t)).replace('\\n', '\n')
+
+LOCKED_PAT = re.compile(r'wordmark|logos/|/icons/|motif|avatar|favicon|studio/')
+
+def render(mid, shapes):
+    slots, body = [], []
+    tno = 0
+    for sh in shapes:
+        k = sh.get('k')
+        x, y = sh.get('x', 0), sh.get('y', 0)
+        w, h = sh.get('w', 0), sh.get('h', 5)
+        pos = f'left:{cq(x)};top:{cq(y)};width:{cq(w)};height:{cq(h)}'
+        if k == 'r':
+            st = pos
+            if sh.get('fill'):
+                alpha = sh.get('alpha')
+                if alpha is not None:
+                    a = round((100 - alpha) / 100, 2)
+                    fill = sh["fill"]
+                    st += f';background:#{fill};opacity:{a}'
+                else:
+                    st += f';background:#{sh["fill"]}'
+            if sh.get('line'):
+                st += f';border:{round(sh.get("lw",1)*1.33,1)}px solid #{sh["line"]}'
+            if sh.get('radius'):
+                st += f';border-radius:{cq(sh["radius"])}'
+            body.append(f'<div class="r" style="{st}"></div>')
+        elif k == 't':
+            tno += 1
+            sid = f't{tno}'
+            s = sh.get('s', 1.75)
+            st = pos + f';font-size:{fs(s)}'
+            st += f';font-weight:{800 if sh.get("b") else 400}'
+            st += f';color:#{sh.get("c") or "161616"}'
+            st += f';text-align:{sh.get("al","left")}'
+            va = sh.get('va', 'top')
+            if va != 'top':
+                st += f';display:flex;flex-direction:column;justify-content:{ {"middle":"center","bottom":"flex-end"}.get(va,"flex-start") }'
+            st += f';line-height:{sh.get("lh", 1.2)}'
+            if sh.get('cs') is not None:
+                st += f';letter-spacing:{round(sh["cs"]*1.33/ (s*12.8), 4)}em'
+            elif sh.get('tight'):
+                st += ';letter-spacing:-0.03em'
+            text = sh.get('text', '')
+            if isinstance(text, list):
+                text = ' '.join(str(t.get('text', t)) if isinstance(t, dict) else str(t) for t in text)
+            # heurística de rol y capacidad
+            fpx = s * 12.8
+            role = 'display' if s >= 4 else ('titulo' if s >= 2.4 else ('subtitulo' if s >= 1.7 else 'caption'))
+            if str(text).isupper() and s <= 1.7: role = 'kicker'
+            cpl = max(1, int(w * 19.2 / (0.56 * fpx)))
+            lines = max(1, int(h * 19.2 / (fpx * sh.get('lh', 1.2))))
+            slots.append({'slot': sid, 'rol': role, 'texto_ejemplo': str(text)[:160],
+                          'max_caracteres_aprox': int(cpl * lines * 0.9),
+                          'max_lineas': lines})
+            body.append(f'<p class="t" data-slot="{sid}" data-rol="{role}" style="{st}">{esc(text)}</p>')
+        elif k == 'i':
+            src = sh.get('src', '')
+            url = src if src.startswith('http') else f'{BASE}/{src}'
+            locked = bool(LOCKED_PAT.search(src))
+            fit = {'contain': 'contain', 'cover': 'cover', 'crop': 'cover'}.get(sh.get('fit'), 'fill')
+            tint = sh.get('tint')
+            swap = sh.get('swap')
+            if (tint or swap) and src.endswith('.svg'):
+                color = tint or (swap[0][1] if swap else '161616')
+                if not str(color).startswith('#'): color = f'#{color}'
+                body.append(
+                    f'<div class="im" data-asset="{src}" {"data-locked=\"brand\"" if locked else ""} '
+                    f'style="{pos};background:{color};-webkit-mask-image:url({url});mask-image:url({url});'
+                    f'-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:{fit};mask-size:{fit};'
+                    f'-webkit-mask-position:center;mask-position:center"></div>')
+            else:
+                extra = ';filter:grayscale(1)' if sh.get('gray') else ''
+                slot_attr = '' if locked else f' data-slot="img{len(slots)}" data-reemplazable="foto: respetar B&N+acento si es persona"'
+                body.append(f'<img class="im" src="{url}" {"data-locked=\"brand\"" if locked else slot_attr} '
+                            f'style="{pos};object-fit:{fit}{extra}" alt="">')
+        elif k == 'c':
+            data = json.dumps(sh.get('data', []), ensure_ascii=False)[:400]
+            slots.append({'slot': f'chart{tno}', 'rol': 'grafico',
+                          'texto_ejemplo': f'tipo {sh.get("type","bar")}',
+                          'nota': 'reemplazar por barras/lineas hechas con divs .r usando la paleta; datos de ejemplo en el comentario'})
+            body.append(f'<!-- CHART tipo={sh.get("type","?")} datos={esc(data)} -->'
+                        f'<div class="chart" data-slot="chart{tno}" style="{pos};border:1px dashed #C4B5A6;'
+                        f'display:flex;align-items:center;justify-content:center;color:#666;font-size:1cqw">'
+                        f'GRÁFICO ({sh.get("type","bar")}): reconstruir con divs de la paleta</div>')
+        elif k == 'tb':
+            rows = sh.get('rows', [])
+            trs = []
+            for r_ in rows[:12]:
+                tds = ''.join(f'<td>{esc(c.get("text", c) if isinstance(c, dict) else c)}</td>' for c in r_)
+                trs.append(f'<tr>{tds}</tr>')
+            slots.append({'slot': f'tabla{tno}', 'rol': 'tabla', 'texto_ejemplo': 'tabla de datos'})
+            body.append(f'<table class="tb" data-slot="tabla{tno}" style="{pos}">{"".join(trs)}</table>')
+    meta = mods.get(mid, {})
+    doc = f'''<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Magoya · módulo {mid} — {htmllib.escape(meta.get('nombre', ''))}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<style>
+  *{{box-sizing:border-box;margin:0;padding:0}}
+  body{{background:#EEF0E9;padding:2vw;font-family:'Manrope',Arial,sans-serif}}
+  .slide{{position:relative;aspect-ratio:16/9;width:100%;max-width:1920px;margin:0 auto;
+         container-type:inline-size;overflow:hidden;font-family:'Manrope',Arial,sans-serif;
+         box-shadow:0 10px 40px rgba(0,0,0,.12)}}
+  .t{{position:absolute;white-space:pre-line;font-family:inherit}}
+  .r,.im,.chart{{position:absolute}}
+  .tb{{position:absolute;border-collapse:collapse;font-size:1.4cqw}}
+  .tb td{{border-bottom:1px solid #DCD0C4;padding:.6cqw .9cqw}}
+</style>
+<!--
+PLANTILLA OFICIAL MAGOYA — módulo {mid} ({htmllib.escape(meta.get('nombre',''))})
+Cuándo usarlo: {htmllib.escape(meta.get('cuando_usarlo',''))}
+
+REGLAS PARA AI (no negociables):
+1. NO tocar posiciones, tamaños, colores ni tipografías. La geometría ES la marca.
+2. Solo reemplazar el TEXTO INTERNO de los elementos con data-slot, respetando
+   max_caracteres_aprox y max_lineas de ai/templates/index.json. Si tu texto no
+   entra, acortá el texto — nunca achiques la fuente ni muevas la caja.
+3. Los elementos data-locked="brand" (wordmark, logos, íconos, motivos) no se
+   tocan, no se reemplazan, no se mueven.
+4. Las imágenes data-reemplazable aceptan otra foto REAL respetando su regla.
+5. El texto "NN" del número de página se reemplaza por el número real (2 dígitos).
+-->
+</head><body>
+<div class="slide" data-modulo="{mid}">
+{chr(10).join(body)}
+</div>
+</body></html>'''
+    return doc, slots
+
+os.makedirs('ai/templates', exist_ok=True)
+index = {'que_es': 'Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca.',
+         'como_elegir': f'{BASE}/ai/selector.json',
+         'constraints': f'{BASE}/ai/constraints.json',
+         'modulos': []}
+ok = 0
+for mid in sorted(shapes_by_mod):
+    shp = shapes_by_mod[mid]
+    if isinstance(shp, dict):
+        continue
+    doc, slots = render(mid, shp)
+    open(f'ai/templates/{mid}.html', 'w').write(doc)
+    m = mods.get(mid, {})
+    index['modulos'].append({'id': mid, 'nombre': m.get('nombre',''), 'cuando_usarlo': m.get('cuando_usarlo',''),
+                             'url': f'{BASE}/ai/templates/{mid}.html', 'slots': slots})
+    ok += 1
+json.dump(index, open('ai/templates/index.json','w'), ensure_ascii=False, indent=1)
+print(f'plantillas generadas: {ok}/41 · index.json con slots y max_caracteres')
