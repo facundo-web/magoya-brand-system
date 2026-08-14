@@ -24,7 +24,7 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 - [README.md](https://brand.magoya.com/README.md): mapa del repositorio, orden de lectura recomendado y árbol de la carpeta `assets/`.
 - [ai/assets.json](https://brand.magoya.com/ai/assets.json): manifiesto de TODOS los assets (247 archivos) con URL directa y regla de uso por carpeta — wordmarks, avatares, los 58 íconos del sistema como SVGs individuales (`assets/icons/`), ilustraciones, fotos, logos reales de clientes y stack. Pages no lista directorios: este manifiesto es la única forma de enumerar los assets.
 - [llms-full.txt](https://brand.magoya.com/llms-full.txt): TODO el sistema en un solo fetch (doctrina + constraints + selector + índice de plantillas + método + checklist) — empezá acá si tus fetches encadenados fallan o truncan.
-- [ai/templates/index.json](https://brand.magoya.com/ai/templates/index.json): las 41 plantillas HTML oficiales con slots — se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques geometría ni colores. Este es el camino "copiá, pegá y funciona". Cada plantilla también está como `.txt` (texto plano) porque muchos fetch convierten el `.html` a markdown.
+- [ai/templates/index.json](https://brand.magoya.com/ai/templates/index.json): las 41 plantillas HTML oficiales con slots — se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques geometría ni colores. Este es el camino "copiá, pegá y funciona". Cada plantilla también está como `.txt` (texto plano) porque muchos fetch convierten el `.html` a markdown. Para armar un deck de varias slides: [deck-starter.html](https://brand.magoya.com/ai/templates/deck-starter.html) — pegás los `<div class="slide">` adentro, con un solo `<head>`.
 - [ai/selector.json](https://brand.magoya.com/ai/selector.json): qué querés contar → qué plantilla. Sin criterio de diseño requerido.
 - [ai/facts.json](https://brand.magoya.com/ai/facts.json): los datos REALES de la compañía (cifras aprobadas, clientes y equipo nombrables). Todo texto y cifra de las plantillas es EJEMPLO — lo que no esté acá se pide, no se inventa.
 - [ai/constraints.json](https://brand.magoya.com/ai/constraints.json): mínimos de logo, clearspace, márgenes, safe areas, límites de texto — los números que nadie tiene que asumir.
@@ -328,7 +328,7 @@ Capa machine-readable: `llms.txt` (resumen estable), `.ai/brand-prompt.md` y `.a
   {"tenes": "validación técnica del stack (audiencia CTO)", "usa": "K1"},
   {"tenes": "capacidades de AI con herramientas concretas", "usa": "K2"},
   {"tenes": "prueba social (clientes)", "usa": "L1"},
-  {"tenes": "el cierre con próximos pasos", "usa": "M3", "nota": "siempre es la última slide; tres pasos con fecha y UN solo CTA"}
+  {"tenes": "el cierre con próximos pasos", "usa": "M3", "nota": "siempre es la última slide; la plantilla M3 tiene CUATRO pasos numerados (t5-t12) y UN solo CTA — llená los cuatro, no borres ninguno"}
  ],
  "plantillas": "https://brand.magoya.com/ai/templates/index.json",
  "geometria_fuente": "https://brand.magoya.com/ai/slides.json"

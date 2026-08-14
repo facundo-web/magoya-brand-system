@@ -38,7 +38,7 @@
   {"tenes": "validación técnica del stack (audiencia CTO)", "usa": "K1"},
   {"tenes": "capacidades de AI con herramientas concretas", "usa": "K2"},
   {"tenes": "prueba social (clientes)", "usa": "L1"},
-  {"tenes": "el cierre con próximos pasos", "usa": "M3", "nota": "siempre es la última slide; tres pasos con fecha y UN solo CTA"}
+  {"tenes": "el cierre con próximos pasos", "usa": "M3", "nota": "siempre es la última slide; la plantilla M3 tiene CUATRO pasos numerados (t5-t12) y UN solo CTA — llená los cuatro, no borres ninguno"}
  ],
  "plantillas": "https://brand.magoya.com/ai/templates/index.json",
  "geometria_fuente": "https://brand.magoya.com/ai/slides.json"

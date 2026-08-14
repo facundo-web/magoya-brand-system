@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#EEF0E9;padding:2vw;font-family:'Manrope',Arial,sans-serif}
+  body{background:#EEF2EC;padding:2vw;font-family:'Manrope',Arial,sans-serif}
   .slide{position:relative;aspect-ratio:16/9;width:100%;max-width:1920px;margin:0 auto;
          container-type:inline-size;overflow:hidden;font-family:'Manrope',Arial,sans-serif;
          box-shadow:0 10px 40px rgba(0,0,0,.12)}

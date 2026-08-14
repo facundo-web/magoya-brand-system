@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#EEF0E9;padding:2vw;font-family:'Manrope',Arial,sans-serif}
+  body{background:#EEF2EC;padding:2vw;font-family:'Manrope',Arial,sans-serif}
   .slide{position:relative;aspect-ratio:16/9;width:100%;max-width:1920px;margin:0 auto;
          container-type:inline-size;overflow:hidden;font-family:'Manrope',Arial,sans-serif;
          box-shadow:0 10px 40px rgba(0,0,0,.12)}
@@ -38,7 +38,7 @@ REGLAS PARA AI (no negociables):
 <div class="r" style="left:0cqw;top:0cqw;width:100cqw;height:56.25cqw;background:#0C2117"></div>
 <div class="im" data-asset="assets/motif-semis.svg" data-locked="brand" style="left:0cqw;top:41.25cqw;width:100cqw;height:15cqw;background:#ECE3DB;-webkit-mask-image:url(https://brand.magoya.com/assets/motif-semis.svg);mask-image:url(https://brand.magoya.com/assets/motif-semis.svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:cover;mask-size:cover;-webkit-mask-position:center;mask-position:center"></div>
 <img class="im" src="https://brand.magoya.com/assets/magoya-wordmark-cream.svg" data-locked="brand" style="left:7.5cqw;top:7cqw;width:11cqw;height:3.007cqw;object-fit:fill" alt="">
-<p class="t" data-slot="t1" data-rol="display" style="left:7.5cqw;top:14cqw;width:30cqw;height:12cqw;font-size:8.0cqw;font-weight:800;color:#A2FF00;text-align:left;line-height:0.9;letter-spacing:-0.03em">02</p>
+<p class="t" data-slot="t1" data-rol="display" style="left:7.5cqw;top:14cqw;width:30cqw;height:12cqw;font-size:8.0cqw;font-weight:800;color:#A2FF00;text-align:left;line-height:0.9;letter-spacing:-0.03em">[XX]</p>
 <p class="t" data-slot="t2" data-rol="display" style="left:7.5cqw;top:26cqw;width:60cqw;height:13cqw;font-size:3.733cqw;font-weight:800;color:#F6F1EB;text-align:left;line-height:1.05;letter-spacing:-0.03em">What we&#x27;ve built
 in AgTech</p>
 </div>

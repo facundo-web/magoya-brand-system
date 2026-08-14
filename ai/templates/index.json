@@ -1,4 +1,14 @@
 {
+ "como_armar_un_deck_de_varias_slides": {
+  "starter": "https://brand.magoya.com/ai/templates/deck-starter.html (y .txt) — documento base: pegá los <div class=\"slide\"> uno abajo del otro ahí adentro",
+  "reglas": [
+   "un solo <head> (el del starter: trae Manrope y los estilos .slide/.t/.r/.im)",
+   "separacion entre slides: 48px (escala base-4) — ya esta en el starter",
+   "fondo de la pagina: #EEF2EC (sage) — nunca un color fuera de la paleta",
+   "el numero de pagina (rol numero_de_pagina) va correlativo en 2 digitos desde la primera slide de contenido",
+   "no repetir dos veces el mismo modulo seguido; alterná los pares espejo (H1/H2, I1/I2)"
+  ]
+ },
  "que_es": "Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca. IMPORTANTE: si tu fetch de .html llega convertido/resumido, usá url_texto_crudo (.txt, mismo contenido servido como texto plano). TODO texto y cifra de las plantillas es EJEMPLO: los datos reales aprobados están en ai/facts.json — lo que no esté ahí se pide, no se inventa.",
  "datos_reales": "https://brand.magoya.com/ai/facts.json",
  "como_elegir": "https://brand.magoya.com/ai/selector.json",
@@ -167,7 +177,7 @@
     {
      "slot": "t1",
      "rol": "display",
-     "texto_ejemplo": "02",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 5,
      "max_lineas": 1
     },
@@ -534,7 +544,7 @@
     {
      "slot": "t3",
      "rol": "display",
-     "texto_ejemplo": "95%",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 9,
      "max_lineas": 1
     },
@@ -548,7 +558,7 @@
     {
      "slot": "t5",
      "rol": "display",
-     "texto_ejemplo": "5+",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 9,
      "max_lineas": 1
     },
@@ -562,7 +572,7 @@
     {
      "slot": "t7",
      "rol": "display",
-     "texto_ejemplo": "21",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 9,
      "max_lineas": 1
     },
@@ -576,7 +586,7 @@
     {
      "slot": "t9",
      "rol": "display",
-     "texto_ejemplo": "10",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 9,
      "max_lineas": 1
     },
@@ -613,7 +623,7 @@
     {
      "slot": "t3",
      "rol": "display",
-     "texto_ejemplo": "25 k",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 8,
      "max_lineas": 1
     },
@@ -627,7 +637,7 @@
     {
      "slot": "t5",
      "rol": "display",
-     "texto_ejemplo": "3 k",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 8,
      "max_lineas": 1
     },
@@ -641,7 +651,7 @@
     {
      "slot": "t7",
      "rol": "display",
-     "texto_ejemplo": "8 ×",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 8,
      "max_lineas": 1
     },
@@ -671,7 +681,7 @@
     {
      "slot": "t2",
      "rol": "display",
-     "texto_ejemplo": "95 %",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 4,
      "max_lineas": 1
     },
@@ -708,7 +718,7 @@
     {
      "slot": "t3",
      "rol": "display",
-     "texto_ejemplo": "21",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 3,
      "max_lineas": 1
     },
@@ -722,7 +732,7 @@
     {
      "slot": "t5",
      "rol": "display",
-     "texto_ejemplo": "10",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 3,
      "max_lineas": 1
     },
@@ -736,7 +746,7 @@
     {
      "slot": "t7",
      "rol": "display",
-     "texto_ejemplo": "5+",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 3,
      "max_lineas": 1
     },
@@ -922,7 +932,7 @@
     {
      "slot": "t3",
      "rol": "titulo",
-     "texto_ejemplo": "68%",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 9,
      "max_lineas": 1
     },
@@ -1264,7 +1274,7 @@
     {
      "slot": "t6",
      "rol": "titulo",
-     "texto_ejemplo": "9",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 8,
      "max_lineas": 1
     },
@@ -1278,7 +1288,7 @@
     {
      "slot": "t8",
      "rol": "titulo",
-     "texto_ejemplo": "1",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 8,
      "max_lineas": 1
     },
@@ -1327,7 +1337,7 @@
     {
      "slot": "t15",
      "rol": "titulo",
-     "texto_ejemplo": "5",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 8,
      "max_lineas": 1
     },
@@ -1341,7 +1351,7 @@
     {
      "slot": "t17",
      "rol": "titulo",
-     "texto_ejemplo": "2",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 8,
      "max_lineas": 1
     },
@@ -1960,7 +1970,7 @@
     {
      "slot": "t12",
      "rol": "titulo",
-     "texto_ejemplo": "8×",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 16,
      "max_lineas": 1
     },
@@ -1974,7 +1984,7 @@
     {
      "slot": "t14",
      "rol": "titulo",
-     "texto_ejemplo": "3k",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 16,
      "max_lineas": 1
     },
@@ -2067,7 +2077,7 @@
     {
      "slot": "t11",
      "rol": "display",
-     "texto_ejemplo": "3",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 9,
      "max_lineas": 1
     },
@@ -2289,7 +2299,7 @@
     {
      "slot": "t2",
      "rol": "display",
-     "texto_ejemplo": "21",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 11,
      "max_lineas": 1
     },
@@ -2609,7 +2619,7 @@
     {
      "slot": "t3",
      "rol": "titulo",
-     "texto_ejemplo": "5+",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 15,
      "max_lineas": 1
     },

@@ -88,6 +88,11 @@ def render(mid, shapes):
             text = sh.get('text', '')
             if isinstance(text, list):
                 text = ' '.join(str(t.get('text', t)) if isinstance(t, dict) else str(t) for t in text)
+            # cifras de ejemplo -> [XX]: imposible entregarlas en silencio como reales
+            _t = str(text).strip()
+            _es_cifra = bool(re.fullmatch(r'[\d.,]+\s*(%|x|×|k|K|M|\+|hs|min)?', _t)) and _t != 'NN'
+            if _es_cifra and s >= 2.4:
+                text = '[XX]'
             # heurística de rol y capacidad
             fpx = s * 12.8
             role = 'display' if s >= 4 else ('titulo' if s >= 2.4 else ('subtitulo' if s >= 1.7 else 'caption'))
@@ -144,7 +149,7 @@ def render(mid, shapes):
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 <style>
   *{{box-sizing:border-box;margin:0;padding:0}}
-  body{{background:#EEF0E9;padding:2vw;font-family:'Manrope',Arial,sans-serif}}
+  body{{background:#EEF2EC;padding:2vw;font-family:'Manrope',Arial,sans-serif}}
   .slide{{position:relative;aspect-ratio:16/9;width:100%;max-width:1920px;margin:0 auto;
          container-type:inline-size;overflow:hidden;font-family:'Manrope',Arial,sans-serif;
          box-shadow:0 10px 40px rgba(0,0,0,.12)}}
@@ -180,7 +185,14 @@ REGLAS PARA AI (no negociables):
     return doc, slots
 
 os.makedirs('ai/templates', exist_ok=True)
-index = {'que_es': 'Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca. IMPORTANTE: si tu fetch de .html llega convertido/resumido, usá url_texto_crudo (.txt, mismo contenido servido como texto plano). TODO texto y cifra de las plantillas es EJEMPLO: los datos reales aprobados están en ai/facts.json — lo que no esté ahí se pide, no se inventa.',
+index = {'como_armar_un_deck_de_varias_slides': {
+          'starter': f'{BASE}/ai/templates/deck-starter.html (y .txt) — documento base: pegá los <div class="slide"> uno abajo del otro ahí adentro',
+          'reglas': ['un solo <head> (el del starter: trae Manrope y los estilos .slide/.t/.r/.im)',
+                     'separacion entre slides: 48px (escala base-4) — ya esta en el starter',
+                     'fondo de la pagina: #EEF2EC (sage) — nunca un color fuera de la paleta',
+                     'el numero de pagina (rol numero_de_pagina) va correlativo en 2 digitos desde la primera slide de contenido',
+                     'no repetir dos veces el mismo modulo seguido; alterná los pares espejo (H1/H2, I1/I2)']},
+         'que_es': 'Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca. IMPORTANTE: si tu fetch de .html llega convertido/resumido, usá url_texto_crudo (.txt, mismo contenido servido como texto plano). TODO texto y cifra de las plantillas es EJEMPLO: los datos reales aprobados están en ai/facts.json — lo que no esté ahí se pide, no se inventa.',
          'datos_reales': f'{BASE}/ai/facts.json',
          'como_elegir': f'{BASE}/ai/selector.json',
          'constraints': f'{BASE}/ai/constraints.json',
@@ -198,5 +210,36 @@ for mid in sorted(shapes_by_mod):
                              'url': f'{BASE}/ai/templates/{mid}.html',
                              'url_texto_crudo': f'{BASE}/ai/templates/{mid}.txt', 'slots': slots})
     ok += 1
+starter = '''<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<title>Magoya · deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#EEF2EC;padding:2vw;font-family:'Manrope',Arial,sans-serif}
+  .slide{position:relative;aspect-ratio:16/9;width:100%;max-width:1920px;margin:0 auto 48px;
+         container-type:inline-size;overflow:hidden;font-family:'Manrope',Arial,sans-serif;
+         box-shadow:0 10px 40px rgba(0,0,0,.12)}
+  .t{position:absolute;white-space:pre-line;font-family:inherit}
+  .r,.im,.chart{position:absolute}
+  .tb{position:absolute;border-collapse:collapse;font-size:1.4cqw}
+  .tb td{border-bottom:1px solid #DCD0C4;padding:.6cqw .9cqw}
+</style>
+<!--
+DECK STARTER OFICIAL MAGOYA
+Peg\u00e1 ac\u00e1 abajo los <div class="slide"> de cada plantilla (ai/templates/<ID>.txt),
+en el orden de tu narrativa. NO copies el <head> de cada plantilla: este ya tiene todo.
+Numeraci\u00f3n: reemplaz\u00e1 cada "NN" por el n\u00famero correlativo en 2 d\u00edgitos.
+Las cifras que veas como [XX] son datos que TEN\u00c9S QUE PEDIR: est\u00e1n en ai/facts.json
+o no existen todav\u00eda. Nunca las completes con algo verosímil.
+-->
+</head><body>
+
+<!-- pegá los <div class="slide"> acá, uno abajo del otro -->
+
+</body></html>'''
+open('ai/templates/deck-starter.html','w').write(starter)
+open('ai/templates/deck-starter.txt','w').write(starter)
 json.dump(index, open('ai/templates/index.json','w'), ensure_ascii=False, indent=1)
 print(f'plantillas generadas: {ok}/41 · index.json con slots y max_caracteres')
