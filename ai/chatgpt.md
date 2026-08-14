@@ -1,6 +1,6 @@
 # Magoya Brand — entrada para ChatGPT (Custom GPT / Projects)
 
-**Versión 1.3 · 2026-08-11** · Este archivo es el punto de entrada de la marca Magoya para ChatGPT. Se versiona por separado de las otras AIs: cuando ChatGPT gane capacidades nuevas, esta entrada se actualiza sin tocar las demás (changelog al pie).
+**Versión 1.4 · 2026-08-11** · Este archivo es el punto de entrada de la marca Magoya para ChatGPT. Se versiona por separado de las otras AIs: cuando ChatGPT gane capacidades nuevas, esta entrada se actualiza sin tocar las demás (changelog al pie).
 
 Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir permisos adicionales — todas las URLs son públicas.
 
@@ -10,9 +10,30 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 2. **Valores exactos** → https://brand.magoya.com/tokens.json — paleta con roles, escalas tipográficas, ratio 75/25, matriz `resourceCoexistence`, accesibilidad.
 3. **Assets** → https://brand.magoya.com/ai/assets.json — manifiesto de TODOS los archivos (247): wordmarks, avatares, 58 íconos, ilustraciones, fotos, logos reales de clientes; cada uno con URL directa y su regla de uso.
 4. **Presentaciones — flujo copiá-pegá-y-funciona**: (a) elegí el módulo con https://brand.magoya.com/ai/selector.json (qué querés contar → qué plantilla, sin criterio de diseño), (b) copiá la plantilla oficial TAL CUAL desde https://brand.magoya.com/ai/templates/index.json (HTML listo, geometría y colores bloqueados), (c) llená SOLO los data-slot respetando max_caracteres — si el texto no entra, acortá el texto, nunca la fuente. La geometría de referencia sigue en ai/slides.json (layout_src) para quien renderice por su cuenta.
-5. **Constraints duros** → https://brand.magoya.com/ai/constraints.json — mínimos de logo, clearspace, márgenes, safe areas, límites de texto. Nada se asume: si un valor no está ahí ni en tokens.json, se pregunta.
-6. **Método de trabajo (OBLIGATORIO en piezas con contenido)** → https://brand.magoya.com/ai/metodo.md — entender antes de elegir, módulo por criterio (no por defecto), y pasadas de copy / diseño / crítica antes de entregar (secuenciales si no tenés subagentes).
-7. **Antes de entregar** → https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md — 15 chequeos verificables.
+5. **Datos reales de la empresa** → https://brand.magoya.com/ai/facts.json — cifras aprobadas, clientes y equipo nombrables. Las cifras de las plantillas son EJEMPLO: nunca se entregan como reales. Si el dato no está acá, se le pide al usuario.
+6. **Constraints duros** → https://brand.magoya.com/ai/constraints.json — mínimos de logo, clearspace, márgenes, safe areas, límites de texto. Nada se asume: si un valor no está ahí ni en tokens.json, se pregunta.
+7. **Método de trabajo (OBLIGATORIO en piezas con contenido)** → https://brand.magoya.com/ai/metodo.md — entender antes de elegir, módulo por criterio (no por defecto), y pasadas de copy / diseño / crítica antes de entregar (secuenciales si no tenés subagentes).
+8. **Antes de entregar** → https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md — 15 chequeos verificables.
+
+
+## URLs del flujo (lista plana — si tu fetch resumió lo de arriba, usá esta)
+
+```
+https://brand.magoya.com/llms-full.txt        <- TODO en un solo fetch (empezá acá si dudás)
+https://brand.magoya.com/BRAND.md             <- doctrina
+https://brand.magoya.com/tokens.json          <- valores exactos
+https://brand.magoya.com/ai/facts.json        <- datos REALES de la empresa (cifras, clientes, equipo)
+https://brand.magoya.com/ai/selector.json     <- qué querés contar -> qué plantilla
+https://brand.magoya.com/ai/templates/index.json  <- las 41 plantillas + slots + max_caracteres
+https://brand.magoya.com/ai/templates/<ID>.txt    <- la plantilla como TEXTO PLANO (usá .txt, no .html:
+                                                     muchos fetch convierten el .html a markdown y rompen el copy-paste)
+https://brand.magoya.com/ai/constraints.json  <- mínimos, clearspace, márgenes, safe areas
+https://brand.magoya.com/ai/assets.json       <- los 247 assets con URL directa
+https://brand.magoya.com/ai/metodo.md         <- método obligatorio (narrativa + agentes)
+https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md  <- 15 chequeos
+```
+
+**Las dos reglas que más se rompen en este flujo:** (1) la plantilla se copia TAL CUAL — solo cambia el texto de los `data-slot`; (2) las cifras y textos de las plantillas son EJEMPLO: los datos reales están en `facts.json` y lo que no esté ahí se pide, nunca se inventa.
 
 ## Qué podés hacer al pie de la letra (hoy)
 
@@ -28,6 +49,8 @@ Si sos un modelo leyendo esto: seguí el flujo de abajo tal cual, sin pedir perm
 4. Fallback sin browsing: subí `BRAND.md` y `tokens.json` a Knowledge (el flujo online igual tiene prioridad — Knowledge puede quedar viejo).
 
 ## Changelog
+
+- **1.4** (2026-08-11): `ai/facts.json` (datos reales, contra cifras inventadas) + lista plana de URLs a prueba de resúmenes + plantillas también en `.txt` (el fetch de `.html` las convierte a markdown y rompe el copy-paste).
 
 - **1.3** (2026-08-11): plantillas HTML con slots + selector + constraints + llms-full.txt. Si tu fetch rinde poco, un solo fetch de https://brand.magoya.com/llms-full.txt trae todo.
 

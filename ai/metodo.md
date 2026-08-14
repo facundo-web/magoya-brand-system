@@ -1,6 +1,6 @@
 # Método de trabajo — obligatorio para cualquier pieza con contenido
 
-**Versión 1.2 · 2026-08-11** · Este archivo es parte del flujo de todas las entradas por AI. No es opcional: cumplir la marca al pie de la letra es la mitad del trabajo — la otra mitad es buscar la excelencia en cómo se cuenta. Una pieza on-brand con la historia mal contada es una pieza fallida.
+**Versión 1.3 · 2026-08-11** · Este archivo es parte del flujo de todas las entradas por AI. No es opcional: cumplir la marca al pie de la letra es la mitad del trabajo — la otra mitad es buscar la excelencia en cómo se cuenta. Una pieza on-brand con la historia mal contada es una pieza fallida.
 
 ## Fase 1 — Entender antes de elegir
 
@@ -9,7 +9,7 @@ Antes de mirar un solo template, respondé por escrito (para vos):
 1. **Audiencia**: ¿quién lo va a ver y qué sabe ya?
 2. **Objetivo**: ¿qué tiene que pasar después de ver la pieza?
 3. **LA idea**: la única frase que la audiencia se tiene que llevar. Si no podés escribirla, no estás listo para elegir módulos.
-4. **Datos reales disponibles**: qué cifras, casos y nombres tenés de verdad. Los placeholders del sistema (`[DATE]`, cifras de ejemplo) NUNCA se entregan como contenido final — si falta un dato, pedilo o marcalo explícitamente.
+4. **Datos reales disponibles**: leé `ai/facts.json` — ahí están las cifras aprobadas, los clientes y el equipo nombrables. Los placeholders y cifras de ejemplo de las plantillas NUNCA se entregan como contenido final. Si el dato que necesitás no está en `facts.json`, pedíselo al usuario; no lo completes con algo verosímil.
 
 Después armá la **narrativa primero**: un outline donde cada slide/bloque es una frase de la historia. La historia manda; los módulos sirven a la historia, nunca al revés.
 
@@ -38,6 +38,8 @@ Antes de entregar, verificá los dos niveles:
 Entregá junto con la pieza una nota corta de decisiones: qué módulos elegiste y por qué, y qué encontró el crítico.
 
 ## Changelog
+
+- **1.3** (2026-08-11): fase 1 exige `ai/facts.json` como única fuente de datos de la empresa.
 
 - **1.2** (2026-08-11): fase 2 usa el selector; el agente de diseño valida plantilla-sin-cambios + constraints.
 

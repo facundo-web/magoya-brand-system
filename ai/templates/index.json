@@ -1,5 +1,6 @@
 {
- "que_es": "Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca.",
+ "que_es": "Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca. IMPORTANTE: si tu fetch de .html llega convertido/resumido, usá url_texto_crudo (.txt, mismo contenido servido como texto plano). TODO texto y cifra de las plantillas es EJEMPLO: los datos reales aprobados están en ai/facts.json — lo que no esté ahí se pide, no se inventa.",
+ "datos_reales": "https://brand.magoya.com/ai/facts.json",
  "como_elegir": "https://brand.magoya.com/ai/selector.json",
  "constraints": "https://brand.magoya.com/ai/constraints.json",
  "modulos": [
@@ -8,6 +9,7 @@
    "nombre": "Statement hero (126pt)",
    "cuando_usarlo": "primera slide después de la portada, o para abrir un bloque con una sola idea. Una frase, nada más. La frase que carga el sentido va en lima.",
    "url": "https://brand.magoya.com/ai/templates/A1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/A1.txt",
    "slots": [
     {
      "slot": "t1",
@@ -30,10 +32,11 @@
    "nombre": "Título + bajada (2 columnas)",
    "cuando_usarlo": "cuando el statement necesita una aclaración de contexto. El display manda; la bajada no pasa de tres líneas.",
    "url": "https://brand.magoya.com/ai/templates/A2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/A2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -59,10 +62,11 @@
    "nombre": "Agenda / índice",
    "cuando_usarlo": "slide 2 de todo deck de más de 10 slides. Se repite antes de cada bloque moviendo la fila en lima a la sección que arranca.",
    "url": "https://brand.magoya.com/ai/templates/A3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/A3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -158,6 +162,7 @@
    "nombre": "Divisor de sección (paño de semicírculos al corte)",
    "cuando_usarlo": "respiro entre bloques. El paño nace del borde inferior y se corta contra los tres bordes de la pieza — nunca flota en el aire. Número en lima, título en crema.",
    "url": "https://brand.magoya.com/ai/templates/A4.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/A4.txt",
    "slots": [
     {
      "slot": "t1",
@@ -180,10 +185,11 @@
    "nombre": "Título + ícono semántico grande",
    "cuando_usarlo": "abrir un capítulo temático. El ícono",
    "url": "https://brand.magoya.com/ai/templates/A5.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/A5.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -209,10 +215,11 @@
    "nombre": "3 cards de servicio con ícono semántico (sage)",
    "cuando_usarlo": "presentar los tres modelos de trabajo. El ícono en lima marca el modelo que estás proponiendo — ése es el golpe de lima de la slide.",
    "url": "https://brand.magoya.com/ai/templates/B1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/B1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -294,10 +301,11 @@
    "nombre": "3 boxes de modelo comercial (uno destacado en verde profundo)",
    "cuando_usarlo": "cuando hay que comparar cómo se factura cada modelo. La caja oscura es la recomendada; el resto queda en sage.",
    "url": "https://brand.magoya.com/ai/templates/B2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/B2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -400,10 +408,11 @@
    "nombre": "Grilla de capacidades 2×3 con iconografía semántica",
    "cuando_usarlo": "resumir qué hace el equipo sin párrafos. Un ícono del set agro por capacidad, texto de una línea. El destacado va en lima.",
    "url": "https://brand.magoya.com/ai/templates/B3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/B3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -506,10 +515,11 @@
    "nombre": "Título + grilla de 4 stats",
    "cuando_usarlo": "credenciales de la compañía. Cuatro cifras, cada una con un descriptor de una línea. Nunca más de cuatro en esta grilla.",
    "url": "https://brand.magoya.com/ai/templates/C1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/C1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -584,10 +594,11 @@
    "nombre": "Data hero — 3 métricas de producto (sage)",
    "cuando_usarlo": "resultado de un producto puntual. El sufijo (k, ×, %) va en verde digital para que la cifra respire.",
    "url": "https://brand.magoya.com/ai/templates/C2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/C2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -648,10 +659,11 @@
    "nombre": "Porcentaje al palo — una cifra gigante (44cqw ≈ 65% del ancho)",
    "cuando_usarlo": "cuando el dato es el argumento. La cifra ocupa ~70% del slide y no comparte protagonismo con nada. Lima como display sobre verde profundo.",
    "url": "https://brand.magoya.com/ai/templates/C3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/C3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -677,10 +689,11 @@
    "nombre": "Tres cifras grandes en línea (15cqw)",
    "cuando_usarlo": "cuando tres datos cuentan una sola historia. Un descriptor corto abajo de cada uno y una regla lima para anclar el bloque.",
    "url": "https://brand.magoya.com/ai/templates/C4.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/C4.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -741,10 +754,11 @@
    "nombre": "Barras simples (una serie, última barra en lima)",
    "cuando_usarlo": "una sola serie temporal. La barra en lima es el período que querés que se recuerde; el resto en verde profundo.",
    "url": "https://brand.magoya.com/ai/templates/D1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/D1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -776,10 +790,11 @@
    "nombre": "Barras agrupadas (dos series + leyenda en chips)",
    "cuando_usarlo": "comparar dos cohortes o dos escenarios en el mismo eje. Máximo dos series y cuatro grupos: más que eso deja de leerse en pantalla.",
    "url": "https://brand.magoya.com/ai/templates/D2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/D2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -825,10 +840,11 @@
    "nombre": "Gráfico de líneas (serie principal + baseline punteada)",
    "cuando_usarlo": "tendencia larga. La serie de Magoya va sólida en verde profundo con el último punto en lima; el baseline queda punteado en gris.",
    "url": "https://brand.magoya.com/ai/templates/D3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/D3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -881,10 +897,11 @@
    "nombre": "Donut + barras de progreso (sage)",
    "cuando_usarlo": "una proporción principal más dos o tres avances secundarios. El donut lleva la cifra adentro; una sola barra va en lima.",
    "url": "https://brand.magoya.com/ai/templates/D4.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/D4.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -972,10 +989,11 @@
    "nombre": "Lista numerada con fila destacada (lima)",
    "cuando_usarlo": "secuencias de 4 a 5 pasos. La fila en lima es el paso donde está el cliente hoy — se mueve según la conversación.",
    "url": "https://brand.magoya.com/ai/templates/E1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/E1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1050,10 +1068,11 @@
    "nombre": "Checklist en dos columnas",
    "cuando_usarlo": "argumentos de diferenciación. Tres ítems por columna como máximo, cada uno de una línea. El check va en verde digital.",
    "url": "https://brand.magoya.com/ai/templates/E2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/E2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1170,10 +1189,11 @@
    "nombre": "Tabla comparativa de scope — Lean vs Recommended",
    "cuando_usarlo": "primera de las dos slides de escenarios de inversión:",
    "url": "https://brand.magoya.com/ai/templates/E3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/E3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1204,10 +1224,11 @@
    "nombre": "Escenarios de inversión — timing + números",
    "cuando_usarlo": "segunda slide de escenarios:",
    "url": "https://brand.magoya.com/ai/templates/E4.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/E4.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1429,10 +1450,11 @@
    "nombre": "Timeline horizontal de 5 etapas (etapa activa en lima)",
    "cuando_usarlo": "mostrar dónde arranca y dónde termina el trabajo. Cinco hitos como máximo; el nodo lima es el que se está negociando.",
    "url": "https://brand.magoya.com/ai/templates/F1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/F1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1521,10 +1543,11 @@
    "nombre": "Método en 4 columnas — Discover · Align · Execute · Learn",
    "cuando_usarlo": "explicar el método propio con una frase por fase. La fase Execute lleva el golpe de lima porque es donde vive el equipo embebido.",
    "url": "https://brand.magoya.com/ai/templates/F2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/F2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1627,10 +1650,11 @@
    "nombre": "Journey de actores y plataformas (swimlanes)",
    "cuando_usarlo": "mostrar la interacción entre personas y sistemas. Un carril por actor, una etapa por columna, celdas vacías cuando el actor no participa. Nunca llenar la grilla entera: eso es el \"bingo\" que hay que evitar.",
    "url": "https://brand.magoya.com/ai/templates/F3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/F3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1810,10 +1834,11 @@
    "nombre": "Artefactos de proceso (wireframe · prototipo · output de discovery)",
    "cuando_usarlo": "cuando hay que mostrar",
    "url": "https://brand.magoya.com/ai/templates/F4.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/F4.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1853,10 +1878,11 @@
    "nombre": "Caso estructurado — challenge · team · adaptation · results",
    "cuando_usarlo": "el caso de éxito canónico. Los chips dejan visibles el",
    "url": "https://brand.magoya.com/ai/templates/G1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/G1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -1966,10 +1992,11 @@
    "nombre": "Caso en resultados — antes / después",
    "cuando_usarlo": "variante corta del caso, para cuando el deck ya explicó el contexto. Se usa alternada con G1 para que dos casos seguidos no se vean iguales.",
    "url": "https://brand.magoya.com/ai/templates/G2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/G2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2065,10 +2092,11 @@
    "nombre": "Foto a sangre a la izquierda + texto a la derecha",
    "cuando_usarlo": "abrir un bloque de contexto de mercado. La foto va a sangre por tres bordes y el texto respira en el lienzo blanco — nunca texto encima de la foto en esta variante.",
    "url": "https://brand.magoya.com/ai/templates/H1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/H1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2108,10 +2136,11 @@
    "nombre": "Foto a sangre a la derecha + texto a la izquierda (sage)",
    "cuando_usarlo": "el espejo de H1, para alternar ritmo cuando hay dos slides de foto seguidas. Lienzo sage para diferenciarla.",
    "url": "https://brand.magoya.com/ai/templates/H2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/H2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2144,10 +2173,11 @@
    "nombre": "Foto de fondo completo + scrim verde + statement",
    "cuando_usarlo": "statement de impacto a mitad de deck. El scrim verde profundo 55→86% es obligatorio cuando hay texto encima; es el único degradado permitido.",
    "url": "https://brand.magoya.com/ai/templates/H3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/H3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2173,10 +2203,11 @@
    "nombre": "Tira de 3 fotos + título",
    "cuando_usarlo": "mostrar rango geográfico o de cultivos sin caer en un collage. Tres aéreas, mismo alto, un rótulo por foto. Sin texto encima de las imágenes.",
    "url": "https://brand.magoya.com/ai/templates/H4.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/H4.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2216,10 +2247,11 @@
    "nombre": "Personaje + display al palo",
    "cuando_usarlo": "statement conceptual sin foto. El personaje se recorta contra el borde derecho, ocupa ~47% del ancho y va sobre lienzo plano —",
    "url": "https://brand.magoya.com/ai/templates/I1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/I1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2245,10 +2277,11 @@
    "nombre": "Personaje a la izquierda + dato al palo (sage)",
    "cuando_usarlo": "espejo de I1 para alternar el lado. El texto siempre va del lado opuesto al personaje; la cifra hace de display.",
    "url": "https://brand.magoya.com/ai/templates/I2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/I2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2281,6 +2314,7 @@
    "nombre": "Quote destacada en card (sage)",
    "cuando_usarlo": "testimonio con nombre y rol. La regla lima abajo del texto es el golpe de color; la card nunca lleva foto además del texto.",
    "url": "https://brand.magoya.com/ai/templates/J1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/J1.txt",
    "slots": [
     {
      "slot": "t1",
@@ -2310,10 +2344,11 @@
    "nombre": "Quote sobre foto B&N + scrim",
    "cuando_usarlo": "cuando el testimonio tiene que poner cara. Retrato en B&amp;N a sangre, scrim verde profundo y la frase que carga el sentido en lima.",
    "url": "https://brand.magoya.com/ai/templates/J2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/J2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2346,10 +2381,11 @@
    "nombre": "Equipo — retratos B&N + rol",
    "cuando_usarlo": "presentar el pod concreto de la propuesta, con nombre y rol reales. Los retratos van siempre en B&amp;N.",
    "url": "https://brand.magoya.com/ai/templates/J3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/J3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2417,10 +2453,11 @@
    "nombre": "Stack tecnológico por capa (logos reales en gris)",
    "cuando_usarlo": "validación técnica frente a un CTO. Logos reales de",
    "url": "https://brand.magoya.com/ai/templates/K1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/K1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2474,10 +2511,11 @@
    "nombre": "Capacidades de AI (logos de modelos + qué hacemos con ellos)",
    "cuando_usarlo": "cuando la conversación entra en AI y hay que ser explícito. Cada fila nombra una capacidad concreta, no \"AI-powered\". Los logos de",
    "url": "https://brand.magoya.com/ai/templates/K2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/K2.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2552,10 +2590,11 @@
    "nombre": "Logo wall de clientes (12 logos, grilla pareja)",
    "cuando_usarlo": "prueba social después de la portada o antes del cierre. Logos",
    "url": "https://brand.magoya.com/ai/templates/L1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/L1.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2
@@ -2588,6 +2627,7 @@
    "nombre": "Portada — aérea de campo + scrim verde",
    "cuando_usarlo": "portada por defecto. Wordmark crema arriba a la izquierda, chip de contexto a la derecha, display abajo. El scrim es obligatorio: sin él el texto no lee.",
    "url": "https://brand.magoya.com/ai/templates/M1.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/M1.txt",
    "slots": [
     {
      "slot": "t1",
@@ -2617,6 +2657,7 @@
    "nombre": "Portada alternativa — verde profundo + paño al corte",
    "cuando_usarlo": "cuando no hay una foto que aporte, o cuando el deck ya abre con foto y hace falta contraste. El paño nace del borde derecho y se corta contra él.",
    "url": "https://brand.magoya.com/ai/templates/M2.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/M2.txt",
    "slots": [
     {
      "slot": "t1",
@@ -2646,10 +2687,11 @@
    "nombre": "Cierre / next step con CTA + flecha a mano",
    "cuando_usarlo": "última slide, siempre. Tres próximos pasos concretos con fecha y un solo CTA. La flecha a mano nace del texto y su punta cae sobre el botón — una sola marca por slide.",
    "url": "https://brand.magoya.com/ai/templates/M3.html",
+   "url_texto_crudo": "https://brand.magoya.com/ai/templates/M3.txt",
    "slots": [
     {
      "slot": "t1",
-     "rol": "kicker",
+     "rol": "numero_de_pagina",
      "texto_ejemplo": "NN",
      "max_caracteres_aprox": 66,
      "max_lineas": 2

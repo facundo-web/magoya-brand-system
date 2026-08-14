@@ -92,6 +92,7 @@ def render(mid, shapes):
             fpx = s * 12.8
             role = 'display' if s >= 4 else ('titulo' if s >= 2.4 else ('subtitulo' if s >= 1.7 else 'caption'))
             if str(text).isupper() and s <= 1.7: role = 'kicker'
+            if str(text).strip() == 'NN': role = 'numero_de_pagina'
             cpl = max(1, int(w * 19.2 / (0.56 * fpx)))
             lines = max(1, int(h * 19.2 / (fpx * sh.get('lh', 1.2))))
             slots.append({'slot': sid, 'rol': role, 'texto_ejemplo': str(text)[:160],
@@ -156,6 +157,11 @@ def render(mid, shapes):
 PLANTILLA OFICIAL MAGOYA — módulo {mid} ({htmllib.escape(meta.get('nombre',''))})
 Cuándo usarlo: {htmllib.escape(meta.get('cuando_usarlo',''))}
 
+ATENCION — TODO EL TEXTO Y LAS CIFRAS DE ESTA PLANTILLA SON EJEMPLO.
+Nunca entregar los textos/cifras de ejemplo como contenido real. Los datos
+aprobados de la compania viven en https://brand.magoya.com/ai/facts.json —
+si el dato que necesitas no esta ahi, pedilo al usuario; no lo inventes.
+
 REGLAS PARA AI (no negociables):
 1. NO tocar posiciones, tamaños, colores ni tipografías. La geometría ES la marca.
 2. Solo reemplazar el TEXTO INTERNO de los elementos con data-slot, respetando
@@ -174,7 +180,8 @@ REGLAS PARA AI (no negociables):
     return doc, slots
 
 os.makedirs('ai/templates', exist_ok=True)
-index = {'que_es': 'Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca.',
+index = {'que_es': 'Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca. IMPORTANTE: si tu fetch de .html llega convertido/resumido, usá url_texto_crudo (.txt, mismo contenido servido como texto plano). TODO texto y cifra de las plantillas es EJEMPLO: los datos reales aprobados están en ai/facts.json — lo que no esté ahí se pide, no se inventa.',
+         'datos_reales': f'{BASE}/ai/facts.json',
          'como_elegir': f'{BASE}/ai/selector.json',
          'constraints': f'{BASE}/ai/constraints.json',
          'modulos': []}
@@ -185,9 +192,11 @@ for mid in sorted(shapes_by_mod):
         continue
     doc, slots = render(mid, shp)
     open(f'ai/templates/{mid}.html', 'w').write(doc)
+    open(f'ai/templates/{mid}.txt', 'w').write(doc)  # copia text/plain: WebFetch de .html convierte a markdown y rompe el copy-paste
     m = mods.get(mid, {})
     index['modulos'].append({'id': mid, 'nombre': m.get('nombre',''), 'cuando_usarlo': m.get('cuando_usarlo',''),
-                             'url': f'{BASE}/ai/templates/{mid}.html', 'slots': slots})
+                             'url': f'{BASE}/ai/templates/{mid}.html',
+                             'url_texto_crudo': f'{BASE}/ai/templates/{mid}.txt', 'slots': slots})
     ok += 1
 json.dump(index, open('ai/templates/index.json','w'), ensure_ascii=False, indent=1)
 print(f'plantillas generadas: {ok}/41 · index.json con slots y max_caracteres')

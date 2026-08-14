@@ -24,8 +24,9 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 - [README.md](https://brand.magoya.com/README.md): mapa del repositorio, orden de lectura recomendado y árbol de la carpeta `assets/`.
 - [ai/assets.json](https://brand.magoya.com/ai/assets.json): manifiesto de TODOS los assets (247 archivos) con URL directa y regla de uso por carpeta — wordmarks, avatares, los 58 íconos del sistema como SVGs individuales (`assets/icons/`), ilustraciones, fotos, logos reales de clientes y stack. Pages no lista directorios: este manifiesto es la única forma de enumerar los assets.
 - [llms-full.txt](https://brand.magoya.com/llms-full.txt): TODO el sistema en un solo fetch (doctrina + constraints + selector + índice de plantillas + método + checklist) — empezá acá si tus fetches encadenados fallan o truncan.
-- [ai/templates/index.json](https://brand.magoya.com/ai/templates/index.json): las 41 plantillas HTML oficiales con slots — se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques geometría ni colores. Este es el camino "copiá, pegá y funciona".
+- [ai/templates/index.json](https://brand.magoya.com/ai/templates/index.json): las 41 plantillas HTML oficiales con slots — se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques geometría ni colores. Este es el camino "copiá, pegá y funciona". Cada plantilla también está como `.txt` (texto plano) porque muchos fetch convierten el `.html` a markdown.
 - [ai/selector.json](https://brand.magoya.com/ai/selector.json): qué querés contar → qué plantilla. Sin criterio de diseño requerido.
+- [ai/facts.json](https://brand.magoya.com/ai/facts.json): los datos REALES de la compañía (cifras aprobadas, clientes y equipo nombrables). Todo texto y cifra de las plantillas es EJEMPLO — lo que no esté acá se pide, no se inventa.
 - [ai/constraints.json](https://brand.magoya.com/ai/constraints.json): mínimos de logo, clearspace, márgenes, safe areas, límites de texto — los números que nadie tiene que asumir.
 - [ai/slides.json](https://brand.magoya.com/ai/slides.json): la geometría fuente de los 41 módulos (layout_src) — para quien renderice por su cuenta; si solo vas a APLICAR, usá las plantillas.
 
@@ -337,56 +338,56 @@ Capa machine-readable: `llms.txt` (resumen estable), `.ai/brand-prompt.md` y `.a
 
 # ===== PLANTILLAS LISTAS (llenar slots, NO tocar geometria) =====
 
-Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca.
+Plantillas HTML oficiales de los 41 módulos, generadas del exportador real. Se usan TAL CUAL: copiá el archivo, llená los data-slot respetando max_caracteres, no toques nada más. La geometría, colores y tipografía ya son la marca. IMPORTANTE: si tu fetch de .html llega convertido/resumido, usá url_texto_crudo (.txt, mismo contenido servido como texto plano). TODO texto y cifra de las plantillas es EJEMPLO: los datos reales aprobados están en ai/facts.json — lo que no esté ahí se pide, no se inventa.
 
 - A1 · Statement hero (126pt) -> https://brand.magoya.com/ai/templates/A1.html · slots: t1(kicker,max 192ch), t2(display,max 97ch)
-- A2 · Título + bajada (2 columnas) -> https://brand.magoya.com/ai/templates/A2.html · slots: t1(kicker,max 66ch), t2(display,max 94ch), t3(subtitulo,max 564ch)
-- A3 · Agenda / índice -> https://brand.magoya.com/ai/templates/A3.html · slots: t1(kicker,max 66ch), t2(display,max 14ch), t3(caption,max 99ch), t4(subtitulo,max 6ch), t5(caption,max 172ch), t6(subtitulo,max 6ch)
+- A2 · Título + bajada (2 columnas) -> https://brand.magoya.com/ai/templates/A2.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 94ch), t3(subtitulo,max 564ch)
+- A3 · Agenda / índice -> https://brand.magoya.com/ai/templates/A3.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 14ch), t3(caption,max 99ch), t4(subtitulo,max 6ch), t5(caption,max 172ch), t6(subtitulo,max 6ch)
 - A4 · Divisor de sección (paño de semicírculos al corte) -> https://brand.magoya.com/ai/templates/A4.html · slots: t1(display,max 5ch), t2(display,max 75ch)
-- A5 · Título + ícono semántico grande -> https://brand.magoya.com/ai/templates/A5.html · slots: t1(kicker,max 66ch), t2(kicker,max 160ch), t3(display,max 121ch)
-- B1 · 3 cards de servicio con ícono semántico (sage) -> https://brand.magoya.com/ai/templates/B1.html · slots: t1(kicker,max 66ch), t2(display,max 30ch), t3(subtitulo,max 75ch), t4(caption,max 270ch), t5(caption,max 77ch), t6(subtitulo,max 75ch)
-- B2 · 3 boxes de modelo comercial (uno destacado en verde profundo) -> https://brand.magoya.com/ai/templates/B2.html · slots: t1(kicker,max 66ch), t2(display,max 37ch), t3(subtitulo,max 75ch), t4(caption,max 232ch), t5(caption,max 193ch), t6(caption,max 72ch)
-- B3 · Grilla de capacidades 2×3 con iconografía semántica -> https://brand.magoya.com/ai/templates/B3.html · slots: t1(kicker,max 66ch), t2(display,max 37ch), t3(subtitulo,max 63ch), t4(caption,max 151ch), t5(subtitulo,max 63ch), t6(caption,max 151ch)
-- C1 · Título + grilla de 4 stats -> https://brand.magoya.com/ai/templates/C1.html · slots: t1(kicker,max 66ch), t2(display,max 61ch), t3(display,max 9ch), t4(caption,max 171ch), t5(display,max 9ch), t6(caption,max 171ch)
-- C2 · Data hero — 3 métricas de producto (sage) -> https://brand.magoya.com/ai/templates/C2.html · slots: t1(kicker,max 66ch), t2(display,max 30ch), t3(display,max 8ch), t4(caption,max 171ch), t5(display,max 8ch), t6(caption,max 171ch)
-- C3 · Porcentaje al palo — una cifra gigante (44cqw ≈ 65% del ancho) -> https://brand.magoya.com/ai/templates/C3.html · slots: t1(kicker,max 66ch), t2(display,max 4ch), t3(subtitulo,max 183ch)
-- C4 · Tres cifras grandes en línea (15cqw) -> https://brand.magoya.com/ai/templates/C4.html · slots: t1(kicker,max 66ch), t2(kicker,max 127ch), t3(display,max 3ch), t4(caption,max 189ch), t5(display,max 3ch), t6(caption,max 189ch)
-- D1 · Barras simples (una serie, última barra en lima) -> https://brand.magoya.com/ai/templates/D1.html · slots: t1(kicker,max 66ch), t2(display,max 108ch), t3(caption,max 378ch), chart3(grafico,max ?ch)
-- D2 · Barras agrupadas (dos series + leyenda en chips) -> https://brand.magoya.com/ai/templates/D2.html · slots: t1(kicker,max 66ch), t2(display,max 113ch), chart2(grafico,max ?ch), t3(caption,max 302ch), t4(caption,max 46ch), t5(caption,max 63ch)
-- D3 · Gráfico de líneas (serie principal + baseline punteada) -> https://brand.magoya.com/ai/templates/D3.html · slots: t1(kicker,max 66ch), t2(display,max 105ch), chart2(grafico,max ?ch), t3(display,max 14ch), t4(caption,max 202ch), t5(caption,max 79ch)
-- D4 · Donut + barras de progreso (sage) -> https://brand.magoya.com/ai/templates/D4.html · slots: t1(kicker,max 66ch), t2(display,max 68ch), chart2(grafico,max ?ch), t3(titulo,max 9ch), t4(caption,max 54ch), t5(subtitulo,max 208ch)
-- E1 · Lista numerada con fila destacada (lima) -> https://brand.magoya.com/ai/templates/E1.html · slots: t1(kicker,max 66ch), t2(display,max 54ch), t3(subtitulo,max 6ch), t4(caption,max 172ch), t5(subtitulo,max 6ch), t6(caption,max 172ch)
-- E2 · Checklist en dos columnas -> https://brand.magoya.com/ai/templates/E2.html · slots: t1(kicker,max 66ch), t2(display,max 37ch), t3(subtitulo,max 84ch), t4(caption,max 9ch), t5(caption,max 159ch), t6(caption,max 9ch)
-- E3 · Tabla comparativa de scope — Lean vs Recommended -> https://brand.magoya.com/ai/templates/E3.html · slots: t1(kicker,max 66ch), t2(display,max 54ch), t3(caption,max 129ch), tabla3(tabla,max ?ch)
-- E4 · Escenarios de inversión — timing + números -> https://brand.magoya.com/ai/templates/E4.html · slots: t1(kicker,max 66ch), t2(display,max 54ch), t3(caption,max 135ch), t4(subtitulo,max 54ch), t5(kicker,max 39ch), t6(titulo,max 8ch)
-- F1 · Timeline horizontal de 5 etapas (etapa activa en lima) -> https://brand.magoya.com/ai/templates/F1.html · slots: t1(kicker,max 66ch), t2(display,max 37ch), t3(caption,max 46ch), t4(caption,max 115ch), t5(caption,max 46ch), t6(caption,max 115ch)
-- F2 · Método en 4 columnas — Discover · Align · Execute · Learn -> https://brand.magoya.com/ai/templates/F2.html · slots: t1(kicker,max 66ch), t2(display,max 37ch), t3(kicker,max 68ch), t4(subtitulo,max 41ch), t5(caption,max 306ch), t6(kicker,max 68ch)
-- F3 · Journey de actores y plataformas (swimlanes) -> https://brand.magoya.com/ai/templates/F3.html · slots: t1(kicker,max 66ch), t2(titulo,max 86ch), t3(kicker,max 79ch), t4(kicker,max 79ch), t5(kicker,max 79ch), t6(kicker,max 72ch)
-- F4 · Artefactos de proceso (wireframe · prototipo · output de discovery) -> https://brand.magoya.com/ai/templates/F4.html · slots: t1(kicker,max 66ch), t2(display,max 79ch), t3(caption,max 99ch), t4(caption,max 99ch), t5(caption,max 99ch)
-- G1 · Caso estructurado — challenge · team · adaptation · results -> https://brand.magoya.com/ai/templates/G1.html · slots: t1(kicker,max 66ch), t2(caption,max 183ch), t3(caption,max 148ch), t4(titulo,max 118ch), t5(kicker,max 88ch), t6(caption,max 324ch)
-- G2 · Caso en resultados — antes / después -> https://brand.magoya.com/ai/templates/G2.html · slots: t1(kicker,max 66ch), t2(caption,max 178ch), t3(titulo,max 110ch), t4(kicker,max 108ch), t5(display,max 9ch), t6(caption,max 169ch)
-- H1 · Foto a sangre a la izquierda + texto a la derecha -> https://brand.magoya.com/ai/templates/H1.html · slots: t1(kicker,max 66ch), t2(kicker,max 127ch), t3(titulo,max 104ch), t4(subtitulo,max 334ch), t5(caption,max 137ch)
-- H2 · Foto a sangre a la derecha + texto a la izquierda (sage) -> https://brand.magoya.com/ai/templates/H2.html · slots: t1(kicker,max 66ch), t2(kicker,max 127ch), t3(titulo,max 104ch), t4(subtitulo,max 279ch)
-- H3 · Foto de fondo completo + scrim verde + statement -> https://brand.magoya.com/ai/templates/H3.html · slots: t1(kicker,max 66ch), t2(display,max 78ch), t3(subtitulo,max 252ch)
-- H4 · Tira de 3 fotos + título -> https://brand.magoya.com/ai/templates/H4.html · slots: t1(kicker,max 66ch), t2(display,max 97ch), t3(caption,max 135ch), t4(caption,max 135ch), t5(caption,max 135ch)
-- I1 · Personaje + display al palo -> https://brand.magoya.com/ai/templates/I1.html · slots: t1(kicker,max 66ch), t2(kicker,max 153ch), t3(display,max 86ch)
-- I2 · Personaje a la izquierda + dato al palo (sage) -> https://brand.magoya.com/ai/templates/I2.html · slots: t1(kicker,max 66ch), t2(display,max 11ch), t3(titulo,max 113ch), t4(caption,max 241ch)
+- A5 · Título + ícono semántico grande -> https://brand.magoya.com/ai/templates/A5.html · slots: t1(numero_de_pagina,max 66ch), t2(kicker,max 160ch), t3(display,max 121ch)
+- B1 · 3 cards de servicio con ícono semántico (sage) -> https://brand.magoya.com/ai/templates/B1.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 30ch), t3(subtitulo,max 75ch), t4(caption,max 270ch), t5(caption,max 77ch), t6(subtitulo,max 75ch)
+- B2 · 3 boxes de modelo comercial (uno destacado en verde profundo) -> https://brand.magoya.com/ai/templates/B2.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 37ch), t3(subtitulo,max 75ch), t4(caption,max 232ch), t5(caption,max 193ch), t6(caption,max 72ch)
+- B3 · Grilla de capacidades 2×3 con iconografía semántica -> https://brand.magoya.com/ai/templates/B3.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 37ch), t3(subtitulo,max 63ch), t4(caption,max 151ch), t5(subtitulo,max 63ch), t6(caption,max 151ch)
+- C1 · Título + grilla de 4 stats -> https://brand.magoya.com/ai/templates/C1.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 61ch), t3(display,max 9ch), t4(caption,max 171ch), t5(display,max 9ch), t6(caption,max 171ch)
+- C2 · Data hero — 3 métricas de producto (sage) -> https://brand.magoya.com/ai/templates/C2.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 30ch), t3(display,max 8ch), t4(caption,max 171ch), t5(display,max 8ch), t6(caption,max 171ch)
+- C3 · Porcentaje al palo — una cifra gigante (44cqw ≈ 65% del ancho) -> https://brand.magoya.com/ai/templates/C3.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 4ch), t3(subtitulo,max 183ch)
+- C4 · Tres cifras grandes en línea (15cqw) -> https://brand.magoya.com/ai/templates/C4.html · slots: t1(numero_de_pagina,max 66ch), t2(kicker,max 127ch), t3(display,max 3ch), t4(caption,max 189ch), t5(display,max 3ch), t6(caption,max 189ch)
+- D1 · Barras simples (una serie, última barra en lima) -> https://brand.magoya.com/ai/templates/D1.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 108ch), t3(caption,max 378ch), chart3(grafico,max ?ch)
+- D2 · Barras agrupadas (dos series + leyenda en chips) -> https://brand.magoya.com/ai/templates/D2.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 113ch), chart2(grafico,max ?ch), t3(caption,max 302ch), t4(caption,max 46ch), t5(caption,max 63ch)
+- D3 · Gráfico de líneas (serie principal + baseline punteada) -> https://brand.magoya.com/ai/templates/D3.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 105ch), chart2(grafico,max ?ch), t3(display,max 14ch), t4(caption,max 202ch), t5(caption,max 79ch)
+- D4 · Donut + barras de progreso (sage) -> https://brand.magoya.com/ai/templates/D4.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 68ch), chart2(grafico,max ?ch), t3(titulo,max 9ch), t4(caption,max 54ch), t5(subtitulo,max 208ch)
+- E1 · Lista numerada con fila destacada (lima) -> https://brand.magoya.com/ai/templates/E1.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 54ch), t3(subtitulo,max 6ch), t4(caption,max 172ch), t5(subtitulo,max 6ch), t6(caption,max 172ch)
+- E2 · Checklist en dos columnas -> https://brand.magoya.com/ai/templates/E2.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 37ch), t3(subtitulo,max 84ch), t4(caption,max 9ch), t5(caption,max 159ch), t6(caption,max 9ch)
+- E3 · Tabla comparativa de scope — Lean vs Recommended -> https://brand.magoya.com/ai/templates/E3.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 54ch), t3(caption,max 129ch), tabla3(tabla,max ?ch)
+- E4 · Escenarios de inversión — timing + números -> https://brand.magoya.com/ai/templates/E4.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 54ch), t3(caption,max 135ch), t4(subtitulo,max 54ch), t5(kicker,max 39ch), t6(titulo,max 8ch)
+- F1 · Timeline horizontal de 5 etapas (etapa activa en lima) -> https://brand.magoya.com/ai/templates/F1.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 37ch), t3(caption,max 46ch), t4(caption,max 115ch), t5(caption,max 46ch), t6(caption,max 115ch)
+- F2 · Método en 4 columnas — Discover · Align · Execute · Learn -> https://brand.magoya.com/ai/templates/F2.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 37ch), t3(kicker,max 68ch), t4(subtitulo,max 41ch), t5(caption,max 306ch), t6(kicker,max 68ch)
+- F3 · Journey de actores y plataformas (swimlanes) -> https://brand.magoya.com/ai/templates/F3.html · slots: t1(numero_de_pagina,max 66ch), t2(titulo,max 86ch), t3(kicker,max 79ch), t4(kicker,max 79ch), t5(kicker,max 79ch), t6(kicker,max 72ch)
+- F4 · Artefactos de proceso (wireframe · prototipo · output de discovery) -> https://brand.magoya.com/ai/templates/F4.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 79ch), t3(caption,max 99ch), t4(caption,max 99ch), t5(caption,max 99ch)
+- G1 · Caso estructurado — challenge · team · adaptation · results -> https://brand.magoya.com/ai/templates/G1.html · slots: t1(numero_de_pagina,max 66ch), t2(caption,max 183ch), t3(caption,max 148ch), t4(titulo,max 118ch), t5(kicker,max 88ch), t6(caption,max 324ch)
+- G2 · Caso en resultados — antes / después -> https://brand.magoya.com/ai/templates/G2.html · slots: t1(numero_de_pagina,max 66ch), t2(caption,max 178ch), t3(titulo,max 110ch), t4(kicker,max 108ch), t5(display,max 9ch), t6(caption,max 169ch)
+- H1 · Foto a sangre a la izquierda + texto a la derecha -> https://brand.magoya.com/ai/templates/H1.html · slots: t1(numero_de_pagina,max 66ch), t2(kicker,max 127ch), t3(titulo,max 104ch), t4(subtitulo,max 334ch), t5(caption,max 137ch)
+- H2 · Foto a sangre a la derecha + texto a la izquierda (sage) -> https://brand.magoya.com/ai/templates/H2.html · slots: t1(numero_de_pagina,max 66ch), t2(kicker,max 127ch), t3(titulo,max 104ch), t4(subtitulo,max 279ch)
+- H3 · Foto de fondo completo + scrim verde + statement -> https://brand.magoya.com/ai/templates/H3.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 78ch), t3(subtitulo,max 252ch)
+- H4 · Tira de 3 fotos + título -> https://brand.magoya.com/ai/templates/H4.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 97ch), t3(caption,max 135ch), t4(caption,max 135ch), t5(caption,max 135ch)
+- I1 · Personaje + display al palo -> https://brand.magoya.com/ai/templates/I1.html · slots: t1(numero_de_pagina,max 66ch), t2(kicker,max 153ch), t3(display,max 86ch)
+- I2 · Personaje a la izquierda + dato al palo (sage) -> https://brand.magoya.com/ai/templates/I2.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 11ch), t3(titulo,max 113ch), t4(caption,max 241ch)
 - J1 · Quote destacada en card (sage) -> https://brand.magoya.com/ai/templates/J1.html · slots: t1(subtitulo,max 390ch), t2(caption,max 131ch), t3(caption,max 131ch)
-- J2 · Quote sobre foto B&N + scrim -> https://brand.magoya.com/ai/templates/J2.html · slots: t1(kicker,max 66ch), t2(titulo,max 274ch), t3(subtitulo,max 113ch), t4(caption,max 131ch)
-- J3 · Equipo — retratos B&N + rol -> https://brand.magoya.com/ai/templates/J3.html · slots: t1(kicker,max 66ch), t2(display,max 50ch), t3(caption,max 216ch), t4(caption,max 81ch), t5(caption,max 99ch), t6(caption,max 81ch)
-- K1 · Stack tecnológico por capa (logos reales en gris) -> https://brand.magoya.com/ai/templates/K1.html · slots: t1(kicker,max 66ch), t2(display,max 55ch), t3(caption,max 153ch), t4(kicker,max 105ch), t5(kicker,max 105ch), t6(kicker,max 105ch)
-- K2 · Capacidades de AI (logos de modelos + qué hacemos con ellos) -> https://brand.magoya.com/ai/templates/K2.html · slots: t1(kicker,max 66ch), t2(display,max 55ch), t3(subtitulo,max 100ch), t4(caption,max 333ch), t5(subtitulo,max 100ch), t6(caption,max 333ch)
-- L1 · Logo wall de clientes (12 logos, grilla pareja) -> https://brand.magoya.com/ai/templates/L1.html · slots: t1(kicker,max 66ch), t2(display,max 78ch), t3(titulo,max 15ch), t4(caption,max 90ch)
+- J2 · Quote sobre foto B&N + scrim -> https://brand.magoya.com/ai/templates/J2.html · slots: t1(numero_de_pagina,max 66ch), t2(titulo,max 274ch), t3(subtitulo,max 113ch), t4(caption,max 131ch)
+- J3 · Equipo — retratos B&N + rol -> https://brand.magoya.com/ai/templates/J3.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 50ch), t3(caption,max 216ch), t4(caption,max 81ch), t5(caption,max 99ch), t6(caption,max 81ch)
+- K1 · Stack tecnológico por capa (logos reales en gris) -> https://brand.magoya.com/ai/templates/K1.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 55ch), t3(caption,max 153ch), t4(kicker,max 105ch), t5(kicker,max 105ch), t6(kicker,max 105ch)
+- K2 · Capacidades de AI (logos de modelos + qué hacemos con ellos) -> https://brand.magoya.com/ai/templates/K2.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 55ch), t3(subtitulo,max 100ch), t4(caption,max 333ch), t5(subtitulo,max 100ch), t6(caption,max 333ch)
+- L1 · Logo wall de clientes (12 logos, grilla pareja) -> https://brand.magoya.com/ai/templates/L1.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 78ch), t3(titulo,max 15ch), t4(caption,max 90ch)
 - M1 · Portada — aérea de campo + scrim verde -> https://brand.magoya.com/ai/templates/M1.html · slots: t1(caption,max 167ch), t2(display,max 82ch), t3(subtitulo,max 189ch)
 - M2 · Portada alternativa — verde profundo + paño al corte -> https://brand.magoya.com/ai/templates/M2.html · slots: t1(caption,max 167ch), t2(display,max 79ch), t3(subtitulo,max 241ch)
-- M3 · Cierre / next step con CTA + flecha a mano -> https://brand.magoya.com/ai/templates/M3.html · slots: t1(kicker,max 66ch), t2(display,max 86ch), t3(subtitulo,max 297ch), t4(subtitulo,max 135ch), t5(subtitulo,max 6ch), t6(caption,max 153ch)
+- M3 · Cierre / next step con CTA + flecha a mano -> https://brand.magoya.com/ai/templates/M3.html · slots: t1(numero_de_pagina,max 66ch), t2(display,max 86ch), t3(subtitulo,max 297ch), t4(subtitulo,max 135ch), t5(subtitulo,max 6ch), t6(caption,max 153ch)
 
 
 # ===== METODO DE TRABAJO (obligatorio) =====
 
 # Método de trabajo — obligatorio para cualquier pieza con contenido
 
-**Versión 1.2 · 2026-08-11** · Este archivo es parte del flujo de todas las entradas por AI. No es opcional: cumplir la marca al pie de la letra es la mitad del trabajo — la otra mitad es buscar la excelencia en cómo se cuenta. Una pieza on-brand con la historia mal contada es una pieza fallida.
+**Versión 1.3 · 2026-08-11** · Este archivo es parte del flujo de todas las entradas por AI. No es opcional: cumplir la marca al pie de la letra es la mitad del trabajo — la otra mitad es buscar la excelencia en cómo se cuenta. Una pieza on-brand con la historia mal contada es una pieza fallida.
 
 ## Fase 1 — Entender antes de elegir
 
@@ -395,7 +396,7 @@ Antes de mirar un solo template, respondé por escrito (para vos):
 1. **Audiencia**: ¿quién lo va a ver y qué sabe ya?
 2. **Objetivo**: ¿qué tiene que pasar después de ver la pieza?
 3. **LA idea**: la única frase que la audiencia se tiene que llevar. Si no podés escribirla, no estás listo para elegir módulos.
-4. **Datos reales disponibles**: qué cifras, casos y nombres tenés de verdad. Los placeholders del sistema (`[DATE]`, cifras de ejemplo) NUNCA se entregan como contenido final — si falta un dato, pedilo o marcalo explícitamente.
+4. **Datos reales disponibles**: leé `ai/facts.json` — ahí están las cifras aprobadas, los clientes y el equipo nombrables. Los placeholders y cifras de ejemplo de las plantillas NUNCA se entregan como contenido final. Si el dato que necesitás no está en `facts.json`, pedíselo al usuario; no lo completes con algo verosímil.
 
 Después armá la **narrativa primero**: un outline donde cada slide/bloque es una frase de la historia. La historia manda; los módulos sirven a la historia, nunca al revés.
 
@@ -424,6 +425,8 @@ Antes de entregar, verificá los dos niveles:
 Entregá junto con la pieza una nota corta de decisiones: qué módulos elegiste y por qué, y qué encontró el crítico.
 
 ## Changelog
+
+- **1.3** (2026-08-11): fase 1 exige `ai/facts.json` como única fuente de datos de la empresa.
 
 - **1.2** (2026-08-11): fase 2 usa el selector; el agente de diseño valida plantilla-sin-cambios + constraints.
 
