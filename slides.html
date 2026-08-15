@@ -12,7 +12,7 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--color-canvas-meta);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  .wrap{max-width:1040px;margin:0 0 0 230px;padding:88px 40px 132px}
+  .wrap{max-width:1040px;margin:0 0 0 64px;padding:88px 40px 132px}
 
   /* ---------- topbar / side (patrón del brand book) ---------- */
   .mg-topbar{position:fixed;top:0;left:0;right:0;z-index:120;display:flex;align-items:center;gap:2px;flex-wrap:wrap;background:var(--green-950);padding:10px 24px;box-shadow:0 4px 18px rgba(0,0,0,.16)}
@@ -23,17 +23,6 @@
   .mg-topbar a.cl2{margin-left:10px}
   .mg-topbar .navdiv{width:1px;height:18px;background:var(--cream-300);opacity:.25;margin:0 14px 0 20px}
   @media (max-width:880px){ .mg-topbar .navdiv{display:none} }
-
-  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:22px 22px 26px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:3px;overflow-y:auto;overflow-x:visible;z-index:50}
-  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-400);margin:0 0 8px 10px}
-  .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
-  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
-  .side .v{margin-top:auto;padding-top:14px;font-size:11px;color:var(--sage-400);letter-spacing:.08em}
-  .side a.near{transform:scale(1.14);color:var(--cream-200)}
-  .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
-  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
-  .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
 
   .crumb{font-size:12.5px;color:var(--gray-600);margin-bottom:12px}
   .crumb a{color:var(--emerald-700);text-decoration:none;font-weight:600}
@@ -302,7 +291,7 @@
   .wall img{width:100%;max-height:4.8cqw;object-fit:contain;filter:grayscale(1);opacity:.62}
 
   /* ---------- barra de export ---------- */
-  .xbar{position:fixed;left:230px;right:0;bottom:0;z-index:130;background:var(--ink-900);color:var(--cream-50);
+  .xbar{position:fixed;left:64px;right:0;bottom:0;z-index:130;background:var(--ink-900);color:var(--cream-50);
     display:flex;align-items:center;gap:12px;padding:12px 24px;box-shadow:0 -6px 24px rgba(0,0,0,.24);flex-wrap:wrap}
   .xbar .cnt{font-size:12.5px;color:var(--gray-600);flex:1;min-width:120px;line-height:1.4}
   .xbar .cnt b{color:var(--cream-50);font-weight:800}
@@ -317,11 +306,7 @@
   @media (max-width:880px){
     .mg-topbar{position:static;padding:10px 14px}
     .wrap{margin-left:0;padding:16px 14px 150px}
-    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:2px 4px;padding:12px 14px}
-    .side .lbl,.side .v{display:none}
     /* dock colapsado en móvil: sin escala, se marca la familia activa con fondo */
-    .side a,.side a.act,.side a.near,.side:has(a:hover) a.act:not(:hover),.side a:hover,.side a:hover + a{transform:none;font-size:12px;padding:4px 8px}
-    .side a.act{background:var(--green-800);color:var(--cream-50);font-weight:800}
     .xbar{left:0;padding:10px 14px;gap:8px}
     .xbar .cnt{flex-basis:100%;order:-1}
     .hstats{grid-template-columns:repeat(2,1fr)}
@@ -331,6 +316,33 @@
     .howto{flex-direction:column;gap:8px}
     .xbar button{flex:1;padding:10px 8px;font-size:12px}
   }
+
+  /* ---------- rail de puntos: navegación de secciones (reemplaza la barra lateral) ---------- */
+  .side{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:50;
+        display:flex;flex-direction:column;gap:2px;padding:8px 6px;width:auto;max-height:82vh;
+        background:transparent;overflow:visible}
+  .side .lbl,.side .v{display:none}
+  .side:not(:has(a)){display:none}
+  .side a{display:flex;align-items:center;text-decoration:none;padding:7px 10px;border-radius:999px;
+          background:transparent;transition:background .22s cubic-bezier(.22,1,.36,1)}
+  .side a::before{content:"";width:9px;height:9px;border-radius:50%;flex:0 0 auto;
+                  background:var(--sage-400);opacity:.42;
+                  transition:background .2s,opacity .2s,transform .2s}
+  .side a span{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;
+               font-size:12.5px;font-weight:700;line-height:1;color:var(--cream-50);
+               transition:max-width .3s cubic-bezier(.22,1,.36,1),opacity .2s,margin-left .3s}
+  .side a:hover,.side a.act{background:var(--green-900)}
+  .side a:hover span,.side a.act span{max-width:230px;opacity:1;margin-left:10px}
+  .side a:hover::before{opacity:1}
+  .side a.act::before{background:var(--lime-500);opacity:1;transform:scale(1.2)}
+  .side a.anx::before{background:transparent;box-shadow:inset 0 0 0 2px var(--lime-500);opacity:1}
+  .side a.anx span{color:var(--lime-500)}
+  @media (max-width:880px){
+    .side{position:static;transform:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;
+          gap:6px;padding:10px 14px;max-height:none;background:var(--green-900)}
+    .side a{flex:0 0 auto;background:var(--green-800)}
+    .side a span{max-width:230px;opacity:1;margin-left:8px}
+  }
 </style>
 </head>
 <body>
@@ -338,19 +350,19 @@
 <nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Inicio</a><a href="brand-book.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html" class="cl on">Slides</a><a href="pieces.html">Comerciales</a><a href="icons.html" class="cl">Iconos</a><a href="library.html">Assets</a><a href="logos.html" class="cl2">Clientes</a><span class="navdiv"></span><a href="ai.html">Integrar con AI</a></nav>
 
 <nav class="side">
-  <a href="#fam-a">Apertura</a>
-  <a href="#fam-b">Servicios</a>
-  <a href="#fam-c">Cifras</a>
-  <a href="#fam-d">Gráficos</a>
-  <a href="#fam-e">Listas &amp; tablas</a>
-  <a href="#fam-f">Proceso</a>
-  <a href="#fam-g">Casos de éxito</a>
-  <a href="#fam-h">Fotografía</a>
-  <a href="#fam-i">Ilustración</a>
-  <a href="#fam-j">Personas</a>
-  <a href="#fam-k">Tecnología &amp; AI</a>
-  <a href="#fam-l">Clientes</a>
-  <a href="#fam-m">Portada &amp; cierre</a>
+  <a href="#fam-a"><span>Apertura</span></a>
+  <a href="#fam-b"><span>Servicios</span></a>
+  <a href="#fam-c"><span>Cifras</span></a>
+  <a href="#fam-d"><span>Gráficos</span></a>
+  <a href="#fam-e"><span>Listas &amp; tablas</span></a>
+  <a href="#fam-f"><span>Proceso</span></a>
+  <a href="#fam-g"><span>Casos de éxito</span></a>
+  <a href="#fam-h"><span>Fotografía</span></a>
+  <a href="#fam-i"><span>Ilustración</span></a>
+  <a href="#fam-j"><span>Personas</span></a>
+  <a href="#fam-k"><span>Tecnología &amp; AI</span></a>
+  <a href="#fam-l"><span>Clientes</span></a>
+  <a href="#fam-m"><span>Portada &amp; cierre</span></a>
   <span class="v">DECK KIT · V1.2</span>
 </nav>
 

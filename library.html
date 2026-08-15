@@ -12,7 +12,7 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--color-canvas-meta);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased;padding:88px 28px 90px}
-  .wrap{max-width:1160px;margin:0 auto 0 230px}
+  .wrap{max-width:1160px;margin:0 auto 0 64px}
   .eyebrow{display:inline-block;background:var(--ink-900);color:var(--white);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
   h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-0.03em;margin:14px 0 10px}
   .lead{color:var(--gray-600);max-width:70ch;font-size:1.1rem;margin-bottom:34px}
@@ -49,19 +49,9 @@
   @media (max-width:880px){ .mg-topbar .navdiv{display:none} }
 
   /* ---------- menú lateral (igual al brand book) ---------- */
-  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;overflow-x:visible;z-index:50}
-  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-400);margin:0 0 8px 10px}
-  .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
-  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
-  .side .v{margin-top:auto;font-size:11px;color:var(--sage-400);letter-spacing:.08em}
   .crumb{font-size:12.5px;color:var(--gray-600);margin-bottom:12px}
   .crumb a{color:var(--emerald-700);text-decoration:none;font-weight:600}
   .crumb a:hover{text-decoration:underline}
-  @media (max-width:880px){
-    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:2px 4px;padding:12px 14px}
-    .side .lbl,.side .v{display:none}
-  }
-
   /* ---------- fichas de descarga ---------- */
   .cell .meta{border-top:1px solid var(--color-hairline);padding:12px;display:block}
   .cell .mi{display:flex;align-items:center;gap:8px;margin-bottom:8px}
@@ -77,15 +67,32 @@
   .cell .meta a svg{width:13px;height:13px}
   .cell .meta a:hover{background:var(--emerald-700);color:var(--white)}
 
-  .side a.near{transform:scale(1.14);color:var(--cream-200)}
-  .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
-  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
-  .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
-
+  
+  /* ---------- rail de puntos: navegación de secciones (reemplaza la barra lateral) ---------- */
+  .side{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:50;
+        display:flex;flex-direction:column;gap:2px;padding:8px 6px;width:auto;max-height:82vh;
+        background:transparent;overflow:visible}
+  .side .lbl,.side .v{display:none}
+  .side:not(:has(a)){display:none}
+  .side a{display:flex;align-items:center;text-decoration:none;padding:7px 10px;border-radius:999px;
+          background:transparent;transition:background .22s cubic-bezier(.22,1,.36,1)}
+  .side a::before{content:"";width:9px;height:9px;border-radius:50%;flex:0 0 auto;
+                  background:var(--sage-400);opacity:.42;
+                  transition:background .2s,opacity .2s,transform .2s}
+  .side a span{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;
+               font-size:12.5px;font-weight:700;line-height:1;color:var(--cream-50);
+               transition:max-width .3s cubic-bezier(.22,1,.36,1),opacity .2s,margin-left .3s}
+  .side a:hover,.side a.act{background:var(--green-900)}
+  .side a:hover span,.side a.act span{max-width:230px;opacity:1;margin-left:10px}
+  .side a:hover::before{opacity:1}
+  .side a.act::before{background:var(--lime-500);opacity:1;transform:scale(1.2)}
+  .side a.anx::before{background:transparent;box-shadow:inset 0 0 0 2px var(--lime-500);opacity:1}
+  .side a.anx span{color:var(--lime-500)}
   @media (max-width:880px){
-    .side a,.side a.act,.side a.near,.side a:hover,.side a:hover + a{transform:none}
-    .side a.act{background:var(--green-800);color:var(--cream-50)}
+    .side{position:static;transform:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;
+          gap:6px;padding:10px 14px;max-height:none;background:var(--green-900)}
+    .side a{flex:0 0 auto;background:var(--green-800)}
+    .side a span{max-width:230px;opacity:1;margin-left:8px}
   }
 </style>
 </head>
@@ -94,18 +101,18 @@
 <nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Inicio</a><a href="brand-book.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html" class="cl">Slides</a><a href="pieces.html">Comerciales</a><a href="icons.html" class="cl">Iconos</a><a href="library.html" class="on">Assets</a><a href="logos.html" class="cl2">Clientes</a><span class="navdiv"></span><a href="ai.html">Integrar con AI</a></nav>
 
 <nav class="side">
-  <a href="#wordmark">Wordmark</a>
-  <a href="#animado">Animado &amp; producción</a>
-  <a href="#avatares">Avatares</a>
-  <a href="#favicon">Favicon & app icon</a>
-  <a href="#motivo">Motivo</a>
-  <a href="#marcas">Marcas a mano</a>
-  <a href="#personajes">Personajes</a>
-  <a href="#fotografia">Fotografía</a>
-  <a href="#tipografia">Tipografía</a>
-  <a href="#papeleria">Papelería &amp; firma</a>
-  <a href="#colecciones">Colecciones</a>
-  <a href="#paginas">Otras páginas</a>
+  <a href="#wordmark"><span>Wordmark</span></a>
+  <a href="#animado"><span>Animado &amp; producción</span></a>
+  <a href="#avatares"><span>Avatares</span></a>
+  <a href="#favicon"><span>Favicon & app icon</span></a>
+  <a href="#motivo"><span>Motivo</span></a>
+  <a href="#marcas"><span>Marcas a mano</span></a>
+  <a href="#personajes"><span>Personajes</span></a>
+  <a href="#fotografia"><span>Fotografía</span></a>
+  <a href="#tipografia"><span>Tipografía</span></a>
+  <a href="#papeleria"><span>Papelería &amp; firma</span></a>
+  <a href="#colecciones"><span>Colecciones</span></a>
+  <a href="#paginas"><span>Otras páginas</span></a>
   <span class="v">BRAND SYSTEM · V1.1</span>
 </nav>
 

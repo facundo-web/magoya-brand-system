@@ -29,24 +29,7 @@
   .mg-topbar a.cl2{margin-left:10px}
   .mg-topbar .navdiv{width:1px;height:18px;background:var(--cream-300);opacity:.25;margin:0 14px 0 20px}
   @media (max-width:880px){ .mg-topbar .navdiv{display:none} }
-  .side{
-    position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;
-    background:var(--green-900);color:var(--cream-50);
-    display:flex;flex-direction:column;gap:4px;overflow-y:auto;overflow-x:visible;z-index:50;
-  }
-  .side img.wm{width:110px;margin-bottom:18px}
-  .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
-  .side a.near{transform:scale(1.14);color:var(--cream-200)}
-  .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side a.anx{margin-top:12px;border-top:1px solid var(--green-800);padding-top:12px;color:var(--lime-500);display:flex;align-items:center;justify-content:space-between}
-  .side a.anx .arr{margin-left:8px}
-  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
-  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
-  .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
-  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
-  .side a.sep{margin-top:14px;border-top:1px solid var(--green-800);padding-top:14px;border-radius:0 0 8px 8px}
-  .side .v{margin-top:auto;font-size:11px;color:var(--sage-400);letter-spacing:.08em}
-  main{margin-left:230px;padding-top:44px}
+  main{margin-left:64px;padding-top:44px}
   section{padding:88px 0}
   section > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 64px}   /* anclado al inicio del contenido, nunca centrado */
   .kicker{
@@ -66,7 +49,7 @@
 
   /* ---------- hero ---------- */
   .hero{
-    margin-left:230px;margin-top:44px;min-height:88vh;position:relative;display:flex;
+    margin-left:64px;margin-top:44px;min-height:88vh;position:relative;display:flex;
     align-items:flex-end;color:var(--cream-50);
     background:
       linear-gradient(180deg, rgba(12,33,23,.55), rgba(12,33,23,.86)),
@@ -300,7 +283,7 @@
   .app-metrics .nums .n{font-size:58px;font-weight:var(--weight-extra);letter-spacing:var(--tracking-tight)}
   .app-metrics .nums .d{font-size:14px;color:var(--gray-600)}
 
-  footer{margin-left:230px;background:var(--green-950);color:var(--cream-300);padding:40px 0;font-size:13px}
+  footer{margin-left:64px;background:var(--green-950);color:var(--cream-300);padding:40px 0;font-size:13px}
   footer > *{max-width:1284px;margin:0 auto 0 0;padding:0 64px}
   footer a{color:var(--lime-500)}
 
@@ -314,13 +297,8 @@
   .table-scroll table{min-width:640px}
   @media (max-width:880px){
     .mg-topbar{position:static;padding:10px 14px}
-    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;align-items:center;gap:2px 4px;padding:12px 14px}
-    .side .lbl{display:none}
     main{padding-top:0}
     .hero{margin-top:0}
-    .side a{font-size:11.5px;padding:4px 8px}
-    .side a.sep{margin-top:0;border-top:none;padding-top:4px;border-radius:8px}
-    .side .v{display:none}
     main,.hero,footer{margin-left:0}
     .hero{min-height:70vh}
     .hero-in{padding:34px 22px}
@@ -428,9 +406,32 @@
   .pcard2 figcaption a svg{width:13px;height:13px}
   .pcard2 figcaption a:hover{background:var(--emerald-700);color:var(--white)}
 
+  
+  /* ---------- rail de puntos: navegación de secciones (reemplaza la barra lateral) ---------- */
+  .side{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:50;
+        display:flex;flex-direction:column;gap:2px;padding:8px 6px;width:auto;max-height:82vh;
+        background:transparent;overflow:visible}
+  .side .lbl,.side .v{display:none}
+  .side:not(:has(a)){display:none}
+  .side a{display:flex;align-items:center;text-decoration:none;padding:7px 10px;border-radius:999px;
+          background:transparent;transition:background .22s cubic-bezier(.22,1,.36,1)}
+  .side a::before{content:"";width:9px;height:9px;border-radius:50%;flex:0 0 auto;
+                  background:var(--sage-400);opacity:.42;
+                  transition:background .2s,opacity .2s,transform .2s}
+  .side a span{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;
+               font-size:12.5px;font-weight:700;line-height:1;color:var(--cream-50);
+               transition:max-width .3s cubic-bezier(.22,1,.36,1),opacity .2s,margin-left .3s}
+  .side a:hover,.side a.act{background:var(--green-900)}
+  .side a:hover span,.side a.act span{max-width:230px;opacity:1;margin-left:10px}
+  .side a:hover::before{opacity:1}
+  .side a.act::before{background:var(--lime-500);opacity:1;transform:scale(1.2)}
+  .side a.anx::before{background:transparent;box-shadow:inset 0 0 0 2px var(--lime-500);opacity:1}
+  .side a.anx span{color:var(--lime-500)}
   @media (max-width:880px){
-    .side a,.side a.act,.side a.near,.side a:hover,.side a:hover + a{transform:none}
-    .side a.act{background:var(--green-800);color:var(--cream-50)}
+    .side{position:static;transform:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;
+          gap:6px;padding:10px 14px;max-height:none;background:var(--green-900)}
+    .side a{flex:0 0 auto;background:var(--green-800)}
+    .side a span{max-width:230px;opacity:1;margin-left:8px}
   }
 </style>
 </head>
@@ -442,19 +443,19 @@
 </nav>
 
 <nav class="side" id="dock">
-  <a href="#esencia">Esencia</a>
-  <a href="#logo">Logo &amp; avatares</a>
-  <a href="#color">Color</a>
-  <a href="#tipografia">Tipografía</a>
-  <a href="#fotografia">Fotografía</a>
-  <a href="#ilustracion">Ilustración &amp; motivos</a>
-  <a href="#convivencia">Convivencia</a>
-  <a href="#iconografia">Iconografía</a>
-  <a href="#componentes">Componentes</a>
-  <a href="#aplicaciones">Aplicaciones</a>
-  <a href="#merch">Merch</a>
-  <a href="#papeleria">Papelería</a>
-  <a href="#reglas">Reglas de oro</a>
+  <a href="#esencia"><span>Esencia</span></a>
+  <a href="#logo"><span>Logo &amp; avatares</span></a>
+  <a href="#color"><span>Color</span></a>
+  <a href="#tipografia"><span>Tipografía</span></a>
+  <a href="#fotografia"><span>Fotografía</span></a>
+  <a href="#ilustracion"><span>Ilustración &amp; motivos</span></a>
+  <a href="#convivencia"><span>Convivencia</span></a>
+  <a href="#iconografia"><span>Iconografía</span></a>
+  <a href="#componentes"><span>Componentes</span></a>
+  <a href="#aplicaciones"><span>Aplicaciones</span></a>
+  <a href="#merch"><span>Merch</span></a>
+  <a href="#papeleria"><span>Papelería</span></a>
+  <a href="#reglas"><span>Reglas de oro</span></a>
   <a href="#anexa" class="anx"><span>AI en campo</span><span class="arr">↗</span></a>
 </nav>
 

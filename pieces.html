@@ -12,7 +12,7 @@
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{background:var(--color-canvas-meta);color:var(--ink-900);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1160px;margin:0 0 0 230px;padding:88px 40px 90px}
+  .wrap{max-width:1160px;margin:0 0 0 64px;padding:88px 40px 90px}
   .intro{margin-bottom:44px}
   .eyebrow{display:inline-block;background:var(--ink-900);color:var(--white);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
   .intro h1{font-weight:800;font-size:clamp(2.2rem,5vw,3.4rem);letter-spacing:-0.03em;margin:14px 0 10px}
@@ -134,30 +134,9 @@
   @media (max-width:880px){ .mg-topbar .navdiv{display:none} }
 
   /* ---------- menú lateral (igual al brand book) ---------- */
-  .side{position:fixed;inset:44px auto 0 0;width:230px;padding:24px 22px;background:var(--green-900);color:var(--cream-50);display:flex;flex-direction:column;gap:4px;overflow-y:auto;overflow-x:visible;z-index:50}
-  .side .lbl{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sage-400);margin:0 0 8px 10px}
-  .side a{color:var(--sage-400);text-decoration:none;font-size:14px;line-height:1.3;padding:5px 10px;border-radius:8px;font-weight:600;transform-origin:left center;will-change:transform;backface-visibility:hidden;transition:transform .28s cubic-bezier(.22,1,.36,1),color .2s ease}
-  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
-  .side .v{margin-top:auto;font-size:11px;color:var(--sage-400);letter-spacing:.08em}
   .crumb{font-size:12.5px;color:var(--gray-600);margin-bottom:12px}
   .crumb a{color:var(--emerald-700);text-decoration:none;font-weight:600}
   .crumb a:hover{text-decoration:underline}
-  @media (max-width:880px){
-    .side{position:static;inset:auto;width:auto;flex-direction:row;flex-wrap:wrap;gap:2px 4px;padding:12px 14px}
-    .side .lbl,.side .v{display:none}
-  }
-
-  .side a.near{transform:scale(1.14);color:var(--cream-200)}
-  .side a.act{transform:scale(1.5);color:var(--cream-50);font-weight:800}
-  .side:has(a:hover) a.act:not(:hover){transform:scale(1.14);color:var(--cream-200)}
-  .side a:hover{transform:scale(1.5);color:var(--cream-50)}
-  .side a:hover + a{transform:scale(1.14);color:var(--cream-200)}
-
-  @media (max-width:880px){
-    .side a,.side a.act,.side a.near,.side a:hover,.side a:hover + a{transform:none}
-    .side a.act{background:var(--green-800);color:var(--cream-50)}
-  }
-
   /* ---------- solapas ---------- */
   .tabs{display:flex;gap:8px;margin:26px 0 22px;flex-wrap:wrap}
   .tab{flex:1 1 200px;text-align:left;background:var(--white);border:1px solid var(--color-hairline);border-radius:14px;
@@ -172,6 +151,33 @@
   .tpanel.on{display:block;animation:tfade .22s ease}
   @keyframes tfade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
   .tpanel .tpl{margin:0}
+
+  /* ---------- rail de puntos: navegación de secciones (reemplaza la barra lateral) ---------- */
+  .side{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:50;
+        display:flex;flex-direction:column;gap:2px;padding:8px 6px;width:auto;max-height:82vh;
+        background:transparent;overflow:visible}
+  .side .lbl,.side .v{display:none}
+  .side:not(:has(a)){display:none}
+  .side a{display:flex;align-items:center;text-decoration:none;padding:7px 10px;border-radius:999px;
+          background:transparent;transition:background .22s cubic-bezier(.22,1,.36,1)}
+  .side a::before{content:"";width:9px;height:9px;border-radius:50%;flex:0 0 auto;
+                  background:var(--sage-400);opacity:.42;
+                  transition:background .2s,opacity .2s,transform .2s}
+  .side a span{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;
+               font-size:12.5px;font-weight:700;line-height:1;color:var(--cream-50);
+               transition:max-width .3s cubic-bezier(.22,1,.36,1),opacity .2s,margin-left .3s}
+  .side a:hover,.side a.act{background:var(--green-900)}
+  .side a:hover span,.side a.act span{max-width:230px;opacity:1;margin-left:10px}
+  .side a:hover::before{opacity:1}
+  .side a.act::before{background:var(--lime-500);opacity:1;transform:scale(1.2)}
+  .side a.anx::before{background:transparent;box-shadow:inset 0 0 0 2px var(--lime-500);opacity:1}
+  .side a.anx span{color:var(--lime-500)}
+  @media (max-width:880px){
+    .side{position:static;transform:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;
+          gap:6px;padding:10px 14px;max-height:none;background:var(--green-900)}
+    .side a{flex:0 0 auto;background:var(--green-800)}
+    .side a span{max-width:230px;opacity:1;margin-left:8px}
+  }
 </style>
 </head>
 <body>
@@ -179,9 +185,9 @@
 <nav class="mg-topbar"><a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a><a href="index.html">Inicio</a><a href="brand-book.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html" class="cl">Slides</a><a href="pieces.html" class="on">Comerciales</a><a href="icons.html" class="cl">Iconos</a><a href="library.html">Assets</a><a href="logos.html" class="cl2">Clientes</a><span class="navdiv"></span><a href="ai.html">Integrar con AI</a></nav>
 
 <nav class="side">
-  <a href="#t1">One-pager</a>
-  <a href="#t2">Flyer de servicio</a>
-  <a href="#t3">Staff Augmentation</a>
+  <a href="#t1"><span>One-pager</span></a>
+  <a href="#t2"><span>Flyer de servicio</span></a>
+  <a href="#t3"><span>Staff Augmentation</span></a>
   <span class="v">BRAND SYSTEM · V1.1</span>
 </nav>
 
