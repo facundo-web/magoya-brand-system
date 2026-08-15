@@ -407,31 +407,60 @@
   .pcard2 figcaption a:hover{background:var(--emerald-700);color:var(--white)}
 
   
-  /* ---------- rail de puntos: navegación de secciones (reemplaza la barra lateral) ---------- */
-  .side{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:50;
-        display:flex;flex-direction:column;gap:2px;padding:8px 6px;width:auto;max-height:82vh;
-        background:transparent;overflow:visible}
+  /* ---------- rail de puntos: navegacion de secciones ---------- */
+  /* Ancho FIJO: el rail nunca crece ni empuja ni pisa el contenido.
+     El titulo es una capa flotante que aparece al pasar por el rail. */
+  .side{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:110;
+        display:flex;flex-direction:column;gap:4px;padding:10px 0;width:44px;
+        background:transparent}
   .side .lbl,.side .v{display:none}
   .side:not(:has(a)){display:none}
-  .side a{display:flex;align-items:center;text-decoration:none;padding:7px 10px;border-radius:999px;
-          background:transparent;transition:background .22s cubic-bezier(.22,1,.36,1)}
-  .side a::before{content:"";width:9px;height:9px;border-radius:50%;flex:0 0 auto;
-                  background:var(--sage-400);opacity:.42;
+  .side a{position:relative;display:flex;align-items:center;justify-content:center;
+          width:44px;height:28px;text-decoration:none;border-radius:999px}
+  .side a::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--sage-400);opacity:.45;
                   transition:background .2s,opacity .2s,transform .2s}
-  .side a span{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;
-               font-size:12.5px;font-weight:700;line-height:1;color:var(--cream-50);
-               transition:max-width .3s cubic-bezier(.22,1,.36,1),opacity .2s,margin-left .3s}
-  .side a:hover,.side a.act{background:var(--green-900)}
-  .side a:hover span,.side a.act span{max-width:230px;opacity:1;margin-left:10px}
-  .side a:hover::before{opacity:1}
-  .side a.act::before{background:var(--lime-500);opacity:1;transform:scale(1.2)}
+  .side a:hover::before{opacity:1;transform:scale(1.25)}
+  .side a.act::before{background:var(--lime-500);opacity:1;transform:scale(1.35)}
   .side a.anx::before{background:transparent;box-shadow:inset 0 0 0 2px var(--lime-500);opacity:1}
+  .side a span{position:absolute;left:34px;top:50%;transform:translateY(-50%) translateX(-8px);
+               opacity:0;visibility:hidden;pointer-events:none;white-space:nowrap;
+               padding:6px 12px;border-radius:999px;
+               background:var(--green-900);color:var(--cream-50);
+               font-size:12.5px;font-weight:700;line-height:1;
+               box-shadow:0 8px 22px rgba(0,0,0,.30);
+               transition:opacity .18s ease,transform .24s cubic-bezier(.22,1,.36,1),visibility 0s .18s}
+  .side:hover a span{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);transition-delay:0s}
+  .side a.act span{background:var(--lime-500);color:var(--green-950)}
   .side a.anx span{color:var(--lime-500)}
+  @media (max-height:620px){ .side{gap:0;padding:6px 0} .side a{height:23px} }
+
+  /* ---------- alto real del topbar: se reserva, nunca tapa contenido ---------- */
+  /* el topbar es fixed y hace flex-wrap: su alto cambia por pagina y por ancho.
+     Lo mide el script del final y lo escribe en --topbar-h. */
+  :root{--topbar-h:70px}
+  body{padding-top:var(--topbar-h)}
+  main{padding-top:0}
+  .hero{margin-top:0}
+  [id]{scroll-margin-top:calc(var(--topbar-h) + 22px)}
+
   @media (max-width:880px){
     .side{position:static;transform:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;
-          gap:6px;padding:10px 14px;max-height:none;background:var(--green-900)}
-    .side a{flex:0 0 auto;background:var(--green-800)}
-    .side a span{max-width:230px;opacity:1;margin-left:8px}
+          width:auto;gap:6px;padding:10px 14px;background:var(--green-900)}
+    .side a{width:auto;height:auto;flex:0 0 auto;gap:8px;padding:7px 12px;
+            background:var(--green-800);justify-content:flex-start}
+    .side a span{position:static;transform:none;opacity:1;visibility:visible;
+                 background:transparent;color:var(--cream-50);
+                 padding:0;box-shadow:none;transition:none}
+    .side a.act{background:var(--lime-500)}
+    .side a.act span{background:transparent;color:var(--green-950)}
+  }
+
+  /* en mobile el topbar deja de ser fixed: no reserva alto y no se apila
+     (en icons.html la media query estaba ANTES de la regla base y no aplicaba) */
+  @media (max-width:880px){
+    .mg-topbar{position:static;padding:10px 14px}
+    /* URLs largas en <code>: sin esto empujan el ancho del documento */
+    code{overflow-wrap:anywhere}
   }
 </style>
 </head>
@@ -456,7 +485,7 @@
   <a href="#merch"><span>Merch</span></a>
   <a href="#papeleria"><span>Papelería</span></a>
   <a href="#reglas"><span>Reglas de oro</span></a>
-  <a href="#anexa" class="anx"><span>AI en campo</span><span class="arr">↗</span></a>
+  <a href="#anexa" class="anx"><span>AI en campo ↗</span></a>
 </nav>
 
 <header class="hero">
@@ -1377,6 +1406,23 @@
   window.addEventListener('scroll',onScroll,{passive:true});
   window.addEventListener('resize',onScroll);
   compute();
+})();
+</script>
+<script>
+/* --topbar-h: el topbar es fixed y hace flex-wrap, asi que su alto real cambia
+   con el ancho de la ventana. Se mide y se publica como variable CSS. */
+(function(){
+  var tb = document.querySelector('.mg-topbar');
+  if(!tb) return;
+  function set(){
+    var fijo = getComputedStyle(tb).position === 'fixed';
+    document.documentElement.style.setProperty(
+      '--topbar-h', fijo ? Math.round(tb.getBoundingClientRect().height) + 'px' : '0px');
+  }
+  set();
+  window.addEventListener('resize', set);
+  window.addEventListener('load', set);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(set);
 })();
 </script>
 </body>

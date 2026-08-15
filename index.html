@@ -120,6 +120,19 @@
     .board{grid-template-columns:1fr;grid-auto-rows:auto}
     .board .c{grid-column:1/-1 !important;grid-row:auto !important;aspect-ratio:4/5}
   }
+
+  /* ---------- alto real del topbar: se reserva, nunca tapa contenido ---------- */
+  :root{--topbar-h:70px}
+  body{padding-top:var(--topbar-h)}
+  [id]{scroll-margin-top:calc(var(--topbar-h) + 22px)}
+
+  /* en mobile el topbar deja de ser fixed: no reserva alto y no se apila
+     (en icons.html la media query estaba ANTES de la regla base y no aplicaba) */
+  @media (max-width:880px){
+    .mg-topbar{position:static;padding:10px 14px}
+    /* URLs largas en <code>: sin esto empujan el ancho del documento */
+    code{overflow-wrap:anywhere}
+  }
 </style>
 </head>
 <body>
@@ -365,5 +378,22 @@
   Magoya Brand System · <a href="brand-book.html">brand book completo</a> · <a href="plantillas.html">plantillas listas</a> · <a href="library.html">librería de assets</a> · <a href="logos.html">clientes & stack</a> · <a href="ai.html">integrar con AI</a> · <a href="ROADMAP.md">roadmap</a>
 </footer>
 
+<script>
+/* --topbar-h: el topbar es fixed y hace flex-wrap, asi que su alto real cambia
+   con el ancho de la ventana. Se mide y se publica como variable CSS. */
+(function(){
+  var tb = document.querySelector('.mg-topbar');
+  if(!tb) return;
+  function set(){
+    var fijo = getComputedStyle(tb).position === 'fixed';
+    document.documentElement.style.setProperty(
+      '--topbar-h', fijo ? Math.round(tb.getBoundingClientRect().height) + 'px' : '0px');
+  }
+  set();
+  window.addEventListener('resize', set);
+  window.addEventListener('load', set);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(set);
+})();
+</script>
 </body>
 </html>
