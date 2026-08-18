@@ -408,31 +408,49 @@
 
   
   /* ---------- rail de puntos: navegacion de secciones ---------- */
-  /* Ancho FIJO: el rail nunca crece ni empuja ni pisa el contenido.
-     El titulo es una capa flotante que aparece al pasar por el rail. */
+  /* El punto ES la pill: al entrar al rail se ensancha hasta que entra el texto,
+     asi que el texto siempre es parte del link y se puede clickear.
+     En reposo la caja mide 44px fijos: nunca empuja ni pisa el contenido.
+     --w  (ancho final de cada pill) y --s (escala tipo dock) las calcula el script. */
   .side{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:110;
-        display:flex;flex-direction:column;gap:4px;padding:10px 0;width:44px;
-        background:transparent}
+        display:flex;flex-direction:column;align-items:flex-start;
+        gap:4px;padding:12px 0;width:44px;background:transparent}
+  .side:hover{width:var(--wmax,240px)}   /* el hover no se pierde al moverse entre pills */
   .side .lbl,.side .v{display:none}
   .side:not(:has(a)){display:none}
-  .side a{position:relative;display:flex;align-items:center;justify-content:center;
-          width:44px;height:28px;text-decoration:none;border-radius:999px}
-  .side a::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--sage-400);opacity:.45;
-                  transition:background .2s,opacity .2s,transform .2s}
-  .side a:hover::before{opacity:1;transform:scale(1.25)}
-  .side a.act::before{background:var(--lime-500);opacity:1;transform:scale(1.35)}
+
+  .side a{position:relative;display:block;width:44px;height:30px;   /* alto fijo: el paso entre puntos nunca cambia */
+          text-decoration:none;transform:scale(var(--s,1));transform-origin:left center;
+          transition:transform .16s cubic-bezier(.22,1,.36,1)}
+  .side:hover a{width:var(--w,180px)}
+
+  /* el punto que se convierte en pill */
+  .side a::before{content:"";position:absolute;left:17px;top:50%;
+                  width:10px;height:10px;margin-top:-5px;border-radius:999px;
+                  background:var(--sage-400);opacity:.45;
+                  transition:width .34s cubic-bezier(.22,1,.36,1),height .26s ease,
+                             margin-top .26s ease,left .26s ease,
+                             background .22s,opacity .22s,box-shadow .22s}
+  .side:hover a::before{left:10px;width:var(--w,180px);height:24px;margin-top:-12px;
+                        background:var(--green-900);opacity:1;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+  .side a.act::before{background:var(--lime-500);opacity:1;width:13px;height:13px;margin-top:-6.5px;left:15px}
+  .side:hover a.act::before{background:var(--lime-500);width:var(--w,180px);height:24px;margin-top:-12px;left:10px}
   .side a.anx::before{background:transparent;box-shadow:inset 0 0 0 2px var(--lime-500);opacity:1}
-  .side a span{position:absolute;left:34px;top:50%;transform:translateY(-50%) translateX(-8px);
-               opacity:0;visibility:hidden;pointer-events:none;white-space:nowrap;
-               padding:6px 12px;border-radius:999px;
-               background:var(--green-900);color:var(--cream-50);
-               font-size:12.5px;font-weight:700;line-height:1;
-               box-shadow:0 8px 22px rgba(0,0,0,.30);
-               transition:opacity .18s ease,transform .24s cubic-bezier(.22,1,.36,1),visibility 0s .18s}
-  .side:hover a span{opacity:1;visibility:visible;transform:translateY(-50%) translateX(0);transition-delay:0s}
-  .side a.act span{background:var(--lime-500);color:var(--green-950)}
-  .side a.anx span{color:var(--lime-500)}
-  @media (max-height:620px){ .side{gap:0;padding:6px 0} .side a{height:23px} }
+  .side:hover a.anx::before{background:var(--green-900);box-shadow:0 8px 22px rgba(0,0,0,.28)}
+
+  /* el texto entra cuando la pill ya tiene ancho */
+  .side a span{position:absolute;left:24px;top:50%;transform:translateY(-50%);
+               white-space:nowrap;opacity:0;pointer-events:none;
+               font-size:12.5px;font-weight:700;line-height:1;color:var(--cream-50);
+               transition:opacity .14s ease}
+  .side:hover a span{opacity:1;transition-delay:.16s}
+  .side:hover a.act span{color:var(--green-950)}
+  .side:hover a.anx span{color:var(--lime-500)}
+  @media (max-height:620px){ .side{gap:2px;padding:8px 0} .side a{height:26px} }
+  @media (prefers-reduced-motion:reduce){
+    .side a,.side a::before,.side a span{transition-duration:.01ms}
+    .side a{transform:none}
+  }
 
   /* ---------- alto real del topbar: se reserva, nunca tapa contenido ---------- */
   /* el topbar es fixed y hace flex-wrap: su alto cambia por pagina y por ancho.
@@ -444,20 +462,21 @@
   [id]{scroll-margin-top:calc(var(--topbar-h) + 22px)}
 
   @media (max-width:880px){
-    .side{position:static;transform:none;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;
-          width:auto;gap:6px;padding:10px 14px;background:var(--green-900)}
-    .side a{width:auto;height:auto;flex:0 0 auto;gap:8px;padding:7px 12px;
-            background:var(--green-800);justify-content:flex-start}
-    .side a span{position:static;transform:none;opacity:1;visibility:visible;
-                 background:transparent;color:var(--cream-50);
-                 padding:0;box-shadow:none;transition:none}
-    .side a.act{background:var(--lime-500)}
-    .side a.act span{background:transparent;color:var(--green-950)}
+    .side,.side:hover{position:static;transform:none;flex-direction:row;flex-wrap:nowrap;
+          overflow-x:auto;width:auto;gap:6px;padding:10px 14px;
+          background:var(--green-900);align-items:center}
+    .side a,.side:hover a{width:auto;height:auto;flex:0 0 auto;transform:none;
+          padding:8px 13px;border-radius:999px;background:var(--green-800)}
+    .side a::before,.side:hover a::before{display:none}   /* chips sin punto delante: acuerdo del sistema */
+    .side a span,.side:hover a span{position:static;transform:none;opacity:1;
+          color:var(--cream-50);transition:none}
+    .side a.act,.side:hover a.act{background:var(--lime-500)}
+    .side a.act span,.side:hover a.act span{color:var(--green-950)}
   }
 
-  /* en mobile el topbar deja de ser fixed: no reserva alto y no se apila
-     (en icons.html la media query estaba ANTES de la regla base y no aplicaba) */
   @media (max-width:880px){
+    /* en mobile el topbar deja de ser fixed: no reserva alto ni se apila
+       (en icons.html la media query estaba ANTES de la regla base y no aplicaba) */
     .mg-topbar{position:static;padding:10px 14px}
     /* URLs largas en <code>: sin esto empujan el ancho del documento */
     code{overflow-wrap:anywhere}
@@ -1423,6 +1442,50 @@
   window.addEventListener('resize', set);
   window.addEventListener('load', set);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(set);
+})();
+</script>
+<script>
+/* rail: ancho de cada pill + magnificacion tipo dock */
+(function(){
+  var side = document.querySelector('.side');
+  if(!side) return;
+  var links = [].slice.call(side.querySelectorAll('a'));
+  if(!links.length) return;
+
+  /* --w: cuanto tiene que ensancharse el punto para que entre su texto */
+  function medir(){
+    var max = 0;
+    links.forEach(function(a){
+      var sp = a.querySelector('span');
+      if(!sp) return;
+      var w = Math.ceil(sp.getBoundingClientRect().width) + 38;   /* 24 izq + 14 der */
+      a.style.setProperty('--w', w + 'px');
+      if(w > max) max = w;
+    });
+    side.style.setProperty('--wmax', (max + 10) + 'px');
+  }
+  medir();
+  window.addEventListener('resize', medir);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(medir);
+
+  /* --s: la pill mas cercana al cursor crece y arrastra a las vecinas.
+     Los centros se leen de offsetTop (layout), no de getBoundingClientRect,
+     porque ese ya viene con la escala aplicada y se realimentaria. */
+  var raf = null, cy = 0;
+  function pintar(){
+    raf = null;
+    links.forEach(function(a){
+      var d = Math.abs(cy - (a.offsetTop + a.offsetHeight / 2));
+      a.style.setProperty('--s', (1 + 0.26 * Math.exp(-(d * d) / 2704)).toFixed(3));
+    });
+  }
+  side.addEventListener('mousemove', function(e){
+    cy = e.clientY - side.getBoundingClientRect().top;
+    if (raf === null) raf = requestAnimationFrame(pintar);
+  });
+  side.addEventListener('mouseleave', function(){
+    links.forEach(function(a){ a.style.setProperty('--s', '1'); });
+  });
 })();
 </script>
 </body>

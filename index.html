@@ -133,6 +133,11 @@
     /* URLs largas en <code>: sin esto empujan el ancho del documento */
     code{overflow-wrap:anywhere}
   }
+
+  /* ---------- alto real del topbar: se reserva, nunca tapa contenido ---------- */
+  :root{--topbar-h:70px}
+  body{padding-top:var(--topbar-h)}
+  [id]{scroll-margin-top:calc(var(--topbar-h) + 22px)}
 </style>
 </head>
 <body>
@@ -393,6 +398,50 @@
   window.addEventListener('resize', set);
   window.addEventListener('load', set);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(set);
+})();
+</script>
+<script>
+/* rail: ancho de cada pill + magnificacion tipo dock */
+(function(){
+  var side = document.querySelector('.side');
+  if(!side) return;
+  var links = [].slice.call(side.querySelectorAll('a'));
+  if(!links.length) return;
+
+  /* --w: cuanto tiene que ensancharse el punto para que entre su texto */
+  function medir(){
+    var max = 0;
+    links.forEach(function(a){
+      var sp = a.querySelector('span');
+      if(!sp) return;
+      var w = Math.ceil(sp.getBoundingClientRect().width) + 38;   /* 24 izq + 14 der */
+      a.style.setProperty('--w', w + 'px');
+      if(w > max) max = w;
+    });
+    side.style.setProperty('--wmax', (max + 10) + 'px');
+  }
+  medir();
+  window.addEventListener('resize', medir);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(medir);
+
+  /* --s: la pill mas cercana al cursor crece y arrastra a las vecinas.
+     Los centros se leen de offsetTop (layout), no de getBoundingClientRect,
+     porque ese ya viene con la escala aplicada y se realimentaria. */
+  var raf = null, cy = 0;
+  function pintar(){
+    raf = null;
+    links.forEach(function(a){
+      var d = Math.abs(cy - (a.offsetTop + a.offsetHeight / 2));
+      a.style.setProperty('--s', (1 + 0.26 * Math.exp(-(d * d) / 2704)).toFixed(3));
+    });
+  }
+  side.addEventListener('mousemove', function(e){
+    cy = e.clientY - side.getBoundingClientRect().top;
+    if (raf === null) raf = requestAnimationFrame(pintar);
+  });
+  side.addEventListener('mouseleave', function(){
+    links.forEach(function(a){ a.style.setProperty('--s', '1'); });
+  });
 })();
 </script>
 </body>
