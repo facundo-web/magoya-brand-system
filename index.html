@@ -24,7 +24,7 @@
   .mg-topbar .navdiv{width:1px;height:18px;background:var(--cream-300);opacity:.25;margin:0 14px 0 20px}
   @media (max-width:880px){ .mg-topbar .navdiv{display:none} }
 
-  .wrap{max-width:1420px;margin:0 auto;padding:88px 28px 80px}
+  .wrap{max-width:1420px;margin:0 auto 0 64px;padding:88px 32px 80px}
 
   /* ---------- cabecera ---------- */
   .head{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:end;margin-bottom:26px}
@@ -109,7 +109,12 @@
 
   @media (max-width:1100px){ .board{grid-template-columns:repeat(3,1fr)} }
   @media (max-width:880px){
-    .mg-topbar{position:static;padding:10px 14px}
+    /* una sola fila que scrollea, como los chips del rail: la barra apilaba
+       4 o 5 filas y medía 130 a 162px segun la pagina */
+    .mg-topbar{position:static;padding:10px 14px;flex-wrap:nowrap;overflow-x:auto;
+               -webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .mg-topbar::-webkit-scrollbar{display:none}
+    .mg-topbar > *{flex:0 0 auto}
     .wrap{padding:20px 16px 60px}
     .head{grid-template-columns:1fr;gap:18px;align-items:start}
     .meta{justify-content:flex-start}
@@ -138,6 +143,23 @@
   :root{--topbar-h:70px}
   body{padding-top:var(--topbar-h)}
   [id]{scroll-margin-top:calc(var(--topbar-h) + 22px)}
+
+  /* ---------- topbar: mismo alto en todas las paginas ---------- */
+  /* el <img> inline dejaba hueco de baseline debajo del lockup y el alto de la
+     barra salia 54, 66 o 70 segun la pagina. Con display:block el lockup mide
+     siempre 34 + 12 de padding, asi que la barra mide 66 en todas. */
+  .mg-topbar{align-items:center}
+  .mg-topbar img{display:block}
+  .mg-topbar .brandmark{display:inline-flex;align-items:center;padding:6px 10px}
+
+  @media (max-width:880px){
+    /* una sola sangria en mobile: el texto arranca a 20px en todas las paginas
+       (venia de 14, 16, 18, 22 o 32 segun donde estuviera el padding) */
+    .wrap{margin-left:0;margin-right:0;padding-left:20px;padding-right:20px}
+    main{margin-left:0}
+    .hero-in,.inner,.hero > .inner,section > .inner,footer > *,footer > div{padding-left:20px;padding-right:20px}
+    body{padding-left:0;padding-right:0}
+  }
 </style>
 </head>
 <body>

@@ -30,9 +30,9 @@
   /* ---------- layout ---------- */
   main{margin-left:64px;padding-top:44px}
   section{padding:88px 0}
-  section > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 64px}
+  section > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 32px}
   .hero{margin-left:64px;margin-top:44px;background:var(--green-950);color:var(--cream-50);padding:70px 0 60px;position:relative}
-  .hero > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 64px}
+  .hero > .inner{max-width:1284px;margin:0 auto 0 0;padding:0 32px}
   .hero .k{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--lime-500);border:1.5px solid rgba(162,255,0,.45);padding:6px 14px;border-radius:999px}
   .hero h1{font-weight:800;font-size:clamp(2.6rem,5.6vw,4.6rem);letter-spacing:var(--tracking-tight);line-height:1.02;margin:20px 0 16px}
   .hero h1 em{font-style:normal;color:var(--lime-500)}
@@ -150,7 +150,12 @@
 
   /* ---------- responsive ---------- */
   @media (max-width:880px){
-    .mg-topbar{position:static;padding:10px 14px}
+    /* una sola fila que scrollea, como los chips del rail: la barra apilaba
+       4 o 5 filas y medía 130 a 162px segun la pagina */
+    .mg-topbar{position:static;padding:10px 14px;flex-wrap:nowrap;overflow-x:auto;
+               -webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .mg-topbar::-webkit-scrollbar{display:none}
+    .mg-topbar > *{flex:0 0 auto}
     main{padding-top:0}
     main,.hero,footer{margin-left:0}
     .hero{margin-top:0;padding:44px 0 40px}
@@ -170,7 +175,10 @@
      asi que el texto siempre es parte del link y se puede clickear.
      En reposo la caja mide 44px fijos: nunca empuja ni pisa el contenido.
      --w  (ancho final de cada pill) y --s (escala tipo dock) las calcula el script. */
-  .side{position:fixed;left:10px;top:50%;transform:translateY(-50%);z-index:110;
+  .side{position:fixed;left:10px;z-index:110;
+        top:calc(var(--topbar-h) + 62px);   /* altura fija: el primer punto cae en el mismo
+                                               lugar en toda la web. Centrado vertical no:
+                                               con 2 o con 14 secciones arrancaba a distinta altura */
         display:flex;flex-direction:column;align-items:flex-start;
         gap:4px;padding:12px 0;width:44px;background:transparent}
   .side:hover{width:var(--wmax,240px)}   /* el hover no se pierde al moverse entre pills */
@@ -224,7 +232,8 @@
           overflow-x:auto;width:auto;gap:6px;padding:10px 14px;
           background:var(--green-900);align-items:center}
     .side a,.side:hover a{width:auto;height:auto;flex:0 0 auto;transform:none;
-          padding:8px 13px;border-radius:999px;background:var(--green-800)}
+          padding:8px 13px;border-radius:999px;background:var(--green-800);
+          font-size:12.5px;line-height:1}   /* sin esto el chip hereda el line-height de la pagina y mide distinto en cada una */
     .side a::before,.side:hover a::before{display:none}   /* chips sin punto delante: acuerdo del sistema */
     .side a span,.side:hover a span{position:static;transform:none;opacity:1;
           color:var(--cream-50);transition:none}
@@ -238,6 +247,22 @@
     .mg-topbar{position:static;padding:10px 14px}
     /* URLs largas en <code>: sin esto empujan el ancho del documento */
     code{overflow-wrap:anywhere}
+  }
+
+  /* ---------- topbar: mismo alto en todas las paginas ---------- */
+  /* el <img> inline dejaba hueco de baseline debajo del lockup y el alto de la
+     barra salia 54, 66 o 70 segun la pagina. Con display:block el lockup mide
+     siempre 34 + 12 de padding, asi que la barra mide 66 en todas. */
+  .mg-topbar{align-items:center}
+  .mg-topbar img{display:block}
+  .mg-topbar .brandmark{display:inline-flex;align-items:center;padding:6px 10px}
+
+  @media (max-width:880px){
+    /* una sola sangria en mobile: el texto arranca a 20px en todas las paginas
+       (venia de 14, 16, 18, 22 o 32 segun donde estuviera el padding) */
+    .wrap{margin-left:0;margin-right:0;padding-left:20px;padding-right:20px}
+    main{margin-left:0}
+    .hero-in,.inner,.hero > .inner,section > .inner,footer > *,footer > div{padding-left:20px;padding-right:20px}
   }
 </style>
 </head>
