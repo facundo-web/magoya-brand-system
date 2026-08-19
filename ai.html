@@ -176,9 +176,8 @@
      En reposo la caja mide 44px fijos: nunca empuja ni pisa el contenido.
      --w  (ancho final de cada pill) y --s (escala tipo dock) las calcula el script. */
   .side{position:fixed;left:10px;z-index:110;
-        top:calc(var(--topbar-h) + 62px);   /* altura fija: el primer punto cae en el mismo
-                                               lugar en toda la web. Centrado vertical no:
-                                               con 2 o con 14 secciones arrancaba a distinta altura */
+        top:50%;transform:translateY(-50%);   /* centrado vertical: el centro del rail es
+                                                 la referencia fija en toda la web */
         display:flex;flex-direction:column;align-items:flex-start;
         gap:4px;padding:12px 0;width:44px;background:transparent}
   .side:hover{width:var(--wmax,240px)}   /* el hover no se pierde al moverse entre pills */
@@ -264,13 +263,24 @@
     main{margin-left:0}
     .hero-in,.inner,.hero > .inner,section > .inner,footer > *,footer > div{padding-left:20px;padding-right:20px}
   }
+
+  /* ---------- topbar: espacios iguales y el grupo de AI al final ---------- */
+  /* los margenes .cl (16px) y .cl2 (10px) hacian que cada par de items tuviera
+     una separacion distinta. Ahora todos los items pares estan a la misma
+     distancia y el unico corte estructural es el divisor antes del grupo de AI. */
+  .mg-topbar a.cl,.mg-topbar a.cl2{margin-left:0}
+  .mg-topbar .navdiv{margin:0 12px}
+  /* AI en campo es sub-marca: se anuncia con su propia ley, el verde ES el fondo */
+  .mg-topbar a.sub{background:var(--emerald-500);color:var(--green-950);font-weight:800}
+  .mg-topbar a.sub:hover{background:var(--lime-500);color:var(--green-950)}
+  .mg-topbar a.sub.on{box-shadow:inset 0 0 0 2px var(--cream-50)}
 </style>
 </head>
 <body>
 
 <nav class="mg-topbar">
   <a href="index.html"><img src="assets/magoya-wordmark-cream.svg" alt="Magoya"></a>
-  <a href="index.html">Inicio</a><a href="brand-book.html">Brand book</a><a href="ai-en-campo.html">AI en campo</a><a href="slides.html" class="cl">Slides</a><a href="pieces.html">Comerciales</a><a href="icons.html" class="cl">Iconos</a><a href="library.html">Assets</a><a href="logos.html" class="cl2">Clientes</a><span class="navdiv"></span><a href="ai.html" class="on">Integrar con AI</a>
+  <a href="index.html">Inicio</a><a href="brand-book.html">Brand book</a><a href="slides.html">Slides</a><a href="pieces.html">Comerciales</a><a href="icons.html">Iconos</a><a href="library.html">Assets</a><a href="logos.html">Clientes</a><span class="navdiv"></span><a href="ai.html" class="on">Integrar con AI</a><a href="ai-en-campo.html" class="sub">AI en campo</a>
 </nav>
 
 <nav class="side" id="dock">
