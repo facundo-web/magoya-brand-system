@@ -148,7 +148,7 @@ Síntoma: aparece el **puzzle**, naranja o amarillo, personajes con rostro o mon
 3. Si es una pieza heredada que hay que actualizar, decilo de entrada: *"esta pieza es del brand viejo; rehacela con el manual actual"*.
 4. Cuidado especial con las **fotos de merch y los logos de clientes**: la regla es foto o render real y logos reales de `assets/logos/clients/`. Si falta el asset, la IA tiene que decirlo, no dibujarlo.
 
-### La IA mezcla "AI en campo" con el core
+### La IA mezcla "IA en campo" con el core
 
 `ai-en-campo.html` es una **marca anexa con manual propio** que rompe tres reglas del core a propósito: lienzo verde digital `#00DE68` pleno, placa negra de dato clave, y doodles del Studio. Si aparece un fondo verde digital pleno en una pieza institucional, la IA cruzó los manuales. Decile explícitamente en qué marca estás trabajando antes de pedir la pieza.
 

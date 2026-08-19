@@ -1,6 +1,6 @@
 # Magoya — Brand System v1.1
 
-> Manual de marca en Markdown, pensado para ser consumido por personas y por AIs.
+> Manual de marca en Markdown, pensado para ser consumido por personas y por IAs.
 > Tokens exactos en [`tokens.json`](tokens.json) y [`tokens.css`](tokens.css). Manual visual navegable en [`brand-book.html`](brand-book.html).
 > **Las secciones 1–13 + §14 espejan una a una las del brand book visual.** Si una regla cambia acá, cambia allá — y al revés.
 
@@ -143,12 +143,13 @@ Línea 2px, terminaciones y esquinas redondeadas, grid 24×24, `currentColor`. *
 8. Máximo 2 recursos gráficos por pieza (§7); el monograma "m" no va en cards; en la firma va el wordmark.
 9. **Emojis prohibidos** — la única excepción son las manitos que señalan (👈 👉 👇) hacia un CTA y las banderas de países para geografía. Nunca en títulos.
 10. ✗ Resaltador sólido tras texto · ✗ gradientes glossy/3D/estética IA · ✗ pieza 100% negra o verde · ✗ personajes con rostro/monoline · ✗ puzzle · ✗ naranja/amarillo · ✗ banda festoneada · ✗ motivos de líneas.
+11. **En español se escribe IA, nunca AI** — "IA en campo", "Integrar con IA", "capacidades de IA". "AI" queda solo para copy en inglés (decks US) y nombres propios ajenos ("Data & AI", "AI Studio"). Una pieza en español que diga "AI" está mal escrita.
 
-## 14. Marca anexa "AI en campo" (manual propio)
+## 14. Marca anexa "IA en campo" (manual propio)
 
 **No es una sección de este brand: es una marca anexa con su propio manual** (`ai-en-campo.html`). Línea de contenido educativo de IA para el agro (carruseles, reels, webinars). Mismo ADN (Manrope, verdes oficiales) pero **rompe tres reglas del core a propósito**: (1) lienzo **verde digital pleno #00DE68** como fondo dominante; (2) **placa negra** #161616 con texto crema para el dato clave — permitida acá como lenguaje sticker; (3) **ruido con los assets del Studio** (`assets/studio/`): doodles (sparkle, dots, blob, loop), flourishes (arrow, navarrow, circle, underline), badge EN VIVO y logos oficiales de IA/redes — 2–4 por pieza, ±5–15°, en las esquinas, teñidos en verde digital o lima (nunca un color propio: la sub-marca no usa terracota ni ningún acento fuera de la paleta core). Texto secundario verde profundo; display negro. Formato madre: **carrusel retrato 4:5 (1080×1350)** — no el cuadrado 1080×1080, que Instagram dejó de privilegiar para carruseles. Arco narrativo de 4–6 slides (duda real → herramienta → prueba → paso siguiente), sin numerar las slides (el swipe ya lo comunica); **ritmo de color del arco: verde pleno en la primera y la última slide, crema Magoya en las del medio** — todo verde se lee como una sola pieza repetida, no como un recorrido.
 
-**Logo de la sub-marca:** lockup **"AI en campo · por Magoya"** abajo-izquierda — reemplaza al wordmark de Magoya solo en piezas de esta línea. Se compone con Manrope viva (800, tracking −2%), nunca como imagen. Lleva un mark a mano (`assets/studio/mark-ai-campo.svg`, mismo lenguaje de las marcas a mano del core) pegado a la derecha de "AI", a ~65% de su altura — **ese mark existe únicamente en este tamaño**: agrandado y suelto en una esquina como estallido cómic queda fuera del sistema. Negro `#161616` sobre lienzo claro, crema `#ECE3DB` sobre placa negra; nunca lima ni verde digital en el lockup — el color lo pone el fondo, no el logo. "por Magoya" siempre en `font-mono`, mayúsculas, más chico: es la firma, no el título.
+**Logo de la sub-marca:** lockup **"IA en campo · por Magoya"** abajo-izquierda — reemplaza al wordmark de Magoya solo en piezas de esta línea. Se compone con Manrope viva (800, tracking −2%), nunca como imagen. Lleva un mark a mano (`assets/studio/mark-ai-campo.svg`, mismo lenguaje de las marcas a mano del core) pegado a la derecha de "IA", a ~65% de su altura — **ese mark existe únicamente en este tamaño**: agrandado y suelto en una esquina como estallido cómic queda fuera del sistema. Negro `#161616` sobre lienzo claro, crema `#ECE3DB` sobre placa negra; nunca lima ni verde digital en el lockup — el color lo pone el fondo, no el logo. "por Magoya" siempre en `font-mono`, mayúsculas, más chico: es la firma, no el título.
 
 Las piezas se producen SIEMPRE desde plantillas del Studio y su receta queda guardada en un `.magoya.json` (template, scheme, accent, anchor, rule, silueta, objetos con x/y/scale/rotation) — esa es la fuente para reproducirlas, no el ojo. Producción en Magoya Studio (30+ plantillas, 13 formatos de red). Nada de esto vuelve al core.
 
@@ -163,7 +164,7 @@ Las piezas se producen SIEMPRE desde plantillas del Studio y su receta queda gua
 | `icons.html` | 58 iconos copiables |
 | `library.html` | Ficha + descarga de cada asset aprobado |
 | `logos.html` | Logos de clientes y stack tecnológico |
-| `ai.html` | Cómo cargar esta marca en una herramienta de AI y cómo validar el resultado |
+| `ai.html` | Cómo cargar esta marca en una herramienta de IA y cómo validar el resultado |
 
 Capa machine-readable: `llms.txt` (resumen estable), `.ai/brand-prompt.md` y `.ai/brand-prompt-short.md` (prompts para pegar), `.ai/checklist.md` (validación) y `.ai/presets/` (uno por herramienta). **Todos derivan de este archivo: si una regla cambia acá, hay que propagarla ahí.**
 

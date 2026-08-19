@@ -1,15 +1,15 @@
-# Magoya Brand — entradas por AI
+# Magoya Brand — entradas por IA
 
-Un link por herramienta. Cada entrada se versiona por separado: cuando una AI gana capacidades, se actualiza SU archivo (con changelog) sin tocar los demás.
+Un link por herramienta. Cada entrada se versiona por separado: cuando una IA gana capacidades, se actualiza SU archivo (con changelog) sin tocar los demás.
 
-| AI | Link de entrada |
+| IA | Link de entrada |
 |---|---|
 | ChatGPT (Custom GPT / Projects) | https://brand.magoya.com/ai/chatgpt.md |
 | Claude (claude.ai / Claude Code / API) | https://brand.magoya.com/ai/claude.md |
 | Gemini (app / AI Studio / Gems) | https://brand.magoya.com/ai/gemini.md |
 | Cursor | https://brand.magoya.com/ai/cursor.md |
 | GitHub Copilot | https://brand.magoya.com/ai/copilot.md |
-| Cualquier otra AI con browsing | https://brand.magoya.com/ai/generic.md |
+| Cualquier otra IA con browsing | https://brand.magoya.com/ai/generic.md |
 
 ## Capa compartida (lo que todas las entradas apuntan)
 

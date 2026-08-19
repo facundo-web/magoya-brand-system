@@ -1,6 +1,6 @@
-# Bench · Sub-marca "AI en campo"
+# Bench · Sub-marca "IA en campo"
 
-**Qué es esto**: benchmark de referentes reales para sistematizar la diferenciación de "AI en campo" respecto del core de Magoya — un mecanismo por capa (iconografía, formato, elementos), como pidió el dueño de la marca, no solo un cambio de color. Investigado con búsqueda y lectura de fuentes en vivo el **11 de agosto de 2026**.
+**Qué es esto**: benchmark de referentes reales para sistematizar la diferenciación de "IA en campo" respecto del core de Magoya — un mecanismo por capa (iconografía, formato, elementos), como pidió el dueño de la marca, no solo un cambio de color. Investigado con búsqueda y lectura de fuentes en vivo el **11 de agosto de 2026**.
 
 ## Fuentes relevadas (consultadas de verdad)
 
@@ -46,8 +46,8 @@ Vistas solo por resúmenes de búsqueda (no pude leer la página completa):
 
 ### Patrones transversales
 
-1. **Un ancla innegociable, todo lo demás negociable.** Cada caso fija UN elemento heredado intocable que garantiza el parentesco (Figma: las primitivas + tipografía; Duolingo: la mascota + reglas de construcción; QuantumBlack: el endoso "by McKinsey"; Wrapped: los activos madre). La sub-marca se reconoce porque rompe todo *alrededor* de un ancla estable. AI en campo ya tiene la suya: Manrope + lockup "AI en campo · por Magoya".
-2. **La diferencia es un cambio de ROL de la capa, no un asset nuevo.** Config no inventa formas: toma las del toolbar y les cambia el rol (de UI a glifo expresivo gigante). Wrapped toma el verde y lo desborda. Esto valida la ruptura #1 de AI en campo: el verde no es nuevo, cambió de rol (acento → lienzo).
+1. **Un ancla innegociable, todo lo demás negociable.** Cada caso fija UN elemento heredado intocable que garantiza el parentesco (Figma: las primitivas + tipografía; Duolingo: la mascota + reglas de construcción; QuantumBlack: el endoso "by McKinsey"; Wrapped: los activos madre). La sub-marca se reconoce porque rompe todo *alrededor* de un ancla estable. IA en campo ya tiene la suya: Manrope + lockup "IA en campo · por Magoya".
+2. **La diferencia es un cambio de ROL de la capa, no un asset nuevo.** Config no inventa formas: toma las del toolbar y les cambia el rol (de UI a glifo expresivo gigante). Wrapped toma el verde y lo desborda. Esto valida la ruptura #1 de IA en campo: el verde no es nuevo, cambió de rol (acento → lienzo).
 3. **"Menos pulido" como señal deliberada de sub-marca.** Config Commons se deconstruye a propósito ("less polished"); Wrapped abraza el caos ("untamed"); Notion mete mano alzada donde el core es quirúrgico. La imperfección controlada es un código reconocido de "esto es la voz cercana de la casa, no la corporativa". Fundamenta los doodles como sistema, no como decoración.
 4. **El nivel "dinámico" se documenta con reglas propias, no se deja al gusto.** Mailchimp formalizó Core vs Dynamic como dos sistemas escritos; Wrapped sistematiza su caos en capas con perillas. La sub-marca necesita su propio manual de qué se puede romper y cuánto — que es exactamente lo que ai-en-campo.html ya empezó a ser.
 
@@ -58,10 +58,10 @@ Vistas solo por resúmenes de búsqueda (no pude leer la página completa):
 ### Referentes agro LATAM
 
 - **Agrofy News** (@agrofynews, 130K seguidores IG) y **Agrofy Market** (@agrofy.ar, 60K): el medio informativo separado del marketplace — bio "información para la toma de decisiones, siempre cerca del productor". Solo pude ver perfiles, no auditar piezas.
-- **CREA** (@crea_arg, 51K) y **Aapresid**: comunicación institucional técnica; su valor para este bench es como marca de *confianza técnica* que AI en campo compite por ganarse, más que como referente visual.
+- **CREA** (@crea_arg, 51K) y **Aapresid**: comunicación institucional técnica; su valor para este bench es como marca de *confianza técnica* que IA en campo compite por ganarse, más que como referente visual.
 - **Bichos de Campo**: elegido "mejor medio de comunicación 2022" por el Círculo de Periodistas Agropecuarios; +6M de lectores por trimestre (SimilarWeb vía su propia nota). Nació como programa de TV → radio → digital 2017: el agro argentino premia la voz periodística cercana por sobre la corporativa.
 - **La Joya Agro** (Bruno Riboldi, ing. agrónomo): 987K en IG, 510K en TikTok, premio CITA Comunicador Digital 2022. El formato ganador del agro argentino en redes es **persona + humor + técnica**, no placa institucional.
-- Dato clave de adopción (innovaciondigital360.com): *"un video de YouTube de 8 minutos explicando cómo calibrar una pulverizadora puede tener más impacto en la adopción de tecnología que seis meses de visitas a campo"*. El contenido que funciona con productores es **procedimental y concreto** (cómo hacer X, con qué herramienta, cuánto da) — valida el arco del carrusel de AI en campo: pregunta real → herramienta → prueba → una acción.
+- Dato clave de adopción (innovaciondigital360.com): *"un video de YouTube de 8 minutos explicando cómo calibrar una pulverizadora puede tener más impacto en la adopción de tecnología que seis meses de visitas a campo"*. El contenido que funciona con productores es **procedimental y concreto** (cómo hacer X, con qué herramienta, cuánto da) — valida el arco del carrusel de IA en campo: pregunta real → herramienta → prueba → una acción.
 
 ### Educación sobre IA en español (carruseles y placas)
 
@@ -73,9 +73,9 @@ Vistas solo por resúmenes de búsqueda (no pude leer la página completa):
 Las guías de carruseles coinciden en los mecanismos de reconocibilidad antes de leer:
 
 1. **Plantilla de layout fija**: mismos tamaños de fuente, misma posición de titulares, mismos bloques de color en TODA la serie — el seguidor reconoce la serie por la silueta de la slide, no por el logo.
-2. **Lógica de secuencia fija**: slide 1 nombra el problema, 2 da contexto, 3–7 método y prueba, última pide UNA acción — calca el arco narrativo que AI en campo ya definió.
+2. **Lógica de secuencia fija**: slide 1 nombra el problema, 2 da contexto, 3–7 método y prueba, última pide UNA acción — calca el arco narrativo que IA en campo ya definió.
 3. **Tratamiento visual idéntico** de foto/ilustración/gráficos en todo el set.
-4. Las guías genéricas recomiendan numerar pasos y usar cuadrado 1080×1080 para contenido "guardable" — **el manual de AI en campo prohíbe ambas** (no numerar slides, no cuadrado para carrusel). No es contradicción fatal: la numeración es un truco de retención genérico y la firma de serie puede venir de la plantilla fija; pero conviene saber que se está nadando contra la práctica estándar a propósito.
+4. Las guías genéricas recomiendan numerar pasos y usar cuadrado 1080×1080 para contenido "guardable" — **el manual de IA en campo prohíbe ambas** (no numerar slides, no cuadrado para carrusel). No es contradicción fatal: la numeración es un truco de retención genérico y la firma de serie puede venir de la plantilla fija; pero conviene saber que se está nadando contra la práctica estándar a propósito.
 
 **Síntesis del frente**: para productores/técnicos funciona lo concreto (placa de dato, cifra, captura de pantalla real, "cómo se hace") con voz de persona, no de empresa. La serie se hace reconocible por plantilla fija + ritual de color + un elemento firma que siempre está en el mismo lugar — tres cosas que el kit ya tiene (plantillas del Studio, ritmo verde-crema-verde, lockup abajo-izquierda) y solo hay que declarar como ley.
 
@@ -92,11 +92,11 @@ Las guías de carruseles coinciden en los mecanismos de reconocibilidad antes de
 | **Sticker die-cut: contorno que sigue el dibujo** | Tendencia 2025–2026 documentada (Sticker Mule, Paperlust, RareCustom) | El recorte sigue la silueta del arte en vez de encerrarlo en un rectángulo; los "character stickers" recortados al contorno exacto son el formato dominante para marcas con identidad expresiva. En digital se emula con borde blanco/claro grueso alrededor del elemento | Secundarias (blogs de industria, coincidentes) |
 | **Ícono de 1 color en producto, 2 colores en marketing** | Guía de iconografía de designsystems.com | "For product icons, use 1 color, while for marketing icons you might want to use 2 colors if it is a crucial part of your brand" | Secundaria |
 
-**Lectura para AI en campo**: el mecanismo más probado y más barato es el de Atlassian — mismo set de íconos, distinto peso/relleno según superficie. El core de Magoya (58 íconos línea 2px, 24×24) es la "capa producto"; la sub-marca puede tener la "capa marketing" del MISMO vocabulario: versión rellena/bold, a escala grande, o con tratamiento sticker. Lo que ningún caso serio hace: inventar un set de íconos nuevo y desconectado para la sub-marca.
+**Lectura para IA en campo**: el mecanismo más probado y más barato es el de Atlassian — mismo set de íconos, distinto peso/relleno según superficie. El core de Magoya (58 íconos línea 2px, 24×24) es la "capa producto"; la sub-marca puede tener la "capa marketing" del MISMO vocabulario: versión rellena/bold, a escala grande, o con tratamiento sticker. Lo que ningún caso serio hace: inventar un set de íconos nuevo y desconectado para la sub-marca.
 
 ---
 
-## Implicancias para AI en campo
+## Implicancias para IA en campo
 
 ### Matriz SE HEREDA / SE DIFERENCIA
 
@@ -112,7 +112,7 @@ Las guías de carruseles coinciden en los mecanismos de reconocibilidad antes de
 
 ### Qué validar con Facundo/Varu (solo lo nuevo)
 
-1. **Íconos rellenos de sub-marca**: generar la variante filled/bold de los íconos que AI en campo usa (los 4 agro + los que pida el contenido), mismo grid 24×24 escalable, relleno pleno. Es el mecanismo Atlassian aplicado tal cual y responde directo al pedido "desde el uso de la iconografía".
+1. **Íconos rellenos de sub-marca**: generar la variante filled/bold de los íconos que IA en campo usa (los 4 agro + los que pida el contenido), mismo grid 24×24 escalable, relleno pleno. Es el mecanismo Atlassian aplicado tal cual y responde directo al pedido "desde el uso de la iconografía".
 2. **Ícono a escala gigante como ilustración de slide** (rol brand-icon): habilitarlo solo en la sub-marca — en el core los íconos siguen siendo señal a 24px.
 3. **Tratamiento sticker** (borde crema grueso siguiendo el contorno) para logos de IA y badge sobre verde pleno — hoy la plantilla collage-stickers lo insinúa; habría que reglarlo.
 4. **Anatomía de serie como ley**: cada serie con su plantilla congelada; cambiar plantilla = nueva serie. (Riesgo bajo, alto retorno de reconocibilidad.)

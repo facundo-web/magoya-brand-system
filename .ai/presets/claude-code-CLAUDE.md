@@ -84,4 +84,4 @@ Profesional y senior, nunca vendedor; transparente y estructurado; maduro y conf
 
 Corré la checklist: https://raw.githubusercontent.com/magoya/magoya-brand-system/main/.ai/checklist.md — y reportá en una línea los hex usados, los golpes de lima y los recursos gráficos.
 
-"AI en campo" es una marca anexa con manual propio (`ai-en-campo.html`): sus reglas nunca se aplican a piezas de Magoya core.
+"IA en campo" es una marca anexa con manual propio (`ai-en-campo.html`): sus reglas nunca se aplican a piezas de Magoya core.

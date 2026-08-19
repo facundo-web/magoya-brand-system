@@ -53,7 +53,7 @@ for mod in mods:
         mod['layout_src'] = mod_srcs[mod['id']]
 
 slides = {
-  'que_es': 'Spec machine-readable de los 41 módulos de presentación de Magoya. El deck kit navegable (con export .pptx) vive en slides.html — esta es la receta para que una AI reconstruya cualquier módulo.',
+  'que_es': 'Spec machine-readable de los 41 módulos de presentación de Magoya. El deck kit navegable (con export .pptx) vive en slides.html — esta es la receta para que una IA reconstruya cualquier módulo.',
   'si_tu_fetch_trunca': f'Este archivo es grande (~86KB). Si tu fetch llega cortado o resumido, usa los archivos por familia (2-10KB, mismo formato): {BASE}/ai/slides/A.json hasta {BASE}/ai/slides/M.json — una familia por archivo, con layout_src completo por modulo.',
   'lienzo': {'ancho_px': 1920, 'alto_px': 1080, 'margen_interior': '7%',
              'fondos': ['blanco #FFFFFF', 'sage #EFF3EE', 'oscuro #133825 (solo apertura/cierre/citas)'],
@@ -92,10 +92,10 @@ CATDOC = {
  'assets/font': ('Manrope variable (única tipografía)', 'Pesos 200–800. Display 800 tracking −3%. También en Google Fonts como "Manrope".'),
  'assets/font/manrope': ('Archivos de la fuente', ''),
  'assets/favicon': ('Favicons oficiales', 'Avatar m al corte, sin padding extra.'),
- 'assets/pieces': ('Piezas reales exportadas (referencia de calidad)', 'fecha-marcada-ig-portrait es LA pieza canónica de AI en campo (formato madre 4:5).'),
- 'assets/studio': ('Kit de la sub-marca AI en campo + logos de terceros', 'Los doodles/flourishes del Studio son SOLO para piezas de AI en campo, no para Magoya core.'),
+ 'assets/pieces': ('Piezas reales exportadas (referencia de calidad)', 'fecha-marcada-ig-portrait es LA pieza canónica de IA en campo (formato madre 4:5).'),
+ 'assets/studio': ('Kit de la sub-marca IA en campo + logos de terceros', 'Los doodles/flourishes del Studio son SOLO para piezas de IA en campo, no para Magoya core.'),
  'assets/studio/icons/agro': ('Íconos agro del Studio', ''),
- 'assets/studio/icons/ai': ('Logos oficiales de plataformas de AI', 'Usar la variante correcta según fondo (-black sobre claro).'),
+ 'assets/studio/icons/ai': ('Logos oficiales de plataformas de IA', 'Usar la variante correcta según fondo (-black sobre claro).'),
  'assets/studio/icons/social': ('Logos oficiales de redes', 'Idem variantes por fondo.'),
  'assets/studio/devices': ('Mockups de dispositivos', ''),
  'assets/refs': ('REFERENCIAS del diseñador original', 'NO son assets finales — no usar en piezas. Solo contexto histórico.'),

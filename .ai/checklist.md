@@ -20,6 +20,7 @@ Quince chequeos verificables. Todos tienen que dar **sí** antes de publicar. Si
 | 14 | **Chips: solo texto, sin punto** | Mirá cada chip/pill de la pieza | Un chip lleva un punto/bullet (•) delante del texto, un ícono adentro, o texto en sentence case — el chip es SOLO texto uppercase; la pill ya delimita, el punto es ruido |
 | 15 | **Espaciado en escala y un eje** | Extraé los margin/padding/gap y compará contra la escala base-4 de `tokens.json`; mirá el eje de alineación | Hay valores fuera de la escala (5, 10, 14, 18…), bloques a menos de 24 de aire entre sí, más de un eje de alineación en la pieza, filas cuyos elementos no comparten centro vertical, o paddings con 4 valores distintos |
 
+| 16 | **IA, no AI** | Buscá `AI` como palabra suelta en todo el copy | Una pieza en español escribe "AI" (AI en campo, Integrar con AI, capacidades de AI) en vez de **IA**. Solo se admite "AI" en copy en inglés y en nombres propios ajenos ("Data & AI", "AI Studio") |
 ## Extras según el formato
 
 - **Slides**: margen interior 7% del ancho, escala 126/84/56/42pt sobre 1920px, un golpe de lima por slide, lienzo blanco o sage `#EEF2EC`.
@@ -29,6 +30,6 @@ Quince chequeos verificables. Todos tienen que dar **sí** antes de publicar. Si
 - **Merch**: siempre foto o render real del producto, nunca ilustración ni esquema vectorial. Sin lima en textil.
 - **Fotos de personas**: siempre B&N con un acento verde o lima.
 
-## Si la pieza es de "AI en campo"
+## Si la pieza es de "IA en campo"
 
-Es una **marca anexa con manual propio** (`ai-en-campo.html`), no el core. Ahí sí valen el lienzo verde digital `#00DE68` pleno, la placa negra de dato clave y los doodles del Studio (2–4 por pieza, ±5–15°). Nada de eso es válido en una pieza de Magoya core, y nada del core aplica tal cual a "AI en campo".
+Es una **marca anexa con manual propio** (`ai-en-campo.html`), no el core. Ahí sí valen el lienzo verde digital `#00DE68` pleno, la placa negra de dato clave y los doodles del Studio (2–4 por pieza, ±5–15°). Nada de eso es válido en una pieza de Magoya core, y nada del core aplica tal cual a "IA en campo".

@@ -39,10 +39,10 @@ Esto es **criterio de aceptación transversal**: ninguna sección se considera t
 | Aplicaciones | ✅ | ✅ | ✅ | 🟡 |
 | Merch | ✅ | 🟡 catálogo con placeholders | ✅ | 🟡 |
 | Papelería | ✅ | ✅ | ✅ | ✅ (header/footer/firma + instructivo Gmail) |
-| Marca anexa AI en campo | ✅ | ✅ (pieza real del Studio) | ✅ | ✅ (kit ZIP) |
+| Marca anexa IA en campo | ✅ | ✅ (pieza real del Studio) | ✅ | ✅ (kit ZIP) |
 | Slides | ✅ | 🟡 en ampliación | 🟡 | 🟡 export a Google Slides en curso |
 | Comerciales | ✅ | ✅ (3 modelos diferenciados) | 🟡 | 🟡 |
-| **Integrar con AI** | 🔵 en construcción | 🔵 | 🔵 | 🔵 prompts + presets + llms.txt |
+| **Integrar con IA** | 🔵 en construcción | 🔵 | 🔵 | 🔵 prompts + presets + llms.txt |
 
 ---
 
@@ -59,7 +59,7 @@ Esto es **criterio de aceptación transversal**: ninguna sección se considera t
 | `assets/downloads/magoya-firma-animada.gif` | sin trackear | firma de email animada |
 | `assets/downloads/magoya-firma-estatica.png` | sin trackear | firma de email estática |
 | `assets/downloads/doc-header.svg` · `doc-footer.svg` | sin trackear | membrete |
-| `assets/photos/pieza-ai-campo-real.jpg` | sin trackear | referencia AI en campo |
+| `assets/photos/pieza-ai-campo-real.jpg` | sin trackear | referencia IA en campo |
 
 Ver **A1** en el backlog.
 
@@ -79,7 +79,7 @@ Ver **A1** en el backlog.
 | [`library.html`](library.html) | Todos los assets con descarga directa (formato + peso + dimensiones) + 8 ZIPs por sección | 🟡 Falta sumar los assets nuevos de papelería/firma |
 | [`logos.html`](logos.html) | 31 logos (17 clientes + 14 partners) con botón de descarga | 🟡 Faltan 3 en vector (ver S2) |
 
-### Capa consumible por AI
+### Capa consumible por IA
 
 | Archivo | Estado |
 |---|---|
@@ -117,7 +117,7 @@ Desbloquea: quién tiene que producir algo o decidir para que el ítem avance. *
 | # | Qué | Por qué importa | Desbloquea | Esf. |
 |---|---|---|---|---|
 | **A1** | Commitear y pushear el trabajo pendiente (`brand-book.html`, `ai-en-campo.html`, `assets/pieces/`, wordmark animado, firma GIF/PNG, doc-header/footer, `pieza-ai-campo-real.jpg`) | El live está atrás del local. Cualquiera que abra el link hoy ve una versión vieja, y los assets nuevos no se pueden descargar | nadie | S |
-| **A2** | Guardar los renders de merch en `assets/photos/merch/` con los nombres exactos del `LEEME.txt`: `remera-blanca.jpg`, `remera-negra.jpg`, `gorra.jpg`, `medias.jpg`, `mochila.jpg`, `termo.jpg`, `cuaderno.jpg`, `stickers.jpg`, `equipo-merch.jpg` (JPG, lado largo ≥1600px, calidad 80-85) | Los renders ya existen (generados hoy con AI) pero **no están en disco** — la §11 muestra 9 slots con badge de placeholder. El manual las levanta solas al recargar, no hay que tocar código | **Facu** (bajar los archivos del chat) | S |
+| **A2** | Guardar los renders de merch en `assets/photos/merch/` con los nombres exactos del `LEEME.txt`: `remera-blanca.jpg`, `remera-negra.jpg`, `gorra.jpg`, `medias.jpg`, `mochila.jpg`, `termo.jpg`, `cuaderno.jpg`, `stickers.jpg`, `equipo-merch.jpg` (JPG, lado largo ≥1600px, calidad 80-85) | Los renders ya existen (generados hoy con IA) pero **no están en disco** — la §11 muestra 9 slots con badge de placeholder. El manual las levanta solas al recargar, no hay que tocar código | **Facu** (bajar los archivos del chat) | S |
 | **A3** | Integrar los assets de papelería en §12 del manual: firma animada (GIF) + firma estática (PNG) + `doc-header.svg`/`doc-footer.svg` + logo animado, con **instructivo de cómo se sube la firma a Gmail** (Configuración → Firma → pegar imagen → link a magoya.com), y **sacar la carita del ejemplo de firma → va siempre el logo** (`brand-book.html:1203` usa `avatars/avatar-face.svg`) | Hoy los archivos existen en `assets/downloads/` pero **no están linkeados desde ninguna página**: nadie los va a encontrar. Y el ejemplo de firma enseña lo contrario de la regla (avatar de persona en lugar de logo) | nadie | M |
 | **A4** | Unificar el contacto a `info@magoya.com` (hay 4 usos de `people@magoya.com` y 3 de `info@`) y arreglar las bios del one-pager EN | Un manual que muestra dos emails distintos no es fuente de verdad. El one-pager 2024 tiene bios desactualizadas | **Varu** (confirmar cuál es el email correcto y pasar bios al día) | S |
 | **A5** | Roster real del equipo: fotos B&N + nombres + roles reales en `slides.html` E2 (5 figuras "Subtitle bold"), `pieces.html:175-179` (5 × "Nombre Apellido") e `brand-book.html:583` | Es el placeholder más caro: el módulo E2 lleva un cartel escrito que dice "reemplazar antes de usar". Si alguien arma un deck de cliente hoy, sale con nombres falsos | **Facu + Varu** (roster) / **fotos** del equipo en B&N | M |
@@ -133,9 +133,9 @@ Desbloquea: quién tiene que producir algo o decidir para que el ítem avance. *
 | **S3** | Sumar el merch extendido: **indumentaria deportiva** (remera dry fit, jersey de bici, colección mujer) y las **3 opciones de gorra** (M oficial · logo completo tipo MLB · isotipo circular) | Los renders ya existen. La deportiva abre una línea nueva (¿aplica la regla "sin lima en textil"?) y hay que **elegir una gorra oficial**, no publicar tres | **Facu** (archivos) + **Varu** (decidir gorra oficial y si la deportiva es línea aprobada) | M |
 | **S4** | Recolorear las **tramas `.ai`** del brand viejo al mapping nuevo (verdes oficiales) y sumarlas como recurso · **Ubicación del archivo a confirmar** (no verificada en disco; lo único encontrado es `Copia de Avatares.ai` en `/Users/facu/Desktop/Sistema de diseño/Logo Magoya/`) | Veredicto del triage del brand viejo: las tramas son el ancestro del motivo actual y valen la adaptación. Suma textura sin inventar lenguaje nuevo | **Facu** (localizar el `.ai`) + **diseñador** si hay que retrazar | M |
 | **S5** | Rescatar los **iconos monoline sobre chip** del brand viejo, adaptados a la gramática actual (línea 2px, esquinas redondeadas) | Otro veredicto "rescatar" del triage. Da un componente de icono con fondo que hoy el sistema no tiene | nadie | M |
-| **S6** | Sincronizar `BRAND.md` y `README.md` con el manual visual: agregar la sección **Convivencia de recursos** (matriz de combinación) a `BRAND.md`, y en `README.md` corregir "12 secciones" → 13 + sumar `ai-en-campo.html` a la tabla de páginas | `BRAND.md` es lo que lee una AI para generar piezas. Si le falta la matriz de convivencia, va a combinar recursos que el manual prohíbe combinar | nadie | S |
+| **S6** | Sincronizar `BRAND.md` y `README.md` con el manual visual: agregar la sección **Convivencia de recursos** (matriz de combinación) a `BRAND.md`, y en `README.md` corregir "12 secciones" → 13 + sumar `ai-en-campo.html` a la tabla de páginas | `BRAND.md` es lo que lee una IA para generar piezas. Si le falta la matriz de convivencia, va a combinar recursos que el manual prohíbe combinar | nadie | S |
 | **S7** | Recibir y triagear el **listado de mejoras de Aye para Magoya Studio** | El Studio es donde el equipo produce de verdad. Si no mejora, el brand system queda como documento y no como práctica | **Aye** (pasar el listado) · esfuerzo real a estimar cuando llegue | ? |
-| **S8** | Limpiar comentarios obsoletos en `tokens.css` (líneas 38, 41, 101, 104 hablan de "motivo camino / estratos", ambos retirados) y decidir qué hacer con los assets legacy que siguen en disco (`motif-estratos.svg`, `illus/camino-*.svg`) — ninguna página los referencia | Un token que dice "motivo camino" invita a usar un recurso retirado. Riesgo directo de que una AI o un diseñador lo reviva | nadie | S |
+| **S8** | Limpiar comentarios obsoletos en `tokens.css` (líneas 38, 41, 101, 104 hablan de "motivo camino / estratos", ambos retirados) y decidir qué hacer con los assets legacy que siguen en disco (`motif-estratos.svg`, `illus/camino-*.svg`) — ninguna página los referencia | Un token que dice "motivo camino" invita a usar un recurso retirado. Riesgo directo de que una IA o un diseñador lo reviva | nadie | S |
 
 ### DESPUÉS — sostenibilidad del sistema
 
@@ -201,10 +201,10 @@ Reglas cerradas. Si alguien las cuestiona, la respuesta es este bloque.
 
 | Decisión | Detalle |
 |---|---|
-| Dos marcas, dos manuales | El core (`brand-book.html`) y **"AI en campo"** (`ai-en-campo.html`) son **marcas separadas**. AI en campo rompe 3 reglas del core **a propósito** (fondo verde digital pleno · placa negra con crema para el dato clave · ruido controlado 2–4 doodles ±5–15°). **Nada de eso vuelve al core** |
+| Dos marcas, dos manuales | El core (`brand-book.html`) y **"IA en campo"** (`ai-en-campo.html`) son **marcas separadas**. IA en campo rompe 3 reglas del core **a propósito** (fondo verde digital pleno · placa negra con crema para el dato clave · ruido controlado 2–4 doodles ±5–15°). **Nada de eso vuelve al core** |
 | Producción | Las piezas de redes se producen **siempre desde plantillas de Magoya Studio** (28 plantillas, 13 formatos) y la receta queda en un `.magoya.json` — esa es la fuente para reproducir una pieza, no el ojo |
 | Piezas comerciales | Se capturan las **estructuras** como plantillas del sistema (`pieces.html`), no se producen los flyers uno por uno |
-| Capa para AI | `BRAND.md` (doctrina) + `tokens.json` (valores) + `tokens.css` (4 temas). Orden de lectura documentado en `README.md` |
+| Capa para IA | `BRAND.md` (doctrina) + `tokens.json` (valores) + `tokens.css` (4 temas). Orden de lectura documentado en `README.md` |
 | Deck Studio | Fuera de la nav pública (confunde); vive en `app/` |
 | Navegación | Topbar sticky compartida + índice lateral en las 7 páginas (el "volver" enterrado no funcionaba) |
 | Material fuente | `assets/refs/` (25 MB del diseñador) **excluido del repo** vía `.gitignore` |
@@ -243,9 +243,9 @@ Reglas cerradas. Si alguien las cuestiona, la respuesta es este bloque.
 | **R4** | **Placeholders visibles en un sistema ya compartido** (9 slots de merch, 5 nombres "Nombre Apellido", 5 "Subtitle bold", cita parcial). El sistema se compartió a Varu y diseñadores para feedback | Medio-alto — erosiona la autoridad del manual justo cuando se está pidiendo aprobación | A2, A5, A6. Mientras tanto, los placeholders llevan cartel explícito (ya implementado en E2 y en merch) |
 | **R5** | **Doble fuente de verdad brand-system ↔ magoya-studio.** Iconos, doodles y badge están **copiados** en los dos repos. El manual afirma que son "los mismos archivos" | Medio — divergencia silenciosa: el manual documenta un icono que el Studio ya cambió | D6. Definir fuente única y proceso de sync |
 | **R6** | **Bus factor = 1.** Facu es el único que produce, decide la ejecución y tiene el material fuente (`assets/refs/` está gitignored, solo local) | Alto para continuidad | D4 (gobernanza) + D7 (backup de refs) |
-| **R7** | **Renders de merch generados con AI presentados como producto real.** La regla dice "foto o render real"; un render AI cumple la letra pero puede prometer un producto que el proveedor no puede fabricar igual | Medio — expectativa vs. producción | Al cotizar, comparar contra los vectores de producción (`/Users/facu/Desktop/Diseño buzos/`). Marcar en el manual qué es render y qué es producto fotografiado |
+| **R7** | **Renders de merch generados con IA presentados como producto real.** La regla dice "foto o render real"; un render de IA cumple la letra pero puede prometer un producto que el proveedor no puede fabricar igual | Medio — expectativa vs. producción | Al cotizar, comparar contra los vectores de producción (`/Users/facu/Desktop/Diseño buzos/`). Marcar en el manual qué es render y qué es producto fotografiado |
 | **R8** | **Logos de terceros en repo público** (17 clientes + 14 partners). Hay nota de uso nominativo en `README.md` | Bajo, pero real | Mantener la nota; retirar cualquier logo ante pedido del titular |
-| **R9** | **Documentos desincronizados entre sí.** `BRAND.md` no tiene "Convivencia", `README.md` dice 12 secciones y no lista `ai-en-campo.html`, `tokens.css` comenta motivos retirados | Medio — la capa para AI es justo la que se lee sin criterio propio | S6 + S8. Al agregar una sección al manual visual, actualizar `BRAND.md` en el mismo commit |
+| **R9** | **Documentos desincronizados entre sí.** `BRAND.md` no tiene "Convivencia", `README.md` dice 12 secciones y no lista `ai-en-campo.html`, `tokens.css` comenta motivos retirados | Medio — la capa para IA es justo la que se lee sin criterio propio | S6 + S8. Al agregar una sección al manual visual, actualizar `BRAND.md` en el mismo commit |
 | **R10** | **`app/` y `archive/` en el repo público** sin estar en la navegación | Bajo — confunde a quien clona | D5 |
 
 ---

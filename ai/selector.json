@@ -36,7 +36,7 @@
   {"tenes": "un testimonio", "usa": "J1", "alternativa": "J2 si hay retrato real del autor (B&N + scrim)"},
   {"tenes": "el equipo concreto de la propuesta", "usa": "J3"},
   {"tenes": "validación técnica del stack (audiencia CTO)", "usa": "K1"},
-  {"tenes": "capacidades de AI con herramientas concretas", "usa": "K2"},
+  {"tenes": "capacidades de IA con herramientas concretas", "usa": "K2"},
   {"tenes": "prueba social (clientes)", "usa": "L1"},
   {"tenes": "el cierre con próximos pasos", "usa": "M3", "nota": "siempre es la última slide; la plantilla M3 tiene CUATRO pasos numerados (t5-t12) y UN solo CTA — llená los cuatro, no borres ninguno"}
  ],

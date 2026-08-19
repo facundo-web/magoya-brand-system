@@ -30,14 +30,14 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 - [ai/constraints.json](https://brand.magoya.com/ai/constraints.json): mínimos de logo, clearspace, márgenes, safe areas, límites de texto — los números que nadie tiene que asumir.
 - [ai/slides.json](https://brand.magoya.com/ai/slides.json): la geometría fuente de los 41 módulos (layout_src) — para quien renderice por su cuenta; si solo vas a APLICAR, usá las plantillas.
 
-## Entrada por AI (un link por herramienta, versionadas por separado)
+## Entrada por IA (un link por herramienta, versionadas por separado)
 
 - [ai/chatgpt.md](https://brand.magoya.com/ai/chatgpt.md): ChatGPT (Custom GPT / Projects) — flujo por browsing, sin permisos.
 - [ai/claude.md](https://brand.magoya.com/ai/claude.md): Claude (claude.ai / Claude Code / API).
 - [ai/gemini.md](https://brand.magoya.com/ai/gemini.md): Gemini (app / AI Studio / Gems).
 - [ai/cursor.md](https://brand.magoya.com/ai/cursor.md): Cursor.
 - [ai/copilot.md](https://brand.magoya.com/ai/copilot.md): GitHub Copilot.
-- [ai/generic.md](https://brand.magoya.com/ai/generic.md): cualquier otra AI con browsing.
+- [ai/generic.md](https://brand.magoya.com/ai/generic.md): cualquier otra IA con browsing.
 
 ## Prompts y checklist listos para usar
 
@@ -58,5 +58,5 @@ Si vas a generar piezas, código o copy para Magoya, leé `BRAND.md` y `tokens.j
 
 - [library.html](https://brand.magoya.com/library.html): todos los assets con descarga directa (wordmarks, avatares, motivos, personajes, fotos, fuente).
 - [logos.html](https://brand.magoya.com/logos.html): logos reales de clientes y del stack tecnológico — los únicos que se pueden usar en un logo wall.
-- [ai-en-campo.html](https://brand.magoya.com/ai-en-campo.html): manual de la marca anexa "AI en campo". **No es parte del core**: rompe tres reglas a propósito (lienzo verde digital pleno, placa negra de dato clave, doodles del Studio). No aplicar sus reglas a piezas de Magoya.
+- [ai-en-campo.html](https://brand.magoya.com/ai-en-campo.html): manual de la marca anexa "IA en campo". **No es parte del core**: rompe tres reglas a propósito (lienzo verde digital pleno, placa negra de dato clave, doodles del Studio). No aplicar sus reglas a piezas de Magoya.
 - [ROADMAP.md](https://brand.magoya.com/ROADMAP.md): estado del sistema y pendientes de contenido.

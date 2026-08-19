@@ -1,4 +1,4 @@
-# Magoya Brand — entrada genérica (cualquier AI con browsing)
+# Magoya Brand — entrada genérica (cualquier IA con browsing)
 
 **Versión 1.5 · 2026-08-11** · Punto de entrada de la marca Magoya para cualquier modelo no cubierto por las entradas específicas (Perplexity, Mistral, un LLM por API, lo que venga). Changelog al pie.
 

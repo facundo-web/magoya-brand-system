@@ -66,11 +66,11 @@ Este es **el documento más importante de todo el material para esta investigaci
 
 ### 1.3 `Pilares de contenido redes Magoya con audiencia definida.docx`
 
-Documento reciente (menciona AI, Pato, Facu, Martin, Inés). Es **la única fuente que segmenta voz por audiencia**, y lo hace muy bien:
+Documento reciente (menciona IA, Pato, Facu, Martin, Inés). Es **la única fuente que segmenta voz por audiencia**, y lo hace muy bien:
 
-- **Pilar "IA en Campo"** → *"Agronomistas, técnicos de campo (…) Gente que vive el campo pero quiere entender cómo la AI los puede ayudar en su trabajo concreto. No es para: CTOs ni decisores de compra. Es para el usuario final que después le dice al jefe 'esto funciona'."*
-- **Pilar "Filosofía Magoya"** → *"Gente que está pensando qué lugar le da a la AI en su empresa y quiere escuchar **una voz que no sea hype ni negacionismo**."*
-- **Pilar "Negocio / Matando el FOMO"** → *"Gente que tiene presupuesto pero no quiere tirarlo a la basura como pasó con la transformación digital hace 10 años. (…) **Magoya es la voz que dice 'pará, pensá antes de activar'**."* Y atribuye el insight: *"Pato dijo exactamente esto — hay una ola de 1-2 años de demanda de consultoría AI, pero con riesgo de repetir el error del ecommerce."*
+- **Pilar "IA en Campo"** → *"Agronomistas, técnicos de campo (…) Gente que vive el campo pero quiere entender cómo la IA los puede ayudar en su trabajo concreto. No es para: CTOs ni decisores de compra. Es para el usuario final que después le dice al jefe 'esto funciona'."*
+- **Pilar "Filosofía Magoya"** → *"Gente que está pensando qué lugar le da a la IA en su empresa y quiere escuchar **una voz que no sea hype ni negacionismo**."*
+- **Pilar "Negocio / Matando el FOMO"** → *"Gente que tiene presupuesto pero no quiere tirarlo a la basura como pasó con la transformación digital hace 10 años. (…) **Magoya es la voz que dice 'pará, pensá antes de activar'**."* Y atribuye el insight: *"Pato dijo exactamente esto — hay una ola de 1-2 años de demanda de consultoría de IA, pero con riesgo de repetir el error del ecommerce."*
 - **Pilar "Cómo lo hace Magoya"** → *"Pato contó que los clientes del agro validan dos cosas: conocimiento agronómico Y conocimiento de software. Este pilar tiene que mostrar los dos."*
 - **Pilar "Mundo Techie"** → *"el par técnico del cliente. Alguien que cuando lee el contenido de Pato piensa 'estos tipos saben de lo que hablan, podría trabajar con ellos'. Formato que tiene sentido para esta audiencia: artículos de LinkedIn de 800-1200 palabras, newsletter técnica con casos de arquitectura reales, **nada de carruseles con tips. Este público no consume contenido de ese tipo.**"*
 
@@ -165,7 +165,7 @@ La nota de memoria agrega: *"partnership por encima de hype"* y *"la esencia es 
 | **"Pasión"** | Manual 2022: *"la pasión es nuestro motor"*, *"Nos apasiona el agro"* (título de sección) | Varu 2026: *"la palabra 'pasión' se usa como reemplazo para ambición (…) no garantiza profundidad, excelencia ni consistencia"* |
 | **"Startup"** | Manual 2022: *"combinando la flexibilidad y dinámica de una startup"* | Varu 2026: *"ni en años ni en estructura ni en facturación"* somos startup |
 | **"Familia" / clima** | Cultura Magoya: *"somos más que un equipo; somos una comunidad"*, *"ambiente relajado y amistoso"* | Varu 2026: *"Equipo de alto rendimiento, no familia"*; *"la interdependencia no se resuelve con 'buena onda'"* |
-| **Emojis** | Cultura Magoya usa 9 emojis en 9 valores; AI en campo permite manitos | `BRAND.md` regla 9: *"Emojis prohibidos"* |
+| **Emojis** | Cultura Magoya usa 9 emojis en 9 valores; IA en campo permite manitos | `BRAND.md` regla 9: *"Emojis prohibidos"* |
 | **Humor** | Manual: *"Nos divertimos sin perder el profesionalismo"*; Anita: *"Divertida (…) para alivianar la complejidad"* | `BRAND.md`: *"no whimsical"*, sin mención de humor |
 | **Fáctico** | Manual slide 22: tono *"fáctico"* | Manual slide 23: *"sin declaraciones fácticas"* |
 | **Inglés en castellano** | Manual: *"usamos la menor cantidad de palabras en inglés posible. Y si usamos palabras en inglés, las traducimos"* | `BRAND.md` §1: vocabulario propio declarado 100% en inglés sin traducción (*embedded, deep AgTech fluency, long-term value*) |
@@ -515,7 +515,7 @@ Preguntas que solo Varu o Cami pueden responder. Listadas para llevar a reunión
 2. **¿Magoya se sigue presentando como "startup" / con "dinámica de startup"?** Varu ya dijo que no lo es. ¿Qué la reemplaza: "empresa mediana", "estudio", "partner", "product studio"? **Para Varu.**
 3. **El filo, ¿hasta dónde?** *"Magoya es la voz que dice 'pará, pensá antes de activar'"* frente a un cliente que ya compró consultoría de IA: ¿la marca institucional se banca decirlo, o eso solo lo dice Varu como vocera? **Para Varu.**
 4. **Contradicción literal del Manual:** ¿el tono es *"fáctico"* (slide 22) o *"sin declaraciones fácticas"* (slide 23)? Mi lectura es que la segunda quiso decir "no afirmamos como hecho lo que es opinión", pero hay que confirmarlo antes de escribir la regla. **Para Cami** (es quien conserva el brief original).
-5. **Emojis.** `BRAND.md` los prohíbe; Cultura Magoya usa nueve; AI en campo permite manitos. ¿Regla de tres capas (core: solo manitos y banderas / sub-marca: como está / interno y employer brand: libres)? **Para Cami.**
+5. **Emojis.** `BRAND.md` los prohíbe; Cultura Magoya usa nueve; IA en campo permite manitos. ¿Regla de tres capas (core: solo manitos y banderas / sub-marca: como está / interno y employer brand: libres)? **Para Cami.**
 6. **"Familia" y "career path"** están vetados por la POV de Varu — ¿eso aplica al copy de employer brand y a las cards de hiring, o solo a su discurso personal? **Para Varu.**
 
 **Atribución y trazabilidad (bloquean poder citar el material)**
@@ -559,7 +559,7 @@ Preguntas que solo Varu o Cami pueden responder. Listadas para llevar a reunión
 
 ### Actualización — 5 de agosto de 2026: Proteína está trabajando con Magoya ahora
 
-Las notas de reunión de julio de 2026 confirman que **Proteína es una agencia** — y que **el proyecto está activo, no cerrado en 2022**. Kickoff el 28 de julio de 2026, con Anita Figueiredo y Estrella. Entregables comprometidos: módulo 1 (posicionamiento, propuesta de valor, arquitectura de marca) después del workshop del 13 de agosto, y módulo 2 (**playbook consumible por AI** + vocabulario acordado) después del 2 de septiembre.
+Las notas de reunión de julio de 2026 confirman que **Proteína es una agencia** — y que **el proyecto está activo, no cerrado en 2022**. Kickoff el 28 de julio de 2026, con Anita Figueiredo y Estrella. Entregables comprometidos: módulo 1 (posicionamiento, propuesta de valor, arquitectura de marca) después del workshop del 13 de agosto, y módulo 2 (**playbook consumible por IA** + vocabulario acordado) después del 2 de septiembre.
 
 Esto obliga a bajar la confianza de la atribución del material 2022:
 

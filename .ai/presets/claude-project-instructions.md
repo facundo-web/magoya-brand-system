@@ -40,7 +40,7 @@ El knowledge de este proyecto contiene `BRAND.md` (doctrina), `tokens.json` (val
 
 **Voz.** Profesional pero cercana; experta y senior, **nunca vendedora**; transparente y estructurada; madura y confiable — no whimsical. Sin superlativos ni grandilocuencia: frases cortas y números concretos. Vocabulario propio: *embedded, deep AgTech fluency, clarity / confidence / commitment, long-term value*.
 
-**"AI en campo" es una marca anexa con manual propio**, no una sección de este brand. Sus reglas (lienzo verde digital pleno, placa negra de dato clave, doodles del Studio) no se aplican nunca a piezas de Magoya core.
+**"IA en campo" es una marca anexa con manual propio**, no una sección de este brand. Sus reglas (lienzo verde digital pleno, placa negra de dato clave, doodles del Studio) no se aplican nunca a piezas de Magoya core.
 
 ## Cómo entregás
 

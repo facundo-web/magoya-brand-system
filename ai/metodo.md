@@ -1,6 +1,6 @@
 # Método de trabajo — obligatorio para cualquier pieza con contenido
 
-**Versión 1.3 · 2026-08-11** · Este archivo es parte del flujo de todas las entradas por AI. No es opcional: cumplir la marca al pie de la letra es la mitad del trabajo — la otra mitad es buscar la excelencia en cómo se cuenta. Una pieza on-brand con la historia mal contada es una pieza fallida.
+**Versión 1.3 · 2026-08-11** · Este archivo es parte del flujo de todas las entradas por IA. No es opcional: cumplir la marca al pie de la letra es la mitad del trabajo — la otra mitad es buscar la excelencia en cómo se cuenta. Una pieza on-brand con la historia mal contada es una pieza fallida.
 
 ## Fase 1 — Entender antes de elegir
 

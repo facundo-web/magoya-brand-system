@@ -2518,8 +2518,8 @@
   },
   {
    "id": "K2",
-   "nombre": "Capacidades de AI (logos de modelos + qué hacemos con ellos)",
-   "cuando_usarlo": "cuando la conversación entra en AI y hay que ser explícito. Cada fila nombra una capacidad concreta, no \"AI-powered\". Los logos de",
+   "nombre": "Capacidades de IA (logos de modelos + qué hacemos con ellos)",
+   "cuando_usarlo": "cuando la conversación entra en IA y hay que ser explícito. Cada fila nombra una capacidad concreta, no \"AI-powered\". Los logos de",
    "url": "https://brand.magoya.com/ai/templates/K2.html",
    "url_texto_crudo": "https://brand.magoya.com/ai/templates/K2.txt",
    "slots": [
