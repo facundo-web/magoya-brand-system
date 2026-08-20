@@ -98,10 +98,15 @@ CATDOC = {
  'assets/studio/icons/ai': ('Logos oficiales de plataformas de IA', 'Usar la variante correcta según fondo (-black sobre claro).'),
  'assets/studio/icons/social': ('Logos oficiales de redes', 'Idem variantes por fondo.'),
  'assets/studio/devices': ('Mockups de dispositivos', ''),
- 'assets/refs': ('REFERENCIAS del diseñador original', 'NO son assets finales — no usar en piezas. Solo contexto histórico.'),
+ # assets/refs NO va en el manifiesto: está gitignored, así que sus URLs dan 404
+ # en brand.magoya.com. Es material fuente y BRAND.md ya dice que no se publica.
 }
 tree = {}
+NO_PUBLICABLE = ('assets/refs',)   # gitignored: sus URLs darían 404 en el sitio
 for root, dirs, files in os.walk('assets'):
+    if root.startswith(NO_PUBLICABLE):
+        dirs[:] = []
+        continue
     fs = sorted(f for f in files if not f.startswith('.'))
     if fs: tree[root] = fs
 carpetas = []

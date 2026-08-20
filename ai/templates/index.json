@@ -959,8 +959,8 @@
     },
     {
      "slot": "t7",
-     "rol": "caption",
-     "texto_ejemplo": "68%",
+     "rol": "kicker",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 63,
      "max_lineas": 2
     },
@@ -973,8 +973,8 @@
     },
     {
      "slot": "t9",
-     "rol": "caption",
-     "texto_ejemplo": "44%",
+     "rol": "kicker",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 63,
      "max_lineas": 2
     },
@@ -987,8 +987,8 @@
     },
     {
      "slot": "t11",
-     "rol": "caption",
-     "texto_ejemplo": "31%",
+     "rol": "kicker",
+     "texto_ejemplo": "[XX]",
      "max_caracteres_aprox": 63,
      "max_lineas": 2
     }

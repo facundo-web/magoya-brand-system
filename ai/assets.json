@@ -2,7 +2,7 @@
  "que_es": "Manifiesto completo de assets del brand system de Magoya. Cada URL es pública y fetcheable sin auth. Antes de usar cualquier asset, leer BRAND.md (reglas) y tokens.json (valores).",
  "doctrina": "https://brand.magoya.com/BRAND.md",
  "tokens": "https://brand.magoya.com/tokens.json",
- "total_archivos": 247,
+ "total_archivos": 239,
  "iconos_sistema": [
   {
    "nombre": "sprout",
@@ -545,21 +545,6 @@
     "https://brand.magoya.com/assets/pieces/fecha-marcada.jpg",
     "https://brand.magoya.com/assets/pieces/impacto-pregunta.jpg",
     "https://brand.magoya.com/assets/pieces/mito-vs-realidad.jpg"
-   ]
-  },
-  {
-   "carpeta": "assets/refs",
-   "descripcion": "REFERENCIAS del diseñador original",
-   "reglas": "NO son assets finales — no usar en piezas. Solo contexto histórico.",
-   "archivos": [
-    "https://brand.magoya.com/assets/refs/Introduction titulo grande+ilustracion .svg",
-    "https://brand.magoya.com/assets/refs/Slides - CASE STUDY.svg",
-    "https://brand.magoya.com/assets/refs/Slides - copy+titulo+personas.svg",
-    "https://brand.magoya.com/assets/refs/modules-for-slides.png",
-    "https://brand.magoya.com/assets/refs/pieza de redes.svg",
-    "https://brand.magoya.com/assets/refs/quote + foto + flecha.svg",
-    "https://brand.magoya.com/assets/refs/tirulo grande.svg",
-    "https://brand.magoya.com/assets/refs/titulo con persona y ilustraciones .svg"
    ]
   },
   {

@@ -90,8 +90,10 @@ def render(mid, shapes):
                 text = ' '.join(str(t.get('text', t)) if isinstance(t, dict) else str(t) for t in text)
             # cifras de ejemplo -> [XX]: imposible entregarlas en silencio como reales
             _t = str(text).strip()
-            _es_cifra = bool(re.fullmatch(r'[\d.,]+\s*(%|x|×|k|K|M|\+|hs|min)?', _t)) and _t != 'NN'
-            if _es_cifra and s >= 2.4:
+            _m = re.fullmatch(r'[\d.,]+\s*(%|x|×|k|K|M|\+|hs|min)?', _t)
+            _es_cifra = bool(_m) and _t != 'NN'
+            _con_unidad = bool(_m and _m.group(1))   # 68%, 3x, 40k: es una afirmación, no una numeración
+            if _es_cifra and (s >= 2.4 or _con_unidad):
                 text = '[XX]'
             # heurística de rol y capacidad
             fpx = s * 12.8
